@@ -1,0 +1,212 @@
+player_name,year,signal,correct,contract_start,contract_end,contract_yrs,aav_m,age,contract_year,yrs_remaining,cohort
+Nelson Cruz,2022,Buy Low,True,2022.0,2023.0,1.0,15.0,41.0,False,1.0,4-Post-Prime
+Joey Votto,2022,Slight Buy,True,,,,,,,,No contract data
+Eduardo Escobar,2022,Slight Sell,True,2022.0,2024.0,2.0,10.0,32.0,False,2.0,5-Mid-Contract
+Paul Goldschmidt,2022,Slight Sell,False,2020.0,2024.0,5.0,26.0,34.0,False,2.0,4-Post-Prime
+Marcell Ozuna,2022,Buy Low,False,2021.0,2025.0,4.0,16.25,31.0,False,3.0,5-Mid-Contract
+Eric Hosmer,2022,Sell High,True,2018.0,2025.0,8.0,18.0,32.0,False,3.0,5-Mid-Contract
+Marcus Semien,2022,Buy Low,True,2022.0,2028.0,7.0,25.0,31.0,False,6.0,3-Secured
+George Springer,2022,Slight Sell,True,2021.0,2026.0,6.0,25.0,32.0,False,4.0,3-Secured
+Bryce Harper,2022,Slight Buy,True,2019.0,2031.0,13.0,25.384615,29.0,False,9.0,3-Secured
+Jonathan Schoop,2022,Buy Low,True,2021.0,2023.0,2.0,7.5,30.0,False,1.0,5-Mid-Contract
+Nolan Arenado,2022,Sell High,True,2019.0,2027.0,8.0,32.5,30.0,False,5.0,3-Secured
+Enrique Hernández,2022,Slight Buy,True,2021.0,2022.0,2.0,7.0,30.0,True,0.0,1-Payday
+Christian Walker,2022,Buy Low,True,,,,,,,,No contract data
+Darin Ruf,2022,Buy Low,True,,,,,,,,No contract data
+Nick Castellanos,2022,Slight Sell,True,2022.0,2026.0,5.0,20.0,29.0,False,4.0,3-Secured
+Aaron Judge,2022,Slight Buy,True,2022.0,2022.0,1.0,19.0,29.0,True,0.0,2-Prove-It
+Manny Machado,2022,Sell High,True,2019.0,2028.0,10.0,30.0,29.0,False,6.0,3-Secured
+Christian Yelich,2022,Slight Buy,True,2020.0,2029.0,7.0,26.928571,30.0,False,7.0,3-Secured
+Whit Merrifield,2022,Buy Low,True,2019.0,2024.0,4.0,4.0625,32.0,False,2.0,5-Mid-Contract
+Xander Bogaerts,2022,Sell High,True,2019.0,2026.0,6.0,20.0,29.0,False,4.0,3-Secured
+Jorge Polanco,2022,Slight Buy,True,2019.0,2025.0,5.0,5.15,28.0,False,3.0,5-Mid-Contract
+Josh Bell,2022,Sell High,True,2022.0,2022.0,1.0,10.0,29.0,True,0.0,1-Payday
+Mookie Betts,2022,Slight Buy,True,2021.0,2032.0,12.0,30.416667,29.0,False,10.0,3-Secured
+Ketel Marte,2022,Buy Low,True,2018.0,2022.0,5.0,4.8,28.0,True,0.0,1-Payday
+Corey Seager,2022,Buy Low,True,2022.0,2031.0,10.0,32.5,27.0,False,9.0,3-Secured
+Jesse Winker,2022,Buy Low,True,2022.0,2023.0,2.0,7.25,28.0,False,1.0,5-Mid-Contract
+Jorge Soler,2022,Slight Buy,True,2022.0,2024.0,3.0,12.0,30.0,False,2.0,5-Mid-Contract
+Cody Bellinger,2022,Slight Buy,False,2022.0,2022.0,1.0,17.0,26.0,True,0.0,2-Prove-It
+J. P. Crawford,2022,Sell High,True,2022.0,2026.0,5.0,10.2,26.0,False,4.0,5-Mid-Contract
+Trey Mancini,2022,Buy Low,True,,,,,,,,No contract data
+Ryan Mcmahon,2022,Slight Sell,True,2022.0,2027.0,6.0,11.666667,27.0,False,5.0,5-Mid-Contract
+Tyler O'Neill,2022,Slight Buy,True,,,,,,,,No contract data
+Amed Rosario,2022,Buy Low,True,2022.0,2024.0,2.0,9.0,30.0,False,2.0,5-Mid-Contract
+Willy Adames,2022,Slight Buy,False,,,,,,,,No contract data
+Ozzie Albies,2022,Slight Buy,False,2019.0,2027.0,7.0,5.0,24.0,False,5.0,5-Mid-Contract
+Cedric Mullins,2022,Slight Buy,True,,,,,,,,No contract data
+Kyle Schwarber,2022,Buy Low,True,2022.0,2025.0,4.0,19.75,29.0,False,3.0,5-Mid-Contract
+Alex Verdugo,2022,Buy Low,True,,,,,,,,No contract data
+Ryan Mountcastle,2022,Buy Low,True,,,,,,,,No contract data
+Ke'Bryan Hayes,2022,Sell High,True,2022.0,2030.0,8.0,8.75,24.0,False,8.0,5-Mid-Contract
+Kyle Tucker,2022,Buy Low,True,,,,,,,,No contract data
+Trent Grisham,2022,Slight Buy,True,,,,,,,,No contract data
+Myles Straw,2022,Sell High,True,2022.0,2028.0,5.0,5.0,27.0,False,6.0,5-Mid-Contract
+Jeremy Peña,2022,Slight Buy,False,,,,,,,,No contract data
+Juan Soto,2022,Buy Low,True,2022.0,2022.0,1.0,17.1,23.0,True,0.0,2-Prove-It
+Bo Bichette,2022,Buy Low,True,,,,,,,,No contract data
+Adolis García,2022,Slight Buy,True,2022.0,2026.0,4.0,13.25,30.0,False,4.0,5-Mid-Contract
+Randy Arozarena,2022,Slight Sell,False,,,,,,,,No contract data
+Bryan Reynolds,2022,Slight Buy,True,2022.0,2023.0,2.0,6.75,26.0,False,1.0,5-Mid-Contract
+Austin Hays,2022,Slight Sell,True,,,,,,,,No contract data
+Seiya Suzuki,2022,Slight Sell,True,2022.0,2026.0,5.0,17.0,27.0,False,4.0,5-Mid-Contract
+Carlos Santana,2023,Slight Sell,True,,,,,,,,No contract data
+Jean Segura,2023,Buy Low,True,2023.0,2025.0,2.0,8.5,32.0,False,2.0,5-Mid-Contract
+Freddie Freeman,2023,Slight Buy,True,2022.0,2027.0,6.0,27.0,33.0,False,4.0,3-Secured
+Yasmani Grandal,2023,Slight Sell,True,2020.0,2023.0,4.0,18.25,34.0,True,0.0,4-Post-Prime
+Jon Berti,2023,Slight Buy,True,,,,,,,,No contract data
+Robbie Grossman,2023,Slight Sell,True,,,,,,,,No contract data
+Marcus Semien,2023,Slight Sell,True,2022.0,2028.0,7.0,25.0,32.0,False,5.0,3-Secured
+George Springer,2023,Buy Low,True,2021.0,2026.0,6.0,25.0,33.0,False,3.0,3-Secured
+Mike Trout,2023,Slight Sell,True,2019.0,2030.0,12.0,35.541667,31.0,False,7.0,3-Secured
+Elías Díaz,2023,Sell High,True,2022.0,2024.0,3.0,4.833333,32.0,False,1.0,5-Mid-Contract
+Max Muncy,2023,Slight Buy,False,2023.0,2024.0,1.0,13.5,32.0,False,1.0,5-Mid-Contract
+Michael Taylor,2023,Slight Sell,True,2022.0,2026.0,4.0,15.0,32.0,False,3.0,5-Mid-Contract
+Mike Yastrzemski,2023,Sell High,True,,,,,,,,No contract data
+Kris Bryant,2023,Slight Sell,True,2022.0,2028.0,7.0,26.0,31.0,False,5.0,3-Secured
+Nick Castellanos,2023,Sell High,True,2022.0,2026.0,5.0,20.0,30.0,False,3.0,3-Secured
+Hunter Renfroe,2023,Slight Sell,True,2023.0,2023.0,1.0,11.9,30.0,True,0.0,1-Payday
+Jurickson Profar,2023,Slight Buy,True,2021.0,2023.0,3.0,7.0,29.0,True,0.0,1-Payday
+Ramón Urías,2023,Sell High,True,,,,,,,,No contract data
+J. D. Davis,2023,Slight Sell,True,,,,,,,,No contract data
+Teoscar Hernández,2023,Buy Low,True,2023.0,2023.0,1.0,14.0,30.0,True,0.0,1-Payday
+José Ramírez,2023,Slight Buy,True,2022.0,2028.0,7.0,20.142857,30.0,False,5.0,3-Secured
+Carlos Correa,2023,Buy Low,True,2023.0,2032.0,6.0,33.333333,28.0,False,9.0,3-Secured
+Taylor Ward,2023,Slight Buy,True,2016.0,2023.0,8.0,23.0,33.0,True,0.0,4-Post-Prime
+Jorge Mateo,2023,Sell High,True,,,,,,,,No contract data
+Harold Ramírez,2023,Slight Sell,True,2022.0,2028.0,7.0,20.142857,30.0,False,5.0,3-Secured
+Pete Alonso,2023,Slight Buy,False,2023.0,2023.0,1.0,14.5,27.0,True,0.0,1-Payday
+Adam Frazier,2023,Slight Buy,True,2023.0,2023.0,1.0,8.0,31.0,True,0.0,1-Payday
+Jorge Soler,2023,Buy Low,True,2022.0,2024.0,3.0,12.0,31.0,False,1.0,5-Mid-Contract
+Cody Bellinger,2023,Slight Sell,True,2023.0,2024.0,1.0,17.5,27.0,False,1.0,5-Mid-Contract
+Amed Rosario,2023,Slight Buy,True,2022.0,2024.0,2.0,9.0,31.0,False,1.0,5-Mid-Contract
+Thairo Estrada,2023,Sell High,True,,,,,,,,No contract data
+Mauricio Dubón,2023,Slight Sell,True,,,,,,,,No contract data
+Tony Kemp,2023,Buy Low,True,,,,,,,,No contract data
+Josh Naylor,2023,Buy Low,True,,,,,,,,No contract data
+Aledmys Díaz,2023,Buy Low,True,2023.0,2024.0,2.0,7.25,32.0,False,1.0,5-Mid-Contract
+Luis Arráez,2023,Sell High,True,,,,,,,,No contract data
+Gleyber Torres,2023,Buy Low,False,2023.0,2023.0,1.0,9.95,25.0,True,0.0,1-Payday
+Luis Rengifo,2023,Slight Buy,True,,,,,,,,No contract data
+Matt Chapman,2023,Sell High,True,2022.0,2023.0,2.0,12.5,29.0,True,0.0,1-Payday
+Connor Joe,2023,Slight Sell,True,,,,,,,,No contract data
+Lane Thomas,2023,Sell High,False,,,,,,,,No contract data
+Ryan Mountcastle,2023,Buy Low,True,,,,,,,,No contract data
+Ke'Bryan Hayes,2023,Buy Low,True,2022.0,2030.0,8.0,8.75,25.0,False,7.0,5-Mid-Contract
+Vladimir Guerrero,2023,Slight Buy,False,,,,,,,,No contract data
+Juan Soto,2023,Buy Low,True,2023.0,2023.0,1.0,23.0,23.0,True,0.0,2-Prove-It
+Josh Lowe,2023,Sell High,True,2019.0,2026.0,6.0,4.0,28.0,False,3.0,5-Mid-Contract
+Rodolfo Castro,2023,Slight Sell,True,,,,,,,,No contract data
+Randy Arozarena,2023,Slight Sell,True,,,,,,,,No contract data
+Josh Rojas,2023,Slight Sell,True,2023.0,2025.0,2.0,5.5,33.0,False,2.0,4-Post-Prime
+Mj Melendez,2023,Slight Buy,True,,,,,,,,No contract data
+Brandon Marsh,2023,Sell High,True,,,,,,,,No contract data
+Austin Hays,2023,Slight Sell,True,,,,,,,,No contract data
+Isaac Paredes,2023,Slight Sell,False,,,,,,,,No contract data
+Triston Casas,2023,Buy Low,True,,,,,,,,No contract data
+Luis García,2023,Buy Low,True,2022.0,2026.0,4.0,13.25,31.0,False,3.0,5-Mid-Contract
+Jarred Kelenic,2023,Slight Sell,True,,,,,,,,No contract data
+Ryan Noda,2023,Sell High,True,,,,,,,,No contract data
+Alec Burleson,2023,Buy Low,False,,,,,,,,No contract data
+Alek Thomas,2023,Buy Low,True,,,,,,,,No contract data
+Bobby Witt,2023,Buy Low,True,,,,,,,,No contract data
+Spencer Torkelson,2023,Buy Low,True,,,,,,,,No contract data
+James Outman,2023,Sell High,True,,,,,,,,No contract data
+Vinnie Pasquantino,2023,Slight Buy,False,,,,,,,,No contract data
+Michael Massey,2023,Buy Low,True,,,,,,,,No contract data
+Carlos Santana,2024,Slight Buy,True,,,,,,,,No contract data
+José Altuve,2024,Slight Sell,True,2018.0,2024.0,7.0,23.357143,33.0,True,0.0,4-Post-Prime
+Giancarlo Stanton,2024,Slight Sell,True,2015.0,2027.0,13.0,25.0,34.0,False,3.0,3-Secured
+George Springer,2024,Slight Buy,True,2021.0,2026.0,6.0,25.0,34.0,False,2.0,4-Post-Prime
+Bryce Harper,2024,Buy Low,True,2019.0,2031.0,13.0,25.384615,31.0,False,7.0,3-Secured
+Elías Díaz,2024,Slight Sell,True,2022.0,2024.0,3.0,4.833333,33.0,True,0.0,4-Post-Prime
+Michael Taylor,2024,Sell High,True,2022.0,2026.0,4.0,15.0,33.0,False,2.0,4-Post-Prime
+Nick Castellanos,2024,Buy Low,True,2022.0,2026.0,5.0,20.0,31.0,False,2.0,5-Mid-Contract
+Aaron Judge,2024,Slight Buy,True,2023.0,2031.0,9.0,40.0,31.0,False,7.0,3-Secured
+Hunter Renfroe,2024,Buy Low,True,2024.0,2025.0,2.0,6.5,31.0,False,1.0,5-Mid-Contract
+Eddie Rosario,2024,Buy Low,True,2022.0,2024.0,2.0,9.0,32.0,True,0.0,2-Prove-It
+Xander Bogaerts,2024,Buy Low,True,2023.0,2033.0,11.0,25.454545,31.0,False,9.0,3-Secured
+Francisco Lindor,2024,Buy Low,True,2022.0,2031.0,10.0,34.1,30.0,False,7.0,3-Secured
+Josh Bell,2024,Slight Buy,True,2023.0,2024.0,2.0,16.5,31.0,True,0.0,2-Prove-It
+Orlando Arcia,2024,Slight Sell,True,2024.0,2025.0,2.0,7.0,30.0,False,1.0,5-Mid-Contract
+Brandon Nimmo,2024,Buy Low,True,2023.0,2030.0,8.0,20.25,30.0,False,6.0,3-Secured
+Corey Seager,2024,Buy Low,True,2022.0,2031.0,10.0,32.5,29.0,False,7.0,3-Secured
+Joey Meneses,2024,Buy Low,True,,,,,,,,No contract data
+Byron Buxton,2024,Slight Sell,False,2022.0,2028.0,7.0,14.285714,30.0,False,4.0,5-Mid-Contract
+Dj Stewart,2024,Slight Buy,False,,,,,,,,No contract data
+Taylor Ward,2024,Slight Buy,False,2024.0,2024.0,1.0,9.0,34.0,True,0.0,2-Prove-It
+Adam Frazier,2024,Slight Buy,False,,,,,,,,No contract data
+Jake Cronenworth,2024,Slight Buy,False,2024.0,2030.0,7.0,11.428571,29.0,False,6.0,5-Mid-Contract
+Tim Anderson,2024,Slight Sell,True,2017.0,2024.0,6.0,4.166667,30.0,True,0.0,1-Payday
+Mitch Garver,2024,Slight Buy,True,2024.0,2026.0,2.0,12.0,32.0,False,2.0,5-Mid-Contract
+Jonah Heim,2024,Slight Sell,True,,,,,,,,No contract data
+Ryan Mcmahon,2024,Sell High,True,2022.0,2027.0,6.0,11.666667,29.0,False,3.0,5-Mid-Contract
+Tyler O'Neill,2024,Slight Sell,True,,,,,,,,No contract data
+Rowdy Tellez,2024,Slight Buy,True,,,,,,,,No contract data
+Amed Rosario,2024,Slight Sell,True,2022.0,2024.0,2.0,9.0,32.0,True,0.0,2-Prove-It
+Willy Adames,2024,Slight Sell,True,2024.0,2024.0,1.0,12.25,28.0,True,0.0,1-Payday
+Jeff Mcneil,2024,Slight Buy,False,2023.0,2027.0,4.0,12.5,31.0,False,3.0,5-Mid-Contract
+Ozzie Albies,2024,Slight Sell,True,2019.0,2027.0,7.0,5.0,26.0,False,3.0,5-Mid-Contract
+Josh Naylor,2024,Slight Buy,False,,,,,,,,No contract data
+Eloy Jiménez,2024,Slight Buy,False,2019.0,2026.0,6.0,7.166667,27.0,False,2.0,5-Mid-Contract
+Willi Castro,2024,Slight Sell,False,,,,,,,,No contract data
+Stuart Fairchild,2024,Slight Buy,True,,,,,,,,No contract data
+Rhys Hoskins,2024,Slight Buy,False,2024.0,2026.0,2.0,17.0,30.0,False,2.0,5-Mid-Contract
+Connor Joe,2024,Slight Sell,True,,,,,,,,No contract data
+Ryan O'Hearn,2024,Slight Buy,False,,,,,,,,No contract data
+Kyle Schwarber,2024,Slight Buy,True,2022.0,2025.0,4.0,19.75,31.0,False,1.0,5-Mid-Contract
+Lane Thomas,2024,Slight Buy,True,,,,,,,,No contract data
+Connor Wong,2024,Slight Sell,True,,,,,,,,No contract data
+Paul Dejong,2024,Slight Sell,False,2018.0,2025.0,6.0,4.333333,30.0,False,1.0,5-Mid-Contract
+Gavin Sheets,2024,Slight Buy,False,,,,,,,,No contract data
+Elehuris Montero,2024,Slight Buy,True,,,,,,,,No contract data
+William Contreras,2024,Slight Sell,True,2023.0,2028.0,5.0,17.5,31.0,False,4.0,5-Mid-Contract
+Blake Perkins,2024,Sell High,True,,,,,,,,No contract data
+Tyler Nevin,2024,Sell High,True,,,,,,,,No contract data
+Austin Riley,2024,Slight Buy,True,2023.0,2033.0,10.0,21.2,26.0,False,9.0,3-Secured
+Ke'Bryan Hayes,2024,Slight Sell,True,2022.0,2030.0,8.0,8.75,26.0,False,6.0,5-Mid-Contract
+Alec Bohm,2024,Sell High,True,,,,,,,,No contract data
+Lamonte Wade,2024,Sell High,True,,,,,,,,No contract data
+Seth Brown,2024,Slight Buy,True,,,,,,,,No contract data
+Jake Mccarthy,2024,Sell High,False,,,,,,,,No contract data
+Fernando Tatís,2024,Buy Low,True,,,,,,,,No contract data
+Vladimir Guerrero,2024,Slight Buy,True,,,,,,,,No contract data
+Leody Taveras,2024,Slight Buy,True,,,,,,,,No contract data
+Andrés Giménez,2024,Slight Sell,True,2023.0,2030.0,7.0,15.214286,25.0,False,6.0,5-Mid-Contract
+Gavin Lux,2024,Slight Buy,True,,,,,,,,No contract data
+Will Benson,2024,Slight Sell,True,,,,,,,,No contract data
+Bo Naylor,2024,Slight Sell,True,,,,,,,,No contract data
+Christopher Morel,2024,Slight Buy,True,,,,,,,,No contract data
+Randy Arozarena,2024,Buy Low,True,2024.0,2024.0,1.0,8.1,28.0,True,0.0,1-Payday
+Bryan Reynolds,2024,Slight Buy,True,2023.0,2031.0,8.0,13.34375,29.0,False,7.0,5-Mid-Contract
+Brice Turang,2024,Slight Sell,True,,,,,,,,No contract data
+Shea Langeliers,2024,Buy Low,True,,,,,,,,No contract data
+Will Smith,2024,Slight Sell,True,2024.0,2033.0,10.0,14.0,28.0,False,9.0,5-Mid-Contract
+Jack Suwinski,2024,Buy Low,True,,,,,,,,No contract data
+Nolan Gorman,2024,Slight Buy,True,,,,,,,,No contract data
+Josh Smith,2024,Sell High,True,2024.0,2033.0,10.0,14.0,28.0,False,9.0,5-Mid-Contract
+Yordan Álvarez,2024,Buy Low,True,2023.0,2028.0,6.0,19.166667,25.0,False,4.0,5-Mid-Contract
+Luis García,2024,Slight Buy,True,2024.0,2025.0,2.0,7.0,30.0,False,1.0,5-Mid-Contract
+Tyler Freeman,2024,Slight Buy,False,2022.0,2027.0,6.0,27.0,34.0,False,3.0,3-Secured
+Lawrence Butler,2024,Slight Buy,True,,,,,,,,No contract data
+Michael Harris,2024,Slight Sell,True,,,,,,,,No contract data
+Jarred Kelenic,2024,Sell High,True,,,,,,,,No contract data
+Alejandro Kirk,2024,Buy Low,True,,,,,,,,No contract data
+Gabriel Moreno,2024,Buy Low,True,,,,,,,,No contract data
+Maikel García,2024,Buy Low,False,2024.0,2025.0,2.0,7.0,30.0,False,1.0,5-Mid-Contract
+Nelson Velázquez,2024,Slight Sell,True,,,,,,,,No contract data
+Chas Mccormick,2024,Slight Sell,True,,,,,,,,No contract data
+Wilyer Abreu,2024,Sell High,True,2023.0,2025.0,3.0,19.5,36.0,False,1.0,4-Post-Prime
+Blaze Alexander,2024,Sell High,True,,,,,,,,No contract data
+Ezequiel Tovar,2024,Sell High,False,2024.0,2031.0,7.0,9.071429,22.0,False,7.0,5-Mid-Contract
+Richie Palacios,2024,Slight Sell,True,,,,,,,,No contract data
+Ryan Jeffers,2024,Sell High,True,,,,,,,,No contract data
+Brendan Donovan,2024,Buy Low,True,,,,,,,,No contract data
+Colton Cowser,2024,Sell High,True,,,,,,,,No contract data
+Elly De La Cruz,2024,Slight Sell,True,,,,,,,,No contract data
+Riley Greene,2024,Slight Buy,False,,,,,,,,No contract data
+Anthony Volpe,2024,Slight Sell,True,,,,,,,,No contract data
+Andrew Vaughn,2024,Slight Buy,True,,,,,,,,No contract data
+Colt Keith,2024,Buy Low,True,2024.0,2032.0,6.0,4.77375,22.0,False,8.0,5-Mid-Contract
+Masyn Winn,2024,Slight Sell,True,,,,,,,,No contract data
+Trey Lipscomb,2024,Sell High,True,,,,,,,,No contract data

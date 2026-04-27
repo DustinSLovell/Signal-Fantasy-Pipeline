@@ -482,9 +482,21 @@ without clear labeling would corrupt the published track record.
   flagged cases with resolved outcomes before calibrating. Built as display-only in score_luck.py;
   concern flags: Devers, Bichette, Adames, Alonso, Soto (April 2026).
 
-- **Financial motivation backtest** — test all 5 cohorts vs signal accuracy when Spotrac Phase 2
-  historical data (2022-2024) is populated. Must check for double-counting with age decay (Layer 6)
-  before any model weighting. 31 players loaded (April 2026). Target: 100+ players + 3 seasons.
+- **Financial motivation backtest** — PRELIMINARY RUN COMPLETE (April 29, 2026).
+  Spotrac MLB_Contracts_3.xlsx: 1,000 rows, 609 unique players, 2015-2039 range.
+  Hitter contracts: 506 rows, 308 unique players. Saved: data/spotrac_contracts_clean.csv.
+  Joined to backtest_audit_hitters.csv (2022-2024, n=211): 112 matched (53%), 99 unmatched.
+  Unmatched = pre-arb/arb players (no Spotrac FA deal entry). All 3 sanity checks pass:
+    Mookie Betts 2022 → contract_year=False (end=2032) ✓
+    Aaron Judge 2022 → contract_year=True (end=2022) ✓
+    Corey Seager 2022 → contract_year=False (end=2031) ✓
+  Saved: data/spotrac_contract_backtest.csv (211 rows, with cohort assignments).
+
+  PRELIMINARY RESULTS — all n<10 per cohort/signal, too thin for conclusions:
+  Cohort 3 (Secured): 96.4% overall, 100% Buy Low (n=9) — highest, but borderline reliable.
+  No evidence of financial motivation effect: CY Buy Low 85.7% (n=7) vs non-CY 92.3% (n=26).
+  Must reach 50+ players per cohort before publishing conclusions.
+  Full backtest still requires 100+ players × 3 seasons for reliable signal.
 
 - **Elite player ascending theory** — test whether age 27-31 players in final year of a strong deal
   ($200M+) outperform or underperform luck signals. The financial motivation question is unresolved:
@@ -502,11 +514,10 @@ without clear labeling would corrupt the published track record.
   Build once 30+ age-stratified call resolutions exist (mid-2027 earliest).
   Constants in config.py: H_CHASE_AGE_WEIGHT_U25, H_CHASE_AGE_WEIGHT_26_27.
 
-- **Contract Year Historical Experiment** — Tag 2022-2024 player-seasons by cohort (1-5). Check
-  whether cohort correlates with buy/sell signal accuracy. Requires Spotrac Phase 2 historical data.
-  All programmatic data sources exhausted (April 26-27); Wayback Machine scraper is only viable path.
-  Scraper built: build_spotrac_contracts.py → data/spotrac_contracts_raw.csv.
-  Conclusion: Manual curation + Wayback CDX API. 31 players populated for 2026 season.
+- **Contract Year Historical Experiment** — PRELIMINARY RUN COMPLETE (April 29 2026). See
+  Financial motivation backtest entry above. Full validation requires 50+ per cohort/signal.
+  Source: MLB_Contracts_3.xlsx (user-provided Spotrac export, 1,000 rows).
+  Next step: Expand contract match rate beyond 53% by adding arb-year salary data.
 
 ### TRADE TOOL FOUNDATION
 
@@ -573,6 +584,18 @@ Do NOT use HR coef (0.430) to manually estimate HR value — the model uses all 
 
 - **Positional scarcity cap** — 15-spot rule: never let scarcity flip a tier. Prevents the catcher
   scarcity premium from making a replacement-level catcher appear equal to a top outfielder.
+
+- **ERA_all_sc option for pitcher luck scores** — DIAGNOSED, NOT IMPLEMENTED (April 29, 2026).
+  Full simulation run: era_simulation.py tested ERA_all_sc vs filtered ERA across 389 pitchers.
+  Result: 7 verdict changes (1.8%). 3 were artifacts; 4 real:
+    Skenes: Sell High → Slight Sell (ERA-FIP gap -1.58 → -0.05, final luck -0.151 → -0.074)
+    Crochet, Suarez: Neutral → Buy Low (FALSE SIGNALS — driven by excluded disaster starts)
+    López: Neutral → Slight Buy (borderline, FIP 4.45 near gate)
+  Decision: KEEP filtered ERA (qualifying starts only, MIN_START_IP=2.0).
+  Reasoning: switching to ERA_all_sc creates phantom buy signals from blowup outings that the
+  filter correctly ignores. Skenes is the only legitimate case, and his sell is BABIP/LOB-dominant
+  anyway (-0.60 BABIP, -0.77 LOB components), not ERA-driven.
+  Revisit after full season if filtering creates systematic bias for pitchers with early blowups.
 
 - **Projection stress test / consensus blend** — NOT YET BUILT (as of April 2026).
   Only CBS actuals scraped (build_cbs_fpts.py). ESPN and FantasyPros projections not attempted.
@@ -815,11 +838,26 @@ Backtest data structure documented: April 29
   - april_statcast_2024.parquet for hitters: MISSING (only pitcher versions exist for 2024)
   - data/projection_consensus_2026.csv: does NOT exist — consensus blend task not yet built
 
+--- April 29, 2026 (Session 9 — continued) ---
+ERA_all_sc simulation: era_simulation.py — 389 pitchers, 7 verdict changes (1.8%)
+  - 4 real changes: Skenes SH→SS, Crochet/Suarez N→BL (false signals), López N→SB
+  - Decision: keep filtered ERA — ERA_all_sc creates phantom buy signals from excluded disasters
+  - era_simulation.py saved (diagnostic only, not production code)
+  - 37/37 PASS (no production code changed)
+Financial motivation backtest: spotrac_contract_backtest.csv (211 rows)
+  - Source: MLB_Contracts_3.xlsx (1,000 rows, 609 players, Spotrac export)
+  - data/spotrac_contracts_clean.csv: 506 hitter rows, 308 unique players
+  - Match rate: 112/211 (53%) — 99 unmatched are pre-arb/arb players
+  - Sanity checks PASS (Betts 2022 False, Judge 2022 True, Seager 2022 False)
+  - Cohort 3 (Secured) shows 96.4% accuracy (n=28) — preliminary positive signal
+  - ALL cohort/signal combinations n<10 except Cohort 5 — no publishable conclusions
+  - 37/37 PASS
+
 PENDING MANUAL ACTIONS:
   - Review and publish Week 2 article in Substack (Tuesday April 29 deadline)
-  - Career lessons database (Session 7-8, April 26-29) — add new lessons manually in Claude.ai
+  - Career lessons database (Session 8-9) — add new lessons manually in Claude.ai
   - Push code to GitHub: git add . && git commit -m "Session update - April 29" && git push
-  - Update thread_handoff.md in Claude.ai with full April 26-29 session summary
+  - Update thread_handoff.md in Claude.ai with full session summary (including ERA sim + contract backtest)
   - White paper: update Section 10 (live track record) in 2-3 weeks, then publish to whitepapersonline.com
   - Week 3 article: May 5-6 deadline — run_pipeline.py --write → weekly_update.py --update → --report --top 15
 
