@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: April 26, 2026
+# Last updated: April 29, 2026
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -539,6 +539,18 @@ Do NOT use HR coef (0.430) to manually estimate HR value — the model uses all 
 - Note: Ben Rice CBS position = C (retains C eligibility). Surplus vs C repl = +44.
   If treating as 1B: surplus = +58. Either way Rice surplus > Skenes surplus (+33).
 
+**Projection Accuracy Backtest — BUILT (April 2026):**
+- Script: projection_backtest_2025.py | Outputs: data/projection_accuracy_2025.csv, data/projection_accuracy_summary_2025.csv
+- Method: April 2025 Statcast events → player rates → stat_projections.py → projected full-season → vs CBS 2025 actuals (n=141)
+- Career baselines: 2022-2024 FG data only (no 2025 leakage)
+- HR MAE overall: 6.70 | Bias: -3.78 (systematic under-projection — April window misses late-season breakouts)
+- **Thin baseline fix VALIDATED:** career_pa < 1000 shows 54% less HR bias (-2.05 vs -4.44) and lower MAE (5.18 vs 7.28) vs established players
+- Sell High R²=0.656 — strongest signal group; sell signals correctly identify players who won't accumulate counting stats
+- AVG R²=0.056 — unpredictable from April data (industry-wide known limitation; not a model bug)
+- RBI bias -9.65 — lineup context not captured; expected from simplified formula
+- Late-season breakouts are irreducible misses (Caminero proj 20 actual 45; Goodman proj 15 actual 31)
+- Ben Rice: proj 26 HR, actual 26 HR — thin baseline fix working exactly as intended
+
 - **CBS Rankings Reverse Engineering** — Reverse engineer CBS end-of-season overall rankings using
   linear regression against final player stats for 2022-2024.
   X = [HR, R, RBI, SB, AVG, ERA, WHIP, K, W, SV], y = CBS overall rank (inverted).
@@ -562,13 +574,13 @@ Do NOT use HR coef (0.430) to manually estimate HR value — the model uses all 
 - **Positional scarcity cap** — 15-spot rule: never let scarcity flip a tier. Prevents the catcher
   scarcity premium from making a replacement-level catcher appear equal to a top outfielder.
 
-- **Projection stress test / consensus blend** — Scrape CBS/ESPN/FantasyPros ROS projections,
-  compare vs our model stat-by-stat, then build a consensus blend (α=0.60 our model + 0.40
-  consensus) as an optional trade tool setting. Current known divergences (April 2026):
-  Rice HR 21 (ours) vs 28 (CBS) — thin career baseline + BABIP-only sell signal.
+- **Projection stress test / consensus blend** — NOT YET BUILT (as of April 2026).
+  Only CBS actuals scraped (build_cbs_fpts.py). ESPN and FantasyPros projections not attempted.
+  When ready: scrape ESPN projections page + FantasyPros consensus, build α=0.60/0.40 blend,
+  save to data/projection_consensus_2026.csv. Known divergences to check once built:
+  Rice HR 21 (ours) vs 28 (CBS) — fixed post thin-baseline patch; recheck after building consensus.
   Skenes W 7 (ours) vs 11 (CBS), K 114 vs 153 — conservative IP projection from velo/SwStr flags.
-  Blend would close the FPTS gap without forcing a model architecture change.
-  Prerequisite: build_cbs_fpts.py already scrapes CBS; extend to ESPN/FantasyPros endpoints.
+  Prerequisite: build_cbs_fpts.py already scrapes CBS actuals; extend to CBS ROS projection pages.
 
 ### CONTENT PIPELINE
 
@@ -591,6 +603,13 @@ Do NOT use HR coef (0.430) to manually estimate HR value — the model uses all 
 - **Spotrac Phase 2: historical 2022-2024 contract data** — Run build_spotrac_contracts.py with
   historical season parameters for each prior year. Populates financial motivation cohort data for
   backtest. Target: 100+ players × 3 seasons. Prerequisite for financial motivation backtest above.
+
+- **Historical contract data — Baseball Reference approach (easier than Spotrac):**
+  baseball-reference.com/friv/free_agents.fcgi?year=2022 (repeat for 2023, 2024).
+  FA class tables are copy-paste friendly into Excel. INDEX/MATCH join against backtest signal
+  players → export to CSV and import into contract_year_2026.csv schema.
+  Estimated time: ~45 minutes. Populates cohort backtest for financial motivation research.
+  This is the fastest viable path to 100+ historical contract records.
 
 ### BUILT — Display-only, not yet validated as model modifiers
 
@@ -777,12 +796,32 @@ Replacement level calculator: April 29 — replacement_level.py
   - 37/37 PASS
 GitHub repo: DustinSLovell/Signal-Fantasy-Pipeline (private) — first commit April 26, 2026
 
+--- April 29, 2026 (continued) ---
+Projection accuracy backtest: April 29 — projection_backtest_2025.py
+  - Aggregates April 2025 Statcast events → per-player rates → stat_projections.py → projected full-season
+  - Career baselines: FG 2022-2024 only (no 2025 leakage); 141 players matched to CBS 2025 actuals
+  - HR overall: MAE 6.70 | Bias -3.78 (systematic under-projection from April-only window)
+  - Thin baseline fix VALIDATED: career_pa<1000 → 54% less HR bias (2.05 vs 4.44), lower MAE (5.18 vs 7.28)
+  - Sell High HR R²=0.656 — strongest signal group; validates sell signal direction
+  - AVG R²=0.056 — unpredictable from April alone (industry-wide); RBI bias -9.65 (lineup context missing)
+  - Ben Rice: proj 26 HR, actual 26 HR — thin baseline fix working exactly as intended
+  - Irreducible misses: Caminero (proj 20, actual 45), Goodman (proj 15, actual 31) — late-season breakouts
+  - Outputs: data/projection_accuracy_2025.csv (141 rows), data/projection_accuracy_summary_2025.csv
+  - 37/37 PASS
+Backtest data structure documented: April 29
+  - backtest_cache/v4_april_2025.csv = raw event-level Statcast, date range 2025-03-27 to 2025-04-30
+  - backtest_cache/april_statcast_2025.parquet = sparse game-context join table (not main data)
+  - data/backtest_audit_hitters.csv = model OUTPUT (luck scores/verdicts 2022-2025, n=305)
+  - april_statcast_2024.parquet for hitters: MISSING (only pitcher versions exist for 2024)
+  - data/projection_consensus_2026.csv: does NOT exist — consensus blend task not yet built
+
 PENDING MANUAL ACTIONS:
   - Review and publish Week 2 article in Substack (Tuesday April 29 deadline)
-  - Career lessons database (Session 7, April 26-28) — COMPLETED per user; file at outputs/career_lessons_database.html
+  - Career lessons database (Session 7-8, April 26-29) — add new lessons manually in Claude.ai
   - Push code to GitHub: git add . && git commit -m "Session update - April 29" && git push
-  - Update thread_handoff.md in Claude.ai with today's session work
+  - Update thread_handoff.md in Claude.ai with full April 26-29 session summary
   - White paper: update Section 10 (live track record) in 2-3 weeks, then publish to whitepapersonline.com
+  - Week 3 article: May 5-6 deadline — run_pipeline.py --write → weekly_update.py --update → --report --top 15
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
