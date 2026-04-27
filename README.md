@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fantasy Baseball Statcast Pipeline
 
 A Python pipeline that pulls pitch-level Statcast data from Baseball Savant and pitching stats from FanGraphs, aggregates them into per-player metrics, and scores each player for fantasy luck — identifying who to buy low and who to sell high.
@@ -1169,3 +1170,7 @@ Planned enhancements for future development sessions.
 | **Backtesting** | ✓ Completed — `backtest_april.py` pulls 2023–2024 historical data; `backtest_analyze.py` runs correlation analysis, verdict accuracy, metric importance ranking, and 32,400-combination weight grid search. Results in `backtest_report.md`. |
 | **Blank-name Chadwick fix (pitcher)** | ✓ Fixed — `process_pitcher_stats.py` now detects Chadwick Bureau entries where the name resolved to null/empty ("Nan Nan") and routes those IDs to the MLB Stats API fallback, same as completely-missing IDs. |
 | **Phase B: Consistency score** | ✓ Implemented — `compute_consistency.py` applies per-player variance multipliers to luck_score_v5 producing luck_score_v6. Five-tier variance system (Very Consistent/Consistent/Inconsistent/Volatile/Extreme). Elite quality gate (wRC+ > 120) gates the consistency boost so average-consistent players (Bohm) receive neutral multiplier. Age modifier amplifies penalties for 32+ players. ~58% insufficient data is expected correct behavior for players without 2+ seasons of 300+ PA. Superstar wRC+ tier (≥130: ×1.15) added to score_luck.py quality gate. |
+=======
+# Signal-Fantasy-Pipeline
+The Signal Fantasy - Statcast Luck Detection Pipeline.  First published April 22, 2026
+>>>>>>> e85b09bbc3a81c9c33f0753b9448f23d40ab32fc
