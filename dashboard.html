@@ -1,0 +1,3076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fantasy Baseball Luck Analyzer</title>
+<style>
+/* ── Reset & variables ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #f1f5f9;
+  --surface:   #ffffff;
+  --hdr:       #0f172a;
+  --hdr-fg:    #f8fafc;
+  --text:      #1e293b;
+  --muted:     #64748b;
+  --border:    #e2e8f0;
+  --radius:    8px;
+  --sh-sm:     0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.1);
+  --sh-md:     0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.05);
+  /* verdict palette */
+  --c-bl-bg: #f0fdf4; --c-bl-tx: #15803d; --c-bl-bd: #86efac;
+  --c-sb-bg: #f7fef9; --c-sb-tx: #16a34a; --c-sb-bd: #bbf7d0;
+  --c-nt-bg: #f8fafc; --c-nt-tx: #475569; --c-nt-bd: #e2e8f0;
+  --c-ss-bg: #fffbeb; --c-ss-tx: #b45309; --c-ss-bd: #fde68a;
+  --c-sh-bg: #fef2f2; --c-sh-tx: #b91c1c; --c-sh-bd: #fca5a5;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── Site header ───────────────────────────────────────────────────────── */
+.site-hdr {
+  background: var(--hdr);
+  color: var(--hdr-fg);
+  padding: 0 24px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  box-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+.site-hdr-left h1 { font-size: 18px; font-weight: 700; letter-spacing: -.3px; }
+.site-hdr-left .sub { font-size: 11px; color: #94a3b8; margin-top: 1px; }
+.site-hdr-right { text-align: right; font-size: 11px; color: #94a3b8; line-height: 1.6; }
+
+/* ── Screens ───────────────────────────────────────────────────────────── */
+.screen { display: none; }
+.screen.visible { display: block; }
+
+/* ── Load screen ───────────────────────────────────────────────────────── */
+#load-screen.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 58px);
+  padding: 24px;
+}
+.load-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 44px 48px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.1);
+  width: 100%;
+  max-width: 500px;
+}
+.load-card .lc-icon { font-size: 36px; margin-bottom: 14px; }
+.load-card h2 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+.load-card .lc-desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.file-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 2px dashed var(--border);
+  transition: border-color .15s, background .15s;
+}
+.file-row.loaded { border-style: solid; border-color: #22c55e; background: var(--c-bl-bg); }
+.fr-icon { font-size: 22px; flex-shrink: 0; }
+.fr-info { flex: 1; min-width: 0; }
+.fr-name { font-weight: 600; font-size: 13px; }
+.fr-status { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.file-row.loaded .fr-status { color: #16a34a; }
+.fr-btn {
+  padding: 6px 14px;
+  background: var(--hdr);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: opacity .15s;
+}
+.fr-btn:hover { opacity: .8; }
+input[type=file] { display: none; }
+.load-hint {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.65;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.load-hint code {
+  background: #f1f5f9;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: 'Cascadia Code', 'Consolas', monospace;
+  font-size: 11px;
+}
+
+/* ── Spinner ───────────────────────────────────────────────────────────── */
+#spin-screen.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 58px);
+}
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Dashboard ─────────────────────────────────────────────────────────── */
+.main { max-width: 1500px; margin: 0 auto; padding: 24px; }
+
+/* tabs */
+.tab-bar {
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--sh-sm);
+  width: fit-content;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+.tab-btn {
+  padding: 7px 24px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--muted);
+  transition: background .12s, color .12s;
+}
+.tab-btn:hover { background: var(--bg); color: var(--text); }
+.tab-btn.active { background: var(--hdr); color: white; }
+
+/* cards */
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.v-card {
+  border-radius: var(--radius);
+  padding: 14px 16px 12px;
+  box-shadow: var(--sh-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform .12s, box-shadow .12s, border-color .12s, opacity .12s;
+  user-select: none;
+}
+.v-card:hover { transform: translateY(-2px); box-shadow: var(--sh-md); }
+
+/* Active card: prominent ring + lifted */
+.v-card.active {
+  border-color: currentColor;
+  box-shadow: var(--sh-md), 0 0 0 2px currentColor;
+  transform: translateY(-2px);
+}
+
+/* When a filter is active, dim the cards that aren't selected */
+.cards-row.has-filter .v-card:not(.active) {
+  opacity: 0.35;
+  transform: none;
+  box-shadow: none;
+}
+.cards-row.has-filter .v-card:not(.active):hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+  box-shadow: var(--sh-sm);
+}
+.v-card .vc-label {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .7px;
+}
+.v-card .vc-count { font-size: 38px; font-weight: 800; line-height: 1.05; margin-top: 4px; }
+.v-card .vc-pct { font-size: 11px; margin-top: 3px; opacity: .65; }
+
+.v-card.vBuyLow   { background: var(--c-bl-bg); color: var(--c-bl-tx); }
+.v-card.vSlightBuy { background: var(--c-sb-bg); color: var(--c-sb-tx); }
+.v-card.vNeutral  { background: var(--c-nt-bg); color: var(--c-nt-tx); }
+.v-card.vSlightSell { background: var(--c-ss-bg); color: var(--c-ss-tx); }
+.v-card.vSellHigh { background: var(--c-sh-bg); color: var(--c-sh-tx); }
+
+/* controls bar */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.search-wrap { position: relative; }
+.search-wrap .si {
+  position: absolute; left: 10px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted); pointer-events: none;
+}
+.search-input {
+  padding: 8px 12px 8px 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-size: 13px;
+  width: 240px;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+  color: var(--text);
+}
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+}
+.clear-filter {
+  padding: 7px 13px;
+  background: var(--c-ss-bg);
+  color: var(--c-ss-tx);
+  border: 1px solid var(--c-ss-bd);
+  border-radius: var(--radius);
+  font-size: 12px; font-weight: 600;
+  cursor: pointer;
+  display: none;
+}
+.clear-filter.on { display: inline-block; }
+.results-info { margin-left: auto; font-size: 12px; color: var(--muted); }
+
+/* table wrapper */
+.tbl-wrap {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--sh-sm);
+  overflow: auto;
+  max-height: calc(100vh - 310px);
+}
+table { width: 100%; border-collapse: collapse; }
+
+thead th {
+  background: #f8fafc;
+  padding: 9px 12px;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .6px;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  text-align: right;
+  position: sticky; top: 0; z-index: 10;
+}
+thead th:first-child { text-align: left; }
+thead th:hover { color: var(--text); background: #f1f5f9; }
+thead th.sorted { color: var(--text); }
+.sort-arrow { opacity: .3; font-style: normal; }
+thead th.sorted .sort-arrow { opacity: 1; }
+
+tbody tr { border-bottom: 1px solid #f8fafc; transition: filter .08s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover td { filter: brightness(.965); }
+
+td {
+  padding: 9px 12px;
+  font-size: 13px;
+  text-align: right;
+  white-space: nowrap;
+}
+td:first-child { text-align: left; }
+td.name-cell { font-weight: 600; max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+td.na { color: #cbd5e1; }
+td.pos { color: #15803d; font-weight: 700; }
+td.neg { color: #b91c1c; font-weight: 700; }
+td.luck-pos { color: #15803d; font-weight: 700; }
+td.luck-neg { color: #b91c1c; font-weight: 700; }
+td.luck-neu { color: var(--muted); }
+
+/* row verdict tints */
+tr.rBuyLow    td { background: var(--c-bl-bg); }
+tr.rSlightBuy td { background: var(--c-sb-bg); }
+tr.rSlightSell td { background: var(--c-ss-bg); }
+tr.rSellHigh  td { background: var(--c-sh-bg); }
+
+/* badges */
+.badge {
+  display: inline-block;
+  padding: 2px 9px 3px;
+  border-radius: 99px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.badge.vBuyLow    { background: #dcfce7; color: #15803d; border-color: var(--c-bl-bd); }
+.badge.vSlightBuy { background: #d1fae5; color: #065f46; border-color: var(--c-sb-bd); }
+.badge.vNeutral   { background: #f1f5f9; color: #475569; border-color: var(--c-nt-bd); }
+.badge.vSlightSell { background: #fef3c7; color: #92400e; border-color: var(--c-ss-bd); }
+.badge.vSellHigh  { background: #fee2e2; color: #991b1b; border-color: var(--c-sh-bd); }
+
+/* sell tier badges */
+.badge.tSellMoveOn  { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
+.badge.tSellPerc    { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
+.badge.tVetReg      { background: #fffbeb; color: #78350f; border-color: #fde68a; }
+.badge.tSlightReg   { background: #fefce8; color: #713f12; border-color: #fef08a; }
+
+/* volatility badge */
+.volatility-badge {
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 4px;
+  cursor: default;
+  vertical-align: middle;
+  opacity: 0.85;
+}
+
+/* seasonal pattern indicators */
+.seasonal-star {
+  font-size: 13px;
+  margin-left: 5px;
+  color: #d97706;
+  cursor: default;
+  vertical-align: middle;
+  line-height: 1;
+}
+.seasonal-dot {
+  font-size: 11px;
+  margin-left: 5px;
+  color: #94a3b8;
+  cursor: default;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* ── Signal filter button bar ───────────────────────────────────────────── */
+.signal-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.sig-btn {
+  padding: 5px 13px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background .1s, color .1s, border-color .1s;
+  white-space: nowrap;
+}
+.sig-btn-all     { background:#f1f5f9; color:#475569; border-color:#e2e8f0; }
+.sig-btn-all.active { background:#475569; color:white; border-color:#475569; }
+.sig-btn-buy     { background:#dcfce7; color:#15803d; border-color:#86efac; }
+.sig-btn-buy.active { background:#16a34a; color:white; border-color:#16a34a; }
+.sig-btn-sbuy    { background:#d1fae5; color:#065f46; border-color:#bbf7d0; }
+.sig-btn-sbuy.active { background:#059669; color:white; border-color:#059669; }
+.sig-btn-neutral { background:#f8fafc; color:#64748b; border-color:#e2e8f0; }
+.sig-btn-neutral.active { background:#64748b; color:white; border-color:#64748b; }
+.sig-btn-ssell   { background:#fefce8; color:#a16207; border-color:#fde68a; }
+.sig-btn-ssell.active { background:#ca8a04; color:white; border-color:#ca8a04; }
+.sig-btn-sell    { background:#fee2e2; color:#b91c1c; border-color:#fca5a5; }
+.sig-btn-sell.active { background:#dc2626; color:white; border-color:#dc2626; }
+
+/* tier filter bar */
+.tier-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  min-height: 28px;
+}
+.tier-label {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px;
+  color: var(--muted);
+}
+.tier-btn {
+  padding: 3px 10px 4px;
+  border-radius: 99px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: opacity .12s, box-shadow .12s;
+  opacity: 0.55;
+}
+.tier-btn.active { opacity: 1; box-shadow: 0 0 0 2px currentColor; }
+.tier-btn:hover  { opacity: 0.85; }
+.tier-btn.tSellMoveOn  { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
+.tier-btn.tSellPerc    { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
+.tier-btn.tVetReg      { background: #fffbeb; color: #78350f; border-color: #fde68a; }
+.tier-btn.tSlightReg   { background: #fefce8; color: #713f12; border-color: #fef08a; }
+
+/* no results */
+.no-rows td { text-align: center; padding: 52px 0; color: var(--muted); font-size: 13px; }
+
+/* footer legend */
+.legend {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--sh-sm);
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.legend strong { color: var(--text); }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+
+/* ── View toggle buttons ────────────────────────────────────────────────── */
+.view-toggle-group {
+  display: flex;
+  gap: 0;
+  margin-left: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.view-toggle-btn {
+  padding: 7px 14px;
+  border: none;
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: background .12s, color .12s;
+  white-space: nowrap;
+}
+.view-toggle-btn:first-child { border-right: 1px solid var(--border); }
+.view-toggle-btn:hover { background: var(--bg); color: var(--text); }
+.view-toggle-btn.active { background: var(--hdr); color: white; }
+
+/* ── Simple view: action badge ──────────────────────────────────────────── */
+td.action-cell { text-align: left; min-width: 200px; }
+.action-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px 4px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  letter-spacing: .1px;
+}
+.ab-buy      { background: #dcfce7; color: #15803d; border-color: #86efac; }
+.ab-sbuy     { background: #d1fae5; color: #065f46; border-color: #bbf7d0; }
+.ab-sellmove { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
+.ab-sellperc { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
+.ab-vetreg   { background: #fffbeb; color: #78350f; border-color: #fde68a; }
+.ab-slightreg{ background: #fefce8; color: #713f12; border-color: #fef08a; }
+.ab-neutral  { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+
+/* ── Simple view: explanation cell ─────────────────────────────────────── */
+td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
+.explain-text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: default;
+}
+
+/* ── Seasonal confidence label ─────────────────────────────────────────── */
+.signal-conf {
+  display: block;
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* ── Age warning ────────────────────────────────────────────────────────── */
+.age-warn {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #b91c1c;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.park-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.cqs-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  color: #1d4ed8;
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-left: 5px;
+  vertical-align: middle;
+  letter-spacing: 0.03em;
+}
+
+.rank-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  color: #52525b;
+  background: #f4f4f5;
+  border: 1px solid #d4d4d8;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+
+.own-label {
+  color: #9ca3af;
+  font-size: 0.72em;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+/* ── Table fade transition ──────────────────────────────────────────────── */
+.tbl-wrap { transition: opacity .15s ease; }
+.tbl-wrap.fading { opacity: 0; }
+
+/* responsive */
+@media (max-width: 900px) { .cards-row { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 560px) {
+  .main { padding: 12px; }
+  .cards-row { grid-template-columns: repeat(2,1fr); }
+  .search-input { width: 180px; }
+}
+
+/* ── League toggle (Trade Value tab) ────────────────────────────────────── */
+.league-toggle {
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--sh-sm);
+  width: fit-content;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+.league-btn {
+  padding: 5px 22px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--muted);
+  transition: background .12s, color .12s;
+}
+.league-btn:hover { background: var(--bg); color: var(--text); }
+.league-btn.active { background: #2563eb; color: white; }
+
+/* ── Trade value content ─────────────────────────────────────────────────── */
+.tv-sub-bar {
+  display: flex;
+  gap: 2px;
+  width: fit-content;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 3px;
+  margin-bottom: 16px;
+}
+.tv-sub-btn {
+  padding: 5px 18px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--muted);
+  transition: background .12s, color .12s;
+}
+.tv-sub-btn:hover  { background: var(--surface); color: var(--text); }
+.tv-sub-btn.active { background: var(--surface); color: var(--text); box-shadow: var(--sh-sm); }
+
+.tv-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.tv-results { font-size: 12px; color: var(--muted); }
+
+/* Value badge 0-100 */
+.val-badge {
+  display: inline-block;
+  min-width: 44px;
+  text-align: center;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.val-elite { background: #fef3c7; color: #92400e; }
+.val-great { background: #dbeafe; color: #1e40af; }
+.val-good  { background: #f0fdf4; color: #166534; }
+.val-zero  { background: var(--c-nt-bg); color: var(--muted); }
+
+.pos-cell { font-weight: 700; font-size: 11px; color: var(--muted); }
+
+.tv-empty {
+  padding: 56px 32px;
+  text-align: center;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.tv-empty code {
+  background: var(--bg);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: 'Cascadia Code', 'Consolas', monospace;
+}
+.tv-gen-note { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
+
+/* ── Verdict filter bar (Trade Value tab) ───────────────────────────────── */
+.tv-verdict-bar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.tv-vf-btn {
+  padding: 4px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: var(--muted);
+  transition: background .12s, color .12s, border-color .12s;
+}
+.tv-vf-btn:hover { background: var(--bg); color: var(--text); }
+.tv-vf-btn.vf-all.active  { background: var(--hdr);      color: white;           border-color: var(--hdr);      }
+.tv-vf-btn.vf-bl.active   { background: var(--c-bl-bg);  color: var(--c-bl-tx);  border-color: var(--c-bl-bd);  }
+.tv-vf-btn.vf-sh.active   { background: var(--c-sh-bg);  color: var(--c-sh-tx);  border-color: var(--c-sh-bd);  }
+.tv-vf-btn.vf-nt.active   { background: var(--c-nt-bg);  color: var(--c-nt-tx);  border-color: var(--c-nt-bd);  }
+
+/* ── Trade Analyzer ──────────────────────────────────────────────────────── */
+.ta-mode-bar { display:flex; gap:6px; margin-bottom:18px; }
+.ta-section-divider { display:flex; align-items:center; gap:12px; margin:32px 0 20px; }
+.ta-divider-line  { flex:1; border:none; border-top:1px solid var(--border); margin:0; }
+.ta-divider-label { white-space:nowrap; font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+.ta-mode-btn {
+  padding:6px 18px; border-radius:6px; border:1px solid var(--border);
+  background:var(--surface); cursor:pointer; font-weight:600; font-size:12px;
+  color:var(--muted); transition:all .12s;
+}
+.ta-mode-btn.active { background:var(--hdr); color:white; border-color:var(--hdr); }
+
+.ta-league-bar {
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:10px 16px; margin-bottom:14px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.ta-league-summary { font-size:12px; color:var(--muted); flex:1; }
+.ta-league-summary strong { color:var(--text); }
+.ta-league-edit-btn {
+  padding:4px 10px; border-radius:5px; border:1px solid var(--border);
+  background:var(--bg); font-size:11px; font-weight:600; color:var(--muted);
+  cursor:pointer; transition:all .12s;
+}
+.ta-league-edit-btn:hover { border-color:var(--hdr); color:var(--hdr); }
+.ta-league-panel {
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:18px; margin-bottom:14px; display:none;
+}
+.ta-league-panel.open { display:block; }
+.ta-league-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:14px; margin-bottom:14px;
+}
+.ta-league-field label { display:block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); margin-bottom:4px; }
+.ta-league-field select { width:100%; padding:5px 8px; border:1px solid var(--border); border-radius:5px; font-size:12px; background:var(--bg); }
+.ta-cat-section-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); margin-bottom:5px; }
+.ta-cat-row { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:10px; }
+.ta-cat-row label { font-size:12px; cursor:pointer; display:flex; align-items:center; gap:4px; color:var(--text); }
+.ta-save-btn { padding:7px 18px; background:var(--hdr); color:white; border:none; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
+.ta-save-btn:hover { opacity:.85; }
+
+.ta-columns {
+  display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-bottom:18px;
+}
+@media (max-width:768px) { .ta-columns { grid-template-columns:1fr; } }
+
+.ta-col {
+  background:var(--surface); border-radius:var(--radius); padding:14px;
+  box-shadow:var(--sh-sm); min-height:180px; display:flex; flex-direction:column;
+}
+.ta-col-hdr {
+  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.7px;
+  margin-bottom:9px; padding-bottom:7px; border-bottom:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.ta-col-giving   { border-top:3px solid #fca5a5; }
+.ta-col-getting  { border-top:3px solid #86efac; }
+.ta-col-dropping { border-top:3px solid #fde68a; }
+.ta-col-giving  .ta-col-hdr  { color:#b91c1c; }
+.ta-col-getting .ta-col-hdr  { color:#15803d; }
+.ta-col-dropping .ta-col-hdr { color:#b45309; }
+.ta-count-badge { font-size:10px; font-weight:600; padding:1px 6px; border-radius:9px; background:var(--bg); color:var(--muted); }
+
+.ta-search-wrap { position:relative; margin-bottom:9px; }
+.ta-search-input {
+  width:100%; padding:7px 10px; border:1px solid var(--border); border-radius:6px;
+  font-size:12px; background:var(--bg); outline:none; transition:border-color .12s;
+}
+.ta-search-input:focus { border-color:#94a3b8; background:white; }
+.ta-dropdown {
+  position:absolute; top:100%; left:0; right:0; background:white;
+  border:1px solid var(--border); border-radius:6px;
+  box-shadow:0 8px 24px rgba(0,0,0,.12); z-index:200;
+  max-height:260px; overflow-y:auto; display:none;
+}
+.ta-dropdown.open { display:block; }
+.ta-dd-item {
+  padding:8px 12px; cursor:pointer; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:8px; transition:background .08s;
+}
+.ta-dd-item:last-child { border-bottom:none; }
+.ta-dd-item:hover { background:var(--bg); }
+.ta-dd-name { font-size:12px; font-weight:600; flex:1; }
+.ta-dd-sub  { font-size:10px; color:var(--muted); }
+.ta-dd-badge { font-size:10px; font-weight:700; padding:1px 5px; border-radius:3px; white-space:nowrap; }
+.ta-dd-badge.vBuyLow    { background:var(--c-bl-bg); color:var(--c-bl-tx); }
+.ta-dd-badge.vSlightBuy { background:var(--c-sb-bg); color:var(--c-sb-tx); }
+.ta-dd-badge.vNeutral   { background:var(--c-nt-bg); color:var(--c-nt-tx); }
+.ta-dd-badge.vSlightSell{ background:var(--c-ss-bg); color:var(--c-ss-tx); }
+.ta-dd-badge.vSellHigh  { background:var(--c-sh-bg); color:var(--c-sh-tx); }
+
+.ta-cards-list { display:flex; flex-direction:column; gap:7px; flex:1; }
+.ta-empty-hint { color:var(--muted); font-size:11px; text-align:center; padding:14px 0; flex:1; display:flex; align-items:center; justify-content:center; }
+.ta-player-card { background:var(--bg); border-radius:6px; padding:9px 11px; border:1px solid var(--border); }
+.ta-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:5px; margin-bottom:3px; }
+.ta-card-name { font-size:12px; font-weight:700; flex:1; line-height:1.25; }
+.ta-card-meta { font-size:10px; color:var(--muted); margin-bottom:4px; }
+.ta-card-badge { font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px; display:inline-block; margin-bottom:4px; }
+.ta-card-badge.vBuyLow    { background:var(--c-bl-bg); color:var(--c-bl-tx); }
+.ta-card-badge.vSlightBuy { background:var(--c-sb-bg); color:var(--c-sb-tx); }
+.ta-card-badge.vNeutral   { background:var(--c-nt-bg); color:var(--c-nt-tx); }
+.ta-card-badge.vSlightSell{ background:var(--c-ss-bg); color:var(--c-ss-tx); }
+.ta-card-badge.vSellHigh  { background:var(--c-sh-bg); color:var(--c-sh-tx); }
+.ta-card-stats { font-size:10px; color:var(--muted); line-height:1.5; }
+.ta-card-stats strong { color:var(--text); font-weight:600; }
+.ta-remove-btn { background:none; border:none; cursor:pointer; color:#94a3b8; font-size:15px; padding:0; line-height:1; flex-shrink:0; transition:color .12s; }
+.ta-remove-btn:hover { color:#b91c1c; }
+.ta-evo-badge { font-size:9px; font-weight:700; background:#dbeafe; color:#1e40af; padding:1px 5px; border-radius:3px; margin-top:3px; display:inline-block; }
+
+.ta-analyze-row { display:flex; justify-content:center; align-items:center; gap:14px; margin-bottom:22px; flex-wrap:wrap; }
+.ta-analyze-btn {
+  padding:11px 36px; background:var(--hdr); color:white; border:none;
+  border-radius:8px; font-size:14px; font-weight:700; cursor:pointer;
+  transition:opacity .12s, transform .1s; letter-spacing:.3px;
+}
+.ta-analyze-btn:hover:not(:disabled) { opacity:.85; transform:translateY(-1px); }
+.ta-analyze-btn:disabled { opacity:.35; cursor:not-allowed; transform:none; }
+.ta-reset-btn {
+  padding:9px 22px; border:1px solid var(--border); background:var(--surface);
+  color:var(--muted); border-radius:8px; font-size:13px; font-weight:600;
+  cursor:pointer; transition:all .12s;
+}
+.ta-reset-btn:hover { border-color:#94a3b8; color:var(--text); }
+
+.ta-results { background:var(--surface); border-radius:var(--radius); box-shadow:var(--sh-sm); overflow:hidden; display:none; }
+.ta-results.visible { display:block; }
+.ta-results-hdr { background:var(--hdr); color:white; padding:14px 22px; font-size:14px; font-weight:700; letter-spacing:.3px; }
+.ta-sides { display:grid; grid-template-columns:1fr 1fr; }
+@media (max-width:768px) { .ta-sides { grid-template-columns:1fr; } }
+.ta-side { padding:18px 20px; border-right:1px solid var(--border); }
+.ta-side:last-child { border-right:none; }
+.ta-side-hdr { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.7px; margin-bottom:11px; padding-bottom:7px; border-bottom:2px solid; }
+.ta-side-giving  .ta-side-hdr { color:#b91c1c; border-color:#fca5a5; }
+.ta-side-getting .ta-side-hdr { color:#15803d; border-color:#86efac; }
+.ta-result-player { margin-bottom:11px; padding-bottom:11px; border-bottom:1px solid var(--border); }
+.ta-result-player:last-child { border-bottom:none; margin-bottom:0; }
+.ta-rp-name { font-size:13px; font-weight:700; margin-bottom:2px; display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+.ta-rp-meta { font-size:10px; color:var(--muted); margin-bottom:3px; }
+.ta-rp-stats { font-size:11px; color:var(--muted); line-height:1.6; }
+.ta-rp-stats strong { color:var(--text); font-weight:700; }
+.ta-side-totals { margin-top:12px; padding:11px; background:var(--bg); border-radius:6px; }
+.ta-side-totals-hdr { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:6px; }
+.ta-totals-stats { font-size:11px; line-height:1.7; }
+.ta-totals-stats strong { font-weight:700; }
+
+.ta-net-bar { padding:14px 22px; background:#f8fafc; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.ta-net-hdr { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.7px; color:var(--muted); margin-bottom:9px; }
+.ta-net-stats { display:flex; flex-wrap:wrap; gap:6px 18px; }
+.ta-net-stat { font-size:12px; font-weight:700; display:flex; flex-direction:column; align-items:center; gap:1px; min-width:42px; }
+.ta-net-cat { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); }
+.ta-net-val { font-size:15px; font-weight:800; }
+.ta-net-val.pos { color:#15803d; }
+.ta-net-val.neg { color:#b91c1c; }
+.ta-net-val.neu { color:var(--muted); }
+
+.ta-verdict-banner { padding:20px 22px; text-align:center; }
+.ta-verdict-icon  { font-size:26px; margin-bottom:6px; }
+.ta-verdict-label { font-size:20px; font-weight:800; margin-bottom:5px; }
+.ta-verdict-sub   { font-size:13px; margin-bottom:7px; }
+.ta-verdict-signal { font-size:12px; }
+.ta-verdict-banner.vb-strong  { background:#dcfce7; color:#166534; }
+.ta-verdict-banner.vb-favor   { background:#f0fdf4; color:#15803d; }
+.ta-verdict-banner.vb-neutral { background:#f8fafc; color:#475569; }
+.ta-verdict-banner.vb-unfavor { background:#fffbeb; color:#854d0e; }
+.ta-verdict-banner.vb-avoid   { background:#fef2f2; color:#b91c1c; }
+</style>
+</head>
+<body>
+
+<header class="site-hdr">
+  <div class="site-hdr-left">
+    <h1>⚾ Fantasy Baseball Luck Analyzer</h1>
+    <div class="sub">Statcast-powered buy-low &amp; sell-high signals</div>
+    <div style="margin-top:4px;font-size:10px;color:#f59e0b;font-weight:600">⚠ IL status not yet integrated — verify player availability before acting on signals</div>
+  </div>
+  <div class="site-hdr-right" id="hdr-meta">—</div>
+</header>
+
+<!-- Spinner -->
+<div id="spin-screen" class="screen">
+  <div class="spinner"></div>
+</div>
+
+<!-- Load screen (file:// fallback) -->
+<div id="load-screen" class="screen">
+  <div class="load-card">
+    <div class="lc-icon">📊</div>
+    <h2>Load your data files</h2>
+    <p class="lc-desc">
+      Select <strong>luck_scores.csv</strong> and <strong>pitcher_luck_scores.csv</strong>
+      from your <code>fantasy-baseball</code> folder. The dashboard populates automatically
+      once both files are loaded.
+    </p>
+    <div class="file-rows">
+      <div class="file-row" id="fr-hitters">
+        <div class="fr-icon">🏏</div>
+        <div class="fr-info">
+          <div class="fr-name">luck_scores.csv</div>
+          <div class="fr-status" id="fs-hitters">Not loaded</div>
+        </div>
+        <button class="fr-btn" onclick="document.getElementById('fi-hitters').click()">Browse</button>
+        <input type="file" id="fi-hitters" accept=".csv"
+               onchange="loadFile(this,'hitters')">
+      </div>
+      <div class="file-row" id="fr-pitchers">
+        <div class="fr-icon">⚾</div>
+        <div class="fr-info">
+          <div class="fr-name">pitcher_luck_scores.csv</div>
+          <div class="fr-status" id="fs-pitchers">Not loaded</div>
+        </div>
+        <button class="fr-btn" onclick="document.getElementById('fi-pitchers').click()">Browse</button>
+        <input type="file" id="fi-pitchers" accept=".csv"
+               onchange="loadFile(this,'pitchers')">
+      </div>
+    </div>
+    <div class="load-hint">
+      <strong>Tip:</strong> Run <code>python run_pipeline.py</code> first to generate the
+      latest CSV files, then select them here.
+      Files are read locally — no data leaves your machine.
+    </div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dash-screen" class="screen">
+  <div class="main">
+
+    <!-- Tab bar -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-h"  onclick="setTab('hitters')">🏏 Hitters</button>
+      <button class="tab-btn"        id="tab-p"  onclick="setTab('pitchers')">⚾ Pitchers</button>
+      <button class="tab-btn"        id="tab-tv" onclick="setTab('tradevalue')">📊 Trade Value</button>
+    </div>
+
+    <!-- League toggle — visible only on Trade Value tab -->
+    <div class="league-toggle" id="league-toggle" style="display:none">
+      <button class="league-btn active" id="lg-btn-1" onclick="setLeague('league1')">League 1</button>
+      <button class="league-btn"        id="lg-btn-2" onclick="setLeague('league2')">League 2</button>
+    </div>
+
+    <!-- Luck analysis content (Hitters / Pitchers tabs) -->
+    <div id="luck-content">
+
+    <!-- Summary cards -->
+    <div class="cards-row" id="cards"></div>
+
+    <!-- Signal filter button bar -->
+    <div class="signal-filter-bar" id="signal-filter-bar"></div>
+
+    <!-- Tier filter bar (sell signals only) -->
+    <div class="tier-filter-bar" id="tier-btns"></div>
+
+    <!-- Search + filter controls -->
+    <div class="controls" id="luck-controls">
+      <div class="search-wrap">
+        <svg class="si" width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input class="search-input" id="search" type="search"
+               placeholder="Search player…" autocomplete="off"
+               oninput="onSearch(this.value)">
+      </div>
+      <button class="clear-filter" id="clear-btn" onclick="clearFilter()">✕ Clear filter</button>
+      <span class="results-info" id="results-info"></span>
+      <div class="view-toggle-group">
+        <button class="view-toggle-btn active" id="view-btn-simple" onclick="setViewMode('simple')">Simple</button>
+        <button class="view-toggle-btn"        id="view-btn-advanced" onclick="setViewMode('advanced')">Advanced</button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="tbl-wrap">
+      <table>
+        <thead id="tbl-head"></thead>
+        <tbody id="tbl-body"></tbody>
+      </table>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend" id="legend"></div>
+
+    <!-- CBS disclaimer -->
+    <div style="margin-top:8px; font-size:10px; color:#94a3b8; text-align:right; padding-right:2px;">
+      Position eligibility based on CBS Sports rules. &nbsp;|&nbsp; <span id="cbs-data-note"></span>
+    </div>
+
+    </div><!-- end #luck-content -->
+
+    <!-- Trade Analyzer / Trade Value content -->
+    <div id="tv-content" style="display:none">
+
+      <!-- ─── TRADE ANALYZER PANEL ──────────────────────────────────── -->
+      <div id="ta-panel">
+
+        <!-- League Settings bar -->
+        <div class="ta-league-bar">
+          <span class="ta-league-summary" id="ta-league-summary"><strong>12-team</strong> · Redraft · 5×5 Roto</span>
+          <button class="ta-league-edit-btn" onclick="toggleLeaguePanel()">⚙ Edit</button>
+        </div>
+        <div class="ta-league-panel" id="ta-league-panel">
+          <div class="ta-league-grid">
+            <div class="ta-league-field">
+              <label>League Size</label>
+              <select id="ta-ls-size">
+                <option value="8">8 teams</option>
+                <option value="10">10 teams</option>
+                <option value="12" selected>12 teams</option>
+                <option value="14">14 teams</option>
+                <option value="15">15 teams</option>
+                <option value="16">16+ teams</option>
+              </select>
+            </div>
+            <div class="ta-league-field">
+              <label>Format</label>
+              <select id="ta-ls-format">
+                <option value="redraft" selected>Redraft</option>
+                <option value="keeper">Keeper</option>
+                <option value="dynasty">Dynasty</option>
+              </select>
+            </div>
+            <div class="ta-league-field">
+              <label>Scoring</label>
+              <select id="ta-ls-scoring">
+                <option value="5x5" selected>5×5 Roto</option>
+                <option value="points">Points</option>
+                <option value="h2h_cat">H2H Categories</option>
+                <option value="h2h_pts">H2H Points</option>
+              </select>
+            </div>
+          </div>
+          <div class="ta-cat-section-label">Hitter Categories</div>
+          <div class="ta-cat-row">
+            <label><input type="checkbox" id="cat-avg"  checked> AVG</label>
+            <label><input type="checkbox" id="cat-r"    checked> R</label>
+            <label><input type="checkbox" id="cat-hr"   checked> HR</label>
+            <label><input type="checkbox" id="cat-rbi"  checked> RBI</label>
+            <label><input type="checkbox" id="cat-sb"   checked> SB</label>
+            <label><input type="checkbox" id="cat-obp"        > OBP</label>
+            <label><input type="checkbox" id="cat-slg"        > SLG</label>
+            <label><input type="checkbox" id="cat-ops"        > OPS</label>
+          </div>
+          <div class="ta-cat-section-label" style="margin-top:8px">Pitcher Categories</div>
+          <div class="ta-cat-row">
+            <label><input type="checkbox" id="cat-era"  checked> ERA</label>
+            <label><input type="checkbox" id="cat-whip" checked> WHIP</label>
+            <label><input type="checkbox" id="cat-w"    checked> W</label>
+            <label><input type="checkbox" id="cat-k"    checked> K</label>
+            <label><input type="checkbox" id="cat-svh"  checked> SV+H</label>
+            <label><input type="checkbox" id="cat-qs"         > QS</label>
+            <label><input type="checkbox" id="cat-hld"        > HLD</label>
+          </div>
+          <div style="margin-top:12px">
+            <button class="ta-save-btn" onclick="saveLeagueSettings()">Save Settings</button>
+          </div>
+        </div>
+
+        <!-- Input columns -->
+        <div class="ta-columns">
+          <!-- GIVING -->
+          <div class="ta-col ta-col-giving">
+            <div class="ta-col-hdr">
+              <span>Giving Away <span class="ta-count-badge" id="ta-count-giving">0</span></span>
+            </div>
+            <div class="ta-search-wrap">
+              <input class="ta-search-input" id="ta-search-giving" type="search"
+                     placeholder="Search player…" autocomplete="off"
+                     oninput="onTaSearch(this.value,'giving')"
+                     onfocus="onTaFocus('giving')"
+                     onblur="closeTaDropdownDelayed('giving')">
+              <div class="ta-dropdown" id="ta-dd-giving"></div>
+            </div>
+            <div class="ta-cards-list" id="ta-cards-giving">
+              <div class="ta-empty-hint">Search for players above</div>
+            </div>
+          </div>
+          <!-- GETTING -->
+          <div class="ta-col ta-col-getting">
+            <div class="ta-col-hdr">
+              <span>Getting <span class="ta-count-badge" id="ta-count-getting">0</span></span>
+            </div>
+            <div class="ta-search-wrap">
+              <input class="ta-search-input" id="ta-search-getting" type="search"
+                     placeholder="Search player…" autocomplete="off"
+                     oninput="onTaSearch(this.value,'getting')"
+                     onfocus="onTaFocus('getting')"
+                     onblur="closeTaDropdownDelayed('getting')">
+              <div class="ta-dropdown" id="ta-dd-getting"></div>
+            </div>
+            <div class="ta-cards-list" id="ta-cards-getting">
+              <div class="ta-empty-hint">Search for players above</div>
+            </div>
+          </div>
+          <!-- DROPPING -->
+          <div class="ta-col ta-col-dropping">
+            <div class="ta-col-hdr">
+              <span>Dropping <span class="ta-count-badge" id="ta-count-dropping">0</span></span>
+              <span style="font-size:9px;font-weight:400;color:#94a3b8;text-transform:none">optional</span>
+            </div>
+            <div class="ta-search-wrap">
+              <input class="ta-search-input" id="ta-search-dropping" type="search"
+                     placeholder="Search player…" autocomplete="off"
+                     oninput="onTaSearch(this.value,'dropping')"
+                     onfocus="onTaFocus('dropping')"
+                     onblur="closeTaDropdownDelayed('dropping')">
+              <div class="ta-dropdown" id="ta-dd-dropping"></div>
+            </div>
+            <div class="ta-cards-list" id="ta-cards-dropping">
+              <div class="ta-empty-hint">Waiver drops (optional)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analyze button -->
+        <div class="ta-analyze-row">
+          <button class="ta-analyze-btn" id="ta-analyze-btn" disabled onclick="analyzeTrade()">Analyze Trade</button>
+          <button class="ta-reset-btn" onclick="resetTrade()">Reset</button>
+        </div>
+
+        <!-- Results -->
+        <div class="ta-results" id="ta-results">
+          <div class="ta-results-hdr">Trade Analysis Results</div>
+          <div class="ta-sides" id="ta-sides"></div>
+          <div class="ta-net-bar" id="ta-net-bar"></div>
+          <div class="ta-verdict-banner" id="ta-verdict-banner"></div>
+        </div>
+
+      </div><!-- end #ta-panel -->
+
+      <!-- ─── SIGNAL RANKINGS ──────────────────────────────────────── -->
+      <div class="ta-section-divider">
+        <hr class="ta-divider-line">
+        <span class="ta-divider-label">Signal Rankings</span>
+        <hr class="ta-divider-line">
+      </div>
+
+      <div id="ta-rankings-panel">
+
+        <!-- Generation timestamp note -->
+        <p class="tv-gen-note" id="tv-gen-note"></p>
+
+        <!-- Player type filter: All / Hitters / Pitchers -->
+        <div class="tv-sub-bar">
+          <button class="tv-sub-btn"        id="tv-tab-all" onclick="setTvTab('all')">All</button>
+          <button class="tv-sub-btn active" id="tv-tab-h"   onclick="setTvTab('hitters')">Hitters</button>
+          <button class="tv-sub-btn"        id="tv-tab-p"   onclick="setTvTab('pitchers')">Pitchers</button>
+        </div>
+
+        <!-- Verdict filter bar -->
+        <div class="tv-verdict-bar" id="tv-verdict-bar"></div>
+
+        <!-- Search + result count -->
+        <div class="tv-controls">
+          <div class="search-wrap">
+            <svg class="si" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input class="search-input" id="tv-search" type="search"
+                   placeholder="Search player…" autocomplete="off"
+                   oninput="onTvSearch(this.value)">
+          </div>
+          <span class="tv-results" id="tv-results"></span>
+        </div>
+
+        <!-- Table -->
+        <div class="tbl-wrap">
+          <table>
+            <thead id="tv-head"></thead>
+            <tbody id="tv-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Notes -->
+        <div class="legend" id="tv-legend" style="margin-top:20px">
+          <strong>Value model:</strong>
+          Z-score above positional replacement level across all scoring categories.
+          Scaled 0&ndash;100 (100&nbsp;=&nbsp;best available). Projected to a full 600 PA / 175 IP season.
+          &nbsp;|&nbsp;
+          <strong>SV+H (League 2):</strong> SV weighted 3&times;, H weighted 2&times;.
+          &nbsp;|&nbsp;
+          <strong>SV/H note:</strong> Saves and holds estimated from performance tier (Statcast only; updates when FanGraphs data is available).
+        </div>
+
+      </div><!-- end #ta-rankings-panel -->
+
+    </div><!-- end #tv-content -->
+
+  </div>
+</div>
+
+<script>
+'use strict';
+
+// ─── State ────────────────────────────────────────────────────────────────────
+const S = {
+  // Luck analyzer (existing)
+  data:    { hitters: [], pitchers: [] },
+  tab:     'hitters',
+  sort:    { hitters: { col: 'luck_score', dir: 'desc', userSort: false },
+             pitchers: { col: 'luck_score', dir: 'desc', userSort: false } },
+  search:  { hitters: '', pitchers: '' },
+  vfilter:    { hitters: null, pitchers: null },
+  tierfilter: { hitters: null, pitchers: null },
+  ready:   { hitters: false, pitchers: false },
+  // View mode: 'simple' (default) | 'advanced'
+  viewMode: 'simple',
+  // Position data
+  cbsPositions:     {},   // mlbam_id (string) -> {name, position, source}
+  positionOverrides:{},   // mlbam_id (string) -> position string
+  // Trade value
+  league:          'league1',
+  tvTab:           'hitters',   // 'all' | 'hitters' | 'pitchers'
+  tvVerdictFilter: 'all',       // 'all' | 'Buy low' | 'Sell high' | 'neutral'
+  tvData:          null,
+  tvSearch: { all: '', hitters: '', pitchers: '' },
+  tvSort:   { all:      { col: '__value', dir: 'desc' },
+              hitters:  { col: '__value', dir: 'desc' },
+              pitchers: { col: '__value', dir: 'desc' } },
+  tvLeagueNames: { league1: 'League 1', league2: 'League 2' },
+  tvMode: 'analyzer',   // 'analyzer' | 'rankings'
+  // Trade analyzer
+  ta: { giving: [], getting: [], dropping: [], results: null },
+  taBuilt: false,
+  taByName: {},   // normalizeName -> flatPlayer
+  taById:   {},   // id string -> flatPlayer
+  hLuckById:{},   // batter id string -> luck row
+  pLuckById:{},   // pitcher id string -> luck row
+  taLeague: {
+    size: '12', format: 'redraft', scoring: '5x5',
+    hCats: ['avg','r','hr','rbi','sb'],
+    pCats: ['era','whip','w','k','svh'],
+  },
+};
+
+// ─── Column definitions ───────────────────────────────────────────────────────
+// fmt codes: name | int | f1 | f2 | rate (3dp) | pct (×100, 1dp%) |
+//            gap (±f2, coloured) | luck (±f4, coloured) | badge | team
+const HITTER_COLS = [
+  { key:'name',          label:'Player',     fmt:'name'  },
+  { key:'owned_pct',     label:'Own%',       fmt:'own'   },
+  { key:'PA',            label:'PA',         fmt:'int'   },
+  // ── Scoring components (v2 model) ────────────────────────────────────────
+  { key:'BABIP',         label:'BABIP',      fmt:'rate'  },
+  { key:'hr_fb_rate',    label:'HR/FB%',     fmt:'pct'   },
+  { key:'xwOBA_gap',     label:'xwOBA Gap',  fmt:'xwoba' },
+  { key:'z_contact_rate',label:'Z-Con%',     fmt:'pct'   },
+  // ── Display-only metrics (informational; not in v2 scoring formula) ──────
+  { key:'hard_hit_rate', label:'Hard Hit%',  fmt:'pct'   },
+  { key:'barrel_rate',   label:'Barrel%',    fmt:'pct'   },
+  // ── Result ───────────────────────────────────────────────────────────────
+  { key:'luck_score',    label:'Luck Score', fmt:'luck'  },
+  { key:'verdict',       label:'Verdict',    fmt:'badge', nosort:true },
+  { key:'tier_sell',     label:'Sell Tier',  fmt:'tier',  nosort:true },
+];
+
+const PITCHER_COLS = [
+  { key:'name',                  label:'Player',    fmt:'name'  },
+  { key:'owned_pct',             label:'Own%',      fmt:'own'   },
+  { key:'Team',                  label:'Team',      fmt:'team'  },
+  { key:'IP',                    label:'IP',        fmt:'f1'    },
+  { key:'ERA',                   label:'ERA',       fmt:'f2'    },
+  { key:'FIP',                   label:'FIP',       fmt:'f2'    },
+  { key:'ERA_minus_FIP',         label:'ERA−FIP',   fmt:'gap'   },
+  { key:'xERA',                  label:'xERA',      fmt:'f2'    },
+  { key:'BABIP_allowed',         label:'BABIP',     fmt:'rate'  },
+  { key:'lob_pct',               label:'LOB%',      fmt:'pct'   },
+  { key:'hard_hit_rate_allowed', label:'Hard Hit%', fmt:'pct'   },
+  { key:'swstr_rate',            label:'SwStr%',    fmt:'pct'   },
+  { key:'luck_score',            label:'Luck Score',fmt:'luck'  },
+  { key:'verdict',               label:'Verdict',   fmt:'badge', nosort:true },
+  { key:'tier_sell',             label:'Sell Tier', fmt:'tier',  nosort:true },
+];
+
+// ─── Trade value column definitions ──────────────────────────────────────────
+// '__value' resolves to 'league1_value' or 'league2_value' based on S.league.
+// '__esv'   resolves to 'expected_stats_value_l1' or '_l2' based on S.league.
+// '_rank'   is injected per-row in renderTVTable (rank within player type).
+const TV_COLS = [
+  { key:'name',                   label:'Player',       fmt:'name'  },
+  { key:'pos',                    label:'Pos',          fmt:'pos'   },
+  { key:'__value',                label:'Trade Value',  fmt:'value' },
+  { key:'__esv',                  label:'Exp Stats',    fmt:'f2'    },
+  { key:'track_record_multiplier',label:'Track Rec',    fmt:'f2'    },
+  { key:'quality_points',         label:'QP',           fmt:'int'   },
+  { key:'luck_adjustment',        label:'Luck Adj',     fmt:'f2'    },
+  { key:'verdict',                label:'Verdict',      fmt:'badge', nosort:true },
+  { key:'_rank',                  label:'League Rank',  fmt:'int',   nosort:true },
+];
+
+// ─── Verdict helpers ──────────────────────────────────────────────────────────
+const VERDICTS = [
+  { key:'Buy low',    cls:'vBuyLow',    label:'Buy Low',    row:'rBuyLow'    },
+  { key:'Slight buy', cls:'vSlightBuy', label:'Slight Buy', row:'rSlightBuy' },
+  { key:'Neutral',    cls:'vNeutral',   label:'Neutral',    row:''           },
+  { key:'Slight sell',cls:'vSlightSell',label:'Slight Sell',row:'rSlightSell'},
+  { key:'Sell high',  cls:'vSellHigh',  label:'Sell High',  row:'rSellHigh'  },
+];
+const VERDICT_MAP = Object.fromEntries(VERDICTS.map(v => [v.key, v]));
+
+function vInfo(raw) {
+  return VERDICT_MAP[raw] || { key:raw, cls:'vNeutral', label: raw || 'Neutral', row:'' };
+}
+
+// ─── Number helpers ───────────────────────────────────────────────────────────
+function isNA(v) {
+  return v === undefined || v === null || v === ''
+    || String(v).trim().toLowerCase() === 'nan'
+    || String(v).trim() === '—';
+}
+
+function toNum(v) {
+  if (isNA(v)) return NaN;
+  const n = parseFloat(v);
+  return isNaN(n) ? NaN : n;
+}
+
+// Sort key: NaN sorts last regardless of direction
+function sortKey(v) {
+  const n = toNum(v);
+  if (!isNaN(n)) return n;
+  if (isNA(v)) return null; // sorted last
+  return String(v).toLowerCase();
+}
+
+// ─── Cell formatters  ─────────────────────────────────────────────────────────
+// Each returns a <td>...</td> string
+const F = {
+  name(v, r) {
+    if (isNA(v)) return `<td class="name-cell">—</td>`;
+    const park = (r && (r.park_change === 'True' || r.park_change === true))
+      ? `<span class="park-badge" title="${esc((r && r.park_change_label) || 'Park change — career baseline less reliable')}">⚠ Park</span>` : '';
+    return `<td class="name-cell">${esc(v)}${park}</td>`;
+  },
+  team(v)  { return isNA(v) ? `<td class="na">—</td>` : `<td>${esc(v)}</td>`; },
+  int(v)   {
+    const n = toNum(v);
+    return isNaN(n) ? `<td class="na">—</td>` : `<td>${Math.round(n)}</td>`;
+  },
+  f1(v) {
+    const n = toNum(v);
+    return isNaN(n) ? `<td class="na">—</td>` : `<td>${n.toFixed(1)}</td>`;
+  },
+  f2(v) {
+    const n = toNum(v);
+    return isNaN(n) ? `<td class="na">—</td>` : `<td>${n.toFixed(2)}</td>`;
+  },
+  rate(v) {
+    const n = toNum(v);
+    return isNaN(n) ? `<td class="na">—</td>` : `<td>.${String(Math.round(n * 1000)).padStart(3,'0')}</td>`;
+  },
+  pct(v) {
+    const n = toNum(v);
+    return isNaN(n) ? `<td class="na">—</td>` : `<td>${(n * 100).toFixed(1)}%</td>`;
+  },
+  gap(v) {
+    const n = toNum(v);
+    if (isNaN(n)) return `<td class="na">—</td>`;
+    const sign = n > 0 ? '+' : '';
+    const cls  = n > 0.3 ? 'pos' : n < -0.3 ? 'neg' : '';
+    return `<td class="${cls}">${sign}${n.toFixed(2)}</td>`;
+  },
+  // Signed .NNN rate display for xwOBA gap — coloured at ±0.020 threshold
+  // Positive = player underperformed contact quality (unlucky, green)
+  // Negative = player overperformed contact quality (lucky, red)
+  xwoba(v) {
+    const n = toNum(v);
+    if (isNaN(n)) return `<td class="na">—</td>`;
+    const cls  = n > 0.020 ? 'pos' : n < -0.020 ? 'neg' : '';
+    const abs3 = Math.abs(Math.round(n * 1000)).toString().padStart(3, '0');
+    const disp = (n < 0 ? '−.' : '+.') + abs3;
+    return `<td class="${cls}">${disp}</td>`;
+  },
+  luck(v) {
+    const n = toNum(v);
+    if (isNaN(n)) return `<td class="na">—</td>`;
+    const sign = n > 0 ? '+' : '';
+    const cls  = n > 0.05 ? 'luck-pos' : n < -0.05 ? 'luck-neg' : 'luck-neu';
+    return `<td class="${cls}">${sign}${n.toFixed(4)}</td>`;
+  },
+  badge(v, r) {
+    const info   = vInfo(v);
+    const volBadge = (r && (r.volatility_flag === true || r.volatility_flag === 'True'))
+      ? `<span class="volatility-badge" title="${esc(r.volatility_label || 'High variance — signals less reliable')}">⚡</span>` : '';
+    return `<td><span class="badge ${info.cls}">${info.label}</span>${volBadge}</td>`;
+  },
+  tier(v) {
+    if (isNA(v) || v === null || v === 'None') return `<td></td>`;
+    const TIER_MAP = {
+      'Sell and Move On':           { cls:'tSellMoveOn', label:'Move On'    },
+      'Sell High on Perception':    { cls:'tSellPerc',   label:'Perception' },
+      'Veteran Regression':         { cls:'tVetReg',     label:'Vet Reg'    },
+      'Slight Regression Expected': { cls:'tSlightReg',  label:'Slight Reg' },
+    };
+    const info = TIER_MAP[v] || { cls:'vNeutral', label: String(v) };
+    return `<td><span class="badge ${info.cls}">${info.label}</span></td>`;
+  },
+  own(v) {
+    const n = toNum(v);
+    return isNaN(n) ? `<td class="na">—</td>` : `<td>${n.toFixed(1)}%</td>`;
+  },
+  // 0-100 trade value badge
+  value(v) {
+    const n = toNum(v);
+    if (isNaN(n) || n === 0) return `<td><span class="val-badge val-zero">—</span></td>`;
+    const cls = n > 75 ? 'val-elite' : n > 40 ? 'val-great' : n > 10 ? 'val-good' : 'val-zero';
+    return `<td><span class="val-badge ${cls}">${n.toFixed(1)}</span></td>`;
+  },
+  // Position abbreviation (SP/RP/C/1B/etc.)
+  pos(v) {
+    return isNA(v) ? `<td class="na">—</td>` : `<td class="pos-cell">${esc(v)}</td>`;
+  },
+};
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─── Position lookup ──────────────────────────────────────────────────────────
+// Returns CBS-standard position string for a player, applying any override.
+function getPosition(mlbamId) {
+  const id = String(mlbamId);
+  // Override wins
+  if (S.positionOverrides[id]) return S.positionOverrides[id];
+  // CBS Sports lookup
+  const entry = S.cbsPositions[id];
+  if (entry && entry.position && entry.position !== 'N/A') return entry.position;
+  return '—';
+}
+
+// ─── Explanation generator ────────────────────────────────────────────────────
+// Generates a one-line plain-English explanation from row metrics.
+// type: 'hitter' | 'pitcher'
+function generateExplanation(row, type, pvEntry) {
+  const first = (name) => String(name || '').split(' ')[0];
+  const nm    = esc(row.name || 'This player');
+  const fn    = esc(first(row.name));
+  const verdict   = row.verdict || '';
+  const tier      = row.tier_sell || '';
+  const age_flag  = row.age_flag || '';
+
+  if (type === 'hitter') {
+    const babip    = parseFloat(row.BABIP)          || 0;
+    const xgap     = parseFloat(row.xwOBA_gap)      || 0;
+    const hrfb     = parseFloat(row.hr_fb_rate)     || 0;
+    const hhr      = parseFloat(row.hard_hit_rate)  || 0;
+    const pa       = parseInt(row.PA)               || 0;
+    const age      = parseInt(row.age)              || 0;
+
+    // CQS conversion rate flag overrides (check before normal logic)
+    const convFlag = row.conversion_flag || '';
+    if (convFlag === 'underperformer') {
+      if (verdict === 'Buy low' || verdict === 'Slight buy') {
+        return `${fn} is unlucky by the numbers — but strong contact metrics have historically produced outs. Temper expectations on the upside.`;
+      }
+    }
+    if (convFlag === 'overperformer') {
+      // FIX 1: gate overperformer language to verdict direction.
+      // Sell candidates with overperformer flag need sell language, not buy language.
+      if (verdict === 'Sell high' || verdict === 'Slight sell') {
+        return `${fn} consistently outperforms their Statcast metrics — which makes right now the ideal time to sell. Their ceiling is already being exceeded and regression is coming even by their own elevated standard.`;
+      }
+      return `Don't be fooled by mediocre Statcast metrics for ${fn} — this player consistently outperforms the underlying numbers`;
+    }
+
+    // Small sample Neutral
+    if (verdict === 'Neutral' && pa < 55) {
+      return `Too early in the season to generate a reliable signal for ${fn} — check back in May`;
+    }
+
+    if (verdict === 'Buy low') {
+      // FIX 3: CQS-aware override for floored players — career track record outweighs
+      // soft-contact small-sample concern.
+      const floorApplied = pvEntry && pvEntry.cqs_floor_applied;
+      const cqsTier      = pvEntry && pvEntry.cqs_tier;
+      if (floorApplied && cqsTier) {
+        const tierLabel = cqsTier === 'Superstar' ? 'Superstar' : 'proven';
+        return `${fn} is a ${tierLabel}-caliber player having an unusually cold stretch — the career track record says buy with confidence`;
+      }
+      // Tier 1: strong xwOBA gap + terrible BABIP — clearest buy signal
+      if (xgap > 0.060 && babip < 0.270) {
+        return `${fn} is making elite contact but a .${Math.round(babip*1000).toString().padStart(3,'0')} BABIP is one of the worst in baseball — strong buy before the market catches on`;
+      }
+      // Tier 2: strong xwOBA gap alone
+      if (xgap > 0.060) {
+        return `${fn}'s underlying metrics are significantly better than their stats suggest — regression incoming upward`;
+      }
+      // Fix 4: soft contact — hard_hit% gate fired, cap upside expectations
+      if (hhr > 0 && hhr < 0.28) {
+        // Near-threshold zone (26–28%): extreme BABIP with borderline contact → split language
+        if (hhr >= 0.26 && babip < 0.200) {
+          return `${fn} is suffering through extreme bad luck on balls in play — but soft contact limits how much they'll benefit when it normalizes. Cautious buy.`;
+        }
+        return `${fn} has a low BABIP but soft contact metrics suggest limited upside — mild buy at best`;
+      }
+      // Fix 2: pure BABIP luck case — very low BABIP with modest xwOBA gap
+      if (babip < 0.220) {
+        return `${fn}'s .${Math.round(babip*1000).toString().padStart(3,'0')} BABIP is one of the worst in baseball — extreme bad luck that should normalize`;
+      }
+      return `${fn} is unlucky — contact quality is running well ahead of their results so far this season`;
+    }
+
+    if (verdict === 'Slight buy') {
+      return `${fn} is showing positive signs — modest improvement likely as luck normalizes`;
+    }
+
+    if (tier === 'Sell and Move On') {
+      if (age_flag === 'Decline risk') {
+        return `${fn} is ${age} posting results their contact quality doesn't support — at this age, any correction may be permanent. Get out now.`;
+      }
+      return `${fn}'s results are well ahead of their contact quality — this won't last. Move on.`;
+    }
+
+    if (tier === 'Sell High on Perception') {
+      if (hrfb > 0.250) {
+        return `${fn} is hitting HRs at an unsustainable rate (${(hrfb*100).toFixed(0)}% HR/FB) — cash in before the correction hits`;
+      }
+      return `${fn} is running hot even by their own elite standard — peak value right now, sell into it`;
+    }
+
+    if (tier === 'Veteran Regression') {
+      if (age_flag) {
+        return `${fn} is ${age} with a proven track record — sell while perception is high; any correction may linger at this age`;
+      }
+      return `${fn} is a proven veteran riding a lucky BABIP streak — hold unless you can get full value back`;
+    }
+
+    if (tier === 'Slight Regression Expected' || verdict === 'Slight sell') {
+      return `${fn} has mild luck working in their favor — minor correction likely but nothing dramatic`;
+    }
+
+    // Genuine Neutral
+    return `${fn}'s results are in line with their underlying metrics — no actionable signal in either direction`;
+
+  } else {
+    // Pitcher
+    const era      = parseFloat(row.ERA)            || 0;
+    const fip      = parseFloat(row.FIP)            || 0;
+    const xgap     = parseFloat(row.xwoba_gap)      || 0;
+    const ip       = parseFloat(row.IP)             || 0;
+    const conf     = row.conf_phase                 || '';
+    const age_flag = row.age_flag                   || '';
+    const age      = parseInt(row.age)              || 0;
+    const efip     = parseFloat(row.ERA_minus_FIP)  || 0;
+
+    // Small sample Neutral (April phase, low IP)
+    if (verdict === 'Neutral' && conf === 'April' && ip < 20) {
+      return `Too early in the season to generate a reliable signal for ${fn} — check back in May`;
+    }
+
+    if (verdict === 'Buy low') {
+      if (efip > 1.0) {
+        return `${fn}'s ERA is ${efip.toFixed(1)} runs above their FIP — luck-driven inflation, real performance is much better`;
+      }
+      return `${fn}'s ERA is running well above their underlying contact quality — expect meaningful regression downward`;
+    }
+
+    if (verdict === 'Slight buy') {
+      return `${fn} is showing some bad luck in their ERA — modest improvement likely as sequencing normalizes`;
+    }
+
+    if (tier === 'Sell and Move On') {
+      if (age_flag === 'Decline risk') {
+        return `${fn} is ${age} with ERA running ahead of contact quality — at this age structural decline is possible. Move on.`;
+      }
+      return `${fn}'s ERA is significantly better than their peripherals suggest — this won't hold. Sell now.`;
+    }
+
+    if (tier === 'Sell High on Perception') {
+      return `${fn} is running hot and ERA looks great — underlying metrics say regression is coming. Cash in.`;
+    }
+
+    if (tier === 'Veteran Regression') {
+      return `${fn} is a proven arm on a lucky stretch — sell while the ERA narrative is strong`;
+    }
+
+    if (tier === 'Slight Regression Expected' || verdict === 'Slight sell') {
+      return `${fn} has mild luck working in their favor — minor ERA correction likely but nothing dramatic`;
+    }
+
+    // Genuine Neutral
+    return `${fn}'s ERA and underlying metrics are tightly aligned — no meaningful luck signal in either direction`;
+  }
+}
+
+// ─── View mode toggle ─────────────────────────────────────────────────────────
+function setViewMode(mode) {
+  const wrap = document.querySelector('.tbl-wrap');
+  wrap.classList.add('fading');
+  setTimeout(() => {
+    S.viewMode = mode;
+    _syncViewButtons();
+    renderTable();
+    wrap.classList.remove('fading');
+  }, 150);
+}
+
+function _syncViewButtons() {
+  const simple   = document.getElementById('view-btn-simple');
+  const advanced = document.getElementById('view-btn-advanced');
+  if (simple)   simple.classList.toggle('active',   S.viewMode === 'simple');
+  if (advanced) advanced.classList.toggle('active', S.viewMode === 'advanced');
+}
+
+// Keep backward-compat alias in case any stray onclick still calls the old name
+function toggleViewMode() { setViewMode(S.viewMode === 'simple' ? 'advanced' : 'simple'); }
+
+// ─── Trade value helpers ──────────────────────────────────────────────────────
+function flattenPlayer(p) {
+  // Hoist p.proj.X into p.proj_X for flat column key access
+  const flat = Object.assign({}, p);
+  if (p.proj && typeof p.proj === 'object') {
+    for (const [k, v] of Object.entries(p.proj)) {
+      flat['proj_' + k] = v;
+    }
+    delete flat.proj;
+  }
+  return flat;
+}
+
+function loadPlayerValues(json) {
+  try {
+    const parsed = typeof json === 'string' ? JSON.parse(json) : json;
+    S.tvData = (parsed.players || []).map(flattenPlayer);
+    S.tvLeagueNames = parsed.leagues || { league1: 'League 1', league2: 'League 2' };
+    // Index by player id for O(1) trade-value lookup in Simple View gate
+    S.tvById = {};
+    (parsed.players || []).forEach(p => { if (p.id) S.tvById[String(p.id)] = p; });
+    const note = document.getElementById('tv-gen-note');
+    if (note && parsed.generated_at) {
+      note.textContent = 'Projections generated ' + parsed.generated_at.replace('T', ' ').slice(0, 16)
+        + ' \u00b7 ' + parsed.season_days + ' days into season';
+    }
+    return true;
+  } catch(e) {
+    console.error('player_values.json parse error:', e);
+    return false;
+  }
+}
+
+// Resolve '__value' → league-specific value column
+function tvValueKey() { return S.league + '_value'; }
+// Resolve '__esv' → league-specific expected-stats-value column
+function tvEsvKey()   { return 'expected_stats_value_' + (S.league === 'league2' ? 'l2' : 'l1'); }
+
+function getTvCols() { return TV_COLS; }
+
+function tvColKey(c) {
+  if (c.key === '__value') return tvValueKey();
+  if (c.key === '__esv')   return tvEsvKey();
+  return c.key;
+}
+
+// ─── Trade value render ───────────────────────────────────────────────────────
+const TV_VF_BUTTONS = [
+  { key:'all',       label:'All',       cls:'vf-all' },
+  { key:'Buy low',   label:'Buy Low',   cls:'vf-bl'  },
+  { key:'Sell high', label:'Sell High', cls:'vf-sh'  },
+  { key:'neutral',   label:'Neutral',   cls:'vf-nt'  },
+];
+
+function renderTV() {
+  const isTV = S.tab === 'tradevalue';
+  document.getElementById('luck-content').style.display = isTV ? 'none' : 'block';
+  document.getElementById('tv-content').style.display    = isTV ? 'block' : 'none';
+  document.getElementById('league-toggle').style.display = isTV ? '' : 'none';
+  if (!isTV) return;
+
+  // Sync league button states
+  document.getElementById('lg-btn-1').classList.toggle('active', S.league === 'league1');
+  document.getElementById('lg-btn-2').classList.toggle('active', S.league === 'league2');
+  document.getElementById('lg-btn-1').textContent = S.tvLeagueNames.league1 || 'League 1';
+  document.getElementById('lg-btn-2').textContent = S.tvLeagueNames.league2 || 'League 2';
+
+  // Sync type filter buttons
+  document.getElementById('tv-tab-all').classList.toggle('active', S.tvTab === 'all');
+  document.getElementById('tv-tab-h').classList.toggle('active',   S.tvTab === 'hitters');
+  document.getElementById('tv-tab-p').classList.toggle('active',   S.tvTab === 'pitchers');
+
+  // Render verdict filter bar
+  document.getElementById('tv-verdict-bar').innerHTML = TV_VF_BUTTONS.map(b => {
+    const active = S.tvVerdictFilter === b.key ? ' active' : '';
+    return `<button class="tv-vf-btn ${b.cls}${active}" onclick="setTvVerdict('${b.key}')">${b.label}</button>`;
+  }).join('');
+
+  if (!S.tvData) {
+    document.getElementById('tv-head').innerHTML = '';
+    document.getElementById('tv-body').innerHTML =
+      `<tr><td colspan="${TV_COLS.length}" class="tv-empty">
+         Trade value data not yet generated.<br>
+         Run <code>python score_value.py --write</code> to create
+         <code>data/player_values.json</code>, then reload the dashboard.
+       </td></tr>`;
+    document.getElementById('tv-results').textContent = '';
+    return;
+  }
+
+  renderTVTable();
+}
+
+function renderTVTable() {
+  const type = S.tvTab;   // 'all' | 'hitters' | 'pitchers'
+  const vf   = S.tvVerdictFilter;
+  const cols = getTvCols();
+  const sort = S.tvSort[type] || S.tvSort.hitters;
+  const q    = (S.tvSearch[type] || '').toLowerCase();
+  const vk   = tvValueKey();
+
+  // Pre-compute league ranks for each player type (unfiltered, full pool)
+  const rankMap = {};
+  ['hitter', 'pitcher'].forEach(ptype => {
+    (S.tvData || [])
+      .filter(p => p.type === ptype)
+      .slice()
+      .sort((a, b) => (b[vk] || 0) - (a[vk] || 0))
+      .forEach((p, i) => { rankMap[p.id] = i + 1; });
+  });
+
+  // Map tab name ('hitters') → player type ('hitter')
+  const typeFilter = { hitters: 'hitter', pitchers: 'pitcher' };
+
+  // Filter rows
+  let rows = (S.tvData || []).filter(p => {
+    if (type !== 'all' && p.type !== typeFilter[type]) return false;
+    if (q && !String(p.name || '').toLowerCase().includes(q)) return false;
+    if (vf !== 'all') {
+      const v = String(p.verdict || '').toLowerCase();
+      if (vf === 'neutral') { if (!v.includes('neutral')) return false; }
+      else                  { if (p.verdict !== vf) return false; }
+    }
+    return true;
+  });
+
+  // Sort
+  const sk = sort.col === '__value' ? vk
+           : sort.col === '__esv'   ? tvEsvKey()
+           : sort.col;
+  rows.sort((a, b) => {
+    const va = sortKey(a[sk]);
+    const vb = sortKey(b[sk]);
+    if (va === null && vb === null) return 0;
+    if (va === null) return 1;
+    if (vb === null) return -1;
+    const cmp = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
+    return sort.dir === 'desc' ? -cmp : cmp;
+  });
+
+  // Inject league rank into local row copies
+  rows = rows.map(row => ({ ...row, _rank: rankMap[row.id] }));
+
+  // Render header
+  document.getElementById('tv-head').innerHTML = '<tr>' + cols.map(c => {
+    if (c.nosort) return `<th style="cursor:default">${esc(c.label)}</th>`;
+    const active = sort.col === c.key;
+    const arr    = active ? (sort.dir === 'asc' ? ' &#9650;' : ' &#9660;') : ' <i class="sort-arrow">&#8597;</i>';
+    return `<th class="${active ? 'sorted' : ''}"
+                data-col="${c.key}"
+                onclick="onTvSort(this.dataset.col)">${esc(c.label)}${arr}</th>`;
+  }).join('') + '</tr>';
+
+  // Render body
+  if (!rows.length) {
+    document.getElementById('tv-body').innerHTML =
+      `<tr><td colspan="${cols.length}" class="tv-empty">No players found.</td></tr>`;
+    document.getElementById('tv-results').textContent = '0 players';
+    return;
+  }
+
+  document.getElementById('tv-body').innerHTML = rows.map(row => {
+    const info   = vInfo(row.verdict || '');
+    const rowCls = info.row || '';
+    const cells  = cols.map(c => {
+      const k   = tvColKey(c);
+      const fmt = F[c.fmt] || F.f1;
+      return fmt(row[k]);
+    }).join('');
+    return `<tr class="${rowCls}">${cells}</tr>`;
+  }).join('');
+
+  document.getElementById('tv-results').textContent =
+    `${rows.length.toLocaleString()} players`;
+}
+
+// ─── Trade value event handlers ───────────────────────────────────────────────
+function setLeague(lg) {
+  S.league = lg;
+  renderTV();
+}
+
+function setTvTab(tab) {
+  S.tvTab = tab;
+  document.getElementById('tv-search').value = S.tvSearch[tab] || '';
+  renderTV();
+}
+
+function setTvVerdict(v) {
+  S.tvVerdictFilter = v;
+  renderTV();
+}
+
+function onTvSort(col) {
+  const s = S.tvSort[S.tvTab] || S.tvSort.hitters;
+  s.dir = (s.col === col && s.dir === 'desc') ? 'asc' : 'desc';
+  s.col = col;
+  renderTVTable();
+}
+
+function onTvSearch(val) {
+  S.tvSearch[S.tvTab] = val;
+  renderTVTable();
+}
+
+// ─── CSV parser ───────────────────────────────────────────────────────────────
+function parseCSV(text) {
+  // Normalize line endings
+  const lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  let pos = 0;
+  const len = lines.length;
+
+  function readField() {
+    let f = '';
+    if (pos < len && lines[pos] === '"') {
+      pos++; // skip opening quote
+      while (pos < len) {
+        if (lines[pos] === '"') {
+          pos++;
+          if (pos < len && lines[pos] === '"') { f += '"'; pos++; } // escaped quote
+          else break; // closing quote
+        } else { f += lines[pos++]; }
+      }
+    } else {
+      while (pos < len && lines[pos] !== ',' && lines[pos] !== '\n') {
+        f += lines[pos++];
+      }
+    }
+    return f;
+  }
+
+  function readLine() {
+    const fields = [];
+    while (pos < len && lines[pos] !== '\n') {
+      fields.push(readField());
+      if (pos < len && lines[pos] === ',') pos++;
+    }
+    if (pos < len) pos++; // consume newline
+    return fields;
+  }
+
+  const headers = readLine().map(h => h.trim());
+  const rows = [];
+  while (pos < len) {
+    const vals = readLine();
+    if (vals.length === 0 || (vals.length === 1 && vals[0].trim() === '')) continue;
+    const obj = {};
+    headers.forEach((h, i) => { obj[h] = vals[i] !== undefined ? vals[i].trim() : ''; });
+    rows.push(obj);
+  }
+  return rows;
+}
+
+// ─── Verdict counts ───────────────────────────────────────────────────────────
+function verdictCounts(data) {
+  const c = {};
+  VERDICTS.forEach(v => { c[v.key] = 0; });
+  data.forEach(r => { if (c[r.verdict] !== undefined) c[r.verdict]++; });
+  return c;
+}
+
+// ─── Render: header meta ──────────────────────────────────────────────────────
+function renderMeta() {
+  const h = S.data.hitters.length;
+  const p = S.data.pitchers.length;
+  const now = new Date().toLocaleString('en-US',
+    { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+  document.getElementById('hdr-meta').innerHTML =
+    `${h} batters · ${p} pitchers<br>Updated ${now}`;
+}
+
+// ─── Render: signal filter button bar ────────────────────────────────────────
+function renderSignalFilterBar() {
+  const tab  = S.tab;
+  const data = S.data[tab];
+  const vf   = S.vfilter[tab];
+  const counts = verdictCounts(data);
+
+  const DEFS = [
+    { key: null,          cls:'sig-btn-all',     label:'All'         },
+    { key:'Buy low',      cls:'sig-btn-buy',      label:'🟢 Buy Low'  },
+    { key:'Slight buy',   cls:'sig-btn-sbuy',     label:'🟢 Slight Buy'},
+    { key:'Neutral',      cls:'sig-btn-neutral',  label:'⚪ Neutral'  },
+    { key:'Slight sell',  cls:'sig-btn-ssell',    label:'🟡 Slight Sell'},
+    { key:'Sell high',    cls:'sig-btn-sell',     label:'🔴 Sell High'},
+  ];
+
+  const el = document.getElementById('signal-filter-bar');
+  if (!el) return;
+  el.innerHTML = DEFS.map(d => {
+    const isActive = vf === d.key;
+    const count    = d.key ? (counts[d.key] || 0) : data.length;
+    const label    = d.key ? `${d.label} (${count})` : `All (${count})`;
+    return `<button class="sig-btn ${d.cls}${isActive ? ' active' : ''}"
+                    onclick="setSignalFilter(${d.key === null ? 'null' : `'${d.key}'`})">${label}</button>`;
+  }).join('');
+}
+
+function setSignalFilter(verdict) {
+  S.vfilter[S.tab] = verdict;
+  render();
+}
+
+// ─── Render: tier filter buttons ─────────────────────────────────────────────
+function renderTierButtons() {
+  const tab = S.tab;
+  const data = S.data[tab];
+  const tf = S.tierfilter[tab];
+
+  const TIER_DEFS = [
+    { key:'Sell and Move On',           cls:'tSellMoveOn', label:'Sell and Move On'     },
+    { key:'Sell High on Perception',    cls:'tSellPerc',   label:'Sell High on Perception' },
+    { key:'Veteran Regression',         cls:'tVetReg',     label:'Veteran Regression'   },
+    { key:'Slight Regression Expected', cls:'tSlightReg',  label:'Slight Regression'    },
+  ];
+
+  const counts = {};
+  data.forEach(r => { if (r.tier_sell) counts[r.tier_sell] = (counts[r.tier_sell] || 0) + 1; });
+  const totalTiered = Object.values(counts).reduce((a, b) => a + b, 0);
+
+  if (totalTiered === 0) {
+    document.getElementById('tier-btns').innerHTML = '';
+    return;
+  }
+
+  const btns = TIER_DEFS
+    .filter(d => counts[d.key] > 0)
+    .map(d => {
+      const act = tf === d.key ? ' active' : '';
+      return `<button class="tier-btn ${d.cls}${act}"
+                      onclick="toggleTierFilter('${d.key}')">${d.label} (${counts[d.key]})</button>`;
+    }).join('');
+  document.getElementById('tier-btns').innerHTML = '<span class="tier-label">Sell tier:</span>' + btns;
+}
+
+// ─── Render: cards ────────────────────────────────────────────────────────────
+function renderCards() {
+  const data   = S.data[S.tab];
+  const counts = verdictCounts(data);
+  const total  = data.length;
+  const vf     = S.vfilter[S.tab];
+
+  const CARD_DEF = [
+    { key:'Buy low',    cls:'vBuyLow',    label:'Buy Low'    },
+    { key:'Slight buy', cls:'vSlightBuy', label:'Slight Buy' },
+    { key:'Neutral',    cls:'vNeutral',   label:'Neutral'    },
+    { key:'Slight sell',cls:'vSlightSell',label:'Slight Sell'},
+    { key:'Sell high',  cls:'vSellHigh',  label:'Sell High'  },
+  ];
+
+  document.getElementById('cards').innerHTML = CARD_DEF.map(d => {
+    const n   = counts[d.key] || 0;
+    const pct = total ? Math.round(n / total * 100) : 0;
+    const act = vf === d.key ? ' active' : '';
+    return `<div class="v-card ${d.cls}${act}"
+                 data-verdict="${d.key}"
+                 onclick="toggleFilter(this.dataset.verdict)">
+      <div class="vc-label">${d.label}</div>
+      <div class="vc-count">${n}</div>
+      <div class="vc-pct">${pct}% of ${total}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─── Render: table ────────────────────────────────────────────────────────────
+function renderTable() {
+  if (S.viewMode === 'simple') {
+    renderSimpleTable();
+  } else {
+    renderAdvancedTable();
+  }
+}
+
+// ─── Shared filter helper ─────────────────────────────────────────────────────
+// CQS tier priority: lower = higher priority in table (SUP first)
+const CQS_TIER_RANK = { 'Superstar': 0, 'Established Star': 1, 'Solid Contributor': 2 };
+// Verdict bucket rank for primary grouping when sorting by luck_score
+const VERDICT_BUCKET_RANK = {
+  'Buy low': 0, 'Slight buy': 1, 'Neutral': 2, 'Slight sell': 3, 'Sell high': 4
+};
+
+function cqsTierRank(row, idKey) {
+  const pvEntry = S.tvById && S.tvById[String(row[idKey])];
+  const tier    = pvEntry && pvEntry.cqs_tier;
+  return CQS_TIER_RANK[tier] ?? 3; // 3 = no tag, sorts last within bucket
+}
+
+function getFilteredRows(tab) {
+  const sort  = S.sort[tab];
+  const vf    = S.vfilter[tab];
+  const tf    = S.tierfilter[tab];
+  const q     = S.search[tab].toLowerCase();
+  const idKey = tab === 'hitters' ? 'batter' : 'pitcher';
+
+  let rows = S.data[tab].filter(r => {
+    if (q && !String(r.name || '').toLowerCase().includes(q)) return false;
+    if (vf && r.verdict !== vf) return false;
+    if (tf && r.tier_sell !== tf) return false;
+    return true;
+  });
+
+  if (sort.col && sort.col !== 'verdict') {
+    const dir = sort.dir === 'asc' ? 1 : -1;
+
+    if (sort.col === 'luck_score') {
+      if (!sort.userSort) {
+        // Default sort (not user-triggered): CQS tier first, then luck_score desc within tier
+        rows = [...rows].sort((a, b) => {
+          const tierA = cqsTierRank(a, idKey);
+          const tierB = cqsTierRank(b, idKey);
+          if (tierA !== tierB) return tierA - tierB;
+          const la = toNum(a.luck_score), lb = toNum(b.luck_score);
+          if (isNaN(la) && isNaN(lb)) return 0;
+          if (isNaN(la)) return 1;
+          if (isNaN(lb)) return -1;
+          return lb - la; // luck_score desc within tier
+        });
+      } else {
+        rows = [...rows].sort((a, b) => {
+          const la = toNum(a.luck_score), lb = toNum(b.luck_score);
+          if (isNaN(la) && isNaN(lb)) return 0;
+          if (isNaN(la)) return 1;
+          if (isNaN(lb)) return -1;
+          if (!vf) {
+            // No verdict filter active: numeric sort so positives lead on desc
+            // desc → buys first (0.5, 0.3, … -0.1, -0.3); asc → sells first
+            return dir * (la - lb);
+          }
+          // Single-bucket filter active: abs sort keeps strongest signal first
+          return dir * (Math.abs(lb) - Math.abs(la));
+        });
+      }
+    } else {
+      rows = [...rows].sort((a, b) => {
+        const ka = sortKey(a[sort.col]);
+        const kb = sortKey(b[sort.col]);
+        if (ka === null && kb === null) return 0;
+        if (ka === null) return 1;
+        if (kb === null) return -1;
+        if (typeof ka === 'string' && typeof kb === 'string')
+          return dir * ka.localeCompare(kb);
+        if (typeof ka === 'string') return 1;
+        if (typeof kb === 'string') return -1;
+        return dir * (ka - kb);
+      });
+    }
+  }
+  return rows;
+}
+
+// ─── Simple view renderer ─────────────────────────────────────────────────────
+function renderSimpleTable() {
+  const tab   = S.tab;
+  const type  = tab === 'hitters' ? 'hitter' : 'pitcher';
+  const idKey = tab === 'hitters' ? 'batter' : 'pitcher';
+  const rows  = getFilteredRows(tab);
+
+  const ACTION_MAP = {
+    'Buy low':    { badge:'ab-buy',       emoji:'🟢', label:'BUY LOW'                    },
+    'Slight buy': { badge:'ab-sbuy',      emoji:'🟢', label:'SLIGHT BUY'                 },
+    'Neutral':    { badge:'ab-neutral',   emoji:'⚪', label:'NEUTRAL'                    },
+    'Slight sell':{ badge:'ab-slightreg', emoji:'🟡', label:'SLIGHT REGRESSION EXPECTED' },
+    'Sell high':  { badge:'ab-sellmove',  emoji:'🔴', label:'SELL HIGH'                  },
+  };
+
+  // Seasonal confidence label — days since 2026-03-27 season start
+  const SEASON_START = new Date('2026-03-27');
+  const daysIntoSeason = Math.floor((new Date() - SEASON_START) / 86400000);
+  const confLabel = daysIntoSeason < 1   ? null
+    : daysIntoSeason <= 35  ? 'Early signal'
+    : daysIntoSeason <= 90  ? 'Signal strengthening'
+    : daysIntoSeason <= 150 ? 'Confirmed signal'
+    :                         'Late season';
+
+  const TIER_ACTION = {
+    'Sell and Move On':           { badge:'ab-sellmove',  emoji:'🔴', label:'SELL AND MOVE ON'           },
+    'Sell High on Perception':    { badge:'ab-sellperc',  emoji:'🟠', label:'SELL HIGH ON PERCEPTION'    },
+    'Veteran Regression':         { badge:'ab-vetreg',    emoji:'🟡', label:'VETERAN REGRESSION'         },
+    'Slight Regression Expected': { badge:'ab-slightreg', emoji:'🟡', label:'SLIGHT REGRESSION EXPECTED' },
+  };
+
+  // Head — 3 columns
+  document.getElementById('tbl-head').innerHTML = `<tr>
+    <th style="cursor:default;text-align:left">Player</th>
+    <th style="cursor:default;text-align:left">Signal</th>
+    <th style="cursor:default;text-align:left">Why</th>
+  </tr>`;
+
+  if (!rows.length) {
+    document.getElementById('tbl-body').innerHTML =
+      `<tr class="no-rows"><td colspan="3">🔍 No players match your search or filter.</td></tr>`;
+    document.getElementById('results-info').textContent = `0 of ${S.data[tab].length.toLocaleString()} players`;
+    return;
+  }
+
+  document.getElementById('tbl-body').innerHTML = rows.map(r => {
+    const info    = vInfo(r.verdict);
+    const rowCls  = info.row;
+    const mlbamId = r[idKey];
+    const pos     = getPosition(mlbamId);
+
+    // Determine action label — tier overrides verdict for sell signals.
+    // For pitchers, "Sell and Move On" is the catch-all tier (fires when no specific
+    // sub-classification applies) and should not override the verdict badge; use
+    // "SELL HIGH" from ACTION_MAP instead.  Specific pitcher tiers ("Sell High on
+    // Perception", "Veteran Regression") do override.
+    const tier    = r.tier_sell;
+    const tierOverrideAllowed = tab !== 'pitchers' || tier !== 'Sell and Move On';
+    const act     = (tier && TIER_ACTION[tier] && tierOverrideAllowed) ? TIER_ACTION[tier]
+                  : (ACTION_MAP[r.verdict] || ACTION_MAP['Neutral']);
+
+    // Age warning
+    const ageWarn = (r.age_flag && r.age_flag !== 'nan' && r.age_flag !== 'None' && r.age_flag !== '')
+      ? `<span class="age-warn" title="${esc(r.age_flag)}">⚠ ${parseInt(r.age)||''}</span>` : '';
+
+    // Park change badge
+    const parkBadge = (r.park_change === 'True' || r.park_change === true)
+      ? `<span class="park-badge" title="${esc(r.park_change_label || 'Park change — career baseline less reliable')}">⚠ Park</span>` : '';
+
+    // Hitter trade value gate: buy low only surfaces if player has meaningful value
+    let finalAct = act;
+    let explain;
+    const pvEntry = S.tvById && S.tvById[String(mlbamId)];
+    if (tab === 'hitters' && (r.verdict === 'Buy low' || r.verdict === 'Slight buy')) {
+      const maxTv = pvEntry ? Math.max(pvEntry.league1_value || 0, pvEntry.league2_value || 0) : 0;
+      if (maxTv === 0 && pvEntry) {
+        finalAct = ACTION_MAP['Neutral'];
+        explain = `Strong luck signal but underlying metrics project modest recovery ceiling — buy for regression, not for star upside`;
+      } else if (maxTv < 20) {
+        finalAct = ACTION_MAP['Neutral'];
+        const fn2 = esc((r.name || '').split(' ')[0]);
+        explain = `${fn2} is unlucky but projected value after regression may not be worth a roster spot`;
+      }
+    }
+    if (explain === undefined) explain = generateExplanation(r, type, pvEntry);
+
+    // CQS floor badge: append tier indicator when floor was applied
+    let cqsBadge = '';
+    if (pvEntry && pvEntry.cqs_floor_applied && pvEntry.cqs_tier) {
+      const tierShort = { 'Superstar': 'SUP', 'Established Star': 'EST', 'Solid Contributor': 'SOL' }[pvEntry.cqs_tier] || '';
+      if (tierShort) cqsBadge = ` <span class="cqs-badge" title="Career Quality Score floor applied (${pvEntry.cqs_tier})">${tierShort}</span>`;
+    }
+
+    // Seasonal pattern badge — from player_values.json (pvEntry) with CSV fallback
+    const sp = (pvEntry && pvEntry.seasonal_pattern) || r.seasonal_pattern || '';
+    let seasonalBadge = '';
+    if (sp && sp !== '' && sp !== 'nan' && sp !== 'None' && sp !== 'null') {
+      const isVshape = sp.includes('V-shape');
+      seasonalBadge = isVshape
+        ? `<span class="seasonal-star" title="${esc(sp)}">&#9733;</span>`
+        : `<span class="seasonal-dot"  title="${esc(sp)}">&#9679;</span>`;
+    }
+
+    const fpRank = r.fp_rank || (pvEntry && pvEntry.fp_rank);
+    const rankBadge = (fpRank && fpRank <= 50)
+      ? ` <span class="rank-badge" title="FantasyPros consensus rank #${fpRank}">#${fpRank}</span>`
+      : '';
+    const ownPct = toNum(r.owned_pct);
+    const ownLabel = !isNaN(ownPct)
+      ? `<span class="own-label">${ownPct.toFixed(1)}% owned</span>`
+      : '';
+    // Simple View: name + pos tag + own% + badges, all in one cell
+    const posTag = pos ? ` <span style="font-size:10px;color:var(--muted);font-weight:600">${esc(pos)}</span>` : '';
+    const playerNameCell = `<td class="name-cell">${esc(r.name || '—')}${posTag}${ageWarn}${parkBadge}${cqsBadge}${rankBadge}${ownLabel}</td>`;
+
+    const showConf = confLabel && (r.verdict === 'Buy low' || r.verdict === 'Sell high');
+    const confSpan = showConf ? `<span class="signal-conf">${confLabel}</span>` : '';
+    const volBadge = (tab === 'pitchers' && (r.volatility_flag === true || r.volatility_flag === 'True'))
+      ? `<span class="volatility-badge" title="${esc(r.volatility_label || 'High variance — signals less reliable')}">⚡</span>` : '';
+    const actionCell = `<td class="action-cell"><span class="action-badge ${finalAct.badge}">${finalAct.emoji} ${finalAct.label}</span>${volBadge}${seasonalBadge}${confSpan}</td>`;
+
+    // Truncate explanation to 120 chars; full text on hover
+    const short = explain.length > 120 ? explain.slice(0, 117) + '…' : explain;
+    const explainCell = `<td class="explain-cell"><span class="explain-text" title="${esc(explain)}">${esc(short)}</span></td>`;
+
+    return `<tr class="${rowCls}">${playerNameCell}${actionCell}${explainCell}</tr>`;
+  }).join('');
+
+  document.getElementById('results-info').textContent =
+    `${rows.length.toLocaleString()} of ${S.data[tab].length.toLocaleString()} players`;
+}
+
+// ─── Advanced view renderer ───────────────────────────────────────────────────
+function renderAdvancedTable() {
+  const tab  = S.tab;
+  const cols = tab === 'hitters' ? HITTER_COLS : PITCHER_COLS;
+  const sort = S.sort[tab];
+  const rows = getFilteredRows(tab);
+
+  // Head
+  const headHTML = '<tr>' + cols.map(c => {
+    if (c.nosort)
+      return `<th style="cursor:default">${c.label}</th>`;
+    const sorted = sort.col === c.key;
+    const arrow  = sorted
+      ? (sort.dir === 'desc' ? ' ↓' : ' ↑')
+      : ' <i class="sort-arrow">↕</i>';
+    return `<th class="${sorted ? 'sorted' : ''}"
+                onclick="onSort('${c.key}')"
+            >${c.label}${arrow}</th>`;
+  }).join('') + '</tr>';
+  document.getElementById('tbl-head').innerHTML = headHTML;
+
+  // Body
+  let bodyHTML;
+  if (rows.length === 0) {
+    bodyHTML = `<tr class="no-rows"><td colspan="${cols.length}">
+      🔍 No players match your search or filter.
+    </td></tr>`;
+  } else {
+    bodyHTML = rows.map(r => {
+      const info   = vInfo(r.verdict);
+      const rowCls = info.row;
+      const cells  = cols.map(c => F[c.fmt](r[c.key], r)).join('');
+      return `<tr class="${rowCls}">${cells}</tr>`;
+    }).join('');
+  }
+  document.getElementById('tbl-body').innerHTML = bodyHTML;
+
+  document.getElementById('results-info').textContent =
+    `${rows.length.toLocaleString()} of ${S.data[tab].length.toLocaleString()} players`;
+}
+
+// ─── Render: legend ───────────────────────────────────────────────────────────
+function renderLegend() {
+  const isH = S.tab === 'hitters';
+  const items = isH
+    ? [
+        ['BABIP',      'Batting avg on balls in play — primary luck signal (weight −3.0)'],
+        ['HR/FB%',     'Home runs per fly ball — regresses strongly to mean (weight −0.15)'],
+        ['xwOBA Gap',  'xwOBA − wOBA: positive = underperformed contact quality = unlucky (weight +1.0)'],
+        ['Z-Con%',     'In-zone contact rate (weight −0.03)'],
+        ['Hard Hit%',  'Exit velo ≥ 95 mph / all BBE — display only, not in v2 scoring'],
+        ['Barrel%',    'Barrels / all BBE — display only, not in v2 scoring'],
+      ]
+    : [
+        ['ERA−FIP',   'ERA above FIP — positive = unlucky'],
+        ['xERA',      'Expected ERA from xwOBA allowed'],
+        ['BABIP',     'Hits on BIP allowed / total BIP'],
+        ['LOB%',      'Strand rate — low = unlucky'],
+        ['SwStr%',    'Swinging-strike rate'],
+        ['Hard Hit%', 'BBE ≥ 95 mph allowed'],
+      ];
+
+  const sign = '<strong>+score = unlucky (buy low) · −score = lucky (sell high)</strong>';
+  const cols = items.map(([k,v]) =>
+    `<span class="legend-item"><strong>${k}:</strong> ${v}</span>`
+  ).join('');
+
+  document.getElementById('legend').innerHTML =
+    `<span>${sign}</span>${cols}`;
+}
+
+// ─── Full render ──────────────────────────────────────────────────────────────
+function render() {
+  renderCards();
+  renderSignalFilterBar();
+  renderTierButtons();
+  renderTable();
+  renderLegend();
+  const vf = S.vfilter[S.tab];
+  const tf = S.tierfilter[S.tab];
+  document.getElementById('clear-btn').classList.toggle('on', !!(vf || tf));
+  document.getElementById('cards').classList.toggle('has-filter', !!vf);
+}
+
+// ─── Event handlers ───────────────────────────────────────────────────────────
+function setTab(tab) {
+  S.tab = tab;
+  document.getElementById('tab-h').classList.toggle('active',  tab === 'hitters');
+  document.getElementById('tab-p').classList.toggle('active',  tab === 'pitchers');
+  document.getElementById('tab-tv').classList.toggle('active', tab === 'tradevalue');
+
+  if (tab === 'tradevalue') {
+    if (!S.taBuilt) { buildPlayerIndex(); loadLeagueSettings(); S.taBuilt = true; }
+    renderTV();
+  } else {
+    renderTV(); // hides TV, shows luck-content
+    document.getElementById('search').value = S.search[tab];
+    _syncViewButtons();
+    render();
+  }
+}
+
+function onSort(col) {
+  const s = S.sort[S.tab];
+  // Toggle direction only when re-clicking a column the user already explicitly sorted.
+  // First click on any column (or transitioning from default load) always starts desc.
+  if (s.userSort && s.col === col) {
+    s.dir = s.dir === 'desc' ? 'asc' : 'desc';
+  } else {
+    s.dir = 'desc';
+  }
+  s.col = col;
+  s.userSort = true;
+  renderTable();
+}
+
+function onSearch(val) {
+  S.search[S.tab] = val;
+  renderTable();
+}
+
+function toggleFilter(verdict) {
+  S.vfilter[S.tab] = S.vfilter[S.tab] === verdict ? null : verdict;
+  render();
+}
+
+function toggleTierFilter(tier) {
+  S.tierfilter[S.tab] = S.tierfilter[S.tab] === tier ? null : tier;
+  render();
+}
+
+function clearFilter() {
+  S.vfilter[S.tab]    = null;
+  S.tierfilter[S.tab] = null;
+  render();
+}
+
+// ─── Screen helpers ───────────────────────────────────────────────────────────
+function showScreen(id) {
+  ['spin-screen','load-screen','dash-screen'].forEach(s => {
+    document.getElementById(s).classList.toggle('visible', s === id);
+  });
+}
+
+// ─── File input handler ───────────────────────────────────────────────────────
+function loadFile(input, type) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const parsed = parseCSV(e.target.result);
+    S.data[type]  = parsed;
+    S.ready[type] = true;
+
+    const rowEl = document.getElementById(`fr-${type}`);
+    const stEl  = document.getElementById(`fs-${type}`);
+    rowEl.classList.add('loaded');
+    stEl.textContent = `✓ ${parsed.length.toLocaleString()} rows loaded`;
+
+    if (S.ready.hitters && S.ready.pitchers) {
+      // Fetch player_values.json if not yet loaded (file-picker path skips init fetch)
+      if (!S.tvData) {
+        fetch('data/player_values.json')
+          .then(r => r.ok ? r.text() : null)
+          .catch(() => null)
+          .then(txt => {
+            if (txt) loadPlayerValues(txt);
+            buildPlayerIndex();
+            loadLeagueSettings();
+            S.taBuilt = true;
+          });
+      } else if (!S.taBuilt) {
+        buildPlayerIndex();
+        loadLeagueSettings();
+        S.taBuilt = true;
+      }
+      renderMeta();
+      showScreen('dash-screen');
+      render();
+    }
+  };
+  reader.readAsText(file, 'UTF-8');
+}
+
+// ─── TV mode switch ───────────────────────────────────────────────────────────
+function setTvMode(mode) {
+  S.tvMode = mode;
+  renderTV();
+}
+
+// ─── Trade Analyzer ───────────────────────────────────────────────────────────
+
+const TA_MAXES = { giving: 4, getting: 4, dropping: 2 };
+
+function normalizeName(s) {
+  return String(s || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9 ]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildPlayerIndex() {
+  S.taByName = {};
+  S.taById   = {};
+  (S.tvData || []).forEach(p => {
+    const key = normalizeName(p.name);
+    if (!S.taByName[key]) S.taByName[key] = p;  // first match wins
+    if (p.id) S.taById[String(p.id)] = p;
+  });
+  // Index luck score rows by player id
+  S.hLuckById = {};
+  (S.data.hitters || []).forEach(r => {
+    const id = r.batter || r.id;
+    if (id) S.hLuckById[String(id)] = r;
+  });
+  S.pLuckById = {};
+  (S.data.pitchers || []).forEach(r => {
+    const id = r.pitcher || r.id;
+    if (id) S.pLuckById[String(id)] = r;
+  });
+}
+
+function taSearchPlayers(q, excludeIds) {
+  const qn   = normalizeName(q);
+  if (qn.length < 2) return [];
+  const excl = new Set((excludeIds || []).map(String));
+  return (S.tvData || [])
+    .filter(p => {
+      if (excl.has(String(p.id))) return false;
+      return normalizeName(p.name).includes(qn);
+    })
+    .sort((a, b) => {
+      const an = normalizeName(a.name);
+      const bn = normalizeName(b.name);
+      const aStart = an.startsWith(qn) ? 0 : 1;
+      const bStart = bn.startsWith(qn) ? 0 : 1;
+      if (aStart !== bStart) return aStart - bStart;
+      const aRank = toNum(a.fp_rank) || 9999;
+      const bRank = toNum(b.fp_rank) || 9999;
+      return aRank - bRank;
+    })
+    .slice(0, 8);
+}
+
+// All currently selected IDs across all sides
+function taAllSelectedIds() {
+  return [
+    ...S.ta.giving.map(p => String(p.id)),
+    ...S.ta.getting.map(p => String(p.id)),
+    ...S.ta.dropping.map(p => String(p.id)),
+  ];
+}
+
+// ── Dropdown ──────────────────────────────────────────────────────────────────
+function onTaSearch(q, side) {
+  if (!q || q.length < 2) { closeTaDropdown(side); return; }
+  // Lazy index rebuild: covers the file-picker path where async fetch may not be done yet
+  if (!S.taBuilt || Object.keys(S.taById).length === 0) {
+    buildPlayerIndex();
+    loadLeagueSettings();
+    S.taBuilt = true;
+  }
+  const matches = taSearchPlayers(q, taAllSelectedIds());
+  renderTaDropdown(matches, side);
+}
+
+function onTaFocus(side) {
+  const inp = document.getElementById(`ta-search-${side}`);
+  if (inp && inp.value.length >= 2) onTaSearch(inp.value, side);
+}
+
+function renderTaDropdown(matches, side) {
+  const dd = document.getElementById(`ta-dd-${side}`);
+  if (!dd) return;
+  if (!matches.length) {
+    if (!S.tvData) {
+      dd.innerHTML = `<div class="ta-dd-item" style="color:#94a3b8;font-size:11px;cursor:default">
+        player_values.json not loaded — run the pipeline and reload</div>`;
+      dd.classList.add('open');
+    } else {
+      closeTaDropdown(side);
+    }
+    return;
+  }
+
+  dd.innerHTML = matches.map(p => {
+    const info = vInfo(p.verdict);
+    const isH  = p.type === 'hitter';
+    const lRow = isH ? (S.hLuckById[String(p.id)] || {}) : (S.pLuckById[String(p.id)] || {});
+    const team = lRow.Team || lRow.team || '';
+    const pos  = p.pos || (isH ? 'H' : 'P');
+    const rankStr = toNum(p.fp_rank) ? `#${p.fp_rank}` : '';
+
+    return `<div class="ta-dd-item"
+                 onmousedown="event.preventDefault(); addTaPlayer('${String(p.id)}', '${side}')">
+      <div style="flex:1;min-width:0">
+        <div class="ta-dd-name">${esc(p.name)}</div>
+        <div class="ta-dd-sub">${[pos, team, rankStr].filter(Boolean).join(' · ')}</div>
+      </div>
+      <span class="ta-dd-badge ${info.cls}">${info.label}</span>
+    </div>`;
+  }).join('');
+
+  dd.classList.add('open');
+}
+
+function closeTaDropdown(side) {
+  const dd = document.getElementById(`ta-dd-${side}`);
+  if (dd) dd.classList.remove('open');
+}
+
+function closeTaDropdownDelayed(side) {
+  setTimeout(() => closeTaDropdown(side), 200);
+}
+
+// ── Player card management ────────────────────────────────────────────────────
+function addTaPlayer(idStr, side) {
+  const p = S.taById[String(idStr)];
+  if (!p) return;
+  if (S.ta[side].length >= TA_MAXES[side]) return;
+  if (S.ta[side].some(x => String(x.id) === String(p.id))) return;
+  S.ta[side].push(Object.assign({}, p));
+  renderTaCards(side);
+  updateTaAnalyzeButton();
+  const inp = document.getElementById(`ta-search-${side}`);
+  if (inp) inp.value = '';
+  closeTaDropdown(side);
+  // Clear stale results when roster changes
+  if (S.ta.results) {
+    document.getElementById('ta-results').classList.remove('visible');
+    S.ta.results = null;
+  }
+}
+
+function removeTaPlayer(idStr, side) {
+  S.ta[side] = S.ta[side].filter(p => String(p.id) !== String(idStr));
+  renderTaCards(side);
+  updateTaAnalyzeButton();
+  if (S.ta.results) {
+    document.getElementById('ta-results').classList.remove('visible');
+    S.ta.results = null;
+  }
+}
+
+function renderTaCards(side) {
+  const players = S.ta[side];
+  const el      = document.getElementById(`ta-cards-${side}`);
+  const cntEl   = document.getElementById(`ta-count-${side}`);
+  if (cntEl) cntEl.textContent = players.length;
+  if (!el) return;
+
+  if (!players.length) {
+    const hints = { giving:'Search for players above', getting:'Search for players above', dropping:'Waiver drops (optional)' };
+    el.innerHTML = `<div class="ta-empty-hint">${hints[side]}</div>`;
+    return;
+  }
+
+  el.innerHTML = players.map(p => buildTaCardHtml(p, side)).join('');
+}
+
+function buildTaCardHtml(p, side) {
+  const info  = vInfo(p.verdict);
+  const isH   = p.type === 'hitter';
+  const lRow  = isH ? (S.hLuckById[String(p.id)] || {}) : (S.pLuckById[String(p.id)] || {});
+  const team  = lRow.Team || lRow.team || '';
+  const pos   = p.pos || (isH ? '—' : 'P');
+
+  let currentLine = '', projLine = '';
+  if (isH) {
+    const woba  = toNum(lRow.wOBA);
+    const babip = toNum(lRow.BABIP);
+    if (!isNaN(woba))  currentLine += `wOBA .<strong>${Math.round(woba*1000).toString().padStart(3,'0')}</strong> `;
+    if (!isNaN(babip)) currentLine += `BABIP .<strong>${Math.round(babip*1000).toString().padStart(3,'0')}</strong>`;
+    const avg = toNum(p.proj_AVG), hr = toNum(p.proj_HR), r = toNum(p.proj_R);
+    const rbi = toNum(p.proj_RBI), sb = toNum(p.proj_SB);
+    projLine = [
+      !isNaN(avg) ? `AVG .<strong>${Math.round(avg*1000).toString().padStart(3,'0')}</strong>` : null,
+      !isNaN(hr)  ? `HR <strong>${Math.round(hr)}</strong>` : null,
+      !isNaN(r)   ? `R <strong>${Math.round(r)}</strong>` : null,
+      !isNaN(rbi) ? `RBI <strong>${Math.round(rbi)}</strong>` : null,
+      !isNaN(sb)  ? `SB <strong>${Math.round(sb)}</strong>` : null,
+    ].filter(Boolean).join(' · ');
+  } else {
+    const era = toNum(lRow.ERA), fip = toNum(lRow.FIP);
+    if (!isNaN(era)) currentLine += `ERA <strong>${era.toFixed(2)}</strong> `;
+    if (!isNaN(fip)) currentLine += `FIP <strong>${fip.toFixed(2)}</strong>`;
+    const pEra = toNum(p.proj_ERA), pWhip = toNum(p.proj_WHIP);
+    const pK   = toNum(p.proj_K),   pW    = toNum(p.proj_W);
+    projLine = [
+      !isNaN(pEra)  ? `ERA <strong>${pEra.toFixed(2)}</strong>` : null,
+      !isNaN(pWhip) ? `WHIP <strong>${pWhip.toFixed(2)}</strong>` : null,
+      !isNaN(pK)    ? `K <strong>${Math.round(pK)}</strong>` : null,
+      !isNaN(pW)    ? `W <strong>${Math.round(pW)}</strong>` : null,
+    ].filter(Boolean).join(' · ');
+  }
+
+  const newPitches = (lRow.new_pitches || '').split(',').filter(x => x.trim().length > 0);
+  const evoSwstr  = toNum(lRow.swstr_gap);
+  const hasEvo = !isH && (newPitches.length >= 2 || (!isNaN(evoSwstr) && evoSwstr > 0.015));
+  const evoBadge = hasEvo ? `<div class="ta-evo-badge">⚡ New Pitcher — career discounted</div>` : '';
+
+  return `<div class="ta-player-card">
+    <div class="ta-card-top">
+      <div>
+        <div class="ta-card-name">${esc(p.name)}</div>
+        <div class="ta-card-meta">${esc(pos)} · ${esc(team)}</div>
+      </div>
+      <button class="ta-remove-btn"
+              onclick="removeTaPlayer('${esc(String(p.id))}','${side}')"
+              title="Remove">&times;</button>
+    </div>
+    <span class="ta-card-badge ${info.cls}">${info.label}</span>
+    ${currentLine ? `<div class="ta-card-stats">${currentLine}</div>` : ''}
+    <div class="ta-card-stats">Proj: ${projLine || '—'}</div>
+    ${evoBadge}
+  </div>`;
+}
+
+function updateTaAnalyzeButton() {
+  const btn = document.getElementById('ta-analyze-btn');
+  if (btn) btn.disabled = !(S.ta.giving.length > 0 && S.ta.getting.length > 0);
+}
+
+// ── Trade computation ─────────────────────────────────────────────────────────
+function getTaProj(p) {
+  const isH = p.type === 'hitter';
+  if (isH) return {
+    type: 'hitter',
+    AVG: toNum(p.proj_AVG), OBP: toNum(p.proj_OBP),
+    HR:  toNum(p.proj_HR),  R:   toNum(p.proj_R),
+    RBI: toNum(p.proj_RBI), SB:  toNum(p.proj_SB),
+    PA:  toNum(p.PA_proj),
+  };
+  return {
+    type: 'pitcher',
+    ERA:  toNum(p.proj_ERA),  WHIP: toNum(p.proj_WHIP),
+    K:    toNum(p.proj_K),    W:    toNum(p.proj_W),
+    SVH:  toNum(p.proj_SVH_L1),
+    IP:   toNum(p.IP_proj),
+  };
+}
+
+function computeTaSide(players) {
+  const hitters  = players.filter(p => p.type === 'hitter');
+  const pitchers = players.filter(p => p.type === 'pitcher');
+
+  let totalPA = 0, wAVG = 0, wOBP = 0, HR = 0, R = 0, RBI = 0, SB = 0;
+  hitters.forEach(p => {
+    const proj = getTaProj(p);
+    const pa   = isNaN(proj.PA) || proj.PA <= 0 ? 500 : proj.PA;
+    totalPA += pa;
+    if (!isNaN(proj.AVG)) wAVG += proj.AVG * pa;
+    if (!isNaN(proj.OBP)) wOBP += proj.OBP * pa;
+    if (!isNaN(proj.HR))  HR  += proj.HR;
+    if (!isNaN(proj.R))   R   += proj.R;
+    if (!isNaN(proj.RBI)) RBI += proj.RBI;
+    if (!isNaN(proj.SB))  SB  += proj.SB;
+  });
+  const h = hitters.length ? {
+    AVG: totalPA ? wAVG / totalPA : NaN,
+    OBP: totalPA ? wOBP / totalPA : NaN,
+    HR, R, RBI, SB, PA: totalPA, count: hitters.length,
+  } : null;
+
+  let totalIP = 0, wERA = 0, wWHIP = 0, K = 0, W = 0, SVH = 0;
+  pitchers.forEach(p => {
+    const proj = getTaProj(p);
+    const ip   = isNaN(proj.IP) || proj.IP <= 0 ? 150 : proj.IP;
+    totalIP += ip;
+    if (!isNaN(proj.ERA))  wERA  += proj.ERA  * ip;
+    if (!isNaN(proj.WHIP)) wWHIP += proj.WHIP * ip;
+    if (!isNaN(proj.K))    K  += proj.K;
+    if (!isNaN(proj.W))    W  += proj.W;
+    if (!isNaN(proj.SVH))  SVH += proj.SVH;
+  });
+  const pit = pitchers.length ? {
+    ERA:  totalIP ? wERA  / totalIP : NaN,
+    WHIP: totalIP ? wWHIP / totalIP : NaN,
+    K, W, SVH, IP: totalIP, count: pitchers.length,
+  } : null;
+
+  return { h, pit };
+}
+
+function computeNetStats(getting, giving, dropping) {
+  const ls   = S.taLeague;
+  const netH = {}, netP = {};
+  let wonCats = 0, totalCats = 0;
+
+  const g = getting, v = giving, d = dropping;
+
+  // Helper: net = getting - giving - drop (for counting stats)
+  //         for rate stats weighted by PA/IP
+  if (g.h || v.h) {
+    const gh = g.h || {}, vh = v.h || {}, dh = (d && d.h) ? d.h : {};
+    const hCats = [
+      { key:'AVG', label:'AVG', isRate:true,  active: ls.hCats.includes('avg'), thresh: 0.003 },
+      { key:'HR',  label:'HR',  isRate:false, active: ls.hCats.includes('hr'),  thresh: 1 },
+      { key:'R',   label:'R',   isRate:false, active: ls.hCats.includes('r'),   thresh: 2 },
+      { key:'RBI', label:'RBI', isRate:false, active: ls.hCats.includes('rbi'), thresh: 2 },
+      { key:'SB',  label:'SB',  isRate:false, active: ls.hCats.includes('sb'),  thresh: 1 },
+      { key:'OBP', label:'OBP', isRate:true,  active: ls.hCats.includes('obp'), thresh: 0.005 },
+    ];
+    hCats.forEach(cat => {
+      if (!cat.active) return;
+      const gv = gh[cat.key] || 0, vv = vh[cat.key] || 0, dv = dh[cat.key] || 0;
+      const net = gv - vv - dv;
+      netH[cat.key] = { val: net, label: cat.label, isRate: cat.isRate };
+      totalCats++;
+      if (net > cat.thresh) wonCats++;
+    });
+  }
+
+  if (g.pit || v.pit) {
+    const gp = g.pit || {}, vp = v.pit || {}, dp = (d && d.pit) ? d.pit : {};
+    const pCats = [
+      { key:'ERA',  label:'ERA',  lower:true,  active: ls.pCats.includes('era'),  thresh: 0.08 },
+      { key:'WHIP', label:'WHIP', lower:true,  active: ls.pCats.includes('whip'), thresh: 0.02 },
+      { key:'K',    label:'K',    lower:false, active: ls.pCats.includes('k'),    thresh: 4 },
+      { key:'W',    label:'W',    lower:false, active: ls.pCats.includes('w'),    thresh: 1 },
+      { key:'SVH',  label:'SV+H', lower:false, active: ls.pCats.includes('svh'),  thresh: 1 },
+    ];
+    pCats.forEach(cat => {
+      if (!cat.active) return;
+      const gv = gp[cat.key] || 0, vv = vp[cat.key] || 0, dv = dp[cat.key] || 0;
+      const net = gv - vv - dv;
+      const eff = cat.lower ? -net : net;   // flip sign: lower ERA = better for you
+      netP[cat.key] = { val: net, label: cat.label, lower: cat.lower };
+      totalCats++;
+      if (eff > cat.thresh) wonCats++;
+    });
+  }
+
+  return { netH, netP, wonCats, totalCats };
+}
+
+function taComputeVerdict(wonCats, totalCats) {
+  if (totalCats === 0) return { cls:'vb-neutral', icon:'⚠️', label:'No Data', sub:'Add players to both sides' };
+  const pct = wonCats / totalCats;
+  if (pct >= 0.75) return { cls:'vb-strong',  icon:'✅', label:'Strong Trade',  sub:`You win ${wonCats} of ${totalCats} categories` };
+  if (pct >= 0.60) return { cls:'vb-favor',   icon:'✅', label:'Favorable',     sub:'Slight edge in your favor'              };
+  if (pct >= 0.40) return { cls:'vb-neutral', icon:'⚠️', label:'Neutral',       sub:'Even trade — depends on your needs'     };
+  if (pct >= 0.25) return { cls:'vb-unfavor', icon:'⚠️', label:'Unfavorable',   sub:'Trade partner has the edge'             };
+  return               { cls:'vb-avoid',   icon:'❌', label:'Avoid',          sub:'Trade strongly favors your partner'     };
+}
+
+function taSignalNote(giving, getting) {
+  const buyLow    = v => v === 'Buy low';
+  const slightBuy = v => v === 'Slight buy';
+  const sellHigh  = v => v === 'Sell high';
+  const gvBL  = giving.filter(p => buyLow(p.verdict)).length;
+  const gtBL  = getting.filter(p => buyLow(p.verdict)).length;
+  const gvSH  = giving.filter(p => sellHigh(p.verdict)).length;
+  const gtSH  = getting.filter(p => sellHigh(p.verdict)).length;
+  const gvBuy = giving.filter(p => buyLow(p.verdict) || slightBuy(p.verdict)).length;
+  const gtBuy = getting.filter(p => buyLow(p.verdict) || slightBuy(p.verdict)).length;
+  const gvSell = giving.filter(p => ['Sell high','Slight sell'].includes(p.verdict)).length;
+  const gtSell = getting.filter(p => ['Sell high','Slight sell'].includes(p.verdict)).length;
+
+  const note = `Giving: ${gvBuy} buy${gvBuy !== 1 ? 's' : ''}, ${gvSell} sell${gvSell !== 1 ? 's' : ''} · Getting: ${gtBuy} buy${gtBuy !== 1 ? 's' : ''}, ${gtSell} sell${gtSell !== 1 ? 's' : ''}`;
+  let msg = '';
+  if (gvBL > 0 && gtSH > 0 && gtBL === 0)
+    msg = '⚠️ Signal alert: giving up buy-low players for sell-highs';
+  else if (gtBL > 0 && gvSH > 0 && gvBL === 0)
+    msg = '✅ Signal edge: getting buy-low players, giving sell-highs';
+  else if (gtBL > gvBL)
+    msg = '✅ Signal edge: more buy-low upside on your return';
+  else if (gvBL > gtBL)
+    msg = '⚠️ Signal note: giving more buy-low value than receiving';
+  return { note, msg };
+}
+
+function analyzeTrade() {
+  if (!S.ta.giving.length || !S.ta.getting.length) return;
+
+  const givingSum  = computeTaSide(S.ta.giving);
+  const gettingSum = computeTaSide(S.ta.getting);
+  const dropSum    = S.ta.dropping.length ? computeTaSide(S.ta.dropping) : null;
+  const { netH, netP, wonCats, totalCats } = computeNetStats(gettingSum, givingSum, dropSum);
+  const verdict  = taComputeVerdict(wonCats, totalCats);
+  const signal   = taSignalNote(S.ta.giving, S.ta.getting);
+
+  S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal };
+  renderTradeResults();
+}
+
+// ── Results rendering ─────────────────────────────────────────────────────────
+function renderTradeResults() {
+  const r = S.ta.results;
+  if (!r) return;
+  const el = document.getElementById('ta-results');
+  el.classList.add('visible');
+
+  document.getElementById('ta-sides').innerHTML =
+    buildTaSideHtml('giving',  S.ta.giving,  r.givingSum) +
+    buildTaSideHtml('getting', S.ta.getting, r.gettingSum);
+
+  renderTaNetBar(r.netH, r.netP);
+
+  const v = r.verdict;
+  const vEl = document.getElementById('ta-verdict-banner');
+  vEl.className = `ta-verdict-banner ${v.cls}`;
+  vEl.innerHTML = `
+    <div class="ta-verdict-icon">${v.icon}</div>
+    <div class="ta-verdict-label">${v.label}</div>
+    <div class="ta-verdict-sub">${v.sub}</div>
+    <div class="ta-verdict-signal" style="margin-top:6px">${r.signal.note}</div>
+    ${r.signal.msg ? `<div class="ta-verdict-signal" style="margin-top:3px;font-weight:700">${r.signal.msg}</div>` : ''}
+  `;
+
+  setTimeout(() => el.scrollIntoView({ behavior:'smooth', block:'nearest' }), 80);
+}
+
+function buildTaSideHtml(side, players, summary) {
+  const cls   = side === 'giving' ? 'ta-side-giving' : 'ta-side-getting';
+  const lbl   = side === 'giving' ? `Giving Away (${players.length})` : `Getting (${players.length})`;
+
+  const playerHtml = players.map(p => {
+    const info = vInfo(p.verdict);
+    const isH  = p.type === 'hitter';
+    const lRow = isH ? (S.hLuckById[String(p.id)] || {}) : (S.pLuckById[String(p.id)] || {});
+    const team = lRow.Team || lRow.team || '';
+    const pos  = p.pos || (isH ? '—' : 'P');
+
+    let cur = '', proj = '';
+    if (isH) {
+      const pa = toNum(lRow.PA), woba = toNum(lRow.wOBA), babip = toNum(lRow.BABIP);
+      const parts = [];
+      if (!isNaN(pa))    parts.push(`${Math.round(pa)} PA`);
+      if (!isNaN(woba))  parts.push(`wOBA .<strong>${Math.round(woba*1000).toString().padStart(3,'0')}</strong>`);
+      if (!isNaN(babip)) parts.push(`BABIP .<strong>${Math.round(babip*1000).toString().padStart(3,'0')}</strong>`);
+      cur = parts.join(' · ');
+      const avg = toNum(p.proj_AVG), hr = toNum(p.proj_HR), r2 = toNum(p.proj_R);
+      const rbi = toNum(p.proj_RBI), sb = toNum(p.proj_SB);
+      proj = [
+        !isNaN(avg) ? `AVG .<strong>${Math.round(avg*1000).toString().padStart(3,'0')}</strong>` : null,
+        !isNaN(hr)  ? `HR <strong>${Math.round(hr)}</strong>` : null,
+        !isNaN(r2)  ? `R <strong>${Math.round(r2)}</strong>` : null,
+        !isNaN(rbi) ? `RBI <strong>${Math.round(rbi)}</strong>` : null,
+        !isNaN(sb)  ? `SB <strong>${Math.round(sb)}</strong>` : null,
+      ].filter(Boolean).join(' · ');
+    } else {
+      const ip = toNum(lRow.IP), era = toNum(lRow.ERA), fip = toNum(lRow.FIP);
+      const parts = [];
+      if (!isNaN(ip))  parts.push(`${ip.toFixed(1)} IP`);
+      if (!isNaN(era)) parts.push(`ERA <strong>${era.toFixed(2)}</strong>`);
+      if (!isNaN(fip)) parts.push(`FIP <strong>${fip.toFixed(2)}</strong>`);
+      cur = parts.join(' · ');
+      const pEra = toNum(p.proj_ERA), pWhip = toNum(p.proj_WHIP);
+      const pK   = toNum(p.proj_K),   pW    = toNum(p.proj_W);
+      proj = [
+        !isNaN(pEra)  ? `ERA <strong>${pEra.toFixed(2)}</strong>` : null,
+        !isNaN(pWhip) ? `WHIP <strong>${pWhip.toFixed(2)}</strong>` : null,
+        !isNaN(pK)    ? `K <strong>${Math.round(pK)}</strong>` : null,
+        !isNaN(pW)    ? `W <strong>${Math.round(pW)}</strong>` : null,
+      ].filter(Boolean).join(' · ');
+    }
+
+    const rNewPitches = (lRow.new_pitches || '').split(',').filter(x => x.trim().length > 0);
+    const rEvoSwstr   = toNum(lRow.swstr_gap);
+    const hasEvo = !isH && (rNewPitches.length >= 2 || (!isNaN(rEvoSwstr) && rEvoSwstr > 0.015));
+    const evoBadge = hasEvo ? `<span class="ta-evo-badge">⚡ New Pitcher — career discounted</span>` : '';
+
+    return `<div class="ta-result-player">
+      <div class="ta-rp-name">
+        ${esc(p.name)}
+        <span class="badge ${info.cls}" style="font-size:10px">${info.label}</span>
+        ${evoBadge}
+      </div>
+      <div class="ta-rp-meta">${esc(pos)} · ${esc(team)}</div>
+      ${cur  ? `<div class="ta-rp-stats">${cur}</div>` : ''}
+      ${proj ? `<div class="ta-rp-stats">Proj: ${proj}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Totals
+  const h = summary.h, pit = summary.pit;
+  let totals = '';
+  if (h) {
+    const avgS  = !isNaN(h.AVG) ? `.<strong>${Math.round(h.AVG*1000).toString().padStart(3,'0')}</strong>` : '—';
+    totals += `<div>Hitters: AVG ${avgS} · HR <strong>${Math.round(h.HR)}</strong> · R <strong>${Math.round(h.R)}</strong> · RBI <strong>${Math.round(h.RBI)}</strong> · SB <strong>${Math.round(h.SB)}</strong></div>`;
+  }
+  if (pit) {
+    const eraS  = !isNaN(pit.ERA)  ? `<strong>${pit.ERA.toFixed(2)}</strong>`  : '—';
+    const whipS = !isNaN(pit.WHIP) ? `<strong>${pit.WHIP.toFixed(2)}</strong>` : '—';
+    totals += `<div>Pitchers: ERA ${eraS} · WHIP ${whipS} · K <strong>${Math.round(pit.K)}</strong> · W <strong>${Math.round(pit.W)}</strong></div>`;
+  }
+
+  return `<div class="ta-side ${cls}">
+    <div class="ta-side-hdr">${lbl}</div>
+    ${playerHtml}
+    ${totals ? `<div class="ta-side-totals">
+      <div class="ta-side-totals-hdr">Projected Totals</div>
+      <div class="ta-totals-stats">${totals}</div>
+    </div>` : ''}
+  </div>`;
+}
+
+function renderTaNetBar(netH, netP) {
+  const el = document.getElementById('ta-net-bar');
+  if (!el) return;
+  const allStats = [...Object.entries(netH), ...Object.entries(netP)];
+  if (!allStats.length) { el.innerHTML = ''; return; }
+
+  const statHtml = allStats.map(([, stat]) => {
+    const { val, isRate, lower, label } = stat;
+    const eff = lower ? -val : val;
+    const cls = eff > 0 ? 'pos' : eff < 0 ? 'neg' : 'neu';
+
+    let disp;
+    if (isRate) {
+      const sign = val >= 0 ? '+' : '−';
+      disp = `${sign}.${Math.abs(Math.round(val*1000)).toString().padStart(3,'0')}`;
+    } else if (lower) {
+      const sign = val >= 0 ? '+' : '';
+      disp = `${sign}${val.toFixed(2)}`;
+    } else {
+      const sign = val >= 0 ? '+' : '';
+      disp = `${sign}${Math.round(val)}`;
+    }
+
+    return `<div class="ta-net-stat">
+      <span class="ta-net-cat">${esc(label)}</span>
+      <span class="ta-net-val ${cls}">${disp}</span>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="ta-net-hdr">Net Stats (Getting − Giving${S.ta.dropping.length ? ' − Drop' : ''})</div>
+    <div class="ta-net-stats">${statHtml}</div>`;
+}
+
+function resetTrade() {
+  S.ta.giving = []; S.ta.getting = []; S.ta.dropping = []; S.ta.results = null;
+  ['giving','getting','dropping'].forEach(side => {
+    renderTaCards(side);
+    const inp = document.getElementById(`ta-search-${side}`);
+    if (inp) inp.value = '';
+    closeTaDropdown(side);
+  });
+  updateTaAnalyzeButton();
+  const res = document.getElementById('ta-results');
+  if (res) res.classList.remove('visible');
+}
+
+// ── League settings ───────────────────────────────────────────────────────────
+function toggleLeaguePanel() {
+  const p = document.getElementById('ta-league-panel');
+  if (p) p.classList.toggle('open');
+}
+
+function loadLeagueSettings() {
+  try {
+    const raw = localStorage.getItem('signalFantasy_leagueSettings');
+    if (raw) {
+      const saved = JSON.parse(raw);
+      S.taLeague = Object.assign({
+        size:'12', format:'redraft', scoring:'5x5',
+        hCats:['avg','r','hr','rbi','sb'],
+        pCats:['era','whip','w','k','svh'],
+      }, saved);
+    }
+  } catch(e) {}
+  syncLeagueUI();
+  renderLeagueSummary();
+}
+
+function syncLeagueUI() {
+  const ls = S.taLeague;
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
+  set('ta-ls-size',    ls.size);
+  set('ta-ls-format',  ls.format);
+  set('ta-ls-scoring', ls.scoring);
+
+  const H_MAP = [['cat-avg','avg'],['cat-r','r'],['cat-hr','hr'],['cat-rbi','rbi'],
+                 ['cat-sb','sb'],['cat-obp','obp'],['cat-slg','slg'],['cat-ops','ops']];
+  const P_MAP = [['cat-era','era'],['cat-whip','whip'],['cat-w','w'],['cat-k','k'],
+                 ['cat-svh','svh'],['cat-qs','qs'],['cat-hld','hld']];
+  H_MAP.forEach(([id, key]) => { const el = document.getElementById(id); if (el) el.checked = ls.hCats.includes(key); });
+  P_MAP.forEach(([id, key]) => { const el = document.getElementById(id); if (el) el.checked = ls.pCats.includes(key); });
+}
+
+function saveLeagueSettings() {
+  const val = id => (document.getElementById(id) || {}).value || '';
+  const chk = id => !!(document.getElementById(id) || {}).checked;
+  const size    = val('ta-ls-size')    || '12';
+  const format  = val('ta-ls-format')  || 'redraft';
+  const scoring = val('ta-ls-scoring') || '5x5';
+
+  const hCats = ['avg','r','hr','rbi','sb','obp','slg','ops'].filter(k => chk(`cat-${k}`));
+  const pCats = ['era','whip','w','k','svh','qs','hld'].filter(k => chk(`cat-${k}`));
+
+  S.taLeague = { size, format, scoring, hCats, pCats };
+  try { localStorage.setItem('signalFantasy_leagueSettings', JSON.stringify(S.taLeague)); } catch(e) {}
+  renderLeagueSummary();
+  toggleLeaguePanel();
+}
+
+function renderLeagueSummary() {
+  const el = document.getElementById('ta-league-summary');
+  if (!el) return;
+  const ls  = S.taLeague;
+  const fmt = { redraft:'Redraft', keeper:'Keeper', dynasty:'Dynasty' }[ls.format] || ls.format;
+  const scr = { '5x5':'5×5 Roto', points:'Points', h2h_cat:'H2H Cat', h2h_pts:'H2H Pts' }[ls.scoring] || ls.scoring;
+  el.innerHTML = `<strong>${ls.size}-team</strong> · ${fmt} · ${scr}`;
+}
+
+// ─── Init: try auto-fetch, fall back to file inputs ───────────────────────────
+async function init() {
+  showScreen('spin-screen');
+
+  // fetch() works when served over HTTP; fails silently on file:// — that's fine
+  const tryFetch = async url => {
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(r.status);
+      return await r.text();
+    } catch (_) { return null; }
+  };
+
+  const [hText, pText, tvText, cbsText, overrideText] = await Promise.all([
+    tryFetch('luck_scores.csv'),
+    tryFetch('pitcher_luck_scores.csv'),
+    tryFetch('data/player_values.json'),
+    tryFetch('data/cbs_positions.json'),
+    tryFetch('data/position_overrides.json'),
+  ]);
+
+  // Trade value data (optional)
+  if (tvText) loadPlayerValues(tvText);
+
+  // CBS positions (optional — falls back gracefully)
+  if (cbsText) {
+    try {
+      const cbsJson = JSON.parse(cbsText);
+      S.cbsPositions = cbsJson.players || {};
+      const note = document.getElementById('cbs-data-note');
+      if (note) {
+        const cbsCount = Object.values(S.cbsPositions)
+          .filter(p => p.source === 'CBS Sports').length;
+        note.textContent = `${cbsCount} players with CBS positions`;
+      }
+    } catch(e) { console.warn('cbs_positions.json parse error:', e); }
+  }
+
+  // Position overrides
+  if (overrideText) {
+    try {
+      const ov = JSON.parse(overrideText);
+      // Strip the _comment key
+      delete ov._comment;
+      S.positionOverrides = ov;
+    } catch(e) { console.warn('position_overrides.json parse error:', e); }
+  }
+
+  if (hText && pText) {
+    S.data.hitters  = parseCSV(hText);
+    S.data.pitchers = parseCSV(pText);
+    S.ready.hitters = true;
+    S.ready.pitchers = true;
+    // Build trade analyzer index eagerly so first tab-switch is instant
+    buildPlayerIndex();
+    loadLeagueSettings();
+    S.taBuilt = true;
+    renderMeta();
+    showScreen('dash-screen');
+    render();
+  } else {
+    showScreen('load-screen');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

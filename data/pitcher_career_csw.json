@@ -1,0 +1,6331 @@
+{
+  "425794": {
+    "name": "",
+    "career_csw": 0.2848,
+    "n_seasons": 1,
+    "career_pitches": 453,
+    "seasons": {
+      "2022": 0.2848
+    }
+  },
+  "425844": {
+    "name": "",
+    "career_csw": 0.259,
+    "n_seasons": 2,
+    "career_pitches": 749,
+    "seasons": {
+      "2022": 0.247,
+      "2023": 0.2688
+    }
+  },
+  "434378": {
+    "name": "",
+    "career_csw": 0.2778,
+    "n_seasons": 3,
+    "career_pitches": 997,
+    "seasons": {
+      "2022": 0.2963,
+      "2024": 0.2486,
+      "2025": 0.2735
+    }
+  },
+  "445276": {
+    "name": "",
+    "career_csw": 0.3072,
+    "n_seasons": 3,
+    "career_pitches": 472,
+    "seasons": {
+      "2022": 0.3056,
+      "2023": 0.3265,
+      "2024": 0.2928
+    }
+  },
+  "445926": {
+    "name": "",
+    "career_csw": 0.307,
+    "n_seasons": 3,
+    "career_pitches": 469,
+    "seasons": {
+      "2022": 0.3043,
+      "2023": 0.3397,
+      "2024": 0.2713
+    }
+  },
+  "446372": {
+    "name": "",
+    "career_csw": 0.2848,
+    "n_seasons": 2,
+    "career_pitches": 681,
+    "seasons": {
+      "2022": 0.2901,
+      "2023": 0.2791
+    }
+  },
+  "448179": {
+    "name": "",
+    "career_csw": 0.2857,
+    "n_seasons": 2,
+    "career_pitches": 833,
+    "seasons": {
+      "2022": 0.2877,
+      "2023": 0.2847
+    }
+  },
+  "450203": {
+    "name": "",
+    "career_csw": 0.2712,
+    "n_seasons": 4,
+    "career_pitches": 1807,
+    "seasons": {
+      "2022": 0.2515,
+      "2023": 0.2942,
+      "2024": 0.2799,
+      "2025": 0.2522
+    }
+  },
+  "453178": {
+    "name": "",
+    "career_csw": 0.2554,
+    "n_seasons": 2,
+    "career_pitches": 321,
+    "seasons": {
+      "2022": 0.2205,
+      "2023": 0.3095
+    }
+  },
+  "453286": {
+    "name": "Max Scherzer",
+    "career_csw": 0.3123,
+    "n_seasons": 2,
+    "career_pitches": 618,
+    "seasons": {
+      "2022": 0.3298,
+      "2023": 0.2845
+    }
+  },
+  "455119": {
+    "name": "",
+    "career_csw": 0.2948,
+    "n_seasons": 3,
+    "career_pitches": 485,
+    "seasons": {
+      "2022": 0.2767,
+      "2024": 0.3152,
+      "2025": 0.2919
+    }
+  },
+  "456713": {
+    "name": "",
+    "career_csw": 0.3423,
+    "n_seasons": 2,
+    "career_pitches": 298,
+    "seasons": {
+      "2022": 0.3636,
+      "2023": 0.3226
+    }
+  },
+  "471911": {
+    "name": "",
+    "career_csw": 0.2737,
+    "n_seasons": 4,
+    "career_pitches": 1392,
+    "seasons": {
+      "2022": 0.3201,
+      "2023": 0.2509,
+      "2024": 0.2616,
+      "2025": 0.2593
+    }
+  },
+  "472610": {
+    "name": "",
+    "career_csw": 0.2689,
+    "n_seasons": 4,
+    "career_pitches": 662,
+    "seasons": {
+      "2022": 0.283,
+      "2023": 0.2692,
+      "2024": 0.2959,
+      "2025": 0.2346
+    }
+  },
+  "476595": {
+    "name": "",
+    "career_csw": 0.2573,
+    "n_seasons": 2,
+    "career_pitches": 272,
+    "seasons": {
+      "2022": 0.2658,
+      "2023": 0.2456
+    }
+  },
+  "477132": {
+    "name": "",
+    "career_csw": 0.3326,
+    "n_seasons": 2,
+    "career_pitches": 908,
+    "seasons": {
+      "2022": 0.338,
+      "2023": 0.3291
+    }
+  },
+  "493603": {
+    "name": "",
+    "career_csw": 0.3314,
+    "n_seasons": 3,
+    "career_pitches": 525,
+    "seasons": {
+      "2022": 0.3118,
+      "2023": 0.2969,
+      "2024": 0.4014
+    }
+  },
+  "500779": {
+    "name": "Jose Quintana",
+    "career_csw": 0.2565,
+    "n_seasons": 3,
+    "career_pitches": 1232,
+    "seasons": {
+      "2022": 0.2613,
+      "2024": 0.2433,
+      "2025": 0.2688
+    }
+  },
+  "502042": {
+    "name": "",
+    "career_csw": 0.228,
+    "n_seasons": 1,
+    "career_pitches": 329,
+    "seasons": {
+      "2022": 0.228
+    }
+  },
+  "502043": {
+    "name": "",
+    "career_csw": 0.2887,
+    "n_seasons": 3,
+    "career_pitches": 1541,
+    "seasons": {
+      "2022": 0.2982,
+      "2023": 0.3059,
+      "2024": 0.2653
+    }
+  },
+  "502085": {
+    "name": "",
+    "career_csw": 0.375,
+    "n_seasons": 3,
+    "career_pitches": 536,
+    "seasons": {
+      "2022": 0.3935,
+      "2023": 0.3724,
+      "2024": 0.3644
+    }
+  },
+  "502171": {
+    "name": "",
+    "career_csw": 0.307,
+    "n_seasons": 2,
+    "career_pitches": 720,
+    "seasons": {
+      "2022": 0.3793,
+      "2023": 0.2839
+    }
+  },
+  "502179": {
+    "name": "",
+    "career_csw": 0.2743,
+    "n_seasons": 2,
+    "career_pitches": 288,
+    "seasons": {
+      "2022": 0.2857,
+      "2024": 0.2566
+    }
+  },
+  "502202": {
+    "name": "",
+    "career_csw": 0.3173,
+    "n_seasons": 2,
+    "career_pitches": 271,
+    "seasons": {
+      "2022": 0.3197,
+      "2023": 0.3154
+    }
+  },
+  "506433": {
+    "name": "",
+    "career_csw": 0.2948,
+    "n_seasons": 3,
+    "career_pitches": 1296,
+    "seasons": {
+      "2022": 0.3121,
+      "2023": 0.3259,
+      "2024": 0.2236
+    }
+  },
+  "518489": {
+    "name": "",
+    "career_csw": 0.263,
+    "n_seasons": 3,
+    "career_pitches": 521,
+    "seasons": {
+      "2022": 0.2836,
+      "2023": 0.2363,
+      "2024": 0.2867
+    }
+  },
+  "518516": {
+    "name": "",
+    "career_csw": 0.2412,
+    "n_seasons": 2,
+    "career_pitches": 800,
+    "seasons": {
+      "2022": 0.2644,
+      "2023": 0.2114
+    }
+  },
+  "518617": {
+    "name": "",
+    "career_csw": 0.2996,
+    "n_seasons": 3,
+    "career_pitches": 554,
+    "seasons": {
+      "2022": 0.3298,
+      "2023": 0.25,
+      "2024": 0.3381
+    }
+  },
+  "518876": {
+    "name": "",
+    "career_csw": 0.2838,
+    "n_seasons": 4,
+    "career_pitches": 1674,
+    "seasons": {
+      "2022": 0.3075,
+      "2023": 0.266,
+      "2024": 0.2695,
+      "2025": 0.2854
+    }
+  },
+  "518886": {
+    "name": "",
+    "career_csw": 0.3464,
+    "n_seasons": 3,
+    "career_pitches": 508,
+    "seasons": {
+      "2022": 0.3654,
+      "2023": 0.355,
+      "2024": 0.3319
+    }
+  },
+  "519043": {
+    "name": "",
+    "career_csw": 0.2775,
+    "n_seasons": 3,
+    "career_pitches": 526,
+    "seasons": {
+      "2022": 0.2822,
+      "2023": 0.2731,
+      "2024": 0.2789
+    }
+  },
+  "519293": {
+    "name": "",
+    "career_csw": 0.3013,
+    "n_seasons": 3,
+    "career_pitches": 448,
+    "seasons": {
+      "2022": 0.3099,
+      "2023": 0.3172,
+      "2024": 0.2795
+    }
+  },
+  "519326": {
+    "name": "",
+    "career_csw": 0.2798,
+    "n_seasons": 2,
+    "career_pitches": 361,
+    "seasons": {
+      "2022": 0.2727,
+      "2024": 0.2895
+    }
+  },
+  "521230": {
+    "name": "",
+    "career_csw": 0.33,
+    "n_seasons": 1,
+    "career_pitches": 203,
+    "seasons": {
+      "2022": 0.33
+    }
+  },
+  "527048": {
+    "name": "Mart\u00edn P\u00e9rez",
+    "career_csw": 0.2864,
+    "n_seasons": 4,
+    "career_pitches": 1585,
+    "seasons": {
+      "2022": 0.2953,
+      "2023": 0.277,
+      "2024": 0.294,
+      "2025": 0.2788
+    }
+  },
+  "528748": {
+    "name": "",
+    "career_csw": 0.2786,
+    "n_seasons": 1,
+    "career_pitches": 262,
+    "seasons": {
+      "2022": 0.2786
+    }
+  },
+  "542881": {
+    "name": "",
+    "career_csw": 0.2799,
+    "n_seasons": 4,
+    "career_pitches": 1715,
+    "seasons": {
+      "2022": 0.289,
+      "2023": 0.2759,
+      "2024": 0.275,
+      "2025": 0.2845
+    }
+  },
+  "542888": {
+    "name": "Shawn Armstrong",
+    "career_csw": 0.3011,
+    "n_seasons": 3,
+    "career_pitches": 548,
+    "seasons": {
+      "2022": 0.2183,
+      "2024": 0.3556,
+      "2025": 0.2983
+    }
+  },
+  "542914": {
+    "name": "",
+    "career_csw": 0.3321,
+    "n_seasons": 2,
+    "career_pitches": 283,
+    "seasons": {
+      "2022": 0.3169,
+      "2023": 0.3475
+    }
+  },
+  "543037": {
+    "name": "",
+    "career_csw": 0.313,
+    "n_seasons": 2,
+    "career_pitches": 965,
+    "seasons": {
+      "2022": 0.3291,
+      "2023": 0.2978
+    }
+  },
+  "543056": {
+    "name": "",
+    "career_csw": 0.3203,
+    "n_seasons": 4,
+    "career_pitches": 637,
+    "seasons": {
+      "2022": 0.3464,
+      "2023": 0.3017,
+      "2024": 0.3212,
+      "2025": 0.3143
+    }
+  },
+  "543101": {
+    "name": "",
+    "career_csw": 0.2986,
+    "n_seasons": 2,
+    "career_pitches": 700,
+    "seasons": {
+      "2022": 0.3023,
+      "2023": 0.2964
+    }
+  },
+  "543135": {
+    "name": "Nathan Eovaldi",
+    "career_csw": 0.3146,
+    "n_seasons": 4,
+    "career_pitches": 2171,
+    "seasons": {
+      "2022": 0.316,
+      "2023": 0.3166,
+      "2024": 0.3153,
+      "2025": 0.3106
+    }
+  },
+  "543243": {
+    "name": "Sonny Gray",
+    "career_csw": 0.3325,
+    "n_seasons": 4,
+    "career_pitches": 1573,
+    "seasons": {
+      "2022": 0.3355,
+      "2023": 0.3214,
+      "2024": 0.3647,
+      "2025": 0.3153
+    }
+  },
+  "543272": {
+    "name": "",
+    "career_csw": 0.3129,
+    "n_seasons": 2,
+    "career_pitches": 294,
+    "seasons": {
+      "2022": 0.3628,
+      "2023": 0.2818
+    }
+  },
+  "543294": {
+    "name": "",
+    "career_csw": 0.2697,
+    "n_seasons": 3,
+    "career_pitches": 1253,
+    "seasons": {
+      "2022": 0.2893,
+      "2024": 0.2612,
+      "2025": 0.2542
+    }
+  },
+  "543339": {
+    "name": "",
+    "career_csw": 0.296,
+    "n_seasons": 2,
+    "career_pitches": 277,
+    "seasons": {
+      "2022": 0.325,
+      "2024": 0.2739
+    }
+  },
+  "543475": {
+    "name": "",
+    "career_csw": 0.2423,
+    "n_seasons": 2,
+    "career_pitches": 945,
+    "seasons": {
+      "2022": 0.2565,
+      "2023": 0.2327
+    }
+  },
+  "543507": {
+    "name": "",
+    "career_csw": 0.2659,
+    "n_seasons": 2,
+    "career_pitches": 282,
+    "seasons": {
+      "2022": 0.2647,
+      "2023": 0.2671
+    }
+  },
+  "543606": {
+    "name": "",
+    "career_csw": 0.2379,
+    "n_seasons": 1,
+    "career_pitches": 269,
+    "seasons": {
+      "2022": 0.2379
+    }
+  },
+  "544727": {
+    "name": "",
+    "career_csw": 0.301,
+    "n_seasons": 2,
+    "career_pitches": 412,
+    "seasons": {
+      "2022": 0.3571,
+      "2023": 0.2623
+    }
+  },
+  "547179": {
+    "name": "Michael Lorenzen",
+    "career_csw": 0.2733,
+    "n_seasons": 4,
+    "career_pitches": 1511,
+    "seasons": {
+      "2022": 0.2588,
+      "2023": 0.2834,
+      "2024": 0.2888,
+      "2025": 0.2675
+    }
+  },
+  "547973": {
+    "name": "Aroldis Chapman",
+    "career_csw": 0.3615,
+    "n_seasons": 4,
+    "career_pitches": 686,
+    "seasons": {
+      "2022": 0.3841,
+      "2023": 0.3842,
+      "2024": 0.3182,
+      "2025": 0.3688
+    }
+  },
+  "548384": {
+    "name": "Brooks Raley",
+    "career_csw": 0.291,
+    "n_seasons": 3,
+    "career_pitches": 433,
+    "seasons": {
+      "2022": 0.3455,
+      "2023": 0.2674,
+      "2024": 0.2794
+    }
+  },
+  "548389": {
+    "name": "",
+    "career_csw": 0.2847,
+    "n_seasons": 3,
+    "career_pitches": 1103,
+    "seasons": {
+      "2022": 0.312,
+      "2023": 0.3069,
+      "2024": 0.26
+    }
+  },
+  "552640": {
+    "name": "",
+    "career_csw": 0.3383,
+    "n_seasons": 2,
+    "career_pitches": 266,
+    "seasons": {
+      "2022": 0.3306,
+      "2024": 0.3451
+    }
+  },
+  "554340": {
+    "name": "",
+    "career_csw": 0.3161,
+    "n_seasons": 4,
+    "career_pitches": 677,
+    "seasons": {
+      "2022": 0.2699,
+      "2023": 0.3467,
+      "2024": 0.3158,
+      "2025": 0.3264
+    }
+  },
+  "554430": {
+    "name": "",
+    "career_csw": 0.3117,
+    "n_seasons": 4,
+    "career_pitches": 2111,
+    "seasons": {
+      "2022": 0.2787,
+      "2023": 0.3153,
+      "2024": 0.3202,
+      "2025": 0.3163
+    }
+  },
+  "554431": {
+    "name": "",
+    "career_csw": 0.2919,
+    "n_seasons": 2,
+    "career_pitches": 298,
+    "seasons": {
+      "2022": 0.3559,
+      "2024": 0.25
+    }
+  },
+  "570257": {
+    "name": "",
+    "career_csw": 0.3401,
+    "n_seasons": 2,
+    "career_pitches": 297,
+    "seasons": {
+      "2022": 0.3788,
+      "2024": 0.3091
+    }
+  },
+  "570632": {
+    "name": "",
+    "career_csw": 0.2616,
+    "n_seasons": 3,
+    "career_pitches": 753,
+    "seasons": {
+      "2022": 0.3382,
+      "2023": 0.2204,
+      "2024": 0.2795
+    }
+  },
+  "570666": {
+    "name": "",
+    "career_csw": 0.2582,
+    "n_seasons": 2,
+    "career_pitches": 515,
+    "seasons": {
+      "2022": 0.3165,
+      "2023": 0.2367
+    }
+  },
+  "571479": {
+    "name": "",
+    "career_csw": 0.2904,
+    "n_seasons": 2,
+    "career_pitches": 279,
+    "seasons": {
+      "2022": 0.3028,
+      "2023": 0.2824
+    }
+  },
+  "571578": {
+    "name": "Patrick Corbin",
+    "career_csw": 0.2604,
+    "n_seasons": 4,
+    "career_pitches": 1651,
+    "seasons": {
+      "2022": 0.2968,
+      "2023": 0.2717,
+      "2024": 0.2185,
+      "2025": 0.2582
+    }
+  },
+  "571656": {
+    "name": "",
+    "career_csw": 0.3028,
+    "n_seasons": 3,
+    "career_pitches": 611,
+    "seasons": {
+      "2022": 0.3316,
+      "2023": 0.2802,
+      "2024": 0.2986
+    }
+  },
+  "571760": {
+    "name": "",
+    "career_csw": 0.2843,
+    "n_seasons": 4,
+    "career_pitches": 1470,
+    "seasons": {
+      "2022": 0.3718,
+      "2023": 0.2674,
+      "2024": 0.2595,
+      "2025": 0.294
+    }
+  },
+  "571800": {
+    "name": "",
+    "career_csw": 0.2277,
+    "n_seasons": 1,
+    "career_pitches": 202,
+    "seasons": {
+      "2022": 0.2277
+    }
+  },
+  "571901": {
+    "name": "",
+    "career_csw": 0.2966,
+    "n_seasons": 2,
+    "career_pitches": 327,
+    "seasons": {
+      "2022": 0.3043,
+      "2023": 0.2867
+    }
+  },
+  "571927": {
+    "name": "Steven Matz",
+    "career_csw": 0.2758,
+    "n_seasons": 4,
+    "career_pitches": 1552,
+    "seasons": {
+      "2022": 0.3127,
+      "2023": 0.2854,
+      "2024": 0.2104,
+      "2025": 0.2857
+    }
+  },
+  "571945": {
+    "name": "Miles Mikolas",
+    "career_csw": 0.2568,
+    "n_seasons": 4,
+    "career_pitches": 1873,
+    "seasons": {
+      "2022": 0.2694,
+      "2023": 0.2527,
+      "2024": 0.2581,
+      "2025": 0.2437
+    }
+  },
+  "571948": {
+    "name": "Hoby Milner",
+    "career_csw": 0.2938,
+    "n_seasons": 4,
+    "career_pitches": 708,
+    "seasons": {
+      "2022": 0.3016,
+      "2023": 0.275,
+      "2024": 0.2871,
+      "2025": 0.3167
+    }
+  },
+  "572955": {
+    "name": "Pierce Johnson",
+    "career_csw": 0.3229,
+    "n_seasons": 4,
+    "career_pitches": 700,
+    "seasons": {
+      "2022": 0.3289,
+      "2023": 0.3476,
+      "2024": 0.2914,
+      "2025": 0.3228
+    }
+  },
+  "572971": {
+    "name": "",
+    "career_csw": 0.249,
+    "n_seasons": 1,
+    "career_pitches": 257,
+    "seasons": {
+      "2022": 0.249
+    }
+  },
+  "573009": {
+    "name": "Joe Mantiply",
+    "career_csw": 0.3048,
+    "n_seasons": 3,
+    "career_pitches": 410,
+    "seasons": {
+      "2022": 0.3445,
+      "2024": 0.2981,
+      "2025": 0.2769
+    }
+  },
+  "573124": {
+    "name": "Taylor Rogers",
+    "career_csw": 0.2767,
+    "n_seasons": 4,
+    "career_pitches": 553,
+    "seasons": {
+      "2022": 0.3186,
+      "2023": 0.2442,
+      "2024": 0.2458,
+      "2025": 0.3067
+    }
+  },
+  "573186": {
+    "name": "",
+    "career_csw": 0.2757,
+    "n_seasons": 4,
+    "career_pitches": 1404,
+    "seasons": {
+      "2022": 0.2733,
+      "2023": 0.2595,
+      "2024": 0.2998,
+      "2025": 0.25
+    }
+  },
+  "573204": {
+    "name": "Caleb Thielbar",
+    "career_csw": 0.2997,
+    "n_seasons": 4,
+    "career_pitches": 564,
+    "seasons": {
+      "2022": 0.3106,
+      "2023": 0.295,
+      "2024": 0.3277,
+      "2025": 0.269
+    }
+  },
+  "579328": {
+    "name": "Yusei Kikuchi",
+    "career_csw": 0.2696,
+    "n_seasons": 4,
+    "career_pitches": 1736,
+    "seasons": {
+      "2022": 0.2468,
+      "2023": 0.2721,
+      "2024": 0.2993,
+      "2025": 0.2571
+    }
+  },
+  "592094": {
+    "name": "",
+    "career_csw": 0.3318,
+    "n_seasons": 4,
+    "career_pitches": 669,
+    "seasons": {
+      "2022": 0.4015,
+      "2023": 0.2956,
+      "2024": 0.2925,
+      "2025": 0.342
+    }
+  },
+  "592332": {
+    "name": "Kevin Gausman",
+    "career_csw": 0.3116,
+    "n_seasons": 4,
+    "career_pitches": 1858,
+    "seasons": {
+      "2022": 0.3587,
+      "2023": 0.3236,
+      "2024": 0.2773,
+      "2025": 0.2854
+    }
+  },
+  "592351": {
+    "name": "",
+    "career_csw": 0.2998,
+    "n_seasons": 3,
+    "career_pitches": 984,
+    "seasons": {
+      "2022": 0.3132,
+      "2023": 0.2881,
+      "2024": 0.3059
+    }
+  },
+  "592662": {
+    "name": "Robbie Ray",
+    "career_csw": 0.2774,
+    "n_seasons": 2,
+    "career_pitches": 959,
+    "seasons": {
+      "2022": 0.2668,
+      "2025": 0.2885
+    }
+  },
+  "592741": {
+    "name": "",
+    "career_csw": 0.2976,
+    "n_seasons": 2,
+    "career_pitches": 326,
+    "seasons": {
+      "2022": 0.3355,
+      "2023": 0.2632
+    }
+  },
+  "592767": {
+    "name": "",
+    "career_csw": 0.2821,
+    "n_seasons": 3,
+    "career_pitches": 975,
+    "seasons": {
+      "2022": 0.2603,
+      "2023": 0.3032,
+      "2024": 0.2706
+    }
+  },
+  "592773": {
+    "name": "Ryne Stanek",
+    "career_csw": 0.2779,
+    "n_seasons": 4,
+    "career_pitches": 673,
+    "seasons": {
+      "2022": 0.3167,
+      "2023": 0.2892,
+      "2024": 0.2435,
+      "2025": 0.2784
+    }
+  },
+  "592789": {
+    "name": "",
+    "career_csw": 0.2923,
+    "n_seasons": 2,
+    "career_pitches": 780,
+    "seasons": {
+      "2022": 0.3097,
+      "2023": 0.2809
+    }
+  },
+  "592791": {
+    "name": "Jameson Taillon",
+    "career_csw": 0.2902,
+    "n_seasons": 4,
+    "career_pitches": 1144,
+    "seasons": {
+      "2022": 0.3052,
+      "2023": 0.2597,
+      "2024": 0.2778,
+      "2025": 0.3002
+    }
+  },
+  "592826": {
+    "name": "",
+    "career_csw": 0.3022,
+    "n_seasons": 2,
+    "career_pitches": 890,
+    "seasons": {
+      "2022": 0.3026,
+      "2023": 0.302
+    }
+  },
+  "592836": {
+    "name": "Taijuan Walker",
+    "career_csw": 0.2725,
+    "n_seasons": 3,
+    "career_pitches": 976,
+    "seasons": {
+      "2022": 0.2895,
+      "2023": 0.2715,
+      "2025": 0.2689
+    }
+  },
+  "592866": {
+    "name": "",
+    "career_csw": 0.2573,
+    "n_seasons": 4,
+    "career_pitches": 1660,
+    "seasons": {
+      "2022": 0.284,
+      "2023": 0.2306,
+      "2024": 0.2784,
+      "2025": 0.2532
+    }
+  },
+  "593423": {
+    "name": "",
+    "career_csw": 0.2707,
+    "n_seasons": 2,
+    "career_pitches": 750,
+    "seasons": {
+      "2022": 0.2961,
+      "2024": 0.2313
+    }
+  },
+  "593576": {
+    "name": "",
+    "career_csw": 0.2676,
+    "n_seasons": 3,
+    "career_pitches": 497,
+    "seasons": {
+      "2022": 0.3275,
+      "2023": 0.2727,
+      "2024": 0.2035
+    }
+  },
+  "593958": {
+    "name": "Eduardo Rodr\u00edguez",
+    "career_csw": 0.2691,
+    "n_seasons": 3,
+    "career_pitches": 1360,
+    "seasons": {
+      "2022": 0.2648,
+      "2023": 0.2774,
+      "2025": 0.2642
+    }
+  },
+  "593974": {
+    "name": "Wandy Peralta",
+    "career_csw": 0.2439,
+    "n_seasons": 4,
+    "career_pitches": 574,
+    "seasons": {
+      "2022": 0.2093,
+      "2023": 0.2517,
+      "2024": 0.2229,
+      "2025": 0.3025
+    }
+  },
+  "594580": {
+    "name": "Sam Moll",
+    "career_csw": 0.2957,
+    "n_seasons": 2,
+    "career_pitches": 274,
+    "seasons": {
+      "2022": 0.3429,
+      "2023": 0.2663
+    }
+  },
+  "594835": {
+    "name": "",
+    "career_csw": 0.2882,
+    "n_seasons": 3,
+    "career_pitches": 1010,
+    "seasons": {
+      "2022": 0.3051,
+      "2023": 0.2843,
+      "2024": 0.2773
+    }
+  },
+  "595345": {
+    "name": "Steven Okert",
+    "career_csw": 0.3252,
+    "n_seasons": 3,
+    "career_pitches": 449,
+    "seasons": {
+      "2022": 0.287,
+      "2024": 0.351,
+      "2025": 0.3279
+    }
+  },
+  "595881": {
+    "name": "",
+    "career_csw": 0.2684,
+    "n_seasons": 2,
+    "career_pitches": 354,
+    "seasons": {
+      "2022": 0.1838,
+      "2024": 0.3211
+    }
+  },
+  "596001": {
+    "name": "Jakob Junis",
+    "career_csw": 0.3279,
+    "n_seasons": 3,
+    "career_pitches": 607,
+    "seasons": {
+      "2022": 0.344,
+      "2023": 0.3223,
+      "2025": 0.326
+    }
+  },
+  "596071": {
+    "name": "",
+    "career_csw": 0.2673,
+    "n_seasons": 1,
+    "career_pitches": 217,
+    "seasons": {
+      "2022": 0.2673
+    }
+  },
+  "596295": {
+    "name": "",
+    "career_csw": 0.2558,
+    "n_seasons": 3,
+    "career_pitches": 1337,
+    "seasons": {
+      "2022": 0.2402,
+      "2023": 0.2463,
+      "2024": 0.28
+    }
+  },
+  "598264": {
+    "name": "",
+    "career_csw": 0.2742,
+    "n_seasons": 3,
+    "career_pitches": 558,
+    "seasons": {
+      "2022": 0.3037,
+      "2023": 0.2775,
+      "2024": 0.2523
+    }
+  },
+  "600921": {
+    "name": "",
+    "career_csw": 0.267,
+    "n_seasons": 1,
+    "career_pitches": 221,
+    "seasons": {
+      "2022": 0.267
+    }
+  },
+  "601713": {
+    "name": "Nick Pivetta",
+    "career_csw": 0.3074,
+    "n_seasons": 3,
+    "career_pitches": 1272,
+    "seasons": {
+      "2022": 0.3071,
+      "2023": 0.3006,
+      "2025": 0.3149
+    }
+  },
+  "605130": {
+    "name": "Scott Barlow",
+    "career_csw": 0.3464,
+    "n_seasons": 4,
+    "career_pitches": 716,
+    "seasons": {
+      "2022": 0.3585,
+      "2023": 0.3098,
+      "2024": 0.3922,
+      "2025": 0.3195
+    }
+  },
+  "605135": {
+    "name": "Chris Bassitt",
+    "career_csw": 0.2827,
+    "n_seasons": 4,
+    "career_pitches": 2059,
+    "seasons": {
+      "2022": 0.3114,
+      "2023": 0.2606,
+      "2024": 0.2774,
+      "2025": 0.2867
+    }
+  },
+  "605154": {
+    "name": "",
+    "career_csw": 0.2941,
+    "n_seasons": 3,
+    "career_pitches": 510,
+    "seasons": {
+      "2022": 0.3239,
+      "2023": 0.3105,
+      "2025": 0.2416
+    }
+  },
+  "605164": {
+    "name": "",
+    "career_csw": 0.3023,
+    "n_seasons": 1,
+    "career_pitches": 311,
+    "seasons": {
+      "2022": 0.3023
+    }
+  },
+  "605200": {
+    "name": "",
+    "career_csw": 0.2722,
+    "n_seasons": 2,
+    "career_pitches": 540,
+    "seasons": {
+      "2022": 0.2776,
+      "2023": 0.2604
+    }
+  },
+  "605242": {
+    "name": "",
+    "career_csw": 0.3121,
+    "n_seasons": 2,
+    "career_pitches": 330,
+    "seasons": {
+      "2022": 0.3043,
+      "2023": 0.3177
+    }
+  },
+  "605280": {
+    "name": "Clay Holmes",
+    "career_csw": 0.3138,
+    "n_seasons": 4,
+    "career_pitches": 921,
+    "seasons": {
+      "2022": 0.3373,
+      "2023": 0.3052,
+      "2024": 0.3429,
+      "2025": 0.2955
+    }
+  },
+  "605288": {
+    "name": "Adrian Houser",
+    "career_csw": 0.2525,
+    "n_seasons": 2,
+    "career_pitches": 895,
+    "seasons": {
+      "2022": 0.2661,
+      "2024": 0.2421
+    }
+  },
+  "605347": {
+    "name": "",
+    "career_csw": 0.3027,
+    "n_seasons": 4,
+    "career_pitches": 717,
+    "seasons": {
+      "2022": 0.3316,
+      "2023": 0.2721,
+      "2024": 0.3367,
+      "2025": 0.2609
+    }
+  },
+  "605397": {
+    "name": "",
+    "career_csw": 0.3097,
+    "n_seasons": 3,
+    "career_pitches": 1085,
+    "seasons": {
+      "2022": 0.3554,
+      "2023": 0.3072,
+      "2024": 0.2793
+    }
+  },
+  "605400": {
+    "name": "Aaron Nola",
+    "career_csw": 0.3055,
+    "n_seasons": 4,
+    "career_pitches": 2039,
+    "seasons": {
+      "2022": 0.3374,
+      "2023": 0.2922,
+      "2024": 0.2887,
+      "2025": 0.3067
+    }
+  },
+  "605447": {
+    "name": "Jordan Romano",
+    "career_csw": 0.3455,
+    "n_seasons": 3,
+    "career_pitches": 492,
+    "seasons": {
+      "2022": 0.3509,
+      "2023": 0.3388,
+      "2025": 0.3478
+    }
+  },
+  "605488": {
+    "name": "Jeffrey Springs",
+    "career_csw": 0.3277,
+    "n_seasons": 3,
+    "career_pitches": 830,
+    "seasons": {
+      "2022": 0.3699,
+      "2023": 0.4265,
+      "2025": 0.2646
+    }
+  },
+  "605507": {
+    "name": "",
+    "career_csw": 0.2865,
+    "n_seasons": 1,
+    "career_pitches": 363,
+    "seasons": {
+      "2022": 0.2865
+    }
+  },
+  "605538": {
+    "name": "",
+    "career_csw": 0.3156,
+    "n_seasons": 1,
+    "career_pitches": 225,
+    "seasons": {
+      "2022": 0.3156
+    }
+  },
+  "605540": {
+    "name": "Brandon Woodruff",
+    "career_csw": 0.3125,
+    "n_seasons": 2,
+    "career_pitches": 592,
+    "seasons": {
+      "2022": 0.3017,
+      "2023": 0.337
+    }
+  },
+  "606149": {
+    "name": "",
+    "career_csw": 0.3368,
+    "n_seasons": 3,
+    "career_pitches": 383,
+    "seasons": {
+      "2022": 0.3445,
+      "2023": 0.3828,
+      "2024": 0.2868
+    }
+  },
+  "606160": {
+    "name": "",
+    "career_csw": 0.2951,
+    "n_seasons": 4,
+    "career_pitches": 732,
+    "seasons": {
+      "2022": 0.3395,
+      "2023": 0.3012,
+      "2024": 0.2464,
+      "2025": 0.3057
+    }
+  },
+  "606303": {
+    "name": "",
+    "career_csw": 0.2638,
+    "n_seasons": 4,
+    "career_pitches": 633,
+    "seasons": {
+      "2022": 0.2308,
+      "2023": 0.2609,
+      "2024": 0.2597,
+      "2025": 0.2968
+    }
+  },
+  "607074": {
+    "name": "",
+    "career_csw": 0.307,
+    "n_seasons": 3,
+    "career_pitches": 1430,
+    "seasons": {
+      "2022": 0.3439,
+      "2024": 0.2553,
+      "2025": 0.3247
+    }
+  },
+  "607200": {
+    "name": "Erick Fedde",
+    "career_csw": 0.2719,
+    "n_seasons": 3,
+    "career_pitches": 1313,
+    "seasons": {
+      "2022": 0.3005,
+      "2024": 0.2827,
+      "2025": 0.2339
+    }
+  },
+  "607259": {
+    "name": "Nick Mart\u00ednez",
+    "career_csw": 0.3021,
+    "n_seasons": 4,
+    "career_pitches": 1463,
+    "seasons": {
+      "2022": 0.3325,
+      "2023": 0.3027,
+      "2024": 0.2903,
+      "2025": 0.2813
+    }
+  },
+  "607455": {
+    "name": "Anthony Banda",
+    "career_csw": 0.2539,
+    "n_seasons": 3,
+    "career_pitches": 445,
+    "seasons": {
+      "2022": 0.3267,
+      "2023": 0.2547,
+      "2025": 0.2131
+    }
+  },
+  "607481": {
+    "name": "",
+    "career_csw": 0.3122,
+    "n_seasons": 4,
+    "career_pitches": 727,
+    "seasons": {
+      "2022": 0.3453,
+      "2023": 0.2659,
+      "2024": 0.2949,
+      "2025": 0.3314
+    }
+  },
+  "607536": {
+    "name": "Kyle Freeland",
+    "career_csw": 0.2506,
+    "n_seasons": 4,
+    "career_pitches": 1560,
+    "seasons": {
+      "2022": 0.2861,
+      "2023": 0.2391,
+      "2024": 0.2228,
+      "2025": 0.2531
+    }
+  },
+  "607625": {
+    "name": "Seth Lugo",
+    "career_csw": 0.2775,
+    "n_seasons": 4,
+    "career_pitches": 1712,
+    "seasons": {
+      "2022": 0.3268,
+      "2023": 0.2683,
+      "2024": 0.2639,
+      "2025": 0.2872
+    }
+  },
+  "607644": {
+    "name": "",
+    "career_csw": 0.2282,
+    "n_seasons": 1,
+    "career_pitches": 206,
+    "seasons": {
+      "2022": 0.2282
+    }
+  },
+  "608032": {
+    "name": "",
+    "career_csw": 0.2542,
+    "n_seasons": 3,
+    "career_pitches": 590,
+    "seasons": {
+      "2022": 0.2148,
+      "2023": 0.3013,
+      "2025": 0.2311
+    }
+  },
+  "608331": {
+    "name": "Max Fried",
+    "career_csw": 0.2766,
+    "n_seasons": 4,
+    "career_pitches": 1562,
+    "seasons": {
+      "2022": 0.2804,
+      "2023": 0.261,
+      "2024": 0.273,
+      "2025": 0.2846
+    }
+  },
+  "608337": {
+    "name": "",
+    "career_csw": 0.3012,
+    "n_seasons": 2,
+    "career_pitches": 860,
+    "seasons": {
+      "2022": 0.3466,
+      "2023": 0.2796
+    }
+  },
+  "608344": {
+    "name": "",
+    "career_csw": 0.26,
+    "n_seasons": 3,
+    "career_pitches": 1250,
+    "seasons": {
+      "2022": 0.2882,
+      "2023": 0.2268,
+      "2024": 0.2519
+    }
+  },
+  "608379": {
+    "name": "Michael Wacha",
+    "career_csw": 0.2727,
+    "n_seasons": 4,
+    "career_pitches": 1793,
+    "seasons": {
+      "2022": 0.2608,
+      "2023": 0.2772,
+      "2024": 0.2784,
+      "2025": 0.2715
+    }
+  },
+  "608566": {
+    "name": "Germ\u00e1n M\u00e1rquez",
+    "career_csw": 0.2559,
+    "n_seasons": 3,
+    "career_pitches": 977,
+    "seasons": {
+      "2022": 0.3,
+      "2023": 0.2372,
+      "2025": 0.2182
+    }
+  },
+  "608665": {
+    "name": "",
+    "career_csw": 0.3314,
+    "n_seasons": 2,
+    "career_pitches": 338,
+    "seasons": {
+      "2022": 0.3056,
+      "2023": 0.3608
+    }
+  },
+  "608678": {
+    "name": "",
+    "career_csw": 0.2898,
+    "n_seasons": 2,
+    "career_pitches": 352,
+    "seasons": {
+      "2022": 0.2937,
+      "2024": 0.2876
+    }
+  },
+  "608717": {
+    "name": "",
+    "career_csw": 0.2488,
+    "n_seasons": 4,
+    "career_pitches": 824,
+    "seasons": {
+      "2022": 0.2793,
+      "2023": 0.2397,
+      "2024": 0.2431,
+      "2025": 0.2378
+    }
+  },
+  "608718": {
+    "name": "Brent Suter",
+    "career_csw": 0.2574,
+    "n_seasons": 4,
+    "career_pitches": 874,
+    "seasons": {
+      "2022": 0.2991,
+      "2023": 0.2746,
+      "2024": 0.2392,
+      "2025": 0.2443
+    }
+  },
+  "608723": {
+    "name": "",
+    "career_csw": 0.2766,
+    "n_seasons": 3,
+    "career_pitches": 593,
+    "seasons": {
+      "2022": 0.2547,
+      "2023": 0.3112,
+      "2024": 0.25
+    }
+  },
+  "612434": {
+    "name": "",
+    "career_csw": 0.2961,
+    "n_seasons": 3,
+    "career_pitches": 510,
+    "seasons": {
+      "2022": 0.3148,
+      "2023": 0.3077,
+      "2024": 0.2651
+    }
+  },
+  "614179": {
+    "name": "",
+    "career_csw": 0.281,
+    "n_seasons": 3,
+    "career_pitches": 541,
+    "seasons": {
+      "2022": 0.3312,
+      "2023": 0.2554,
+      "2025": 0.268
+    }
+  },
+  "615698": {
+    "name": "",
+    "career_csw": 0.2332,
+    "n_seasons": 4,
+    "career_pitches": 1805,
+    "seasons": {
+      "2022": 0.2312,
+      "2023": 0.216,
+      "2024": 0.2309,
+      "2025": 0.2592
+    }
+  },
+  "621051": {
+    "name": "",
+    "career_csw": 0.3149,
+    "n_seasons": 4,
+    "career_pitches": 667,
+    "seasons": {
+      "2022": 0.3924,
+      "2023": 0.3068,
+      "2024": 0.2468,
+      "2025": 0.3173
+    }
+  },
+  "621074": {
+    "name": "",
+    "career_csw": 0.3064,
+    "n_seasons": 2,
+    "career_pitches": 359,
+    "seasons": {
+      "2022": 0.3515,
+      "2023": 0.268
+    }
+  },
+  "621107": {
+    "name": "",
+    "career_csw": 0.296,
+    "n_seasons": 4,
+    "career_pitches": 1250,
+    "seasons": {
+      "2022": 0.2667,
+      "2023": 0.3165,
+      "2024": 0.3052,
+      "2025": 0.3062
+    }
+  },
+  "621111": {
+    "name": "Walker Buehler",
+    "career_csw": 0.281,
+    "n_seasons": 2,
+    "career_pitches": 897,
+    "seasons": {
+      "2022": 0.2768,
+      "2025": 0.2851
+    }
+  },
+  "621112": {
+    "name": "Paul Blackburn",
+    "career_csw": 0.2827,
+    "n_seasons": 2,
+    "career_pitches": 771,
+    "seasons": {
+      "2022": 0.3084,
+      "2024": 0.2644
+    }
+  },
+  "621237": {
+    "name": "Jos\u00e9 Alvarado",
+    "career_csw": 0.3255,
+    "n_seasons": 4,
+    "career_pitches": 679,
+    "seasons": {
+      "2022": 0.3307,
+      "2023": 0.3842,
+      "2024": 0.2993,
+      "2025": 0.2884
+    }
+  },
+  "621242": {
+    "name": "",
+    "career_csw": 0.3692,
+    "n_seasons": 3,
+    "career_pitches": 539,
+    "seasons": {
+      "2022": 0.4177,
+      "2024": 0.3699,
+      "2025": 0.3317
+    }
+  },
+  "621244": {
+    "name": "",
+    "career_csw": 0.2929,
+    "n_seasons": 4,
+    "career_pitches": 1854,
+    "seasons": {
+      "2022": 0.2689,
+      "2023": 0.3285,
+      "2024": 0.3071,
+      "2025": 0.2659
+    }
+  },
+  "621345": {
+    "name": "",
+    "career_csw": 0.3274,
+    "n_seasons": 4,
+    "career_pitches": 675,
+    "seasons": {
+      "2022": 0.3067,
+      "2023": 0.3218,
+      "2024": 0.3439,
+      "2025": 0.3373
+    }
+  },
+  "621368": {
+    "name": "",
+    "career_csw": 0.278,
+    "n_seasons": 2,
+    "career_pitches": 500,
+    "seasons": {
+      "2022": 0.2901,
+      "2023": 0.2464
+    }
+  },
+  "621381": {
+    "name": "Matt Strahm",
+    "career_csw": 0.2969,
+    "n_seasons": 4,
+    "career_pitches": 805,
+    "seasons": {
+      "2022": 0.2985,
+      "2023": 0.31,
+      "2024": 0.3056,
+      "2025": 0.2677
+    }
+  },
+  "621383": {
+    "name": "Tanner Banks",
+    "career_csw": 0.2803,
+    "n_seasons": 4,
+    "career_pitches": 785,
+    "seasons": {
+      "2022": 0.2736,
+      "2023": 0.2617,
+      "2024": 0.2959,
+      "2025": 0.2764
+    }
+  },
+  "621389": {
+    "name": "",
+    "career_csw": 0.2521,
+    "n_seasons": 2,
+    "career_pitches": 353,
+    "seasons": {
+      "2022": 0.3077,
+      "2023": 0.2081
+    }
+  },
+  "622072": {
+    "name": "",
+    "career_csw": 0.2874,
+    "n_seasons": 3,
+    "career_pitches": 1089,
+    "seasons": {
+      "2022": 0.3085,
+      "2023": 0.2626,
+      "2024": 0.2815
+    }
+  },
+  "622098": {
+    "name": "",
+    "career_csw": 0.2879,
+    "n_seasons": 3,
+    "career_pitches": 514,
+    "seasons": {
+      "2022": 0.3235,
+      "2023": 0.2717,
+      "2024": 0.2688
+    }
+  },
+  "622251": {
+    "name": "",
+    "career_csw": 0.3196,
+    "n_seasons": 2,
+    "career_pitches": 266,
+    "seasons": {
+      "2022": 0.3464,
+      "2023": 0.2832
+    }
+  },
+  "622253": {
+    "name": "",
+    "career_csw": 0.2286,
+    "n_seasons": 2,
+    "career_pitches": 315,
+    "seasons": {
+      "2022": 0.2714,
+      "2024": 0.1943
+    }
+  },
+  "622503": {
+    "name": "",
+    "career_csw": 0.2808,
+    "n_seasons": 2,
+    "career_pitches": 349,
+    "seasons": {
+      "2022": 0.2816,
+      "2023": 0.28
+    }
+  },
+  "622554": {
+    "name": "Seranthony Dom\u00ednguez",
+    "career_csw": 0.2824,
+    "n_seasons": 4,
+    "career_pitches": 655,
+    "seasons": {
+      "2022": 0.3101,
+      "2023": 0.2857,
+      "2024": 0.2604,
+      "2025": 0.2712
+    }
+  },
+  "622608": {
+    "name": "Antonio Senzatela",
+    "career_csw": 0.2365,
+    "n_seasons": 2,
+    "career_pitches": 757,
+    "seasons": {
+      "2022": 0.2069,
+      "2025": 0.258
+    }
+  },
+  "622663": {
+    "name": "Luis Severino",
+    "career_csw": 0.2655,
+    "n_seasons": 3,
+    "career_pitches": 1322,
+    "seasons": {
+      "2022": 0.2838,
+      "2024": 0.2739,
+      "2025": 0.2483
+    }
+  },
+  "622694": {
+    "name": "",
+    "career_csw": 0.2611,
+    "n_seasons": 1,
+    "career_pitches": 360,
+    "seasons": {
+      "2022": 0.2611
+    }
+  },
+  "623167": {
+    "name": "",
+    "career_csw": 0.2597,
+    "n_seasons": 3,
+    "career_pitches": 1140,
+    "seasons": {
+      "2022": 0.2611,
+      "2023": 0.2757,
+      "2024": 0.2429
+    }
+  },
+  "623352": {
+    "name": "",
+    "career_csw": 0.3297,
+    "n_seasons": 4,
+    "career_pitches": 731,
+    "seasons": {
+      "2022": 0.3642,
+      "2023": 0.3004,
+      "2024": 0.2921,
+      "2025": 0.3743
+    }
+  },
+  "623465": {
+    "name": "",
+    "career_csw": 0.3655,
+    "n_seasons": 3,
+    "career_pitches": 446,
+    "seasons": {
+      "2022": 0.381,
+      "2023": 0.3931,
+      "2024": 0.3314
+    }
+  },
+  "623474": {
+    "name": "Jimmy Herget",
+    "career_csw": 0.2912,
+    "n_seasons": 3,
+    "career_pitches": 546,
+    "seasons": {
+      "2022": 0.3317,
+      "2023": 0.2672,
+      "2025": 0.2667
+    }
+  },
+  "624133": {
+    "name": "Ranger Su\u00e1rez",
+    "career_csw": 0.288,
+    "n_seasons": 2,
+    "career_pitches": 868,
+    "seasons": {
+      "2022": 0.2697,
+      "2024": 0.3032
+    }
+  },
+  "624522": {
+    "name": "",
+    "career_csw": 0.3259,
+    "n_seasons": 3,
+    "career_pitches": 632,
+    "seasons": {
+      "2022": 0.3711,
+      "2023": 0.2946,
+      "2024": 0.2961
+    }
+  },
+  "625643": {
+    "name": "Reynaldo L\u00f3pez",
+    "career_csw": 0.2849,
+    "n_seasons": 3,
+    "career_pitches": 737,
+    "seasons": {
+      "2022": 0.239,
+      "2023": 0.3186,
+      "2024": 0.2841
+    }
+  },
+  "628452": {
+    "name": "Raisel Iglesias",
+    "career_csw": 0.3016,
+    "n_seasons": 3,
+    "career_pitches": 441,
+    "seasons": {
+      "2022": 0.4015,
+      "2024": 0.2485,
+      "2025": 0.2714
+    }
+  },
+  "628708": {
+    "name": "",
+    "career_csw": 0.2588,
+    "n_seasons": 2,
+    "career_pitches": 313,
+    "seasons": {
+      "2022": 0.2772,
+      "2024": 0.25
+    }
+  },
+  "628711": {
+    "name": "",
+    "career_csw": 0.2907,
+    "n_seasons": 2,
+    "career_pitches": 805,
+    "seasons": {
+      "2022": 0.2743,
+      "2023": 0.3026
+    }
+  },
+  "640444": {
+    "name": "",
+    "career_csw": 0.2814,
+    "n_seasons": 2,
+    "career_pitches": 501,
+    "seasons": {
+      "2022": 0.2981,
+      "2023": 0.2514
+    }
+  },
+  "640448": {
+    "name": "Kyle Finnegan",
+    "career_csw": 0.2919,
+    "n_seasons": 4,
+    "career_pitches": 627,
+    "seasons": {
+      "2022": 0.3145,
+      "2023": 0.2785,
+      "2024": 0.2994,
+      "2025": 0.2809
+    }
+  },
+  "640455": {
+    "name": "Sean Manaea",
+    "career_csw": 0.2652,
+    "n_seasons": 3,
+    "career_pitches": 1391,
+    "seasons": {
+      "2022": 0.2767,
+      "2023": 0.2452,
+      "2024": 0.2687
+    }
+  },
+  "640462": {
+    "name": "",
+    "career_csw": 0.3163,
+    "n_seasons": 4,
+    "career_pitches": 724,
+    "seasons": {
+      "2022": 0.3434,
+      "2023": 0.3621,
+      "2024": 0.2578,
+      "2025": 0.3359
+    }
+  },
+  "641154": {
+    "name": "",
+    "career_csw": 0.3006,
+    "n_seasons": 4,
+    "career_pitches": 1700,
+    "seasons": {
+      "2022": 0.331,
+      "2023": 0.3039,
+      "2024": 0.2844,
+      "2025": 0.2807
+    }
+  },
+  "641302": {
+    "name": "Tyler Alexander",
+    "career_csw": 0.2579,
+    "n_seasons": 4,
+    "career_pitches": 1303,
+    "seasons": {
+      "2022": 0.2425,
+      "2023": 0.2857,
+      "2024": 0.26,
+      "2025": 0.2486
+    }
+  },
+  "641329": {
+    "name": "Bryan Baker",
+    "career_csw": 0.3093,
+    "n_seasons": 3,
+    "career_pitches": 514,
+    "seasons": {
+      "2022": 0.3333,
+      "2023": 0.2965,
+      "2025": 0.3013
+    }
+  },
+  "641482": {
+    "name": "",
+    "career_csw": 0.2794,
+    "n_seasons": 3,
+    "career_pitches": 1496,
+    "seasons": {
+      "2022": 0.3115,
+      "2023": 0.277,
+      "2024": 0.2613
+    }
+  },
+  "641540": {
+    "name": "",
+    "career_csw": 0.2953,
+    "n_seasons": 3,
+    "career_pitches": 1375,
+    "seasons": {
+      "2022": 0.2978,
+      "2023": 0.2805,
+      "2024": 0.3006
+    }
+  },
+  "641627": {
+    "name": "",
+    "career_csw": 0.3301,
+    "n_seasons": 2,
+    "career_pitches": 312,
+    "seasons": {
+      "2022": 0.3386,
+      "2023": 0.3243
+    }
+  },
+  "641712": {
+    "name": "",
+    "career_csw": 0.2616,
+    "n_seasons": 2,
+    "career_pitches": 841,
+    "seasons": {
+      "2022": 0.2548,
+      "2024": 0.2657
+    }
+  },
+  "641726": {
+    "name": "",
+    "career_csw": 0.266,
+    "n_seasons": 1,
+    "career_pitches": 297,
+    "seasons": {
+      "2022": 0.266
+    }
+  },
+  "641729": {
+    "name": "",
+    "career_csw": 0.329,
+    "n_seasons": 3,
+    "career_pitches": 465,
+    "seasons": {
+      "2022": 0.2876,
+      "2023": 0.3088,
+      "2024": 0.3807
+    }
+  },
+  "641745": {
+    "name": "Brad Keller",
+    "career_csw": 0.2678,
+    "n_seasons": 3,
+    "career_pitches": 1113,
+    "seasons": {
+      "2022": 0.246,
+      "2023": 0.2685,
+      "2025": 0.3098
+    }
+  },
+  "641755": {
+    "name": "Tyler Kinley",
+    "career_csw": 0.2799,
+    "n_seasons": 3,
+    "career_pitches": 611,
+    "seasons": {
+      "2022": 0.303,
+      "2024": 0.2412,
+      "2025": 0.3028
+    }
+  },
+  "641771": {
+    "name": "",
+    "career_csw": 0.2778,
+    "n_seasons": 2,
+    "career_pitches": 774,
+    "seasons": {
+      "2022": 0.3013,
+      "2023": 0.2619
+    }
+  },
+  "641778": {
+    "name": "Eric Lauer",
+    "career_csw": 0.2803,
+    "n_seasons": 2,
+    "career_pitches": 824,
+    "seasons": {
+      "2022": 0.3162,
+      "2023": 0.2511
+    }
+  },
+  "641816": {
+    "name": "Tyler Mahle",
+    "career_csw": 0.2958,
+    "n_seasons": 3,
+    "career_pitches": 1315,
+    "seasons": {
+      "2022": 0.3011,
+      "2023": 0.2915,
+      "2025": 0.2946
+    }
+  },
+  "641835": {
+    "name": "Tim Mayza",
+    "career_csw": 0.3056,
+    "n_seasons": 4,
+    "career_pitches": 540,
+    "seasons": {
+      "2022": 0.365,
+      "2023": 0.3077,
+      "2024": 0.2486,
+      "2025": 0.3197
+    }
+  },
+  "641927": {
+    "name": "Bailey Ober",
+    "career_csw": 0.2866,
+    "n_seasons": 4,
+    "career_pitches": 1371,
+    "seasons": {
+      "2022": 0.2661,
+      "2023": 0.2825,
+      "2024": 0.3043,
+      "2025": 0.2884
+    }
+  },
+  "641941": {
+    "name": "Emilio Pag\u00e1n",
+    "career_csw": 0.2958,
+    "n_seasons": 4,
+    "career_pitches": 612,
+    "seasons": {
+      "2022": 0.314,
+      "2023": 0.2604,
+      "2024": 0.3193,
+      "2025": 0.2949
+    }
+  },
+  "642028": {
+    "name": "",
+    "career_csw": 0.2275,
+    "n_seasons": 1,
+    "career_pitches": 255,
+    "seasons": {
+      "2022": 0.2275
+    }
+  },
+  "642207": {
+    "name": "",
+    "career_csw": 0.3365,
+    "n_seasons": 3,
+    "career_pitches": 529,
+    "seasons": {
+      "2022": 0.3831,
+      "2023": 0.3537,
+      "2025": 0.2707
+    }
+  },
+  "642397": {
+    "name": "Gregory Soto",
+    "career_csw": 0.3184,
+    "n_seasons": 4,
+    "career_pitches": 625,
+    "seasons": {
+      "2022": 0.2752,
+      "2023": 0.408,
+      "2024": 0.2897,
+      "2025": 0.2647
+    }
+  },
+  "642545": {
+    "name": "",
+    "career_csw": 0.2836,
+    "n_seasons": 2,
+    "career_pitches": 409,
+    "seasons": {
+      "2022": 0.2623,
+      "2023": 0.3009
+    }
+  },
+  "642547": {
+    "name": "Freddy Peralta",
+    "career_csw": 0.2997,
+    "n_seasons": 4,
+    "career_pitches": 1842,
+    "seasons": {
+      "2022": 0.3146,
+      "2023": 0.3071,
+      "2024": 0.3062,
+      "2025": 0.2779
+    }
+  },
+  "642585": {
+    "name": "",
+    "career_csw": 0.3231,
+    "n_seasons": 3,
+    "career_pitches": 489,
+    "seasons": {
+      "2022": 0.2989,
+      "2023": 0.3538,
+      "2025": 0.301
+    }
+  },
+  "642758": {
+    "name": "",
+    "career_csw": 0.2707,
+    "n_seasons": 2,
+    "career_pitches": 314,
+    "seasons": {
+      "2022": 0.314,
+      "2023": 0.2183
+    }
+  },
+  "642770": {
+    "name": "",
+    "career_csw": 0.2267,
+    "n_seasons": 2,
+    "career_pitches": 322,
+    "seasons": {
+      "2022": 0.2169,
+      "2023": 0.2372
+    }
+  },
+  "643256": {
+    "name": "",
+    "career_csw": 0.2756,
+    "n_seasons": 3,
+    "career_pitches": 439,
+    "seasons": {
+      "2022": 0.3262,
+      "2023": 0.2365,
+      "2024": 0.2667
+    }
+  },
+  "643338": {
+    "name": "",
+    "career_csw": 0.25,
+    "n_seasons": 3,
+    "career_pitches": 480,
+    "seasons": {
+      "2022": 0.2431,
+      "2024": 0.2881,
+      "2025": 0.232
+    }
+  },
+  "643377": {
+    "name": "Griffin Jax",
+    "career_csw": 0.3488,
+    "n_seasons": 4,
+    "career_pitches": 734,
+    "seasons": {
+      "2022": 0.3164,
+      "2023": 0.3492,
+      "2024": 0.3254,
+      "2025": 0.397
+    }
+  },
+  "643410": {
+    "name": "Mark Leiter",
+    "career_csw": 0.297,
+    "n_seasons": 4,
+    "career_pitches": 788,
+    "seasons": {
+      "2022": 0.2467,
+      "2023": 0.3155,
+      "2024": 0.2948,
+      "2025": 0.3407
+    }
+  },
+  "643511": {
+    "name": "Tyler Rogers",
+    "career_csw": 0.315,
+    "n_seasons": 4,
+    "career_pitches": 638,
+    "seasons": {
+      "2022": 0.3468,
+      "2023": 0.3422,
+      "2024": 0.2195,
+      "2025": 0.3558
+    }
+  },
+  "645261": {
+    "name": "Sandy Alc\u00e1ntara",
+    "career_csw": 0.2719,
+    "n_seasons": 3,
+    "career_pitches": 1118,
+    "seasons": {
+      "2022": 0.2634,
+      "2023": 0.2997,
+      "2025": 0.2556
+    }
+  },
+  "650556": {
+    "name": "Bryan Abreu",
+    "career_csw": 0.3129,
+    "n_seasons": 4,
+    "career_pitches": 815,
+    "seasons": {
+      "2022": 0.2727,
+      "2023": 0.3443,
+      "2024": 0.3014,
+      "2025": 0.3299
+    }
+  },
+  "650633": {
+    "name": "Mike King",
+    "career_csw": 0.3336,
+    "n_seasons": 4,
+    "career_pitches": 1496,
+    "seasons": {
+      "2022": 0.4192,
+      "2023": 0.3347,
+      "2024": 0.327,
+      "2025": 0.3088
+    }
+  },
+  "650644": {
+    "name": "Aaron Civale",
+    "career_csw": 0.2926,
+    "n_seasons": 3,
+    "career_pitches": 1073,
+    "seasons": {
+      "2022": 0.2682,
+      "2023": 0.2842,
+      "2024": 0.3108
+    }
+  },
+  "650893": {
+    "name": "",
+    "career_csw": 0.2976,
+    "n_seasons": 3,
+    "career_pitches": 541,
+    "seasons": {
+      "2022": 0.262,
+      "2023": 0.3799,
+      "2024": 0.2514
+    }
+  },
+  "650895": {
+    "name": "",
+    "career_csw": 0.2862,
+    "n_seasons": 2,
+    "career_pitches": 332,
+    "seasons": {
+      "2022": 0.3118,
+      "2023": 0.2593
+    }
+  },
+  "650911": {
+    "name": "Cristopher S\u00e1nchez",
+    "career_csw": 0.305,
+    "n_seasons": 3,
+    "career_pitches": 1095,
+    "seasons": {
+      "2022": 0.2953,
+      "2024": 0.2821,
+      "2025": 0.3365
+    }
+  },
+  "656061": {
+    "name": "",
+    "career_csw": 0.2586,
+    "n_seasons": 2,
+    "career_pitches": 464,
+    "seasons": {
+      "2022": 0.2677,
+      "2023": 0.2519
+    }
+  },
+  "656222": {
+    "name": "Jalen Beeks",
+    "career_csw": 0.2547,
+    "n_seasons": 4,
+    "career_pitches": 852,
+    "seasons": {
+      "2022": 0.3292,
+      "2023": 0.242,
+      "2024": 0.2,
+      "2025": 0.2686
+    }
+  },
+  "656271": {
+    "name": "Brock Burke",
+    "career_csw": 0.269,
+    "n_seasons": 3,
+    "career_pitches": 513,
+    "seasons": {
+      "2022": 0.3039,
+      "2023": 0.2365,
+      "2025": 0.2547
+    }
+  },
+  "656302": {
+    "name": "Dylan Cease",
+    "career_csw": 0.2868,
+    "n_seasons": 4,
+    "career_pitches": 1813,
+    "seasons": {
+      "2022": 0.3075,
+      "2023": 0.2608,
+      "2024": 0.3002,
+      "2025": 0.2851
+    }
+  },
+  "656457": {
+    "name": "",
+    "career_csw": 0.2884,
+    "n_seasons": 2,
+    "career_pitches": 319,
+    "seasons": {
+      "2022": 0.3046,
+      "2025": 0.2738
+    }
+  },
+  "656546": {
+    "name": "Jeff Hoffman",
+    "career_csw": 0.2946,
+    "n_seasons": 3,
+    "career_pitches": 594,
+    "seasons": {
+      "2022": 0.2392,
+      "2024": 0.3314,
+      "2025": 0.3413
+    }
+  },
+  "656557": {
+    "name": "",
+    "career_csw": 0.3087,
+    "n_seasons": 4,
+    "career_pitches": 1869,
+    "seasons": {
+      "2022": 0.285,
+      "2023": 0.3108,
+      "2024": 0.3247,
+      "2025": 0.3029
+    }
+  },
+  "656605": {
+    "name": "Mitch Keller",
+    "career_csw": 0.2831,
+    "n_seasons": 4,
+    "career_pitches": 1911,
+    "seasons": {
+      "2022": 0.2763,
+      "2023": 0.3069,
+      "2024": 0.289,
+      "2025": 0.2582
+    }
+  },
+  "656629": {
+    "name": "",
+    "career_csw": 0.2827,
+    "n_seasons": 3,
+    "career_pitches": 1061,
+    "seasons": {
+      "2022": 0.2586,
+      "2023": 0.2872,
+      "2024": 0.31
+    }
+  },
+  "656638": {
+    "name": "Alex Lange",
+    "career_csw": 0.3407,
+    "n_seasons": 3,
+    "career_pitches": 543,
+    "seasons": {
+      "2022": 0.3399,
+      "2023": 0.3431,
+      "2024": 0.3387
+    }
+  },
+  "656686": {
+    "name": "",
+    "career_csw": 0.255,
+    "n_seasons": 1,
+    "career_pitches": 251,
+    "seasons": {
+      "2022": 0.255
+    }
+  },
+  "656731": {
+    "name": "",
+    "career_csw": 0.2862,
+    "n_seasons": 3,
+    "career_pitches": 1314,
+    "seasons": {
+      "2022": 0.309,
+      "2023": 0.246,
+      "2025": 0.3039
+    }
+  },
+  "656756": {
+    "name": "",
+    "career_csw": 0.2819,
+    "n_seasons": 3,
+    "career_pitches": 1018,
+    "seasons": {
+      "2022": 0.2902,
+      "2023": 0.2845,
+      "2024": 0.259
+    }
+  },
+  "656794": {
+    "name": "Sean Newcomb",
+    "career_csw": 0.2659,
+    "n_seasons": 2,
+    "career_pitches": 519,
+    "seasons": {
+      "2022": 0.2381,
+      "2025": 0.2769
+    }
+  },
+  "656849": {
+    "name": "David Peterson",
+    "career_csw": 0.294,
+    "n_seasons": 3,
+    "career_pitches": 1102,
+    "seasons": {
+      "2022": 0.2956,
+      "2023": 0.3117,
+      "2025": 0.2759
+    }
+  },
+  "656876": {
+    "name": "Drew Rasmussen",
+    "career_csw": 0.2904,
+    "n_seasons": 3,
+    "career_pitches": 1257,
+    "seasons": {
+      "2022": 0.298,
+      "2023": 0.2916,
+      "2025": 0.2821
+    }
+  },
+  "656887": {
+    "name": "",
+    "career_csw": 0.3319,
+    "n_seasons": 1,
+    "career_pitches": 229,
+    "seasons": {
+      "2022": 0.3319
+    }
+  },
+  "656945": {
+    "name": "Tanner Scott",
+    "career_csw": 0.3123,
+    "n_seasons": 4,
+    "career_pitches": 666,
+    "seasons": {
+      "2022": 0.3735,
+      "2023": 0.3293,
+      "2024": 0.2461,
+      "2025": 0.3099
+    }
+  },
+  "657006": {
+    "name": "",
+    "career_csw": 0.2653,
+    "n_seasons": 3,
+    "career_pitches": 1078,
+    "seasons": {
+      "2022": 0.2346,
+      "2023": 0.2813,
+      "2025": 0.2781
+    }
+  },
+  "657024": {
+    "name": "",
+    "career_csw": 0.3507,
+    "n_seasons": 2,
+    "career_pitches": 345,
+    "seasons": {
+      "2022": 0.3174,
+      "2023": 0.382
+    }
+  },
+  "657044": {
+    "name": "Ryan Thompson",
+    "career_csw": 0.3043,
+    "n_seasons": 4,
+    "career_pitches": 552,
+    "seasons": {
+      "2022": 0.3387,
+      "2023": 0.2931,
+      "2024": 0.2846,
+      "2025": 0.3022
+    }
+  },
+  "657093": {
+    "name": "",
+    "career_csw": 0.2622,
+    "n_seasons": 1,
+    "career_pitches": 286,
+    "seasons": {
+      "2022": 0.2622
+    }
+  },
+  "657140": {
+    "name": "",
+    "career_csw": 0.3353,
+    "n_seasons": 2,
+    "career_pitches": 698,
+    "seasons": {
+      "2022": 0.3721,
+      "2023": 0.2894
+    }
+  },
+  "657240": {
+    "name": "",
+    "career_csw": 0.3074,
+    "n_seasons": 3,
+    "career_pitches": 488,
+    "seasons": {
+      "2022": 0.32,
+      "2023": 0.3086,
+      "2025": 0.2945
+    }
+  },
+  "657277": {
+    "name": "Logan Webb",
+    "career_csw": 0.3048,
+    "n_seasons": 4,
+    "career_pitches": 2083,
+    "seasons": {
+      "2022": 0.294,
+      "2023": 0.3104,
+      "2024": 0.2895,
+      "2025": 0.3236
+    }
+  },
+  "657376": {
+    "name": "",
+    "career_csw": 0.308,
+    "n_seasons": 4,
+    "career_pitches": 1266,
+    "seasons": {
+      "2022": 0.35,
+      "2023": 0.2727,
+      "2024": 0.3216,
+      "2025": 0.3251
+    }
+  },
+  "657508": {
+    "name": "",
+    "career_csw": 0.268,
+    "n_seasons": 3,
+    "career_pitches": 597,
+    "seasons": {
+      "2022": 0.2406,
+      "2023": 0.278,
+      "2024": 0.284
+    }
+  },
+  "657746": {
+    "name": "Joe Ryan",
+    "career_csw": 0.3225,
+    "n_seasons": 4,
+    "career_pitches": 1603,
+    "seasons": {
+      "2022": 0.3425,
+      "2023": 0.3124,
+      "2024": 0.3261,
+      "2025": 0.3152
+    }
+  },
+  "659275": {
+    "name": "",
+    "career_csw": 0.2834,
+    "n_seasons": 2,
+    "career_pitches": 314,
+    "seasons": {
+      "2022": 0.2903,
+      "2023": 0.2789
+    }
+  },
+  "660271": {
+    "name": "Shohei Ohtani",
+    "career_csw": 0.3445,
+    "n_seasons": 2,
+    "career_pitches": 746,
+    "seasons": {
+      "2022": 0.3691,
+      "2023": 0.3263
+    }
+  },
+  "660761": {
+    "name": "Jos\u00e9 Suarez",
+    "career_csw": 0.2746,
+    "n_seasons": 3,
+    "career_pitches": 1151,
+    "seasons": {
+      "2022": 0.2643,
+      "2023": 0.2781,
+      "2024": 0.2806
+    }
+  },
+  "660813": {
+    "name": "",
+    "career_csw": 0.302,
+    "n_seasons": 2,
+    "career_pitches": 298,
+    "seasons": {
+      "2022": 0.3103,
+      "2023": 0.2941
+    }
+  },
+  "661269": {
+    "name": "",
+    "career_csw": 0.255,
+    "n_seasons": 1,
+    "career_pitches": 349,
+    "seasons": {
+      "2022": 0.255
+    }
+  },
+  "661395": {
+    "name": "",
+    "career_csw": 0.342,
+    "n_seasons": 3,
+    "career_pitches": 500,
+    "seasons": {
+      "2022": 0.4083,
+      "2023": 0.297,
+      "2025": 0.3193
+    }
+  },
+  "661403": {
+    "name": "",
+    "career_csw": 0.2867,
+    "n_seasons": 4,
+    "career_pitches": 750,
+    "seasons": {
+      "2022": 0.2932,
+      "2023": 0.25,
+      "2024": 0.3125,
+      "2025": 0.2893
+    }
+  },
+  "662253": {
+    "name": "Andr\u00e9s Mu\u00f1oz",
+    "career_csw": 0.3427,
+    "n_seasons": 3,
+    "career_pitches": 496,
+    "seasons": {
+      "2022": 0.375,
+      "2024": 0.2963,
+      "2025": 0.3579
+    }
+  },
+  "663158": {
+    "name": "Robert Suarez",
+    "career_csw": 0.251,
+    "n_seasons": 3,
+    "career_pitches": 478,
+    "seasons": {
+      "2022": 0.2588,
+      "2024": 0.2517,
+      "2025": 0.242
+    }
+  },
+  "663423": {
+    "name": "",
+    "career_csw": 0.2956,
+    "n_seasons": 3,
+    "career_pitches": 521,
+    "seasons": {
+      "2022": 0.2841,
+      "2024": 0.328,
+      "2025": 0.2704
+    }
+  },
+  "663432": {
+    "name": "",
+    "career_csw": 0.2539,
+    "n_seasons": 2,
+    "career_pitches": 323,
+    "seasons": {
+      "2022": 0.2821,
+      "2024": 0.2379
+    }
+  },
+  "663460": {
+    "name": "Kris Bubic",
+    "career_csw": 0.2849,
+    "n_seasons": 3,
+    "career_pitches": 997,
+    "seasons": {
+      "2022": 0.2548,
+      "2023": 0.283,
+      "2025": 0.3028
+    }
+  },
+  "663474": {
+    "name": "",
+    "career_csw": 0.2768,
+    "n_seasons": 2,
+    "career_pitches": 719,
+    "seasons": {
+      "2022": 0.2894,
+      "2024": 0.2672
+    }
+  },
+  "663554": {
+    "name": "Casey Mize",
+    "career_csw": 0.274,
+    "n_seasons": 3,
+    "career_pitches": 1197,
+    "seasons": {
+      "2022": 0.2317,
+      "2024": 0.265,
+      "2025": 0.3103
+    }
+  },
+  "663556": {
+    "name": "Shane Mcclanahan",
+    "career_csw": 0.3829,
+    "n_seasons": 2,
+    "career_pitches": 888,
+    "seasons": {
+      "2022": 0.3932,
+      "2023": 0.3728
+    }
+  },
+  "663559": {
+    "name": "",
+    "career_csw": 0.2588,
+    "n_seasons": 4,
+    "career_pitches": 1368,
+    "seasons": {
+      "2022": 0.2302,
+      "2023": 0.2452,
+      "2024": 0.2736,
+      "2025": 0.2753
+    }
+  },
+  "663574": {
+    "name": "Tony Santillan",
+    "career_csw": 0.2592,
+    "n_seasons": 2,
+    "career_pitches": 328,
+    "seasons": {
+      "2022": 0.295,
+      "2025": 0.2328
+    }
+  },
+  "663738": {
+    "name": "Daniel Lynch",
+    "career_csw": 0.2676,
+    "n_seasons": 2,
+    "career_pitches": 441,
+    "seasons": {
+      "2022": 0.2577,
+      "2025": 0.2867
+    }
+  },
+  "663776": {
+    "name": "",
+    "career_csw": 0.2983,
+    "n_seasons": 3,
+    "career_pitches": 1217,
+    "seasons": {
+      "2022": 0.3123,
+      "2023": 0.3002,
+      "2024": 0.2878
+    }
+  },
+  "663855": {
+    "name": "Jordan Hicks",
+    "career_csw": 0.2886,
+    "n_seasons": 4,
+    "career_pitches": 1403,
+    "seasons": {
+      "2022": 0.2571,
+      "2023": 0.3209,
+      "2024": 0.2854,
+      "2025": 0.2893
+    }
+  },
+  "663903": {
+    "name": "Brady Singer",
+    "career_csw": 0.3043,
+    "n_seasons": 4,
+    "career_pitches": 1505,
+    "seasons": {
+      "2022": 0.3107,
+      "2023": 0.3105,
+      "2024": 0.3031,
+      "2025": 0.2974
+    }
+  },
+  "663978": {
+    "name": "Chris Paddack",
+    "career_csw": 0.2565,
+    "n_seasons": 3,
+    "career_pitches": 1127,
+    "seasons": {
+      "2022": 0.3373,
+      "2024": 0.2478,
+      "2025": 0.217
+    }
+  },
+  "663986": {
+    "name": "",
+    "career_csw": 0.2979,
+    "n_seasons": 2,
+    "career_pitches": 339,
+    "seasons": {
+      "2022": 0.3291,
+      "2023": 0.2707
+    }
+  },
+  "664062": {
+    "name": "",
+    "career_csw": 0.2886,
+    "n_seasons": 1,
+    "career_pitches": 350,
+    "seasons": {
+      "2022": 0.2886
+    }
+  },
+  "664141": {
+    "name": "Jt Brubaker",
+    "career_csw": 0.2984,
+    "n_seasons": 1,
+    "career_pitches": 382,
+    "seasons": {
+      "2022": 0.2984
+    }
+  },
+  "664199": {
+    "name": "Taylor Clarke",
+    "career_csw": 0.3051,
+    "n_seasons": 2,
+    "career_pitches": 377,
+    "seasons": {
+      "2022": 0.3067,
+      "2023": 0.304
+    }
+  },
+  "664208": {
+    "name": "",
+    "career_csw": 0.314,
+    "n_seasons": 4,
+    "career_pitches": 726,
+    "seasons": {
+      "2022": 0.237,
+      "2023": 0.3605,
+      "2024": 0.3045,
+      "2025": 0.3602
+    }
+  },
+  "664285": {
+    "name": "Framber Valdez",
+    "career_csw": 0.2819,
+    "n_seasons": 4,
+    "career_pitches": 1451,
+    "seasons": {
+      "2022": 0.2768,
+      "2023": 0.2851,
+      "2024": 0.3077,
+      "2025": 0.2731
+    }
+  },
+  "664294": {
+    "name": "",
+    "career_csw": 0.303,
+    "n_seasons": 2,
+    "career_pitches": 406,
+    "seasons": {
+      "2022": 0.3316,
+      "2023": 0.2778
+    }
+  },
+  "664299": {
+    "name": "Cristian Javier",
+    "career_csw": 0.2754,
+    "n_seasons": 3,
+    "career_pitches": 1075,
+    "seasons": {
+      "2022": 0.2773,
+      "2023": 0.2628,
+      "2024": 0.2908
+    }
+  },
+  "664337": {
+    "name": "",
+    "career_csw": 0.23,
+    "n_seasons": 1,
+    "career_pitches": 200,
+    "seasons": {
+      "2022": 0.23
+    }
+  },
+  "664353": {
+    "name": "",
+    "career_csw": 0.2629,
+    "n_seasons": 2,
+    "career_pitches": 848,
+    "seasons": {
+      "2022": 0.2382,
+      "2023": 0.2795
+    }
+  },
+  "664747": {
+    "name": "",
+    "career_csw": 0.2996,
+    "n_seasons": 4,
+    "career_pitches": 661,
+    "seasons": {
+      "2022": 0.3046,
+      "2023": 0.349,
+      "2024": 0.3092,
+      "2025": 0.2214
+    }
+  },
+  "664776": {
+    "name": "",
+    "career_csw": 0.3554,
+    "n_seasons": 2,
+    "career_pitches": 287,
+    "seasons": {
+      "2022": 0.388,
+      "2024": 0.2981
+    }
+  },
+  "664875": {
+    "name": "Justin Lawrence",
+    "career_csw": 0.3278,
+    "n_seasons": 4,
+    "career_pitches": 659,
+    "seasons": {
+      "2022": 0.3254,
+      "2023": 0.3409,
+      "2024": 0.3158,
+      "2025": 0.3287
+    }
+  },
+  "665665": {
+    "name": "",
+    "career_csw": 0.248,
+    "n_seasons": 2,
+    "career_pitches": 508,
+    "seasons": {
+      "2022": 0.2349,
+      "2023": 0.2643
+    }
+  },
+  "666120": {
+    "name": "",
+    "career_csw": 0.2381,
+    "n_seasons": 2,
+    "career_pitches": 567,
+    "seasons": {
+      "2022": 0.2418,
+      "2025": 0.2315
+    }
+  },
+  "666157": {
+    "name": "",
+    "career_csw": 0.3141,
+    "n_seasons": 4,
+    "career_pitches": 1605,
+    "seasons": {
+      "2022": 0.3155,
+      "2023": 0.3316,
+      "2024": 0.3396,
+      "2025": 0.2756
+    }
+  },
+  "666159": {
+    "name": "",
+    "career_csw": 0.2654,
+    "n_seasons": 3,
+    "career_pitches": 535,
+    "seasons": {
+      "2022": 0.2402,
+      "2023": 0.2701,
+      "2024": 0.2857
+    }
+  },
+  "666200": {
+    "name": "Jes\u00fas Luzardo",
+    "career_csw": 0.306,
+    "n_seasons": 4,
+    "career_pitches": 1817,
+    "seasons": {
+      "2022": 0.3493,
+      "2023": 0.319,
+      "2024": 0.275,
+      "2025": 0.2896
+    }
+  },
+  "666201": {
+    "name": "",
+    "career_csw": 0.2754,
+    "n_seasons": 2,
+    "career_pitches": 904,
+    "seasons": {
+      "2022": 0.284,
+      "2023": 0.2678
+    }
+  },
+  "666204": {
+    "name": "",
+    "career_csw": 0.3334,
+    "n_seasons": 3,
+    "career_pitches": 432,
+    "seasons": {
+      "2022": 0.3743,
+      "2023": 0.2233,
+      "2024": 0.3608
+    }
+  },
+  "666374": {
+    "name": "Matt Brash",
+    "career_csw": 0.3366,
+    "n_seasons": 2,
+    "career_pitches": 603,
+    "seasons": {
+      "2022": 0.3113,
+      "2023": 0.3795
+    }
+  },
+  "666808": {
+    "name": "Camilo Doval",
+    "career_csw": 0.3123,
+    "n_seasons": 4,
+    "career_pitches": 714,
+    "seasons": {
+      "2022": 0.3608,
+      "2023": 0.2849,
+      "2024": 0.3413,
+      "2025": 0.2604
+    }
+  },
+  "667427": {
+    "name": "",
+    "career_csw": 0.287,
+    "n_seasons": 2,
+    "career_pitches": 425,
+    "seasons": {
+      "2022": 0.2941,
+      "2023": 0.2815
+    }
+  },
+  "667463": {
+    "name": "John King",
+    "career_csw": 0.2654,
+    "n_seasons": 2,
+    "career_pitches": 309,
+    "seasons": {
+      "2022": 0.2893,
+      "2025": 0.24
+    }
+  },
+  "668676": {
+    "name": "",
+    "career_csw": 0.2623,
+    "n_seasons": 2,
+    "career_pitches": 709,
+    "seasons": {
+      "2022": 0.2798,
+      "2023": 0.2466
+    }
+  },
+  "668678": {
+    "name": "Zac Gallen",
+    "career_csw": 0.2968,
+    "n_seasons": 4,
+    "career_pitches": 1799,
+    "seasons": {
+      "2022": 0.2552,
+      "2023": 0.3481,
+      "2024": 0.2651,
+      "2025": 0.3069
+    }
+  },
+  "668881": {
+    "name": "",
+    "career_csw": 0.3096,
+    "n_seasons": 4,
+    "career_pitches": 1783,
+    "seasons": {
+      "2022": 0.3077,
+      "2023": 0.314,
+      "2024": 0.2846,
+      "2025": 0.3333
+    }
+  },
+  "669022": {
+    "name": "Mackenzie Gore",
+    "career_csw": 0.3041,
+    "n_seasons": 4,
+    "career_pitches": 1947,
+    "seasons": {
+      "2022": 0.2703,
+      "2023": 0.3292,
+      "2024": 0.2917,
+      "2025": 0.3122
+    }
+  },
+  "669060": {
+    "name": "",
+    "career_csw": 0.2613,
+    "n_seasons": 4,
+    "career_pitches": 1129,
+    "seasons": {
+      "2022": 0.301,
+      "2023": 0.2669,
+      "2024": 0.2707,
+      "2025": 0.2081
+    }
+  },
+  "669145": {
+    "name": "",
+    "career_csw": 0.2978,
+    "n_seasons": 1,
+    "career_pitches": 319,
+    "seasons": {
+      "2022": 0.2978
+    }
+  },
+  "669203": {
+    "name": "",
+    "career_csw": 0.3048,
+    "n_seasons": 4,
+    "career_pitches": 2018,
+    "seasons": {
+      "2022": 0.3596,
+      "2023": 0.3089,
+      "2024": 0.2995,
+      "2025": 0.2644
+    }
+  },
+  "669211": {
+    "name": "",
+    "career_csw": 0.3233,
+    "n_seasons": 3,
+    "career_pitches": 600,
+    "seasons": {
+      "2022": 0.3591,
+      "2024": 0.3333,
+      "2025": 0.2844
+    }
+  },
+  "669212": {
+    "name": "Eli Morgan",
+    "career_csw": 0.322,
+    "n_seasons": 3,
+    "career_pitches": 469,
+    "seasons": {
+      "2022": 0.3481,
+      "2023": 0.295,
+      "2024": 0.3333
+    }
+  },
+  "669302": {
+    "name": "Logan Gilbert",
+    "career_csw": 0.3047,
+    "n_seasons": 4,
+    "career_pitches": 1736,
+    "seasons": {
+      "2022": 0.2543,
+      "2023": 0.3034,
+      "2024": 0.317,
+      "2025": 0.3413
+    }
+  },
+  "669330": {
+    "name": "Tyler Wells",
+    "career_csw": 0.27,
+    "n_seasons": 3,
+    "career_pitches": 889,
+    "seasons": {
+      "2022": 0.2789,
+      "2023": 0.2799,
+      "2024": 0.2316
+    }
+  },
+  "669373": {
+    "name": "Tarik Skubal",
+    "career_csw": 0.3212,
+    "n_seasons": 3,
+    "career_pitches": 1320,
+    "seasons": {
+      "2022": 0.2792,
+      "2024": 0.3326,
+      "2025": 0.3488
+    }
+  },
+  "669424": {
+    "name": "",
+    "career_csw": 0.2976,
+    "n_seasons": 2,
+    "career_pitches": 373,
+    "seasons": {
+      "2022": 0.2787,
+      "2023": 0.3068
+    }
+  },
+  "669432": {
+    "name": "Trevor Rogers",
+    "career_csw": 0.2795,
+    "n_seasons": 3,
+    "career_pitches": 1077,
+    "seasons": {
+      "2022": 0.26,
+      "2023": 0.2939,
+      "2024": 0.2882
+    }
+  },
+  "669456": {
+    "name": "",
+    "career_csw": 0.2947,
+    "n_seasons": 2,
+    "career_pitches": 950,
+    "seasons": {
+      "2022": 0.3093,
+      "2023": 0.2803
+    }
+  },
+  "669459": {
+    "name": "",
+    "career_csw": 0.3194,
+    "n_seasons": 3,
+    "career_pitches": 407,
+    "seasons": {
+      "2022": 0.3398,
+      "2023": 0.3248,
+      "2024": 0.2993
+    }
+  },
+  "669467": {
+    "name": "Andre Pallante",
+    "career_csw": 0.2494,
+    "n_seasons": 4,
+    "career_pitches": 914,
+    "seasons": {
+      "2022": 0.2749,
+      "2023": 0.2677,
+      "2024": 0.227,
+      "2025": 0.2428
+    }
+  },
+  "669622": {
+    "name": "Anthony Bender",
+    "career_csw": 0.3134,
+    "n_seasons": 3,
+    "career_pitches": 517,
+    "seasons": {
+      "2022": 0.3465,
+      "2024": 0.3272,
+      "2025": 0.2717
+    }
+  },
+  "669674": {
+    "name": "",
+    "career_csw": 0.2768,
+    "n_seasons": 2,
+    "career_pitches": 242,
+    "seasons": {
+      "2022": 0.314,
+      "2025": 0.2397
+    }
+  },
+  "669854": {
+    "name": "",
+    "career_csw": 0.2898,
+    "n_seasons": 4,
+    "career_pitches": 1318,
+    "seasons": {
+      "2022": 0.2377,
+      "2023": 0.3285,
+      "2024": 0.2768,
+      "2025": 0.3041
+    }
+  },
+  "669952": {
+    "name": "",
+    "career_csw": 0.2491,
+    "n_seasons": 2,
+    "career_pitches": 273,
+    "seasons": {
+      "2022": 0.2891,
+      "2024": 0.2138
+    }
+  },
+  "670036": {
+    "name": "Matt Festa",
+    "career_csw": 0.3981,
+    "n_seasons": 1,
+    "career_pitches": 206,
+    "seasons": {
+      "2022": 0.3981
+    }
+  },
+  "670124": {
+    "name": "",
+    "career_csw": 0.2235,
+    "n_seasons": 2,
+    "career_pitches": 622,
+    "seasons": {
+      "2022": 0.2317,
+      "2023": 0.2181
+    }
+  },
+  "670280": {
+    "name": "David Bednar",
+    "career_csw": 0.3753,
+    "n_seasons": 3,
+    "career_pitches": 509,
+    "seasons": {
+      "2022": 0.391,
+      "2023": 0.3896,
+      "2024": 0.3518
+    }
+  },
+  "670950": {
+    "name": "",
+    "career_csw": 0.3188,
+    "n_seasons": 3,
+    "career_pitches": 709,
+    "seasons": {
+      "2022": 0.2488,
+      "2023": 0.3756,
+      "2024": 0.3275
+    }
+  },
+  "670990": {
+    "name": "Yohan Ram\u00edrez",
+    "career_csw": 0.3219,
+    "n_seasons": 3,
+    "career_pitches": 438,
+    "seasons": {
+      "2022": 0.3174,
+      "2023": 0.3065,
+      "2024": 0.3401
+    }
+  },
+  "671345": {
+    "name": "",
+    "career_csw": 0.2813,
+    "n_seasons": 3,
+    "career_pitches": 519,
+    "seasons": {
+      "2022": 0.24,
+      "2023": 0.288,
+      "2024": 0.3
+    }
+  },
+  "672282": {
+    "name": "Reid Detmers",
+    "career_csw": 0.3067,
+    "n_seasons": 4,
+    "career_pitches": 1451,
+    "seasons": {
+      "2022": 0.3028,
+      "2023": 0.3004,
+      "2024": 0.3141,
+      "2025": 0.31
+    }
+  },
+  "672335": {
+    "name": "Cionel P\u00e9rez",
+    "career_csw": 0.286,
+    "n_seasons": 3,
+    "career_pitches": 535,
+    "seasons": {
+      "2022": 0.322,
+      "2023": 0.2784,
+      "2025": 0.2739
+    }
+  },
+  "672578": {
+    "name": "",
+    "career_csw": 0.2673,
+    "n_seasons": 3,
+    "career_pitches": 722,
+    "seasons": {
+      "2022": 0.2485,
+      "2023": 0.3108,
+      "2025": 0.2471
+    }
+  },
+  "672710": {
+    "name": "",
+    "career_csw": 0.2966,
+    "n_seasons": 3,
+    "career_pitches": 735,
+    "seasons": {
+      "2022": 0.3643,
+      "2023": 0.2921,
+      "2024": 0.2584
+    }
+  },
+  "672851": {
+    "name": "",
+    "career_csw": 0.2626,
+    "n_seasons": 1,
+    "career_pitches": 495,
+    "seasons": {
+      "2022": 0.2626
+    }
+  },
+  "675911": {
+    "name": "",
+    "career_csw": 0.361,
+    "n_seasons": 2,
+    "career_pitches": 759,
+    "seasons": {
+      "2022": 0.3132,
+      "2023": 0.3866
+    }
+  },
+  "676092": {
+    "name": "",
+    "career_csw": 0.2671,
+    "n_seasons": 2,
+    "career_pitches": 322,
+    "seasons": {
+      "2022": 0.2653,
+      "2025": 0.2686
+    }
+  },
+  "676477": {
+    "name": "Garrett Whitlock",
+    "career_csw": 0.3117,
+    "n_seasons": 4,
+    "career_pitches": 985,
+    "seasons": {
+      "2022": 0.364,
+      "2023": 0.3057,
+      "2024": 0.2542,
+      "2025": 0.3254
+    }
+  },
+  "676596": {
+    "name": "",
+    "career_csw": 0.271,
+    "n_seasons": 3,
+    "career_pitches": 716,
+    "seasons": {
+      "2022": 0.2753,
+      "2023": 0.2561,
+      "2024": 0.2889
+    }
+  },
+  "676684": {
+    "name": "Will Vest",
+    "career_csw": 0.3062,
+    "n_seasons": 3,
+    "career_pitches": 516,
+    "seasons": {
+      "2022": 0.3448,
+      "2024": 0.2848,
+      "2025": 0.2961
+    }
+  },
+  "676710": {
+    "name": "",
+    "career_csw": 0.2943,
+    "n_seasons": 3,
+    "career_pitches": 965,
+    "seasons": {
+      "2022": 0.319,
+      "2023": 0.3037,
+      "2024": 0.2781
+    }
+  },
+  "676760": {
+    "name": "Ron Marinaccio",
+    "career_csw": 0.2898,
+    "n_seasons": 3,
+    "career_pitches": 421,
+    "seasons": {
+      "2022": 0.2903,
+      "2023": 0.2789,
+      "2024": 0.3084
+    }
+  },
+  "676879": {
+    "name": "Aaron Ashby",
+    "career_csw": 0.3236,
+    "n_seasons": 1,
+    "career_pitches": 343,
+    "seasons": {
+      "2022": 0.3236
+    }
+  },
+  "677651": {
+    "name": "",
+    "career_csw": 0.2978,
+    "n_seasons": 2,
+    "career_pitches": 779,
+    "seasons": {
+      "2022": 0.3009,
+      "2023": 0.2957
+    }
+  },
+  "680686": {
+    "name": "",
+    "career_csw": 0.3105,
+    "n_seasons": 2,
+    "career_pitches": 976,
+    "seasons": {
+      "2022": 0.3513,
+      "2023": 0.2833
+    }
+  },
+  "680704": {
+    "name": "",
+    "career_csw": 0.3132,
+    "n_seasons": 3,
+    "career_pitches": 495,
+    "seasons": {
+      "2022": 0.2941,
+      "2023": 0.2892,
+      "2024": 0.3472
+    }
+  },
+  "681799": {
+    "name": "",
+    "career_csw": 0.246,
+    "n_seasons": 2,
+    "career_pitches": 317,
+    "seasons": {
+      "2022": 0.2158,
+      "2025": 0.2913
+    }
+  },
+  "681911": {
+    "name": "Alex Vesia",
+    "career_csw": 0.3038,
+    "n_seasons": 4,
+    "career_pitches": 701,
+    "seasons": {
+      "2022": 0.3365,
+      "2023": 0.2647,
+      "2024": 0.2985,
+      "2025": 0.3333
+    }
+  },
+  "689225": {
+    "name": "",
+    "career_csw": 0.2214,
+    "n_seasons": 2,
+    "career_pitches": 271,
+    "seasons": {
+      "2022": 0.2025,
+      "2025": 0.25
+    }
+  },
+  "693821": {
+    "name": "Bryce Elder",
+    "career_csw": 0.2632,
+    "n_seasons": 4,
+    "career_pitches": 1455,
+    "seasons": {
+      "2022": 0.2392,
+      "2023": 0.29,
+      "2024": 0.2558,
+      "2025": 0.2579
+    }
+  },
+  "458681": {
+    "name": "",
+    "career_csw": 0.2823,
+    "n_seasons": 2,
+    "career_pitches": 967,
+    "seasons": {
+      "2023": 0.3031,
+      "2024": 0.2593
+    }
+  },
+  "489119": {
+    "name": "",
+    "career_csw": 0.2482,
+    "n_seasons": 2,
+    "career_pitches": 540,
+    "seasons": {
+      "2023": 0.2607,
+      "2024": 0.2034
+    }
+  },
+  "489446": {
+    "name": "",
+    "career_csw": 0.2942,
+    "n_seasons": 3,
+    "career_pitches": 476,
+    "seasons": {
+      "2023": 0.2837,
+      "2024": 0.3106,
+      "2025": 0.2874
+    }
+  },
+  "518397": {
+    "name": "",
+    "career_csw": 0.22,
+    "n_seasons": 2,
+    "career_pitches": 291,
+    "seasons": {
+      "2023": 0.2249,
+      "2025": 0.2131
+    }
+  },
+  "518585": {
+    "name": "Fernando Cruz",
+    "career_csw": 0.3365,
+    "n_seasons": 3,
+    "career_pitches": 639,
+    "seasons": {
+      "2023": 0.2603,
+      "2024": 0.3478,
+      "2025": 0.4068
+    }
+  },
+  "519151": {
+    "name": "",
+    "career_csw": 0.3011,
+    "n_seasons": 3,
+    "career_pitches": 455,
+    "seasons": {
+      "2023": 0.281,
+      "2024": 0.369,
+      "2025": 0.2388
+    }
+  },
+  "519242": {
+    "name": "Chris Sale",
+    "career_csw": 0.317,
+    "n_seasons": 3,
+    "career_pitches": 1555,
+    "seasons": {
+      "2023": 0.2976,
+      "2024": 0.3243,
+      "2025": 0.3281
+    }
+  },
+  "541640": {
+    "name": "",
+    "career_csw": 0.269,
+    "n_seasons": 2,
+    "career_pitches": 290,
+    "seasons": {
+      "2023": 0.2356,
+      "2024": 0.319
+    }
+  },
+  "542585": {
+    "name": "",
+    "career_csw": 0.2611,
+    "n_seasons": 2,
+    "career_pitches": 475,
+    "seasons": {
+      "2023": 0.2671,
+      "2024": 0.258
+    }
+  },
+  "543518": {
+    "name": "",
+    "career_csw": 0.3201,
+    "n_seasons": 2,
+    "career_pitches": 353,
+    "seasons": {
+      "2023": 0.3526,
+      "2024": 0.2822
+    }
+  },
+  "543859": {
+    "name": "",
+    "career_csw": 0.2678,
+    "n_seasons": 2,
+    "career_pitches": 437,
+    "seasons": {
+      "2023": 0.2759,
+      "2024": 0.2607
+    }
+  },
+  "571510": {
+    "name": "Matt Boyd",
+    "career_csw": 0.2885,
+    "n_seasons": 2,
+    "career_pitches": 877,
+    "seasons": {
+      "2023": 0.2891,
+      "2025": 0.2879
+    }
+  },
+  "571670": {
+    "name": "",
+    "career_csw": 0.3094,
+    "n_seasons": 2,
+    "career_pitches": 362,
+    "seasons": {
+      "2023": 0.329,
+      "2024": 0.2947
+    }
+  },
+  "571882": {
+    "name": "",
+    "career_csw": 0.2968,
+    "n_seasons": 2,
+    "career_pitches": 529,
+    "seasons": {
+      "2023": 0.3119,
+      "2024": 0.2862
+    }
+  },
+  "571946": {
+    "name": "",
+    "career_csw": 0.3057,
+    "n_seasons": 3,
+    "career_pitches": 507,
+    "seasons": {
+      "2023": 0.2865,
+      "2024": 0.3228,
+      "2025": 0.311
+    }
+  },
+  "593334": {
+    "name": "",
+    "career_csw": 0.3349,
+    "n_seasons": 1,
+    "career_pitches": 415,
+    "seasons": {
+      "2023": 0.3349
+    }
+  },
+  "594798": {
+    "name": "Jacob Degrom",
+    "career_csw": 0.3514,
+    "n_seasons": 2,
+    "career_pitches": 791,
+    "seasons": {
+      "2023": 0.3836,
+      "2025": 0.322
+    }
+  },
+  "596133": {
+    "name": "Luke Weaver",
+    "career_csw": 0.2886,
+    "n_seasons": 3,
+    "career_pitches": 686,
+    "seasons": {
+      "2023": 0.3385,
+      "2024": 0.2484,
+      "2025": 0.3068
+    }
+  },
+  "600917": {
+    "name": "",
+    "career_csw": 0.2693,
+    "n_seasons": 3,
+    "career_pitches": 479,
+    "seasons": {
+      "2023": 0.259,
+      "2024": 0.2955,
+      "2025": 0.25
+    }
+  },
+  "605155": {
+    "name": "",
+    "career_csw": 0.2831,
+    "n_seasons": 2,
+    "career_pitches": 219,
+    "seasons": {
+      "2023": 0.2692,
+      "2024": 0.2957
+    }
+  },
+  "605177": {
+    "name": "",
+    "career_csw": 0.3414,
+    "n_seasons": 2,
+    "career_pitches": 290,
+    "seasons": {
+      "2023": 0.3636,
+      "2024": 0.3162
+    }
+  },
+  "605182": {
+    "name": "",
+    "career_csw": 0.2426,
+    "n_seasons": 1,
+    "career_pitches": 544,
+    "seasons": {
+      "2023": 0.2426
+    }
+  },
+  "605483": {
+    "name": "",
+    "career_csw": 0.2611,
+    "n_seasons": 2,
+    "career_pitches": 701,
+    "seasons": {
+      "2023": 0.25,
+      "2024": 0.2748
+    }
+  },
+  "605513": {
+    "name": "",
+    "career_csw": 0.2862,
+    "n_seasons": 2,
+    "career_pitches": 898,
+    "seasons": {
+      "2023": 0.2672,
+      "2024": 0.3065
+    }
+  },
+  "607067": {
+    "name": "Colin Rea",
+    "career_csw": 0.2709,
+    "n_seasons": 3,
+    "career_pitches": 1174,
+    "seasons": {
+      "2023": 0.2609,
+      "2024": 0.2533,
+      "2025": 0.3254
+    }
+  },
+  "621016": {
+    "name": "",
+    "career_csw": 0.2802,
+    "n_seasons": 1,
+    "career_pitches": 207,
+    "seasons": {
+      "2023": 0.2802
+    }
+  },
+  "621076": {
+    "name": "",
+    "career_csw": 0.2869,
+    "n_seasons": 1,
+    "career_pitches": 359,
+    "seasons": {
+      "2023": 0.2869
+    }
+  },
+  "621363": {
+    "name": "",
+    "career_csw": 0.2419,
+    "n_seasons": 3,
+    "career_pitches": 434,
+    "seasons": {
+      "2023": 0.2252,
+      "2024": 0.1983,
+      "2025": 0.2901
+    }
+  },
+  "622075": {
+    "name": "",
+    "career_csw": 0.2827,
+    "n_seasons": 2,
+    "career_pitches": 428,
+    "seasons": {
+      "2023": 0.2808,
+      "2024": 0.2844
+    }
+  },
+  "622491": {
+    "name": "Luis Castillo",
+    "career_csw": 0.2975,
+    "n_seasons": 3,
+    "career_pitches": 1563,
+    "seasons": {
+      "2023": 0.2992,
+      "2024": 0.3212,
+      "2025": 0.2661
+    }
+  },
+  "623149": {
+    "name": "Paul Sewald",
+    "career_csw": 0.3504,
+    "n_seasons": 2,
+    "career_pitches": 391,
+    "seasons": {
+      "2023": 0.3391,
+      "2025": 0.3665
+    }
+  },
+  "623211": {
+    "name": "Huascar Brazob\u00e1n",
+    "career_csw": 0.3101,
+    "n_seasons": 2,
+    "career_pitches": 445,
+    "seasons": {
+      "2023": 0.3084,
+      "2025": 0.3119
+    }
+  },
+  "623433": {
+    "name": "",
+    "career_csw": 0.3233,
+    "n_seasons": 2,
+    "career_pitches": 331,
+    "seasons": {
+      "2023": 0.3889,
+      "2024": 0.245
+    }
+  },
+  "623437": {
+    "name": "Justin Topa",
+    "career_csw": 0.3082,
+    "n_seasons": 2,
+    "career_pitches": 305,
+    "seasons": {
+      "2023": 0.3378,
+      "2025": 0.2803
+    }
+  },
+  "628317": {
+    "name": "",
+    "career_csw": 0.2654,
+    "n_seasons": 3,
+    "career_pitches": 731,
+    "seasons": {
+      "2023": 0.2879,
+      "2024": 0.2554,
+      "2025": 0.2465
+    }
+  },
+  "640451": {
+    "name": "",
+    "career_csw": 0.3142,
+    "n_seasons": 2,
+    "career_pitches": 366,
+    "seasons": {
+      "2023": 0.3147,
+      "2024": 0.3139
+    }
+  },
+  "640470": {
+    "name": "",
+    "career_csw": 0.2977,
+    "n_seasons": 2,
+    "career_pitches": 420,
+    "seasons": {
+      "2023": 0.3048,
+      "2024": 0.2905
+    }
+  },
+  "641360": {
+    "name": "",
+    "career_csw": 0.285,
+    "n_seasons": 1,
+    "career_pitches": 200,
+    "seasons": {
+      "2023": 0.285
+    }
+  },
+  "641401": {
+    "name": "Connor Brogdon",
+    "career_csw": 0.2833,
+    "n_seasons": 1,
+    "career_pitches": 233,
+    "seasons": {
+      "2023": 0.2833
+    }
+  },
+  "641656": {
+    "name": "",
+    "career_csw": 0.3253,
+    "n_seasons": 3,
+    "career_pitches": 581,
+    "seasons": {
+      "2023": 0.3242,
+      "2024": 0.3382,
+      "2025": 0.3058
+    }
+  },
+  "641703": {
+    "name": "",
+    "career_csw": 0.2711,
+    "n_seasons": 1,
+    "career_pitches": 284,
+    "seasons": {
+      "2023": 0.2711
+    }
+  },
+  "642100": {
+    "name": "Gabe Speier",
+    "career_csw": 0.3521,
+    "n_seasons": 3,
+    "career_pitches": 443,
+    "seasons": {
+      "2023": 0.2932,
+      "2024": 0.3375,
+      "2025": 0.42
+    }
+  },
+  "642232": {
+    "name": "Ryan Yarbrough",
+    "career_csw": 0.2574,
+    "n_seasons": 3,
+    "career_pitches": 913,
+    "seasons": {
+      "2023": 0.2159,
+      "2024": 0.2805,
+      "2025": 0.2741
+    }
+  },
+  "642701": {
+    "name": "Dennis Santana",
+    "career_csw": 0.304,
+    "n_seasons": 3,
+    "career_pitches": 523,
+    "seasons": {
+      "2023": 0.3377,
+      "2024": 0.2743,
+      "2025": 0.3147
+    }
+  },
+  "656234": {
+    "name": "",
+    "career_csw": 0.3306,
+    "n_seasons": 3,
+    "career_pitches": 750,
+    "seasons": {
+      "2023": 0.3014,
+      "2024": 0.3141,
+      "2025": 0.3718
+    }
+  },
+  "656288": {
+    "name": "",
+    "career_csw": 0.3073,
+    "n_seasons": 3,
+    "career_pitches": 1038,
+    "seasons": {
+      "2023": 0.3268,
+      "2024": 0.297,
+      "2025": 0.3038
+    }
+  },
+  "656353": {
+    "name": "",
+    "career_csw": 0.3288,
+    "n_seasons": 1,
+    "career_pitches": 222,
+    "seasons": {
+      "2023": 0.3288
+    }
+  },
+  "656427": {
+    "name": "Jack Flaherty",
+    "career_csw": 0.3227,
+    "n_seasons": 3,
+    "career_pitches": 1630,
+    "seasons": {
+      "2023": 0.2958,
+      "2024": 0.3711,
+      "2025": 0.2957
+    }
+  },
+  "656464": {
+    "name": "Kevin Ginkel",
+    "career_csw": 0.2857,
+    "n_seasons": 2,
+    "career_pitches": 364,
+    "seasons": {
+      "2023": 0.2842,
+      "2024": 0.2873
+    }
+  },
+  "656578": {
+    "name": "",
+    "career_csw": 0.2683,
+    "n_seasons": 1,
+    "career_pitches": 205,
+    "seasons": {
+      "2023": 0.2683
+    }
+  },
+  "656818": {
+    "name": "",
+    "career_csw": 0.285,
+    "n_seasons": 1,
+    "career_pitches": 200,
+    "seasons": {
+      "2023": 0.285
+    }
+  },
+  "656970": {
+    "name": "",
+    "career_csw": 0.2594,
+    "n_seasons": 1,
+    "career_pitches": 212,
+    "seasons": {
+      "2023": 0.2594
+    }
+  },
+  "656981": {
+    "name": "",
+    "career_csw": 0.25,
+    "n_seasons": 1,
+    "career_pitches": 236,
+    "seasons": {
+      "2023": 0.25
+    }
+  },
+  "657571": {
+    "name": "",
+    "career_csw": 0.2714,
+    "n_seasons": 3,
+    "career_pitches": 549,
+    "seasons": {
+      "2023": 0.2771,
+      "2024": 0.2871,
+      "2025": 0.2486
+    }
+  },
+  "657612": {
+    "name": "Tim Hill",
+    "career_csw": 0.2506,
+    "n_seasons": 3,
+    "career_pitches": 451,
+    "seasons": {
+      "2023": 0.2623,
+      "2024": 0.225,
+      "2025": 0.2568
+    }
+  },
+  "657756": {
+    "name": "Connor Seabold",
+    "career_csw": 0.2817,
+    "n_seasons": 1,
+    "career_pitches": 252,
+    "seasons": {
+      "2023": 0.2817
+    }
+  },
+  "660261": {
+    "name": "",
+    "career_csw": 0.2554,
+    "n_seasons": 1,
+    "career_pitches": 368,
+    "seasons": {
+      "2023": 0.2554
+    }
+  },
+  "660853": {
+    "name": "Enyel De los santos",
+    "career_csw": 0.3263,
+    "n_seasons": 3,
+    "career_pitches": 469,
+    "seasons": {
+      "2023": 0.2482,
+      "2024": 0.4028,
+      "2025": 0.3245
+    }
+  },
+  "660896": {
+    "name": "",
+    "career_csw": 0.2735,
+    "n_seasons": 3,
+    "career_pitches": 501,
+    "seasons": {
+      "2023": 0.2637,
+      "2024": 0.3048,
+      "2025": 0.2664
+    }
+  },
+  "661309": {
+    "name": "",
+    "career_csw": 0.2664,
+    "n_seasons": 1,
+    "career_pitches": 304,
+    "seasons": {
+      "2023": 0.2664
+    }
+  },
+  "661527": {
+    "name": "",
+    "career_csw": 0.3111,
+    "n_seasons": 2,
+    "career_pitches": 434,
+    "seasons": {
+      "2023": 0.2991,
+      "2024": 0.3227
+    }
+  },
+  "663372": {
+    "name": "Ryan Feltner",
+    "career_csw": 0.2857,
+    "n_seasons": 3,
+    "career_pitches": 1239,
+    "seasons": {
+      "2023": 0.3005,
+      "2024": 0.2888,
+      "2025": 0.2688
+    }
+  },
+  "663546": {
+    "name": "",
+    "career_csw": 0.3203,
+    "n_seasons": 1,
+    "career_pitches": 256,
+    "seasons": {
+      "2023": 0.3203
+    }
+  },
+  "663558": {
+    "name": "Jovani Mor\u00e1n",
+    "career_csw": 0.3167,
+    "n_seasons": 1,
+    "career_pitches": 240,
+    "seasons": {
+      "2023": 0.3167
+    }
+  },
+  "663562": {
+    "name": "",
+    "career_csw": 0.2656,
+    "n_seasons": 1,
+    "career_pitches": 241,
+    "seasons": {
+      "2023": 0.2656
+    }
+  },
+  "663765": {
+    "name": "Jake Woodford",
+    "career_csw": 0.277,
+    "n_seasons": 1,
+    "career_pitches": 527,
+    "seasons": {
+      "2023": 0.277
+    }
+  },
+  "663773": {
+    "name": "",
+    "career_csw": 0.2843,
+    "n_seasons": 2,
+    "career_pitches": 387,
+    "seasons": {
+      "2023": 0.2848,
+      "2024": 0.2839
+    }
+  },
+  "663947": {
+    "name": "Tyler Holton",
+    "career_csw": 0.2975,
+    "n_seasons": 3,
+    "career_pitches": 494,
+    "seasons": {
+      "2023": 0.3636,
+      "2024": 0.2756,
+      "2025": 0.2765
+    }
+  },
+  "664076": {
+    "name": "",
+    "career_csw": 0.3433,
+    "n_seasons": 3,
+    "career_pitches": 501,
+    "seasons": {
+      "2023": 0.2737,
+      "2024": 0.3621,
+      "2025": 0.4161
+    }
+  },
+  "664139": {
+    "name": "",
+    "career_csw": 0.2963,
+    "n_seasons": 2,
+    "career_pitches": 297,
+    "seasons": {
+      "2023": 0.3188,
+      "2025": 0.2701
+    }
+  },
+  "664854": {
+    "name": "Ryan Helsley",
+    "career_csw": 0.3077,
+    "n_seasons": 3,
+    "career_pitches": 468,
+    "seasons": {
+      "2023": 0.3444,
+      "2024": 0.326,
+      "2025": 0.2426
+    }
+  },
+  "665152": {
+    "name": "Dean Kremer",
+    "career_csw": 0.2759,
+    "n_seasons": 3,
+    "career_pitches": 1515,
+    "seasons": {
+      "2023": 0.2832,
+      "2024": 0.2996,
+      "2025": 0.2403
+    }
+  },
+  "665795": {
+    "name": "Edward Cabrera",
+    "career_csw": 0.3082,
+    "n_seasons": 3,
+    "career_pitches": 1262,
+    "seasons": {
+      "2023": 0.2945,
+      "2024": 0.3463,
+      "2025": 0.2906
+    }
+  },
+  "665871": {
+    "name": "Javier Assad",
+    "career_csw": 0.273,
+    "n_seasons": 2,
+    "career_pitches": 674,
+    "seasons": {
+      "2023": 0.2815,
+      "2024": 0.2709
+    }
+  },
+  "666129": {
+    "name": "",
+    "career_csw": 0.3032,
+    "n_seasons": 1,
+    "career_pitches": 343,
+    "seasons": {
+      "2023": 0.3032
+    }
+  },
+  "666142": {
+    "name": "Cole Ragans",
+    "career_csw": 0.3146,
+    "n_seasons": 3,
+    "career_pitches": 1122,
+    "seasons": {
+      "2023": 0.2893,
+      "2024": 0.2964,
+      "2025": 0.3455
+    }
+  },
+  "666168": {
+    "name": "",
+    "career_csw": 0.3318,
+    "n_seasons": 1,
+    "career_pitches": 211,
+    "seasons": {
+      "2023": 0.3318
+    }
+  },
+  "666205": {
+    "name": "",
+    "career_csw": 0.2593,
+    "n_seasons": 2,
+    "career_pitches": 752,
+    "seasons": {
+      "2023": 0.2428,
+      "2024": 0.2843
+    }
+  },
+  "666214": {
+    "name": "",
+    "career_csw": 0.2868,
+    "n_seasons": 3,
+    "career_pitches": 781,
+    "seasons": {
+      "2023": 0.2911,
+      "2024": 0.2908,
+      "2025": 0.2757
+    }
+  },
+  "666277": {
+    "name": "George Soriano",
+    "career_csw": 0.2531,
+    "n_seasons": 3,
+    "career_pitches": 478,
+    "seasons": {
+      "2023": 0.2407,
+      "2024": 0.237,
+      "2025": 0.2681
+    }
+  },
+  "666619": {
+    "name": "",
+    "career_csw": 0.302,
+    "n_seasons": 2,
+    "career_pitches": 341,
+    "seasons": {
+      "2023": 0.3534,
+      "2025": 0.1927
+    }
+  },
+  "666745": {
+    "name": "",
+    "career_csw": 0.2458,
+    "n_seasons": 2,
+    "career_pitches": 586,
+    "seasons": {
+      "2023": 0.2518,
+      "2024": 0.2298
+    }
+  },
+  "666974": {
+    "name": "Yennier Cano",
+    "career_csw": 0.3235,
+    "n_seasons": 3,
+    "career_pitches": 476,
+    "seasons": {
+      "2023": 0.3445,
+      "2024": 0.3268,
+      "2025": 0.2913
+    }
+  },
+  "668868": {
+    "name": "",
+    "career_csw": 0.2976,
+    "n_seasons": 2,
+    "career_pitches": 420,
+    "seasons": {
+      "2023": 0.3158,
+      "2024": 0.2826
+    }
+  },
+  "668933": {
+    "name": "Graham Ashcraft",
+    "career_csw": 0.2735,
+    "n_seasons": 3,
+    "career_pitches": 1225,
+    "seasons": {
+      "2023": 0.2654,
+      "2024": 0.283,
+      "2025": 0.2649
+    }
+  },
+  "669160": {
+    "name": "Dustin May",
+    "career_csw": 0.2627,
+    "n_seasons": 2,
+    "career_pitches": 868,
+    "seasons": {
+      "2023": 0.2506,
+      "2025": 0.2755
+    }
+  },
+  "669194": {
+    "name": "Ryne Nelson",
+    "career_csw": 0.2612,
+    "n_seasons": 3,
+    "career_pitches": 1164,
+    "seasons": {
+      "2023": 0.2586,
+      "2024": 0.2342,
+      "2025": 0.3062
+    }
+  },
+  "669276": {
+    "name": "Dylan Lee",
+    "career_csw": 0.2969,
+    "n_seasons": 3,
+    "career_pitches": 559,
+    "seasons": {
+      "2023": 0.3315,
+      "2024": 0.2769,
+      "2025": 0.2833
+    }
+  },
+  "669438": {
+    "name": "Mason Englert",
+    "career_csw": 0.2965,
+    "n_seasons": 2,
+    "career_pitches": 489,
+    "seasons": {
+      "2023": 0.3113,
+      "2025": 0.2802
+    }
+  },
+  "669713": {
+    "name": "",
+    "career_csw": 0.2829,
+    "n_seasons": 3,
+    "career_pitches": 933,
+    "seasons": {
+      "2023": 0.2691,
+      "2024": 0.3016,
+      "2025": 0.2897
+    }
+  },
+  "669923": {
+    "name": "George Kirby",
+    "career_csw": 0.2935,
+    "n_seasons": 2,
+    "career_pitches": 964,
+    "seasons": {
+      "2023": 0.2966,
+      "2024": 0.2909
+    }
+  },
+  "670059": {
+    "name": "",
+    "career_csw": 0.282,
+    "n_seasons": 2,
+    "career_pitches": 312,
+    "seasons": {
+      "2023": 0.2709,
+      "2024": 0.3028
+    }
+  },
+  "670167": {
+    "name": "John Schreiber",
+    "career_csw": 0.2698,
+    "n_seasons": 3,
+    "career_pitches": 630,
+    "seasons": {
+      "2023": 0.3112,
+      "2024": 0.2258,
+      "2025": 0.2674
+    }
+  },
+  "670174": {
+    "name": "",
+    "career_csw": 0.2699,
+    "n_seasons": 3,
+    "career_pitches": 804,
+    "seasons": {
+      "2023": 0.2862,
+      "2024": 0.2744,
+      "2025": 0.2415
+    }
+  },
+  "670912": {
+    "name": "",
+    "career_csw": 0.3089,
+    "n_seasons": 1,
+    "career_pitches": 518,
+    "seasons": {
+      "2023": 0.3089
+    }
+  },
+  "671106": {
+    "name": "",
+    "career_csw": 0.2768,
+    "n_seasons": 3,
+    "career_pitches": 1185,
+    "seasons": {
+      "2023": 0.3,
+      "2024": 0.3017,
+      "2025": 0.238
+    }
+  },
+  "671737": {
+    "name": "Taj Bradley",
+    "career_csw": 0.2665,
+    "n_seasons": 2,
+    "career_pitches": 713,
+    "seasons": {
+      "2023": 0.2992,
+      "2025": 0.2495
+    }
+  },
+  "672391": {
+    "name": "",
+    "career_csw": 0.213,
+    "n_seasons": 1,
+    "career_pitches": 216,
+    "seasons": {
+      "2023": 0.213
+    }
+  },
+  "673540": {
+    "name": "Kodai Senga",
+    "career_csw": 0.2917,
+    "n_seasons": 2,
+    "career_pitches": 871,
+    "seasons": {
+      "2023": 0.3157,
+      "2025": 0.2656
+    }
+  },
+  "674072": {
+    "name": "",
+    "career_csw": 0.2422,
+    "n_seasons": 2,
+    "career_pitches": 512,
+    "seasons": {
+      "2023": 0.1824,
+      "2024": 0.2665
+    }
+  },
+  "675540": {
+    "name": "",
+    "career_csw": 0.2222,
+    "n_seasons": 1,
+    "career_pitches": 270,
+    "seasons": {
+      "2023": 0.2222
+    }
+  },
+  "675627": {
+    "name": "",
+    "career_csw": 0.3018,
+    "n_seasons": 2,
+    "career_pitches": 497,
+    "seasons": {
+      "2023": 0.2836,
+      "2024": 0.3243
+    }
+  },
+  "675916": {
+    "name": "",
+    "career_csw": 0.3156,
+    "n_seasons": 1,
+    "career_pitches": 225,
+    "seasons": {
+      "2023": 0.3156
+    }
+  },
+  "676130": {
+    "name": "",
+    "career_csw": 0.2778,
+    "n_seasons": 3,
+    "career_pitches": 882,
+    "seasons": {
+      "2023": 0.233,
+      "2024": 0.282,
+      "2025": 0.302
+    }
+  },
+  "676534": {
+    "name": "Calvin Faucher",
+    "career_csw": 0.2724,
+    "n_seasons": 3,
+    "career_pitches": 613,
+    "seasons": {
+      "2023": 0.2721,
+      "2024": 0.2791,
+      "2025": 0.2658
+    }
+  },
+  "676664": {
+    "name": "",
+    "career_csw": 0.2832,
+    "n_seasons": 3,
+    "career_pitches": 1377,
+    "seasons": {
+      "2023": 0.2888,
+      "2024": 0.2911,
+      "2025": 0.27
+    }
+  },
+  "677053": {
+    "name": "Andrew Nardi",
+    "career_csw": 0.2694,
+    "n_seasons": 2,
+    "career_pitches": 438,
+    "seasons": {
+      "2023": 0.2512,
+      "2024": 0.2863
+    }
+  },
+  "677161": {
+    "name": "Zack Kelly",
+    "career_csw": 0.2841,
+    "n_seasons": 2,
+    "career_pitches": 264,
+    "seasons": {
+      "2023": 0.252,
+      "2025": 0.3121
+    }
+  },
+  "677960": {
+    "name": "Ryan Weathers",
+    "career_csw": 0.2843,
+    "n_seasons": 2,
+    "career_pitches": 756,
+    "seasons": {
+      "2023": 0.2697,
+      "2024": 0.2942
+    }
+  },
+  "678394": {
+    "name": "Brayan Bello",
+    "career_csw": 0.2739,
+    "n_seasons": 3,
+    "career_pitches": 920,
+    "seasons": {
+      "2023": 0.2731,
+      "2024": 0.2922,
+      "2025": 0.2296
+    }
+  },
+  "680570": {
+    "name": "",
+    "career_csw": 0.2958,
+    "n_seasons": 2,
+    "career_pitches": 818,
+    "seasons": {
+      "2023": 0.2991,
+      "2024": 0.2917
+    }
+  },
+  "680694": {
+    "name": "Kyle Bradish",
+    "career_csw": 0.276,
+    "n_seasons": 1,
+    "career_pitches": 279,
+    "seasons": {
+      "2023": 0.276
+    }
+  },
+  "681867": {
+    "name": "Cooper Criswell",
+    "career_csw": 0.2824,
+    "n_seasons": 2,
+    "career_pitches": 347,
+    "seasons": {
+      "2023": 0.292,
+      "2024": 0.2762
+    }
+  },
+  "682120": {
+    "name": "",
+    "career_csw": 0.3244,
+    "n_seasons": 3,
+    "career_pitches": 521,
+    "seasons": {
+      "2023": 0.3226,
+      "2024": 0.3333,
+      "2025": 0.3165
+    }
+  },
+  "682171": {
+    "name": "",
+    "career_csw": 0.3106,
+    "n_seasons": 2,
+    "career_pitches": 380,
+    "seasons": {
+      "2023": 0.342,
+      "2025": 0.2781
+    }
+  },
+  "683769": {
+    "name": "",
+    "career_csw": 0.3208,
+    "n_seasons": 3,
+    "career_pitches": 614,
+    "seasons": {
+      "2023": 0.2816,
+      "2024": 0.3209,
+      "2025": 0.3831
+    }
+  },
+  "685410": {
+    "name": "",
+    "career_csw": 0.2746,
+    "n_seasons": 1,
+    "career_pitches": 295,
+    "seasons": {
+      "2023": 0.2746
+    }
+  },
+  "686610": {
+    "name": "Ken Waldichuk",
+    "career_csw": 0.2313,
+    "n_seasons": 1,
+    "career_pitches": 549,
+    "seasons": {
+      "2023": 0.2313
+    }
+  },
+  "686613": {
+    "name": "Hunter Brown",
+    "career_csw": 0.2969,
+    "n_seasons": 3,
+    "career_pitches": 1337,
+    "seasons": {
+      "2023": 0.2985,
+      "2024": 0.2872,
+      "2025": 0.3029
+    }
+  },
+  "686753": {
+    "name": "",
+    "career_csw": 0.2888,
+    "n_seasons": 1,
+    "career_pitches": 232,
+    "seasons": {
+      "2023": 0.2888
+    }
+  },
+  "687330": {
+    "name": "Kevin Kelly",
+    "career_csw": 0.3089,
+    "n_seasons": 2,
+    "career_pitches": 382,
+    "seasons": {
+      "2023": 0.2782,
+      "2024": 0.3657
+    }
+  },
+  "694363": {
+    "name": "",
+    "career_csw": 0.282,
+    "n_seasons": 2,
+    "career_pitches": 273,
+    "seasons": {
+      "2023": 0.2882,
+      "2024": 0.2718
+    }
+  },
+  "695243": {
+    "name": "Mason Miller",
+    "career_csw": 0.386,
+    "n_seasons": 3,
+    "career_pitches": 487,
+    "seasons": {
+      "2023": 0.2575,
+      "2024": 0.4751,
+      "2025": 0.4245
+    }
+  },
+  "458677": {
+    "name": "",
+    "career_csw": 0.2551,
+    "n_seasons": 2,
+    "career_pitches": 243,
+    "seasons": {
+      "2024": 0.2342,
+      "2025": 0.2727
+    }
+  },
+  "502624": {
+    "name": "",
+    "career_csw": 0.2605,
+    "n_seasons": 1,
+    "career_pitches": 334,
+    "seasons": {
+      "2024": 0.2605
+    }
+  },
+  "519008": {
+    "name": "",
+    "career_csw": 0.2941,
+    "n_seasons": 2,
+    "career_pitches": 221,
+    "seasons": {
+      "2024": 0.3333,
+      "2025": 0.2475
+    }
+  },
+  "543351": {
+    "name": "",
+    "career_csw": 0.3142,
+    "n_seasons": 1,
+    "career_pitches": 261,
+    "seasons": {
+      "2024": 0.3142
+    }
+  },
+  "544150": {
+    "name": "Albert Su\u00e1rez",
+    "career_csw": 0.2996,
+    "n_seasons": 1,
+    "career_pitches": 247,
+    "seasons": {
+      "2024": 0.2996
+    }
+  },
+  "572020": {
+    "name": "",
+    "career_csw": 0.2554,
+    "n_seasons": 1,
+    "career_pitches": 462,
+    "seasons": {
+      "2024": 0.2554
+    }
+  },
+  "572143": {
+    "name": "",
+    "career_csw": 0.1972,
+    "n_seasons": 1,
+    "career_pitches": 218,
+    "seasons": {
+      "2024": 0.1972
+    }
+  },
+  "592155": {
+    "name": "",
+    "career_csw": 0.2937,
+    "n_seasons": 2,
+    "career_pitches": 269,
+    "seasons": {
+      "2024": 0.2991,
+      "2025": 0.2895
+    }
+  },
+  "594902": {
+    "name": "",
+    "career_csw": 0.268,
+    "n_seasons": 2,
+    "career_pitches": 709,
+    "seasons": {
+      "2024": 0.3047,
+      "2025": 0.2472
+    }
+  },
+  "600986": {
+    "name": "",
+    "career_csw": 0.3119,
+    "n_seasons": 1,
+    "career_pitches": 295,
+    "seasons": {
+      "2024": 0.3119
+    }
+  },
+  "605452": {
+    "name": "",
+    "career_csw": 0.2801,
+    "n_seasons": 2,
+    "career_pitches": 607,
+    "seasons": {
+      "2024": 0.2847,
+      "2025": 0.2698
+    }
+  },
+  "605463": {
+    "name": "",
+    "career_csw": 0.2934,
+    "n_seasons": 2,
+    "career_pitches": 409,
+    "seasons": {
+      "2024": 0.2946,
+      "2025": 0.2919
+    }
+  },
+  "606965": {
+    "name": "",
+    "career_csw": 0.3049,
+    "n_seasons": 1,
+    "career_pitches": 246,
+    "seasons": {
+      "2024": 0.3049
+    }
+  },
+  "607179": {
+    "name": "",
+    "career_csw": 0.2402,
+    "n_seasons": 1,
+    "career_pitches": 204,
+    "seasons": {
+      "2024": 0.2402
+    }
+  },
+  "607192": {
+    "name": "Tyler Glasnow",
+    "career_csw": 0.3102,
+    "n_seasons": 2,
+    "career_pitches": 806,
+    "seasons": {
+      "2024": 0.3282,
+      "2025": 0.2643
+    }
+  },
+  "608371": {
+    "name": "Lucas Sims",
+    "career_csw": 0.2923,
+    "n_seasons": 2,
+    "career_pitches": 390,
+    "seasons": {
+      "2024": 0.256,
+      "2025": 0.3333
+    }
+  },
+  "620982": {
+    "name": "",
+    "career_csw": 0.2388,
+    "n_seasons": 1,
+    "career_pitches": 268,
+    "seasons": {
+      "2024": 0.2388
+    }
+  },
+  "621199": {
+    "name": "",
+    "career_csw": 0.2651,
+    "n_seasons": 2,
+    "career_pitches": 381,
+    "seasons": {
+      "2024": 0.2914,
+      "2025": 0.2478
+    }
+  },
+  "624647": {
+    "name": "",
+    "career_csw": 0.2439,
+    "n_seasons": 1,
+    "career_pitches": 205,
+    "seasons": {
+      "2024": 0.2439
+    }
+  },
+  "641585": {
+    "name": "",
+    "career_csw": 0.2554,
+    "n_seasons": 1,
+    "career_pitches": 372,
+    "seasons": {
+      "2024": 0.2554
+    }
+  },
+  "641793": {
+    "name": "Zack Littell",
+    "career_csw": 0.2716,
+    "n_seasons": 2,
+    "career_pitches": 880,
+    "seasons": {
+      "2024": 0.3035,
+      "2025": 0.237
+    }
+  },
+  "647336": {
+    "name": "Michael Soroka",
+    "career_csw": 0.2308,
+    "n_seasons": 1,
+    "career_pitches": 520,
+    "seasons": {
+      "2024": 0.2308
+    }
+  },
+  "656232": {
+    "name": "",
+    "career_csw": 0.1868,
+    "n_seasons": 1,
+    "career_pitches": 257,
+    "seasons": {
+      "2024": 0.1868
+    }
+  },
+  "656412": {
+    "name": "",
+    "career_csw": 0.3079,
+    "n_seasons": 1,
+    "career_pitches": 302,
+    "seasons": {
+      "2024": 0.3079
+    }
+  },
+  "656641": {
+    "name": "Jacob Latz",
+    "career_csw": 0.2826,
+    "n_seasons": 1,
+    "career_pitches": 230,
+    "seasons": {
+      "2024": 0.2826
+    }
+  },
+  "656924": {
+    "name": "",
+    "career_csw": 0.2751,
+    "n_seasons": 1,
+    "career_pitches": 229,
+    "seasons": {
+      "2024": 0.2751
+    }
+  },
+  "657097": {
+    "name": "Jacob Webb",
+    "career_csw": 0.2913,
+    "n_seasons": 2,
+    "career_pitches": 357,
+    "seasons": {
+      "2024": 0.2973,
+      "2025": 0.2849
+    }
+  },
+  "657514": {
+    "name": "Brennan Bernardino",
+    "career_csw": 0.3034,
+    "n_seasons": 2,
+    "career_pitches": 300,
+    "seasons": {
+      "2024": 0.2961,
+      "2025": 0.3108
+    }
+  },
+  "657585": {
+    "name": "",
+    "career_csw": 0.366,
+    "n_seasons": 2,
+    "career_pitches": 388,
+    "seasons": {
+      "2024": 0.4,
+      "2025": 0.319
+    }
+  },
+  "657649": {
+    "name": "",
+    "career_csw": 0.2974,
+    "n_seasons": 2,
+    "career_pitches": 306,
+    "seasons": {
+      "2024": 0.2689,
+      "2025": 0.3155
+    }
+  },
+  "661563": {
+    "name": "Luis Gil",
+    "career_csw": 0.3148,
+    "n_seasons": 1,
+    "career_pitches": 664,
+    "seasons": {
+      "2024": 0.3148
+    }
+  },
+  "663362": {
+    "name": "",
+    "career_csw": 0.2736,
+    "n_seasons": 1,
+    "career_pitches": 541,
+    "seasons": {
+      "2024": 0.2736
+    }
+  },
+  "663485": {
+    "name": "Cole Sands",
+    "career_csw": 0.2928,
+    "n_seasons": 2,
+    "career_pitches": 362,
+    "seasons": {
+      "2024": 0.3333,
+      "2025": 0.2387
+    }
+  },
+  "663542": {
+    "name": "Bryan Hudson",
+    "career_csw": 0.2857,
+    "n_seasons": 2,
+    "career_pitches": 336,
+    "seasons": {
+      "2024": 0.2767,
+      "2025": 0.3
+    }
+  },
+  "663567": {
+    "name": "Peter Lambert",
+    "career_csw": 0.2718,
+    "n_seasons": 1,
+    "career_pitches": 309,
+    "seasons": {
+      "2024": 0.2718
+    }
+  },
+  "663568": {
+    "name": "",
+    "career_csw": 0.2533,
+    "n_seasons": 1,
+    "career_pitches": 225,
+    "seasons": {
+      "2024": 0.2533
+    }
+  },
+  "663623": {
+    "name": "Jake Irvin",
+    "career_csw": 0.3004,
+    "n_seasons": 2,
+    "career_pitches": 889,
+    "seasons": {
+      "2024": 0.3003,
+      "2025": 0.3004
+    }
+  },
+  "664126": {
+    "name": "Pete Fairbanks",
+    "career_csw": 0.2833,
+    "n_seasons": 2,
+    "career_pitches": 293,
+    "seasons": {
+      "2024": 0.3237,
+      "2025": 0.2468
+    }
+  },
+  "665620": {
+    "name": "",
+    "career_csw": 0.2638,
+    "n_seasons": 1,
+    "career_pitches": 307,
+    "seasons": {
+      "2024": 0.2638
+    }
+  },
+  "665625": {
+    "name": "",
+    "career_csw": 0.2818,
+    "n_seasons": 1,
+    "career_pitches": 220,
+    "seasons": {
+      "2024": 0.2818
+    }
+  },
+  "667755": {
+    "name": "Jos\u00e9 Soriano",
+    "career_csw": 0.2854,
+    "n_seasons": 2,
+    "career_pitches": 883,
+    "seasons": {
+      "2024": 0.2952,
+      "2025": 0.2758
+    }
+  },
+  "668674": {
+    "name": "Lucas Erceg",
+    "career_csw": 0.2788,
+    "n_seasons": 2,
+    "career_pitches": 330,
+    "seasons": {
+      "2024": 0.3006,
+      "2025": 0.2548
+    }
+  },
+  "668941": {
+    "name": "Jojo Romero",
+    "career_csw": 0.34,
+    "n_seasons": 2,
+    "career_pitches": 303,
+    "seasons": {
+      "2024": 0.3621,
+      "2025": 0.3101
+    }
+  },
+  "668964": {
+    "name": "Tobias Myers",
+    "career_csw": 0.2374,
+    "n_seasons": 2,
+    "career_pitches": 278,
+    "seasons": {
+      "2024": 0.2653,
+      "2025": 0.2061
+    }
+  },
+  "669062": {
+    "name": "Erik Miller",
+    "career_csw": 0.3012,
+    "n_seasons": 2,
+    "career_pitches": 342,
+    "seasons": {
+      "2024": 0.343,
+      "2025": 0.237
+    }
+  },
+  "669084": {
+    "name": "Dl Hall",
+    "career_csw": 0.2824,
+    "n_seasons": 1,
+    "career_pitches": 255,
+    "seasons": {
+      "2024": 0.2824
+    }
+  },
+  "669422": {
+    "name": "",
+    "career_csw": 0.2288,
+    "n_seasons": 2,
+    "career_pitches": 271,
+    "seasons": {
+      "2024": 0.1953,
+      "2025": 0.2843
+    }
+  },
+  "669461": {
+    "name": "Matthew Liberatore",
+    "career_csw": 0.2799,
+    "n_seasons": 2,
+    "career_pitches": 611,
+    "seasons": {
+      "2024": 0.2485,
+      "2025": 0.2919
+    }
+  },
+  "669711": {
+    "name": "Greg Weissert",
+    "career_csw": 0.2662,
+    "n_seasons": 2,
+    "career_pitches": 308,
+    "seasons": {
+      "2024": 0.226,
+      "2025": 0.3025
+    }
+  },
+  "670102": {
+    "name": "",
+    "career_csw": 0.2838,
+    "n_seasons": 2,
+    "career_pitches": 740,
+    "seasons": {
+      "2024": 0.2945,
+      "2025": 0.2754
+    }
+  },
+  "670241": {
+    "name": "",
+    "career_csw": 0.25,
+    "n_seasons": 1,
+    "career_pitches": 228,
+    "seasons": {
+      "2024": 0.25
+    }
+  },
+  "670970": {
+    "name": "Adri\u00e1n Morej\u00f3n",
+    "career_csw": 0.3367,
+    "n_seasons": 2,
+    "career_pitches": 297,
+    "seasons": {
+      "2024": 0.3688,
+      "2025": 0.3077
+    }
+  },
+  "671096": {
+    "name": "Andrew Abbott",
+    "career_csw": 0.2596,
+    "n_seasons": 2,
+    "career_pitches": 909,
+    "seasons": {
+      "2024": 0.2504,
+      "2025": 0.2829
+    }
+  },
+  "671212": {
+    "name": "Joe Boyle",
+    "career_csw": 0.2752,
+    "n_seasons": 1,
+    "career_pitches": 516,
+    "seasons": {
+      "2024": 0.2752
+    }
+  },
+  "671922": {
+    "name": "Cade Smith",
+    "career_csw": 0.3473,
+    "n_seasons": 2,
+    "career_pitches": 429,
+    "seasons": {
+      "2024": 0.3519,
+      "2025": 0.3427
+    }
+  },
+  "672582": {
+    "name": "Angel Zerpa",
+    "career_csw": 0.2765,
+    "n_seasons": 2,
+    "career_pitches": 387,
+    "seasons": {
+      "2024": 0.2675,
+      "2025": 0.2893
+    }
+  },
+  "673513": {
+    "name": "",
+    "career_csw": 0.2905,
+    "n_seasons": 2,
+    "career_pitches": 327,
+    "seasons": {
+      "2024": 0.2671,
+      "2025": 0.3094
+    }
+  },
+  "673929": {
+    "name": "Jordan Leasure",
+    "career_csw": 0.2824,
+    "n_seasons": 2,
+    "career_pitches": 340,
+    "seasons": {
+      "2024": 0.2749,
+      "2025": 0.2899
+    }
+  },
+  "676106": {
+    "name": "Emerson Hancock",
+    "career_csw": 0.2811,
+    "n_seasons": 2,
+    "career_pitches": 854,
+    "seasons": {
+      "2024": 0.2831,
+      "2025": 0.2765
+    }
+  },
+  "676254": {
+    "name": "Ryan Walker",
+    "career_csw": 0.3179,
+    "n_seasons": 2,
+    "career_pitches": 409,
+    "seasons": {
+      "2024": 0.3348,
+      "2025": 0.2955
+    }
+  },
+  "676395": {
+    "name": "Robert Garcia",
+    "career_csw": 0.3099,
+    "n_seasons": 2,
+    "career_pitches": 284,
+    "seasons": {
+      "2024": 0.3083,
+      "2025": 0.3113
+    }
+  },
+  "676440": {
+    "name": "Tanner Bibee",
+    "career_csw": 0.3114,
+    "n_seasons": 2,
+    "career_pitches": 1034,
+    "seasons": {
+      "2024": 0.3297,
+      "2025": 0.2905
+    }
+  },
+  "676775": {
+    "name": "Keaton Winn",
+    "career_csw": 0.2787,
+    "n_seasons": 1,
+    "career_pitches": 506,
+    "seasons": {
+      "2024": 0.2787
+    }
+  },
+  "676962": {
+    "name": "Ben Brown",
+    "career_csw": 0.3256,
+    "n_seasons": 2,
+    "career_pitches": 651,
+    "seasons": {
+      "2024": 0.3214,
+      "2025": 0.3294
+    }
+  },
+  "676974": {
+    "name": "Max Meyer",
+    "career_csw": 0.3342,
+    "n_seasons": 2,
+    "career_pitches": 778,
+    "seasons": {
+      "2024": 0.3363,
+      "2025": 0.3326
+    }
+  },
+  "676979": {
+    "name": "Garrett Crochet",
+    "career_csw": 0.3065,
+    "n_seasons": 2,
+    "career_pitches": 1106,
+    "seasons": {
+      "2024": 0.3074,
+      "2025": 0.3058
+    }
+  },
+  "677944": {
+    "name": "Slade Cecconi",
+    "career_csw": 0.3255,
+    "n_seasons": 1,
+    "career_pitches": 212,
+    "seasons": {
+      "2024": 0.3255
+    }
+  },
+  "679525": {
+    "name": "",
+    "career_csw": 0.2568,
+    "n_seasons": 1,
+    "career_pitches": 475,
+    "seasons": {
+      "2024": 0.2568
+    }
+  },
+  "680573": {
+    "name": "Simeon Woods richardson",
+    "career_csw": 0.2614,
+    "n_seasons": 2,
+    "career_pitches": 612,
+    "seasons": {
+      "2024": 0.2414,
+      "2025": 0.2694
+    }
+  },
+  "680730": {
+    "name": "Mitchell Parker",
+    "career_csw": 0.2594,
+    "n_seasons": 2,
+    "career_pitches": 771,
+    "seasons": {
+      "2024": 0.2913,
+      "2025": 0.2381
+    }
+  },
+  "680767": {
+    "name": "Victor Vodnik",
+    "career_csw": 0.2583,
+    "n_seasons": 2,
+    "career_pitches": 449,
+    "seasons": {
+      "2024": 0.2643,
+      "2025": 0.2444
+    }
+  },
+  "680897": {
+    "name": "",
+    "career_csw": 0.2602,
+    "n_seasons": 1,
+    "career_pitches": 246,
+    "seasons": {
+      "2024": 0.2602
+    }
+  },
+  "681190": {
+    "name": "Randy V\u00e1squez",
+    "career_csw": 0.2253,
+    "n_seasons": 2,
+    "career_pitches": 537,
+    "seasons": {
+      "2024": 0.2367,
+      "2025": 0.2201
+    }
+  },
+  "681217": {
+    "name": "Chase Silseth",
+    "career_csw": 0.345,
+    "n_seasons": 1,
+    "career_pitches": 258,
+    "seasons": {
+      "2024": 0.345
+    }
+  },
+  "681293": {
+    "name": "Spencer Arrighetti",
+    "career_csw": 0.3008,
+    "n_seasons": 1,
+    "career_pitches": 256,
+    "seasons": {
+      "2024": 0.3008
+    }
+  },
+  "681676": {
+    "name": "",
+    "career_csw": 0.2814,
+    "n_seasons": 2,
+    "career_pitches": 398,
+    "seasons": {
+      "2024": 0.2963,
+      "2025": 0.25
+    }
+  },
+  "681857": {
+    "name": "",
+    "career_csw": 0.3028,
+    "n_seasons": 2,
+    "career_pitches": 918,
+    "seasons": {
+      "2024": 0.2924,
+      "2025": 0.3139
+    }
+  },
+  "682243": {
+    "name": "",
+    "career_csw": 0.2763,
+    "n_seasons": 2,
+    "career_pitches": 807,
+    "seasons": {
+      "2024": 0.2926,
+      "2025": 0.2637
+    }
+  },
+  "682842": {
+    "name": "Abner Uribe",
+    "career_csw": 0.3201,
+    "n_seasons": 2,
+    "career_pitches": 428,
+    "seasons": {
+      "2024": 0.2944,
+      "2025": 0.3458
+    }
+  },
+  "682847": {
+    "name": "",
+    "career_csw": 0.2886,
+    "n_seasons": 2,
+    "career_pitches": 693,
+    "seasons": {
+      "2024": 0.2522,
+      "2025": 0.3062
+    }
+  },
+  "682990": {
+    "name": "",
+    "career_csw": 0.2535,
+    "n_seasons": 2,
+    "career_pitches": 509,
+    "seasons": {
+      "2024": 0.2765,
+      "2025": 0.2419
+    }
+  },
+  "683003": {
+    "name": "",
+    "career_csw": 0.3543,
+    "n_seasons": 1,
+    "career_pitches": 398,
+    "seasons": {
+      "2024": 0.3543
+    }
+  },
+  "683232": {
+    "name": "Nick Mears",
+    "career_csw": 0.2908,
+    "n_seasons": 2,
+    "career_pitches": 361,
+    "seasons": {
+      "2024": 0.2764,
+      "2025": 0.3086
+    }
+  },
+  "684007": {
+    "name": "Shota Imanaga",
+    "career_csw": 0.2768,
+    "n_seasons": 2,
+    "career_pitches": 896,
+    "seasons": {
+      "2024": 0.2857,
+      "2025": 0.2679
+    }
+  },
+  "684320": {
+    "name": "",
+    "career_csw": 0.279,
+    "n_seasons": 2,
+    "career_pitches": 387,
+    "seasons": {
+      "2024": 0.3059,
+      "2025": 0.244
+    }
+  },
+  "686563": {
+    "name": "",
+    "career_csw": 0.2462,
+    "n_seasons": 2,
+    "career_pitches": 719,
+    "seasons": {
+      "2024": 0.2734,
+      "2025": 0.2311
+    }
+  },
+  "686580": {
+    "name": "",
+    "career_csw": 0.2697,
+    "n_seasons": 2,
+    "career_pitches": 367,
+    "seasons": {
+      "2024": 0.25,
+      "2025": 0.313
+    }
+  },
+  "686752": {
+    "name": "",
+    "career_csw": 0.3101,
+    "n_seasons": 2,
+    "career_pitches": 990,
+    "seasons": {
+      "2024": 0.3284,
+      "2025": 0.2882
+    }
+  },
+  "686826": {
+    "name": "",
+    "career_csw": 0.2409,
+    "n_seasons": 1,
+    "career_pitches": 274,
+    "seasons": {
+      "2024": 0.2409
+    }
+  },
+  "686973": {
+    "name": "Louis Varland",
+    "career_csw": 0.2656,
+    "n_seasons": 2,
+    "career_pitches": 610,
+    "seasons": {
+      "2024": 0.2453,
+      "2025": 0.3132
+    }
+  },
+  "687765": {
+    "name": "",
+    "career_csw": 0.2935,
+    "n_seasons": 2,
+    "career_pitches": 494,
+    "seasons": {
+      "2024": 0.296,
+      "2025": 0.2915
+    }
+  },
+  "689017": {
+    "name": "",
+    "career_csw": 0.2508,
+    "n_seasons": 2,
+    "career_pitches": 303,
+    "seasons": {
+      "2024": 0.2722,
+      "2025": 0.2239
+    }
+  },
+  "690986": {
+    "name": "Kyle Harrison",
+    "career_csw": 0.2731,
+    "n_seasons": 1,
+    "career_pitches": 432,
+    "seasons": {
+      "2024": 0.2731
+    }
+  },
+  "694037": {
+    "name": "",
+    "career_csw": 0.2711,
+    "n_seasons": 2,
+    "career_pitches": 332,
+    "seasons": {
+      "2024": 0.255,
+      "2025": 0.2955
+    }
+  },
+  "694297": {
+    "name": "Brandon Pfaadt",
+    "career_csw": 0.3006,
+    "n_seasons": 2,
+    "career_pitches": 925,
+    "seasons": {
+      "2024": 0.3268,
+      "2025": 0.2751
+    }
+  },
+  "694738": {
+    "name": "Landen Roupp",
+    "career_csw": 0.3057,
+    "n_seasons": 2,
+    "career_pitches": 723,
+    "seasons": {
+      "2024": 0.2917,
+      "2025": 0.3107
+    }
+  },
+  "694813": {
+    "name": "",
+    "career_csw": 0.2714,
+    "n_seasons": 1,
+    "career_pitches": 409,
+    "seasons": {
+      "2024": 0.2714
+    }
+  },
+  "696136": {
+    "name": "",
+    "career_csw": 0.2486,
+    "n_seasons": 1,
+    "career_pitches": 354,
+    "seasons": {
+      "2024": 0.2486
+    }
+  },
+  "808967": {
+    "name": "Yoshinobu Yamamoto",
+    "career_csw": 0.3342,
+    "n_seasons": 2,
+    "career_pitches": 763,
+    "seasons": {
+      "2024": 0.3706,
+      "2025": 0.3005
+    }
+  },
+  "596271": {
+    "name": "",
+    "career_csw": 0.25,
+    "n_seasons": 1,
+    "career_pitches": 208,
+    "seasons": {
+      "2025": 0.25
+    }
+  },
+  "606996": {
+    "name": "Kyle Hart",
+    "career_csw": 0.2634,
+    "n_seasons": 1,
+    "career_pitches": 262,
+    "seasons": {
+      "2025": 0.2634
+    }
+  },
+  "608372": {
+    "name": "Tomoyuki Sugano",
+    "career_csw": 0.2511,
+    "n_seasons": 1,
+    "career_pitches": 438,
+    "seasons": {
+      "2025": 0.2511
+    }
+  },
+  "656240": {
+    "name": "",
+    "career_csw": 0.3045,
+    "n_seasons": 1,
+    "career_pitches": 220,
+    "seasons": {
+      "2025": 0.3045
+    }
+  },
+  "656550": {
+    "name": "Grant Holmes",
+    "career_csw": 0.2551,
+    "n_seasons": 1,
+    "career_pitches": 396,
+    "seasons": {
+      "2025": 0.2551
+    }
+  },
+  "660825": {
+    "name": "Eduard Bazardo",
+    "career_csw": 0.27,
+    "n_seasons": 1,
+    "career_pitches": 200,
+    "seasons": {
+      "2025": 0.27
+    }
+  },
+  "663436": {
+    "name": "Davis Martin",
+    "career_csw": 0.25,
+    "n_seasons": 1,
+    "career_pitches": 428,
+    "seasons": {
+      "2025": 0.25
+    }
+  },
+  "663969": {
+    "name": "Tyler Phillips",
+    "career_csw": 0.2857,
+    "n_seasons": 1,
+    "career_pitches": 231,
+    "seasons": {
+      "2025": 0.2857
+    }
+  },
+  "668716": {
+    "name": "",
+    "career_csw": 0.3004,
+    "n_seasons": 1,
+    "career_pitches": 253,
+    "seasons": {
+      "2025": 0.3004
+    }
+  },
+  "668820": {
+    "name": "",
+    "career_csw": 0.2331,
+    "n_seasons": 1,
+    "career_pitches": 236,
+    "seasons": {
+      "2025": 0.2331
+    }
+  },
+  "668909": {
+    "name": "Gavin Williams",
+    "career_csw": 0.2821,
+    "n_seasons": 1,
+    "career_pitches": 436,
+    "seasons": {
+      "2025": 0.2821
+    }
+  },
+  "669358": {
+    "name": "Shane Baz",
+    "career_csw": 0.3021,
+    "n_seasons": 1,
+    "career_pitches": 470,
+    "seasons": {
+      "2025": 0.3021
+    }
+  },
+  "669372": {
+    "name": "J. t. Ginn",
+    "career_csw": 0.2422,
+    "n_seasons": 1,
+    "career_pitches": 256,
+    "seasons": {
+      "2025": 0.2422
+    }
+  },
+  "669387": {
+    "name": "Carmen Mlodzinski",
+    "career_csw": 0.2884,
+    "n_seasons": 1,
+    "career_pitches": 371,
+    "seasons": {
+      "2025": 0.2884
+    }
+  },
+  "669724": {
+    "name": "",
+    "career_csw": 0.2851,
+    "n_seasons": 1,
+    "career_pitches": 221,
+    "seasons": {
+      "2025": 0.2851
+    }
+  },
+  "672456": {
+    "name": "Keider Montero",
+    "career_csw": 0.2638,
+    "n_seasons": 1,
+    "career_pitches": 254,
+    "seasons": {
+      "2025": 0.2638
+    }
+  },
+  "672782": {
+    "name": "Yoendrys G\u00f3mez",
+    "career_csw": 0.2564,
+    "n_seasons": 1,
+    "career_pitches": 234,
+    "seasons": {
+      "2025": 0.2564
+    }
+  },
+  "674370": {
+    "name": "Osvaldo Bido",
+    "career_csw": 0.2455,
+    "n_seasons": 1,
+    "career_pitches": 440,
+    "seasons": {
+      "2025": 0.2455
+    }
+  },
+  "676263": {
+    "name": "Jack Dreyer",
+    "career_csw": 0.3213,
+    "n_seasons": 1,
+    "career_pitches": 221,
+    "seasons": {
+      "2025": 0.3213
+    }
+  },
+  "676282": {
+    "name": "Joey Cantillo",
+    "career_csw": 0.3454,
+    "n_seasons": 1,
+    "career_pitches": 249,
+    "seasons": {
+      "2025": 0.3454
+    }
+  },
+  "676508": {
+    "name": "",
+    "career_csw": 0.3219,
+    "n_seasons": 1,
+    "career_pitches": 292,
+    "seasons": {
+      "2025": 0.3219
+    }
+  },
+  "677958": {
+    "name": "Kumar Rocker",
+    "career_csw": 0.2448,
+    "n_seasons": 1,
+    "career_pitches": 286,
+    "seasons": {
+      "2025": 0.2448
+    }
+  },
+  "678024": {
+    "name": "",
+    "career_csw": 0.262,
+    "n_seasons": 1,
+    "career_pitches": 229,
+    "seasons": {
+      "2025": 0.262
+    }
+  },
+  "678606": {
+    "name": "Jose Ferrer",
+    "career_csw": 0.3085,
+    "n_seasons": 1,
+    "career_pitches": 201,
+    "seasons": {
+      "2025": 0.3085
+    }
+  },
+  "678692": {
+    "name": "",
+    "career_csw": 0.3088,
+    "n_seasons": 1,
+    "career_pitches": 217,
+    "seasons": {
+      "2025": 0.3088
+    }
+  },
+  "680732": {
+    "name": "Sean Burke",
+    "career_csw": 0.2741,
+    "n_seasons": 1,
+    "career_pitches": 405,
+    "seasons": {
+      "2025": 0.2741
+    }
+  },
+  "680885": {
+    "name": "",
+    "career_csw": 0.2937,
+    "n_seasons": 1,
+    "career_pitches": 446,
+    "seasons": {
+      "2025": 0.2937
+    }
+  },
+  "681343": {
+    "name": "Shane Smith",
+    "career_csw": 0.2787,
+    "n_seasons": 1,
+    "career_pitches": 470,
+    "seasons": {
+      "2025": 0.2787
+    }
+  },
+  "681517": {
+    "name": "Kyle Leahy",
+    "career_csw": 0.3047,
+    "n_seasons": 1,
+    "career_pitches": 233,
+    "seasons": {
+      "2025": 0.3047
+    }
+  },
+  "681982": {
+    "name": "Grant Anderson",
+    "career_csw": 0.313,
+    "n_seasons": 1,
+    "career_pitches": 230,
+    "seasons": {
+      "2025": 0.313
+    }
+  },
+  "683409": {
+    "name": "",
+    "career_csw": 0.249,
+    "n_seasons": 1,
+    "career_pitches": 241,
+    "seasons": {
+      "2025": 0.249
+    }
+  },
+  "685107": {
+    "name": "",
+    "career_csw": 0.2217,
+    "n_seasons": 1,
+    "career_pitches": 212,
+    "seasons": {
+      "2025": 0.2217
+    }
+  },
+  "686730": {
+    "name": "",
+    "career_csw": 0.2439,
+    "n_seasons": 1,
+    "career_pitches": 246,
+    "seasons": {
+      "2025": 0.2439
+    }
+  },
+  "686799": {
+    "name": "Jack Kochanowicz",
+    "career_csw": 0.2274,
+    "n_seasons": 1,
+    "career_pitches": 409,
+    "seasons": {
+      "2025": 0.2274
+    }
+  },
+  "686993": {
+    "name": "Justin Sterner",
+    "career_csw": 0.2933,
+    "n_seasons": 1,
+    "career_pitches": 225,
+    "seasons": {
+      "2025": 0.2933
+    }
+  },
+  "687362": {
+    "name": "",
+    "career_csw": 0.2746,
+    "n_seasons": 1,
+    "career_pitches": 386,
+    "seasons": {
+      "2025": 0.2746
+    }
+  },
+  "687473": {
+    "name": "",
+    "career_csw": 0.2922,
+    "n_seasons": 1,
+    "career_pitches": 397,
+    "seasons": {
+      "2025": 0.2922
+    }
+  },
+  "687922": {
+    "name": "",
+    "career_csw": 0.2718,
+    "n_seasons": 1,
+    "career_pitches": 298,
+    "seasons": {
+      "2025": 0.2718
+    }
+  },
+  "693433": {
+    "name": "Bryan Woo",
+    "career_csw": 0.288,
+    "n_seasons": 1,
+    "career_pitches": 368,
+    "seasons": {
+      "2025": 0.288
+    }
+  },
+  "694477": {
+    "name": "Chad Patrick",
+    "career_csw": 0.2408,
+    "n_seasons": 1,
+    "career_pitches": 407,
+    "seasons": {
+      "2025": 0.2408
+    }
+  },
+  "694973": {
+    "name": "Paul Skenes",
+    "career_csw": 0.2804,
+    "n_seasons": 1,
+    "career_pitches": 510,
+    "seasons": {
+      "2025": 0.2804
+    }
+  },
+  "695418": {
+    "name": "Brad Lord",
+    "career_csw": 0.2527,
+    "n_seasons": 1,
+    "career_pitches": 277,
+    "seasons": {
+      "2025": 0.2527
+    }
+  },
+  "695549": {
+    "name": "",
+    "career_csw": 0.2582,
+    "n_seasons": 1,
+    "career_pitches": 337,
+    "seasons": {
+      "2025": 0.2582
+    }
+  },
+  "700249": {
+    "name": "Cade Povich",
+    "career_csw": 0.2915,
+    "n_seasons": 1,
+    "career_pitches": 422,
+    "seasons": {
+      "2025": 0.2915
+    }
+  },
+  "700363": {
+    "name": "",
+    "career_csw": 0.3103,
+    "n_seasons": 1,
+    "career_pitches": 232,
+    "seasons": {
+      "2025": 0.3103
+    }
+  },
+  "701542": {
+    "name": "Will Warren",
+    "career_csw": 0.3277,
+    "n_seasons": 1,
+    "career_pitches": 470,
+    "seasons": {
+      "2025": 0.3277
+    }
+  },
+  "701581": {
+    "name": "",
+    "career_csw": 0.2589,
+    "n_seasons": 1,
+    "career_pitches": 224,
+    "seasons": {
+      "2025": 0.2589
+    }
+  },
+  "801403": {
+    "name": "Chase Dollander",
+    "career_csw": 0.2465,
+    "n_seasons": 1,
+    "career_pitches": 430,
+    "seasons": {
+      "2025": 0.2465
+    }
+  },
+  "806185": {
+    "name": "",
+    "career_csw": 0.3191,
+    "n_seasons": 1,
+    "career_pitches": 235,
+    "seasons": {
+      "2025": 0.3191
+    }
+  },
+  "808963": {
+    "name": "Roki Sasaki",
+    "career_csw": 0.2625,
+    "n_seasons": 1,
+    "career_pitches": 320,
+    "seasons": {
+      "2025": 0.2625
+    }
+  }
+}

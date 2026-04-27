@@ -1,0 +1,553 @@
+player_name,mlbam_id,year,signal,luck_score,era_actual,fip_actual,xera_actual,predicted_direction,actual_era_change,in_eval,correct
+"Wainwright, Adam",425794,2022,Neutral,0.0257,4.1,3.48,4.85,,-1.15,False,
+"Greinke, Zack",425844,2022,Sell high,-0.2374,2.86,3.55,6.17,DECLINED,2.31,True,True
+"Verlander, Justin",434378,2022,Slight sell,-0.1372,2.08,2.7,2.0,DECLINED,0.54,True,True
+"Kluber, Corey",446372,2022,Slight sell,-0.1104,2.84,3.1,4.35,DECLINED,1.9,True,True
+"Hill, Rich",448179,2022,Neutral,0.0835,6.3,4.1,6.05,,-1.88,False,
+"Morton, Charlie",450203,2022,Neutral,0.0399,6.5,5.43,6.48,,-2.59,False,
+"Scherzer, Max",453286,2022,Neutral,0.0,1.82,1.92,1.38,,0.62,False,
+"Carrasco, Carlos",471911,2022,Neutral,0.1077,3.42,2.53,3.17,,-0.43,False,
+"Kershaw, Clayton",477132,2022,Neutral,0.0163,1.69,1.71,0.94,,1.67,False,
+"Quintana, Jose",500779,2022,Neutral,-0.0404,3.63,3.86,4.73,,-0.03,False,
+"Archer, Chris",502042,2022,Neutral,-0.0242,4.08,5.87,5.14,,0.2,False,
+"Gibson, Kyle",502043,2022,Sell high,-0.1534,3.18,3.92,3.56,DECLINED,1.49,True,True
+"Darvish, Yu",506433,2022,Neutral,0.0532,4.11,3.65,4.06,,-1.43,False,
+"Bumgarner, Madison",518516,2022,Sell high,-0.2341,1.95,3.71,2.05,DECLINED,3.3,True,True
+"Kelly, Merrill",518876,2022,Slight sell,-0.113,1.41,1.82,2.71,DECLINED,2.15,True,True
+"Pérez, Martín",527048,2022,Neutral,0.0593,2.61,2.28,1.76,,0.03,False,
+"Castellanos, Humberto",528748,2022,Neutral,0.3299,5.74,2.97,2.57,,-0.59,False,
+"Anderson, Tyler",542881,2022,Neutral,-0.05,2.55,2.82,3.61,,0.03,False,
+"Cole, Gerrit",543037,2022,Neutral,0.0,2.93,3.5,3.77,,0.29,False,
+"Eovaldi, Nathan",543135,2022,Slight sell,-0.1168,3.12,4.48,4.01,DECLINED,2.77,True,True
+"Hendricks, Kyle",543294,2022,Neutral,0.0,6.28,6.55,6.8,,-1.75,False,
+"Lyles, Jordan",543475,2022,Neutral,0.0,5.11,5.21,5.08,,-0.59,False,
+"Lorenzen, Michael",547179,2022,Neutral,-0.0082,3.6,4.0,3.45,,1.44,False,
+"Stripling, Ross",548389,2022,Neutral,0.1195,3.38,2.23,3.1,,0.17,False,
+"Wheeler, Zack",554430,2022,Neutral,0.1396,4.34,3.15,3.81,,-1.72,False,
+"Corbin, Patrick",571578,2022,Buy low,0.4124,7.36,3.43,5.76,IMPROVED,-0.64,True,True
+"Matz, Steven",571927,2022,Buy low,0.2287,4.07,2.07,3.21,IMPROVED,0.97,True,False
+"Mikolas, Miles",571945,2022,Sell high,-0.4905,1.26,3.16,1.58,DECLINED,2.27,True,True
+"Stroman, Marcus",573186,2022,Neutral,0.075,6.98,4.96,5.78,,-3.9,False,
+"Kikuchi, Yusei",579328,2022,Neutral,0.0,5.89,6.26,6.28,,-1.06,False,
+"Gausman, Kevin",592332,2022,Neutral,0.1836,2.37,1.29,2.22,,1.69,False,
+"Ray, Robbie",592662,2022,Neutral,0.0425,4.29,3.86,4.44,,-0.01,False,
+"Smyly, Drew",592767,2022,Neutral,0.0,4.09,4.65,4.44,,1.4,False,
+"Syndergaard, Noah",592789,2022,Neutral,-0.022,2.05,2.15,1.19,,2.36,False,
+"Taillon, Jameson",592791,2022,Neutral,0.0,3.38,3.69,3.44,,0.31,False,
+"Velasquez, Vince",592826,2022,Neutral,0.0315,4.87,3.99,5.93,,1.1,False,
+"Montas, Frankie",593423,2022,Neutral,0.0,3.6,3.57,2.98,,-0.12,False,
+"Gonzales, Marco",594835,2022,Neutral,0.1457,7.2,5.05,3.72,,-3.76,False,
+"Peters, Dillon",596071,2022,Sell high,-0.3181,0.6,2.7,3.64,DECLINED,6.25,True,True
+"Gomber, Austin",596295,2022,Neutral,-0.0672,3.96,4.86,5.24,,2.35,False,
+"Pivetta, Nick",601713,2022,Neutral,-0.0422,7.08,6.2,8.19,,-3.68,False,
+"Bassitt, Chris",605135,2022,Slight sell,-0.0714,3.14,3.62,3.86,DECLINED,0.8,True,True
+"Bundy, Dylan",605164,2022,Neutral,0.0042,3.0,2.96,1.83,,2.89,False,
+"Davies, Zach",605200,2022,Neutral,0.0,4.91,4.92,4.21,,-0.69,False,
+"Houser, Adrian",605288,2022,Slight sell,-0.1111,1.98,2.73,2.91,DECLINED,5.19,True,True
+"Musgrove, Joe",605397,2022,Neutral,0.2628,4.34,2.76,3.88,,-1.72,False,
+"Nola, Aaron",605400,2022,Neutral,0.0154,3.38,3.32,0.94,,-0.41,False,
+"Thompson, Zach",605507,2022,Neutral,0.1684,9.95,5.84,6.87,,-6.03,False,
+"Woodruff, Brandon",605540,2022,Neutral,0.031,3.86,3.44,3.96,,-0.98,False,
+"Rodón, Carlos",607074,2022,Neutral,0.0449,1.17,0.84,0.61,,2.34,False,
+"Fedde, Erick",607200,2022,Neutral,0.0197,4.43,3.91,4.31,,0.01,False,
+"Martinez, Nick",607259,2022,Slight sell,-0.0998,4.38,6.22,6.12,DECLINED,-0.16,True,False
+"Freeland, Kyle",607536,2022,Buy low,0.1332,4.68,3.34,4.25,IMPROVED,-0.38,True,True
+"Fried, Max",608331,2022,Neutral,-0.0139,3.21,2.99,4.13,,-0.84,False,
+"Giolito, Lucas",608337,2022,Neutral,0.0828,4.5,3.16,5.16,,0.97,False,
+"Irvin, Cole",608344,2022,Slight sell,-0.1207,3.38,4.35,4.5,DECLINED,-0.25,True,False
+"Wacha, Michael",608379,2022,Sell high,-0.1647,3.33,5.36,5.2,DECLINED,0.11,True,True
+"Márquez, Germán",608566,2022,Neutral,0.0481,5.13,4.2,4.91,,0.59,False,
+"Quantrill, Cal",615698,2022,Sell high,-0.1682,3.65,4.11,6.13,DECLINED,1.01,True,True
+"Eflin, Zach",621107,2022,Neutral,0.2034,3.91,2.27,2.22,,0.62,False,
+"Buehler, Walker",621111,2022,Slight sell,-0.1311,3.72,4.34,4.78,DECLINED,1.45,True,True
+"Blackburn, Paul",621112,2022,Neutral,-0.044,1.99,2.0,2.77,,2.48,False,
+"Berríos, José",621244,2022,Sell high,-0.3499,2.79,4.34,7.32,DECLINED,1.86,True,True
+"Hearn, Taylor",621368,2022,Neutral,0.1032,7.45,4.7,6.59,,-2.72,False,
+"Wood, Alex",622072,2022,Neutral,0.1399,6.45,3.77,6.93,,-2.61,False,
+"Senzatela, Antonio",622608,2022,Neutral,0.0122,3.79,3.63,6.26,,1.5,False,
+"Severino, Luis",622663,2022,Neutral,0.0,2.42,3.1,1.44,,0.72,False,
+"Hernández, Elieser",622694,2022,Neutral,0.0,5.57,5.62,3.29,,1.53,False,
+"Flexen, Chris",623167,2022,Neutral,-0.0362,4.55,4.83,6.41,,-1.22,False,
+"Suarez, Ranger",624133,2022,Neutral,0.0184,4.12,4.64,3.74,,-0.69,False,
+"Thompson, Keegan",624522,2022,Slight sell,-0.1042,0.93,2.43,1.42,DECLINED,3.78,True,True
+"Urías, Julio",628711,2022,Neutral,0.0369,5.4,5.1,4.49,,-2.29,False,
+"Crowe, Wil",640444,2022,Neutral,-0.0457,0.87,1.79,1.1,,3.4,False,
+"Manaea, Sean",640455,2022,Neutral,-0.0633,2.91,3.31,3.8,,1.82,False,
+"López, Pablo",641154,2022,Slight sell,-0.1139,1.69,2.24,3.16,DECLINED,2.35,True,True
+"Alexander, Tyler",641302,2022,Neutral,0.1036,7.16,4.88,4.8,,-2.6,False,
+"Cortes, Nestor",641482,2022,Neutral,0.0768,1.61,1.31,0.19,,1.05,False,
+"Dunning, Dane",641540,2022,Neutral,0.0368,4.33,3.58,4.88,,0.11,False,
+"Hudson, Dakota",641712,2022,Sell high,-0.2898,2.84,4.42,4.3,DECLINED,1.45,True,True
+"Keller, Brad",641745,2022,Neutral,0.0314,4.34,4.07,3.83,,0.77,False,
+"Kuhl, Chad",641771,2022,Sell high,-0.259,1.93,3.66,2.8,DECLINED,4.18,True,True
+"Lauer, Eric",641778,2022,Neutral,-0.0048,2.31,2.5,2.45,,2.68,False,
+"Mahle, Tyler",641816,2022,Buy low,0.4667,5.54,2.33,3.27,IMPROVED,-2.02,True,True
+"Peralta, Freddy",642547,2022,Buy low,0.4527,6.14,2.37,4.25,IMPROVED,-2.99,True,True
+"Alcantara, Sandy",645261,2022,Neutral,-0.0168,1.88,3.23,2.09,,0.58,False,
+"Civale, Aaron",650644,2022,Neutral,0.2784,10.19,4.63,3.93,,-6.46,False,
+"Cease, Dylan",656302,2022,Neutral,0.0,2.08,2.5,0.9,,0.34,False,
+"Houck, Tanner",656557,2022,Sell high,-0.2504,1.82,3.55,4.77,DECLINED,2.2,True,True
+"Keller, Mitch",656605,2022,Buy low,0.1583,7.29,4.24,4.29,IMPROVED,-3.65,True,True
+"Kopech, Michael",656629,2022,Neutral,0.0,2.66,3.15,3.3,,1.15,False,
+"Montgomery, Jordan",656756,2022,Slight sell,-0.0897,2.25,3.0,2.93,DECLINED,1.63,True,True
+"Rasmussen, Drew",656876,2022,Neutral,-0.0537,2.95,2.63,4.8,,0.62,False,
+"Steele, Justin",657006,2022,Neutral,0.109,5.4,3.86,4.16,,-1.13,False,
+"Watkins, Spenser",657093,2022,Slight sell,-0.1109,3.98,5.12,4.62,DECLINED,0.8,True,True
+"Wright, Kyle",657140,2022,Neutral,0.0117,0.96,0.89,0.71,,2.35,False,
+"Webb, Logan",657277,2022,Neutral,0.0474,3.0,2.8,2.58,,-0.14,False,
+"Ryan, Joe",657746,2022,Sell high,-0.2819,1.19,2.84,2.61,DECLINED,3.6,True,True
+"Ohtani, Shohei",660271,2022,Neutral,0.2114,3.72,2.12,2.41,,-1.23,False,
+"Suarez, José",660761,2022,Neutral,-0.0127,6.1,5.76,6.44,,-2.01,False,
+"McKenzie, Triston",663474,2022,Neutral,0.1832,3.79,2.47,2.57,,-0.59,False,
+"McClanahan, Shane",663556,2022,Neutral,0.1054,2.93,2.35,2.74,,-1.01,False,
+"Lynch IV, Daniel",663738,2022,Neutral,-0.0425,3.92,5.23,5.21,,2.06,False,
+"Sandoval, Patrick",663776,2022,Neutral,-0.0412,1.86,2.43,1.66,,2.62,False,
+"Gonsolin, Tony",664062,2022,Neutral,0.0,3.0,3.15,3.24,,-0.4,False,
+"Brubaker, JT",664141,2022,Neutral,0.0659,6.08,4.71,4.58,,-1.69,False,
+"Valdez, Framber",664285,2022,Neutral,0.0,2.75,3.2,2.63,,0.2,False,
+"Urquidy, José",664353,2022,Neutral,0.0078,4.74,4.64,6.43,,-1.19,False,
+"Anderson, Ian",666120,2022,Neutral,0.0,4.03,5.43,3.49,,0.15,False,
+"Lodolo, Nick",666157,2022,Neutral,0.1531,5.3,3.8,3.89,,-1.39,False,
+"Manoah, Alek",666201,2022,Sell high,-0.1706,1.23,2.73,1.55,DECLINED,1.88,True,True
+"Plesac, Zach",668676,2022,Sell high,-0.1703,3.42,4.03,5.66,DECLINED,1.24,True,True
+"Gallen, Zac",668678,2022,Slight sell,-0.0897,0.96,2.19,1.81,DECLINED,2.68,True,True
+"Greene, Hunter",668881,2022,Neutral,-0.0131,4.84,6.46,5.14,,0.26,False,
+"Gore, MacKenzie",669022,2022,Neutral,0.0196,3.5,3.1,3.84,,1.39,False,
+"Wilson, Bryse",669060,2022,Neutral,0.0,4.74,4.94,6.02,,3.34,False,
+"Zimmermann, Bruce",669145,2022,Neutral,0.049,4.03,3.06,4.79,,3.25,False,
+"Burnes, Corbin",669203,2022,Sell high,-0.2113,1.72,2.84,1.68,DECLINED,0.93,True,True
+"Gilbert, Logan",669302,2022,Slight sell,-0.1277,1.78,2.78,4.02,DECLINED,1.81,True,True
+"Wells, Tyler",669330,2022,Neutral,-0.0159,4.41,4.32,4.77,,-0.91,False,
+"Skubal, Tarik",669373,2022,Buy low,0.3644,4.21,1.27,3.17,IMPROVED,-0.22,True,True
+"Rogers, Trevor",669432,2022,Buy low,0.1559,4.09,2.92,3.2,IMPROVED,2.07,True,False
+"Bieber, Shane",669456,2022,Neutral,0.0,3.06,3.19,3.66,,0.63,False,
+"Detmers, Reid",672282,2022,Neutral,0.0,3.86,4.2,4.51,,-0.57,False,
+"Adon, Joan",672851,2022,Neutral,0.0381,6.07,5.16,7.08,,1.51,False,
+"Whitlock, Garrett",676477,2022,Slight sell,-0.0965,1.08,2.2,0.71,DECLINED,3.06,True,True
+"Ashby, Aaron",676879,2022,Neutral,0.0277,4.42,3.7,5.09,,0.9,False,
+"Garcia, Luis",677651,2022,Neutral,0.0363,3.65,4.32,2.44,,0.46,False,
+"Gray, Josiah",680686,2022,Neutral,0.0376,5.4,4.39,5.59,,-0.49,False,
+"Greinke, Zack",425844,2023,Neutral,0.0474,7.2,5.9,6.38,,-2.39,False,
+"Kluber, Corey",446372,2023,Neutral,-0.026,4.79,5.28,3.67,,3.13,False,
+"Hill, Rich",448179,2023,Neutral,-0.0246,4.78,5.1,6.05,,0.62,False,
+"Morton, Charlie",450203,2023,Slight sell,-0.0927,3.38,3.88,5.0,DECLINED,0.63,True,True
+"Lynn, Lance",458681,2023,Neutral,0.1249,7.33,5.03,5.42,,-0.74,False,
+"Kershaw, Clayton",477132,2023,Neutral,0.0,2.58,2.71,2.03,,0.45,False,
+"Miley, Wade",489119,2023,Sell high,-0.2323,1.88,3.1,3.82,DECLINED,1.67,True,True
+"Gibson, Kyle",502043,2023,Neutral,-0.0383,3.38,4.26,4.22,,1.17,False,
+"Cobb, Alex",502171,2023,Neutral,0.0068,2.7,2.65,3.63,,0.58,False,
+"Darvish, Yu",506433,2023,Neutral,0.0,3.07,3.24,2.83,,1.63,False,
+"Kelly, Merrill",518876,2023,Slight sell,-0.0793,2.89,3.67,4.64,DECLINED,0.89,True,True
+"Sale, Chris",519242,2023,Buy low,0.427,7.14,3.96,4.74,IMPROVED,-4.68,True,True
+"Pérez, Martín",527048,2023,Slight sell,-0.1134,3.0,3.92,4.02,DECLINED,3.59,True,True
+"Anderson, Tyler",542881,2023,Neutral,0.0,5.13,5.95,5.5,,-0.32,False,
+"Cole, Gerrit",543037,2023,Sell high,-0.1567,1.07,1.94,2.24,DECLINED,2.28,True,True
+"DeSclafani, Anthony",543101,2023,Sell high,-0.1611,3.0,3.33,4.61,DECLINED,3.24,True,True
+"Eovaldi, Nathan",543135,2023,Buy low,0.7359,4.21,1.72,2.22,IMPROVED,-2.1,True,True
+"Gray, Sonny",543243,2023,Sell high,-0.2301,0.77,1.79,2.2,DECLINED,3.02,True,True
+"Lyles, Jordan",543475,2023,Neutral,0.0465,6.31,5.88,5.62,,-0.81,False,
+"Stripling, Ross",548389,2023,Neutral,0.0,6.46,7.34,7.18,,-1.69,False,
+"Wheeler, Zack",554430,2023,Neutral,0.4394,3.9,1.99,2.67,,-0.25,False,
+"Boyd, Matthew",571510,2023,Neutral,0.0,4.68,4.74,3.81,,0.92,False,
+"Corbin, Patrick",571578,2023,Neutral,0.028,5.93,5.3,5.9,,-1.08,False,
+"Heaney, Andrew",571760,2023,Neutral,0.0363,4.88,4.35,4.4,,0.24,False,
+"Matz, Steven",571927,2023,Neutral,0.0089,5.26,5.05,5.12,,-1.7,False,
+"Mikolas, Miles",571945,2023,Neutral,0.0,5.08,5.18,5.94,,-1.4,False,
+"Stroman, Marcus",573186,2023,Neutral,-0.0385,2.76,3.75,4.15,,1.71,False,
+"Kikuchi, Yusei",579328,2023,Slight sell,-0.111,3.08,4.62,4.51,DECLINED,0.94,True,True
+"Gausman, Kevin",592332,2023,Neutral,0.3691,3.32,2.1,2.44,,0.06,False,
+"Gray, Jon",592351,2023,Slight sell,-0.1392,3.28,5.41,5.43,DECLINED,0.51,True,True
+"Smyly, Drew",592767,2023,Neutral,0.1766,3.54,2.74,1.34,,1.77,False,
+"Syndergaard, Noah",592789,2023,Neutral,0.262,6.32,4.22,4.32,,0.75,False,
+"Walker, Taijuan",592836,2023,Neutral,0.0,4.68,5.02,3.98,,-1.09,False,
+"Williams, Trevor",592866,2023,Slight sell,-0.1046,3.81,4.48,5.34,DECLINED,1.35,True,True
+"Germán, Domingo",593334,2023,Neutral,0.0,4.5,5.1,4.82,,-0.17,False,
+"Rodriguez, Eduardo",593958,2023,Sell high,-0.2117,1.78,3.23,2.06,DECLINED,2.15,True,True
+"Gonzales, Marco",594835,2023,Neutral,0.0969,5.18,4.13,4.38,,0.0,False,
+"Junis, Jakob",596001,2023,Neutral,0.0887,7.71,6.1,5.7,,-3.14,False,
+"Gomber, Austin",596295,2023,Neutral,0.0695,7.57,6.1,6.63,,-2.86,False,
+"Pivetta, Nick",601713,2023,Neutral,0.0238,5.47,4.8,5.61,,-2.08,False,
+"Bassitt, Chris",605135,2023,Neutral,0.0,5.18,5.22,5.29,,-0.88,False,
+"Clevinger, Mike",605182,2023,Neutral,0.0,4.6,5.08,5.02,,-2.02,False,
+"Nola, Aaron",605400,2023,Neutral,0.0533,3.69,3.48,3.04,,1.08,False,
+"Snell, Blake",605483,2023,Slight sell,-0.0765,5.3,7.49,7.78,DECLINED,-3.41,True,False
+"Rea, Colin",607067,2023,Neutral,0.0,4.87,5.07,4.24,,0.12,False,
+"Martinez, Nick",607259,2023,Sell high,-0.1753,2.38,4.47,3.6,DECLINED,2.73,True,True
+"Freeland, Kyle",607536,2023,Neutral,0.0,5.67,5.77,4.44,,0.04,False,
+"Lugo, Seth",607625,2023,Neutral,0.0129,3.58,3.28,4.54,,0.17,False,
+"Giolito, Lucas",608337,2023,Neutral,0.3143,4.5,3.16,3.49,,-0.59,False,
+"Wacha, Michael",608379,2023,Neutral,0.1224,6.12,4.18,5.99,,-4.91,False,
+"Suter, Brent",608718,2023,Neutral,0.0406,2.3,2.97,1.08,,3.04,False,
+"Quantrill, Cal",615698,2023,Neutral,0.0712,5.76,4.42,5.18,,1.32,False,
+"Kaprielian, James",621076,2023,Neutral,0.2798,13.5,7.54,7.26,,-9.17,False,
+"Eflin, Zach",621107,2023,Neutral,-0.0484,3.05,3.39,3.72,,0.75,False,
+"Berríos, José",621244,2023,Neutral,0.3692,4.45,1.97,4.1,,-1.3,False,
+"Strahm, Matt",621381,2023,Sell high,-0.2232,1.21,2.43,2.57,DECLINED,4.38,True,True
+"Castillo, Luis",622491,2023,Neutral,-0.005,2.2,2.16,3.68,,1.89,False,
+"Flexen, Chris",623167,2023,Neutral,0.1738,9.31,6.31,5.31,,-0.45,False,
+"Maeda, Kenta",628317,2023,Neutral,0.3292,8.62,4.38,4.4,,-5.94,False,
+"Urías, Julio",628711,2023,Neutral,0.024,5.26,5.2,3.36,,0.29,False,
+"Manaea, Sean",640455,2023,Neutral,0.0178,7.36,6.86,7.02,,-1.72,False,
+"López, Pablo",641154,2023,Neutral,0.2758,3.9,2.47,3.07,,0.15,False,
+"Alexander, Tyler",641302,2023,Neutral,0.0671,6.46,4.93,4.91,,-2.06,False,
+"Cortes, Nestor",641482,2023,Neutral,0.0919,4.41,4.17,2.74,,-0.2,False,
+"Dunning, Dane",641540,2023,Neutral,-0.0603,2.21,2.76,2.41,,1.11,False,
+"Honeywell, Brent",641703,2023,Neutral,0.0,4.86,4.96,3.96,,1.32,False,
+"Yarbrough, Ryan",642232,2023,Neutral,-0.03,4.86,4.54,5.8,,-1.8,False,
+"Barria, Jaime",642545,2023,Neutral,0.1993,5.06,3.73,2.34,,0.22,False,
+"Peralta, Freddy",642547,2023,Neutral,0.0613,3.18,2.78,3.04,,1.77,False,
+"Alcantara, Sandy",645261,2023,Buy low,0.1371,4.81,3.35,4.42,IMPROVED,-0.59,True,True
+"King, Michael",650633,2023,Buy low,0.2806,4.02,1.5,3.25,IMPROVED,0.67,True,False
+"Bird, Jake",656234,2023,Neutral,0.2604,4.34,2.35,1.98,,2.47,False,
+"Canning, Griffin",656288,2023,Neutral,-0.0328,3.6,3.83,4.51,,0.48,False,
+"Cease, Dylan",656302,2023,Neutral,0.0483,5.62,4.35,5.03,,-1.99,False,
+"Flaherty, Jack",656427,2023,Neutral,-0.0168,3.98,4.65,4.69,,0.08,False,
+"Houck, Tanner",656557,2023,Neutral,0.1143,4.91,3.92,3.39,,-0.08,False,
+"Keller, Mitch",656605,2023,Neutral,-0.0017,2.9,3.07,3.01,,1.57,False,
+"Kopech, Michael",656629,2023,Neutral,0.0,6.66,6.92,8.15,,-2.82,False,
+"Megill, Tylor",656731,2023,Slight sell,-0.1293,3.96,5.62,6.1,DECLINED,2.89,True,True
+"Montgomery, Jordan",656756,2023,Neutral,0.1692,3.09,2.33,3.35,,1.08,False,
+"Peterson, David",656849,2023,Neutral,0.1374,8.06,5.28,5.17,,-3.16,False,
+"Steele, Justin",657006,2023,Sell high,-0.1936,2.02,2.96,2.75,DECLINED,1.62,True,True
+"Webb, Logan",657277,2023,Buy low,0.2361,4.75,3.5,3.73,IMPROVED,-1.39,True,True
+"Schmidt, Clarke",657376,2023,Neutral,0.1241,7.82,4.99,5.62,,-4.46,False,
+"Baumann, Mike",657508,2023,Neutral,0.057,3.45,3.1,2.48,,2.84,False,
+"Ryan, Joe",657746,2023,Neutral,0.069,3.09,2.85,2.08,,1.29,False,
+"Fujinami, Shintaro",660261,2023,Neutral,0.2026,11.0,6.16,7.28,,-5.11,False,
+"Ohtani, Shohei",660271,2023,Slight sell,-0.0933,2.28,2.96,2.51,DECLINED,1.93,True,True
+"McClanahan, Shane",663556,2023,Neutral,0.0098,2.28,3.32,2.46,,1.13,False,
+"Sandoval, Patrick",663776,2023,Neutral,0.0305,4.26,3.97,3.84,,-0.19,False,
+"Singer, Brady",663903,2023,Neutral,0.2852,7.98,4.7,6.45,,-3.37,False,
+"Valdez, Framber",664285,2023,Neutral,-0.0269,3.51,3.4,4.4,,0.25,False,
+"Javier, Cristian",664299,2023,Slight sell,-0.1402,3.14,3.97,4.97,DECLINED,1.26,True,True
+"Kremer, Dean",665152,2023,Neutral,0.0408,6.28,5.47,6.41,,-2.44,False,
+"Cabrera, Edward",665795,2023,Neutral,0.0,4.0,5.14,4.0,,-0.17,False,
+"Garrett, Braxton",666129,2023,Neutral,0.0208,2.45,2.37,4.07,,1.88,False,
+"Thompson, Mason",666168,2023,Neutral,0.0341,2.6,2.41,1.98,,3.26,False,
+"Luzardo, Jesús",666200,2023,Slight buy,0.1017,4.0,3.36,3.07,IMPROVED,-0.8,True,True
+"Manoah, Alek",666201,2023,Slight sell,-0.1196,3.9,4.65,5.88,DECLINED,3.3,True,True
+"Muller, Kyle",666205,2023,Neutral,0.0353,6.65,5.71,7.29,,2.08,False,
+"Wentz, Joey",666214,2023,Neutral,0.0463,4.84,4.26,4.0,,1.79,False,
+"Brito, Jhony",666745,2023,Neutral,0.0365,5.24,4.22,5.56,,-0.01,False,
+"Gallen, Zac",668678,2023,Neutral,-0.031,1.38,1.39,0.86,,2.57,False,
+"Greene, Hunter",668881,2023,Neutral,0.1776,2.96,1.46,2.37,,1.71,False,
+"Ashcraft, Graham",668933,2023,Sell high,-0.282,1.8,3.43,3.51,DECLINED,4.52,True,True
+"Gore, MacKenzie",669022,2023,Neutral,0.0,2.7,3.25,2.76,,2.35,False,
+"Wilson, Bryse",669060,2023,Neutral,-0.0578,2.7,2.8,3.79,,2.16,False,
+"Nelson, Ryne",669194,2023,Neutral,0.1206,6.39,4.84,4.62,,-1.71,False,
+"Burnes, Corbin",669203,2023,Neutral,0.0,3.58,3.64,3.6,,-0.01,False,
+"Gilbert, Logan",669302,2023,Buy low,0.1703,3.95,3.06,2.07,IMPROVED,-0.26,True,True
+"Wells, Tyler",669330,2023,Neutral,-0.0214,2.79,3.62,2.47,,1.54,False,
+"Englert, Mason",669438,2023,Neutral,0.1091,6.23,4.95,3.54,,0.89,False,
+"Bieber, Shane",669456,2023,Neutral,0.0116,3.73,3.51,4.62,,0.61,False,
+"Wesneski, Hayden",669713,2023,Neutral,0.0,5.64,5.74,5.99,,-1.56,False,
+"Kirby, George",669923,2023,Neutral,0.114,2.97,2.14,3.43,,0.85,False,
+"Winckowski, Josh",670174,2023,Slight sell,-0.128,1.47,2.83,1.56,DECLINED,3.69,True,True
+"Oviedo, Johan",670912,2023,Neutral,0.3077,5.01,3.56,2.96,,-0.95,False,
+"Bradley, Taj",671737,2023,Neutral,0.1929,3.52,2.19,1.34,,2.53,False,
+"Detmers, Reid",672282,2023,Buy low,0.1449,5.13,3.86,3.93,IMPROVED,-1.23,True,True
+"Contreras, Roansy",672710,2023,Neutral,0.1292,3.67,2.66,3.6,,4.73,False,
+"Senga, Kodai",673540,2023,Neutral,0.0,3.76,5.19,4.65,,-0.49,False,
+"Curry, Xzavion",675540,2023,Slight sell,-0.139,2.0,3.16,3.12,DECLINED,1.46,True,True
+"Grove, Michael",675627,2023,Neutral,0.1513,6.32,4.31,3.94,,-0.01,False,
+"Strider, Spencer",675911,2023,Neutral,0.0416,1.8,1.37,2.12,,2.75,False,
+"Whitlock, Garrett",676477,2023,Neutral,0.0571,6.0,5.7,4.55,,-0.65,False,
+"Fleming, Josh",676596,2023,Neutral,0.0321,3.26,2.69,3.71,,2.78,False,
+"Sears, JP",676664,2023,Neutral,0.0507,6.04,5.27,4.83,,-2.58,False,
+"Crawford, Kutter",676710,2023,Neutral,0.0,3.7,4.05,1.66,,0.28,False,
+"Weathers, Ryan",677960,2023,Slight sell,-0.1105,2.6,3.45,4.43,DECLINED,6.64,True,True
+"Rodriguez, Grayson",680570,2023,Neutral,-0.0237,2.96,2.73,3.92,,4.1,False,
+"Gray, Josiah",680686,2023,Neutral,-0.0379,2.7,3.97,2.51,,1.14,False,
+"Waldichuk, Ken",686610,2023,Neutral,0.0,6.1,6.84,5.42,,0.3,False,
+"Brown, Hunter",686613,2023,Neutral,0.2032,3.07,1.94,2.46,,1.45,False,
+"Kelly, Kevin",687330,2023,Neutral,0.3038,4.5,2.04,3.15,,-0.86,False,
+"Elder, Bryce",693821,2023,Sell high,-0.3032,1.88,3.59,4.85,DECLINED,1.68,True,True
+"Morton, Charlie",450203,2024,Neutral,0.2208,4.08,3.18,3.37,,0.52,False,
+"Lynn, Lance",458681,2024,Neutral,-0.0322,4.05,5.09,4.83,,1.33,False,
+"Carrasco, Carlos",471911,2024,Slight sell,-0.1354,3.44,5.34,5.05,DECLINED,2.14,True,True
+"Quintana, Jose",500779,2024,Sell high,-0.349,3.07,4.02,6.54,DECLINED,1.64,True,True
+"Gibson, Kyle",502043,2024,Neutral,0.0192,5.35,5.26,6.13,,-1.1,False,
+"Robertson, David",502085,2024,Neutral,0.0141,2.4,1.97,3.07,,1.82,False,
+"Anderson, Chase",502624,2024,Slight sell,-0.1034,4.12,5.59,5.58,DECLINED,2.63,True,True
+"Darvish, Yu",506433,2024,Neutral,0.0487,5.95,4.88,4.99,,-3.75,False,
+"Sale, Chris",519242,2024,Neutral,0.1104,3.13,2.78,1.47,,-0.98,False,
+"Pérez, Martín",527048,2024,Sell high,-0.1632,2.65,2.84,4.92,DECLINED,4.15,True,True
+"Anderson, Tyler",542881,2024,Sell high,-0.6884,2.36,5.31,4.95,DECLINED,1.04,True,True
+"Armstrong, Shawn",542888,2024,Neutral,0.3705,4.11,1.27,1.82,,3.75,False,
+"Eovaldi, Nathan",543135,2024,Neutral,0.0,3.6,4.44,4.02,,-0.27,False,
+"Gray, Sonny",543243,2024,Neutral,0.2477,2.45,1.05,0.94,,1.8,False,
+"Hendricks, Kyle",543294,2024,Neutral,0.1943,10.29,6.34,5.91,,-4.33,False,
+"Suárez, Albert",544150,2024,Neutral,-0.0598,2.35,2.58,3.38,,2.0,False,
+"Lorenzen, Michael",547179,2024,Neutral,0.0,4.37,4.56,5.25,,-1.13,False,
+"Stripling, Ross",548389,2024,Neutral,0.2204,4.5,3.51,4.02,,4.61,False,
+"Wheeler, Zack",554430,2024,Neutral,0.2559,3.47,2.52,2.1,,0.42,False,
+"Ureña, José",570632,2024,Slight sell,-0.0784,3.06,3.44,4.15,DECLINED,0.3,True,True
+"Corbin, Patrick",571578,2024,Neutral,0.1619,7.09,3.92,6.8,,-2.43,False,
+"Heaney, Andrew",571760,2024,Neutral,0.0,5.09,5.19,4.58,,-2.09,False,
+"Law, Derek",571882,2024,Neutral,0.3084,6.06,3.16,4.74,,0.18,False,
+"Mikolas, Miles",571945,2024,Neutral,-0.0351,4.18,3.94,5.41,,0.34,False,
+"Paxton, James",572020,2024,Sell high,-0.4413,1.82,6.75,6.16,DECLINED,3.41,True,True
+"Stroman, Marcus",573186,2024,Neutral,0.0,4.62,4.99,4.2,,-0.36,False,
+"Kikuchi, Yusei",579328,2024,Neutral,0.1129,2.48,1.86,1.98,,3.16,False,
+"Gausman, Kevin",592332,2024,Neutral,0.0844,6.08,4.07,5.73,,-1.27,False,
+"Gray, Jon",592351,2024,Neutral,0.0215,2.61,1.99,4.02,,1.59,False,
+"Williams, Trevor",592866,2024,Slight sell,-0.1172,2.03,2.29,3.49,DECLINED,0.42,True,True
+"Lively, Ben",594902,2024,Sell high,-0.1575,1.76,2.9,3.05,DECLINED,1.71,True,True
+"Weaver, Luke",596133,2024,Slight sell,-0.0737,2.75,3.86,2.74,DECLINED,1.39,True,True
+"Gomber, Austin",596295,2024,Slight sell,-0.0905,4.0,4.99,4.46,DECLINED,1.08,True,True
+"Vieira, Thyago",600986,2024,Neutral,0.0,5.74,6.1,4.5,,0.59,False,
+"Bassitt, Chris",605135,2024,Neutral,-0.0044,4.6,5.69,6.28,,-1.28,False,
+"Houser, Adrian",605288,2024,Neutral,0.1492,8.33,5.03,6.53,,-3.38,False,
+"Nola, Aaron",605400,2024,Sell high,-0.6695,2.11,3.83,3.38,DECLINED,1.55,True,True
+"Snell, Blake",605483,2024,Neutral,0.3207,12.06,5.72,4.84,,-10.34,False,
+"Turnbull, Spencer",605513,2024,Sell high,-0.3193,1.67,2.95,2.87,DECLINED,2.43,True,True
+"Rea, Colin",607067,2024,Sell high,-0.4225,3.43,4.83,6.01,DECLINED,0.17,True,True
+"Rodón, Carlos",607074,2024,Sell high,-0.1705,1.95,3.82,2.93,DECLINED,3.0,True,True
+"Glasnow, Tyler",607192,2024,Neutral,0.0891,2.09,1.81,1.51,,1.92,False,
+"Fedde, Erick",607200,2024,Sell high,-0.1894,2.4,3.5,2.6,DECLINED,0.86,True,True
+"Martinez, Nick",607259,2024,Buy low,0.4773,6.11,2.42,3.59,IMPROVED,-2.7,True,True
+"Freeland, Kyle",607536,2024,Neutral,0.1914,9.17,4.97,4.95,,-6.34,False,
+"Lugo, Seth",607625,2024,Sell high,-0.5291,2.17,4.14,6.03,DECLINED,0.33,True,True
+"Fried, Max",608331,2024,Neutral,0.0316,3.6,3.5,2.89,,-0.55,False,
+"Irvin, Cole",608344,2024,Sell high,-0.1778,2.83,3.47,4.09,DECLINED,4.01,True,True
+"Wacha, Michael",608379,2024,Neutral,0.0156,4.01,3.78,4.38,,-1.12,False,
+"Suter, Brent",608718,2024,Slight sell,-0.1446,3.74,4.58,5.89,DECLINED,1.19,True,True
+"Quantrill, Cal",615698,2024,Sell high,-0.209,3.27,5.1,3.34,DECLINED,0.45,True,True
+"Eflin, Zach",621107,2024,Neutral,0.1285,3.38,2.59,3.24,,1.18,False,
+"Berríos, José",621244,2024,Sell high,-0.9016,0.73,3.29,4.2,DECLINED,4.67,True,True
+"Banks, Tanner",621383,2024,Buy low,1.0617,12.0,3.3,4.92,IMPROVED,-6.91,True,True
+"Castillo, Luis",622491,2024,Buy low,0.375,4.11,2.76,2.94,IMPROVED,-1.0,True,True
+"Severino, Luis",622663,2024,Neutral,-0.0533,2.86,3.1,3.31,,0.9,False,
+"Flexen, Chris",623167,2024,Slight sell,-0.0864,4.44,5.4,5.5,DECLINED,1.37,True,True
+"Suarez, Ranger",624133,2024,Sell high,-0.599,0.78,2.29,1.25,DECLINED,4.11,True,True
+"López, Reynaldo",625643,2024,Sell high,-0.1852,0.73,2.65,2.04,DECLINED,1.46,True,True
+"Maeda, Kenta",628317,2024,Neutral,0.0,4.5,5.1,3.17,,2.32,False,
+"Manaea, Sean",640455,2024,Neutral,0.0244,3.45,2.93,5.36,,0.3,False,
+"López, Pablo",641154,2024,Neutral,0.1353,5.55,4.17,3.01,,-1.19,False,
+"Alexander, Tyler",641302,2024,Neutral,0.0,3.51,4.27,2.4,,3.3,False,
+"Cortes, Nestor",641482,2024,Neutral,0.0,3.18,3.81,2.04,,0.8,False,
+"Dunning, Dane",641540,2024,Sell high,-0.1995,4.15,4.87,5.5,DECLINED,0.42,True,True
+"Hudson, Dakota",641712,2024,Neutral,0.134,6.46,4.63,4.51,,-1.96,False,
+"Littell, Zack",641793,2024,Buy low,0.236,4.33,2.73,3.61,IMPROVED,0.93,True,False
+"Ober, Bailey",641927,2024,Sell high,-0.2084,0.9,1.9,1.2,DECLINED,2.77,True,True
+"Yarbrough, Ryan",642232,2024,Neutral,-0.0239,3.38,4.41,2.91,,1.16,False,
+"Peralta, Freddy",642547,2024,Buy low,0.0565,3.63,2.65,4.38,IMPROVED,0.95,True,False
+"Santana, Dennis",642701,2024,Neutral,0.1702,4.2,2.7,3.71,,3.09,False,
+"Soroka, Michael",647336,2024,Neutral,-0.0684,5.72,7.23,7.13,,0.09,False,
+"King, Michael",650633,2024,Neutral,0.031,5.97,5.86,4.57,,-3.64,False,
+"Civale, Aaron",650644,2024,Buy low,0.1423,6.23,4.35,4.03,IMPROVED,-1.28,True,True
+"Sánchez, Cristopher",650911,2024,Buy low,0.2186,3.77,2.54,3.1,IMPROVED,-1.28,True,True
+"Canning, Griffin",656288,2024,Neutral,0.1507,7.71,4.92,4.26,,-3.83,False,
+"Cease, Dylan",656302,2024,Neutral,0.0195,3.19,2.91,3.53,,0.89,False,
+"Faedo, Alex",656412,2024,Slight sell,-0.1337,3.38,6.31,4.19,DECLINED,1.38,True,True
+"Flaherty, Jack",656427,2024,Buy low,0.6283,6.69,3.53,4.06,IMPROVED,-4.21,True,True
+"Houck, Tanner",656557,2024,Sell high,-0.1561,1.77,1.74,2.81,DECLINED,1.76,True,True
+"Keller, Mitch",656605,2024,Neutral,0.1205,4.75,3.99,4.93,,-1.9,False,
+"Webb, Logan",657277,2024,Sell high,-0.2567,2.29,2.59,5.08,DECLINED,2.18,True,True
+"Schmidt, Clarke",657376,2024,Neutral,0.0,2.75,3.51,4.18,,-1.41,False,
+"Ryan, Joe",657746,2024,Buy low,0.322,5.09,2.88,1.56,IMPROVED,-1.17,True,True
+"Suarez, José",660761,2024,Neutral,0.2463,11.88,6.88,6.37,,-2.14,False,
+"Clase, Emmanuel",661403,2024,Neutral,0.0377,2.3,1.44,3.24,,-0.57,False,
+"Gil, Luis",661563,2024,Neutral,0.0,2.36,3.1,1.93,,0.06,False,
+"Waldron, Matt",663362,2024,Neutral,-0.0586,3.26,3.63,4.22,,0.88,False,
+"Feltner, Ryan",663372,2024,Buy low,0.2291,5.31,3.64,2.68,IMPROVED,0.54,True,False
+"McKenzie, Triston",663474,2024,Neutral,0.0,5.32,5.55,4.68,,-0.05,False,
+"Mize, Casey",663554,2024,Slight sell,-0.1236,2.48,2.98,3.34,DECLINED,2.38,True,True
+"Falter, Bailey",663559,2024,Sell high,-0.2889,1.54,3.36,3.1,DECLINED,2.17,True,True
+"Lambert, Peter",663567,2024,Buy low,0.6207,7.11,2.31,3.77,IMPROVED,-1.24,True,True
+"Irvin, Jake",663623,2024,Buy low,0.0819,4.37,3.23,4.61,IMPROVED,-0.5,True,True
+"Sandoval, Patrick",663776,2024,Neutral,0.2411,6.2,3.51,4.41,,-1.51,False,
+"Hicks, Jordan",663855,2024,Sell high,-0.2465,1.83,3.39,2.17,DECLINED,3.67,True,True
+"Singer, Brady",663903,2024,Slight sell,-0.1485,3.33,4.58,5.1,DECLINED,0.06,True,True
+"Paddack, Chris",663978,2024,Neutral,0.0354,5.54,4.68,5.41,,-1.21,False,
+"Kremer, Dean",665152,2024,Neutral,-0.0686,3.89,3.97,5.14,,1.51,False,
+"Cabrera, Edward",665795,2024,Buy low,0.3883,5.4,2.3,3.57,IMPROVED,0.56,True,False
+"Assad, Javier",665871,2024,Sell high,-0.1539,2.23,3.25,2.58,DECLINED,1.82,True,True
+"Ragans, Cole",666142,2024,Neutral,0.3002,3.3,1.5,3.43,,-0.28,False,
+"Lodolo, Nick",666157,2024,Neutral,-0.0242,1.69,1.35,2.96,,2.6,False,
+"Luzardo, Jesús",666200,2024,Neutral,0.113,7.46,5.27,5.36,,-3.78,False,
+"Muller, Kyle",666205,2024,Neutral,0.0,3.79,4.05,2.67,,1.21,False,
+"Cano, Yennier",666974,2024,Neutral,0.1302,6.89,4.5,3.88,,-1.83,False,
+"Soriano, José",667755,2024,Neutral,0.0647,5.33,4.21,5.4,,-1.73,False,
+"Gallen, Zac",668678,2024,Neutral,0.0,2.73,3.13,3.38,,1.98,False,
+"Greene, Hunter",668881,2024,Neutral,0.3108,3.94,2.43,1.49,,-1.36,False,
+"Ashcraft, Graham",668933,2024,Buy low,0.1808,4.72,3.8,3.17,IMPROVED,0.1,True,False
+"Gore, MacKenzie",669022,2024,Neutral,0.0,2.9,2.94,3.64,,2.87,False,
+"Wilson, Bryse",669060,2024,Slight sell,-0.101,3.63,5.23,3.91,DECLINED,0.89,True,True
+"Nelson, Ryne",669194,2024,Slight buy,0.0719,5.23,4.41,3.48,IMPROVED,-0.69,True,True
+"Burnes, Corbin",669203,2024,Neutral,0.0,3.51,4.21,3.8,,-0.81,False,
+"Gilbert, Logan",669302,2024,Sell high,-0.3132,2.18,3.62,3.65,DECLINED,0.86,True,True
+"Skubal, Tarik",669373,2024,Neutral,0.0376,2.37,2.24,1.64,,0.11,False,
+"Rogers, Trevor",669432,2024,Buy low,0.1439,4.15,2.73,4.07,IMPROVED,0.56,True,False
+"Blanco, Ronel",669854,2024,Sell high,-0.4036,1.41,3.41,1.48,DECLINED,1.71,True,True
+"Kirby, George",669923,2024,Buy low,0.5108,4.4,1.83,3.17,IMPROVED,-1.65,True,True
+"Francis, Bowden",670102,2024,Neutral,0.1683,9.68,5.99,5.92,,-3.71,False,
+"Winckowski, Josh",670174,2024,Neutral,0.4324,7.11,3.05,5.19,,-4.29,False,
+"Abbott, Andrew",671096,2024,Neutral,0.0,3.82,4.56,2.94,,-0.6,False,
+"Allen, Logan",671106,2024,Neutral,0.0467,5.7,5.2,4.82,,-0.97,False,
+"Detmers, Reid",672282,2024,Buy low,0.1871,3.72,2.65,2.6,IMPROVED,5.37,True,False
+"Buttó, José",676130,2024,Sell high,-0.2436,1.93,2.99,4.17,DECLINED,0.29,True,True
+"Bibee, Tanner",676440,2024,Neutral,-0.0127,3.09,3.54,3.25,,0.4,False,
+"Sears, JP",676664,2024,Sell high,-0.1521,3.68,4.67,4.62,DECLINED,1.68,True,True
+"Crawford, Kutter",676710,2024,Neutral,0.0,1.98,2.22,2.69,,2.82,False,
+"Winn, Keaton",676775,2024,Neutral,0.0,3.31,3.5,4.15,,8.0,False,
+"Brown, Ben",676962,2024,Sell high,-0.2172,1.69,2.3,4.67,DECLINED,2.17,True,True
+"Crochet, Garrett",676979,2024,Neutral,0.2033,6.59,4.53,2.49,,-4.47,False,
+"Cecconi, Slade",677944,2024,Neutral,0.0,2.5,3.16,0.68,,3.7,False,
+"Weathers, Ryan",677960,2024,Neutral,-0.0517,4.5,4.98,5.65,,-1.74,False,
+"Bello, Brayan",678394,2024,Neutral,0.0,3.62,3.65,3.59,,2.02,False,
+"Marsh, Alec",679525,2024,Neutral,-0.0568,3.19,3.0,4.97,,2.45,False,
+"Rodriguez, Grayson",680570,2024,Neutral,0.1496,5.32,3.69,4.14,,-1.83,False,
+"Parker, Mitchell",680730,2024,Sell high,-0.1585,0.78,1.45,2.46,DECLINED,4.23,True,True
+"Vodnik, Victor",680767,2024,Neutral,0.201,4.8,3.17,3.48,,2.05,False,
+"Olson, Reese",681857,2024,Neutral,0.2065,3.77,2.44,3.62,,-0.49,False,
+"Miller, Bryce",682243,2024,Sell high,-0.3799,1.17,3.97,3.83,DECLINED,3.29,True,True
+"Jones, Jared",683003,2024,Slight sell,-0.1045,2.86,4.37,3.67,DECLINED,1.59,True,True
+"Imanaga, Shota",684007,2024,Sell high,-0.2256,1.42,2.25,2.27,DECLINED,2.16,True,True
+"Slaten, Justin",686580,2024,Sell high,-0.1663,1.0,1.93,2.7,DECLINED,4.97,True,True
+"Brown, Hunter",686613,2024,Neutral,0.2477,10.9,5.35,6.35,,-8.18,False,
+"Pepiot, Ryan",686752,2024,Slight sell,-0.095,2.67,3.04,2.21,DECLINED,0.76,True,True
+"Jarvis, Bryce",686826,2024,Neutral,-0.0649,3.0,4.97,4.26,,0.57,False,
+"Spence, Mitch",687765,2024,Neutral,0.0946,3.38,2.54,3.0,,1.67,False,
+"Harrison, Kyle",690986,2024,Buy low,0.1558,4.5,3.18,3.88,IMPROVED,-0.62,True,True
+"Pfaadt, Brandon",694297,2024,Buy low,0.2409,5.4,3.73,3.21,IMPROVED,-1.93,True,True
+"Stone, Gavin",694813,2024,Neutral,0.0795,5.48,4.01,4.79,,-2.99,False,
+"Yamamoto, Yoshinobu",808967,2024,Neutral,0.0,2.82,2.83,3.62,,0.22,False,
+"Verlander, Justin",434378,2025,Neutral,0.1251,5.26,4.11,3.7,,-0.12,False,
+"Morton, Charlie",450203,2025,Neutral,0.13,8.49,7.04,5.36,,-4.34,False,
+"Quintana, Jose",500779,2025,Sell high,-0.2962,1.16,3.4,4.41,DECLINED,4.18,True,True
+"Kelly, Merrill",518876,2025,Neutral,0.0125,4.94,4.6,5.28,,-1.6,False,
+"Sale, Chris",519242,2025,Buy low,0.2325,4.75,3.46,3.24,IMPROVED,-3.51,True,True
+"Anderson, Tyler",542881,2025,Sell high,-0.3022,2.51,4.57,3.13,DECLINED,2.54,True,True
+"Eovaldi, Nathan",543135,2025,Neutral,0.0617,2.45,2.04,3.15,,-1.25,False,
+"Gray, Sonny",543243,2025,Neutral,-0.0112,3.68,3.54,4.17,,1.0,False,
+"Hendricks, Kyle",543294,2025,Neutral,0.0,5.56,5.84,5.16,,-1.17,False,
+"Lorenzen, Michael",547179,2025,Neutral,-0.029,3.48,4.14,3.87,,1.7,False,
+"Wheeler, Zack",554430,2025,Neutral,0.1125,3.35,3.13,1.6,,-1.21,False,
+"Boyd, Matthew",571510,2025,Neutral,0.0553,4.18,3.78,3.61,,-1.48,False,
+"Corbin, Patrick",571578,2025,Neutral,0.0,3.86,4.55,4.74,,-0.26,False,
+"Heaney, Andrew",571760,2025,Slight sell,-0.1399,2.64,3.26,3.08,DECLINED,3.36,True,True
+"Matz, Steven",571927,2025,Neutral,-0.0295,2.25,1.75,2.85,,4.21,False,
+"Mikolas, Miles",571945,2025,Neutral,0.1829,4.56,2.8,4.34,,0.56,False,
+"Kikuchi, Yusei",579328,2025,Neutral,0.0,4.56,4.93,4.57,,-1.22,False,
+"Gausman, Kevin",592332,2025,Buy low,0.1174,4.88,3.86,3.7,IMPROVED,-1.36,True,True
+"Ray, Robbie",592662,2025,Neutral,0.0,3.6,4.5,4.02,,-0.66,False,
+"Taillon, Jameson",592791,2025,Slight sell,-0.1284,2.48,3.44,3.47,DECLINED,2.29,True,True
+"Walker, Taijuan",592836,2025,Neutral,0.0,3.57,3.81,4.02,,0.99,False,
+"Williams, Trevor",592866,2025,Neutral,0.0389,4.2,4.0,3.69,,1.88,False,
+"Rodriguez, Eduardo",593958,2025,Buy low,0.4097,6.26,3.36,3.24,IMPROVED,-0.36,True,True
+"deGrom, Jacob",594798,2025,Neutral,0.036,2.96,4.05,2.78,,-0.53,False,
+"Pivetta, Nick",601713,2025,Neutral,-0.0487,1.93,2.39,2.56,,1.51,False,
+"Bassitt, Chris",605135,2025,Neutral,0.0388,2.54,2.29,2.38,,2.08,False,
+"Holmes, Clay",605280,2025,Neutral,0.0632,2.05,1.69,1.36,,1.67,False,
+"Springs, Jeffrey",605488,2025,Neutral,0.1597,8.74,6.36,4.99,,-4.89,False,
+"Rea, Colin",607067,2025,Neutral,0.0073,1.17,1.34,0.93,,3.79,False,
+"Rodón, Carlos",607074,2025,Neutral,0.0766,4.0,3.82,2.39,,-0.7,False,
+"Fedde, Erick",607200,2025,Neutral,0.0083,5.47,5.26,5.4,,0.21,False,
+"Martinez, Nick",607259,2025,Slight buy,0.0242,4.26,3.65,4.65,IMPROVED,-0.05,True,True
+"Freeland, Kyle",607536,2025,Buy low,0.4918,7.4,3.35,4.18,IMPROVED,-1.57,True,True
+"Lugo, Seth",607625,2025,Sell high,-0.2575,3.09,4.41,4.14,DECLINED,-0.02,True,False
+"Fried, Max",608331,2025,Sell high,-0.3722,1.12,2.76,3.03,DECLINED,2.3,True,True
+"Sugano, Tomoyuki",608372,2025,Sell high,-0.3745,2.79,5.1,5.28,DECLINED,2.49,True,True
+"Wacha, Michael",608379,2025,Sell high,-0.178,1.61,2.71,3.38,DECLINED,1.54,True,True
+"Márquez, Germán",608566,2025,Neutral,0.2787,11.0,5.32,5.77,,-5.55,False,
+"Quantrill, Cal",615698,2025,Neutral,0.0946,7.36,4.83,6.09,,-4.0,False,
+"Buehler, Walker",621111,2025,Neutral,-0.0251,3.38,4.02,3.95,,3.87,False,
+"Berríos, José",621244,2025,Slight sell,-0.1311,2.86,4.23,3.69,DECLINED,1.16,True,True
+"Castillo, Luis",622491,2025,Neutral,-0.0105,3.67,3.62,3.99,,-0.21,False,
+"Senzatela, Antonio",622608,2025,Neutral,0.0509,6.66,6.14,5.4,,0.82,False,
+"Severino, Luis",622663,2025,Neutral,0.0473,4.06,3.76,4.09,,2.26,False,
+"Brazobán, Huascar",623211,2025,Slight sell,-0.1189,3.0,3.83,3.76,DECLINED,2.83,True,True
+"López, Pablo",641154,2025,Neutral,-0.0145,1.96,2.19,1.66,,1.53,False,
+"Alexander, Tyler",641302,2025,Buy low,0.2632,5.57,3.39,4.4,IMPROVED,-1.37,True,True
+"Littell, Zack",641793,2025,Neutral,-0.007,5.93,6.69,6.33,,-2.89,False,
+"Mahle, Tyler",641816,2025,Sell high,-0.2784,0.91,2.46,2.45,DECLINED,1.71,True,True
+"Ober, Bailey",641927,2025,Sell high,-0.2133,1.8,3.33,2.95,DECLINED,4.59,True,True
+"Peralta, Freddy",642547,2025,Sell high,-0.3961,1.05,3.45,2.52,DECLINED,2.35,True,True
+"Alcantara, Sandy",645261,2025,Neutral,0.1023,8.86,6.24,6.98,,-2.83,False,
+"Sánchez, Cristopher",650911,2025,Buy low,0.1507,4.15,3.18,2.51,IMPROVED,-2.03,True,True
+"Bird, Jake",656234,2025,Neutral,-0.0221,1.65,1.81,1.79,,8.19,False,
+"Canning, Griffin",656288,2025,Neutral,-0.0659,2.13,2.9,3.79,,2.16,False,
+"Cease, Dylan",656302,2025,Buy low,0.4299,6.2,3.02,3.66,IMPROVED,-1.51,True,True
+"Flaherty, Jack",656427,2025,Neutral,0.0,3.38,3.59,3.22,,1.67,False,
+"Holmes, Grant",656550,2025,Sell high,-0.2289,2.74,5.23,4.37,DECLINED,1.18,True,True
+"Keller, Mitch",656605,2025,Neutral,0.0297,4.18,3.53,5.57,,-0.27,False,
+"Megill, Tylor",656731,2025,Neutral,0.0134,2.39,2.34,2.13,,4.3,False,
+"Newcomb, Sean",656794,2025,Neutral,0.3225,5.12,2.48,3.79,,-0.23,False,
+"Peterson, David",656849,2025,Neutral,0.0528,3.12,2.18,4.29,,-0.21,False,
+"Rasmussen, Drew",656876,2025,Neutral,0.0097,3.2,2.9,3.88,,-0.14,False,
+"Webb, Logan",657277,2025,Neutral,0.3212,2.8,1.6,2.09,,1.08,False,
+"Ryan, Joe",657746,2025,Neutral,0.0,3.45,3.41,2.92,,-0.76,False,
+"Martin, Davis",663436,2025,Neutral,0.0,4.23,4.58,5.83,,-0.42,False,
+"Bubic, Kris",663460,2025,Slight sell,-0.0974,2.97,3.03,4.4,DECLINED,0.14,True,True
+"Mize, Casey",663554,2025,Slight sell,-0.1436,2.17,4.03,1.49,DECLINED,2.67,True,True
+"Falter, Bailey",663559,2025,Neutral,0.0948,6.38,5.43,4.04,,-3.5,False,
+"Irvin, Jake",663623,2025,Slight sell,-0.1301,3.96,4.64,4.37,DECLINED,1.33,True,True
+"Hicks, Jordan",663855,2025,Buy low,0.1748,5.26,3.76,4.61,IMPROVED,0.7,True,False
+"Singer, Brady",663903,2025,Slight buy,0.0699,4.78,4.09,4.25,IMPROVED,0.35,True,False
+"Paddack, Chris",663978,2025,Neutral,-0.0182,3.38,4.31,3.28,,0.97,False,
+"Valdez, Framber",664285,2025,Buy low,0.1437,4.66,3.72,4.23,IMPROVED,-2.41,True,True
+"Kremer, Dean",665152,2025,Neutral,0.0304,6.48,5.82,5.92,,-3.05,False,
+"Cabrera, Edward",665795,2025,Neutral,0.0799,6.63,5.47,4.76,,-3.91,False,
+"Lodolo, Nick",666157,2025,Neutral,-0.0695,2.43,3.17,2.64,,1.1,False,
+"Luzardo, Jesús",666200,2025,Neutral,-0.0078,2.08,1.91,2.76,,3.15,False,
+"Soriano, José",667755,2025,Slight buy,0.027,5.0,4.43,4.69,IMPROVED,-1.09,True,True
+"Gallen, Zac",668678,2025,Buy low,0.1587,5.02,3.9,3.32,IMPROVED,0.55,True,False
+"Greene, Hunter",668881,2025,Slight sell,-0.1246,2.53,3.41,2.84,DECLINED,0.33,True,True
+"Williams, Gavin",668909,2025,Neutral,0.0353,6.35,5.39,6.36,,-3.3,False,
+"Gore, MacKenzie",669022,2025,Buy low,0.2405,4.19,3.1,3.71,IMPROVED,-0.29,True,True
+"Wilson, Bryse",669060,2025,Neutral,-0.0644,5.28,7.08,7.18,,3.95,False,
+"May, Dustin",669160,2025,Buy low,0.125,4.33,3.29,4.06,IMPROVED,0.85,True,False
+"Nelson, Ryne",669194,2025,Neutral,0.2149,4.11,2.32,3.07,,-1.45,False,
+"Burnes, Corbin",669203,2025,Neutral,0.0,4.5,4.97,5.29,,-3.06,False,
+"Gilbert, Logan",669302,2025,Neutral,0.118,2.7,1.9,1.29,,1.95,False,
+"Baz, Shane",669358,2025,Slight sell,-0.0807,1.84,2.9,1.73,DECLINED,2.85,True,True
+"Skubal, Tarik",669373,2025,Neutral,0.0333,1.55,1.34,1.45,,0.22,False,
+"Mlodzinski, Carmen",669387,2025,Neutral,0.0403,4.5,3.74,5.12,,-1.55,False,
+"Liberatore, Matthew",669461,2025,Neutral,0.1986,2.97,1.88,2.57,,1.72,False,
+"Pallante, Andre",669467,2025,Neutral,0.0,4.28,5.33,4.53,,0.49,False,
+"Hanifee, Brenan",669724,2025,Neutral,0.134,3.6,2.5,2.94,,2.69,False,
+"Francis, Bowden",670102,2025,Neutral,0.0,6.75,7.14,7.0,,0.56,False,
+"Abbott, Andrew",671096,2025,Neutral,0.047,3.6,4.63,2.0,,-1.24,False,
+"Allen, Logan",671106,2025,Slight sell,-0.075,3.2,4.24,4.52,DECLINED,1.21,True,True
+"Bradley, Taj",671737,2025,Neutral,0.0,4.3,4.91,3.54,,0.18,False,
+"Senga, Kodai",673540,2025,Neutral,0.0026,1.95,2.74,2.49,,0.47,False,
+"Bido, Osvaldo",674370,2025,Neutral,0.0314,4.85,6.02,4.45,,4.97,False,
+"Hancock, Emerson",676106,2025,Neutral,0.0373,3.94,3.6,3.59,,1.03,False,
+"Bibee, Tanner",676440,2025,Neutral,-0.0338,5.54,7.22,4.84,,-0.66,False,
+"Casparius, Ben",676508,2025,Neutral,0.1705,3.38,1.98,1.91,,1.78,False,
+"Sears, JP",676664,2025,Slight sell,-0.0851,2.67,3.51,2.9,DECLINED,3.33,True,True
+"Brown, Ben",676962,2025,Neutral,0.2424,6.11,3.72,5.32,,0.24,False,
+"Meyer, Max",676974,2025,Neutral,0.0889,3.54,2.71,3.94,,3.75,False,
+"Crochet, Garrett",676979,2025,Sell high,-0.1832,1.86,2.63,3.06,DECLINED,0.52,True,True
+"Rocker, Kumar",677958,2025,Neutral,0.3291,5.71,2.87,4.63,,-1.28,False,
+"Woods Richardson, Simeon",680573,2025,Neutral,0.0,3.8,3.86,5.4,,0.59,False,
+"Parker, Mitchell",680730,2025,Neutral,0.0,3.73,3.9,3.42,,2.84,False,
+"Burke, Sean",680732,2025,Neutral,0.05,8.41,7.53,7.24,,-4.21,False,
+"Schwellenbach, Spencer",680885,2025,Neutral,0.0898,3.94,3.38,4.0,,-0.28,False,
+"Vásquez, Randy",681190,2025,Sell high,-0.2006,3.38,5.16,6.16,DECLINED,0.02,True,True
+"Smith, Shane",681343,2025,Slight sell,-0.1166,2.27,3.01,3.79,DECLINED,4.14,True,True
+"Leahy, Kyle",681517,2025,Sell high,-0.1886,1.56,3.45,2.3,DECLINED,2.83,True,True
+"Olson, Reese",681857,2025,Slight sell,-0.1113,1.63,2.45,3.46,DECLINED,1.2,True,True
+"Ortiz, Luis",682847,2025,Neutral,-0.0144,3.25,3.82,3.3,,0.79,False,
+"Priester, Quinn",682990,2025,Neutral,-0.0645,3.38,4.33,4.68,,0.0,False,
+"Imanaga, Shota",684007,2025,Slight sell,-0.0848,3.86,5.39,5.08,DECLINED,-0.72,True,False
+"Cannon, Jonathan",686563,2025,Neutral,0.0,5.0,5.43,3.98,,-0.23,False,
+"Brown, Hunter",686613,2025,Slight sell,-0.0772,0.88,1.34,1.4,DECLINED,2.27,True,True
+"Pepiot, Ryan",686752,2025,Neutral,0.0,4.94,6.21,5.08,,-1.11,False,
+"Kochanowicz, Jack",686799,2025,Neutral,-0.0054,5.19,5.83,5.57,,0.71,False,
+"Gusto, Ryan",687473,2025,Neutral,0.0037,3.28,3.14,3.41,,2.65,False,
+"Spence, Mitch",687765,2025,Neutral,0.2639,5.06,3.16,3.3,,0.37,False,
+"Woo, Bryan",693433,2025,Neutral,0.1018,3.46,2.75,2.5,,-0.12,False,
+"Elder, Bryce",693821,2025,Neutral,0.0,5.4,5.95,4.54,,1.04,False,
+"Pfaadt, Brandon",694297,2025,Slight sell,-0.1402,2.48,3.76,4.65,DECLINED,3.73,True,True
+"Patrick, Chad",694477,2025,Sell high,-0.1767,1.5,3.68,3.37,DECLINED,2.22,True,True
+"Roupp, Landen",694738,2025,Slight buy,0.1454,4.6,3.92,3.09,IMPROVED,-1.65,True,True
+"Skenes, Paul",694973,2025,Neutral,0.2509,2.78,1.71,1.05,,-1.07,False,
+"Lord, Brad",695418,2025,Neutral,-0.0446,3.86,3.59,5.28,,-0.6,False,
+"Jobe, Jackson",695549,2025,Neutral,0.0135,3.2,3.76,2.74,,1.9,False,
+"Povich, Cade",700249,2025,Neutral,0.0051,6.29,6.14,6.4,,-0.67,False,
+"Warren, Will",701542,2025,Neutral,0.0354,4.94,4.07,4.78,,-0.72,False,
+"Dollander, Chase",801403,2025,Neutral,0.0846,7.66,6.51,5.61,,-0.91,False,
+"Birdsong, Hayden",806185,2025,Sell high,-0.1573,1.12,2.79,2.98,DECLINED,5.21,True,True
+"Yamamoto, Yoshinobu",808967,2025,Neutral,0.0,1.14,1.66,1.41,,2.43,False,

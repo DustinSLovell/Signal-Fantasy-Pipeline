@@ -1,0 +1,5 @@
+{
+  "_comment": "Manual position overrides. MLBAM ID -> CBS-standard position abbreviation. Applied after CBS Sports lookup and MLB API fallback.",
+  "514888": "2B",
+  "571970": "3B"
+}

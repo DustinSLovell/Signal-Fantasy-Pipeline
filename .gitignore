@@ -1,0 +1,21 @@
+# API keys and secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Data outputs (large / generated files)
+data/player_values.json
+data/narratives.json
+data/sprint_speeds.json
+backtest_cache/
+
+# Logs
+logs/
+
+# OS
+.DS_Store
+Thumbs.db

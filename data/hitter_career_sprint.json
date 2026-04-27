@@ -1,0 +1,9895 @@
+{
+  "682998": {
+    "name": "Corbin Carroll",
+    "career_sprint_speed": 29.9,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 838,
+    "seasons": {
+      "2022": 30.7,
+      "2023": 30.1,
+      "2024": 29.6,
+      "2025": 29.8
+    }
+  },
+  "642350": {
+    "name": "",
+    "career_sprint_speed": 29.97,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 317,
+    "seasons": {
+      "2022": 30.3,
+      "2023": 29.7,
+      "2024": 29.9
+    }
+  },
+  "677951": {
+    "name": "Bobby Witt",
+    "career_sprint_speed": 30.39,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 1026,
+    "seasons": {
+      "2022": 30.3,
+      "2023": 30.5,
+      "2024": 30.5,
+      "2025": 30.2
+    }
+  },
+  "607208": {
+    "name": "Trea Turner",
+    "career_sprint_speed": 30.15,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 1073,
+    "seasons": {
+      "2022": 30.3,
+      "2023": 30.3,
+      "2024": 29.6,
+      "2025": 30.3
+    }
+  },
+  "669352": {
+    "name": "",
+    "career_sprint_speed": 30.27,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 94,
+    "seasons": {
+      "2022": 30.3,
+      "2023": 30.2
+    }
+  },
+  "641796": {
+    "name": "",
+    "career_sprint_speed": 29.73,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 40,
+    "seasons": {
+      "2022": 30.2,
+      "2023": 29.2
+    }
+  },
+  "622761": {
+    "name": "Jorge Mateo",
+    "career_sprint_speed": 30.0,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 408,
+    "seasons": {
+      "2022": 30.1,
+      "2023": 30.1,
+      "2024": 29.9,
+      "2025": 29.3
+    }
+  },
+  "664983": {
+    "name": "Jake Mccarthy",
+    "career_sprint_speed": 29.94,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 607,
+    "seasons": {
+      "2022": 30.1,
+      "2023": 30.0,
+      "2024": 29.8,
+      "2025": 29.9
+    }
+  },
+  "669003": {
+    "name": "Garrett Mitchell",
+    "career_sprint_speed": 29.48,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 160,
+    "seasons": {
+      "2022": 30.1,
+      "2023": 29.3,
+      "2024": 29.5,
+      "2025": 29.0
+    }
+  },
+  "592144": {
+    "name": "",
+    "career_sprint_speed": 30.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 25,
+    "seasons": {
+      "2022": 30.0
+    }
+  },
+  "642201": {
+    "name": "Eli White",
+    "career_sprint_speed": 29.88,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 159,
+    "seasons": {
+      "2022": 30.0,
+      "2024": 29.6,
+      "2025": 29.9
+    }
+  },
+  "665833": {
+    "name": "Oneil Cruz",
+    "career_sprint_speed": 29.22,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 494,
+    "seasons": {
+      "2022": 29.9,
+      "2023": 28.7,
+      "2024": 28.8,
+      "2025": 29.2
+    }
+  },
+  "665923": {
+    "name": "",
+    "career_sprint_speed": 29.6,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 235,
+    "seasons": {
+      "2022": 29.8,
+      "2023": 29.6,
+      "2024": 29.4
+    }
+  },
+  "666176": {
+    "name": "Jo Adell",
+    "career_sprint_speed": 28.65,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 403,
+    "seasons": {
+      "2022": 29.7,
+      "2023": 29.0,
+      "2024": 28.8,
+      "2025": 27.9
+    }
+  },
+  "677594": {
+    "name": "Julio Rodr\u00edguez",
+    "career_sprint_speed": 29.52,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 976,
+    "seasons": {
+      "2022": 29.7,
+      "2023": 29.6,
+      "2024": 29.6,
+      "2025": 29.2
+    }
+  },
+  "641933": {
+    "name": "Tyler O'neill",
+    "career_sprint_speed": 28.48,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 383,
+    "seasons": {
+      "2022": 29.7,
+      "2023": 28.5,
+      "2024": 27.5,
+      "2025": 28.3
+    }
+  },
+  "656537": {
+    "name": "Derek Hill",
+    "career_sprint_speed": 29.73,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 163,
+    "seasons": {
+      "2022": 29.6,
+      "2023": 29.7,
+      "2024": 29.5,
+      "2025": 30.1
+    }
+  },
+  "681987": {
+    "name": "",
+    "career_sprint_speed": 29.63,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 111,
+    "seasons": {
+      "2022": 29.6,
+      "2023": 29.5,
+      "2025": 29.7
+    }
+  },
+  "542932": {
+    "name": "",
+    "career_sprint_speed": 29.25,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 466,
+    "seasons": {
+      "2022": 29.5,
+      "2023": 29.3,
+      "2024": 29.0,
+      "2025": 28.3
+    }
+  },
+  "642423": {
+    "name": "",
+    "career_sprint_speed": 29.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 35,
+    "seasons": {
+      "2022": 29.5
+    }
+  },
+  "663837": {
+    "name": "Matt Vierling",
+    "career_sprint_speed": 28.99,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 618,
+    "seasons": {
+      "2022": 29.5,
+      "2023": 29.1,
+      "2024": 28.8,
+      "2025": 27.7
+    }
+  },
+  "642708": {
+    "name": "Amed Rosario",
+    "career_sprint_speed": 29.14,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 874,
+    "seasons": {
+      "2022": 29.4,
+      "2023": 29.4,
+      "2024": 29.0,
+      "2025": 27.5
+    }
+  },
+  "641658": {
+    "name": "",
+    "career_sprint_speed": 29.59,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 287,
+    "seasons": {
+      "2022": 29.4,
+      "2023": 29.8,
+      "2024": 29.8,
+      "2025": 28.9
+    }
+  },
+  "624641": {
+    "name": "Edmundo Sosa",
+    "career_sprint_speed": 29.29,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 396,
+    "seasons": {
+      "2022": 29.4,
+      "2023": 29.2,
+      "2024": 29.2,
+      "2025": 29.4
+    }
+  },
+  "665161": {
+    "name": "Jeremy Pe\u00f1a",
+    "career_sprint_speed": 29.56,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 1016,
+    "seasons": {
+      "2022": 29.4,
+      "2023": 29.4,
+      "2024": 29.8,
+      "2025": 29.6
+    }
+  },
+  "640492": {
+    "name": "",
+    "career_sprint_speed": 29.36,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 169,
+    "seasons": {
+      "2022": 29.4,
+      "2023": 29.6,
+      "2024": 29.0
+    }
+  },
+  "671083": {
+    "name": "",
+    "career_sprint_speed": 29.23,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 45,
+    "seasons": {
+      "2022": 29.4,
+      "2025": 28.7
+    }
+  },
+  "671739": {
+    "name": "Michael Harris",
+    "career_sprint_speed": 28.77,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 888,
+    "seasons": {
+      "2022": 29.4,
+      "2023": 28.8,
+      "2024": 28.3,
+      "2025": 28.5
+    }
+  },
+  "657041": {
+    "name": "Lane Thomas",
+    "career_sprint_speed": 29.33,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 671,
+    "seasons": {
+      "2022": 29.4,
+      "2023": 29.3,
+      "2024": 29.3,
+      "2025": 29.3
+    }
+  },
+  "665750": {
+    "name": "Leody Taveras",
+    "career_sprint_speed": 28.94,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 583,
+    "seasons": {
+      "2022": 29.3,
+      "2023": 29.1,
+      "2024": 28.5,
+      "2025": 28.8
+    }
+  },
+  "665862": {
+    "name": "Jazz Chisholm",
+    "career_sprint_speed": 28.4,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 557,
+    "seasons": {
+      "2022": 29.3,
+      "2023": 28.4,
+      "2024": 28.6,
+      "2025": 27.6
+    }
+  },
+  "677950": {
+    "name": "Alek Thomas",
+    "career_sprint_speed": 28.72,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 683,
+    "seasons": {
+      "2022": 29.3,
+      "2023": 28.8,
+      "2024": 27.8,
+      "2025": 28.3
+    }
+  },
+  "664702": {
+    "name": "Myles Straw",
+    "career_sprint_speed": 29.29,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 581,
+    "seasons": {
+      "2022": 29.3,
+      "2023": 29.2,
+      "2025": 29.4
+    }
+  },
+  "545361": {
+    "name": "Mike Trout",
+    "career_sprint_speed": 28.83,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 346,
+    "seasons": {
+      "2022": 29.3,
+      "2023": 29.5,
+      "2024": 28.9,
+      "2025": 27.9
+    }
+  },
+  "670042": {
+    "name": "Luke Raley",
+    "career_sprint_speed": 28.85,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 358,
+    "seasons": {
+      "2022": 29.3,
+      "2023": 28.8,
+      "2024": 28.9,
+      "2025": 28.7
+    }
+  },
+  "605548": {
+    "name": "",
+    "career_sprint_speed": 29.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 43,
+    "seasons": {
+      "2022": 29.3
+    }
+  },
+  "665926": {
+    "name": "Andr\u00e9s Gim\u00e9nez",
+    "career_sprint_speed": 28.92,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 879,
+    "seasons": {
+      "2022": 29.3,
+      "2023": 29.2,
+      "2024": 28.9,
+      "2025": 28.0
+    }
+  },
+  "680776": {
+    "name": "Jarren Duran",
+    "career_sprint_speed": 29.37,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 868,
+    "seasons": {
+      "2022": 29.2,
+      "2023": 29.5,
+      "2024": 29.6,
+      "2025": 29.1
+    }
+  },
+  "663630": {
+    "name": "",
+    "career_sprint_speed": 29.0,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 123,
+    "seasons": {
+      "2022": 29.2,
+      "2023": 28.7
+    }
+  },
+  "666181": {
+    "name": "Will Benson",
+    "career_sprint_speed": 28.96,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 284,
+    "seasons": {
+      "2022": 29.2,
+      "2023": 28.8,
+      "2024": 28.8,
+      "2025": 29.3
+    }
+  },
+  "595281": {
+    "name": "",
+    "career_sprint_speed": 28.87,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 408,
+    "seasons": {
+      "2022": 29.2,
+      "2023": 28.8,
+      "2024": 28.7
+    }
+  },
+  "641553": {
+    "name": "",
+    "career_sprint_speed": 29.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 93,
+    "seasons": {
+      "2022": 29.1
+    }
+  },
+  "621439": {
+    "name": "Byron Buxton",
+    "career_sprint_speed": 29.68,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 478,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 29.3,
+      "2024": 29.7,
+      "2025": 30.2
+    }
+  },
+  "623205": {
+    "name": "",
+    "career_sprint_speed": 28.97,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 131,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 28.4
+    }
+  },
+  "663538": {
+    "name": "Nico Hoerner",
+    "career_sprint_speed": 28.63,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 1119,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 28.5,
+      "2024": 28.4,
+      "2025": 28.6
+    }
+  },
+  "664056": {
+    "name": "Harrison Bader",
+    "career_sprint_speed": 28.7,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 594,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 28.8,
+      "2024": 28.2,
+      "2025": 28.8
+    }
+  },
+  "656413": {
+    "name": "",
+    "career_sprint_speed": 29.11,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 211,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 29.2,
+      "2024": 29.1,
+      "2025": 28.8
+    }
+  },
+  "608671": {
+    "name": "",
+    "career_sprint_speed": 28.87,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 302,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 29.0,
+      "2024": 28.5,
+      "2025": 29.3
+    }
+  },
+  "642180": {
+    "name": "",
+    "career_sprint_speed": 28.67,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 180,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 28.9,
+      "2024": 28.7,
+      "2025": 28.1
+    }
+  },
+  "677649": {
+    "name": "Ezequiel Duran",
+    "career_sprint_speed": 28.96,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 448,
+    "seasons": {
+      "2022": 29.1,
+      "2023": 29.1,
+      "2024": 28.8,
+      "2025": 28.8
+    }
+  },
+  "681082": {
+    "name": "Bryson Stott",
+    "career_sprint_speed": 28.92,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 851,
+    "seasons": {
+      "2022": 29.0,
+      "2023": 28.8,
+      "2024": 29.1,
+      "2025": 28.8
+    }
+  },
+  "683002": {
+    "name": "Gunnar Henderson",
+    "career_sprint_speed": 28.76,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 812,
+    "seasons": {
+      "2022": 29.0,
+      "2023": 28.8,
+      "2024": 28.9,
+      "2025": 28.5
+    }
+  },
+  "594838": {
+    "name": "",
+    "career_sprint_speed": 29.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 25,
+    "seasons": {
+      "2022": 29.0
+    }
+  },
+  "680911": {
+    "name": "",
+    "career_sprint_speed": 29.0,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 302,
+    "seasons": {
+      "2022": 29.0,
+      "2023": 29.0
+    }
+  },
+  "621433": {
+    "name": "",
+    "career_sprint_speed": 28.78,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 71,
+    "seasons": {
+      "2022": 29.0,
+      "2023": 28.1
+    }
+  },
+  "682928": {
+    "name": "Cj Abrams",
+    "career_sprint_speed": 28.53,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 791,
+    "seasons": {
+      "2022": 29.0,
+      "2023": 28.6,
+      "2024": 28.5,
+      "2025": 28.2
+    }
+  },
+  "678225": {
+    "name": "",
+    "career_sprint_speed": 29.53,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 223,
+    "seasons": {
+      "2022": 29.0,
+      "2023": 29.7,
+      "2024": 29.0
+    }
+  },
+  "672724": {
+    "name": "Oswald Peraza",
+    "career_sprint_speed": 28.97,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 199,
+    "seasons": {
+      "2022": 28.9,
+      "2023": 28.7,
+      "2025": 29.2
+    }
+  },
+  "457705": {
+    "name": "Andrew Mccutchen",
+    "career_sprint_speed": 27.83,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 647,
+    "seasons": {
+      "2022": 28.9,
+      "2023": 28.4,
+      "2024": 26.8,
+      "2025": 27.1
+    }
+  },
+  "664059": {
+    "name": "Sam Haggerty",
+    "career_sprint_speed": 28.97,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 203,
+    "seasons": {
+      "2022": 28.9,
+      "2023": 29.2,
+      "2025": 28.9
+    }
+  },
+  "657136": {
+    "name": "Connor Wong",
+    "career_sprint_speed": 28.33,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 427,
+    "seasons": {
+      "2022": 28.9,
+      "2023": 28.3,
+      "2024": 28.4,
+      "2025": 28.0
+    }
+  },
+  "666139": {
+    "name": "Josh Lowe",
+    "career_sprint_speed": 28.48,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 515,
+    "seasons": {
+      "2022": 28.9,
+      "2023": 28.7,
+      "2024": 28.4,
+      "2025": 28.1
+    }
+  },
+  "676694": {
+    "name": "Jake Meyers",
+    "career_sprint_speed": 28.75,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 507,
+    "seasons": {
+      "2022": 28.9,
+      "2023": 29.2,
+      "2024": 28.9,
+      "2025": 28.2
+    }
+  },
+  "668731": {
+    "name": "",
+    "career_sprint_speed": 28.88,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 234,
+    "seasons": {
+      "2022": 28.9,
+      "2023": 29.0,
+      "2024": 28.1
+    }
+  },
+  "669016": {
+    "name": "Brandon Marsh",
+    "career_sprint_speed": 28.49,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 617,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.6,
+      "2024": 28.2,
+      "2025": 28.3
+    }
+  },
+  "666624": {
+    "name": "",
+    "career_sprint_speed": 28.13,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 550,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.6,
+      "2024": 27.3,
+      "2025": 28.0
+    }
+  },
+  "543760": {
+    "name": "Marcus Semien",
+    "career_sprint_speed": 28.64,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 942,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.7,
+      "2024": 28.5,
+      "2025": 28.5
+    }
+  },
+  "663757": {
+    "name": "Trent Grisham",
+    "career_sprint_speed": 27.67,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 548,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 27.7,
+      "2024": 26.9,
+      "2025": 26.7
+    }
+  },
+  "669450": {
+    "name": "",
+    "career_sprint_speed": 28.64,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 98,
+    "seasons": {
+      "2022": 28.8,
+      "2025": 28.3
+    }
+  },
+  "666158": {
+    "name": "",
+    "career_sprint_speed": 28.17,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 586,
+    "seasons": {
+      "2022": 28.8,
+      "2024": 27.7,
+      "2025": 27.9
+    }
+  },
+  "660757": {
+    "name": "",
+    "career_sprint_speed": 28.52,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 282,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.0,
+      "2025": 28.1
+    }
+  },
+  "656308": {
+    "name": "",
+    "career_sprint_speed": 28.78,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 176,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.7
+    }
+  },
+  "645302": {
+    "name": "V\u00edctor Robles",
+    "career_sprint_speed": 28.25,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 354,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.0,
+      "2024": 27.8,
+      "2025": 28.1
+    }
+  },
+  "672779": {
+    "name": "",
+    "career_sprint_speed": 28.18,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 137,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 27.6
+    }
+  },
+  "668227": {
+    "name": "Randy Arozarena",
+    "career_sprint_speed": 28.28,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 882,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.4,
+      "2024": 28.1,
+      "2025": 27.7
+    }
+  },
+  "670764": {
+    "name": "Taylor Walls",
+    "career_sprint_speed": 28.34,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 447,
+    "seasons": {
+      "2022": 28.8,
+      "2023": 28.2,
+      "2024": 27.8,
+      "2025": 28.2
+    }
+  },
+  "669242": {
+    "name": "",
+    "career_sprint_speed": 28.57,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 714,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.8,
+      "2024": 27.9,
+      "2025": 28.4
+    }
+  },
+  "572191": {
+    "name": "",
+    "career_sprint_speed": 28.48,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 441,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.7,
+      "2024": 28.5,
+      "2025": 27.8
+    }
+  },
+  "592663": {
+    "name": "J. t. Realmuto",
+    "career_sprint_speed": 28.54,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 745,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.6,
+      "2024": 28.4,
+      "2025": 28.4
+    }
+  },
+  "545350": {
+    "name": "",
+    "career_sprint_speed": 28.75,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 56,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.8
+    }
+  },
+  "656541": {
+    "name": "",
+    "career_sprint_speed": 28.78,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 143,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.9,
+      "2024": 28.8,
+      "2025": 28.9
+    }
+  },
+  "606157": {
+    "name": "",
+    "career_sprint_speed": 28.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 78,
+    "seasons": {
+      "2022": 28.7
+    }
+  },
+  "663897": {
+    "name": "",
+    "career_sprint_speed": 28.63,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 79,
+    "seasons": {
+      "2022": 28.7,
+      "2024": 28.6,
+      "2025": 28.4
+    }
+  },
+  "669222": {
+    "name": "",
+    "career_sprint_speed": 28.23,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 339,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.3,
+      "2024": 27.3
+    }
+  },
+  "595751": {
+    "name": "",
+    "career_sprint_speed": 28.62,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 124,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.5,
+      "2025": 28.2
+    }
+  },
+  "669127": {
+    "name": "Shea Langeliers",
+    "career_sprint_speed": 28.32,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 495,
+    "seasons": {
+      "2022": 28.7,
+      "2023": 28.4,
+      "2024": 27.8,
+      "2025": 28.6
+    }
+  },
+  "669261": {
+    "name": "",
+    "career_sprint_speed": 28.44,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 382,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.6,
+      "2024": 28.3,
+      "2025": 27.9
+    }
+  },
+  "669256": {
+    "name": "",
+    "career_sprint_speed": 28.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 39,
+    "seasons": {
+      "2022": 28.6
+    }
+  },
+  "593160": {
+    "name": "",
+    "career_sprint_speed": 28.77,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 529,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.8,
+      "2024": 29.0
+    }
+  },
+  "607043": {
+    "name": "Brandon Nimmo",
+    "career_sprint_speed": 28.02,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 1006,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.0,
+      "2024": 28.0,
+      "2025": 27.3
+    }
+  },
+  "676801": {
+    "name": "",
+    "career_sprint_speed": 28.32,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 375,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.2,
+      "2024": 28.7,
+      "2025": 26.4
+    }
+  },
+  "663853": {
+    "name": "",
+    "career_sprint_speed": 28.62,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 331,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 29.3,
+      "2024": 28.9,
+      "2025": 28.3
+    }
+  },
+  "614173": {
+    "name": "",
+    "career_sprint_speed": 28.33,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 103,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 27.4
+    }
+  },
+  "658668": {
+    "name": "",
+    "career_sprint_speed": 28.41,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 312,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.6,
+      "2024": 27.8
+    }
+  },
+  "606192": {
+    "name": "Teoscar Hern\u00e1ndez",
+    "career_sprint_speed": 28.47,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 871,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.6,
+      "2024": 28.6,
+      "2025": 28.1
+    }
+  },
+  "663662": {
+    "name": "",
+    "career_sprint_speed": 28.38,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 102,
+    "seasons": {
+      "2022": 28.6,
+      "2024": 28.4,
+      "2025": 27.7
+    }
+  },
+  "671221": {
+    "name": "",
+    "career_sprint_speed": 28.28,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 214,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.7,
+      "2025": 27.6
+    }
+  },
+  "656448": {
+    "name": "",
+    "career_sprint_speed": 28.52,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 103,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 28.5
+    }
+  },
+  "665506": {
+    "name": "",
+    "career_sprint_speed": 28.41,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 208,
+    "seasons": {
+      "2022": 28.6,
+      "2023": 27.8,
+      "2024": 28.5
+    }
+  },
+  "660644": {
+    "name": "",
+    "career_sprint_speed": 27.54,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 250,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 26.9,
+      "2024": 27.5,
+      "2025": 27.0
+    }
+  },
+  "660670": {
+    "name": "Ronald Acu\u00f1a",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 679,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 28.0,
+      "2024": 27.7,
+      "2025": 27.9
+    }
+  },
+  "622168": {
+    "name": "",
+    "career_sprint_speed": 28.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 33,
+    "seasons": {
+      "2022": 28.5
+    }
+  },
+  "621035": {
+    "name": "",
+    "career_sprint_speed": 28.27,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 340,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 28.3,
+      "2024": 28.1,
+      "2025": 27.8
+    }
+  },
+  "624415": {
+    "name": "",
+    "career_sprint_speed": 28.39,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 261,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 28.3,
+      "2024": 28.5,
+      "2025": 28.1
+    }
+  },
+  "682073": {
+    "name": "",
+    "career_sprint_speed": 27.56,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 76,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 27.1,
+      "2024": 27.6
+    }
+  },
+  "642456": {
+    "name": "",
+    "career_sprint_speed": 28.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 40,
+    "seasons": {
+      "2022": 28.5
+    }
+  },
+  "641943": {
+    "name": "",
+    "career_sprint_speed": 27.87,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 183,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 28.2,
+      "2024": 28.0,
+      "2025": 26.8
+    }
+  },
+  "672580": {
+    "name": "Maikel Garc\u00eda",
+    "career_sprint_speed": 27.98,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 766,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 28.2,
+      "2024": 27.9,
+      "2025": 27.9
+    }
+  },
+  "656775": {
+    "name": "Cedric Mullins",
+    "career_sprint_speed": 28.32,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 621,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 28.0,
+      "2024": 28.3,
+      "2025": 28.4
+    }
+  },
+  "607054": {
+    "name": "",
+    "career_sprint_speed": 28.2,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 257,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 28.0,
+      "2024": 27.5
+    }
+  },
+  "608070": {
+    "name": "Jos\u00e9 Ram\u00edrez",
+    "career_sprint_speed": 28.22,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 950,
+    "seasons": {
+      "2022": 28.5,
+      "2023": 27.8,
+      "2024": 28.2,
+      "2025": 28.4
+    }
+  },
+  "621438": {
+    "name": "Tyrone Taylor",
+    "career_sprint_speed": 28.82,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 504,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.8,
+      "2024": 28.9,
+      "2025": 29.3
+    }
+  },
+  "596115": {
+    "name": "Trevor Story",
+    "career_sprint_speed": 28.53,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 423,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.8,
+      "2024": 28.1,
+      "2025": 28.6
+    }
+  },
+  "680757": {
+    "name": "Steven Kwan",
+    "career_sprint_speed": 27.79,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 1124,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.1,
+      "2024": 27.1,
+      "2025": 27.3
+    }
+  },
+  "643396": {
+    "name": "Isiah Kiner-falefa",
+    "career_sprint_speed": 27.85,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 901,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 27.7,
+      "2024": 27.8,
+      "2025": 27.4
+    }
+  },
+  "543829": {
+    "name": "",
+    "career_sprint_speed": 28.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 34,
+    "seasons": {
+      "2022": 28.4
+    }
+  },
+  "641313": {
+    "name": "",
+    "career_sprint_speed": 27.6,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 520,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 27.2,
+      "2024": 27.1,
+      "2025": 27.9
+    }
+  },
+  "578428": {
+    "name": "",
+    "career_sprint_speed": 28.29,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 515,
+    "seasons": {
+      "2022": 28.4,
+      "2024": 28.6,
+      "2025": 27.8
+    }
+  },
+  "673490": {
+    "name": "",
+    "career_sprint_speed": 28.34,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 686,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.5,
+      "2024": 28.3,
+      "2025": 27.6
+    }
+  },
+  "544725": {
+    "name": "",
+    "career_sprint_speed": 28.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 141,
+    "seasons": {
+      "2022": 28.4
+    }
+  },
+  "644374": {
+    "name": "",
+    "career_sprint_speed": 28.33,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 97,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.2
+    }
+  },
+  "621493": {
+    "name": "Taylor Ward",
+    "career_sprint_speed": 27.61,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 637,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.0,
+      "2024": 26.8,
+      "2025": 27.3
+    }
+  },
+  "656305": {
+    "name": "Matt Chapman",
+    "career_sprint_speed": 28.44,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 696,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.5,
+      "2024": 28.7,
+      "2025": 28.1
+    }
+  },
+  "621020": {
+    "name": "Dansby Swanson",
+    "career_sprint_speed": 28.27,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 870,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.4,
+      "2024": 27.8,
+      "2025": 28.5
+    }
+  },
+  "669743": {
+    "name": "Alex Call",
+    "career_sprint_speed": 28.32,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 365,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.8,
+      "2024": 28.0,
+      "2025": 27.8
+    }
+  },
+  "676628": {
+    "name": "",
+    "career_sprint_speed": 28.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 20,
+    "seasons": {
+      "2022": 28.4
+    }
+  },
+  "668904": {
+    "name": "Royce Lewis",
+    "career_sprint_speed": 27.19,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 325,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.2,
+      "2024": 26.6,
+      "2025": 26.8
+    }
+  },
+  "640458": {
+    "name": "",
+    "career_sprint_speed": 28.29,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 57,
+    "seasons": {
+      "2022": 28.4,
+      "2023": 28.0
+    }
+  },
+  "656716": {
+    "name": "Zach Mckinstry",
+    "career_sprint_speed": 28.38,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 538,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 28.5,
+      "2024": 28.4,
+      "2025": 28.3
+    }
+  },
+  "650489": {
+    "name": "Willi Castro",
+    "career_sprint_speed": 28.21,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 676,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 28.6,
+      "2024": 27.9,
+      "2025": 28.2
+    }
+  },
+  "670242": {
+    "name": "Matt Wallner",
+    "career_sprint_speed": 27.43,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 241,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 28.0,
+      "2024": 27.5,
+      "2025": 26.8
+    }
+  },
+  "673548": {
+    "name": "Seiya Suzuki",
+    "career_sprint_speed": 28.38,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 679,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 28.5,
+      "2024": 28.3,
+      "2025": 28.4
+    }
+  },
+  "656185": {
+    "name": "",
+    "career_sprint_speed": 28.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 48,
+    "seasons": {
+      "2022": 28.3
+    }
+  },
+  "669911": {
+    "name": "",
+    "career_sprint_speed": 27.49,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 262,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 28.0,
+      "2024": 27.4,
+      "2025": 27.0
+    }
+  },
+  "514917": {
+    "name": "",
+    "career_sprint_speed": 28.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 242,
+    "seasons": {
+      "2022": 28.3
+    }
+  },
+  "664238": {
+    "name": "Dylan Moore",
+    "career_sprint_speed": 27.98,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 283,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 27.7,
+      "2024": 28.0,
+      "2025": 27.7
+    }
+  },
+  "456715": {
+    "name": "",
+    "career_sprint_speed": 28.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 67,
+    "seasons": {
+      "2022": 28.3
+    }
+  },
+  "541645": {
+    "name": "",
+    "career_sprint_speed": 28.27,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 200,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 28.3,
+      "2024": 28.0
+    }
+  },
+  "650339": {
+    "name": "",
+    "career_sprint_speed": 28.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 25,
+    "seasons": {
+      "2022": 28.3
+    }
+  },
+  "543807": {
+    "name": "George Springer",
+    "career_sprint_speed": 28.04,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 920,
+    "seasons": {
+      "2022": 28.3,
+      "2023": 27.8,
+      "2024": 28.1,
+      "2025": 28.0
+    }
+  },
+  "660271": {
+    "name": "Shohei Ohtani",
+    "career_sprint_speed": 28.03,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 883,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 27.8,
+      "2024": 28.1,
+      "2025": 28.0
+    }
+  },
+  "668804": {
+    "name": "Bryan Reynolds",
+    "career_sprint_speed": 28.02,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 883,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 27.8,
+      "2024": 28.0,
+      "2025": 28.1
+    }
+  },
+  "666160": {
+    "name": "Mickey Moniak",
+    "career_sprint_speed": 28.53,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 367,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.6,
+      "2024": 28.6,
+      "2025": 28.5
+    }
+  },
+  "641513": {
+    "name": "",
+    "career_sprint_speed": 28.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 35,
+    "seasons": {
+      "2022": 28.2
+    }
+  },
+  "669701": {
+    "name": "Josh Smith",
+    "career_sprint_speed": 27.76,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 528,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.5,
+      "2024": 27.6,
+      "2025": 27.5
+    }
+  },
+  "668952": {
+    "name": "Ryan Kreidler",
+    "career_sprint_speed": 27.85,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 44,
+    "seasons": {
+      "2022": 28.2,
+      "2024": 27.5
+    }
+  },
+  "676391": {
+    "name": "Ernie Clement",
+    "career_sprint_speed": 28.47,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 549,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.4,
+      "2024": 28.4,
+      "2025": 28.6
+    }
+  },
+  "666915": {
+    "name": "",
+    "career_sprint_speed": 28.26,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 126,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.1,
+      "2024": 28.6
+    }
+  },
+  "630105": {
+    "name": "Jake Cronenworth",
+    "career_sprint_speed": 28.06,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 814,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.3,
+      "2024": 27.7,
+      "2025": 28.1
+    }
+  },
+  "571976": {
+    "name": "",
+    "career_sprint_speed": 28.14,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 140,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.0
+    }
+  },
+  "643289": {
+    "name": "Mauricio Dub\u00f3n",
+    "career_sprint_speed": 27.88,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 656,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.1,
+      "2024": 27.3,
+      "2025": 28.0
+    }
+  },
+  "676369": {
+    "name": "",
+    "career_sprint_speed": 27.67,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 198,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 27.2,
+      "2024": 27.5
+    }
+  },
+  "606132": {
+    "name": "",
+    "career_sprint_speed": 28.33,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 268,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.7
+    }
+  },
+  "642731": {
+    "name": "",
+    "career_sprint_speed": 28.08,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 664,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 28.1,
+      "2024": 28.0,
+      "2025": 27.8
+    }
+  },
+  "596103": {
+    "name": "Austin Slater",
+    "career_sprint_speed": 28.05,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 301,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 27.7,
+      "2024": 28.2,
+      "2025": 28.0
+    }
+  },
+  "663457": {
+    "name": "",
+    "career_sprint_speed": 27.49,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 678,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 27.8,
+      "2024": 27.0,
+      "2025": 27.0
+    }
+  },
+  "680814": {
+    "name": "",
+    "career_sprint_speed": 28.08,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 36,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 27.8
+    }
+  },
+  "670768": {
+    "name": "",
+    "career_sprint_speed": 28.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 123,
+    "seasons": {
+      "2022": 28.2
+    }
+  },
+  "444876": {
+    "name": "",
+    "career_sprint_speed": 28.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 44,
+    "seasons": {
+      "2022": 28.2
+    }
+  },
+  "656514": {
+    "name": "",
+    "career_sprint_speed": 28.05,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 33,
+    "seasons": {
+      "2022": 28.2,
+      "2023": 27.9
+    }
+  },
+  "592885": {
+    "name": "Christian Yelich",
+    "career_sprint_speed": 28.18,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 923,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 28.1,
+      "2024": 28.5,
+      "2025": 28.2
+    }
+  },
+  "666134": {
+    "name": "",
+    "career_sprint_speed": 28.07,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 408,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 28.4,
+      "2024": 28.1,
+      "2025": 27.6
+    }
+  },
+  "686676": {
+    "name": "",
+    "career_sprint_speed": 27.69,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 196,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 28.0,
+      "2024": 27.6,
+      "2025": 27.6
+    }
+  },
+  "671289": {
+    "name": "Tyler Freeman",
+    "career_sprint_speed": 28.38,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 473,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 28.6,
+      "2024": 28.2,
+      "2025": 28.5
+    }
+  },
+  "593871": {
+    "name": "Jorge Polanco",
+    "career_sprint_speed": 27.51,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 472,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 27.6,
+      "2024": 27.5,
+      "2025": 27.1
+    }
+  },
+  "602074": {
+    "name": "",
+    "career_sprint_speed": 28.0,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 255,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 27.4
+    }
+  },
+  "670770": {
+    "name": "Tj Friedl",
+    "career_sprint_speed": 27.36,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 611,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 28.3,
+      "2024": 26.5,
+      "2025": 26.7
+    }
+  },
+  "623912": {
+    "name": "",
+    "career_sprint_speed": 27.96,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 520,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 27.8,
+      "2024": 28.0
+    }
+  },
+  "542194": {
+    "name": "",
+    "career_sprint_speed": 27.68,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 303,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 27.4,
+      "2024": 27.5
+    }
+  },
+  "641505": {
+    "name": "",
+    "career_sprint_speed": 28.55,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 75,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 28.9
+    }
+  },
+  "656248": {
+    "name": "",
+    "career_sprint_speed": 27.33,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 88,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 27.3,
+      "2024": 27.1,
+      "2025": 26.8
+    }
+  },
+  "666185": {
+    "name": "",
+    "career_sprint_speed": 27.77,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 432,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 27.6,
+      "2024": 27.3,
+      "2025": 27.6
+    }
+  },
+  "641355": {
+    "name": "Cody Bellinger",
+    "career_sprint_speed": 28.26,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 722,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 28.3,
+      "2024": 28.4,
+      "2025": 28.2
+    }
+  },
+  "514888": {
+    "name": "Jos\u00e9 Altuve",
+    "career_sprint_speed": 27.29,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 887,
+    "seasons": {
+      "2022": 28.1,
+      "2023": 26.9,
+      "2024": 27.1,
+      "2025": 26.9
+    }
+  },
+  "672356": {
+    "name": "Gabriel Arias",
+    "career_sprint_speed": 27.45,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 394,
+    "seasons": {
+      "2022": 28.0,
+      "2023": 28.0,
+      "2024": 27.4,
+      "2025": 27.0
+    }
+  },
+  "662139": {
+    "name": "Daulton Varsho",
+    "career_sprint_speed": 28.21,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 592,
+    "seasons": {
+      "2022": 28.0,
+      "2023": 28.1,
+      "2024": 28.5,
+      "2025": 28.4
+    }
+  },
+  "628338": {
+    "name": "",
+    "career_sprint_speed": 28.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 26,
+    "seasons": {
+      "2022": 28.0
+    }
+  },
+  "595909": {
+    "name": "",
+    "career_sprint_speed": 27.73,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 252,
+    "seasons": {
+      "2022": 28.0,
+      "2023": 27.6,
+      "2024": 27.7
+    }
+  },
+  "664728": {
+    "name": "Kyle Isbel",
+    "career_sprint_speed": 27.83,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 604,
+    "seasons": {
+      "2022": 28.0,
+      "2023": 27.6,
+      "2024": 27.9,
+      "2025": 27.8
+    }
+  },
+  "641779": {
+    "name": "",
+    "career_sprint_speed": 28.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 54,
+    "seasons": {
+      "2022": 28.0
+    }
+  },
+  "594807": {
+    "name": "",
+    "career_sprint_speed": 27.91,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 248,
+    "seasons": {
+      "2022": 28.0,
+      "2023": 27.6,
+      "2024": 28.1
+    }
+  },
+  "545341": {
+    "name": "Randal Grichuk",
+    "career_sprint_speed": 27.58,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 600,
+    "seasons": {
+      "2022": 28.0,
+      "2023": 27.4,
+      "2024": 27.5,
+      "2025": 27.1
+    }
+  },
+  "647351": {
+    "name": "",
+    "career_sprint_speed": 27.93,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 371,
+    "seasons": {
+      "2022": 28.0,
+      "2024": 27.9,
+      "2025": 27.9
+    }
+  },
+  "650859": {
+    "name": "Luis Rengifo",
+    "career_sprint_speed": 27.34,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 767,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.4,
+      "2024": 26.9,
+      "2025": 27.0
+    }
+  },
+  "516782": {
+    "name": "Starling Marte",
+    "career_sprint_speed": 27.33,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 656,
+    "seasons": {
+      "2022": 28.0,
+      "2023": 27.1,
+      "2024": 27.1,
+      "2025": 26.6
+    }
+  },
+  "605113": {
+    "name": "",
+    "career_sprint_speed": 27.88,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 182,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.1,
+      "2024": 27.7
+    }
+  },
+  "664314": {
+    "name": "",
+    "career_sprint_speed": 28.75,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 74,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 29.3,
+      "2024": 28.7
+    }
+  },
+  "595879": {
+    "name": "Javier B\u00e1ez",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 766,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.1,
+      "2024": 27.5,
+      "2025": 27.5
+    }
+  },
+  "502054": {
+    "name": "Tommy Pham",
+    "career_sprint_speed": 27.56,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 752,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.8,
+      "2024": 27.2,
+      "2025": 27.2
+    }
+  },
+  "622534": {
+    "name": "",
+    "career_sprint_speed": 27.92,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 418,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.3,
+      "2024": 27.5
+    }
+  },
+  "666969": {
+    "name": "Adolis Garc\u00eda",
+    "career_sprint_speed": 27.28,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 760,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.3,
+      "2024": 26.8,
+      "2025": 27.0
+    }
+  },
+  "592325": {
+    "name": "",
+    "career_sprint_speed": 27.68,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 193,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.6,
+      "2024": 26.9
+    }
+  },
+  "673357": {
+    "name": "Luis Robert",
+    "career_sprint_speed": 28.56,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 576,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.7,
+      "2024": 28.8,
+      "2025": 29.0
+    }
+  },
+  "665482": {
+    "name": "",
+    "career_sprint_speed": 27.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 159,
+    "seasons": {
+      "2022": 27.9
+    }
+  },
+  "593428": {
+    "name": "Xander Bogaerts",
+    "career_sprint_speed": 27.64,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 934,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.6,
+      "2024": 27.4,
+      "2025": 27.6
+    }
+  },
+  "500871": {
+    "name": "",
+    "career_sprint_speed": 27.58,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 249,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.1
+    }
+  },
+  "543257": {
+    "name": "",
+    "career_sprint_speed": 27.81,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 333,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.8,
+      "2024": 27.7
+    }
+  },
+  "606992": {
+    "name": "",
+    "career_sprint_speed": 27.98,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 273,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.0,
+      "2024": 27.9,
+      "2025": 28.3
+    }
+  },
+  "676632": {
+    "name": "",
+    "career_sprint_speed": 27.46,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 81,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 26.1,
+      "2024": 27.1
+    }
+  },
+  "664023": {
+    "name": "Ian Happ",
+    "career_sprint_speed": 27.74,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 856,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.7,
+      "2024": 27.9,
+      "2025": 27.4
+    }
+  },
+  "621028": {
+    "name": "",
+    "career_sprint_speed": 27.69,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 432,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.0,
+      "2024": 27.5,
+      "2025": 27.0
+    }
+  },
+  "641584": {
+    "name": "Jake Fraley",
+    "career_sprint_speed": 28.15,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 458,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.0,
+      "2024": 28.3,
+      "2025": 28.4
+    }
+  },
+  "543305": {
+    "name": "",
+    "career_sprint_speed": 27.57,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 259,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.3,
+      "2024": 27.0
+    }
+  },
+  "641531": {
+    "name": "",
+    "career_sprint_speed": 27.96,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 209,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 28.3
+    }
+  },
+  "663647": {
+    "name": "Ke'bryan Hayes",
+    "career_sprint_speed": 27.2,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 777,
+    "seasons": {
+      "2022": 27.9,
+      "2023": 27.1,
+      "2024": 26.4,
+      "2025": 27.2
+    }
+  },
+  "518586": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 57,
+    "seasons": {
+      "2022": 27.8
+    }
+  },
+  "596146": {
+    "name": "",
+    "career_sprint_speed": 27.29,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 593,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.4,
+      "2024": 26.8,
+      "2025": 27.0
+    }
+  },
+  "624414": {
+    "name": "",
+    "career_sprint_speed": 27.76,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 205,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.7
+    }
+  },
+  "680700": {
+    "name": "Richie Palacios",
+    "career_sprint_speed": 27.8,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 203,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 28.0,
+      "2024": 27.9,
+      "2025": 26.7
+    }
+  },
+  "621450": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 37,
+    "seasons": {
+      "2022": 27.8
+    }
+  },
+  "667670": {
+    "name": "Brent Rooker",
+    "career_sprint_speed": 27.44,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 517,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.1,
+      "2024": 27.6,
+      "2025": 27.5
+    }
+  },
+  "572008": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 25,
+    "seasons": {
+      "2022": 27.8
+    }
+  },
+  "679529": {
+    "name": "Spencer Torkelson",
+    "career_sprint_speed": 27.25,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 635,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.4,
+      "2024": 27.2,
+      "2025": 26.7
+    }
+  },
+  "664913": {
+    "name": "",
+    "career_sprint_speed": 27.55,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 390,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.3,
+      "2024": 27.4,
+      "2025": 27.7
+    }
+  },
+  "663743": {
+    "name": "Nick Fortes",
+    "career_sprint_speed": 27.2,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 420,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.6,
+      "2024": 26.7,
+      "2025": 26.8
+    }
+  },
+  "453568": {
+    "name": "",
+    "career_sprint_speed": 27.62,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 540,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.6,
+      "2024": 27.4
+    }
+  },
+  "621550": {
+    "name": "",
+    "career_sprint_speed": 27.77,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 243,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.7,
+      "2024": 27.8
+    }
+  },
+  "677551": {
+    "name": "",
+    "career_sprint_speed": 27.63,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 328,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.5
+    }
+  },
+  "676480": {
+    "name": "",
+    "career_sprint_speed": 27.63,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 87,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.5
+    }
+  },
+  "571980": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 96,
+    "seasons": {
+      "2022": 27.8
+    }
+  },
+  "669720": {
+    "name": "Austin Hays",
+    "career_sprint_speed": 27.54,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 711,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.4,
+      "2024": 27.1,
+      "2025": 27.6
+    }
+  },
+  "650559": {
+    "name": "",
+    "career_sprint_speed": 27.65,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 552,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.7,
+      "2024": 27.5,
+      "2025": 27.8
+    }
+  },
+  "572041": {
+    "name": "",
+    "career_sprint_speed": 28.0,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 264,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 28.8
+    }
+  },
+  "624503": {
+    "name": "",
+    "career_sprint_speed": 27.71,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 320,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.4,
+      "2024": 27.7
+    }
+  },
+  "669004": {
+    "name": "Mj Melendez",
+    "career_sprint_speed": 27.72,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 513,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.6,
+      "2024": 27.8,
+      "2025": 27.2
+    }
+  },
+  "663586": {
+    "name": "Austin Riley",
+    "career_sprint_speed": 27.98,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 759,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 28.1,
+      "2024": 27.9,
+      "2025": 28.2
+    }
+  },
+  "642715": {
+    "name": "Willy Adames",
+    "career_sprint_speed": 27.69,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 686,
+    "seasons": {
+      "2022": 27.8,
+      "2023": 27.6,
+      "2024": 27.4,
+      "2025": 28.0
+    }
+  },
+  "669394": {
+    "name": "Jake Burger",
+    "career_sprint_speed": 27.91,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 553,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 28.0,
+      "2024": 27.9,
+      "2025": 27.9
+    }
+  },
+  "572204": {
+    "name": "",
+    "career_sprint_speed": 27.57,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 103,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.3
+    }
+  },
+  "621453": {
+    "name": "",
+    "career_sprint_speed": 27.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 20,
+    "seasons": {
+      "2022": 27.7
+    }
+  },
+  "657557": {
+    "name": "",
+    "career_sprint_speed": 26.9,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 319,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 26.8,
+      "2024": 26.8,
+      "2025": 26.5
+    }
+  },
+  "687093": {
+    "name": "Vaughn Grissom",
+    "career_sprint_speed": 27.49,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 141,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.2,
+      "2024": 27.4
+    }
+  },
+  "666464": {
+    "name": "Jerar Encarnacion",
+    "career_sprint_speed": 26.96,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 95,
+    "seasons": {
+      "2022": 27.7,
+      "2024": 26.9,
+      "2025": 26.1
+    }
+  },
+  "682985": {
+    "name": "Riley Greene",
+    "career_sprint_speed": 27.52,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 733,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 28.1,
+      "2024": 27.7,
+      "2025": 26.7
+    }
+  },
+  "670032": {
+    "name": "",
+    "career_sprint_speed": 27.48,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 588,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.7,
+      "2024": 27.1,
+      "2025": 27.3
+    }
+  },
+  "663697": {
+    "name": "Jonathan India",
+    "career_sprint_speed": 27.95,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 738,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.8,
+      "2024": 28.0,
+      "2025": 28.2
+    }
+  },
+  "649557": {
+    "name": "",
+    "career_sprint_speed": 26.85,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 269,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 26.0,
+      "2024": 27.6
+    }
+  },
+  "656669": {
+    "name": "",
+    "career_sprint_speed": 27.67,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 88,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.6
+    }
+  },
+  "516416": {
+    "name": "",
+    "career_sprint_speed": 27.57,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 351,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.4
+    }
+  },
+  "670276": {
+    "name": "",
+    "career_sprint_speed": 27.63,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 34,
+    "seasons": {
+      "2022": 27.7,
+      "2024": 27.5
+    }
+  },
+  "657061": {
+    "name": "",
+    "career_sprint_speed": 27.85,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 44,
+    "seasons": {
+      "2022": 27.7,
+      "2024": 28.0
+    }
+  },
+  "670712": {
+    "name": "",
+    "career_sprint_speed": 27.67,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 70,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.6
+    }
+  },
+  "668709": {
+    "name": "",
+    "career_sprint_speed": 27.42,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 439,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.2,
+      "2024": 27.6,
+      "2025": 27.1
+    }
+  },
+  "669397": {
+    "name": "Nick Allen",
+    "career_sprint_speed": 27.66,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 489,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.9,
+      "2024": 27.6,
+      "2025": 27.4
+    }
+  },
+  "642727": {
+    "name": "",
+    "career_sprint_speed": 27.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 83,
+    "seasons": {
+      "2022": 27.7
+    }
+  },
+  "592206": {
+    "name": "Nick Castellanos",
+    "career_sprint_speed": 27.49,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 846,
+    "seasons": {
+      "2022": 27.7,
+      "2023": 27.2,
+      "2024": 27.4,
+      "2025": 27.7
+    }
+  },
+  "547180": {
+    "name": "Bryce Harper",
+    "career_sprint_speed": 27.39,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 758,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.6,
+      "2024": 27.4,
+      "2025": 27.0
+    }
+  },
+  "666135": {
+    "name": "",
+    "career_sprint_speed": 27.21,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 245,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.2,
+      "2024": 26.8
+    }
+  },
+  "622268": {
+    "name": "",
+    "career_sprint_speed": 27.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 38,
+    "seasons": {
+      "2022": 27.6
+    }
+  },
+  "596019": {
+    "name": "Francisco Lindor",
+    "career_sprint_speed": 27.66,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 902,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 28.1,
+      "2024": 27.6,
+      "2025": 27.4
+    }
+  },
+  "672820": {
+    "name": "Lenyn Sosa",
+    "career_sprint_speed": 27.1,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 340,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.6,
+      "2024": 27.3,
+      "2025": 26.7
+    }
+  },
+  "643217": {
+    "name": "Andrew Benintendi",
+    "career_sprint_speed": 27.13,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 714,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.3,
+      "2024": 26.7,
+      "2025": 26.7
+    }
+  },
+  "657656": {
+    "name": "Ram\u00f3n Laureano",
+    "career_sprint_speed": 27.78,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 502,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.9,
+      "2024": 27.8,
+      "2025": 27.8
+    }
+  },
+  "592696": {
+    "name": "",
+    "career_sprint_speed": 27.71,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 332,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 28.0,
+      "2024": 27.3
+    }
+  },
+  "546991": {
+    "name": "",
+    "career_sprint_speed": 27.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 110,
+    "seasons": {
+      "2022": 27.6
+    }
+  },
+  "675656": {
+    "name": "",
+    "career_sprint_speed": 27.45,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 90,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.3
+    }
+  },
+  "665828": {
+    "name": "",
+    "career_sprint_speed": 27.45,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 348,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.8,
+      "2024": 27.4,
+      "2025": 26.6
+    }
+  },
+  "664029": {
+    "name": "",
+    "career_sprint_speed": 27.6,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 56,
+    "seasons": {
+      "2022": 27.6,
+      "2023": 27.6
+    }
+  },
+  "605119": {
+    "name": "",
+    "career_sprint_speed": 26.99,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 247,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 26.4
+    }
+  },
+  "622682": {
+    "name": "",
+    "career_sprint_speed": 27.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 127,
+    "seasons": {
+      "2022": 27.6
+    }
+  },
+  "645277": {
+    "name": "Ozzie Albies",
+    "career_sprint_speed": 27.38,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 707,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.6,
+      "2024": 27.2,
+      "2025": 27.2
+    }
+  },
+  "575929": {
+    "name": "Willson Contreras",
+    "career_sprint_speed": 27.22,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 638,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 26.7,
+      "2024": 27.1,
+      "2025": 27.5
+    }
+  },
+  "444482": {
+    "name": "",
+    "career_sprint_speed": 27.15,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 464,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.0,
+      "2024": 26.9
+    }
+  },
+  "501571": {
+    "name": "",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2022": 27.5
+    }
+  },
+  "664040": {
+    "name": "Brandon Lowe",
+    "career_sprint_speed": 27.19,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 467,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.3,
+      "2024": 27.2,
+      "2025": 26.9
+    }
+  },
+  "669374": {
+    "name": "",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 53,
+    "seasons": {
+      "2022": 27.5
+    }
+  },
+  "672515": {
+    "name": "Gabriel Moreno",
+    "career_sprint_speed": 27.18,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 477,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.2,
+      "2024": 27.2,
+      "2025": 27.0
+    }
+  },
+  "592348": {
+    "name": "",
+    "career_sprint_speed": 27.18,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 26,
+    "seasons": {
+      "2022": 27.5,
+      "2024": 26.9
+    }
+  },
+  "666182": {
+    "name": "Bo Bichette",
+    "career_sprint_speed": 26.94,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 887,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.1,
+      "2024": 27.3,
+      "2025": 26.1
+    }
+  },
+  "669257": {
+    "name": "Will Smith",
+    "career_sprint_speed": 27.35,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 666,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.2,
+      "2024": 27.4,
+      "2025": 27.3
+    }
+  },
+  "686823": {
+    "name": "",
+    "career_sprint_speed": 28.21,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 394,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 28.3,
+      "2024": 28.2
+    }
+  },
+  "663624": {
+    "name": "Ryan Mountcastle",
+    "career_sprint_speed": 27.73,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 664,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 28.2,
+      "2024": 27.6,
+      "2025": 27.6
+    }
+  },
+  "643376": {
+    "name": "Danny Jansen",
+    "career_sprint_speed": 26.81,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 318,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.1,
+      "2024": 26.6,
+      "2025": 26.1
+    }
+  },
+  "670869": {
+    "name": "",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 22,
+    "seasons": {
+      "2022": 27.5
+    }
+  },
+  "592192": {
+    "name": "",
+    "career_sprint_speed": 27.7,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 639,
+    "seasons": {
+      "2022": 27.5,
+      "2023": 27.8,
+      "2024": 27.8,
+      "2025": 27.8
+    }
+  },
+  "668715": {
+    "name": "Spencer Steer",
+    "career_sprint_speed": 28.18,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 637,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 28.4,
+      "2024": 28.2,
+      "2025": 28.0
+    }
+  },
+  "668843": {
+    "name": "",
+    "career_sprint_speed": 27.18,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 52,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 27.0
+    }
+  },
+  "660162": {
+    "name": "Yo\u00e1n Moncada",
+    "career_sprint_speed": 26.75,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 334,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 26.4,
+      "2024": 26.8,
+      "2025": 26.2
+    }
+  },
+  "671218": {
+    "name": "Heliot Ramos",
+    "career_sprint_speed": 27.63,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 461,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 26.9,
+      "2024": 27.9,
+      "2025": 27.5
+    }
+  },
+  "605141": {
+    "name": "Mookie Betts",
+    "career_sprint_speed": 27.07,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 814,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 27.2,
+      "2024": 26.7,
+      "2025": 26.9
+    }
+  },
+  "660829": {
+    "name": "",
+    "career_sprint_speed": 27.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 22,
+    "seasons": {
+      "2022": 27.4
+    }
+  },
+  "660650": {
+    "name": "",
+    "career_sprint_speed": 27.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 42,
+    "seasons": {
+      "2022": 27.4
+    }
+  },
+  "663611": {
+    "name": "",
+    "career_sprint_speed": 27.71,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 335,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 28.0,
+      "2024": 27.5
+    }
+  },
+  "609280": {
+    "name": "Miguel And\u00fajar",
+    "career_sprint_speed": 26.94,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 395,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 27.7,
+      "2024": 26.6,
+      "2025": 26.9
+    }
+  },
+  "678662": {
+    "name": "Ezequiel Tovar",
+    "career_sprint_speed": 27.98,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 564,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 28.1,
+      "2024": 28.1,
+      "2025": 27.6
+    }
+  },
+  "628451": {
+    "name": "Andy Ib\u00e1\u00f1ez",
+    "career_sprint_speed": 27.37,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 347,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 27.2,
+      "2024": 27.6,
+      "2025": 27.5
+    }
+  },
+  "608703": {
+    "name": "",
+    "career_sprint_speed": 27.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 103,
+    "seasons": {
+      "2022": 27.4
+    }
+  },
+  "666801": {
+    "name": "",
+    "career_sprint_speed": 27.35,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 195,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 27.3
+    }
+  },
+  "643446": {
+    "name": "Jeff Mcneil",
+    "career_sprint_speed": 27.02,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 757,
+    "seasons": {
+      "2022": 27.4,
+      "2023": 27.4,
+      "2024": 26.3,
+      "2025": 26.5
+    }
+  },
+  "621563": {
+    "name": "",
+    "career_sprint_speed": 27.53,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 340,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 27.8,
+      "2024": 27.6
+    }
+  },
+  "660636": {
+    "name": "",
+    "career_sprint_speed": 27.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 94,
+    "seasons": {
+      "2022": 27.3
+    }
+  },
+  "668942": {
+    "name": "",
+    "career_sprint_speed": 26.94,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 481,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 26.7,
+      "2024": 27.0,
+      "2025": 26.2
+    }
+  },
+  "665019": {
+    "name": "Kody Clemens",
+    "career_sprint_speed": 27.69,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 253,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 27.5,
+      "2024": 27.7,
+      "2025": 27.9
+    }
+  },
+  "544369": {
+    "name": "",
+    "career_sprint_speed": 27.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 87,
+    "seasons": {
+      "2022": 27.3
+    }
+  },
+  "681481": {
+    "name": "Kerry Carpenter",
+    "career_sprint_speed": 27.62,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 443,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 28.1,
+      "2024": 27.7,
+      "2025": 27.1
+    }
+  },
+  "666971": {
+    "name": "Lourdes Gurriel",
+    "career_sprint_speed": 27.03,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 814,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 27.1,
+      "2024": 26.6,
+      "2025": 27.1
+    }
+  },
+  "592450": {
+    "name": "Aaron Judge",
+    "career_sprint_speed": 27.02,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 639,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 26.7,
+      "2024": 26.8,
+      "2025": 27.1
+    }
+  },
+  "660821": {
+    "name": "Jes\u00fas S\u00e1nchez",
+    "career_sprint_speed": 27.24,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 675,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 27.5,
+      "2024": 27.2,
+      "2025": 27.0
+    }
+  },
+  "672695": {
+    "name": "Geraldo Perdomo",
+    "career_sprint_speed": 27.18,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 766,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 27.2,
+      "2024": 27.0,
+      "2025": 27.2
+    }
+  },
+  "608686": {
+    "name": "",
+    "career_sprint_speed": 27.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 27,
+    "seasons": {
+      "2022": 27.3
+    }
+  },
+  "592178": {
+    "name": "",
+    "career_sprint_speed": 26.54,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 230,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 26.4,
+      "2024": 25.7,
+      "2025": 25.7
+    }
+  },
+  "672284": {
+    "name": "",
+    "career_sprint_speed": 27.74,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 312,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 28.0,
+      "2024": 27.9,
+      "2025": 26.1
+    }
+  },
+  "596117": {
+    "name": "",
+    "career_sprint_speed": 27.81,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 129,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 28.1,
+      "2024": 28.0
+    }
+  },
+  "679631": {
+    "name": "",
+    "career_sprint_speed": 27.53,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 55,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 27.9
+    }
+  },
+  "600869": {
+    "name": "Jeimer Candelario",
+    "career_sprint_speed": 27.37,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 576,
+    "seasons": {
+      "2022": 27.3,
+      "2023": 27.5,
+      "2024": 27.4,
+      "2025": 26.7
+    }
+  },
+  "663698": {
+    "name": "Joey Bart",
+    "career_sprint_speed": 26.84,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 295,
+    "seasons": {
+      "2022": 27.2,
+      "2023": 26.5,
+      "2024": 27.0,
+      "2025": 26.6
+    }
+  },
+  "656811": {
+    "name": "Ryan O'hearn",
+    "career_sprint_speed": 27.66,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 547,
+    "seasons": {
+      "2022": 27.2,
+      "2023": 27.7,
+      "2024": 27.8,
+      "2025": 27.6
+    }
+  },
+  "680977": {
+    "name": "Brendan Donovan",
+    "career_sprint_speed": 26.97,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 849,
+    "seasons": {
+      "2022": 27.2,
+      "2023": 27.1,
+      "2024": 27.0,
+      "2025": 26.6
+    }
+  },
+  "571970": {
+    "name": "Max Muncy",
+    "career_sprint_speed": 27.02,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 435,
+    "seasons": {
+      "2022": 27.2,
+      "2023": 26.9,
+      "2024": 26.9,
+      "2025": 27.0
+    }
+  },
+  "640457": {
+    "name": "",
+    "career_sprint_speed": 27.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 43,
+    "seasons": {
+      "2022": 27.2
+    }
+  },
+  "668472": {
+    "name": "",
+    "career_sprint_speed": 26.59,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 134,
+    "seasons": {
+      "2022": 27.2,
+      "2023": 26.3
+    }
+  },
+  "608336": {
+    "name": "",
+    "career_sprint_speed": 26.79,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 175,
+    "seasons": {
+      "2022": 27.2,
+      "2023": 26.6,
+      "2024": 26.5
+    }
+  },
+  "668939": {
+    "name": "Adley Rutschman",
+    "career_sprint_speed": 26.87,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 742,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 27.0,
+      "2024": 26.6,
+      "2025": 26.7
+    }
+  },
+  "545121": {
+    "name": "Ildemaro Vargas",
+    "career_sprint_speed": 26.99,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 465,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 27.0,
+      "2024": 26.7,
+      "2025": 27.4
+    }
+  },
+  "543281": {
+    "name": "",
+    "career_sprint_speed": 26.97,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 188,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 26.5
+    }
+  },
+  "606993": {
+    "name": "",
+    "career_sprint_speed": 27.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 27.1
+    }
+  },
+  "592669": {
+    "name": "",
+    "career_sprint_speed": 26.87,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 502,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 26.8,
+      "2024": 26.7,
+      "2025": 27.0
+    }
+  },
+  "663993": {
+    "name": "Nathaniel Lowe",
+    "career_sprint_speed": 26.81,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 921,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 27.3,
+      "2024": 26.4,
+      "2025": 26.2
+    }
+  },
+  "608701": {
+    "name": "Rob Refsnyder",
+    "career_sprint_speed": 27.08,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 308,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 27.1,
+      "2024": 27.3,
+      "2025": 26.7
+    }
+  },
+  "543543": {
+    "name": "",
+    "career_sprint_speed": 26.78,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 100,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 25.9
+    }
+  },
+  "621043": {
+    "name": "Carlos Correa",
+    "career_sprint_speed": 26.74,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 762,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 26.6,
+      "2024": 26.8,
+      "2025": 26.5
+    }
+  },
+  "650490": {
+    "name": "Yandy D\u00edaz",
+    "career_sprint_speed": 26.27,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 1011,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 26.6,
+      "2024": 25.4,
+      "2025": 26.1
+    }
+  },
+  "596059": {
+    "name": "",
+    "career_sprint_speed": 27.01,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 162,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 26.8
+    }
+  },
+  "542364": {
+    "name": "",
+    "career_sprint_speed": 27.13,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 162,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 27.2
+    }
+  },
+  "686681": {
+    "name": "Michael Massey",
+    "career_sprint_speed": 26.86,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 402,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 27.3,
+      "2024": 26.8,
+      "2025": 26.0
+    }
+  },
+  "641856": {
+    "name": "",
+    "career_sprint_speed": 27.04,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 76,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 27.1,
+      "2025": 26.8
+    }
+  },
+  "598265": {
+    "name": "",
+    "career_sprint_speed": 27.1,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 204,
+    "seasons": {
+      "2022": 27.1,
+      "2023": 27.1
+    }
+  },
+  "518792": {
+    "name": "",
+    "career_sprint_speed": 27.0,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 328,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 27.1,
+      "2024": 26.8,
+      "2025": 27.2
+    }
+  },
+  "664761": {
+    "name": "Alec Bohm",
+    "career_sprint_speed": 26.61,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 1021,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.6,
+      "2024": 26.3,
+      "2025": 26.5
+    }
+  },
+  "669065": {
+    "name": "Kyle Stowers",
+    "career_sprint_speed": 27.38,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 237,
+    "seasons": {
+      "2022": 27.0,
+      "2024": 28.2,
+      "2025": 27.1
+    }
+  },
+  "673962": {
+    "name": "Josh Jung",
+    "career_sprint_speed": 26.81,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 466,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.8,
+      "2024": 27.3,
+      "2025": 26.6
+    }
+  },
+  "592273": {
+    "name": "",
+    "career_sprint_speed": 26.69,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 551,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.9,
+      "2024": 26.0
+    }
+  },
+  "570731": {
+    "name": "",
+    "career_sprint_speed": 26.98,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 251,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.9
+    }
+  },
+  "624585": {
+    "name": "Jorge Soler",
+    "career_sprint_speed": 26.66,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 493,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.6,
+      "2024": 26.9,
+      "2025": 26.0
+    }
+  },
+  "669357": {
+    "name": "Nolan Gorman",
+    "career_sprint_speed": 26.37,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 328,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.5,
+      "2024": 26.2,
+      "2025": 25.9
+    }
+  },
+  "546318": {
+    "name": "",
+    "career_sprint_speed": 27.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 79,
+    "seasons": {
+      "2022": 27.0
+    }
+  },
+  "671277": {
+    "name": "Luis Garc\u00eda",
+    "career_sprint_speed": 26.98,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 812,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 27.2,
+      "2024": 27.2,
+      "2025": 26.5
+    }
+  },
+  "573262": {
+    "name": "Mike Yastrzemski",
+    "career_sprint_speed": 27.02,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 537,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 27.0,
+      "2024": 27.2,
+      "2025": 26.9
+    }
+  },
+  "669289": {
+    "name": "Santiago Espinal",
+    "career_sprint_speed": 27.07,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 587,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.9,
+      "2024": 27.3,
+      "2025": 27.1
+    }
+  },
+  "669087": {
+    "name": "",
+    "career_sprint_speed": 26.08,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 68,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.2,
+      "2025": 23.4
+    }
+  },
+  "606466": {
+    "name": "Ketel Marte",
+    "career_sprint_speed": 27.16,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 887,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 27.7,
+      "2024": 27.1,
+      "2025": 26.6
+    }
+  },
+  "661388": {
+    "name": "William Contreras",
+    "career_sprint_speed": 26.46,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 909,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.5,
+      "2024": 26.4,
+      "2025": 26.2
+    }
+  },
+  "663616": {
+    "name": "Trevor Larnach",
+    "career_sprint_speed": 26.36,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 448,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.7,
+      "2024": 26.3,
+      "2025": 26.1
+    }
+  },
+  "572816": {
+    "name": "",
+    "career_sprint_speed": 26.87,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 195,
+    "seasons": {
+      "2022": 27.0,
+      "2023": 26.6
+    }
+  },
+  "642336": {
+    "name": "",
+    "career_sprint_speed": 26.7,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 145,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.3
+    }
+  },
+  "493329": {
+    "name": "",
+    "career_sprint_speed": 26.96,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 411,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 27.2,
+      "2024": 26.5,
+      "2025": 26.8
+    }
+  },
+  "571771": {
+    "name": "",
+    "career_sprint_speed": 26.93,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 569,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.9,
+      "2024": 27.0,
+      "2025": 26.9
+    }
+  },
+  "650402": {
+    "name": "Gleyber Torres",
+    "career_sprint_speed": 26.5,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 848,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.4,
+      "2024": 26.6,
+      "2025": 26.2
+    }
+  },
+  "681146": {
+    "name": "",
+    "career_sprint_speed": 26.92,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 242,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 27.1,
+      "2024": 26.9,
+      "2025": 26.8
+    }
+  },
+  "641487": {
+    "name": "J. p. Crawford",
+    "career_sprint_speed": 26.78,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 795,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.7,
+      "2024": 26.8,
+      "2025": 26.7
+    }
+  },
+  "656896": {
+    "name": "",
+    "career_sprint_speed": 26.8,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 414,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 27.1,
+      "2024": 26.7,
+      "2025": 25.9
+    }
+  },
+  "683146": {
+    "name": "Brett Baty",
+    "career_sprint_speed": 27.09,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 378,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 27.3,
+      "2024": 26.9,
+      "2025": 27.0
+    }
+  },
+  "650333": {
+    "name": "Luis Arr\u00e1ez",
+    "career_sprint_speed": 26.54,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 1097,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.1,
+      "2024": 26.7,
+      "2025": 26.5
+    }
+  },
+  "660707": {
+    "name": "",
+    "career_sprint_speed": 26.55,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 240,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.6,
+      "2024": 26.2
+    }
+  },
+  "571745": {
+    "name": "",
+    "career_sprint_speed": 26.53,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 255,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.7,
+      "2024": 26.2
+    }
+  },
+  "518692": {
+    "name": "Freddie Freeman",
+    "career_sprint_speed": 26.29,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 999,
+    "seasons": {
+      "2022": 26.9,
+      "2023": 26.7,
+      "2024": 25.8,
+      "2025": 25.6
+    }
+  },
+  "608596": {
+    "name": "",
+    "career_sprint_speed": 26.14,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 80,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 26.0,
+      "2024": 26.1
+    }
+  },
+  "624428": {
+    "name": "Adam Frazier",
+    "career_sprint_speed": 26.66,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 699,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 26.5,
+      "2024": 26.7,
+      "2025": 26.6
+    }
+  },
+  "622110": {
+    "name": "",
+    "career_sprint_speed": 26.9,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 182,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 27.0
+    }
+  },
+  "666211": {
+    "name": "Taylor Trammell",
+    "career_sprint_speed": 27.52,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 87,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 27.1,
+      "2025": 28.2
+    }
+  },
+  "657077": {
+    "name": "",
+    "career_sprint_speed": 26.85,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 858,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 27.3,
+      "2024": 26.7,
+      "2025": 26.1
+    }
+  },
+  "656582": {
+    "name": "",
+    "career_sprint_speed": 26.93,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 519,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 27.1,
+      "2024": 26.9,
+      "2025": 27.0
+    }
+  },
+  "607461": {
+    "name": "",
+    "career_sprint_speed": 25.94,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 41,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 25.5
+    }
+  },
+  "650907": {
+    "name": "",
+    "career_sprint_speed": 26.86,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 50,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 26.9
+    }
+  },
+  "660766": {
+    "name": "",
+    "career_sprint_speed": 26.71,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 224,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 26.0,
+      "2024": 26.7
+    }
+  },
+  "676701": {
+    "name": "",
+    "career_sprint_speed": 26.48,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 159,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 26.4,
+      "2024": 26.3,
+      "2025": 26.2
+    }
+  },
+  "664247": {
+    "name": "",
+    "career_sprint_speed": 26.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 50,
+    "seasons": {
+      "2022": 26.8
+    }
+  },
+  "542340": {
+    "name": "",
+    "career_sprint_speed": 26.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 97,
+    "seasons": {
+      "2022": 26.8
+    }
+  },
+  "663728": {
+    "name": "Cal Raleigh",
+    "career_sprint_speed": 26.57,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 470,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 27.0,
+      "2024": 26.6,
+      "2025": 26.0
+    }
+  },
+  "665155": {
+    "name": "",
+    "career_sprint_speed": 26.87,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 122,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 27.2,
+      "2025": 25.3
+    }
+  },
+  "656695": {
+    "name": "",
+    "career_sprint_speed": 26.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 26.8
+    }
+  },
+  "660634": {
+    "name": "",
+    "career_sprint_speed": 26.34,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 26,
+    "seasons": {
+      "2022": 26.8,
+      "2023": 25.6
+    }
+  },
+  "571657": {
+    "name": "",
+    "career_sprint_speed": 26.44,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 523,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.5,
+      "2024": 25.9,
+      "2025": 26.2
+    }
+  },
+  "665489": {
+    "name": "Vladimir Guerrero",
+    "career_sprint_speed": 26.81,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 1087,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.4,
+      "2024": 27.2,
+      "2025": 26.9
+    }
+  },
+  "681584": {
+    "name": "",
+    "career_sprint_speed": 26.32,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 102,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 25.9,
+      "2024": 26.2,
+      "2025": 26.2
+    }
+  },
+  "613564": {
+    "name": "",
+    "career_sprint_speed": 26.53,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 65,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.0,
+      "2024": 26.7
+    }
+  },
+  "623168": {
+    "name": "Tyler Heineman",
+    "career_sprint_speed": 26.41,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 131,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 25.7,
+      "2025": 26.3
+    }
+  },
+  "663898": {
+    "name": "",
+    "career_sprint_speed": 26.35,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 612,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.3,
+      "2024": 26.0,
+      "2025": 26.4
+    }
+  },
+  "663656": {
+    "name": "Kyle Tucker",
+    "career_sprint_speed": 26.52,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 657,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.6,
+      "2024": 26.0,
+      "2025": 26.5
+    }
+  },
+  "602104": {
+    "name": "Ram\u00f3n Ur\u00edas",
+    "career_sprint_speed": 26.81,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 571,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.7,
+      "2024": 26.9,
+      "2025": 27.0
+    }
+  },
+  "656180": {
+    "name": "",
+    "career_sprint_speed": 26.51,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 216,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.2,
+      "2024": 26.5,
+      "2025": 26.6
+    }
+  },
+  "605131": {
+    "name": "",
+    "career_sprint_speed": 26.31,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 225,
+    "seasons": {
+      "2022": 26.7,
+      "2023": 26.5,
+      "2024": 25.8,
+      "2025": 25.6
+    }
+  },
+  "623520": {
+    "name": "",
+    "career_sprint_speed": 26.69,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 67,
+    "seasons": {
+      "2022": 26.6,
+      "2024": 26.9
+    }
+  },
+  "592743": {
+    "name": "",
+    "career_sprint_speed": 26.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 41,
+    "seasons": {
+      "2022": 26.6
+    }
+  },
+  "657757": {
+    "name": "Gavin Sheets",
+    "career_sprint_speed": 26.73,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 591,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.5,
+      "2024": 26.7,
+      "2025": 27.0
+    }
+  },
+  "623993": {
+    "name": "",
+    "career_sprint_speed": 26.4,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 566,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.7,
+      "2024": 26.0,
+      "2025": 26.0
+    }
+  },
+  "542303": {
+    "name": "Marcell Ozuna",
+    "career_sprint_speed": 26.0,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 670,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.4,
+      "2024": 25.7,
+      "2025": 25.3
+    }
+  },
+  "640449": {
+    "name": "",
+    "career_sprint_speed": 27.29,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 43,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 27.7
+    }
+  },
+  "670541": {
+    "name": "Yordan \u00c1lvarez",
+    "career_sprint_speed": 26.33,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 510,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.3,
+      "2024": 26.1,
+      "2025": 26.2
+    }
+  },
+  "665742": {
+    "name": "Juan Soto",
+    "career_sprint_speed": 26.54,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 965,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.8,
+      "2024": 26.8,
+      "2025": 25.8
+    }
+  },
+  "608324": {
+    "name": "Alex Bregman",
+    "career_sprint_speed": 26.41,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 862,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.3,
+      "2024": 26.7,
+      "2025": 26.0
+    }
+  },
+  "663886": {
+    "name": "Tyler Stephenson",
+    "career_sprint_speed": 26.7,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 503,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.9,
+      "2024": 26.5,
+      "2025": 26.8
+    }
+  },
+  "572233": {
+    "name": "Christian Walker",
+    "career_sprint_speed": 26.37,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 772,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.4,
+      "2024": 26.2,
+      "2025": 26.2
+    }
+  },
+  "595777": {
+    "name": "",
+    "career_sprint_speed": 26.29,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 777,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 25.6,
+      "2024": 26.5,
+      "2025": 26.3
+    }
+  },
+  "664670": {
+    "name": "",
+    "career_sprint_speed": 26.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 65,
+    "seasons": {
+      "2022": 26.6
+    }
+  },
+  "656976": {
+    "name": "",
+    "career_sprint_speed": 26.38,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 296,
+    "seasons": {
+      "2022": 26.6,
+      "2023": 26.2,
+      "2024": 26.4,
+      "2025": 26.3
+    }
+  },
+  "642020": {
+    "name": "",
+    "career_sprint_speed": 25.96,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 57,
+    "seasons": {
+      "2022": 26.5,
+      "2024": 25.5
+    }
+  },
+  "605204": {
+    "name": "",
+    "career_sprint_speed": 25.97,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 352,
+    "seasons": {
+      "2022": 26.5,
+      "2023": 25.8,
+      "2024": 25.6
+    }
+  },
+  "677954": {
+    "name": "",
+    "career_sprint_speed": 26.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2022": 26.5
+    }
+  },
+  "661531": {
+    "name": "",
+    "career_sprint_speed": 26.34,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 86,
+    "seasons": {
+      "2022": 26.4,
+      "2024": 26.1
+    }
+  },
+  "641914": {
+    "name": "",
+    "career_sprint_speed": 26.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 124,
+    "seasons": {
+      "2022": 26.4
+    }
+  },
+  "543592": {
+    "name": "",
+    "career_sprint_speed": 26.33,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 224,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 26.2,
+      "2025": 25.8
+    }
+  },
+  "656941": {
+    "name": "Kyle Schwarber",
+    "career_sprint_speed": 25.75,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 658,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 25.0,
+      "2024": 25.8,
+      "2025": 25.9
+    }
+  },
+  "606115": {
+    "name": "",
+    "career_sprint_speed": 25.81,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 642,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 25.9,
+      "2024": 25.6,
+      "2025": 25.5
+    }
+  },
+  "501303": {
+    "name": "",
+    "career_sprint_speed": 26.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 42,
+    "seasons": {
+      "2022": 26.4
+    }
+  },
+  "649966": {
+    "name": "",
+    "career_sprint_speed": 26.17,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 347,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 26.0,
+      "2024": 26.0,
+      "2025": 26.0
+    }
+  },
+  "518934": {
+    "name": "",
+    "career_sprint_speed": 26.02,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 595,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 25.7,
+      "2024": 26.1,
+      "2025": 25.6
+    }
+  },
+  "500743": {
+    "name": "Miguel Rojas",
+    "career_sprint_speed": 26.17,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 671,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 26.4,
+      "2024": 25.8,
+      "2025": 25.9
+    }
+  },
+  "503556": {
+    "name": "",
+    "career_sprint_speed": 26.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 54,
+    "seasons": {
+      "2022": 26.4
+    }
+  },
+  "683021": {
+    "name": "",
+    "career_sprint_speed": 25.86,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 118,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 26.0,
+      "2024": 25.6,
+      "2025": 25.1
+    }
+  },
+  "641598": {
+    "name": "Mitch Garver",
+    "career_sprint_speed": 25.98,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 318,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 25.7,
+      "2024": 26.0,
+      "2025": 26.0
+    }
+  },
+  "664731": {
+    "name": "P. j. Higgins",
+    "career_sprint_speed": 26.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 82,
+    "seasons": {
+      "2022": 26.4
+    }
+  },
+  "592518": {
+    "name": "Manny Machado",
+    "career_sprint_speed": 26.07,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 789,
+    "seasons": {
+      "2022": 26.4,
+      "2023": 26.3,
+      "2024": 25.8,
+      "2025": 25.8
+    }
+  },
+  "621566": {
+    "name": "Matt Olson",
+    "career_sprint_speed": 25.81,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 827,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.2,
+      "2024": 25.5,
+      "2025": 25.2
+    }
+  },
+  "663845": {
+    "name": "",
+    "career_sprint_speed": 26.48,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 133,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.9
+    }
+  },
+  "643265": {
+    "name": "",
+    "career_sprint_speed": 26.35,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 325,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.3,
+      "2024": 26.8
+    }
+  },
+  "543228": {
+    "name": "",
+    "career_sprint_speed": 26.25,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 268,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.2,
+      "2024": 26.3
+    }
+  },
+  "502671": {
+    "name": "Paul Goldschmidt",
+    "career_sprint_speed": 26.28,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 825,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.4,
+      "2024": 26.3,
+      "2025": 26.1
+    }
+  },
+  "669742": {
+    "name": "",
+    "career_sprint_speed": 25.7,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 50,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 24.0
+    }
+  },
+  "605612": {
+    "name": "",
+    "career_sprint_speed": 26.38,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 271,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.5
+    }
+  },
+  "642086": {
+    "name": "Dominic Smith",
+    "career_sprint_speed": 25.8,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 447,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 25.8,
+      "2024": 25.6,
+      "2025": 25.7
+    }
+  },
+  "643393": {
+    "name": "",
+    "career_sprint_speed": 26.26,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 373,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.2
+    }
+  },
+  "608577": {
+    "name": "",
+    "career_sprint_speed": 26.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 62,
+    "seasons": {
+      "2022": 26.3
+    }
+  },
+  "605137": {
+    "name": "Josh Bell",
+    "career_sprint_speed": 25.73,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 864,
+    "seasons": {
+      "2022": 26.2,
+      "2023": 25.9,
+      "2024": 25.4,
+      "2025": 25.2
+    }
+  },
+  "543685": {
+    "name": "",
+    "career_sprint_speed": 26.58,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 192,
+    "seasons": {
+      "2022": 26.3,
+      "2023": 26.5,
+      "2024": 26.8
+    }
+  },
+  "669304": {
+    "name": "",
+    "career_sprint_speed": 26.07,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 405,
+    "seasons": {
+      "2022": 26.2,
+      "2023": 26.6,
+      "2024": 25.9,
+      "2025": 23.8
+    }
+  },
+  "683734": {
+    "name": "",
+    "career_sprint_speed": 26.0,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 795,
+    "seasons": {
+      "2022": 26.2,
+      "2023": 25.5,
+      "2024": 26.3,
+      "2025": 26.0
+    }
+  },
+  "608369": {
+    "name": "Corey Seager",
+    "career_sprint_speed": 25.84,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 723,
+    "seasons": {
+      "2022": 26.2,
+      "2023": 26.2,
+      "2024": 25.3,
+      "2025": 25.3
+    }
+  },
+  "660620": {
+    "name": "",
+    "career_sprint_speed": 26.16,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 25,
+    "seasons": {
+      "2022": 26.2,
+      "2023": 26.1
+    }
+  },
+  "620443": {
+    "name": "Luis Torrens",
+    "career_sprint_speed": 26.51,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 210,
+    "seasons": {
+      "2022": 26.2,
+      "2024": 26.6,
+      "2025": 26.6
+    }
+  },
+  "543939": {
+    "name": "",
+    "career_sprint_speed": 26.35,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 251,
+    "seasons": {
+      "2022": 26.2,
+      "2023": 26.7
+    }
+  },
+  "670623": {
+    "name": "Isaac Paredes",
+    "career_sprint_speed": 25.96,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 562,
+    "seasons": {
+      "2022": 26.2,
+      "2023": 26.1,
+      "2024": 25.9,
+      "2025": 25.6
+    }
+  },
+  "502110": {
+    "name": "",
+    "career_sprint_speed": 26.01,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 458,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.1,
+      "2024": 25.8
+    }
+  },
+  "462101": {
+    "name": "",
+    "career_sprint_speed": 26.29,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 428,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.5
+    }
+  },
+  "669221": {
+    "name": "",
+    "career_sprint_speed": 25.68,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 541,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.0,
+      "2024": 25.2,
+      "2025": 24.8
+    }
+  },
+  "518595": {
+    "name": "Travis D'arnaud",
+    "career_sprint_speed": 26.03,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 455,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.1,
+      "2024": 25.7,
+      "2025": 26.3
+    }
+  },
+  "664058": {
+    "name": "",
+    "career_sprint_speed": 26.13,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 124,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.2
+    }
+  },
+  "641511": {
+    "name": "",
+    "career_sprint_speed": 26.28,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 129,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.4
+    }
+  },
+  "543510": {
+    "name": "James Mccann",
+    "career_sprint_speed": 25.84,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 244,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.1,
+      "2024": 25.1,
+      "2025": 26.4
+    }
+  },
+  "672478": {
+    "name": "",
+    "career_sprint_speed": 25.49,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 154,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 25.3
+    }
+  },
+  "642165": {
+    "name": "",
+    "career_sprint_speed": 26.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 50,
+    "seasons": {
+      "2022": 26.1
+    }
+  },
+  "669134": {
+    "name": "Luis Campusano",
+    "career_sprint_speed": 25.36,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 211,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 25.8,
+      "2024": 25.0,
+      "2025": 25.0
+    }
+  },
+  "668751": {
+    "name": "",
+    "career_sprint_speed": 26.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 96,
+    "seasons": {
+      "2022": 26.1
+    }
+  },
+  "664901": {
+    "name": "",
+    "career_sprint_speed": 26.15,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 111,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 25.6,
+      "2024": 26.5
+    }
+  },
+  "547989": {
+    "name": "",
+    "career_sprint_speed": 25.78,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 501,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 25.5,
+      "2024": 25.3
+    }
+  },
+  "660294": {
+    "name": "",
+    "career_sprint_speed": 26.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 61,
+    "seasons": {
+      "2022": 26.1
+    }
+  },
+  "553869": {
+    "name": "",
+    "career_sprint_speed": 25.13,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 498,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 25.0,
+      "2024": 24.4,
+      "2025": 25.0
+    }
+  },
+  "571875": {
+    "name": "",
+    "career_sprint_speed": 25.79,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 45,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 25.1
+    }
+  },
+  "680777": {
+    "name": "Ryan Jeffers",
+    "career_sprint_speed": 26.18,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 447,
+    "seasons": {
+      "2022": 26.1,
+      "2023": 26.5,
+      "2024": 26.3,
+      "2025": 25.9
+    }
+  },
+  "572761": {
+    "name": "",
+    "career_sprint_speed": 25.34,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 115,
+    "seasons": {
+      "2022": 26.0,
+      "2023": 25.3,
+      "2024": 24.6
+    }
+  },
+  "624512": {
+    "name": "Reese Mcguire",
+    "career_sprint_speed": 25.87,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 258,
+    "seasons": {
+      "2022": 26.0,
+      "2023": 25.9,
+      "2024": 25.5,
+      "2025": 25.9
+    }
+  },
+  "641680": {
+    "name": "Jonah Heim",
+    "career_sprint_speed": 25.58,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 625,
+    "seasons": {
+      "2022": 26.0,
+      "2023": 25.8,
+      "2024": 25.3,
+      "2025": 25.2
+    }
+  },
+  "605244": {
+    "name": "",
+    "career_sprint_speed": 26.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 26.0
+    }
+  },
+  "592626": {
+    "name": "Joc Pederson",
+    "career_sprint_speed": 25.81,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 405,
+    "seasons": {
+      "2022": 26.0,
+      "2023": 26.4,
+      "2024": 25.5,
+      "2025": 25.2
+    }
+  },
+  "664874": {
+    "name": "",
+    "career_sprint_speed": 26.17,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 113,
+    "seasons": {
+      "2022": 26.0,
+      "2023": 26.4,
+      "2024": 26.0
+    }
+  },
+  "614177": {
+    "name": "",
+    "career_sprint_speed": 26.07,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 170,
+    "seasons": {
+      "2022": 26.0,
+      "2023": 26.5
+    }
+  },
+  "666018": {
+    "name": "Jonathan Aranda",
+    "career_sprint_speed": 25.92,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 236,
+    "seasons": {
+      "2022": 26.0,
+      "2023": 26.1,
+      "2024": 25.8,
+      "2025": 25.9
+    }
+  },
+  "593643": {
+    "name": "",
+    "career_sprint_speed": 25.69,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 104,
+    "seasons": {
+      "2022": 25.9,
+      "2023": 25.2
+    }
+  },
+  "664774": {
+    "name": "",
+    "career_sprint_speed": 25.73,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 380,
+    "seasons": {
+      "2022": 25.9,
+      "2023": 26.0,
+      "2024": 25.2,
+      "2025": 26.0
+    }
+  },
+  "656555": {
+    "name": "Rhys Hoskins",
+    "career_sprint_speed": 25.51,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 389,
+    "seasons": {
+      "2022": 25.9,
+      "2024": 25.3,
+      "2025": 24.8
+    }
+  },
+  "665120": {
+    "name": "",
+    "career_sprint_speed": 26.02,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 190,
+    "seasons": {
+      "2022": 25.9,
+      "2023": 26.2,
+      "2024": 26.7
+    }
+  },
+  "640461": {
+    "name": "",
+    "career_sprint_speed": 25.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 140,
+    "seasons": {
+      "2022": 25.9
+    }
+  },
+  "641645": {
+    "name": "",
+    "career_sprint_speed": 25.5,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 274,
+    "seasons": {
+      "2022": 25.9,
+      "2023": 25.5,
+      "2024": 24.7
+    }
+  },
+  "456781": {
+    "name": "",
+    "career_sprint_speed": 25.49,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 408,
+    "seasons": {
+      "2022": 25.9,
+      "2023": 25.4,
+      "2024": 25.5,
+      "2025": 25.0
+    }
+  },
+  "553993": {
+    "name": "Eugenio Su\u00e1rez",
+    "career_sprint_speed": 26.31,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 641,
+    "seasons": {
+      "2022": 25.9,
+      "2023": 26.4,
+      "2024": 26.5,
+      "2025": 26.4
+    }
+  },
+  "668800": {
+    "name": "",
+    "career_sprint_speed": 25.75,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 253,
+    "seasons": {
+      "2022": 25.8,
+      "2023": 25.9,
+      "2024": 25.0,
+      "2025": 25.9
+    }
+  },
+  "608841": {
+    "name": "",
+    "career_sprint_speed": 25.62,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 472,
+    "seasons": {
+      "2022": 25.8,
+      "2023": 25.6,
+      "2024": 25.5
+    }
+  },
+  "543309": {
+    "name": "Kyle Higashioka",
+    "career_sprint_speed": 25.44,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 303,
+    "seasons": {
+      "2022": 25.8,
+      "2023": 25.6,
+      "2024": 25.4,
+      "2025": 25.1
+    }
+  },
+  "543333": {
+    "name": "",
+    "career_sprint_speed": 25.64,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 226,
+    "seasons": {
+      "2022": 25.8,
+      "2023": 25.0
+    }
+  },
+  "641857": {
+    "name": "Ryan Mcmahon",
+    "career_sprint_speed": 26.02,
+    "trend": "improving",
+    "n_seasons": 4,
+    "total_opp": 743,
+    "seasons": {
+      "2022": 25.8,
+      "2023": 25.8,
+      "2024": 25.9,
+      "2025": 26.7
+    }
+  },
+  "606213": {
+    "name": "",
+    "career_sprint_speed": 25.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 25.8
+    }
+  },
+  "570482": {
+    "name": "",
+    "career_sprint_speed": 25.42,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 542,
+    "seasons": {
+      "2022": 25.8,
+      "2023": 26.2,
+      "2024": 25.1,
+      "2025": 24.2
+    }
+  },
+  "641432": {
+    "name": "",
+    "career_sprint_speed": 24.74,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 160,
+    "seasons": {
+      "2022": 25.8,
+      "2023": 25.1,
+      "2024": 24.3
+    }
+  },
+  "467793": {
+    "name": "Carlos Santana",
+    "career_sprint_speed": 25.79,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 705,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 25.9,
+      "2024": 25.9,
+      "2025": 25.6
+    }
+  },
+  "573131": {
+    "name": "",
+    "career_sprint_speed": 25.64,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 123,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 25.2
+    }
+  },
+  "519390": {
+    "name": "",
+    "career_sprint_speed": 25.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 49,
+    "seasons": {
+      "2022": 25.7
+    }
+  },
+  "608348": {
+    "name": "Carson Kelly",
+    "career_sprint_speed": 25.77,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 412,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 25.7,
+      "2024": 25.6,
+      "2025": 26.0
+    }
+  },
+  "518626": {
+    "name": "",
+    "career_sprint_speed": 25.49,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 216,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 24.9
+    }
+  },
+  "572287": {
+    "name": "",
+    "career_sprint_speed": 25.89,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 53,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 26.0
+    }
+  },
+  "650391": {
+    "name": "Eloy Jim\u00e9nez",
+    "career_sprint_speed": 25.87,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 461,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 26.5,
+      "2024": 25.2
+    }
+  },
+  "624413": {
+    "name": "Pete Alonso",
+    "career_sprint_speed": 25.79,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 831,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 26.0,
+      "2024": 26.1,
+      "2025": 25.3
+    }
+  },
+  "605353": {
+    "name": "",
+    "career_sprint_speed": 25.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 94,
+    "seasons": {
+      "2022": 25.7
+    }
+  },
+  "663527": {
+    "name": "",
+    "career_sprint_speed": 26.07,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 170,
+    "seasons": {
+      "2022": 25.7,
+      "2023": 25.7,
+      "2024": 26.4
+    }
+  },
+  "686469": {
+    "name": "Vinnie Pasquantino",
+    "career_sprint_speed": 25.59,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 585,
+    "seasons": {
+      "2022": 25.6,
+      "2023": 25.8,
+      "2024": 25.6,
+      "2025": 25.5
+    }
+  },
+  "628450": {
+    "name": "",
+    "career_sprint_speed": 25.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 118,
+    "seasons": {
+      "2022": 25.6
+    }
+  },
+  "608385": {
+    "name": "",
+    "career_sprint_speed": 25.57,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 386,
+    "seasons": {
+      "2022": 25.6,
+      "2023": 23.5,
+      "2024": 26.1,
+      "2025": 25.8
+    }
+  },
+  "643524": {
+    "name": "",
+    "career_sprint_speed": 25.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 106,
+    "seasons": {
+      "2022": 25.6
+    }
+  },
+  "646240": {
+    "name": "Rafael Devers",
+    "career_sprint_speed": 25.77,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 823,
+    "seasons": {
+      "2022": 25.6,
+      "2023": 26.0,
+      "2024": 26.5,
+      "2025": 25.0
+    }
+  },
+  "641820": {
+    "name": "",
+    "career_sprint_speed": 25.53,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 267,
+    "seasons": {
+      "2022": 25.6,
+      "2023": 25.4
+    }
+  },
+  "650619": {
+    "name": "",
+    "career_sprint_speed": 25.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 25.6
+    }
+  },
+  "621512": {
+    "name": "",
+    "career_sprint_speed": 25.29,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 187,
+    "seasons": {
+      "2022": 25.6,
+      "2023": 24.8,
+      "2024": 24.7,
+      "2025": 25.1
+    }
+  },
+  "545358": {
+    "name": "",
+    "career_sprint_speed": 25.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 119,
+    "seasons": {
+      "2022": 25.6
+    }
+  },
+  "443558": {
+    "name": "",
+    "career_sprint_speed": 25.36,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 225,
+    "seasons": {
+      "2022": 25.5,
+      "2023": 24.7
+    }
+  },
+  "571912": {
+    "name": "",
+    "career_sprint_speed": 25.61,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 183,
+    "seasons": {
+      "2022": 25.5,
+      "2023": 26.0,
+      "2024": 25.5,
+      "2025": 23.9
+    }
+  },
+  "543877": {
+    "name": "Christian V\u00e1zquez",
+    "career_sprint_speed": 25.11,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 450,
+    "seasons": {
+      "2022": 25.5,
+      "2023": 25.0,
+      "2024": 24.8,
+      "2025": 24.7
+    }
+  },
+  "571448": {
+    "name": "Nolan Arenado",
+    "career_sprint_speed": 25.28,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 731,
+    "seasons": {
+      "2022": 25.5,
+      "2023": 24.9,
+      "2024": 25.3,
+      "2025": 25.5
+    }
+  },
+  "519203": {
+    "name": "",
+    "career_sprint_speed": 24.94,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 384,
+    "seasons": {
+      "2022": 25.5,
+      "2023": 24.7,
+      "2024": 24.5
+    }
+  },
+  "596748": {
+    "name": "",
+    "career_sprint_speed": 25.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 144,
+    "seasons": {
+      "2022": 25.5
+    }
+  },
+  "543063": {
+    "name": "",
+    "career_sprint_speed": 25.58,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 294,
+    "seasons": {
+      "2022": 25.5,
+      "2023": 25.8,
+      "2024": 25.1
+    }
+  },
+  "594777": {
+    "name": "",
+    "career_sprint_speed": 25.28,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 146,
+    "seasons": {
+      "2022": 25.4,
+      "2023": 25.0
+    }
+  },
+  "488726": {
+    "name": "",
+    "career_sprint_speed": 25.4,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 115,
+    "seasons": {
+      "2022": 25.4,
+      "2023": 25.4
+    }
+  },
+  "446334": {
+    "name": "",
+    "career_sprint_speed": 25.79,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 153,
+    "seasons": {
+      "2022": 25.4,
+      "2023": 26.2
+    }
+  },
+  "647304": {
+    "name": "Josh Naylor",
+    "career_sprint_speed": 25.14,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 836,
+    "seasons": {
+      "2022": 25.3,
+      "2023": 25.8,
+      "2024": 25.2,
+      "2025": 24.4
+    }
+  },
+  "458015": {
+    "name": "",
+    "career_sprint_speed": 25.42,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 173,
+    "seasons": {
+      "2022": 25.3,
+      "2023": 25.6
+    }
+  },
+  "660688": {
+    "name": "Keibert Ruiz",
+    "career_sprint_speed": 25.02,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 617,
+    "seasons": {
+      "2022": 25.3,
+      "2023": 25.1,
+      "2024": 25.0,
+      "2025": 24.5
+    }
+  },
+  "521692": {
+    "name": "Salvador P\u00e9rez",
+    "career_sprint_speed": 24.59,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 629,
+    "seasons": {
+      "2022": 25.3,
+      "2023": 24.3,
+      "2024": 24.5,
+      "2025": 24.4
+    }
+  },
+  "621458": {
+    "name": "",
+    "career_sprint_speed": 25.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 25.3
+    }
+  },
+  "676475": {
+    "name": "Alec Burleson",
+    "career_sprint_speed": 25.52,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 536,
+    "seasons": {
+      "2022": 25.3,
+      "2023": 25.6,
+      "2024": 25.5,
+      "2025": 25.5
+    }
+  },
+  "645444": {
+    "name": "",
+    "career_sprint_speed": 25.11,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 204,
+    "seasons": {
+      "2022": 25.3,
+      "2023": 25.4,
+      "2024": 25.0,
+      "2025": 24.8
+    }
+  },
+  "527038": {
+    "name": "",
+    "career_sprint_speed": 24.68,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 497,
+    "seasons": {
+      "2022": 25.3,
+      "2023": 24.4,
+      "2024": 24.0,
+      "2025": 24.5
+    }
+  },
+  "543068": {
+    "name": "",
+    "career_sprint_speed": 25.13,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 273,
+    "seasons": {
+      "2022": 25.2,
+      "2023": 25.0
+    }
+  },
+  "596142": {
+    "name": "Gary S\u00e1nchez",
+    "career_sprint_speed": 24.98,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 298,
+    "seasons": {
+      "2022": 25.2,
+      "2023": 24.9,
+      "2024": 24.8,
+      "2025": 24.6
+    }
+  },
+  "572039": {
+    "name": "",
+    "career_sprint_speed": 25.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 38,
+    "seasons": {
+      "2022": 25.2
+    }
+  },
+  "519058": {
+    "name": "",
+    "career_sprint_speed": 25.16,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 177,
+    "seasons": {
+      "2022": 25.1,
+      "2023": 25.2
+    }
+  },
+  "476704": {
+    "name": "",
+    "career_sprint_speed": 25.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 48,
+    "seasons": {
+      "2022": 25.1
+    }
+  },
+  "596847": {
+    "name": "",
+    "career_sprint_speed": 25.06,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 148,
+    "seasons": {
+      "2022": 25.1,
+      "2023": 24.9
+    }
+  },
+  "624431": {
+    "name": "Jose Trevino",
+    "career_sprint_speed": 24.6,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 434,
+    "seasons": {
+      "2022": 25.1,
+      "2023": 24.4,
+      "2024": 24.5,
+      "2025": 24.3
+    }
+  },
+  "665861": {
+    "name": "",
+    "career_sprint_speed": 24.9,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 22,
+    "seasons": {
+      "2022": 25.0,
+      "2025": 24.8
+    }
+  },
+  "457759": {
+    "name": "",
+    "career_sprint_speed": 25.2,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 566,
+    "seasons": {
+      "2022": 25.0,
+      "2023": 25.2,
+      "2024": 25.4,
+      "2025": 25.3
+    }
+  },
+  "605170": {
+    "name": "V\u00edctor Caratini",
+    "career_sprint_speed": 24.6,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 404,
+    "seasons": {
+      "2022": 24.9,
+      "2023": 25.0,
+      "2024": 24.4,
+      "2025": 24.3
+    }
+  },
+  "671213": {
+    "name": "",
+    "career_sprint_speed": 24.63,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 261,
+    "seasons": {
+      "2022": 24.9,
+      "2023": 24.9,
+      "2024": 24.1,
+      "2025": 24.4
+    }
+  },
+  "642851": {
+    "name": "Austin Wynns",
+    "career_sprint_speed": 24.71,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 158,
+    "seasons": {
+      "2022": 24.9,
+      "2023": 24.7,
+      "2025": 24.4
+    }
+  },
+  "595956": {
+    "name": "",
+    "career_sprint_speed": 25.31,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 64,
+    "seasons": {
+      "2022": 24.9,
+      "2023": 25.4
+    }
+  },
+  "600303": {
+    "name": "",
+    "career_sprint_speed": 24.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 72,
+    "seasons": {
+      "2022": 24.9
+    }
+  },
+  "622666": {
+    "name": "",
+    "career_sprint_speed": 24.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 50,
+    "seasons": {
+      "2022": 24.8
+    }
+  },
+  "608700": {
+    "name": "",
+    "career_sprint_speed": 24.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 64,
+    "seasons": {
+      "2022": 24.8
+    }
+  },
+  "519222": {
+    "name": "",
+    "career_sprint_speed": 24.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 47,
+    "seasons": {
+      "2022": 24.8
+    }
+  },
+  "664034": {
+    "name": "Ty France",
+    "career_sprint_speed": 24.99,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 797,
+    "seasons": {
+      "2022": 24.8,
+      "2023": 25.0,
+      "2024": 25.1,
+      "2025": 25.1
+    }
+  },
+  "572228": {
+    "name": "",
+    "career_sprint_speed": 24.72,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 138,
+    "seasons": {
+      "2022": 24.7,
+      "2023": 24.9
+    }
+  },
+  "650331": {
+    "name": "",
+    "career_sprint_speed": 24.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 42,
+    "seasons": {
+      "2022": 24.7
+    }
+  },
+  "666179": {
+    "name": "",
+    "career_sprint_speed": 24.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 42,
+    "seasons": {
+      "2022": 24.7
+    }
+  },
+  "657709": {
+    "name": "",
+    "career_sprint_speed": 24.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 33,
+    "seasons": {
+      "2022": 24.7
+    }
+  },
+  "592200": {
+    "name": "",
+    "career_sprint_speed": 24.35,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 96,
+    "seasons": {
+      "2022": 24.6,
+      "2023": 23.8,
+      "2024": 24.4
+    }
+  },
+  "641470": {
+    "name": "",
+    "career_sprint_speed": 24.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 24.6
+    }
+  },
+  "605421": {
+    "name": "",
+    "career_sprint_speed": 24.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 31,
+    "seasons": {
+      "2022": 24.5
+    }
+  },
+  "519317": {
+    "name": "Giancarlo Stanton",
+    "career_sprint_speed": 24.36,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 427,
+    "seasons": {
+      "2022": 24.5,
+      "2023": 24.4,
+      "2024": 24.6,
+      "2025": 23.5
+    }
+  },
+  "595978": {
+    "name": "Austin Hedges",
+    "career_sprint_speed": 24.72,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 222,
+    "seasons": {
+      "2022": 24.5,
+      "2023": 24.5,
+      "2024": 25.3,
+      "2025": 25.0
+    }
+  },
+  "642136": {
+    "name": "",
+    "career_sprint_speed": 24.85,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 219,
+    "seasons": {
+      "2022": 24.5,
+      "2023": 24.7,
+      "2024": 24.9,
+      "2025": 25.2
+    }
+  },
+  "553902": {
+    "name": "",
+    "career_sprint_speed": 24.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2022": 24.5
+    }
+  },
+  "429664": {
+    "name": "",
+    "career_sprint_speed": 24.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 40,
+    "seasons": {
+      "2022": 24.4
+    }
+  },
+  "645801": {
+    "name": "",
+    "career_sprint_speed": 24.2,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 96,
+    "seasons": {
+      "2022": 24.4,
+      "2023": 24.5,
+      "2024": 22.8
+    }
+  },
+  "474832": {
+    "name": "",
+    "career_sprint_speed": 25.45,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 137,
+    "seasons": {
+      "2022": 24.4,
+      "2023": 26.2
+    }
+  },
+  "553882": {
+    "name": "",
+    "career_sprint_speed": 24.17,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 129,
+    "seasons": {
+      "2022": 24.3,
+      "2023": 24.4,
+      "2024": 23.1
+    }
+  },
+  "435559": {
+    "name": "",
+    "career_sprint_speed": 24.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 40,
+    "seasons": {
+      "2022": 24.3
+    }
+  },
+  "664850": {
+    "name": "",
+    "career_sprint_speed": 24.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 28,
+    "seasons": {
+      "2022": 24.3
+    }
+  },
+  "595453": {
+    "name": "",
+    "career_sprint_speed": 24.28,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 58,
+    "seasons": {
+      "2022": 24.2,
+      "2023": 24.3
+    }
+  },
+  "672386": {
+    "name": "Alejandro Kirk",
+    "career_sprint_speed": 24.22,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 685,
+    "seasons": {
+      "2022": 24.2,
+      "2023": 23.7,
+      "2024": 24.7,
+      "2025": 24.3
+    }
+  },
+  "592567": {
+    "name": "",
+    "career_sprint_speed": 24.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 37,
+    "seasons": {
+      "2022": 24.2
+    }
+  },
+  "596129": {
+    "name": "",
+    "career_sprint_speed": 23.84,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 213,
+    "seasons": {
+      "2022": 24.0,
+      "2023": 23.6,
+      "2024": 23.9
+    }
+  },
+  "642133": {
+    "name": "",
+    "career_sprint_speed": 23.88,
+    "trend": "declining",
+    "n_seasons": 4,
+    "total_opp": 430,
+    "seasons": {
+      "2022": 24.0,
+      "2023": 23.5,
+      "2024": 24.2,
+      "2025": 23.5
+    }
+  },
+  "542583": {
+    "name": "",
+    "career_sprint_speed": 23.82,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 152,
+    "seasons": {
+      "2022": 24.0,
+      "2023": 23.0
+    }
+  },
+  "571466": {
+    "name": "",
+    "career_sprint_speed": 23.88,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 172,
+    "seasons": {
+      "2022": 23.9,
+      "2023": 23.2,
+      "2024": 24.4
+    }
+  },
+  "607732": {
+    "name": "",
+    "career_sprint_speed": 23.72,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 353,
+    "seasons": {
+      "2022": 23.7,
+      "2023": 23.6,
+      "2024": 23.9,
+      "2025": 23.6
+    }
+  },
+  "455139": {
+    "name": "",
+    "career_sprint_speed": 23.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 48,
+    "seasons": {
+      "2022": 23.7
+    }
+  },
+  "506702": {
+    "name": "",
+    "career_sprint_speed": 23.33,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 30,
+    "seasons": {
+      "2022": 23.7,
+      "2023": 22.7
+    }
+  },
+  "408234": {
+    "name": "",
+    "career_sprint_speed": 23.1,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 277,
+    "seasons": {
+      "2022": 23.1,
+      "2023": 23.1
+    }
+  },
+  "405395": {
+    "name": "",
+    "career_sprint_speed": 22.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 97,
+    "seasons": {
+      "2022": 22.7
+    }
+  },
+  "455117": {
+    "name": "",
+    "career_sprint_speed": 22.94,
+    "trend": "stable",
+    "n_seasons": 4,
+    "total_opp": 248,
+    "seasons": {
+      "2022": 22.6,
+      "2023": 23.2,
+      "2024": 23.1,
+      "2025": 23.1
+    }
+  },
+  "518735": {
+    "name": "",
+    "career_sprint_speed": 22.69,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 309,
+    "seasons": {
+      "2022": 22.1,
+      "2023": 22.8,
+      "2024": 23.2
+    }
+  },
+  "425877": {
+    "name": "",
+    "career_sprint_speed": 21.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 81,
+    "seasons": {
+      "2022": 21.8
+    }
+  },
+  "682829": {
+    "name": "Elly De la cruz",
+    "career_sprint_speed": 29.75,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 693,
+    "seasons": {
+      "2023": 30.5,
+      "2024": 30.0,
+      "2025": 29.1
+    }
+  },
+  "680118": {
+    "name": "",
+    "career_sprint_speed": 29.95,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 110,
+    "seasons": {
+      "2023": 30.3,
+      "2024": 29.6
+    }
+  },
+  "666149": {
+    "name": "",
+    "career_sprint_speed": 29.85,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 185,
+    "seasons": {
+      "2023": 30.1,
+      "2024": 30.0,
+      "2025": 29.6
+    }
+  },
+  "663368": {
+    "name": "Blake Perkins",
+    "career_sprint_speed": 29.56,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 286,
+    "seasons": {
+      "2023": 30.0,
+      "2024": 29.6,
+      "2025": 29.1
+    }
+  },
+  "691783": {
+    "name": "Jordan Lawlar",
+    "career_sprint_speed": 29.8,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 39,
+    "seasons": {
+      "2023": 30.0,
+      "2025": 29.7
+    }
+  },
+  "696285": {
+    "name": "Jacob Young",
+    "career_sprint_speed": 29.6,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 441,
+    "seasons": {
+      "2023": 30.0,
+      "2024": 29.7,
+      "2025": 29.3
+    }
+  },
+  "686668": {
+    "name": "Brenton Doyle",
+    "career_sprint_speed": 29.54,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 552,
+    "seasons": {
+      "2023": 29.9,
+      "2024": 29.3,
+      "2025": 29.5
+    }
+  },
+  "676356": {
+    "name": "Jonny Deluca",
+    "career_sprint_speed": 29.75,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 158,
+    "seasons": {
+      "2023": 29.7,
+      "2024": 29.8,
+      "2025": 29.5
+    }
+  },
+  "694497": {
+    "name": "Evan Carter",
+    "career_sprint_speed": 29.39,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 210,
+    "seasons": {
+      "2023": 29.6,
+      "2024": 29.7,
+      "2025": 29.0
+    }
+  },
+  "679032": {
+    "name": "",
+    "career_sprint_speed": 29.95,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 322,
+    "seasons": {
+      "2023": 29.5,
+      "2024": 30.1,
+      "2025": 30.1
+    }
+  },
+  "668930": {
+    "name": "Brice Turang",
+    "career_sprint_speed": 29.17,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 678,
+    "seasons": {
+      "2023": 29.4,
+      "2024": 29.3,
+      "2025": 28.9
+    }
+  },
+  "685133": {
+    "name": "",
+    "career_sprint_speed": 29.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2023": 29.4
+    }
+  },
+  "678894": {
+    "name": "",
+    "career_sprint_speed": 29.27,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 97,
+    "seasons": {
+      "2023": 29.3,
+      "2025": 29.2
+    }
+  },
+  "665487": {
+    "name": "Fernando Tat\u00eds",
+    "career_sprint_speed": 28.79,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 631,
+    "seasons": {
+      "2023": 29.3,
+      "2024": 28.4,
+      "2025": 28.6
+    }
+  },
+  "664057": {
+    "name": "",
+    "career_sprint_speed": 29.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 20,
+    "seasons": {
+      "2023": 29.2
+    }
+  },
+  "677347": {
+    "name": "",
+    "career_sprint_speed": 29.0,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 74,
+    "seasons": {
+      "2023": 29.2,
+      "2024": 28.9,
+      "2025": 29.0
+    }
+  },
+  "677941": {
+    "name": "",
+    "career_sprint_speed": 29.46,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 21,
+    "seasons": {
+      "2023": 29.2,
+      "2024": 29.7
+    }
+  },
+  "691026": {
+    "name": "Masyn Winn",
+    "career_sprint_speed": 28.68,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 488,
+    "seasons": {
+      "2023": 29.2,
+      "2024": 28.8,
+      "2025": 28.4
+    }
+  },
+  "666152": {
+    "name": "David Hamilton",
+    "career_sprint_speed": 29.35,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 178,
+    "seasons": {
+      "2023": 29.2,
+      "2024": 29.4,
+      "2025": 29.3
+    }
+  },
+  "682622": {
+    "name": "Noelvi Marte",
+    "career_sprint_speed": 28.96,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 271,
+    "seasons": {
+      "2023": 29.1,
+      "2024": 28.8,
+      "2025": 29.0
+    }
+  },
+  "669392": {
+    "name": "",
+    "career_sprint_speed": 29.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 27,
+    "seasons": {
+      "2023": 29.1
+    }
+  },
+  "680869": {
+    "name": "Zack Gelof",
+    "career_sprint_speed": 28.74,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 276,
+    "seasons": {
+      "2023": 29.0,
+      "2024": 28.7,
+      "2025": 28.0
+    }
+  },
+  "680574": {
+    "name": "Matt Mclain",
+    "career_sprint_speed": 29.11,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 307,
+    "seasons": {
+      "2023": 29.0,
+      "2025": 29.2
+    }
+  },
+  "678009": {
+    "name": "Parker Meadows",
+    "career_sprint_speed": 29.14,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 229,
+    "seasons": {
+      "2023": 29.0,
+      "2024": 29.3,
+      "2025": 29.0
+    }
+  },
+  "676609": {
+    "name": "Jos\u00e9 Caballero",
+    "career_sprint_speed": 28.47,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 345,
+    "seasons": {
+      "2023": 29.0,
+      "2024": 28.3,
+      "2025": 28.3
+    }
+  },
+  "667472": {
+    "name": "Dane Myers",
+    "career_sprint_speed": 28.51,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 181,
+    "seasons": {
+      "2023": 28.9,
+      "2024": 28.5,
+      "2025": 28.4
+    }
+  },
+  "686894": {
+    "name": "Joey Wiemer",
+    "career_sprint_speed": 28.83,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 184,
+    "seasons": {
+      "2023": 28.9,
+      "2024": 28.6,
+      "2025": 28.4
+    }
+  },
+  "681546": {
+    "name": "James Outman",
+    "career_sprint_speed": 28.82,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 249,
+    "seasons": {
+      "2023": 28.9,
+      "2024": 28.8,
+      "2025": 28.5
+    }
+  },
+  "676059": {
+    "name": "",
+    "career_sprint_speed": 28.98,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 361,
+    "seasons": {
+      "2023": 28.9,
+      "2024": 29.0,
+      "2025": 29.0
+    }
+  },
+  "687799": {
+    "name": "",
+    "career_sprint_speed": 28.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 25,
+    "seasons": {
+      "2023": 28.9
+    }
+  },
+  "669369": {
+    "name": "Bryce Johnson",
+    "career_sprint_speed": 28.41,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 68,
+    "seasons": {
+      "2023": 28.8,
+      "2024": 28.1,
+      "2025": 28.5
+    }
+  },
+  "693304": {
+    "name": "Nick Gonzales",
+    "career_sprint_speed": 29.01,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 371,
+    "seasons": {
+      "2023": 28.8,
+      "2024": 29.2,
+      "2025": 28.9
+    }
+  },
+  "678882": {
+    "name": "Ceddanne Rafaela",
+    "career_sprint_speed": 28.94,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 496,
+    "seasons": {
+      "2023": 28.7,
+      "2024": 28.8,
+      "2025": 29.1
+    }
+  },
+  "670156": {
+    "name": "",
+    "career_sprint_speed": 28.41,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 162,
+    "seasons": {
+      "2023": 28.6,
+      "2024": 28.0,
+      "2025": 28.5
+    }
+  },
+  "691406": {
+    "name": "Junior Caminero",
+    "career_sprint_speed": 26.73,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 339,
+    "seasons": {
+      "2023": 28.6,
+      "2024": 26.4,
+      "2025": 26.7
+    }
+  },
+  "686217": {
+    "name": "Sal Frelick",
+    "career_sprint_speed": 29.01,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 618,
+    "seasons": {
+      "2023": 28.6,
+      "2024": 29.3,
+      "2025": 28.9
+    }
+  },
+  "676946": {
+    "name": "",
+    "career_sprint_speed": 28.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 50,
+    "seasons": {
+      "2023": 28.6
+    }
+  },
+  "678545": {
+    "name": "",
+    "career_sprint_speed": 28.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 48,
+    "seasons": {
+      "2023": 28.6
+    }
+  },
+  "691023": {
+    "name": "Jordan Walker",
+    "career_sprint_speed": 28.56,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 359,
+    "seasons": {
+      "2023": 28.5,
+      "2024": 28.4,
+      "2025": 28.7
+    }
+  },
+  "686452": {
+    "name": "Drew Millas",
+    "career_sprint_speed": 27.96,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 71,
+    "seasons": {
+      "2023": 28.5,
+      "2024": 28.3,
+      "2025": 27.4
+    }
+  },
+  "676724": {
+    "name": "Jared Young",
+    "career_sprint_speed": 28.19,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 27,
+    "seasons": {
+      "2023": 28.5,
+      "2025": 27.8
+    }
+  },
+  "683011": {
+    "name": "",
+    "career_sprint_speed": 28.45,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 687,
+    "seasons": {
+      "2023": 28.4,
+      "2024": 28.6,
+      "2025": 28.3
+    }
+  },
+  "621545": {
+    "name": "",
+    "career_sprint_speed": 28.33,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 70,
+    "seasons": {
+      "2023": 28.4,
+      "2024": 28.0
+    }
+  },
+  "663550": {
+    "name": "",
+    "career_sprint_speed": 28.07,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 52,
+    "seasons": {
+      "2023": 28.4,
+      "2024": 27.9
+    }
+  },
+  "641525": {
+    "name": "",
+    "career_sprint_speed": 28.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 28,
+    "seasons": {
+      "2023": 28.4
+    }
+  },
+  "667452": {
+    "name": "",
+    "career_sprint_speed": 28.43,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 157,
+    "seasons": {
+      "2023": 28.4,
+      "2024": 28.5
+    }
+  },
+  "669707": {
+    "name": "Jared Triolo",
+    "career_sprint_speed": 28.6,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 336,
+    "seasons": {
+      "2023": 28.4,
+      "2024": 28.5,
+      "2025": 28.8
+    }
+  },
+  "691176": {
+    "name": "",
+    "career_sprint_speed": 28.55,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 190,
+    "seasons": {
+      "2023": 28.3,
+      "2024": 27.8,
+      "2025": 28.7
+    }
+  },
+  "666703": {
+    "name": "",
+    "career_sprint_speed": 27.91,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 32,
+    "seasons": {
+      "2023": 28.3,
+      "2024": 27.6
+    }
+  },
+  "675961": {
+    "name": "",
+    "career_sprint_speed": 28.11,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 73,
+    "seasons": {
+      "2023": 28.2,
+      "2024": 28.0
+    }
+  },
+  "680779": {
+    "name": "Henry Davis",
+    "career_sprint_speed": 28.15,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 177,
+    "seasons": {
+      "2023": 28.2,
+      "2024": 27.7,
+      "2025": 28.3
+    }
+  },
+  "669364": {
+    "name": "Xavier Edwards",
+    "career_sprint_speed": 28.32,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 416,
+    "seasons": {
+      "2023": 28.2,
+      "2024": 28.4,
+      "2025": 28.3
+    }
+  },
+  "657088": {
+    "name": "",
+    "career_sprint_speed": 28.51,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 25,
+    "seasons": {
+      "2023": 28.2,
+      "2024": 28.8
+    }
+  },
+  "607680": {
+    "name": "",
+    "career_sprint_speed": 28.33,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 169,
+    "seasons": {
+      "2023": 28.2,
+      "2024": 28.4,
+      "2025": 28.4
+    }
+  },
+  "687401": {
+    "name": "Joey Ortiz",
+    "career_sprint_speed": 28.68,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 440,
+    "seasons": {
+      "2023": 28.1,
+      "2024": 28.7,
+      "2025": 28.7
+    }
+  },
+  "666906": {
+    "name": "",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 62,
+    "seasons": {
+      "2023": 28.1
+    }
+  },
+  "670097": {
+    "name": "",
+    "career_sprint_speed": 27.69,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 110,
+    "seasons": {
+      "2023": 28.1,
+      "2024": 26.8,
+      "2025": 27.4
+    }
+  },
+  "669477": {
+    "name": "Casey Schmitt",
+    "career_sprint_speed": 27.83,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 220,
+    "seasons": {
+      "2023": 28.0,
+      "2024": 28.0,
+      "2025": 27.6
+    }
+  },
+  "655316": {
+    "name": "Andruw Monasterio",
+    "career_sprint_speed": 27.84,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 191,
+    "seasons": {
+      "2023": 28.0,
+      "2024": 27.6,
+      "2025": 27.7
+    }
+  },
+  "665877": {
+    "name": "Jos\u00e9 Ferm\u00edn",
+    "career_sprint_speed": 28.23,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 84,
+    "seasons": {
+      "2023": 28.0,
+      "2024": 28.9,
+      "2025": 27.1
+    }
+  },
+  "677592": {
+    "name": "Everson Pereira",
+    "career_sprint_speed": 28.12,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 47,
+    "seasons": {
+      "2023": 28.0,
+      "2025": 28.3
+    }
+  },
+  "689172": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 147,
+    "seasons": {
+      "2023": 27.9,
+      "2024": 27.8,
+      "2025": 27.5
+    }
+  },
+  "681297": {
+    "name": "Colton Cowser",
+    "career_sprint_speed": 27.94,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 308,
+    "seasons": {
+      "2023": 27.9,
+      "2024": 28.2,
+      "2025": 27.4
+    }
+  },
+  "622569": {
+    "name": "",
+    "career_sprint_speed": 27.66,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 101,
+    "seasons": {
+      "2023": 27.9,
+      "2024": 27.3,
+      "2025": 26.9
+    }
+  },
+  "678246": {
+    "name": "Miguel Vargas",
+    "career_sprint_speed": 27.83,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 315,
+    "seasons": {
+      "2023": 27.9,
+      "2024": 28.6,
+      "2025": 27.5
+    }
+  },
+  "681351": {
+    "name": "Logan O'hoppe",
+    "career_sprint_speed": 27.77,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 301,
+    "seasons": {
+      "2023": 27.9,
+      "2024": 28.1,
+      "2025": 27.3
+    }
+  },
+  "682848": {
+    "name": "",
+    "career_sprint_speed": 27.66,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 83,
+    "seasons": {
+      "2023": 27.8,
+      "2025": 27.1
+    }
+  },
+  "677595": {
+    "name": "",
+    "career_sprint_speed": 26.66,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 91,
+    "seasons": {
+      "2023": 27.7,
+      "2025": 25.8
+    }
+  },
+  "682641": {
+    "name": "Luis Matos",
+    "career_sprint_speed": 27.63,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 259,
+    "seasons": {
+      "2023": 27.7,
+      "2024": 27.8,
+      "2025": 27.4
+    }
+  },
+  "687263": {
+    "name": "Zach Neto",
+    "career_sprint_speed": 28.05,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 482,
+    "seasons": {
+      "2023": 27.7,
+      "2024": 28.2,
+      "2025": 28.1
+    }
+  },
+  "681962": {
+    "name": "",
+    "career_sprint_speed": 28.17,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 51,
+    "seasons": {
+      "2023": 27.7,
+      "2025": 28.3
+    }
+  },
+  "673237": {
+    "name": "Yainer Diaz",
+    "career_sprint_speed": 27.29,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 644,
+    "seasons": {
+      "2023": 27.6,
+      "2024": 27.1,
+      "2025": 27.3
+    }
+  },
+  "687952": {
+    "name": "",
+    "career_sprint_speed": 27.51,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 150,
+    "seasons": {
+      "2023": 27.6,
+      "2024": 27.4,
+      "2025": 27.5
+    }
+  },
+  "696100": {
+    "name": "Hunter Goodman",
+    "career_sprint_speed": 27.44,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 270,
+    "seasons": {
+      "2023": 27.6,
+      "2024": 28.0,
+      "2025": 27.2
+    }
+  },
+  "671732": {
+    "name": "Lawrence Butler",
+    "career_sprint_speed": 27.22,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 409,
+    "seasons": {
+      "2023": 27.4,
+      "2024": 27.6,
+      "2025": 26.9
+    }
+  },
+  "664770": {
+    "name": "Nathan Lukes",
+    "career_sprint_speed": 27.26,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 256,
+    "seasons": {
+      "2023": 27.4,
+      "2024": 27.0,
+      "2025": 27.3
+    }
+  },
+  "666165": {
+    "name": "",
+    "career_sprint_speed": 27.32,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 137,
+    "seasons": {
+      "2023": 27.4,
+      "2024": 26.6,
+      "2025": 27.4
+    }
+  },
+  "676914": {
+    "name": "Davis Schneider",
+    "career_sprint_speed": 27.36,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 209,
+    "seasons": {
+      "2023": 27.4,
+      "2024": 27.2,
+      "2025": 27.6
+    }
+  },
+  "677587": {
+    "name": "Brayan Rocchio",
+    "career_sprint_speed": 26.95,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 360,
+    "seasons": {
+      "2023": 27.4,
+      "2024": 26.8,
+      "2025": 27.0
+    }
+  },
+  "666310": {
+    "name": "Bo Naylor",
+    "career_sprint_speed": 27.21,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 290,
+    "seasons": {
+      "2023": 27.4,
+      "2024": 26.6,
+      "2025": 27.6
+    }
+  },
+  "664954": {
+    "name": "Brett Sullivan",
+    "career_sprint_speed": 27.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 29,
+    "seasons": {
+      "2023": 27.4
+    }
+  },
+  "643565": {
+    "name": "",
+    "career_sprint_speed": 26.5,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 390,
+    "seasons": {
+      "2023": 27.3,
+      "2024": 27.2,
+      "2025": 24.9
+    }
+  },
+  "676116": {
+    "name": "",
+    "career_sprint_speed": 27.15,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 180,
+    "seasons": {
+      "2023": 27.3,
+      "2024": 27.0,
+      "2025": 25.9
+    }
+  },
+  "641343": {
+    "name": "Jake Bauers",
+    "career_sprint_speed": 27.21,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 209,
+    "seasons": {
+      "2023": 27.3,
+      "2024": 27.2,
+      "2025": 27.1
+    }
+  },
+  "679845": {
+    "name": "Nick Loftin",
+    "career_sprint_speed": 27.87,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 178,
+    "seasons": {
+      "2023": 27.2,
+      "2024": 27.7,
+      "2025": 28.4
+    }
+  },
+  "668670": {
+    "name": "Jake Rogers",
+    "career_sprint_speed": 27.09,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 271,
+    "seasons": {
+      "2023": 27.2,
+      "2024": 27.1,
+      "2025": 26.8
+    }
+  },
+  "605361": {
+    "name": "",
+    "career_sprint_speed": 27.37,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 122,
+    "seasons": {
+      "2023": 27.2,
+      "2024": 27.4,
+      "2025": 27.4
+    }
+  },
+  "682617": {
+    "name": "",
+    "career_sprint_speed": 27.35,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 41,
+    "seasons": {
+      "2023": 27.1,
+      "2024": 27.5
+    }
+  },
+  "666023": {
+    "name": "Freddy Fermin",
+    "career_sprint_speed": 26.86,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 346,
+    "seasons": {
+      "2023": 27.1,
+      "2024": 26.6,
+      "2025": 27.0
+    }
+  },
+  "681807": {
+    "name": "David Fry",
+    "career_sprint_speed": 26.42,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 204,
+    "seasons": {
+      "2023": 27.0,
+      "2024": 26.2,
+      "2025": 26.6
+    }
+  },
+  "666397": {
+    "name": "Edouard Julien",
+    "career_sprint_speed": 27.03,
+    "trend": "improving",
+    "n_seasons": 3,
+    "total_opp": 294,
+    "seasons": {
+      "2023": 27.0,
+      "2024": 26.7,
+      "2025": 27.5
+    }
+  },
+  "693049": {
+    "name": "",
+    "career_sprint_speed": 26.95,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 105,
+    "seasons": {
+      "2023": 27.0,
+      "2024": 26.6
+    }
+  },
+  "592656": {
+    "name": "",
+    "career_sprint_speed": 27.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 32,
+    "seasons": {
+      "2023": 27.0
+    }
+  },
+  "683737": {
+    "name": "Michael Busch",
+    "career_sprint_speed": 26.93,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 375,
+    "seasons": {
+      "2023": 26.9,
+      "2024": 27.3,
+      "2025": 26.5
+    }
+  },
+  "694384": {
+    "name": "Nolan Schanuel",
+    "career_sprint_speed": 26.28,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 478,
+    "seasons": {
+      "2023": 26.8,
+      "2024": 26.4,
+      "2025": 26.0
+    }
+  },
+  "677588": {
+    "name": "Jos\u00e9 Tena",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 151,
+    "seasons": {
+      "2023": 26.8,
+      "2024": 28.1,
+      "2025": 27.7
+    }
+  },
+  "677800": {
+    "name": "Wilyer Abreu",
+    "career_sprint_speed": 27.46,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 263,
+    "seasons": {
+      "2023": 26.7,
+      "2024": 27.5,
+      "2025": 27.6
+    }
+  },
+  "671056": {
+    "name": "Iv\u00e1n Herrera",
+    "career_sprint_speed": 26.69,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 285,
+    "seasons": {
+      "2023": 26.7,
+      "2024": 27.3,
+      "2025": 26.3
+    }
+  },
+  "669224": {
+    "name": "Austin Wells",
+    "career_sprint_speed": 26.57,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 282,
+    "seasons": {
+      "2023": 26.7,
+      "2024": 26.7,
+      "2025": 26.4
+    }
+  },
+  "686527": {
+    "name": "Dominic Canzone",
+    "career_sprint_speed": 26.73,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 207,
+    "seasons": {
+      "2023": 26.7,
+      "2024": 27.1,
+      "2025": 26.5
+    }
+  },
+  "678554": {
+    "name": "Curtis Mead",
+    "career_sprint_speed": 26.85,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 150,
+    "seasons": {
+      "2023": 26.7,
+      "2024": 26.9,
+      "2025": 26.9
+    }
+  },
+  "666198": {
+    "name": "",
+    "career_sprint_speed": 26.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 29,
+    "seasons": {
+      "2023": 26.4
+    }
+  },
+  "665839": {
+    "name": "",
+    "career_sprint_speed": 26.25,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 152,
+    "seasons": {
+      "2023": 26.4,
+      "2024": 26.2,
+      "2025": 26.1
+    }
+  },
+  "666150": {
+    "name": "",
+    "career_sprint_speed": 26.29,
+    "trend": "declining",
+    "n_seasons": 3,
+    "total_opp": 137,
+    "seasons": {
+      "2023": 26.4,
+      "2024": 26.4,
+      "2025": 25.5
+    }
+  },
+  "682626": {
+    "name": "Francisco \u00c1lvarez",
+    "career_sprint_speed": 26.07,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 375,
+    "seasons": {
+      "2023": 26.4,
+      "2024": 25.8,
+      "2025": 26.0
+    }
+  },
+  "621466": {
+    "name": "",
+    "career_sprint_speed": 26.62,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 87,
+    "seasons": {
+      "2023": 26.3,
+      "2024": 27.0
+    }
+  },
+  "668901": {
+    "name": "Mark Vientos",
+    "career_sprint_speed": 26.18,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 359,
+    "seasons": {
+      "2023": 26.3,
+      "2024": 26.3,
+      "2025": 26.0
+    }
+  },
+  "672275": {
+    "name": "Patrick Bailey",
+    "career_sprint_speed": 25.68,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 365,
+    "seasons": {
+      "2023": 26.2,
+      "2024": 25.2,
+      "2025": 25.7
+    }
+  },
+  "807799": {
+    "name": "Masataka Yoshida",
+    "career_sprint_speed": 26.21,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 561,
+    "seasons": {
+      "2023": 26.2,
+      "2024": 26.1,
+      "2025": 26.4
+    }
+  },
+  "656024": {
+    "name": "",
+    "career_sprint_speed": 26.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2023": 26.1
+    }
+  },
+  "624424": {
+    "name": "Michael Conforto",
+    "career_sprint_speed": 26.13,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 444,
+    "seasons": {
+      "2023": 26.1,
+      "2024": 26.3,
+      "2025": 26.0
+    }
+  },
+  "572138": {
+    "name": "",
+    "career_sprint_speed": 25.92,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 145,
+    "seasons": {
+      "2023": 26.0,
+      "2024": 25.9
+    }
+  },
+  "665804": {
+    "name": "Miguel Amaya",
+    "career_sprint_speed": 25.66,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 198,
+    "seasons": {
+      "2023": 26.0,
+      "2024": 25.5,
+      "2025": 25.9
+    }
+  },
+  "666163": {
+    "name": "",
+    "career_sprint_speed": 25.68,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 178,
+    "seasons": {
+      "2023": 25.8,
+      "2024": 25.6,
+      "2025": 25.8
+    }
+  },
+  "691016": {
+    "name": "Tyler Soderstrom",
+    "career_sprint_speed": 27.1,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 349,
+    "seasons": {
+      "2023": 25.7,
+      "2024": 27.0,
+      "2025": 27.4
+    }
+  },
+  "663905": {
+    "name": "",
+    "career_sprint_speed": 25.93,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 30,
+    "seasons": {
+      "2023": 25.5,
+      "2024": 26.3
+    }
+  },
+  "687462": {
+    "name": "Spencer Horwitz",
+    "career_sprint_speed": 25.34,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 281,
+    "seasons": {
+      "2023": 25.1,
+      "2024": 25.2,
+      "2025": 25.5
+    }
+  },
+  "670223": {
+    "name": "",
+    "career_sprint_speed": 25.04,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 56,
+    "seasons": {
+      "2023": 24.8,
+      "2025": 25.2
+    }
+  },
+  "663609": {
+    "name": "",
+    "career_sprint_speed": 24.86,
+    "trend": "stable",
+    "n_seasons": 3,
+    "total_opp": 60,
+    "seasons": {
+      "2023": 24.7,
+      "2024": 24.9,
+      "2025": 25.1
+    }
+  },
+  "542208": {
+    "name": "",
+    "career_sprint_speed": 24.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 44,
+    "seasons": {
+      "2023": 24.6
+    }
+  },
+  "682729": {
+    "name": "",
+    "career_sprint_speed": 29.64,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 49,
+    "seasons": {
+      "2024": 30.0,
+      "2025": 29.4
+    }
+  },
+  "691718": {
+    "name": "Pete Crow-armstrong",
+    "career_sprint_speed": 29.72,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 342,
+    "seasons": {
+      "2024": 30.0,
+      "2025": 29.5
+    }
+  },
+  "687363": {
+    "name": "Victor Scott",
+    "career_sprint_speed": 30.14,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 203,
+    "seasons": {
+      "2024": 30.0,
+      "2025": 30.2
+    }
+  },
+  "694671": {
+    "name": "Wyatt Langford",
+    "career_sprint_speed": 29.36,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 381,
+    "seasons": {
+      "2024": 29.8,
+      "2025": 28.9
+    }
+  },
+  "694192": {
+    "name": "",
+    "career_sprint_speed": 29.45,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 482,
+    "seasons": {
+      "2024": 29.7,
+      "2025": 29.2
+    }
+  },
+  "682668": {
+    "name": "Luisangel Acu\u00f1a",
+    "career_sprint_speed": 29.58,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 111,
+    "seasons": {
+      "2024": 29.5,
+      "2025": 29.6
+    }
+  },
+  "683083": {
+    "name": "Nasim Nu\u00f1ez",
+    "career_sprint_speed": 29.65,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 69,
+    "seasons": {
+      "2024": 29.5,
+      "2025": 29.8
+    }
+  },
+  "702616": {
+    "name": "",
+    "career_sprint_speed": 28.79,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 305,
+    "seasons": {
+      "2024": 29.4,
+      "2025": 28.6
+    }
+  },
+  "694362": {
+    "name": "",
+    "career_sprint_speed": 29.58,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 37,
+    "seasons": {
+      "2024": 29.3,
+      "2025": 29.7
+    }
+  },
+  "681393": {
+    "name": "Connor Norby",
+    "career_sprint_speed": 28.96,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 164,
+    "seasons": {
+      "2024": 29.3,
+      "2025": 28.8
+    }
+  },
+  "686611": {
+    "name": "",
+    "career_sprint_speed": 29.1,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 170,
+    "seasons": {
+      "2024": 29.3,
+      "2025": 29.0
+    }
+  },
+  "687529": {
+    "name": "",
+    "career_sprint_speed": 29.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 37,
+    "seasons": {
+      "2024": 29.2
+    }
+  },
+  "677956": {
+    "name": "Rece Hinds",
+    "career_sprint_speed": 29.48,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 30,
+    "seasons": {
+      "2024": 29.2,
+      "2025": 29.8
+    }
+  },
+  "681460": {
+    "name": "",
+    "career_sprint_speed": 28.72,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 134,
+    "seasons": {
+      "2024": 29.1,
+      "2025": 28.6
+    }
+  },
+  "686554": {
+    "name": "",
+    "career_sprint_speed": 28.65,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 49,
+    "seasons": {
+      "2024": 29.1,
+      "2025": 27.8
+    }
+  },
+  "694377": {
+    "name": "Nick Yorke",
+    "career_sprint_speed": 28.32,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 43,
+    "seasons": {
+      "2024": 28.9,
+      "2025": 28.1
+    }
+  },
+  "694388": {
+    "name": "Joey Loperfido",
+    "career_sprint_speed": 28.71,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 126,
+    "seasons": {
+      "2024": 28.8,
+      "2025": 28.5
+    }
+  },
+  "682868": {
+    "name": "",
+    "career_sprint_speed": 28.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 41,
+    "seasons": {
+      "2024": 28.7
+    }
+  },
+  "672640": {
+    "name": "Otto Lopez",
+    "career_sprint_speed": 28.59,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 460,
+    "seasons": {
+      "2024": 28.7,
+      "2025": 28.5
+    }
+  },
+  "691594": {
+    "name": "Javier Sanoja",
+    "career_sprint_speed": 28.08,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 170,
+    "seasons": {
+      "2024": 28.7,
+      "2025": 28.0
+    }
+  },
+  "695578": {
+    "name": "James Wood",
+    "career_sprint_speed": 28.12,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 327,
+    "seasons": {
+      "2024": 28.7,
+      "2025": 27.8
+    }
+  },
+  "669200": {
+    "name": "",
+    "career_sprint_speed": 28.8,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 31,
+    "seasons": {
+      "2024": 28.7,
+      "2025": 29.0
+    }
+  },
+  "677942": {
+    "name": "Blaze Alexander",
+    "career_sprint_speed": 28.71,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 172,
+    "seasons": {
+      "2024": 28.6,
+      "2025": 28.8
+    }
+  },
+  "687597": {
+    "name": "Jordan Beck",
+    "career_sprint_speed": 28.68,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 260,
+    "seasons": {
+      "2024": 28.6,
+      "2025": 28.7
+    }
+  },
+  "669208": {
+    "name": "",
+    "career_sprint_speed": 28.47,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 35,
+    "seasons": {
+      "2024": 28.5,
+      "2025": 28.4
+    }
+  },
+  "668723": {
+    "name": "Ryan Vilade",
+    "career_sprint_speed": 28.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 21,
+    "seasons": {
+      "2024": 28.5
+    }
+  },
+  "677008": {
+    "name": "",
+    "career_sprint_speed": 28.02,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 93,
+    "seasons": {
+      "2024": 28.5,
+      "2025": 27.7
+    }
+  },
+  "701538": {
+    "name": "Jackson Merrill",
+    "career_sprint_speed": 28.5,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 384,
+    "seasons": {
+      "2024": 28.5,
+      "2025": 28.5
+    }
+  },
+  "808982": {
+    "name": "Jung hoo Lee",
+    "career_sprint_speed": 28.24,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 343,
+    "seasons": {
+      "2024": 28.4,
+      "2025": 28.2
+    }
+  },
+  "672569": {
+    "name": "",
+    "career_sprint_speed": 28.74,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 45,
+    "seasons": {
+      "2024": 28.3,
+      "2025": 29.1
+    }
+  },
+  "701305": {
+    "name": "",
+    "career_sprint_speed": 28.19,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 57,
+    "seasons": {
+      "2024": 28.3,
+      "2025": 28.1
+    }
+  },
+  "672279": {
+    "name": "",
+    "career_sprint_speed": 28.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 131,
+    "seasons": {
+      "2024": 28.3
+    }
+  },
+  "660844": {
+    "name": "Leo Rivas",
+    "career_sprint_speed": 27.99,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 62,
+    "seasons": {
+      "2024": 28.3,
+      "2025": 27.8
+    }
+  },
+  "682177": {
+    "name": "Daniel Schneemann",
+    "career_sprint_speed": 28.03,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 214,
+    "seasons": {
+      "2024": 28.3,
+      "2025": 27.9
+    }
+  },
+  "668885": {
+    "name": "Austin Martin",
+    "career_sprint_speed": 28.3,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 182,
+    "seasons": {
+      "2024": 28.3,
+      "2025": 28.3
+    }
+  },
+  "681624": {
+    "name": "Andy Pages",
+    "career_sprint_speed": 28.18,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 349,
+    "seasons": {
+      "2024": 28.3,
+      "2025": 28.1
+    }
+  },
+  "672761": {
+    "name": "Wenceel P\u00e9rez",
+    "career_sprint_speed": 28.01,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 270,
+    "seasons": {
+      "2024": 28.2,
+      "2025": 27.8
+    }
+  },
+  "700242": {
+    "name": "",
+    "career_sprint_speed": 28.31,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 147,
+    "seasons": {
+      "2024": 28.1,
+      "2025": 28.4
+    }
+  },
+  "676070": {
+    "name": "",
+    "career_sprint_speed": 27.86,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 61,
+    "seasons": {
+      "2024": 28.1,
+      "2025": 27.6
+    }
+  },
+  "642215": {
+    "name": "Weston Wilson",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 68,
+    "seasons": {
+      "2024": 28.1,
+      "2025": 28.1
+    }
+  },
+  "668845": {
+    "name": "",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 32,
+    "seasons": {
+      "2024": 28.1
+    }
+  },
+  "678877": {
+    "name": "",
+    "career_sprint_speed": 27.65,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 108,
+    "seasons": {
+      "2024": 28.1,
+      "2025": 27.1
+    }
+  },
+  "680718": {
+    "name": "Addison Barger",
+    "career_sprint_speed": 27.78,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 265,
+    "seasons": {
+      "2024": 28.0,
+      "2025": 27.7
+    }
+  },
+  "677870": {
+    "name": "Leo Jimenez",
+    "career_sprint_speed": 27.84,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 68,
+    "seasons": {
+      "2024": 28.0,
+      "2025": 26.9
+    }
+  },
+  "695336": {
+    "name": "Thomas Saggese",
+    "career_sprint_speed": 28.33,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 130,
+    "seasons": {
+      "2024": 27.9,
+      "2025": 28.4
+    }
+  },
+  "680474": {
+    "name": "",
+    "career_sprint_speed": 27.98,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 230,
+    "seasons": {
+      "2024": 27.8,
+      "2025": 28.3
+    }
+  },
+  "669699": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 32,
+    "seasons": {
+      "2024": 27.8
+    }
+  },
+  "676113": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 31,
+    "seasons": {
+      "2024": 27.8
+    }
+  },
+  "690993": {
+    "name": "Colt Keith",
+    "career_sprint_speed": 27.83,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 369,
+    "seasons": {
+      "2024": 27.7,
+      "2025": 28.0
+    }
+  },
+  "669137": {
+    "name": "",
+    "career_sprint_speed": 27.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 20,
+    "seasons": {
+      "2024": 27.7
+    }
+  },
+  "686765": {
+    "name": "",
+    "career_sprint_speed": 27.9,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 65,
+    "seasons": {
+      "2024": 27.7,
+      "2025": 28.0
+    }
+  },
+  "691723": {
+    "name": "Coby Mayo",
+    "career_sprint_speed": 27.86,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 94,
+    "seasons": {
+      "2024": 27.6,
+      "2025": 27.9
+    }
+  },
+  "682657": {
+    "name": "Angel Mart\u00ednez",
+    "career_sprint_speed": 27.67,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 247,
+    "seasons": {
+      "2024": 27.6,
+      "2025": 27.7
+    }
+  },
+  "605346": {
+    "name": "",
+    "career_sprint_speed": 27.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 27,
+    "seasons": {
+      "2024": 27.6
+    }
+  },
+  "663330": {
+    "name": "Jahmai Jones",
+    "career_sprint_speed": 28.01,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 67,
+    "seasons": {
+      "2024": 27.6,
+      "2025": 28.1
+    }
+  },
+  "687231": {
+    "name": "Darell Hernaiz",
+    "career_sprint_speed": 27.95,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 124,
+    "seasons": {
+      "2024": 27.5,
+      "2025": 28.2
+    }
+  },
+  "665052": {
+    "name": "Griffin Conine",
+    "career_sprint_speed": 27.55,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 70,
+    "seasons": {
+      "2024": 27.5,
+      "2025": 27.6
+    }
+  },
+  "693307": {
+    "name": "Dillon Dingler",
+    "career_sprint_speed": 27.59,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 191,
+    "seasons": {
+      "2024": 27.5,
+      "2025": 27.6
+    }
+  },
+  "702358": {
+    "name": "",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 109,
+    "seasons": {
+      "2024": 27.5
+    }
+  },
+  "700250": {
+    "name": "Ben Rice",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 223,
+    "seasons": {
+      "2024": 27.5,
+      "2025": 27.5
+    }
+  },
+  "694376": {
+    "name": "Shay Whitcomb",
+    "career_sprint_speed": 27.69,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 23,
+    "seasons": {
+      "2024": 27.4,
+      "2025": 28.0
+    }
+  },
+  "695391": {
+    "name": "",
+    "career_sprint_speed": 27.45,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 67,
+    "seasons": {
+      "2024": 27.2,
+      "2025": 27.7
+    }
+  },
+  "673995": {
+    "name": "",
+    "career_sprint_speed": 27.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 20,
+    "seasons": {
+      "2024": 27.2
+    }
+  },
+  "805779": {
+    "name": "Jacob Wilson",
+    "career_sprint_speed": 27.03,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 307,
+    "seasons": {
+      "2024": 27.2,
+      "2025": 27.0
+    }
+  },
+  "676572": {
+    "name": "",
+    "career_sprint_speed": 26.92,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 208,
+    "seasons": {
+      "2024": 27.1,
+      "2025": 26.9
+    }
+  },
+  "691011": {
+    "name": "",
+    "career_sprint_speed": 26.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2024": 26.9
+    }
+  },
+  "671286": {
+    "name": "Johnathan Rodr\u00edguez",
+    "career_sprint_speed": 26.94,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 52,
+    "seasons": {
+      "2024": 26.8,
+      "2025": 27.0
+    }
+  },
+  "656577": {
+    "name": "",
+    "career_sprint_speed": 27.12,
+    "trend": "improving",
+    "n_seasons": 2,
+    "total_opp": 74,
+    "seasons": {
+      "2024": 26.8,
+      "2025": 27.6
+    }
+  },
+  "669234": {
+    "name": "",
+    "career_sprint_speed": 26.63,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 89,
+    "seasons": {
+      "2024": 26.6,
+      "2025": 26.7
+    }
+  },
+  "682988": {
+    "name": "",
+    "career_sprint_speed": 26.88,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 44,
+    "seasons": {
+      "2024": 26.5,
+      "2025": 27.0
+    }
+  },
+  "695238": {
+    "name": "",
+    "career_sprint_speed": 26.71,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 91,
+    "seasons": {
+      "2024": 26.4,
+      "2025": 26.9
+    }
+  },
+  "691182": {
+    "name": "",
+    "career_sprint_speed": 26.43,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 54,
+    "seasons": {
+      "2024": 26.2,
+      "2025": 26.5
+    }
+  },
+  "665561": {
+    "name": "Rafael March\u00e1n",
+    "career_sprint_speed": 26.26,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 62,
+    "seasons": {
+      "2024": 26.1,
+      "2025": 26.3
+    }
+  },
+  "690291": {
+    "name": "",
+    "career_sprint_speed": 25.81,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 47,
+    "seasons": {
+      "2024": 26.0,
+      "2025": 25.5
+    }
+  },
+  "686780": {
+    "name": "Pedro Pag\u00e9s",
+    "career_sprint_speed": 25.71,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 187,
+    "seasons": {
+      "2024": 25.9,
+      "2025": 25.6
+    }
+  },
+  "700932": {
+    "name": "Kyle Manzardo",
+    "career_sprint_speed": 25.53,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 179,
+    "seasons": {
+      "2024": 25.9,
+      "2025": 25.4
+    }
+  },
+  "665953": {
+    "name": "",
+    "career_sprint_speed": 25.52,
+    "trend": "declining",
+    "n_seasons": 2,
+    "total_opp": 73,
+    "seasons": {
+      "2024": 25.8,
+      "2025": 24.9
+    }
+  },
+  "593934": {
+    "name": "",
+    "career_sprint_speed": 25.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 20,
+    "seasons": {
+      "2024": 25.8
+    }
+  },
+  "686797": {
+    "name": "Brooks Lee",
+    "career_sprint_speed": 25.97,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 260,
+    "seasons": {
+      "2024": 25.6,
+      "2025": 26.1
+    }
+  },
+  "680728": {
+    "name": "Adrian Del castillo",
+    "career_sprint_speed": 25.73,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 53,
+    "seasons": {
+      "2024": 25.5,
+      "2025": 25.9
+    }
+  },
+  "668832": {
+    "name": "",
+    "career_sprint_speed": 25.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 38,
+    "seasons": {
+      "2024": 25.3
+    }
+  },
+  "645305": {
+    "name": "",
+    "career_sprint_speed": 25.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 31,
+    "seasons": {
+      "2024": 25.0
+    }
+  },
+  "640902": {
+    "name": "",
+    "career_sprint_speed": 24.83,
+    "trend": "stable",
+    "n_seasons": 2,
+    "total_opp": 49,
+    "seasons": {
+      "2024": 24.5,
+      "2025": 25.0
+    }
+  },
+  "644433": {
+    "name": "",
+    "career_sprint_speed": 24.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 22,
+    "seasons": {
+      "2024": 24.2
+    }
+  },
+  "663604": {
+    "name": "Brandon Lockridge",
+    "career_sprint_speed": 30.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 69,
+    "seasons": {
+      "2025": 30.1
+    }
+  },
+  "669326": {
+    "name": "Bryce Teodosio",
+    "career_sprint_speed": 29.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 58,
+    "seasons": {
+      "2025": 29.9
+    }
+  },
+  "802415": {
+    "name": "Chandler Simpson",
+    "career_sprint_speed": 29.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 254,
+    "seasons": {
+      "2025": 29.6
+    }
+  },
+  "672016": {
+    "name": "Denzel Clarke",
+    "career_sprint_speed": 29.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 57,
+    "seasons": {
+      "2025": 29.5
+    }
+  },
+  "680737": {
+    "name": "",
+    "career_sprint_speed": 29.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 43,
+    "seasons": {
+      "2025": 29.4
+    }
+  },
+  "805249": {
+    "name": "Otto Kemp",
+    "career_sprint_speed": 29.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 68,
+    "seasons": {
+      "2025": 29.4
+    }
+  },
+  "683090": {
+    "name": "",
+    "career_sprint_speed": 29.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 25,
+    "seasons": {
+      "2025": 29.4
+    }
+  },
+  "701358": {
+    "name": "Cam Smith",
+    "career_sprint_speed": 29.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 188,
+    "seasons": {
+      "2025": 29.3
+    }
+  },
+  "669288": {
+    "name": "",
+    "career_sprint_speed": 29.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 22,
+    "seasons": {
+      "2025": 29.2
+    }
+  },
+  "690022": {
+    "name": "",
+    "career_sprint_speed": 29.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 85,
+    "seasons": {
+      "2025": 29.2
+    }
+  },
+  "695734": {
+    "name": "Daylen Lile",
+    "career_sprint_speed": 29.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 134,
+    "seasons": {
+      "2025": 29.1
+    }
+  },
+  "683766": {
+    "name": "",
+    "career_sprint_speed": 29.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 95,
+    "seasons": {
+      "2025": 29.1
+    }
+  },
+  "690924": {
+    "name": "",
+    "career_sprint_speed": 29.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 40,
+    "seasons": {
+      "2025": 29.1
+    }
+  },
+  "663968": {
+    "name": "Jake Mangum",
+    "career_sprint_speed": 29.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 219,
+    "seasons": {
+      "2025": 29.1
+    }
+  },
+  "689200": {
+    "name": "",
+    "career_sprint_speed": 29.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 32,
+    "seasons": {
+      "2025": 29.0
+    }
+  },
+  "807713": {
+    "name": "Matt Shaw",
+    "career_sprint_speed": 29.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 163,
+    "seasons": {
+      "2025": 29.0
+    }
+  },
+  "687637": {
+    "name": "Dylan Beavers",
+    "career_sprint_speed": 28.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 31,
+    "seasons": {
+      "2025": 28.9
+    }
+  },
+  "686475": {
+    "name": "",
+    "career_sprint_speed": 28.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2025": 28.9
+    }
+  },
+  "670231": {
+    "name": "",
+    "career_sprint_speed": 28.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 57,
+    "seasons": {
+      "2025": 28.9
+    }
+  },
+  "678489": {
+    "name": "Jorge Barrosa",
+    "career_sprint_speed": 28.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 28,
+    "seasons": {
+      "2025": 28.9
+    }
+  },
+  "682927": {
+    "name": "",
+    "career_sprint_speed": 28.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 31,
+    "seasons": {
+      "2025": 28.8
+    }
+  },
+  "807712": {
+    "name": "Luke Keaschall",
+    "career_sprint_speed": 28.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 92,
+    "seasons": {
+      "2025": 28.7
+    }
+  },
+  "808975": {
+    "name": "Hyeseong Kim",
+    "career_sprint_speed": 28.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 71,
+    "seasons": {
+      "2025": 28.7
+    }
+  },
+  "681715": {
+    "name": "Heriberto Hernandez",
+    "career_sprint_speed": 28.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 84,
+    "seasons": {
+      "2025": 28.7
+    }
+  },
+  "701675": {
+    "name": "Nathan Church",
+    "career_sprint_speed": 28.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 27,
+    "seasons": {
+      "2025": 28.7
+    }
+  },
+  "687515": {
+    "name": "",
+    "career_sprint_speed": 28.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 33,
+    "seasons": {
+      "2025": 28.6
+    }
+  },
+  "680577": {
+    "name": "",
+    "career_sprint_speed": 28.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 27,
+    "seasons": {
+      "2025": 28.5
+    }
+  },
+  "696030": {
+    "name": "",
+    "career_sprint_speed": 28.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 65,
+    "seasons": {
+      "2025": 28.5
+    }
+  },
+  "695681": {
+    "name": "",
+    "career_sprint_speed": 28.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 51,
+    "seasons": {
+      "2025": 28.4
+    }
+  },
+  "682653": {
+    "name": "",
+    "career_sprint_speed": 28.4,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 63,
+    "seasons": {
+      "2025": 28.4
+    }
+  },
+  "670224": {
+    "name": "",
+    "career_sprint_speed": 28.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 75,
+    "seasons": {
+      "2025": 28.3
+    }
+  },
+  "694374": {
+    "name": "Tim Tawa",
+    "career_sprint_speed": 28.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 75,
+    "seasons": {
+      "2025": 28.2
+    }
+  },
+  "691777": {
+    "name": "Max Muncy",
+    "career_sprint_speed": 28.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 70,
+    "seasons": {
+      "2025": 28.2
+    }
+  },
+  "690987": {
+    "name": "",
+    "career_sprint_speed": 28.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 76,
+    "seasons": {
+      "2025": 28.2
+    }
+  },
+  "702332": {
+    "name": "Caleb Durbin",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 213,
+    "seasons": {
+      "2025": 28.1
+    }
+  },
+  "810938": {
+    "name": "Ben Williamson",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 138,
+    "seasons": {
+      "2025": 28.1
+    }
+  },
+  "805300": {
+    "name": "Jakob Marsee",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 92,
+    "seasons": {
+      "2025": 28.1
+    }
+  },
+  "672744": {
+    "name": "",
+    "career_sprint_speed": 28.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 75,
+    "seasons": {
+      "2025": 28.1
+    }
+  },
+  "700246": {
+    "name": "Carson Williams",
+    "career_sprint_speed": 27.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 34,
+    "seasons": {
+      "2025": 27.9
+    }
+  },
+  "683770": {
+    "name": "",
+    "career_sprint_speed": 27.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 20,
+    "seasons": {
+      "2025": 27.9
+    }
+  },
+  "702176": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 72,
+    "seasons": {
+      "2025": 27.8
+    }
+  },
+  "691781": {
+    "name": "Brady House",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 102,
+    "seasons": {
+      "2025": 27.8
+    }
+  },
+  "671284": {
+    "name": "",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 21,
+    "seasons": {
+      "2025": 27.8
+    }
+  },
+  "701350": {
+    "name": "Roman Anthony",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 125,
+    "seasons": {
+      "2025": 27.8
+    }
+  },
+  "687221": {
+    "name": "Dalton Rushing",
+    "career_sprint_speed": 27.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 33,
+    "seasons": {
+      "2025": 27.7
+    }
+  },
+  "702284": {
+    "name": "Cole Young",
+    "career_sprint_speed": 27.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 77,
+    "seasons": {
+      "2025": 27.8
+    }
+  },
+  "686555": {
+    "name": "Isaac Collins",
+    "career_sprint_speed": 27.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 173,
+    "seasons": {
+      "2025": 27.7
+    }
+  },
+  "687551": {
+    "name": "Drew Gilbert",
+    "career_sprint_speed": 27.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 48,
+    "seasons": {
+      "2025": 27.7
+    }
+  },
+  "692216": {
+    "name": "C. j. Kayfus",
+    "career_sprint_speed": 27.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 45,
+    "seasons": {
+      "2025": 27.6
+    }
+  },
+  "669236": {
+    "name": "Jeremiah Jackson",
+    "career_sprint_speed": 27.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 69,
+    "seasons": {
+      "2025": 27.6
+    }
+  },
+  "695600": {
+    "name": "Carter Jensen",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 31,
+    "seasons": {
+      "2025": 27.5
+    }
+  },
+  "683227": {
+    "name": "",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 59,
+    "seasons": {
+      "2025": 27.5
+    }
+  },
+  "691720": {
+    "name": "Kyle Karros",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 54,
+    "seasons": {
+      "2025": 27.5
+    }
+  },
+  "680862": {
+    "name": "",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 46,
+    "seasons": {
+      "2025": 27.5
+    }
+  },
+  "691785": {
+    "name": "Marcelo Mayer",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 55,
+    "seasons": {
+      "2025": 27.5
+    }
+  },
+  "691019": {
+    "name": "",
+    "career_sprint_speed": 27.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 86,
+    "seasons": {
+      "2025": 27.5
+    }
+  },
+  "695657": {
+    "name": "Colson Montgomery",
+    "career_sprint_speed": 27.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 76,
+    "seasons": {
+      "2025": 27.3
+    }
+  },
+  "692225": {
+    "name": "",
+    "career_sprint_speed": 27.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 96,
+    "seasons": {
+      "2025": 27.2
+    }
+  },
+  "656484": {
+    "name": "Tristan Gray",
+    "career_sprint_speed": 27.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2025": 27.1
+    }
+  },
+  "701762": {
+    "name": "Nick Kurtz",
+    "career_sprint_speed": 27.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 126,
+    "seasons": {
+      "2025": 27.1
+    }
+  },
+  "805367": {
+    "name": "Chase Meidroth",
+    "career_sprint_speed": 27.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 217,
+    "seasons": {
+      "2025": 27.0
+    }
+  },
+  "681508": {
+    "name": "",
+    "career_sprint_speed": 26.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 32,
+    "seasons": {
+      "2025": 26.8
+    }
+  },
+  "695506": {
+    "name": "Jac Caglianone",
+    "career_sprint_speed": 26.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 87,
+    "seasons": {
+      "2025": 26.8
+    }
+  },
+  "805373": {
+    "name": "",
+    "career_sprint_speed": 26.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 67,
+    "seasons": {
+      "2025": 26.8
+    }
+  },
+  "678011": {
+    "name": "",
+    "career_sprint_speed": 26.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 23,
+    "seasons": {
+      "2025": 26.7
+    }
+  },
+  "682663": {
+    "name": "Agust\u00edn Ram\u00edrez",
+    "career_sprint_speed": 26.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 227,
+    "seasons": {
+      "2025": 26.7
+    }
+  },
+  "666126": {
+    "name": "Carlos Cortes",
+    "career_sprint_speed": 26.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 34,
+    "seasons": {
+      "2025": 26.6
+    }
+  },
+  "663584": {
+    "name": "",
+    "career_sprint_speed": 26.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 26,
+    "seasons": {
+      "2025": 26.6
+    }
+  },
+  "688363": {
+    "name": "Graham Pauley",
+    "career_sprint_speed": 26.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 63,
+    "seasons": {
+      "2025": 26.6
+    }
+  },
+  "687859": {
+    "name": "Troy Johnston",
+    "career_sprint_speed": 26.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 37,
+    "seasons": {
+      "2025": 26.5
+    }
+  },
+  "678391": {
+    "name": "Jorbit Vivas",
+    "career_sprint_speed": 26.3,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 22,
+    "seasons": {
+      "2025": 26.3
+    }
+  },
+  "690976": {
+    "name": "Alex Freeland",
+    "career_sprint_speed": 26.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 21,
+    "seasons": {
+      "2025": 26.2
+    }
+  },
+  "676439": {
+    "name": "Hunter Feduccia",
+    "career_sprint_speed": 26.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 32,
+    "seasons": {
+      "2025": 26.2
+    }
+  },
+  "689414": {
+    "name": "Liam Hicks",
+    "career_sprint_speed": 26.2,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 143,
+    "seasons": {
+      "2025": 26.2
+    }
+  },
+  "686948": {
+    "name": "Drake Baldwin",
+    "career_sprint_speed": 26.1,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 196,
+    "seasons": {
+      "2025": 26.1
+    }
+  },
+  "671655": {
+    "name": "George Valera",
+    "career_sprint_speed": 26.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 21,
+    "seasons": {
+      "2025": 26.0
+    }
+  },
+  "676044": {
+    "name": "",
+    "career_sprint_speed": 26.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2025": 26.0
+    }
+  },
+  "694208": {
+    "name": "Mois\u00e9s Ballesteros",
+    "career_sprint_speed": 26.0,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 33,
+    "seasons": {
+      "2025": 26.0
+    }
+  },
+  "641555": {
+    "name": "J. c. Escarra",
+    "career_sprint_speed": 25.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 36,
+    "seasons": {
+      "2025": 25.8
+    }
+  },
+  "694212": {
+    "name": "Samuel Basallo",
+    "career_sprint_speed": 25.7,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 35,
+    "seasons": {
+      "2025": 25.7
+    }
+  },
+  "669717": {
+    "name": "",
+    "career_sprint_speed": 25.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 24,
+    "seasons": {
+      "2025": 25.6
+    }
+  },
+  "665966": {
+    "name": "Carlos Narv\u00e1ez",
+    "career_sprint_speed": 25.6,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 154,
+    "seasons": {
+      "2025": 25.6
+    }
+  },
+  "692585": {
+    "name": "",
+    "career_sprint_speed": 25.5,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 46,
+    "seasons": {
+      "2025": 25.5
+    }
+  },
+  "700337": {
+    "name": "Edgar Quero",
+    "career_sprint_speed": 24.9,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 155,
+    "seasons": {
+      "2025": 24.9
+    }
+  },
+  "650968": {
+    "name": "Yohel Pozo",
+    "career_sprint_speed": 24.8,
+    "trend": "stable",
+    "n_seasons": 1,
+    "total_opp": 59,
+    "seasons": {
+      "2025": 24.8
+    }
+  }
+}

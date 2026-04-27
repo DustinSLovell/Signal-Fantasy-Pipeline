@@ -1,0 +1,3282 @@
+[
+  {
+    "player_id": 663586,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3533,
+    "may_july_woba_avg": 0.3818,
+    "aug_sept_woba_avg": 0.3631
+  },
+  {
+    "player_id": 663624,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3142,
+    "may_july_woba_avg": 0.3288,
+    "aug_sept_woba_avg": 0.3306
+  },
+  {
+    "player_id": 663647,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3406,
+    "may_july_woba_avg": 0.2824,
+    "aug_sept_woba_avg": 0.3415
+  },
+  {
+    "player_id": 663656,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3742,
+    "may_july_woba_avg": 0.3832,
+    "aug_sept_woba_avg": 0.4019
+  },
+  {
+    "player_id": 647304,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3186,
+    "may_july_woba_avg": 0.3634,
+    "aug_sept_woba_avg": 0.3424
+  },
+  {
+    "player_id": 663697,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3493,
+    "may_july_woba_avg": 0.3423,
+    "aug_sept_woba_avg": 0.3423
+  },
+  {
+    "player_id": 663698,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 622761,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3605,
+    "may_july_woba_avg": 0.2399,
+    "aug_sept_woba_avg": 0.3204
+  },
+  {
+    "player_id": 663728,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3345,
+    "may_july_woba_avg": 0.3218,
+    "aug_sept_woba_avg": 0.3438
+  },
+  {
+    "player_id": 647351,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2891,
+    "may_july_woba_avg": 0.2709,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 663743,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.1703,
+    "may_july_woba_avg": 0.2687,
+    "aug_sept_woba_avg": 0.2987
+  },
+  {
+    "player_id": 663757,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2851,
+    "may_july_woba_avg": 0.3082,
+    "aug_sept_woba_avg": 0.2825
+  },
+  {
+    "player_id": 606466,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3104,
+    "may_july_woba_avg": 0.3996,
+    "aug_sept_woba_avg": 0.3376
+  },
+  {
+    "player_id": 663837,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.339,
+    "may_july_woba_avg": 0.3289,
+    "aug_sept_woba_avg": 0.3191
+  },
+  {
+    "player_id": 516416,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2498,
+    "may_july_woba_avg": 0.3173,
+    "aug_sept_woba_avg": 0.3421
+  },
+  {
+    "player_id": 663886,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3332,
+    "may_july_woba_avg": 0.3227,
+    "aug_sept_woba_avg": 0.356
+  },
+  {
+    "player_id": 663898,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2895,
+    "may_july_woba_avg": 0.322,
+    "aug_sept_woba_avg": 0.3378
+  },
+  {
+    "player_id": 663993,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3536,
+    "may_july_woba_avg": 0.3623,
+    "aug_sept_woba_avg": 0.3657
+  },
+  {
+    "player_id": 664023,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3676,
+    "may_july_woba_avg": 0.3482,
+    "aug_sept_woba_avg": 0.3485
+  },
+  {
+    "player_id": 664034,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.349,
+    "may_july_woba_avg": 0.327,
+    "aug_sept_woba_avg": 0.3149
+  },
+  {
+    "player_id": 664040,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3135,
+    "may_july_woba_avg": 0.3663,
+    "aug_sept_woba_avg": 0.2931
+  },
+  {
+    "player_id": 664056,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3089,
+    "may_july_woba_avg": 0.321,
+    "aug_sept_woba_avg": 0.2422
+  },
+  {
+    "player_id": 672275,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3128,
+    "may_july_woba_avg": 0.3185,
+    "aug_sept_woba_avg": 0.2152
+  },
+  {
+    "player_id": 672284,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3845,
+    "may_july_woba_avg": 0.3055,
+    "aug_sept_woba_avg": 0.2657
+  },
+  {
+    "player_id": 672386,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2982,
+    "may_july_woba_avg": 0.3408,
+    "aug_sept_woba_avg": 0.3234
+  },
+  {
+    "player_id": 516782,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3095,
+    "may_july_woba_avg": 0.3391,
+    "aug_sept_woba_avg": 0.3126
+  },
+  {
+    "player_id": 672515,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.302,
+    "may_july_woba_avg": 0.3161,
+    "aug_sept_woba_avg": 0.3934
+  },
+  {
+    "player_id": 680757,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3731,
+    "may_july_woba_avg": 0.3501,
+    "aug_sept_woba_avg": 0.3216
+  },
+  {
+    "player_id": 607043,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3718,
+    "may_july_woba_avg": 0.3424,
+    "aug_sept_woba_avg": 0.3534
+  },
+  {
+    "player_id": 672580,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3054,
+    "may_july_woba_avg": 0.2792,
+    "aug_sept_woba_avg": 0.2612
+  },
+  {
+    "player_id": 680776,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3201,
+    "may_july_woba_avg": 0.4018,
+    "aug_sept_woba_avg": 0.3545
+  },
+  {
+    "player_id": 680777,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.433,
+    "may_july_woba_avg": 0.2965,
+    "aug_sept_woba_avg": 0.2881
+  },
+  {
+    "player_id": 607054,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2773,
+    "may_july_woba_avg": 0.2926,
+    "aug_sept_woba_avg": 0.2574
+  },
+  {
+    "player_id": 467793,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2952,
+    "may_july_woba_avg": 0.3351,
+    "aug_sept_woba_avg": 0.3224
+  },
+  {
+    "player_id": 680869,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2596,
+    "may_july_woba_avg": 0.2762,
+    "aug_sept_woba_avg": 0.2893
+  },
+  {
+    "player_id": 656305,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3692,
+    "may_july_woba_avg": 0.3469,
+    "aug_sept_woba_avg": 0.3174
+  },
+  {
+    "player_id": 672695,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.4592,
+    "may_july_woba_avg": 0.3202,
+    "aug_sept_woba_avg": 0.2704
+  },
+  {
+    "player_id": 607208,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3366,
+    "may_july_woba_avg": 0.3616,
+    "aug_sept_woba_avg": 0.3622
+  },
+  {
+    "player_id": 500743,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2308,
+    "may_july_woba_avg": 0.3192,
+    "aug_sept_woba_avg": 0.2509
+  },
+  {
+    "player_id": 680977,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3116,
+    "may_july_woba_avg": 0.3548,
+    "aug_sept_woba_avg": 0.369
+  },
+  {
+    "player_id": 656413,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3019,
+    "may_july_woba_avg": 0.3302,
+    "aug_sept_woba_avg": 0.2594
+  },
+  {
+    "player_id": 681082,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3237,
+    "may_july_woba_avg": 0.3299,
+    "aug_sept_woba_avg": 0.2955
+  },
+  {
+    "player_id": 664702,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3338,
+    "may_july_woba_avg": 0.2588,
+    "aug_sept_woba_avg": 0.2603
+  },
+  {
+    "player_id": 500871,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3047,
+    "may_july_woba_avg": 0.2961,
+    "aug_sept_woba_avg": 0.3073
+  },
+  {
+    "player_id": 664728,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2637,
+    "may_july_woba_avg": 0.3132,
+    "aug_sept_woba_avg": 0.2986
+  },
+  {
+    "player_id": 443558,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3055,
+    "may_july_woba_avg": 0.2939,
+    "aug_sept_woba_avg": 0.2889
+  },
+  {
+    "player_id": 656555,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3269,
+    "may_july_woba_avg": 0.3427,
+    "aug_sept_woba_avg": 0.3335
+  },
+  {
+    "player_id": 664761,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3837,
+    "may_july_woba_avg": 0.34,
+    "aug_sept_woba_avg": 0.3082
+  },
+  {
+    "player_id": 656582,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3805,
+    "may_july_woba_avg": 0.3068,
+    "aug_sept_woba_avg": 0.3042
+  },
+  {
+    "player_id": 664774,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.4125,
+    "may_july_woba_avg": 0.3482,
+    "aug_sept_woba_avg": 0.3252
+  },
+  {
+    "player_id": 623912,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3594,
+    "may_july_woba_avg": 0.3139,
+    "aug_sept_woba_avg": 0.3802
+  },
+  {
+    "player_id": 656716,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3021,
+    "may_july_woba_avg": 0.2701,
+    "aug_sept_woba_avg": 0.3143
+  },
+  {
+    "player_id": 664913,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2499,
+    "may_july_woba_avg": 0.3228,
+    "aug_sept_woba_avg": 0.3258
+  },
+  {
+    "player_id": 623993,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3334,
+    "may_july_woba_avg": 0.3674,
+    "aug_sept_woba_avg": 0.3302
+  },
+  {
+    "player_id": 656775,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3161,
+    "may_july_woba_avg": 0.324,
+    "aug_sept_woba_avg": 0.3194
+  },
+  {
+    "player_id": 664983,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2848,
+    "may_july_woba_avg": 0.3512,
+    "aug_sept_woba_avg": 0.3178
+  },
+  {
+    "player_id": 656811,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.4365,
+    "may_july_woba_avg": 0.3462,
+    "aug_sept_woba_avg": 0.3134
+  },
+  {
+    "player_id": 607680,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 673237,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3641,
+    "may_july_woba_avg": 0.3338,
+    "aug_sept_woba_avg": 0.3527
+  },
+  {
+    "player_id": 542194,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3758,
+    "may_july_woba_avg": 0.2372,
+    "aug_sept_woba_avg": 0.3138
+  },
+  {
+    "player_id": 607732,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 656896,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.257,
+    "may_july_woba_avg": 0.2724,
+    "aug_sept_woba_avg": 0.3551
+  },
+  {
+    "player_id": 681481,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3399,
+    "may_july_woba_avg": 0.4047,
+    "aug_sept_woba_avg": 0.3839
+  },
+  {
+    "player_id": 656941,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3199,
+    "may_july_woba_avg": 0.3593,
+    "aug_sept_woba_avg": 0.3738
+  },
+  {
+    "player_id": 665161,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3598,
+    "may_july_woba_avg": 0.3109,
+    "aug_sept_woba_avg": 0.3185
+  },
+  {
+    "player_id": 681546,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3275,
+    "may_july_woba_avg": 0.2639,
+    "aug_sept_woba_avg": 0.3663
+  },
+  {
+    "player_id": 673357,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2965,
+    "may_july_woba_avg": 0.4174,
+    "aug_sept_woba_avg": 0.3343
+  },
+  {
+    "player_id": 542303,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3094,
+    "may_july_woba_avg": 0.3572,
+    "aug_sept_woba_avg": 0.3767
+  },
+  {
+    "player_id": 657041,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2724,
+    "may_july_woba_avg": 0.3566,
+    "aug_sept_woba_avg": 0.316
+  },
+  {
+    "player_id": 657077,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3367,
+    "may_july_woba_avg": 0.3054,
+    "aug_sept_woba_avg": 0.3211
+  },
+  {
+    "player_id": 673490,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2966,
+    "may_july_woba_avg": 0.3635,
+    "aug_sept_woba_avg": 0.3053
+  },
+  {
+    "player_id": 657136,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3322,
+    "may_july_woba_avg": 0.3263,
+    "aug_sept_woba_avg": 0.2996
+  },
+  {
+    "player_id": 673548,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3985,
+    "may_july_woba_avg": 0.3319,
+    "aug_sept_woba_avg": 0.4021
+  },
+  {
+    "player_id": 493329,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2616,
+    "may_july_woba_avg": 0.3172,
+    "aug_sept_woba_avg": 0.2691
+  },
+  {
+    "player_id": 624413,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3565,
+    "may_july_woba_avg": 0.3583,
+    "aug_sept_woba_avg": 0.3569
+  },
+  {
+    "player_id": 624415,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2894,
+    "may_july_woba_avg": 0.2877,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 624424,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3238,
+    "may_july_woba_avg": 0.3162,
+    "aug_sept_woba_avg": 0.3391
+  },
+  {
+    "player_id": 624428,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2894,
+    "may_july_woba_avg": 0.2929,
+    "aug_sept_woba_avg": 0.2843
+  },
+  {
+    "player_id": 624431,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.298,
+    "may_july_woba_avg": 0.296,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 608070,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3832,
+    "may_july_woba_avg": 0.3763,
+    "aug_sept_woba_avg": 0.3422
+  },
+  {
+    "player_id": 624512,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3824,
+    "may_july_woba_avg": 0.2224,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 665487,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3326,
+    "may_july_woba_avg": 0.3808,
+    "aug_sept_woba_avg": 0.364
+  },
+  {
+    "player_id": 665489,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3684,
+    "may_july_woba_avg": 0.3765,
+    "aug_sept_woba_avg": 0.3713
+  },
+  {
+    "player_id": 624585,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3111,
+    "may_july_woba_avg": 0.3453,
+    "aug_sept_woba_avg": 0.3883
+  },
+  {
+    "player_id": 624641,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3798,
+    "may_july_woba_avg": 0.2748,
+    "aug_sept_woba_avg": 0.354
+  },
+  {
+    "player_id": 444482,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2297,
+    "may_july_woba_avg": 0.3577,
+    "aug_sept_woba_avg": 0.2762
+  },
+  {
+    "player_id": 608324,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3286,
+    "may_july_woba_avg": 0.3458,
+    "aug_sept_woba_avg": 0.3844
+  },
+  {
+    "player_id": 608336,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3286,
+    "may_july_woba_avg": 0.287,
+    "aug_sept_woba_avg": 0.3092
+  },
+  {
+    "player_id": 608348,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2849,
+    "may_july_woba_avg": 0.343,
+    "aug_sept_woba_avg": 0.2911
+  },
+  {
+    "player_id": 608369,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2967,
+    "may_july_woba_avg": 0.367,
+    "aug_sept_woba_avg": 0.366
+  },
+  {
+    "player_id": 608385,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3067,
+    "may_july_woba_avg": 0.3195,
+    "aug_sept_woba_avg": 0.3092
+  },
+  {
+    "player_id": 665742,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3838,
+    "may_july_woba_avg": 0.4224,
+    "aug_sept_woba_avg": 0.3921
+  },
+  {
+    "player_id": 657557,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2882,
+    "may_july_woba_avg": 0.3143,
+    "aug_sept_woba_avg": 0.3109
+  },
+  {
+    "player_id": 665750,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2689,
+    "may_july_woba_avg": 0.2886,
+    "aug_sept_woba_avg": 0.3059
+  },
+  {
+    "player_id": 542932,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2934,
+    "may_july_woba_avg": 0.336,
+    "aug_sept_woba_avg": 0.3795
+  },
+  {
+    "player_id": 665828,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.269,
+    "may_july_woba_avg": 0.2888,
+    "aug_sept_woba_avg": 0.3005
+  },
+  {
+    "player_id": 665833,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2654,
+    "may_july_woba_avg": 0.3449,
+    "aug_sept_woba_avg": 0.3567
+  },
+  {
+    "player_id": 657656,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3041,
+    "may_july_woba_avg": 0.2862,
+    "aug_sept_woba_avg": 0.3561
+  },
+  {
+    "player_id": 665862,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3482,
+    "may_july_woba_avg": 0.3493,
+    "aug_sept_woba_avg": 0.341
+  },
+  {
+    "player_id": 641313,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3281,
+    "may_july_woba_avg": 0.2678,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 502054,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3182,
+    "may_july_woba_avg": 0.3098,
+    "aug_sept_woba_avg": 0.3182
+  },
+  {
+    "player_id": 592178,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3182,
+    "may_july_woba_avg": 0.3404,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 641343,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2867,
+    "may_july_woba_avg": 0.3318,
+    "aug_sept_woba_avg": 0.2481
+  },
+  {
+    "player_id": 592192,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3579,
+    "may_july_woba_avg": 0.3191,
+    "aug_sept_woba_avg": 0.3513
+  },
+  {
+    "player_id": 665926,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3473,
+    "may_july_woba_avg": 0.2842,
+    "aug_sept_woba_avg": 0.3275
+  },
+  {
+    "player_id": 641355,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3565,
+    "may_july_woba_avg": 0.337,
+    "aug_sept_woba_avg": 0.3271
+  },
+  {
+    "player_id": 592206,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3394,
+    "may_july_woba_avg": 0.3142,
+    "aug_sept_woba_avg": 0.3603
+  },
+  {
+    "player_id": 649557,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2247,
+    "may_july_woba_avg": 0.2739,
+    "aug_sept_woba_avg": 0.3429
+  },
+  {
+    "player_id": 543063,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.286,
+    "may_july_woba_avg": 0.2877,
+    "aug_sept_woba_avg": 0.2868
+  },
+  {
+    "player_id": 543068,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3587,
+    "may_july_woba_avg": 0.353,
+    "aug_sept_woba_avg": 0.2968
+  },
+  {
+    "player_id": 657757,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3358,
+    "may_july_woba_avg": 0.2688,
+    "aug_sept_woba_avg": 0.2957
+  },
+  {
+    "player_id": 502110,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3689,
+    "may_july_woba_avg": 0.3635,
+    "aug_sept_woba_avg": 0.3716
+  },
+  {
+    "player_id": 592273,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3027,
+    "may_july_woba_avg": 0.3017,
+    "aug_sept_woba_avg": 0.2743
+  },
+  {
+    "player_id": 666023,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 575929,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3618,
+    "may_july_woba_avg": 0.3769,
+    "aug_sept_woba_avg": 0.3594
+  },
+  {
+    "player_id": 608701,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 518595,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3794,
+    "may_july_woba_avg": 0.3205,
+    "aug_sept_woba_avg": 0.3346
+  },
+  {
+    "player_id": 641487,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3635,
+    "may_july_woba_avg": 0.3183,
+    "aug_sept_woba_avg": 0.321
+  },
+  {
+    "player_id": 518626,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3348,
+    "may_july_woba_avg": 0.304,
+    "aug_sept_woba_avg": 0.3354
+  },
+  {
+    "player_id": 543228,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3736,
+    "may_july_woba_avg": 0.3413,
+    "aug_sept_woba_avg": 0.2843
+  },
+  {
+    "player_id": 666134,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2444,
+    "may_july_woba_avg": 0.3409,
+    "aug_sept_woba_avg": 0.3132
+  },
+  {
+    "player_id": 543257,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3182,
+    "may_july_woba_avg": 0.3051,
+    "aug_sept_woba_avg": 0.3015
+  },
+  {
+    "player_id": 666139,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3602,
+    "may_july_woba_avg": 0.3026,
+    "aug_sept_woba_avg": 0.3909
+  },
+  {
+    "player_id": 518692,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3845,
+    "may_july_woba_avg": 0.4172,
+    "aug_sept_woba_avg": 0.3824
+  },
+  {
+    "player_id": 666158,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2882,
+    "may_july_woba_avg": 0.3481,
+    "aug_sept_woba_avg": 0.3286
+  },
+  {
+    "player_id": 641584,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3374,
+    "may_july_woba_avg": 0.341,
+    "aug_sept_woba_avg": 0.3212
+  },
+  {
+    "player_id": 666160,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.1974,
+    "may_july_woba_avg": 0.2768,
+    "aug_sept_woba_avg": 0.3469
+  },
+  {
+    "player_id": 641598,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2755,
+    "may_july_woba_avg": 0.3205,
+    "aug_sept_woba_avg": 0.2881
+  },
+  {
+    "player_id": 666176,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.4358,
+    "may_july_woba_avg": 0.2697,
+    "aug_sept_woba_avg": 0.3308
+  },
+  {
+    "player_id": 592450,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.377,
+    "may_july_woba_avg": 0.5045,
+    "aug_sept_woba_avg": 0.4633
+  },
+  {
+    "player_id": 666181,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3132,
+    "may_july_woba_avg": 0.2824,
+    "aug_sept_woba_avg": 0.2471
+  },
+  {
+    "player_id": 666182,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2956,
+    "may_july_woba_avg": 0.3321,
+    "aug_sept_woba_avg": 0.358
+  },
+  {
+    "player_id": 543305,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3726,
+    "may_july_woba_avg": 0.3099,
+    "aug_sept_woba_avg": 0.2878
+  },
+  {
+    "player_id": 666185,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2541,
+    "may_july_woba_avg": 0.3419,
+    "aug_sept_woba_avg": 0.2853
+  },
+  {
+    "player_id": 608841,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2857,
+    "may_july_woba_avg": 0.3151,
+    "aug_sept_woba_avg": 0.3352
+  },
+  {
+    "player_id": 543309,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 518735,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2925,
+    "may_july_woba_avg": 0.2876,
+    "aug_sept_woba_avg": 0.2646
+  },
+  {
+    "player_id": 641658,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 682626,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3089,
+    "may_july_woba_avg": 0.3496,
+    "aug_sept_woba_avg": 0.3106
+  },
+  {
+    "player_id": 592518,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.351,
+    "may_july_woba_avg": 0.3598,
+    "aug_sept_woba_avg": 0.3672
+  },
+  {
+    "player_id": 518792,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3685,
+    "may_july_woba_avg": 0.3506,
+    "aug_sept_woba_avg": 0.382
+  },
+  {
+    "player_id": 641680,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3593,
+    "may_july_woba_avg": 0.3055,
+    "aug_sept_woba_avg": 0.2601
+  },
+  {
+    "player_id": 527038,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3342,
+    "may_july_woba_avg": 0.337,
+    "aug_sept_woba_avg": 0.3247
+  },
+  {
+    "player_id": 666310,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3,
+    "may_july_woba_avg": 0.2774,
+    "aug_sept_woba_avg": 0.283
+  },
+  {
+    "player_id": 649966,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 592626,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3563,
+    "may_july_woba_avg": 0.3745,
+    "aug_sept_woba_avg": 0.3566
+  },
+  {
+    "player_id": 518934,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.364,
+    "may_july_woba_avg": 0.3335,
+    "aug_sept_woba_avg": 0.2983
+  },
+  {
+    "player_id": 543510,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 592663,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3324,
+    "may_july_woba_avg": 0.3345,
+    "aug_sept_woba_avg": 0.3718
+  },
+  {
+    "player_id": 641820,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2907,
+    "may_july_woba_avg": 0.3216,
+    "aug_sept_woba_avg": 0.2876
+  },
+  {
+    "player_id": 592669,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3136,
+    "may_july_woba_avg": 0.352,
+    "aug_sept_woba_avg": 0.2835
+  },
+  {
+    "player_id": 666397,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3654,
+    "may_july_woba_avg": 0.2385,
+    "aug_sept_woba_avg": 0.2429
+  },
+  {
+    "player_id": 600869,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.278,
+    "may_july_woba_avg": 0.3418,
+    "aug_sept_woba_avg": 0.3035
+  },
+  {
+    "player_id": 592696,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2183,
+    "may_july_woba_avg": 0.3076,
+    "aug_sept_woba_avg": 0.3452
+  },
+  {
+    "player_id": 641857,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3634,
+    "may_july_woba_avg": 0.3364,
+    "aug_sept_woba_avg": 0.3001
+  },
+  {
+    "player_id": 682829,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.4293,
+    "may_july_woba_avg": 0.3482,
+    "aug_sept_woba_avg": 0.3364
+  },
+  {
+    "player_id": 691023,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3173,
+    "may_july_woba_avg": 0.3444,
+    "aug_sept_woba_avg": 0.3228
+  },
+  {
+    "player_id": 543592,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2614,
+    "may_july_woba_avg": 0.2492,
+    "aug_sept_woba_avg": 0.3262
+  },
+  {
+    "player_id": 641933,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3538,
+    "may_july_woba_avg": 0.334,
+    "aug_sept_woba_avg": 0.329
+  },
+  {
+    "player_id": 502671,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3424,
+    "may_july_woba_avg": 0.3804,
+    "aug_sept_woba_avg": 0.3737
+  },
+  {
+    "player_id": 682928,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3702,
+    "may_july_woba_avg": 0.3233,
+    "aug_sept_woba_avg": 0.2919
+  },
+  {
+    "player_id": 453568,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3398,
+    "may_july_woba_avg": 0.3437,
+    "aug_sept_woba_avg": 0.3373
+  },
+  {
+    "player_id": 543685,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3256,
+    "may_july_woba_avg": 0.3132,
+    "aug_sept_woba_avg": 0.3
+  },
+  {
+    "player_id": 682985,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.331,
+    "may_july_woba_avg": 0.3943,
+    "aug_sept_woba_avg": 0.3248
+  },
+  {
+    "player_id": 592885,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3171,
+    "may_july_woba_avg": 0.3776,
+    "aug_sept_woba_avg": 0.3211
+  },
+  {
+    "player_id": 682998,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.35,
+    "may_july_woba_avg": 0.3518,
+    "aug_sept_woba_avg": 0.3767
+  },
+  {
+    "player_id": 683002,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3693,
+    "may_july_woba_avg": 0.3812,
+    "aug_sept_woba_avg": 0.3575
+  },
+  {
+    "player_id": 666624,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2862,
+    "may_july_woba_avg": 0.3135,
+    "aug_sept_woba_avg": 0.237
+  },
+  {
+    "player_id": 683011,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3305,
+    "may_july_woba_avg": 0.2972,
+    "aug_sept_woba_avg": 0.2788
+  },
+  {
+    "player_id": 543760,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3175,
+    "may_july_woba_avg": 0.3383,
+    "aug_sept_woba_avg": 0.3582
+  },
+  {
+    "player_id": 519203,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3789,
+    "may_july_woba_avg": 0.3034,
+    "aug_sept_woba_avg": 0.3214
+  },
+  {
+    "player_id": 642086,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2816,
+    "may_july_woba_avg": 0.3194,
+    "aug_sept_woba_avg": 0.3246
+  },
+  {
+    "player_id": 543807,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.333,
+    "may_july_woba_avg": 0.338,
+    "aug_sept_woba_avg": 0.3411
+  },
+  {
+    "player_id": 642133,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3264,
+    "may_july_woba_avg": 0.3102,
+    "aug_sept_woba_avg": 0.3083
+  },
+  {
+    "player_id": 650333,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3832,
+    "may_july_woba_avg": 0.3633,
+    "aug_sept_woba_avg": 0.3273
+  },
+  {
+    "player_id": 543877,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2864,
+    "may_july_woba_avg": 0.259,
+    "aug_sept_woba_avg": 0.2726
+  },
+  {
+    "player_id": 519317,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3431,
+    "may_july_woba_avg": 0.3584,
+    "aug_sept_woba_avg": 0.2803
+  },
+  {
+    "player_id": 650391,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3091,
+    "may_july_woba_avg": 0.3253,
+    "aug_sept_woba_avg": 0.2959
+  },
+  {
+    "player_id": 650402,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3139,
+    "may_july_woba_avg": 0.334,
+    "aug_sept_woba_avg": 0.3563
+  },
+  {
+    "player_id": 543939,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.241,
+    "may_july_woba_avg": 0.293,
+    "aug_sept_woba_avg": 0.3571
+  },
+  {
+    "player_id": 658668,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3464,
+    "may_july_woba_avg": 0.287,
+    "aug_sept_woba_avg": 0.3888
+  },
+  {
+    "player_id": 650489,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3347,
+    "may_july_woba_avg": 0.3537,
+    "aug_sept_woba_avg": 0.2953
+  },
+  {
+    "player_id": 650490,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3779,
+    "may_july_woba_avg": 0.3655,
+    "aug_sept_woba_avg": 0.4011
+  },
+  {
+    "player_id": 593160,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2657,
+    "may_july_woba_avg": 0.3326,
+    "aug_sept_woba_avg": 0.2864
+  },
+  {
+    "player_id": 462101,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2705,
+    "may_july_woba_avg": 0.2958,
+    "aug_sept_woba_avg": 0.3451
+  },
+  {
+    "player_id": 642350,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2587,
+    "may_july_woba_avg": 0.3011,
+    "aug_sept_woba_avg": 0.2291
+  },
+  {
+    "player_id": 650559,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3088,
+    "may_july_woba_avg": 0.328,
+    "aug_sept_woba_avg": 0.2695
+  },
+  {
+    "player_id": 666969,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3422,
+    "may_july_woba_avg": 0.3217,
+    "aug_sept_woba_avg": 0.3389
+  },
+  {
+    "player_id": 666971,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3228,
+    "may_july_woba_avg": 0.3341,
+    "aug_sept_woba_avg": 0.3403
+  },
+  {
+    "player_id": 593428,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3581,
+    "may_july_woba_avg": 0.3504,
+    "aug_sept_woba_avg": 0.3456
+  },
+  {
+    "player_id": 650859,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3229,
+    "may_july_woba_avg": 0.3374,
+    "aug_sept_woba_avg": 0.3971
+  },
+  {
+    "player_id": 642708,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2873,
+    "may_july_woba_avg": 0.3401,
+    "aug_sept_woba_avg": 0.2864
+  },
+  {
+    "player_id": 642715,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3658,
+    "may_july_woba_avg": 0.3138,
+    "aug_sept_woba_avg": 0.3576
+  },
+  {
+    "player_id": 642731,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3368,
+    "may_july_woba_avg": 0.3079,
+    "aug_sept_woba_avg": 0.3221
+  },
+  {
+    "player_id": 683734,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3284,
+    "may_july_woba_avg": 0.3278,
+    "aug_sept_woba_avg": 0.3344
+  },
+  {
+    "player_id": 642851,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 593871,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2962,
+    "may_july_woba_avg": 0.3293,
+    "aug_sept_woba_avg": 0.3106
+  },
+  {
+    "player_id": 602104,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2939,
+    "may_july_woba_avg": 0.3344,
+    "aug_sept_woba_avg": 0.3203
+  },
+  {
+    "player_id": 667670,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.4224,
+    "may_july_woba_avg": 0.3638,
+    "aug_sept_woba_avg": 0.3639
+  },
+  {
+    "player_id": 643217,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3205,
+    "may_july_woba_avg": 0.3138,
+    "aug_sept_woba_avg": 0.3335
+  },
+  {
+    "player_id": 643265,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3395,
+    "may_july_woba_avg": 0.3296,
+    "aug_sept_woba_avg": 0.3248
+  },
+  {
+    "player_id": 643289,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3356,
+    "may_july_woba_avg": 0.3033,
+    "aug_sept_woba_avg": 0.3408
+  },
+  {
+    "player_id": 643376,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2803,
+    "may_july_woba_avg": 0.358,
+    "aug_sept_woba_avg": 0.378
+  },
+  {
+    "player_id": 643393,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2678,
+    "may_july_woba_avg": 0.2837,
+    "aug_sept_woba_avg": 0.3067
+  },
+  {
+    "player_id": 643396,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3238,
+    "may_july_woba_avg": 0.3244,
+    "aug_sept_woba_avg": 0.2949
+  },
+  {
+    "player_id": 545121,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3341,
+    "may_july_woba_avg": 0.2863,
+    "aug_sept_woba_avg": 0.1988
+  },
+  {
+    "player_id": 643446,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3571,
+    "may_july_woba_avg": 0.3033,
+    "aug_sept_woba_avg": 0.3715
+  },
+  {
+    "player_id": 455117,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2101,
+    "may_july_woba_avg": 0.2214,
+    "aug_sept_woba_avg": 0.3242
+  },
+  {
+    "player_id": 643565,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.4062,
+    "may_july_woba_avg": 0.2669,
+    "aug_sept_woba_avg": 0.395
+  },
+  {
+    "player_id": 545341,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3933,
+    "may_july_woba_avg": 0.303,
+    "aug_sept_woba_avg": 0.3181
+  },
+  {
+    "player_id": 668227,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2991,
+    "may_july_woba_avg": 0.3491,
+    "aug_sept_woba_avg": 0.3664
+  },
+  {
+    "player_id": 545361,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.4557,
+    "may_july_woba_avg": 0.3694,
+    "aug_sept_woba_avg": 0.4347
+  },
+  {
+    "player_id": 676475,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3407,
+    "may_july_woba_avg": 0.3261,
+    "aug_sept_woba_avg": 0.3024
+  },
+  {
+    "player_id": 660162,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 676609,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2987,
+    "may_july_woba_avg": 0.3149,
+    "aug_sept_woba_avg": 0.2487
+  },
+  {
+    "player_id": 660271,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3825,
+    "may_july_woba_avg": 0.4258,
+    "aug_sept_woba_avg": 0.4201
+  },
+  {
+    "player_id": 676694,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3074,
+    "may_july_woba_avg": 0.312,
+    "aug_sept_woba_avg": 0.2617
+  },
+  {
+    "player_id": 807799,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3822,
+    "may_july_woba_avg": 0.3626,
+    "aug_sept_woba_avg": 0.3153
+  },
+  {
+    "player_id": 578428,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3492,
+    "may_july_woba_avg": 0.3458,
+    "aug_sept_woba_avg": 0.287
+  },
+  {
+    "player_id": 553869,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3451,
+    "may_july_woba_avg": 0.3147,
+    "aug_sept_woba_avg": 0.2918
+  },
+  {
+    "player_id": 676801,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3139,
+    "may_july_woba_avg": 0.3045,
+    "aug_sept_woba_avg": 0.282
+  },
+  {
+    "player_id": 668670,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2764,
+    "may_july_woba_avg": 0.2714,
+    "aug_sept_woba_avg": 0.2953
+  },
+  {
+    "player_id": 553993,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.315,
+    "may_july_woba_avg": 0.3225,
+    "aug_sept_woba_avg": 0.3759
+  },
+  {
+    "player_id": 668715,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3676,
+    "may_july_woba_avg": 0.3501,
+    "aug_sept_woba_avg": 0.3438
+  },
+  {
+    "player_id": 570482,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3059,
+    "may_july_woba_avg": 0.3135,
+    "aug_sept_woba_avg": 0.3334
+  },
+  {
+    "player_id": 668800,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 668804,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3419,
+    "may_july_woba_avg": 0.3561,
+    "aug_sept_woba_avg": 0.3575
+  },
+  {
+    "player_id": 660670,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3946,
+    "may_july_woba_avg": 0.3796,
+    "aug_sept_woba_avg": 0.4582
+  },
+  {
+    "player_id": 660688,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2803,
+    "may_july_woba_avg": 0.2858,
+    "aug_sept_woba_avg": 0.3251
+  },
+  {
+    "player_id": 668901,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 668904,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 668930,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3142,
+    "may_july_woba_avg": 0.291,
+    "aug_sept_woba_avg": 0.2771
+  },
+  {
+    "player_id": 668939,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3758,
+    "may_july_woba_avg": 0.3337,
+    "aug_sept_woba_avg": 0.3307
+  },
+  {
+    "player_id": 668942,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3574,
+    "may_july_woba_avg": 0.2645,
+    "aug_sept_woba_avg": 0.2896
+  },
+  {
+    "player_id": 669004,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2724,
+    "may_july_woba_avg": 0.2922,
+    "aug_sept_woba_avg": 0.353
+  },
+  {
+    "player_id": 595281,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2891,
+    "may_july_woba_avg": 0.2996,
+    "aug_sept_woba_avg": 0.3031
+  },
+  {
+    "player_id": 660821,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3371,
+    "may_july_woba_avg": 0.2888,
+    "aug_sept_woba_avg": 0.3508
+  },
+  {
+    "player_id": 669016,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3909,
+    "may_july_woba_avg": 0.3071,
+    "aug_sept_woba_avg": 0.3456
+  },
+  {
+    "player_id": 669127,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2968,
+    "may_july_woba_avg": 0.2985,
+    "aug_sept_woba_avg": 0.3401
+  },
+  {
+    "player_id": 521692,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3672,
+    "may_july_woba_avg": 0.3061,
+    "aug_sept_woba_avg": 0.3353
+  },
+  {
+    "player_id": 669221,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3634,
+    "may_july_woba_avg": 0.3544,
+    "aug_sept_woba_avg": 0.3429
+  },
+  {
+    "player_id": 669222,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.423,
+    "may_july_woba_avg": 0.3028,
+    "aug_sept_woba_avg": 0.3437
+  },
+  {
+    "player_id": 669242,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3742,
+    "may_july_woba_avg": 0.2952,
+    "aug_sept_woba_avg": 0.328
+  },
+  {
+    "player_id": 669257,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.4023,
+    "may_july_woba_avg": 0.3428,
+    "aug_sept_woba_avg": 0.3056
+  },
+  {
+    "player_id": 669261,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3344,
+    "may_july_woba_avg": 0.3156,
+    "aug_sept_woba_avg": 0.3196
+  },
+  {
+    "player_id": 669289,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2886,
+    "may_july_woba_avg": 0.3136,
+    "aug_sept_woba_avg": 0.3009
+  },
+  {
+    "player_id": 669304,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 669357,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3239,
+    "may_july_woba_avg": 0.3267,
+    "aug_sept_woba_avg": 0.3485
+  },
+  {
+    "player_id": 677551,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.398,
+    "may_july_woba_avg": 0.3023,
+    "aug_sept_woba_avg": 0.3471
+  },
+  {
+    "player_id": 669394,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3635,
+    "may_july_woba_avg": 0.3222,
+    "aug_sept_woba_avg": 0.3682
+  },
+  {
+    "player_id": 669397,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 677594,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2982,
+    "may_july_woba_avg": 0.3524,
+    "aug_sept_woba_avg": 0.408
+  },
+  {
+    "player_id": 628451,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 677649,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2792,
+    "may_july_woba_avg": 0.3284,
+    "aug_sept_woba_avg": 0.2907
+  },
+  {
+    "player_id": 595777,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3385,
+    "may_july_woba_avg": 0.3499,
+    "aug_sept_woba_avg": 0.3167
+  },
+  {
+    "player_id": 661388,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3829,
+    "may_july_woba_avg": 0.3431,
+    "aug_sept_woba_avg": 0.3893
+  },
+  {
+    "player_id": 595879,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2696,
+    "may_july_woba_avg": 0.2462,
+    "aug_sept_woba_avg": 0.271
+  },
+  {
+    "player_id": 669701,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3444,
+    "may_july_woba_avg": 0.3629,
+    "aug_sept_woba_avg": 0.2504
+  },
+  {
+    "player_id": 669707,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2776,
+    "may_july_woba_avg": 0.2797,
+    "aug_sept_woba_avg": 0.3174
+  },
+  {
+    "player_id": 669720,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3968,
+    "may_july_woba_avg": 0.3258,
+    "aug_sept_woba_avg": 0.3206
+  },
+  {
+    "player_id": 596019,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3324,
+    "may_july_woba_avg": 0.3556,
+    "aug_sept_woba_avg": 0.3795
+  },
+  {
+    "player_id": 571448,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3524,
+    "may_july_woba_avg": 0.3585,
+    "aug_sept_woba_avg": 0.337
+  },
+  {
+    "player_id": 677950,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2763,
+    "may_july_woba_avg": 0.3293,
+    "aug_sept_woba_avg": 0.2814
+  },
+  {
+    "player_id": 677951,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3095,
+    "may_july_woba_avg": 0.3798,
+    "aug_sept_woba_avg": 0.3624
+  },
+  {
+    "player_id": 456781,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3331,
+    "may_july_woba_avg": 0.35,
+    "aug_sept_woba_avg": 0.3461
+  },
+  {
+    "player_id": 596103,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 645277,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3585,
+    "may_july_woba_avg": 0.3117,
+    "aug_sept_woba_avg": 0.389
+  },
+  {
+    "player_id": 596129,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3717,
+    "may_july_woba_avg": 0.32,
+    "aug_sept_woba_avg": 0.3578
+  },
+  {
+    "player_id": 596142,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3435,
+    "may_july_woba_avg": 0.2971,
+    "aug_sept_woba_avg": 0.3238
+  },
+  {
+    "player_id": 596146,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3618,
+    "may_july_woba_avg": 0.3238,
+    "aug_sept_woba_avg": 0.3183
+  },
+  {
+    "player_id": 645302,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2762,
+    "may_july_woba_avg": 0.2882,
+    "aug_sept_woba_avg": 0.2634
+  },
+  {
+    "player_id": 669911,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2432,
+    "may_july_woba_avg": 0.3529,
+    "aug_sept_woba_avg": 0.3463
+  },
+  {
+    "player_id": 571657,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2768,
+    "may_july_woba_avg": 0.3086,
+    "aug_sept_woba_avg": 0.326
+  },
+  {
+    "player_id": 670032,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2944,
+    "may_july_woba_avg": 0.2908,
+    "aug_sept_woba_avg": 0.2896
+  },
+  {
+    "player_id": 670042,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3069,
+    "may_july_woba_avg": 0.3617,
+    "aug_sept_woba_avg": 0.3468
+  },
+  {
+    "player_id": 571745,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3118,
+    "may_july_woba_avg": 0.2816,
+    "aug_sept_woba_avg": 0.2683
+  },
+  {
+    "player_id": 547180,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3363,
+    "may_july_woba_avg": 0.432,
+    "aug_sept_woba_avg": 0.3542
+  },
+  {
+    "player_id": 571771,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.28,
+    "may_july_woba_avg": 0.2673,
+    "aug_sept_woba_avg": 0.3249
+  },
+  {
+    "player_id": 686469,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.347,
+    "may_july_woba_avg": 0.3092,
+    "aug_sept_woba_avg": 0.3475
+  },
+  {
+    "player_id": 621020,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3104,
+    "may_july_woba_avg": 0.3358,
+    "aug_sept_woba_avg": 0.3206
+  },
+  {
+    "player_id": 621028,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2792,
+    "may_july_woba_avg": 0.3288,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 621035,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2704,
+    "may_july_woba_avg": 0.319,
+    "aug_sept_woba_avg": 0.3198
+  },
+  {
+    "player_id": 621043,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2945,
+    "may_july_woba_avg": 0.3632,
+    "aug_sept_woba_avg": 0.3652
+  },
+  {
+    "player_id": 571912,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 571970,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3569,
+    "may_july_woba_avg": 0.3091,
+    "aug_sept_woba_avg": 0.3781
+  },
+  {
+    "player_id": 686668,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.337,
+    "may_july_woba_avg": 0.3486,
+    "aug_sept_woba_avg": 0.2878
+  },
+  {
+    "player_id": 686681,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.1685,
+    "may_july_woba_avg": 0.3254,
+    "aug_sept_woba_avg": 0.3168
+  },
+  {
+    "player_id": 662139,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3097,
+    "may_july_woba_avg": 0.298,
+    "aug_sept_woba_avg": 0.3445
+  },
+  {
+    "player_id": 408234,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2754,
+    "may_july_woba_avg": 0.3111,
+    "aug_sept_woba_avg": 0.1682
+  },
+  {
+    "player_id": 686823,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3206,
+    "may_july_woba_avg": 0.312,
+    "aug_sept_woba_avg": 0.3094
+  },
+  {
+    "player_id": 678662,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2963,
+    "may_july_woba_avg": 0.3414,
+    "aug_sept_woba_avg": 0.3004
+  },
+  {
+    "player_id": 572191,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2897,
+    "may_july_woba_avg": 0.3006,
+    "aug_sept_woba_avg": 0.2804
+  },
+  {
+    "player_id": 514888,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.435,
+    "may_july_woba_avg": 0.3375,
+    "aug_sept_woba_avg": 0.3375
+  },
+  {
+    "player_id": 572233,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3254,
+    "may_july_woba_avg": 0.3554,
+    "aug_sept_woba_avg": 0.3447
+  },
+  {
+    "player_id": 670541,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3931,
+    "may_july_woba_avg": 0.4314,
+    "aug_sept_woba_avg": 0.4186
+  },
+  {
+    "player_id": 621438,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3314,
+    "may_july_woba_avg": 0.315,
+    "aug_sept_woba_avg": 0.329
+  },
+  {
+    "player_id": 621439,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3379,
+    "may_july_woba_avg": 0.3425,
+    "aug_sept_woba_avg": 0.3988
+  },
+  {
+    "player_id": 670623,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3541,
+    "may_july_woba_avg": 0.3705,
+    "aug_sept_woba_avg": 0.3224
+  },
+  {
+    "player_id": 621493,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.393,
+    "may_july_woba_avg": 0.3312,
+    "aug_sept_woba_avg": 0.3746
+  },
+  {
+    "player_id": 605131,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 605137,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3447,
+    "may_july_woba_avg": 0.3404,
+    "aug_sept_woba_avg": 0.3418
+  },
+  {
+    "player_id": 605141,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.383,
+    "may_july_woba_avg": 0.3839,
+    "aug_sept_woba_avg": 0.4005
+  },
+  {
+    "player_id": 457705,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3116,
+    "may_july_woba_avg": 0.3395,
+    "aug_sept_woba_avg": 0.3421
+  },
+  {
+    "player_id": 621550,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3753,
+    "may_july_woba_avg": 0.3157,
+    "aug_sept_woba_avg": 0.2742
+  },
+  {
+    "player_id": 605170,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 621563,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3605,
+    "may_july_woba_avg": 0.2927,
+    "aug_sept_woba_avg": 0.2774
+  },
+  {
+    "player_id": 621566,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3617,
+    "may_july_woba_avg": 0.361,
+    "aug_sept_woba_avg": 0.385
+  },
+  {
+    "player_id": 605204,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3063,
+    "may_july_woba_avg": 0.3089,
+    "aug_sept_woba_avg": 0.3063
+  },
+  {
+    "player_id": 457759,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3235,
+    "may_july_woba_avg": 0.3429,
+    "aug_sept_woba_avg": 0.3672
+  },
+  {
+    "player_id": 670764,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.4144,
+    "may_july_woba_avg": 0.2689,
+    "aug_sept_woba_avg": 0.245
+  },
+  {
+    "player_id": 670770,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3387,
+    "may_july_woba_avg": 0.3527,
+    "aug_sept_woba_avg": 0.3917
+  },
+  {
+    "player_id": 646240,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3667,
+    "may_july_woba_avg": 0.4101,
+    "aug_sept_woba_avg": 0.3222
+  },
+  {
+    "player_id": 547989,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2794,
+    "may_july_woba_avg": 0.3583,
+    "aug_sept_woba_avg": 0.3347
+  },
+  {
+    "player_id": 687263,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3055,
+    "may_july_woba_avg": 0.345,
+    "aug_sept_woba_avg": 0.2852
+  },
+  {
+    "player_id": 458015,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2285,
+    "may_july_woba_avg": 0.3709,
+    "aug_sept_woba_avg": 0.2342
+  },
+  {
+    "player_id": 630105,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3359,
+    "may_july_woba_avg": 0.3203,
+    "aug_sept_woba_avg": 0.3223
+  },
+  {
+    "player_id": 671213,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.2668,
+    "may_july_woba_avg": 0.402,
+    "aug_sept_woba_avg": 0.3664
+  },
+  {
+    "player_id": 622110,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": NaN,
+    "may_july_woba_avg": NaN,
+    "aug_sept_woba_avg": NaN
+  },
+  {
+    "player_id": 671277,
+    "slow_starter": true,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2903,
+    "may_july_woba_avg": 0.3136,
+    "aug_sept_woba_avg": 0.3595
+  },
+  {
+    "player_id": 679529,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2788,
+    "may_july_woba_avg": 0.2846,
+    "aug_sept_woba_avg": 0.3353
+  },
+  {
+    "player_id": 474832,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.304,
+    "may_july_woba_avg": 0.3501,
+    "aug_sept_woba_avg": 0.4535
+  },
+  {
+    "player_id": 573262,
+    "slow_starter": false,
+    "second_half_fader": true,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3439,
+    "may_july_woba_avg": 0.3228,
+    "aug_sept_woba_avg": 0.3451
+  },
+  {
+    "player_id": 663457,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3222,
+    "may_july_woba_avg": 0.3509,
+    "aug_sept_woba_avg": 0.3608
+  },
+  {
+    "player_id": 606115,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 2,
+    "april_woba_avg": 0.3346,
+    "may_july_woba_avg": 0.263,
+    "aug_sept_woba_avg": 0.2945
+  },
+  {
+    "player_id": 622534,
+    "slow_starter": true,
+    "second_half_fader": true,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.2694,
+    "may_july_woba_avg": 0.3345,
+    "aug_sept_woba_avg": 0.2818
+  },
+  {
+    "player_id": 606192,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": true,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3146,
+    "may_july_woba_avg": 0.3384,
+    "aug_sept_woba_avg": 0.3836
+  },
+  {
+    "player_id": 663538,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3378,
+    "may_july_woba_avg": 0.3282,
+    "aug_sept_woba_avg": 0.3439
+  },
+  {
+    "player_id": 671739,
+    "slow_starter": false,
+    "second_half_fader": false,
+    "summer_performer": false,
+    "years_of_data": 3,
+    "april_woba_avg": 0.3481,
+    "may_july_woba_avg": 0.2729,
+    "aug_sept_woba_avg": 0.3697
+  }
+]

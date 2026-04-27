@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:baseballsavant.mlb.com)",
+      "Bash(ls:*)",
+      "Bash(python run_pipeline.py --pitchers)",
+      "Bash(python -c \"import pybaseball; print\\(pybaseball.__version__\\); from pybaseball import fg_pitching_data; print\\('fg_pitching_data available'\\)\")",
+      "Bash(python -c ':*)",
+      "Bash(python:*)",
+      "Bash(where python:*)",
+      "Bash(C:/Users/dusti/AppData/Local/Python/pythoncore-3.14-64/python.exe:*)",
+      "Bash(schtasks /create /f /tn \"FantasyBaseballPipeline\" ^)",
+      "Bash(/tr \"\\\\\"C:\\\\Users\\\\dusti\\\\fantasy-baseball\\\\run_pipeline.bat\\\\\"\" ^)",
+      "Bash(/sc daily:*)",
+      "Bash(/ru \"%USERNAME%\" ^)",
+      "Bash(/rl HIGHEST ^)",
+      "Bash(schtasks:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(echo \"---exit $?---\")",
+      "Bash(cat \"C:/Users/dusti/fantasy-baseball/logs/\"*.log)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(powershell:*)",
+      "Bash(del backtest_raw.csv backtest_results.csv backtest_report.md)",
+      "Bash(python3:*)",
+      "Bash(del *)",
+      "Bash(pip install *)",
+      "Bash(ANTHROPIC_API_KEY=\"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\" python generate_narratives.py)",
+      "Bash(pip show *)"
+    ]
+  }
+}

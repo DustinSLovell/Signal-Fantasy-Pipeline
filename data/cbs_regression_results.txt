@@ -1,0 +1,91 @@
+========================================================================
+  HITTER REGRESSION  —  y = FPTS
+  Features: ['R', 'HR', 'RBI', 'SB', 'AVG']
+========================================================================
+
+  Year       n     R²         R        HR       RBI        SB       AVG
+  -----------------------------------------------------------------
+  2024     307  0.986     2.757     0.547     2.032     1.421   316.591   (train)
+  2025     309  0.984     2.984     0.165     1.920     1.405   285.981   (OOS)
+
+  Stability (2024 vs 2025 coefficient comparison):
+    R           +2.757    +2.984  Δ=8.2%  ✓
+    HR          +0.547    +0.165  Δ=69.8%  ✗
+    RBI         +2.032    +1.920  Δ=5.5%  ✓
+    SB          +1.421    +1.405  Δ=1.1%  ✓
+    AVG       +316.591  +285.981  Δ=9.7%  ✓
+
+  Pooled (2024) OLS:  n=307  R²=0.9856
+    R         +2.7571
+    HR        +0.5470
+    RBI       +2.0321
+    SB        +1.4206
+    AVG       +316.5915
+    intercept  -71.3420
+  Pooled (2024) Ridge (alpha=0.1):  R²=0.9853
+    R         +2.8067
+    HR        +0.4303
+    RBI       +2.0806
+    SB        +1.4222
+    AVG       +227.3683
+    intercept  -53.0439
+  OOS 2025 (Ridge):  R²=0.9830  n=309  ✓
+
+========================================================================
+  PITCHER REGRESSION  —  y = FPTS
+  Features: ['W', 'ERA', 'WHIP', 'K', 'SV']
+========================================================================
+
+  Year       n     R²         W       ERA      WHIP         K        SV
+  -----------------------------------------------------------------
+  2024      84  0.927    10.607    -1.354   -98.337     1.320     6.327   (train)
+  2025      82  0.921     7.773    -7.573   -57.392     1.440     6.086   (OOS)
+
+  Stability (2024 vs 2025 coefficient comparison):
+    W          +10.607    +7.773  Δ=26.7%  ⚠
+    ERA         -1.354    -7.573  Δ=459.3%  ✗
+    WHIP       -98.337   -57.392  Δ=41.6%  ✗
+    K           +1.320    +1.440  Δ=9.1%  ✓
+    SV          +6.327    +6.086  Δ=3.8%  ✓
+
+  Pooled (2024) OLS:  n=84  R²=0.9268
+    W         +10.6067
+    ERA       -1.3539
+    WHIP      -98.3365
+    K         +1.3201
+    SV        +6.3271
+    intercept  +127.3377
+  Pooled (2024) Ridge (alpha=0.1):  R²=0.9267
+    W         +10.5398
+    ERA       -2.5531
+    WHIP      -90.7701
+    K         +1.3236
+    SV        +6.3282
+    intercept  +122.7395
+  OOS 2025 (Ridge):  R²=0.9093  n=82  ✓
+
+========================================================================
+  CONFIG.PY CONSTANTS  —  paste into config.py
+========================================================================
+
+# CBS FPTS category weights — hitters (Ridge regression, train=2024, OOS=2025)
+# R² = 0.9853  (train) | n=307
+# Note: R/HR/RBI are collinear — Ridge stabilizes coefficients vs OLS.
+CBS_H_COEF_R         = +2.8067   # per run scored
+CBS_H_COEF_HR        = +0.4303   # per home run
+CBS_H_COEF_RBI       = +2.0806   # per RBI
+CBS_H_COEF_SB        = +1.4222   # per stolen base
+CBS_H_COEF_AVG       = +227.3683   # per .001 batting avg
+CBS_H_INTERCEPT      = -53.0439
+CBS_H_R2_TRAIN       = 0.9853
+
+# CBS FPTS category weights — pitchers (Ridge regression, train=2024, OOS=2025)
+# R² = 0.9267  (train) | n=84
+# Note: ERA/WHIP are collinear — Ridge stabilizes coefficients vs OLS.
+CBS_P_COEF_W         = +10.5398   # per win
+CBS_P_COEF_ERA       = -2.5531   # per ERA point (expect negative)
+CBS_P_COEF_WHIP      = -90.7701   # per WHIP point (expect negative)
+CBS_P_COEF_K         = +1.3236   # per strikeout
+CBS_P_COEF_SV        = +6.3282   # per save
+CBS_P_INTERCEPT      = +122.7395
+CBS_P_R2_TRAIN       = 0.9267

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Signal Fantasy — Career Lessons Database</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0e1a; color: #e8eaf0; font-family: 'DM Sans', sans-serif; min-height: 100vh; padding: 24px; }
+  .header { margin-bottom: 6px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: #38bdf8; }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 10px; color: #4a5568; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+  .meta-bar { display: flex; gap: 8px; margin: 10px 0 14px; flex-wrap: wrap; align-items: center; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 10px; background: #1a2235; border: 1px solid #2d3748; color: #38bdf8; padding: 3px 9px; border-radius: 4px; }
+  .badge.green { color: #4ade80; border-color: #2d5a3d; background: #1a3a2a; }
+  .controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  input[type="text"] { background: #111827; border: 1px solid #2d3748; color: #e8eaf0; padding: 7px 12px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 12px; flex: 1; min-width: 180px; outline: none; transition: border-color 0.2s; }
+  input[type="text"]:focus { border-color: #38bdf8; }
+  .filter-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+  .fbtn { background: #111827; border: 1px solid #2d3748; color: #64748b; padding: 5px 11px; border-radius: 5px; font-family: 'DM Mono', monospace; font-size: 10px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; transition: all 0.15s; }
+  .fbtn:hover { border-color: #38bdf8; color: #38bdf8; }
+  .fbtn.active { background: #1e3a4a; border-color: #38bdf8; color: #38bdf8; }
+  .section-header { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: #4a5568; padding: 6px 0 8px; border-top: 1px solid #1a2235; margin-top: 8px; }
+  .section-header:first-child { border-top: none; margin-top: 0; }
+  .card { background: #111827; border: 1px solid #1e2d40; border-radius: 8px; padding: 14px 16px; cursor: pointer; transition: all 0.18s; position: relative; overflow: hidden; margin-bottom: 8px; }
+  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent, #38bdf8); border-radius: 3px 0 0 3px; }
+  .card:hover { border-color: #38bdf8; background: #131f30; transform: translateX(2px); }
+  .card.expanded { border-color: #38bdf8; background: #131f30; }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+  .concept-name { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #38bdf8; }
+  .tag-row { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 4px; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tag-ml { background: #1a3a2a; color: #4ade80; border: 1px solid #2d5a3d; }
+  .tag-eng { background: #1a2a3a; color: #60a5fa; border: 1px solid #2d4a5a; }
+  .tag-biz { background: #2a1a3a; color: #c084fc; border: 1px solid #4a2d5a; }
+  .tag-comm { background: #3a2a1a; color: #fb923c; border: 1px solid #5a3d2d; }
+  .tag-prod { background: #3a1a1a; color: #f87171; border: 1px solid #5a2d2d; }
+  .tag-career { background: #1a3a3a; color: #2dd4bf; border: 1px solid #2d5a5a; }
+  .tag-infra { background: #2a2a1a; color: #fbbf24; border: 1px solid #5a5a2d; }
+  .session-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: #374151; white-space: nowrap; }
+  .chevron { color: #4a5568; font-size: 13px; transition: transform 0.2s; }
+  .card.expanded .chevron { transform: rotate(180deg); color: #38bdf8; }
+  .preview { font-size: 11px; color: #4b5563; margin-top: 6px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .expanded-body { display: none; margin-top: 14px; border-top: 1px solid #1e2d40; padding-top: 14px; }
+  .card.expanded .expanded-body { display: block; }
+  .slbl { font-family: 'DM Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: #4a5568; margin-bottom: 5px; margin-top: 12px; }
+  .slbl:first-child { margin-top: 0; }
+  .lesson-text { font-size: 12px; color: #cbd5e1; line-height: 1.7; }
+  .interview-box { background: #0d1929; border: 1px solid #1e3a4a; border-radius: 5px; padding: 10px 12px; font-size: 11px; color: #93c5fd; line-height: 1.7; font-style: italic; }
+  .no-results { text-align: center; color: #4a5568; font-family: 'DM Mono', monospace; font-size: 12px; padding: 32px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+  .tab { background: #111827; border: 1px solid #2d3748; color: #64748b; padding: 6px 14px; border-radius: 5px; font-family: 'DM Mono', monospace; font-size: 10px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; transition: all 0.15s; }
+  .tab.active { background: #1e3a4a; border-color: #38bdf8; color: #38bdf8; }
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; margin-top: 10px; }
+  .comp-item { background: #111827; border: 1px solid #1e2d40; border-radius: 5px; padding: 8px 10px; cursor: pointer; transition: border-color 0.15s; }
+  .comp-item:hover { border-color: #38bdf8; }
+  .comp-label { font-family: 'DM Mono', monospace; font-size: 9px; color: #64748b; text-transform: uppercase; margin-bottom: 3px; }
+  .comp-count { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #38bdf8; }
+  .comp-desc { font-size: 10px; color: #4a5568; margin-top: 1px; }
+  .comp-title { font-family: 'DM Mono', monospace; font-size: 10px; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.1em; }
+  .map-hint { font-family: 'DM Mono', monospace; font-size: 10px; color: #4a5568; margin: 10px 0 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>The Signal Fantasy</h1>
+  <div class="subtitle">Career Transition Interview Prep — Full Database</div>
+</div>
+<div class="meta-bar">
+  <span class="badge" id="countBadge">loading...</span>
+  <span class="badge green">5 sessions merged</span>
+  <span class="badge">Updated Apr 25, 2026</span>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('library',this)">📚 Library</div>
+  <div class="tab" onclick="switchTab('map',this)">🗺 Competency Map</div>
+</div>
+<div id="libraryView">
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search concepts, lessons, interview answers..." oninput="render()">
+  </div>
+  <div class="filter-row">
+    <button class="fbtn active" onclick="setFilter('all',this)">All</button>
+    <button class="fbtn" onclick="setFilter('ml',this)">ML/Modeling</button>
+    <button class="fbtn" onclick="setFilter('eng',this)">Engineering</button>
+    <button class="fbtn" onclick="setFilter('prod',this)">Product</button>
+    <button class="fbtn" onclick="setFilter('biz',this)">Business</button>
+    <button class="fbtn" onclick="setFilter('comm',this)">Communication</button>
+    <button class="fbtn" onclick="setFilter('career',this)">Career/Positioning</button>
+    <button class="fbtn" onclick="setFilter('infra',this)">Infrastructure</button>
+  </div>
+  <div id="cardsGrid"></div>
+</div>
+<div id="mapView" style="display:none">
+  <div class="comp-title">VP Analytics / Director AI Strategy — Competency Coverage</div>
+  <div class="comp-grid" id="compGrid"></div>
+  <div class="map-hint" style="margin-top:14px">Click any competency to filter the library →</div>
+</div>
+<script>
+const LESSONS = [
+
+// ═══════════════════════════════════════════════════════
+// ML / MODELING
+// ═══════════════════════════════════════════════════════
+{concept:"Out-of-Sample Validation",tags:["ml"],session:"Multiple sessions",accent:"#4ade80",
+lesson:"Any model can be made to look good on the data it was trained on. The only real test is performance on data the model never saw. This is the single most credible thing you can say in an analytics interview.",
+interview:"I deliberately held out the entire 2025 season during model development. Trained on 2022–2024, then ran the model on 2025 data it had never seen. Out-of-sample accuracy: 89.4% overall, 94.1% sell high. That's the number I lead with everywhere — it's the one that can't be explained by overfitting."},
+
+{concept:"Overfitting",tags:["ml"],session:"Backtest design",accent:"#4ade80",
+lesson:"When a model performs well on historical data but fails on new data because it learned the noise rather than the signal. The most common way ML models fail in production.",
+interview:"Our original grid search tested 32,400 weight combinations on 2021–2023 data. We could have shown perfect accuracy by overfitting those weights. Instead we validated on 2025 out-of-sample data the model never saw. The 89.4% out-of-sample accuracy confirmed we captured real signal, not historical noise."},
+
+{concept:"Split Model Architecture",tags:["ml"],session:"Apr 23",accent:"#4ade80",
+lesson:"The best analytical insight often comes from questioning your own assumptions. The buy and sell sides of a prediction problem don't have to use the same model — discovering this empirically is more credible than designing it upfront.",
+interview:"My pitcher model initially used a single composite score for both buy and sell signals. Controlled backtesting revealed the two sides had fundamentally different signal architectures — the sell side needed all 8 components agreeing, the buy side was flooded with noise from components that don't predict improvement in a 3-month window. Split architecture improved overall accuracy from 82.4% to 91.1%."},
+
+{concept:"Ablation Testing",tags:["ml"],session:"Apr 23–24",accent:"#4ade80",
+lesson:"In analytics you don't just build a model — you isolate each component to measure its individual contribution before combining. Standard ML practice. Interviewers notice when candidates know it by name.",
+interview:"I used ablation testing throughout the model — testing each new signal component in isolation before integrating it. I tested chase rate, CSW%, and sprint speed independently. All three reverted, but each failure revealed a specific fixable issue: directionality, scope, and data infrastructure. That's how I knew exactly what to fix vs what to cut."},
+
+{concept:"Systematic Bias Detection",tags:["ml"],session:"Apr 23–24",accent:"#4ade80",
+lesson:"Flat population thresholds that misclassify subpopulations are one of the most common and damaging model errors. The fix is always individualization — compare each entity to itself, not to the average.",
+interview:"My model originally used a flat 36% hard hit rate threshold for all pitchers. This systematically penalized elite soft-contact pitchers like Paul Skenes whose career norm is 38.6% — above the flat threshold but below his own baseline. I replaced flat thresholds with individualized career baselines for 476 hitters and 687 pitchers."},
+
+{concept:"Feature Engineering: Individualized vs Population Averages",tags:["ml"],session:"Apr 23",accent:"#4ade80",
+lesson:"Population averages are a starting point, not a destination. The most predictive features compare entities to their own historical baseline, not to the crowd. This is the difference between right on average and right for each individual.",
+interview:"The single biggest accuracy improvement came from replacing league-average BABIP (.300) with per-player career BABIP baselines for 476 hitters. By comparing each player to themselves I eliminated a systematic bias generating false buy signals for naturally low-BABIP hitters."},
+
+{concept:"Incremental Model Improvement (Principled vs. Overfitting)",tags:["ml"],session:"v1→v4 progression",accent:"#4ade80",
+lesson:"Every model improvement should be driven by a question, not a target number. 'How do we get above 83%?' is overfitting. 'Are we correctly accounting for age-adjusted BABIP decay?' is principled. Accuracy improves as a byproduct of asking the right questions.",
+interview:"I iterated the model four times. Each version added one new layer based on a baseball insight: park factors, career BABIP baselines, age adjustment. I didn't tune to hit a number — I asked whether the underlying logic was correct. Accuracy improved from 72% to 86.1% as a result."},
+
+{concept:"Iterative Model Improvement with Documented Before/After",tags:["ml","prod"],session:"Apr 23–24",accent:"#4ade80",
+lesson:"A model that went from 82% to 91% accuracy through documented iterative steps is dramatically more impressive than one that 'just works.' The process shows analytical rigor. The documentation shows professional maturity.",
+interview:"Every model improvement is documented with before/after accuracy at each step. The pitcher model went from 82.4% to 91.1% through six discrete improvements — split architecture (+8.7pp), ERA gate (+4.1pp), CSW modifier (+0.6pp), career HH% baselines, age tier fix, and evolution detector. I can trace exactly which change produced which gain and why."},
+
+{concept:"Failure Mode Analysis",tags:["ml","prod"],session:"Apr 23",accent:"#4ade80",
+lesson:"Every gate and threshold in a production model should have a story — the specific real-world case that caused it to be added. This shows the model was built through evidence, not assumption.",
+interview:"Every qualification gate in my pitcher buy signal has a specific player that caused it. The FIP >= 1.50 gate exists because of Pivetta (FIP 1.23 over 16 IP — implausible). The ERA >= 4.00 gate for slight buy exists because elite pitchers were being flagged even though there was no room to improve. I can trace every constraint to a real failure case."},
+
+{concept:"Precision vs Recall Tradeoff",tags:["ml"],session:"Phase A results",accent:"#4ade80",
+lesson:"The fundamental tradeoff in every recommendation system. Tightening precision reduces false positives but misses real signals. Every threshold decision is a precision/recall choice.",
+interview:"When we added park factors, our Buy Low pool expanded from 34 to 101 players — recall increased dramatically. The backtest confirmed Buy Low accuracy improved from 59% to 63%, meaning we maintained precision while expanding recall. Every threshold I set is an explicit precision/recall decision."},
+
+{concept:"Ensemble Modeling / Signal Confluence",tags:["ml"],session:"RTM integration",accent:"#4ade80",
+lesson:"Diverse independent signals combined correctly almost always outperform any single signal. When two independent methods agree, combined accuracy is meaningfully higher than either alone.",
+interview:"When our luck model and regression-to-mean both point the same direction, combined accuracy jumps to 75.5% versus 59% for luck alone. We built confluence detection that boosts signal strength when both methods agree — same principle behind weather forecasting ensembles and the Netflix Prize winning solution."},
+
+{concept:"Bayesian Inference / Anchoring to Prior Knowledge",tags:["ml"],session:"Lindor/CQS design",accent:"#4ade80",
+lesson:"Strong prior evidence should anchor model outputs against small new samples. A player's career history is far more statistically meaningful than 3 weeks of April data.",
+interview:"Our Career Quality Score implements Bayesian anchoring — proven elite players can't fall below a trade value floor regardless of April noise. Lindor's 8 years of elite production anchors his value even when current metrics are suppressed. A model that ignores prior track record will always produce outputs that destroy user trust in April."},
+
+{concept:"Concept Drift / Pitcher Evolution Detection",tags:["ml"],session:"Apr 24",accent:"#4ade80",
+lesson:"Historical baselines assume the entity you're measuring is the same entity it was historically. When a pitcher develops a new pitch, the historical data becomes misleading. Detecting when this assumption fails is sophisticated ML thinking.",
+interview:"I built a pitcher evolution detector that identifies when a player's pitch mix has materially changed, invalidating their career ERA baseline. Taj Bradley: new splitter with 56% whiff rate, evolution score 4, projection moved from 4.47 to 3.77 ERA. Standard projection systems assume career data is predictive — mine detects when it isn't."},
+
+{concept:"Archetype-Aware Modeling",tags:["ml"],session:"Dustin May discussion",accent:"#4ade80",
+lesson:"A universal quality gate applied blindly across all player types will incorrectly penalize legitimate archetypes. The same metric can mean completely different things for different player types.",
+interview:"Our pitcher quality gate required 8%+ SwStr% — but Dustin May is a ground ball pitcher who generates weak contact rather than strikeouts. A 5% SwStr% is expected and sustainable for his profile, not a red flag. We added a GB% carve-out specifically for ground ball pitchers. Always check whether a threshold makes sense across all archetypes before shipping."},
+
+{concept:"Model Validity Boundaries",tags:["ml"],session:"Paredes/conversion rate",accent:"#4ade80",
+lesson:"Every model has assumptions that hold for most cases but break down for specific segments. Always ask: for which segments does our core assumption break down?",
+interview:"Our Career Quality Score assumes good Statcast metrics equal good player value — true for 85% of players. The Paredes analysis identified the 15% where this breaks: persistent underperformers whose hard contact consistently produces outs. We built a conversion rate modifier specifically for these edge cases."},
+
+{concept:"Temporal Feature Engineering",tags:["ml"],session:"Rolling window design",accent:"#4ade80",
+lesson:"Using time as a dimension in your model rather than treating all data points equally regardless of when they occurred. One of the most powerful and underused techniques in sports analytics.",
+interview:"Most baseball models treat an April plate appearance the same as a September one. We built temporal weighting — last 14 days gets 40% weight, last 15–45 days gets 35%, older data gets 25%. Recent performance is more predictive of immediate future performance."},
+
+{concept:"Feature Interaction Design",tags:["ml"],session:"Z-contact/HH% design",accent:"#4ade80",
+lesson:"Two metrics together tell a more complete story than either one alone. Understanding which features interact is as important as the features themselves.",
+interview:"Z-contact rate alone tells you a player makes contact in the zone. Hard hit rate alone tells you they make quality contact. Together they tell you whether a low BABIP is genuinely unlucky. We gate the z-contact amplifier behind hard hit rate quality to capture this interaction."},
+
+{concept:"Conditional Feature Relevance",tags:["ml"],session:"Seasonal pattern design",accent:"#4ade80",
+lesson:"Some features are only meaningful for specific segments of the population. Applying them universally adds noise — applying them conditionally adds signal.",
+interview:"Monthly performance splits are only meaningful for players with documented 3-year seasonal patterns. We built pattern validation — a player needs consistent April/May underperformance in 3 of 3 years before the seasonal modifier activates. Always ask: for which segment does this feature actually matter?"},
+
+{concept:"Contextual Signal Suppression",tags:["ml"],session:"Seasonal pattern detection",accent:"#4ade80",
+lesson:"Using historical knowledge to prevent a model from acting on signals that are real but not actionable in the current context. Separating signal validity from signal actionability.",
+interview:"A pitcher who always has a 5.00 ERA in April before going sub-2.00 in summer generates a real buy signal every April — but it's not actionable. We're building seasonal pattern detection that suppresses buy signals for confirmed slow starters until June. Signal validity vs signal actionability is one of the hardest problems in applied AI."},
+
+{concept:"Sample Size and Confidence Intervals",tags:["ml"],session:"Session 4",accent:"#4ade80",
+lesson:"Knowing when NOT to make a call is as important as knowing when to make one. A well-calibrated model knows its own uncertainty. Most junior analysts over-interpret small samples.",
+interview:"Early in the season with 10–20 plate appearances, our model produced confident verdicts that were essentially noise. I built a confidence multiplier: min(1, max(0, (PA-30)/70)). This dropped our buy-low list from 181 players to 28 high-conviction calls. The model now knows what it doesn't know — which is as important as what it does know."},
+
+{concept:"Backtesting / Empirical Weight Optimization",tags:["ml"],session:"Session 4",accent:"#4ade80",
+lesson:"The difference between a model built on assumptions and a model built on evidence is the difference between a hobby project and a production analytics system.",
+interview:"I backtested the luck model against 551 player-seasons from 2023 and 2024. Results showed r=0.506 correlation with subsequent performance (p<0.001), 71% directional accuracy on strong signals. The backtest revealed our HR/FB weight was 4x too low and xwOBA gap was the second strongest predictor we weren't using. I applied those findings to the live model, improving correlation to r=0.539."},
+
+{concept:"Rule-Based Weighted Scoring vs Traditional ML",tags:["ml","comm"],session:"Apr 24",accent:"#4ade80",
+lesson:"Being able to explain WHY your model made a specific decision is often more valuable than a black-box model with slightly higher accuracy. Explainability matters enormously in business contexts where you need to defend recommendations.",
+interview:"I built a rule-based weighted scoring system rather than a regression or neural network. I can look at any player's score and tell you exactly why it's a buy signal: BABIP .156 vs career .316, xwOBA gap +.044, plate discipline intact. A black-box model can't do that. For content where I explain every call publicly, explainability is not optional."},
+
+{concept:"Two-Test Framework for Recommendations",tags:["ml","prod"],session:"Mikolas/Luzardo",accent:"#4ade80",
+lesson:"Any recommendation engine needs to answer two distinct questions: Is the signal real? And is the action worth taking? Conflating them is how you get technically correct but useless recommendations.",
+interview:"We use a two-test framework for every buy signal. Test one: is this player unlucky based on Statcast? Test two: are they good enough that normalizing actually matters? Luzardo passes both — unlucky AND elite FIP. Mikolas passes test one but fails test two. Only players passing both tests surface as actionable recommendations."},
+
+{concept:"Streak Detection / Behavioral Finance Parallel",tags:["ml","biz"],session:"Session 4",accent:"#4ade80",
+lesson:"Identifying where emotional decision-making creates systematic mispricings is the same skill that finds alpha in financial markets, optimizes retail pricing, and identifies undervalued customer segments.",
+interview:"Fantasy managers make decisions based on recent emotional narratives — a player goes 2-for-24 and panic selling creates a buying opportunity. I'm building a streak detection layer that quantifies how much recent form has deviated from season-long expected performance — separating genuine signal from emotional noise. The identical framework applies to retail: a store having a bad week after a competitor opens is a panic sell moment, not a signal to pull investment."},
+
+{concept:"The 68% Baseline Problem",tags:["ml","biz"],session:"RTM baseline / control",accent:"#4ade80",
+lesson:"Before you can claim your model adds value, you have to know what the baseline is. 68% accuracy sounds good until you realize it's what you'd get from doing nothing sophisticated. The right comparison isn't 'is my model good?' but 'how much better than the naive approach is my model?'",
+interview:"In every analytics project, I establish the baseline first. What would happen if we did nothing sophisticated? For fantasy baseball, that's 68% — pure regression instinct. My model hits 86.1%. That 18-point gap is the return on the analytical investment. In a VP Analytics role, I'd apply that same discipline to every initiative: what's the baseline, what's the improvement, and is the improvement worth the cost?"},
+
+{concept:"Causal Attribution vs Variance Measurement",tags:["ml","eng"],session:"Phase B consistency",accent:"#4ade80",
+lesson:"Not just measuring that variance exists, but understanding WHY it exists before deciding how to penalize it. Same variance, completely different appropriate responses.",
+interview:"Our consistency score doesn't just measure year-to-year variance — it asks why the variance exists. A 24-year-old traded to a new park gets minimal penalty because the variance is explainable. A 33-year-old on the same team with the same role gets full penalty because the variance is unexplained inconsistency. Same number, completely different meaning depending on context."},
+
+// ═══════════════════════════════════════════════════════
+// ENGINEERING
+// ═══════════════════════════════════════════════════════
+{concept:"Data Leakage Prevention",tags:["eng","ml"],session:"Apr 23",accent:"#60a5fa",
+lesson:"Using outcome data to predict outcomes is one of the most subtle and damaging errors in ML. If your feature is contaminated by the thing you're trying to predict, your model will look great in testing and fail in production.",
+interview:"I identified a data leakage risk in the pitcher buy qualification gate. I was using full-season xERA as a gate for April buy signals — but full-season xERA includes May–July performance, exactly what I'm trying to predict. I rebuilt the gate using April-only xERA to ensure no future information contaminated the signal."},
+
+{concept:"Denominator Alignment",tags:["eng"],session:"Apr 24",accent:"#60a5fa",
+lesson:"The same metric computed with different denominators is not the same metric. One of the most common data pipeline bugs and one of the hardest to catch without explicit validation.",
+interview:"I discovered a critical denominator mismatch — current-season hard hit rate used all tracked exit velocities including foul balls (24.4% mean), while career baselines used fair batted ball events only (39.4% mean). The model was comparing apples to oranges on every player. I aligned both denominators, shifting the current-season mean from 24.4% to 39.4%."},
+
+{concept:"Unit / Scale Errors in Feature Engineering",tags:["eng"],session:"Apr 24",accent:"#60a5fa",
+lesson:"Silent errors are the most dangerous bugs in analytics — no crash, plausible output, wrong answer. Senior analysts build validation infrastructure, not just models.",
+interview:"I caught a formula producing K/9 values 4x too low — a unit mismatch where SwStr% was stored as a decimal but the formula assumed percentage scale. I built a 37-test validation suite to systematically catch this class of error before it reached users. Finding a bug yourself in testing is professional. A user finding it for you is not."},
+
+{concept:"Graceful Degradation",tags:["eng"],session:"Multiple sessions",accent:"#60a5fa",
+lesson:"Production systems encounter missing data constantly. A model that crashes on missing data is not production-ready. A model that falls back to reasonable defaults and flags the gap is.",
+interview:"Every component in the pipeline has a graceful fallback. When a pitcher has no career CSW% data — maybe they're a rookie — the model falls back to league average (28.7%) rather than crashing or returning null. I designed this explicitly after early versions would fail silently on missing data."},
+
+{concept:"Formula Validation / Stress Testing",tags:["eng","prod"],session:"Apr 24",accent:"#60a5fa",
+lesson:"Analytics products that go public need validation suites — automated tests that catch formula errors before users see them. Finding a bug yourself in testing is professional. A user finding it for you is not.",
+interview:"Before integrating the projection engine I built a 38-test validation suite covering every formula in the system. It caught two critical bugs: K/9 wrong constant (22.5 → 77.3) and xwOBA-to-AVG scale off (1.80 → 1.057). The suite now runs with every pipeline execution."},
+
+{concept:"Model Validation / Pressure Testing",tags:["eng","ml"],session:"Session 3",accent:"#60a5fa",
+lesson:"Anyone can build a model. Validating it against real data and documenting the results is what separates analytical work that gets trusted from analytical work that gets ignored.",
+interview:"Before relying on our derived ERA and FIP calculations, I pressure-tested them against official MLB Stats API data across 146 pitchers. FIP was accurate to within 0.123 runs on average — 95% of pitchers within 0.50. The IP discrepancy we found wasn't a formula error but a documented data lag from Baseball Savant's overnight processing — a distinction that matters enormously. I documented all of this in the project README."},
+
+{concept:"Data Pipeline Architecture (ETL)",tags:["eng"],session:"Multiple sessions",accent:"#60a5fa",
+lesson:"Understanding how data flows from source to output — fetch, process, score, display — is foundational for any data engineering or analytics engineering role. Being able to describe your pipeline clearly signals production readiness.",
+interview:"The pipeline runs in six stages: fetch (pybaseball pulls Statcast), process (per-player metrics), score (signals), project (rest-of-season), export (Excel signal board), serve (dashboard). Each stage is modular — I can rerun any single stage independently when something breaks upstream."},
+
+{concept:"Building a Data Pipeline From Scratch",tags:["eng"],session:"Sessions 1–3",accent:"#60a5fa",
+lesson:"Employers want evidence you can go from zero to working system independently. The ability to identify a problem, select tools, debug failures, and ship something real is the core skill.",
+interview:"I built a fully automated Statcast data pipeline from scratch with no prior coding experience — pulling 60,000+ rows of pitch-level data from Baseball Savant, aggregating into per-player metrics, and scoring 390 hitters and 146 pitchers on a validated luck model. The pipeline runs automatically every morning. I went from zero to production in three sessions."},
+
+{concept:"Pipeline Idempotency",tags:["eng","infra"],session:"Early sessions",accent:"#60a5fa",
+lesson:"A pipeline you can re-run safely is a pipeline you can debug, audit, and recover from. In enterprise settings this is the difference between a 30-minute incident and a 3-day incident.",
+interview:"We built our fantasy baseball pipeline to be fully idempotent — every script reads from source data and writes fresh output files on every run. When something breaks at 6AM, we fix the bug and re-run. No state management, no partial writes, no data corruption risk."},
+
+{concept:"Separation of Concerns",tags:["eng","infra"],session:"Early sessions",accent:"#60a5fa",
+lesson:"Each component of a system should do one thing and do it well. Tightly coupled systems slow down over time and make every change risky.",
+interview:"We separated data fetching, luck scoring, trade value calculation, and display into distinct scripts. Changing the scoring model doesn't touch the dashboard. Adding a new data source doesn't require touching the scoring logic. Each component is independently testable and replaceable."},
+
+{concept:"Atomic Writes and Failure Recovery",tags:["eng","infra"],session:"Pipeline reliability",accent:"#60a5fa",
+lesson:"An atomic write means the output file is only updated after ALL calculations are complete. Either succeed completely or fail completely — never partially.",
+interview:"Our pipeline builds the complete dataframe in memory, then writes it all at once. If the script crashes mid-calculation, the previous output file is untouched. When something breaks at 6AM we have valid data from the previous run while we fix the issue. Atomic writes are why our pipeline failures are recoverable in minutes rather than hours."},
+
+{concept:"Environment-Agnostic Code",tags:["eng","infra"],session:"Path resolution",accent:"#60a5fa",
+lesson:"Code should work the same whether running on your laptop, a colleague's machine, or a production server. Scripts that only work from specific directories are deployment liabilities.",
+interview:"Every script uses file to resolve paths relative to the script itself rather than the current working directory. Our 6AM Task Scheduler job runs from a system location, not our project folder — without environment-agnostic path resolution it would fail silently every morning."},
+
+{concept:"Environment Mismatch Diagnosis",tags:["eng"],session:"Apr 23",accent:"#60a5fa",
+lesson:"When code that works on your machine fails on another system, the first question is always environment differences — OS, library versions, file paths, encoding. Knowing this saves hours of debugging.",
+interview:"Early in the project a command worked on Windows but failed in the Linux environment. Rather than assuming the code was wrong, I diagnosed it as an OS-specific command and used the cross-platform equivalent. Environment first, code second — that's how I approach any 'it works on my machine' problem."},
+
+{concept:"International Data / Name Resolution",tags:["eng"],session:"Session 3",accent:"#60a5fa",
+lesson:"Real-world data is messy. Demonstrating that you encountered a data quality problem, diagnosed the root cause, and built a systematic fix signals engineering professionalism.",
+interview:"13 players — including NPB imports like Munetaka Murakami and Kazuma Okamoto — weren't resolving correctly because the Chadwick Bureau registry hadn't indexed them yet. I built a two-tier lookup: Chadwick Bureau handles 97% of players instantly, MLB Stats API as fallback for any missing IDs. Zero missing names going forward regardless of debut recency."},
+
+{concept:"Systematic Debugging / Self-Correcting Systems",tags:["eng"],session:"Session 1",accent:"#60a5fa",
+lesson:"Good engineers build systems that fail gracefully and recover automatically. The ability to read a stack trace, isolate the root cause, and fix without intervention is what separates production engineers from script writers.",
+interview:"When our pipeline hit a Unicode character Windows couldn't render, Claude Code caught the error, read the stack trace, identified the root cause, fixed the specific line, and continued — all without me doing anything. I designed the system with this in mind: every script has error handling, the batch file checks exit codes before proceeding, and logs tell you exactly which step failed and why."},
+
+{concept:"Graceful Degradation / Handling Failure",tags:["eng"],session:"Session 3",accent:"#60a5fa",
+lesson:"Professional systems assume things will break. The ability to build fallbacks — and explain why you built them — signals engineering maturity that most candidates without formal training don't demonstrate.",
+interview:"When FanGraphs blocked our data pipeline with a 403 error, I didn't stop. I systematically tried alternative sources, and when those failed too, I derived ERA, FIP, and LOB% mathematically from raw Statcast pitch data. I built a two-tier fallback system — primary source first, MLB Stats API as backup — so the pipeline never fails silently. Always design for failure, not just for success."},
+
+{concept:"Metric-Task Alignment",tags:["eng","ml"],session:"Backtest methodology",accent:"#60a5fa",
+lesson:"Your evaluation metric must actually measure what your system is trying to do. Teams build models, evaluate on convenient metrics, and ship them — only to find they don't perform as expected in production.",
+interview:"We discovered our cross-season backtest was measuring the wrong thing. Our tool generates April signals for May–August decisions within the same season. Cross-season testing adds 6–18 months of noise that doesn't exist in our actual use case. We redesigned the backtest to match the actual prediction window — within-season validation is the only honest accuracy measure for this tool."},
+
+{concept:"Feature Completeness",tags:["eng","ml"],session:"Buxton/availability",accent:"#60a5fa",
+lesson:"A single metric often doesn't fully capture the concept it claims to measure. Always ask whether the metric misses important edge cases.",
+interview:"We started with career PA as a reliability signal for trade value floors. Buxton proved it was incomplete — solid career PA but never played a full healthy season. We added availability rate (games played / games possible). The combination captured what neither alone could — reliability requires both sufficient history AND consistent availability."},
+
+{concept:"Building for Automation / Removing Yourself From the Process",tags:["eng","infra"],session:"Sessions 2–3",accent:"#60a5fa",
+lesson:"The best analytical systems run without the analyst. If the analyst has to babysit it, it's not done yet.",
+interview:"The pipeline runs every morning at 6 AM Pacific automatically. It pulls fresh Statcast data, processes 60,000+ rows, scores every hitter and pitcher, and opens a live dashboard in the browser — all without me touching anything. If something fails, dated log files tell me exactly which step broke and why. I designed it so my involvement is optional, not required."},
+
+// ═══════════════════════════════════════════════════════
+// PRODUCT
+// ═══════════════════════════════════════════════════════
+{concept:"End-to-End Validation Before Shipping",tags:["prod"],session:"Apr 24",accent:"#f87171",
+lesson:"Building something and shipping something are different steps. The validation step between them is what separates analysts who build things that work from those who build things that look like they work.",
+interview:"Before integrating the projection engine into the trade analyzer I validated it on 8 current players with known signals. Every buy low projected improvement, every sell high projected regression. I also caught the Grisham edge case — a low-average hitter whose BABIP luck signal was correctly distinguished from genuine hitting talent. His .200 AVG projection isn't a bug — his career average is .205."},
+
+{concept:"Caution Before Going Public",tags:["prod"],session:"Apr 24",accent:"#f87171",
+lesson:"The instinct to ship quickly is often wrong in analytics. A flawed public model damages credibility permanently. A well-validated model builds it permanently. Knowing when NOT to ship is as important as knowing how to ship.",
+interview:"The trade analyzer is currently Phase B — local dashboard only. Before making it public I'm running it through my own leagues, documenting edge cases, and planning a private beta with Reddit followers. The signal model went through 4 years of backtesting before I published Week 1. I'd rather be late and right than early and wrong."},
+
+{concept:"Explainable AI (XAI)",tags:["prod","comm"],session:"Simple/Advanced toggle",accent:"#f87171",
+lesson:"The ability to communicate in plain language why a model made a decision. Required by EU AI Act, financial services regulations, healthcare AI guidelines. Black box answers are red flags for both user trust and regulatory compliance.",
+interview:"Every recommendation in our dashboard has a plain English explanation — 'José's .203 BABIP is one of the worst in baseball, strong buy before the market catches on.' Users don't need to understand xwOBA gaps to act on the signal. We built a Simple View specifically so anyone can use it without analytical background."},
+
+{concept:"Progressive Disclosure",tags:["prod"],session:"Simple/Advanced toggle",accent:"#f87171",
+lesson:"The difference between a tool and a product. Show users what they need to act, hide complexity until they want it. Same data, two audiences, two surfaces.",
+interview:"We built a Simple View / Advanced View toggle. Simple View shows one action label and one plain English sentence — no metrics, no jargon. Advanced View shows all 12 columns for serious analysts. Same underlying model, completely different experience. Same principle as an executive summary vs a 40-page market analysis."},
+
+{concept:"Business Rules Layering",tags:["prod","ml"],session:"FIP floor discussion",accent:"#f87171",
+lesson:"Separating what the model knows from what the business needs. Models optimize for mathematical objectives — businesses have constraints models don't know about.",
+interview:"Our model flags Mikolas as unlucky based on ERA/FIP gap — that's mathematically correct. But a business rule says 'FIP above 5.00 means not worth rostering even if unlucky.' The model produces the signal, the business rule determines whether it surfaces. Keeping these separate means we can update either without touching the other."},
+
+{concept:"Pre-Output Quality Gates",tags:["prod"],session:"Quality gate design",accent:"#f87171",
+lesson:"A model can be technically correct but produce misleading recommendations without business context. Quality gates sit between model output and user-facing results.",
+interview:"Between our model output and user-facing recommendations we have multiple quality gates — minimum PA thresholds, FIP floors for pitchers, trade value minimums. These prevent technically correct but misleading outputs from reaching users. One Lindor-level mistake costs more trust than 20 correct calls earn."},
+
+{concept:"AI Trust Debt",tags:["prod"],session:"Lindor fix",accent:"#f87171",
+lesson:"Every bad output costs you more trust than a good output earns. The asymmetry means you have to be more conservative than raw accuracy numbers suggest.",
+interview:"When we saw Lindor showing as 'not worth a roster spot' we knew that one output would destroy credibility even if the rest of the model was perfect. We built Career Quality Score floors specifically to prevent catastrophically wrong outputs on proven elite players. Trust calibration is as important as accuracy calibration."},
+
+{concept:"Iterative Validation (Build → Preview → Approve → Write)",tags:["prod"],session:"Throughout",accent:"#f87171",
+lesson:"Never write files until output is reviewed and approved. This is how professional data engineers work — catch problems before they become permanent.",
+interview:"Every model change goes through a dry-run validation before writing any files. We review outputs against known anchor players — if Ramírez doesn't show as Buy Low or Luzardo doesn't show as Buy Low pitcher, something is wrong. We catch errors before they reach users."},
+
+{concept:"Human-in-the-Loop",tags:["prod","infra"],session:"Security discussion",accent:"#f87171",
+lesson:"A design pattern where an AI system requires explicit human confirmation before taking irreversible actions. Core AI governance principle.",
+interview:"Our pipeline uses human-in-the-loop validation at every critical step — Claude Code runs calculations and shows us the output before writing any files. Even though Claude Code built the code itself, it still pauses for human review. This is the same principle that prevents production AI systems from taking irreversible actions autonomously."},
+
+{concept:"Model Transparency as a Product Feature",tags:["prod","comm"],session:"Skenes pipeline QC",accent:"#f87171",
+lesson:"The most sophisticated models know what they're measuring, what they're not measuring, and communicate the difference clearly. Catching a pipeline artifact and explaining it publicly builds MORE trust than hiding it.",
+interview:"In CPG analytics, when a product launch had unusual week-one data due to distribution issues, we noted it in the analysis. I apply the same principle to my model — the Skenes Opening Day exclusion was a methodology note that actually made the article more credible, not less."},
+
+{concept:"Progressive Trust Building",tags:["prod","comm"],session:"Simple View design",accent:"#f87171",
+lesson:"Give users just enough evidence to feel confident in a recommendation without overwhelming them with data. One number, chosen well, does more work than ten numbers presented poorly.",
+interview:"Our Simple View shows one action label and one plain English sentence with exactly one supporting stat. 'José's .203 BABIP is one of the worst in baseball — strong buy.' That single number is the trust anchor. Research shows users act on recommendations they understand — more metrics creates paralysis, not confidence."},
+
+{concept:"Product Tiering / Commercial Roadmap",tags:["prod","biz"],session:"Apr 24",accent:"#f87171",
+lesson:"Knowing how to tier a product by user sophistication and willingness to pay is a business skill that complements technical skills. Senior analytics roles often require both.",
+interview:"I designed a three-tier commercial roadmap for the trade analyzer. Free tier: signal analysis plus projected stats — no live data needed. Mid-tier: category value weighting plus net trade score. Full paid: live league import, current standings context, full league simulation. Each tier requires progressively more infrastructure and delivers progressively more personalized value."},
+
+// ═══════════════════════════════════════════════════════
+// COMMUNICATION
+// ═══════════════════════════════════════════════════════
+{concept:"Translating Technical Concepts for Non-Technical Audiences",tags:["comm"],session:"RTM explanation",accent:"#fb923c",
+lesson:"The best technical communicators don't simplify — they find the right analogy. Your job isn't to explain the concept, it's to show where pure instinct fails and how your model fills that gap.",
+interview:"When I present to non-technical stakeholders, I don't lead with the methodology. I lead with the gap. 'Pure regression instinct is right 68% of the time. Our model is right 86.1% of the time. That 18-point gap is what this tool is worth.' I quantify the value of the upgrade in terms they already understand, then explain the mechanism only if they ask."},
+
+{concept:"Credibility Through Transparency (Publishing Miss Rate)",tags:["comm"],session:"Article methodology",accent:"#fb923c",
+lesson:"The most credible analysts publish their miss rate alongside their hit rate. A tool that claims 100% accuracy is a tool nobody believes. A tool that says '86.1% overall, here are the three ways we were wrong and why' reads as scientifically honest.",
+interview:"I publish our miss rate in every article. We missed on Lane Thomas in 2023 because he changed his swing mechanics — something luck models can't detect. I explain that limitation publicly because hiding it would be worse. In a VP Analytics role, the credibility of your models depends on your willingness to acknowledge where they fail."},
+
+{concept:"Transparent AI Communication",tags:["comm"],session:"Article writing / AI framing",accent:"#fb923c",
+lesson:"The most credible way to describe AI involvement is to be specific about what it did and what it didn't do. 'AI-powered' is marketing. 'AI accelerated the engineering while human judgment designed the analytical framework' is positioning.",
+interview:"I used AI as a force multiplier, not a replacement for thinking. Every signal in the model reflects a deliberate analytical decision I made: what is luck, what is skill, how do you separate them? AI let me build, test, and validate a seven-layer signal stack across four years of data in weeks instead of months. The thinking is human. The speed is AI. The validation is four years of data."},
+
+{concept:"Analytics Communication — Translating Model Output to Narrative",tags:["comm"],session:"Apr 24",accent:"#fb923c",
+lesson:"The most technically sophisticated model is worthless if you can't communicate its output to a non-technical audience. 'The model says X but here's the full picture' is rare and valuable.",
+interview:"Every signal has a plain-English explanation alongside the technical output. When I say Turner is a slight buy, I don't just show his luck score of +0.304. I explain: his Z-contact rate is solid (86.5%) but his hard hit metrics are down, his BABIP is below career baseline, and his SB production may taper as he ages. The model produces the signal. My job is to contextualize it honestly."},
+
+{concept:"Describing Model Architecture Without Revealing IP",tags:["comm"],session:"IP protection / article framing",accent:"#fb923c",
+lesson:"You can communicate sophistication without giving away the recipe. Describe the layers, not the weights. 'Seven layers of signal analysis' tells you the architecture is sophisticated. Publishing the exact coefficients tells you how to replicate it.",
+interview:"I designed the model to have seven layers of signal analysis — contact quality gap, defensive adjustment, contact type, plate discipline, career baseline, age curve, and seasonal patterns. I can describe what each layer does and why it matters without publishing the exact coefficients. In a VP Analytics role, protecting proprietary methodology while communicating its value to stakeholders is a core skill."},
+
+{concept:"Fact-Checking Before Publishing",tags:["comm"],session:"Subtitle QC / article process",accent:"#fb923c",
+lesson:"The numbers that are wrong are always the ones that sound most impressive. Catching them before social promotion matters infinitely more than catching them after.",
+interview:"I have a QC pass built into every article before I publish: cross-reference every number against the source. The subtitle had 94.8% when the validated number was 94.1% — a small difference, but in an analytics product built on credibility, accuracy is everything. I treat published numbers the same way I'd treat numbers in a board presentation."},
+
+// ═══════════════════════════════════════════════════════
+// BUSINESS
+// ═══════════════════════════════════════════════════════
+{concept:"Building a Public Track Record",tags:["biz","comm"],session:"Apr 22–23 — Launch day",accent:"#c084fc",
+lesson:"In analytics, talk is cheap. A public track record with a timestamp is the most credible portfolio artifact you can have. Every week you're right in public is evidence that compounds. Every week you're wrong is accountability you chose.",
+interview:"I time-stamped my first article on April 22, 2026 with live calls. Every player is named, every signal is documented. By September, the track record is either real or it isn't. This is exactly how I'd present analytical work to a board — not as projections you can hedge later, but as falsifiable predictions you're willing to be held to."},
+
+{concept:"Commercial Monetization Strategy",tags:["biz"],session:"Substack pricing / roadmap",accent:"#c084fc",
+lesson:"Build the audience before you charge for it. The free tier establishes trust, demonstrates the model, and creates the subscriber base that converts to paid. Activating paid tiers before you have an audience is the most common mistake in content analytics businesses.",
+interview:"I designed the monetization roadmap the same way I'd design a market entry strategy: establish credibility with a free product, build the audience to 200–500 subscribers, then introduce a paid tier at a price point that feels obvious given the demonstrated value. This mirrors how analytics tools scale in B2B — start with a free proof-of-concept, expand when the ROI is visible."},
+
+{concept:"The Signal vs. Noise Business Case",tags:["biz"],session:"RTM baseline comparison",accent:"#c084fc",
+lesson:"Pure regression to the mean gets you 68% accuracy. Differentiated signal analysis gets you 86.1%. The 18-point gap between instinct and model is the quantified value of analytical rigor — and the core business case for any analytics function.",
+interview:"One of the first things I'd establish in a VP Analytics role is the baseline. What does the company decide now based on instinct? What's the implied accuracy rate? Then I'd show how structured analytical frameworks improve on that baseline — with data, not slides. The 18-point gap in my model is a tangible proof of concept for that exact value proposition."},
+
+{concept:"Data Moats",tags:["biz"],session:"Commercialization discussion",accent:"#c084fc",
+lesson:"Proprietary data is the most defensible competitive advantage in AI. The backtest validation and 4-year historical luck scores are a form of data moat — not just an algorithm anyone can copy.",
+interview:"Our model's backtest validation across 506 player-seasons is a data asset competitors can't easily replicate. The historical luck scores, career baseline calculations, and conversion rate modifiers represent years of accumulated signal. When evaluating AI investments I always ask: what's the data moat? An algorithm without proprietary data is easily displaced."},
+
+{concept:"The Slight Signal Advantage",tags:["biz"],session:"Slight signals intro",accent:"#c084fc",
+lesson:"In any competitive market, the obvious opportunities are already priced in. The real edge lives in signals that are real but not obvious — slight buys and slight sells that sophisticated market participants haven't yet acted on. True in fantasy baseball, capital markets, and product analytics.",
+interview:"My model generates four signal tiers. The strong buy/sell signals have 94% accuracy — but in a competitive league, everyone sees those. The slight signals — 74–85% accurate — are where the edge actually lives, because the market hasn't priced them in yet. Obvious signals get arbitraged away. Subtle, multi-layer signals persist."},
+
+{concept:"Audience-Specific Product Design",tags:["biz","prod"],session:"Slight signals / audience segmentation",accent:"#c084fc",
+lesson:"The same underlying data tells different stories to different audiences. Building a product that serves both — and communicating the right message to each — is audience segmentation applied to analytics.",
+interview:"In CPG, we built different reporting views for different stakeholders — operations gets supply chain metrics, marketing gets consumer sentiment, finance gets margin analysis. Same thinking for The Signal Fantasy: main article features high-conviction calls for broad audiences, the slight signal tier serves sophisticated managers in competitive leagues. Same data, different product surfaces."},
+
+{concept:"Regression to the Mean as a Business Concept",tags:["biz"],session:"RTM / cross-domain application",accent:"#c084fc",
+lesson:"RTM isn't just a baseball concept — it's the foundational insight behind any reversion-based strategy in business. High-performing quarters revert. Strong product launches fade. The model that identifies WHICH outliers are luck vs. real creates lasting competitive advantage.",
+interview:"The Signal Fantasy model is built on a core insight: extreme short-term performance in either direction tends to revert toward true talent. That applies directly to CPG — a product that over-indexes on promotion dollars will revert when the promotion ends. A product with genuine shelf velocity growth won't. Separating signal from noise is the same analytical challenge, different domain."},
+
+{concept:"Build vs Buy vs Partner",tags:["biz","infra"],session:"Commercialization / MCP discussion",accent:"#c084fc",
+lesson:"The strategic framework for deciding when to build AI internally versus use vendors. Custom connectors vs MCP standardization is a small-scale version of this decision every enterprise faces.",
+interview:"Every connector in our pipeline is custom-built — we control everything but maintain everything. At commercial scale the question becomes: should we build proprietary connectors or adopt MCP standards? Custom gives control, standards give speed and ecosystem access. The answer depends on whether our data processing is a core competency or just infrastructure."},
+
+// ═══════════════════════════════════════════════════════
+// CAREER & POSITIONING
+// ═══════════════════════════════════════════════════════
+{concept:"Portfolio Project as Interview Evidence",tags:["career"],session:"Career discussion",accent:"#2dd4bf",
+lesson:"A portfolio project you can demo — with live data, a public track record, validated accuracy numbers, and real users — is worth ten times more in a tech interview than a description of work you did at a previous company. The project IS the interview.",
+interview:"I can show you the dashboard running live. I can show you the backtest results across four years. I can show you the published article with timestamped predictions. I can show you the methodology behind every number. This project demonstrates Python, data pipeline engineering, ML model design, backtesting, statistical validation, product development, and content creation — all in one artifact I built from scratch."},
+
+{concept:"The Transition Narrative",tags:["career"],session:"Resume review",accent:"#2dd4bf",
+lesson:"The story of why you're making this transition needs to be authentic, forward-looking, and positioned as addition not subtraction. You're not leaving CPG because you failed — you're expanding your capability set because you identified a gap between your analytical instincts and your technical execution ability.",
+interview:"I've spent 15 years solving complex operational and commercial problems with data. I've built AI-driven execution models projecting $100M+ in value, led transformation programs across national operations, and managed P&L at scale. Over the past several months I've been deepening my technical foundation — building automated Statcast data pipelines, predictive models validated against historical outcomes, and live analytics dashboards from scratch — to complement my business experience with hands-on engineering capability."},
+
+{concept:"The Reckitt AI Execution Model as Primary Hook",tags:["career"],session:"Career discussion",accent:"#2dd4bf",
+lesson:"You already have a production AI deployment story worth $29M in year one projecting $100M+. This is your primary hook in every tech conversation. Lead with Reckitt, use fantasy baseball as the proof of technical depth.",
+interview:"At Reckitt I'm the national execution lead for an AI-driven sales execution model that uses predictive analytics to identify highest-value retail execution opportunities and streamline resource allocation across the US landscape. The program delivered $29M in revenue in year one and is projecting $100M+ over five years. That experience — taking an AI concept from pilot to national implementation — is what drove me to deepen my technical foundation so I can contribute at the engineering level, not just the strategy level."},
+
+{concept:"P&L Ownership as a Technical Differentiator",tags:["career"],session:"Resume review",accent:"#2dd4bf",
+lesson:"Most data scientists and engineers have never owned a P&L. Your experience running a $110M revenue operation, managing $9M+ budgets, and leading $4M vendor contracts gives you commercial credibility that tech candidates lack. Frame this as a feature, not a bug.",
+interview:"I've spent 15 years making data-driven decisions with real financial consequences — not just recommending actions but owning the outcomes. At Golden West I grew profitability over 100% in year one through data-based prioritization. At Pepsi I led a VP-sponsored transformation program that delivered quantified efficiency improvements. The fantasy baseball project proves I can build the technical systems — the CPG background proves I can translate those systems into business outcomes."},
+
+{concept:"Target Role Positioning (VP Direct)",tags:["career"],session:"Compensation and positioning",accent:"#2dd4bf",
+lesson:"At $257K total comp you should target VP-level directly, not step backward to Senior Manager to 'break into tech.' Your commercial experience and the Reckitt AI execution model already justify VP-level targeting with the right framing.",
+interview:"When asked 'why should we hire you over someone with a CS degree?' — A CS graduate knows how to build systems. I know which systems are worth building and why, and I can build them too. At Reckitt I translated an AI concept into a $29M revenue program. The fantasy baseball project proves I can independently build and validate a sophisticated analytics system from scratch. The combination of commercial judgment and technical execution is rarer than either alone."},
+
+{concept:"Domain Expertise + Technical Execution",tags:["career"],session:"Sessions 3–4",accent:"#2dd4bf",
+lesson:"The most valuable people in analytics aren't the best coders or the best business people — they're the ones who can do both. Your CPG background isn't a liability in a tech interview, it's a differentiator. Lead with the business problem you solved, then explain the technical approach.",
+interview:"I applied the same analytical framework I use in CPG commercial strategy — identifying where results don't match underlying quality, quantifying the gap, and making asset allocation decisions based on expected value rather than recent performance. In CPG that means finding undervalued accounts or SKUs. In fantasy baseball that means finding players whose contact quality outperforms their results. The tools are different, the problem-solving pattern is identical."},
+
+{concept:"The Military Background as Differentiator",tags:["career"],session:"Resume review",accent:"#2dd4bf",
+lesson:"Air Force Academy, NRO mission-critical operations, 24/7 decision-making under pressure — this is genuinely rare and valued in tech, especially defense-adjacent companies, government tech, and any organization that values discipline and systems thinking.",
+interview:"I spent four years at the Air Force Academy and led 24/7 mission-critical operations at the National Reconnaissance Operations Center, delivering intelligence briefings that shaped the priorities of the NRO Director. That background gave me a specific kind of analytical discipline — making confident decisions under time pressure with incomplete information, and building systems that can't fail. I bring that same standard to data systems and commercial analytics."},
+
+{concept:"The Confidence Multiplier as a Career Metaphor",tags:["career"],session:"Session 4",accent:"#2dd4bf",
+lesson:"Making strong calls only when you have enough data, staying neutral when you don't — is a powerful answer to 'how do you handle ambiguity?' Most people either over-commit to weak signals or refuse to make calls at all.",
+interview:"I built a system that literally quantifies how confident it should be based on available evidence. Below 30 plate appearances it says 'not enough data, stay neutral.' At 100 plate appearances it makes full-conviction calls. I apply the same framework in business decisions — I'll make a directional recommendation with 30% confidence and label it as such, but I won't present a weak signal as a strong conviction. Knowing the difference between 'the data suggests' and 'the data proves' is one of the most valuable analytical skills I've developed."},
+
+{concept:"GitHub as Portfolio",tags:["career"],session:"Career discussion — next steps",accent:"#2dd4bf",
+lesson:"Every tech employer will ask to see your work. A well-documented public GitHub repository with a validated analytics pipeline is worth more than a certificate for demonstrating technical credibility to a hiring manager.",
+interview:"The fantasy baseball project is on GitHub — documented README, validated backtest results, modular pipeline architecture. It's the concrete artifact that backs every claim I make in an interview about Python, ML model design, and data pipeline engineering. If I say I built something, I can show it."},
+
+{concept:"Naming / Branding as Systems Thinking",tags:["career","biz"],session:"Brand naming / TheSignalFantasy decision",accent:"#2dd4bf",
+lesson:"Your brand name is an infrastructure decision, not a marketing decision. Once you've built followers and embedded the name in content, changing it has real cost. The right time to think about scalability is before you launch.",
+interview:"The brand decision for The Signal Fantasy was an exercise in systems thinking. I needed a name that scales from baseball to football to basketball, doesn't conflict with existing trademarks, is available across all platforms, and is short enough to work as a social handle. That's the same process I'd use naming an analytics product line — technical constraints, market positioning, and brand architecture all evaluated before the first decision is locked in."},
+
+// ═══════════════════════════════════════════════════════
+// INFRASTRUCTURE & AI SYSTEMS
+// ═══════════════════════════════════════════════════════
+{concept:"MCP (Model Context Protocol)",tags:["infra"],session:"MCP deep dive",accent:"#fbbf24",
+lesson:"A standardized way for AI models to connect to external tools and data sources. The USB standard for AI tool connections — build the connection once and any MCP-compatible AI can use it. Custom connectors are technical debt.",
+interview:"We built custom connectors to six different data sources — Baseball Savant, MLB Stats API, CBS Sports, Chadwick Bureau, FanGraphs, and Anthropic API. Each required custom code to fetch, standardize, and feed into the pipeline. In an enterprise setting with 50 data sources, MCP standardization eliminates this custom connector work. When evaluating AI vendors I always ask: which integrations are MCP-standardized versus custom-built?"},
+
+{concept:"Secrets Management",tags:["infra"],session:"API key / .env file discussion",accent:"#fbbf24",
+lesson:"Never hardcode API credentials. For personal projects: environment variables and .env files. For production: dedicated secrets managers (AWS Secrets Manager, Azure Key Vault) with audit logging and automatic rotation.",
+interview:"When we built the AI narrative generation feature we stored the Anthropic API key in a .env file excluded from version control. In a production system with 50,000 users we'd use AWS Secrets Manager — centralized storage, role-based access control, full audit trail, automatic rotation. Secret sprawl is one of the most common and preventable security vulnerabilities in AI systems."},
+
+{concept:"Separate Billing Systems in AI Products",tags:["infra"],session:"API credits discussion",accent:"#fbbf24",
+lesson:"Consumer AI products and developer API access are separate billing systems even from the same vendor. Always clarify which product line you're purchasing when negotiating AI vendor contracts.",
+interview:"Claude.ai subscription and Anthropic API access are completely separate billing systems — one doesn't fund the other. This is product line segmentation: consumer flat-rate subscription versus developer pay-per-token API. When negotiating enterprise AI contracts always verify which product tier covers which use cases. A team with Pro subscriptions doesn't automatically have API access for their production systems."},
+
+{concept:"Naming Conventions as Standards",tags:["infra"],session:"API key naming discussion",accent:"#fbbf24",
+lesson:"Agreed-upon naming standards allow tools, SDKs, and scripts to find what they need without custom configuration. Breaking conventions means every tool that follows the standard stops working.",
+interview:"When setting up API credentials we used the standard ANTHROPIC_API_KEY environment variable name rather than a custom name. Every Anthropic SDK, every tool, every deployment platform expects that specific name. Naming conventions are micro-scale standards — same principle as MCP at macro scale. Breaking standards creates integration debt that compounds over time."},
+
+{concept:"Documentation as a Professional Practice",tags:["infra"],session:"Sessions 1–3",accent:"#fbbf24",
+lesson:"Most hobby coders don't document. Writing a README that lets someone else — or a future version of yourself — understand, run, and extend your work is a professional engineering practice that signals you've worked at scale.",
+interview:"Every session I updated a README.md documenting what each script does, what the inputs and outputs are, what the known limitations are, and what the next steps are. When I return to the project after time away, Claude Code reads the README and gets fully oriented in seconds — no re-explaining needed. That's the same discipline I'd apply to any production system where other people need to maintain or extend the work."},
+
+{concept:"Instrumentation Design",tags:["infra","ml"],session:"Z-contact / hard hit rate discussion",accent:"#fbbf24",
+lesson:"Defining what you measure and how before building the model. Most teams measure what's easy rather than what's meaningful.",
+interview:"When someone suggested using login frequency as a reliability signal for a SaaS churn model, I'd ask: what were they doing when they logged in? High logins plus high support tickets equals frustrated customer about to churn — same metric, completely opposite meaning. Instrumentation design is asking whether we're measuring the right thing before building anything."},
+
+{concept:"The xwOBA Gap as a Business Intelligence Analogy",tags:["infra","biz"],session:"Session 4",accent:"#fbbf24",
+lesson:"Expected vs actual performance gaps are universal in business analytics. The xwOBA gap is the same concept as comparing a sales rep's pipeline conversion rate to their expected conversion rate — the gap between what they deserved and what they got.",
+interview:"The xwOBA gap measures how much better a player's contact quality is than their actual results. I use the exact same framework in CPG — comparing a retail account's actual performance to its modeled potential based on demographics, traffic, and competitive context. A store underperforming its model is a buy-low opportunity. A store overperforming is a sell-high risk. The math is different but the analytical instinct is identical."},
+
+// ═══════════════════════════════════════════════════════
+// APRIL 26-28, 2026 — SESSION 7 ADDITIONS
+// ═══════════════════════════════════════════════════════
+
+{concept:"Model Silence as Signal",tags:["ml","prod"],session:"Apr 26-28 S7",accent:"#4ade80",
+lesson:"When a high-pedigree player is underperforming and the luck model finds no random explanation, that absence of signal is itself meaningful information. The model is saying: this struggle may be real, not random. Conversely, when a surprise performer shows no regression signal, the breakout may be genuine. The absence of a signal is a signal.",
+interview:"We built a Worry Index layer that flags players where model silence is the most important output. A preseason top-50 player posting wOBA 40+ points below their 3-year xwOBA baseline with no luck signal detected gets a concern flag: the model doesn't see luck as the explanation. A surprise performer with no regression signal gets a breakout flag. Pete Crow-Armstrong in April 2026 was the prototype case — OF45 YTD, OF10 ROS projection, luck score -0.133. The model correctly stayed silent. The recovery thesis requires belief, not data. That distinction is what separates honest analysis from wishful thinking."},
+
+{concept:"Temporal Validity of Model Signals",tags:["ml"],session:"Apr 26-28 S7",accent:"#4ade80",
+lesson:"A model validated on one time window does not automatically produce reliable signals in a different time window. April signals validated against May-August outcomes are a different analytical claim than May rolling signals validated against June-August outcomes. Never present signals from different time windows with equal authority.",
+interview:"Our April signal framework was validated on four years of data — 86.1% training accuracy, 89.7% out-of-sample. When expanding to in-season rolling signals in May and June, we explicitly treated it as a separate unvalidated hypothesis rather than assuming the April results transferred. We published in-season observations as a watch list, clearly labeled Track 2, rather than making authoritative calls. That discipline protected our published accuracy track record while we gathered evidence for the expanded framework. 2026 is our first data collection year for Track 2 validation."},
+
+{concept:"Content Flywheel Architecture",tags:["prod","biz"],session:"Apr 26-28 S7",accent:"#4ade80",
+lesson:"A content flywheel is when each piece of content creates the audience and context for the next piece. April calls create the watch list. The watch list creates the Big Board. The Big Board creates the accountability audit. The audit creates the paid subscriber base. Each piece feeds the next — subscribers don't just read, they follow a story arc across the entire season.",
+interview:"We designed the publishing calendar so each content piece feeds the next: April signals establish the calls, the weekly tracker shows them normalizing in real time, the April Big Board at month-end consolidates everything into the definitive trade reference, and the midseason accountability audit in July publishes the track record publicly. By August we have a full public track record built one week at a time. Readers come back each week specifically to check their players — that's the engagement loop that converts casual readers to paid subscribers."},
+
+{concept:"Financial Motivation Score vs Binary Classification",tags:["ml","biz"],session:"Apr 26-28 S7",accent:"#4ade80",
+lesson:"Binary classifications (contract year: yes/no) miss the mechanism. The real variable is financial security gap — how much money is this player playing for right now? A top-20 player in the last year of a strong deal has near-zero marginal motivation. A 26-year-old on a $720K pre-arb deal approaching a $25M/year payday has maximum motivation. Same contract year status, completely different incentive structures.",
+interview:"We initially modeled contract year as a binary flag. But a top-20 player in the last year of a $30M deal is already guaranteed a massive next contract — the marginal value of one more great season is near zero. Meanwhile a 26-year-old making $720K with top-20 talent has enormous financial motivation. We replaced the binary flag with a five-cohort financial motivation framework: Generational Payday Window, Prove-It, Already Secured, Post-Prime, and Comfortable Mid-Contract. The cohort determines direction and magnitude of any model modifier, not just whether a flag fires."},
+
+{concept:"Two-Path Luck Normalization",tags:["ml","prod"],session:"Apr 26-28 S7",accent:"#4ade80",
+lesson:"A declining sell-high luck score can mean two completely opposite things: results are regressing as predicted, OR contact quality is improving and the player is genuinely getting better. Both produce identical score movement. Only tracking wOBA and xwOBA separately reveals which mechanism is operating. A model monitoring system that tracks the score without the mechanism is a vanity dashboard, not a diagnostic tool.",
+interview:"We initially designed our call tracker to monitor luck score movement week over week. A stress test revealed the flaw: Oneil Cruz declining from -0.408 to -0.201 could mean his results were regressing as predicted, OR his xwOBA was climbing and he was genuinely improving — identical luck score movement, opposite meanings for the trade decision. We redesigned the tracker to classify mechanism independently: results_declining vs contact_improving for sell calls, results_improving vs contact_deteriorating for buy calls. Each gets a different status and story sentence. That distinction is what separates a model monitoring system from a scoreboard."},
+
+// ═══════════════════════════════════════════════════════
+// APRIL 25, 2026 — SESSION 5 ADDITIONS
+// ═══════════════════════════════════════════════════════
+
+{concept:"Sensitivity Analysis",tags:["ml"],session:"Apr 25",accent:"#4ade80",
+lesson:"Systematic parameter testing is how you know your model thresholds are optimal rather than arbitrary. Vary one parameter at a time, hold all others constant, measure both signal count AND accuracy, and use out-of-sample data as the guard rail. If a parameter change improves in-sample but hurts out-of-sample, it's overfitting — revert it.",
+interview:"I ran a formal sensitivity analysis on all 11 threshold parameters in the model — ERA floors, FIP ceilings, SwStr% minimums, luck score band edges. Tested each independently across 2022-2025 data with 2025 held as the out-of-sample guard rail. Result: only one parameter warranted change — the Buy Low ERA floor from 3.50 to 3.75, which added +7.3pp on 2025 out-of-sample accuracy. Everything else was already optimal. That's the right answer from a sensitivity analysis — not 'everything needs tuning,' but 'here's the one thing that actually matters.'"},
+
+{concept:"Measurement Validity",tags:["ml","eng"],session:"Apr 25",accent:"#4ade80",
+lesson:"When a new evaluation returns worse numbers than the original, always check the measurement methodology before concluding the model regressed. The model and the evaluation script are two separate things — one can be correct while the other is wrong. The instinct to immediately fix the model is almost always premature.",
+interview:"I built a new backtest script to validate the production model and it returned 68% accuracy on pitcher buy signals — down from 82%. Before changing anything I diagnosed the evaluation methodology. The new script calculated xERA from contact-only plate appearances, excluding strikeouts. For a high-strikeout pitcher like Eovaldi, this inflated xERA from 2.22 to 4.51 — just enough to trigger a conflict gate and incorrectly block the buy signal. The model hadn't changed at all. Same principle applies in any analytics role: when numbers look wrong, audit the measurement before auditing the model."},
+
+{concept:"Build Order Discipline",tags:["ml","eng"],session:"Apr 25",accent:"#4ade80",
+lesson:"When adding multiple new variables to a model, always add them individually and backtest each in isolation. If you add three variables simultaneously and accuracy improves 3pp, you cannot attribute the gain — you don't know which variable contributed what, and you can't remove a variable that's hurting you because you don't know which one it is. This is ablation logic applied to the build process, not just the validation.",
+interview:"When we identified three new signal variables to add — pitch mix evolution, K% trend, and pull rate trend — the temptation was to build all three and run one big backtest. Instead I sequenced them: pitch mix first (pitcher side, completely separate infrastructure), K% trend second, pull rate third with ablation confirming both hitter variables contribute independently. Each variable gets its own before/after backtest so I know exactly what it contributed. That's how you build a model you can explain and defend."},
+
+{concept:"Signal vs Stats Impact — Dual Evaluation",tags:["ml","prod"],session:"Apr 25",accent:"#4ade80",
+lesson:"A new model variable can have modest impact on the luck signal but large impact on the trade tool if it changes projected counting stats meaningfully. Always evaluate new variables on two dimensions separately: how much does it move the luck score, and how much does it change the projected stats that drive trade value rankings. The second dimension is often larger and more actionable.",
+interview:"When evaluating pitch mix evolution as a new variable, the luck signal impact was Medium-High — useful but not dramatic. The expected stats impact was High. A 2pp improvement in SwStr% from a new pitch type translates to approximately 1.5 K/9 projected, which over 100 remaining IP means 17 more projected strikeouts. That directly changes a pitcher's trade value ranking. Evaluating new variables only on signal accuracy misses half the value they provide to downstream tools."},
+
+{concept:"Trade Tool Architecture — Signals Inform Stats, Not Verdicts",tags:["prod","eng"],session:"Apr 25",accent:"#f87171",
+lesson:"In a multi-layer analytics product, signals should influence the layer they belong to and nothing else. A luck signal belongs in the projection layer — it adjusts expected stats. It does not belong in the verdict layer, which should compare total projected value on each side. Letting signals directly influence verdicts creates circular logic and produces results that fail the domain expertise smell test.",
+interview:"We discovered the trade tool was returning 'Favorable' for trading Paul Skenes — the best pitcher in baseball — for Ben Rice. The bug was architectural: the Slight Sell label on Skenes was directly suppressing his trade verdict, independent of his projected ERA 1.50 and 197 strikeouts. The fix was conceptual before it was technical: signals inform projected stats only. The trade verdict is pure projected value comparison — Side A total vs Side B total. The signal badge displays as information for the user but never independently weights the verdict. Think of it as two separate tools sharing data: Tool 1 generates luck-adjusted projections, Tool 2 compares total value. Tool 2 doesn't know or care about signals."},
+
+{concept:"Recovery Path Thinking",tags:["career","eng"],session:"Apr 25",accent:"#2dd4bf",
+lesson:"Before making any significant change to a production system, know your path back. Documented baselines, archived scripts, validated accuracy numbers, timestamped outputs — these aren't just good practice, they're what separates a recoverable mistake from a catastrophic one. The most experienced engineers aren't the ones who never break things; they're the ones who can always recover.",
+interview:"Throughout the model development I maintained archived backtest scripts, row-level audit CSVs, and documented accuracy baselines at each version. When a new evaluation script returned unexpectedly low accuracy numbers, I had a clear diagnostic path: compare to the archived script, identify the methodology difference, confirm the production files were untouched. The resolution took 20 minutes instead of hours because the recovery path was already built. I apply the same thinking to any system change — before I modify anything, I know exactly how to get back to where I started."},
+
+{concept:"Documentation Drift — Single Source of Truth",tags:["eng","infra"],session:"Apr 25",accent:"#fbbf24",
+lesson:"In any project that evolves across multiple sessions or contributors, documentation drift is inevitable unless you enforce a single source of truth with a disciplined update process. Multiple 'current' documents with similar names are worse than no documentation — they create false confidence while providing stale information. The discipline isn't writing good documentation once; it's overwriting it correctly every time.",
+interview:"Across five development sessions, the project accumulated three versions of the handoff document — thread_handoff.md, thread_handoff_updated.md, and new_thread_starter.md — each with slightly different accuracy numbers and status updates. A new Claude Code session read the stale version and made recommendations based on outdated model state. The fix was structural: one file, one name, mandatory overwrite at session end, no suffix variants ever. Same principle applies to any analytics team: data dictionaries, model cards, and documentation standards mean nothing if the update process isn't enforced."},
+
+];
+
+const TAG_META={ml:{label:"ML/Modeling",cls:"tag-ml"},eng:{label:"Engineering",cls:"tag-eng"},biz:{label:"Business",cls:"tag-biz"},comm:{label:"Communication",cls:"tag-comm"},prod:{label:"Product",cls:"tag-prod"},career:{label:"Career",cls:"tag-career"},infra:{label:"Infrastructure",cls:"tag-infra"}};
+const COMPETENCIES=[{key:"ml",label:"ML Depth",desc:"Modeling, validation, feature engineering"},{key:"eng",label:"Engineering",desc:"Pipelines, data quality, debugging"},{key:"prod",label:"Product",desc:"Shipping discipline, user trust"},{key:"biz",label:"Business",desc:"Strategy, monetization, competitive"},{key:"comm",label:"Communication",desc:"Stakeholder, narrative, transparency"},{key:"career",label:"Career Story",desc:"Positioning, transition, evidence"},{key:"infra",label:"Infrastructure",desc:"Systems, automation, AI tooling"}];
+let activeFilter='all',expandedIndex=null;
+function switchTab(tab,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('libraryView').style.display=tab==='library'?'block':'none';document.getElementById('mapView').style.display=tab==='map'?'block':'none';if(tab==='map')renderMap();}
+function renderMap(){const grid=document.getElementById('compGrid');grid.innerHTML=COMPETENCIES.map(c=>{const count=LESSONS.filter(l=>l.tags.includes(c.key)).length;return`<div class="comp-item" onclick="jumpToFilter('${c.key}')"><div class="comp-label">${c.label}</div><div class="comp-count">${count}</div><div class="comp-desc">${c.desc}</div></div>`;}).join('');}
+function jumpToFilter(key){switchTab('library',document.querySelectorAll('.tab')[0]);activeFilter=key;document.querySelectorAll('.fbtn').forEach(b=>{b.classList.toggle('active',b.textContent.toLowerCase().replace('/','').includes(key)||(key==='all'&&b.textContent==='All'));});render();}
+function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');expandedIndex=null;render();}
+function toggleCard(i){expandedIndex=expandedIndex===i?null:i;render();}
+function render(){const q=document.getElementById('searchInput').value.toLowerCase();const grid=document.getElementById('cardsGrid');const filtered=LESSONS.filter(l=>{const mf=activeFilter==='all'||l.tags.includes(activeFilter);const ms=!q||[l.concept,l.lesson,l.interview,l.session].join(' ').toLowerCase().includes(q);return mf&&ms;});document.getElementById('countBadge').textContent=filtered.length+' concept'+(filtered.length!==1?'s':'');if(filtered.length===0){grid.innerHTML='<div class="no-results">No matches found.</div>';return;}
+const groups={};const go=['ml','eng','prod','biz','comm','career','infra'];go.forEach(g=>groups[g]=[]);filtered.forEach(l=>{const pt=l.tags[0];if(groups[pt])groups[pt].push(l);else groups['infra'].push(l);});const gl={ml:'ML / Modeling',eng:'Engineering',prod:'Product',biz:'Business',comm:'Communication',career:'Career & Positioning',infra:'Infrastructure & AI Systems'};let html='';go.forEach(g=>{if(!groups[g].length)return;html+=`<div class="section-header">${gl[g]} (${groups[g].length})</div>`;groups[g].forEach(l=>{const oi=LESSONS.indexOf(l);const ie=expandedIndex===oi;const th=l.tags.map(t=>`<span class="tag ${TAG_META[t].cls}">${TAG_META[t].label}</span>`).join('');html+=`<div class="card ${ie?'expanded':''}" style="--accent:${l.accent}" onclick="toggleCard(${oi})"><div class="card-header"><div><div class="concept-name">${l.concept}</div><div class="tag-row">${th}</div></div><div style="display:flex;align-items:flex-start;gap:8px;flex-shrink:0"><span class="session-lbl">${l.session}</span><span class="chevron">▾</span></div></div><div class="preview">${l.lesson}</div><div class="expanded-body"><div class="slbl">The Career Lesson</div><div class="lesson-text">${l.lesson}</div><div class="slbl">Interview Answer (using this project)</div><div class="interview-box">"${l.interview}"</div></div></div>`;});});grid.innerHTML=html;}
+render();
+</script>
+</body>
+</html>

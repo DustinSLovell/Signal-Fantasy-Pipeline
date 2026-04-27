@@ -1,0 +1,5813 @@
+{
+  "434378": {
+    "name": "Verlander, Justin",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.453,
+      "SL": 0.233
+    },
+    "career_swstr": {
+      "FF": 0.188,
+      "SL": 0.317
+    },
+    "career_swstr_overall": 0.1863,
+    "career_primary_velo": 94.18,
+    "n_seasons": 4,
+    "career_pitches": 1789
+  },
+  "445276": {
+    "name": "Jansen, Kenley",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.814
+    },
+    "career_swstr": {
+      "FC": 0.252
+    },
+    "career_swstr_overall": 0.2754,
+    "career_primary_velo": 94.0,
+    "n_seasons": 3,
+    "career_pitches": 707
+  },
+  "450203": {
+    "name": "Morton, Charlie",
+    "career_pitch_types": [
+      "CU",
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "CU": 0.383,
+      "FF": 0.276,
+      "SI": 0.151
+    },
+    "career_swstr": {
+      "CU": 0.379,
+      "FF": 0.212,
+      "SI": 0.145
+    },
+    "career_swstr_overall": 0.2081,
+    "career_primary_velo": 94.52,
+    "n_seasons": 4,
+    "career_pitches": 2063
+  },
+  "453286": {
+    "name": "Scherzer, Max",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.485
+    },
+    "career_swstr": {
+      "FF": 0.189
+    },
+    "career_swstr_overall": 0.2233,
+    "career_primary_velo": 93.45,
+    "n_seasons": 4,
+    "career_pitches": 674
+  },
+  "472610": {
+    "name": "García, Luis",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.421
+    },
+    "career_swstr": {
+      "SI": 0.14
+    },
+    "career_swstr_overall": 0.1395,
+    "career_primary_velo": 96.87,
+    "n_seasons": 3,
+    "career_pitches": 377
+  },
+  "477132": {
+    "name": "Kershaw, Clayton",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.414,
+      "FF": 0.346
+    },
+    "career_swstr": {
+      "SL": 0.272,
+      "FF": 0.07
+    },
+    "career_swstr_overall": 0.0912,
+    "career_primary_velo": 90.13,
+    "n_seasons": 3,
+    "career_pitches": 1344
+  },
+  "500779": {
+    "name": "Quintana, Jose",
+    "career_pitch_types": [
+      "SI",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.438,
+      "CH": 0.222
+    },
+    "career_swstr": {
+      "SI": 0.122,
+      "CH": 0.202
+    },
+    "career_swstr_overall": 0.2086,
+    "career_primary_velo": 90.62,
+    "n_seasons": 4,
+    "career_pitches": 1435
+  },
+  "518585": {
+    "name": "Cruz, Fernando",
+    "career_pitch_types": [
+      "FS"
+    ],
+    "career_usage": {
+      "FS": 0.605
+    },
+    "career_swstr": {
+      "FS": 0.566
+    },
+    "career_swstr_overall": 0.1559,
+    "career_primary_velo": 94.5,
+    "n_seasons": 2,
+    "career_pitches": 479
+  },
+  "518876": {
+    "name": "Kelly, Merrill",
+    "career_pitch_types": [
+      "CH",
+      "FF",
+      "SI",
+      "FC"
+    ],
+    "career_usage": {
+      "CH": 0.271,
+      "FF": 0.232,
+      "SI": 0.129,
+      "FC": 0.202
+    },
+    "career_swstr": {
+      "CH": 0.342,
+      "FF": 0.249,
+      "SI": 0.075,
+      "FC": 0.163
+    },
+    "career_swstr_overall": 0.2424,
+    "career_primary_velo": 92.15,
+    "n_seasons": 4,
+    "career_pitches": 2361
+  },
+  "519141": {
+    "name": "Pomeranz, Drew",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.768
+    },
+    "career_swstr": {
+      "FF": 0.241
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 614
+  },
+  "519242": {
+    "name": "Sale, Chris",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.473,
+      "FF": 0.417
+    },
+    "career_swstr": {
+      "SL": 0.398,
+      "FF": 0.211
+    },
+    "career_swstr_overall": 0.2289,
+    "career_primary_velo": 94.5,
+    "n_seasons": 3,
+    "career_pitches": 1806
+  },
+  "542881": {
+    "name": "Anderson, Tyler",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "FC"
+    ],
+    "career_usage": {
+      "FF": 0.381,
+      "CH": 0.34,
+      "FC": 0.205
+    },
+    "career_swstr": {
+      "FF": 0.155,
+      "CH": 0.385,
+      "FC": 0.187
+    },
+    "career_swstr_overall": 0.1778,
+    "career_primary_velo": 89.9,
+    "n_seasons": 4,
+    "career_pitches": 2167
+  },
+  "543135": {
+    "name": "Eovaldi, Nathan",
+    "career_pitch_types": [
+      "FS",
+      "FF"
+    ],
+    "career_usage": {
+      "FS": 0.314,
+      "FF": 0.225
+    },
+    "career_swstr": {
+      "FS": 0.36,
+      "FF": 0.135
+    },
+    "career_swstr_overall": 0.1715,
+    "career_primary_velo": 95.08,
+    "n_seasons": 4,
+    "career_pitches": 1035
+  },
+  "543243": {
+    "name": "Gray, Sonny",
+    "career_pitch_types": [
+      "ST",
+      "SI",
+      "FF"
+    ],
+    "career_usage": {
+      "ST": 0.192,
+      "SI": 0.18,
+      "FF": 0.217
+    },
+    "career_swstr": {
+      "ST": 0.424,
+      "SI": 0.146,
+      "FF": 0.191
+    },
+    "career_swstr_overall": 0.1725,
+    "career_primary_velo": 92.27,
+    "n_seasons": 4,
+    "career_pitches": 1602
+  },
+  "543294": {
+    "name": "Hendricks, Kyle",
+    "career_pitch_types": [
+      "CH",
+      "SI"
+    ],
+    "career_usage": {
+      "CH": 0.384,
+      "SI": 0.384
+    },
+    "career_swstr": {
+      "CH": 0.253,
+      "SI": 0.097
+    },
+    "career_swstr_overall": 0.1681,
+    "career_primary_velo": 87.22,
+    "n_seasons": 4,
+    "career_pitches": 1974
+  },
+  "547179": {
+    "name": "Lorenzen, Michael",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.22,
+      "CH": 0.173,
+      "SI": 0.18
+    },
+    "career_swstr": {
+      "FF": 0.166,
+      "CH": 0.424,
+      "SI": 0.108
+    },
+    "career_swstr_overall": 0.177,
+    "career_primary_velo": 94.18,
+    "n_seasons": 4,
+    "career_pitches": 1330
+  },
+  "547184": {
+    "name": "Kelly, Michael",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.505
+    },
+    "career_swstr": {
+      "ST": 0.206
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 332
+  },
+  "552640": {
+    "name": "Kittredge, Andrew",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.529
+    },
+    "career_swstr": {
+      "SL": 0.403
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 406
+  },
+  "554430": {
+    "name": "Wheeler, Zack",
+    "career_pitch_types": [
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.409,
+      "SI": 0.171
+    },
+    "career_swstr": {
+      "FF": 0.305,
+      "SI": 0.158
+    },
+    "career_swstr_overall": 0.3011,
+    "career_primary_velo": 95.78,
+    "n_seasons": 4,
+    "career_pitches": 1388
+  },
+  "570632": {
+    "name": "Ureña, José",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.363
+    },
+    "career_swstr": {
+      "SI": 0.115
+    },
+    "career_swstr_overall": 0.1304,
+    "career_primary_velo": 96.08,
+    "n_seasons": 4,
+    "career_pitches": 339
+  },
+  "571510": {
+    "name": "Boyd, Matthew",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.471,
+      "CH": 0.237,
+      "SL": 0.149
+    },
+    "career_swstr": {
+      "FF": 0.156,
+      "CH": 0.323,
+      "SL": 0.349
+    },
+    "career_swstr_overall": 0.1987,
+    "career_primary_velo": 92.23,
+    "n_seasons": 3,
+    "career_pitches": 2352
+  },
+  "571578": {
+    "name": "Corbin, Patrick",
+    "career_pitch_types": [
+      "SI",
+      "SL",
+      "FC"
+    ],
+    "career_usage": {
+      "SI": 0.289,
+      "SL": 0.335,
+      "FC": 0.25
+    },
+    "career_swstr": {
+      "SI": 0.127,
+      "SL": 0.393,
+      "FC": 0.233
+    },
+    "career_swstr_overall": 0.1288,
+    "career_primary_velo": 91.63,
+    "n_seasons": 3,
+    "career_pitches": 2264
+  },
+  "571760": {
+    "name": "Heaney, Andrew",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.437,
+      "CH": 0.173
+    },
+    "career_swstr": {
+      "FF": 0.174,
+      "CH": 0.193
+    },
+    "career_swstr_overall": 0.2349,
+    "career_primary_velo": 91.8,
+    "n_seasons": 4,
+    "career_pitches": 1270
+  },
+  "571927": {
+    "name": "Matz, Steven",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.584
+    },
+    "career_swstr": {
+      "SI": 0.164
+    },
+    "career_swstr_overall": 0.2192,
+    "career_primary_velo": 93.33,
+    "n_seasons": 4,
+    "career_pitches": 677
+  },
+  "571945": {
+    "name": "Mikolas, Miles",
+    "career_pitch_types": [
+      "FF",
+      "SL",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.277,
+      "SL": 0.234,
+      "SI": 0.17
+    },
+    "career_swstr": {
+      "FF": 0.183,
+      "SL": 0.178,
+      "SI": 0.1
+    },
+    "career_swstr_overall": 0.1932,
+    "career_primary_velo": 93.25,
+    "n_seasons": 4,
+    "career_pitches": 1688
+  },
+  "571946": {
+    "name": "Miller, Shelby",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.618
+    },
+    "career_swstr": {
+      "FF": 0.263
+    },
+    "career_swstr_overall": 0.2515,
+    "career_primary_velo": 94.07,
+    "n_seasons": 3,
+    "career_pitches": 436
+  },
+  "571948": {
+    "name": "Milner, Hoby",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.334
+    },
+    "career_swstr": {
+      "SI": 0.097
+    },
+    "career_swstr_overall": 0.1806,
+    "career_primary_velo": 88.95,
+    "n_seasons": 2,
+    "career_pitches": 386
+  },
+  "572955": {
+    "name": "Johnson, Pierce",
+    "career_pitch_types": [
+      "CU"
+    ],
+    "career_usage": {
+      "CU": 0.721
+    },
+    "career_swstr": {
+      "CU": 0.274
+    },
+    "career_swstr_overall": 0.2307,
+    "career_primary_velo": 95.57,
+    "n_seasons": 3,
+    "career_pitches": 698
+  },
+  "573124": {
+    "name": "Rogers, Taylor",
+    "career_pitch_types": [
+      "SI",
+      "ST"
+    ],
+    "career_usage": {
+      "SI": 0.491,
+      "ST": 0.509
+    },
+    "career_swstr": {
+      "SI": 0.102,
+      "ST": 0.336
+    },
+    "career_swstr_overall": 0.1432,
+    "career_primary_velo": 93.17,
+    "n_seasons": 4,
+    "career_pitches": 894
+  },
+  "573204": {
+    "name": "Thielbar, Caleb",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.418
+    },
+    "career_swstr": {
+      "FF": 0.222
+    },
+    "career_swstr_overall": 0.2339,
+    "career_primary_velo": 92.97,
+    "n_seasons": 4,
+    "career_pitches": 351
+  },
+  "579328": {
+    "name": "Kikuchi, Yusei",
+    "career_pitch_types": [
+      "SL",
+      "FF",
+      "CU",
+      "CH"
+    ],
+    "career_usage": {
+      "SL": 0.362,
+      "FF": 0.349,
+      "CU": 0.154,
+      "CH": 0.122
+    },
+    "career_swstr": {
+      "SL": 0.25,
+      "FF": 0.212,
+      "CU": 0.242,
+      "CH": 0.251
+    },
+    "career_swstr_overall": 0.2579,
+    "career_primary_velo": 95.08,
+    "n_seasons": 4,
+    "career_pitches": 3054
+  },
+  "592094": {
+    "name": "Adam, Jason",
+    "career_pitch_types": [
+      "CH"
+    ],
+    "career_usage": {
+      "CH": 0.334
+    },
+    "career_swstr": {
+      "CH": 0.342
+    },
+    "career_swstr_overall": 0.2971,
+    "career_primary_velo": 94.88,
+    "n_seasons": 4,
+    "career_pitches": 363
+  },
+  "592332": {
+    "name": "Gausman, Kevin",
+    "career_pitch_types": [
+      "FF",
+      "FS"
+    ],
+    "career_usage": {
+      "FF": 0.537,
+      "FS": 0.374
+    },
+    "career_swstr": {
+      "FF": 0.169,
+      "FS": 0.385
+    },
+    "career_swstr_overall": 0.1697,
+    "career_primary_velo": 94.55,
+    "n_seasons": 4,
+    "career_pitches": 2761
+  },
+  "592426": {
+    "name": "Jackson, Luke",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.488
+    },
+    "career_swstr": {
+      "SL": 0.262
+    },
+    "career_swstr_overall": 0.2014,
+    "career_primary_velo": 94.45,
+    "n_seasons": 2,
+    "career_pitches": 382
+  },
+  "592454": {
+    "name": "Kahnle, Tommy",
+    "career_pitch_types": [
+      "CH"
+    ],
+    "career_usage": {
+      "CH": 0.856
+    },
+    "career_swstr": {
+      "CH": 0.264
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 886
+  },
+  "592662": {
+    "name": "Ray, Robbie",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.519,
+      "SL": 0.226
+    },
+    "career_swstr": {
+      "FF": 0.235,
+      "SL": 0.291
+    },
+    "career_swstr_overall": 0.2471,
+    "career_primary_velo": 93.7,
+    "n_seasons": 3,
+    "career_pitches": 2286
+  },
+  "592773": {
+    "name": "Stanek, Ryne",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.571
+    },
+    "career_swstr": {
+      "FF": 0.244
+    },
+    "career_swstr_overall": 0.2712,
+    "career_primary_velo": 98.22,
+    "n_seasons": 4,
+    "career_pitches": 607
+  },
+  "592791": {
+    "name": "Taillon, Jameson",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.38
+    },
+    "career_swstr": {
+      "FF": 0.179
+    },
+    "career_swstr_overall": 0.1941,
+    "career_primary_velo": 93.08,
+    "n_seasons": 4,
+    "career_pitches": 753
+  },
+  "592836": {
+    "name": "Walker, Taijuan",
+    "career_pitch_types": [
+      "FC",
+      "FS",
+      "SI"
+    ],
+    "career_usage": {
+      "FC": 0.301,
+      "FS": 0.225,
+      "SI": 0.202
+    },
+    "career_swstr": {
+      "FC": 0.195,
+      "FS": 0.204,
+      "SI": 0.109
+    },
+    "career_swstr_overall": 0.2285,
+    "career_primary_velo": 93.25,
+    "n_seasons": 2,
+    "career_pitches": 1500
+  },
+  "592866": {
+    "name": "Williams, Trevor",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.423
+    },
+    "career_swstr": {
+      "FF": 0.151
+    },
+    "career_swstr_overall": 0.1745,
+    "career_primary_velo": 89.38,
+    "n_seasons": 4,
+    "career_pitches": 613
+  },
+  "593958": {
+    "name": "Rodriguez, Eduardo",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.466,
+      "CH": 0.205
+    },
+    "career_swstr": {
+      "FF": 0.221,
+      "CH": 0.286
+    },
+    "career_swstr_overall": 0.2174,
+    "career_primary_velo": 91.97,
+    "n_seasons": 4,
+    "career_pitches": 1738
+  },
+  "593974": {
+    "name": "Peralta, Wandy",
+    "career_pitch_types": [
+      "SI",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.455,
+      "CH": 0.345
+    },
+    "career_swstr": {
+      "SI": 0.17,
+      "CH": 0.369
+    },
+    "career_swstr_overall": 0.1777,
+    "career_primary_velo": 95.4,
+    "n_seasons": 4,
+    "career_pitches": 911
+  },
+  "594798": {
+    "name": "deGrom, Jacob",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.46,
+      "SL": 0.376
+    },
+    "career_swstr": {
+      "FF": 0.215,
+      "SL": 0.39
+    },
+    "career_swstr_overall": 0.2494,
+    "career_primary_velo": 98.37,
+    "n_seasons": 3,
+    "career_pitches": 2186
+  },
+  "595345": {
+    "name": "Okert, Steven",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.578,
+      "FF": 0.414
+    },
+    "career_swstr": {
+      "SL": 0.407,
+      "FF": 0.209
+    },
+    "career_swstr_overall": 0.2069,
+    "career_primary_velo": 93.17,
+    "n_seasons": 3,
+    "career_pitches": 1043
+  },
+  "596001": {
+    "name": "Junis, Jakob",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.445
+    },
+    "career_swstr": {
+      "SL": 0.314
+    },
+    "career_swstr_overall": 0.1455,
+    "career_primary_velo": 92.33,
+    "n_seasons": 3,
+    "career_pitches": 459
+  },
+  "596133": {
+    "name": "Weaver, Luke",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.592
+    },
+    "career_swstr": {
+      "FF": 0.245
+    },
+    "career_swstr_overall": 0.2321,
+    "career_primary_velo": 94.93,
+    "n_seasons": 4,
+    "career_pitches": 621
+  },
+  "601713": {
+    "name": "Pivetta, Nick",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.474,
+      "CU": 0.224,
+      "ST": 0.186
+    },
+    "career_swstr": {
+      "FF": 0.253,
+      "CU": 0.162,
+      "ST": 0.374
+    },
+    "career_swstr_overall": 0.2317,
+    "career_primary_velo": 93.92,
+    "n_seasons": 4,
+    "career_pitches": 2517
+  },
+  "605135": {
+    "name": "Bassitt, Chris",
+    "career_pitch_types": [
+      "SI",
+      "FC",
+      "CU"
+    ],
+    "career_usage": {
+      "SI": 0.417,
+      "FC": 0.168,
+      "CU": 0.162
+    },
+    "career_swstr": {
+      "SI": 0.144,
+      "FC": 0.288,
+      "CU": 0.313
+    },
+    "career_swstr_overall": 0.242,
+    "career_primary_velo": 92.37,
+    "n_seasons": 3,
+    "career_pitches": 2113
+  },
+  "605280": {
+    "name": "Holmes, Clay",
+    "career_pitch_types": [
+      "SI",
+      "ST",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.408,
+      "ST": 0.19,
+      "CH": 0.157
+    },
+    "career_swstr": {
+      "SI": 0.164,
+      "ST": 0.255,
+      "CH": 0.302
+    },
+    "career_swstr_overall": 0.2226,
+    "career_primary_velo": 96.8,
+    "n_seasons": 3,
+    "career_pitches": 2089
+  },
+  "605288": {
+    "name": "Houser, Adrian",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.459
+    },
+    "career_swstr": {
+      "SI": 0.106
+    },
+    "career_swstr_overall": 0.1967,
+    "career_primary_velo": 94.33,
+    "n_seasons": 3,
+    "career_pitches": 868
+  },
+  "605400": {
+    "name": "Nola, Aaron",
+    "career_pitch_types": [
+      "CU"
+    ],
+    "career_usage": {
+      "CU": 0.291
+    },
+    "career_swstr": {
+      "CU": 0.391
+    },
+    "career_swstr_overall": 0.2178,
+    "career_primary_velo": 92.47,
+    "n_seasons": 4,
+    "career_pitches": 457
+  },
+  "605447": {
+    "name": "Romano, Jordan",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.632
+    },
+    "career_swstr": {
+      "SL": 0.295
+    },
+    "career_swstr_overall": 0.2864,
+    "career_primary_velo": 96.37,
+    "n_seasons": 3,
+    "career_pitches": 443
+  },
+  "605483": {
+    "name": "Snell, Blake",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.436
+    },
+    "career_swstr": {
+      "FF": 0.221
+    },
+    "career_swstr_overall": 0.2172,
+    "career_primary_velo": 95.58,
+    "n_seasons": 4,
+    "career_pitches": 448
+  },
+  "605488": {
+    "name": "Springs, Jeffrey",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.425,
+      "CH": 0.253,
+      "SL": 0.202
+    },
+    "career_swstr": {
+      "FF": 0.154,
+      "CH": 0.413,
+      "SL": 0.212
+    },
+    "career_swstr_overall": 0.1972,
+    "career_primary_velo": 90.63,
+    "n_seasons": 3,
+    "career_pitches": 2506
+  },
+  "605540": {
+    "name": "Woodruff, Brandon",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.307
+    },
+    "career_swstr": {
+      "FF": 0.321
+    },
+    "career_swstr_overall": 0.2996,
+    "career_primary_velo": 95.07,
+    "n_seasons": 3,
+    "career_pitches": 296
+  },
+  "606160": {
+    "name": "Montero, Rafael",
+    "career_pitch_types": [
+      "FS"
+    ],
+    "career_usage": {
+      "FS": 0.47
+    },
+    "career_swstr": {
+      "FS": 0.361
+    },
+    "career_swstr_overall": 0.3079,
+    "career_primary_velo": 95.75,
+    "n_seasons": 4,
+    "career_pitches": 511
+  },
+  "607067": {
+    "name": "Rea, Colin",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.415
+    },
+    "career_swstr": {
+      "FF": 0.17
+    },
+    "career_swstr_overall": 0.21,
+    "career_primary_velo": 93.37,
+    "n_seasons": 3,
+    "career_pitches": 1051
+  },
+  "607074": {
+    "name": "Rodón, Carlos",
+    "career_pitch_types": [
+      "FF",
+      "SL",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.418,
+      "SL": 0.284,
+      "CH": 0.162
+    },
+    "career_swstr": {
+      "FF": 0.215,
+      "SL": 0.403,
+      "CH": 0.35
+    },
+    "career_swstr_overall": 0.2373,
+    "career_primary_velo": 95.08,
+    "n_seasons": 4,
+    "career_pitches": 2774
+  },
+  "607192": {
+    "name": "Glasnow, Tyler",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.363
+    },
+    "career_swstr": {
+      "FF": 0.183
+    },
+    "career_swstr_overall": 0.2191,
+    "career_primary_velo": 96.13,
+    "n_seasons": 3,
+    "career_pitches": 537
+  },
+  "607200": {
+    "name": "Fedde, Erick",
+    "career_pitch_types": [
+      "SI",
+      "FC",
+      "ST"
+    ],
+    "career_usage": {
+      "SI": 0.333,
+      "FC": 0.28,
+      "ST": 0.26
+    },
+    "career_swstr": {
+      "SI": 0.095,
+      "FC": 0.208,
+      "ST": 0.26
+    },
+    "career_swstr_overall": 0.1487,
+    "career_primary_velo": 91.9,
+    "n_seasons": 3,
+    "career_pitches": 2067
+  },
+  "607259": {
+    "name": "Martinez, Nick",
+    "career_pitch_types": [
+      "FC",
+      "FF",
+      "CH",
+      "SI"
+    ],
+    "career_usage": {
+      "FC": 0.21,
+      "FF": 0.207,
+      "CH": 0.198,
+      "SI": 0.171
+    },
+    "career_swstr": {
+      "FC": 0.194,
+      "FF": 0.113,
+      "CH": 0.296,
+      "SI": 0.131
+    },
+    "career_swstr_overall": 0.1778,
+    "career_primary_velo": 92.97,
+    "n_seasons": 4,
+    "career_pitches": 2026
+  },
+  "607455": {
+    "name": "Banda, Anthony",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.492
+    },
+    "career_swstr": {
+      "SL": 0.379
+    },
+    "career_swstr_overall": 0.2088,
+    "career_primary_velo": 96.0,
+    "n_seasons": 2,
+    "career_pitches": 524
+  },
+  "607481": {
+    "name": "Bummer, Aaron",
+    "career_pitch_types": [
+      "CU"
+    ],
+    "career_usage": {
+      "CU": 0.351
+    },
+    "career_swstr": {
+      "CU": 0.31
+    },
+    "career_swstr_overall": 0.1571,
+    "career_primary_velo": 93.5,
+    "n_seasons": 3,
+    "career_pitches": 327
+  },
+  "607536": {
+    "name": "Freeland, Kyle",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.334,
+      "CU": 0.261,
+      "ST": 0.129
+    },
+    "career_swstr": {
+      "FF": 0.116,
+      "CU": 0.371,
+      "ST": 0.256
+    },
+    "career_swstr_overall": 0.131,
+    "career_primary_velo": 90.57,
+    "n_seasons": 4,
+    "career_pitches": 1795
+  },
+  "607625": {
+    "name": "Lugo, Seth",
+    "career_pitch_types": [
+      "CU",
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "CU": 0.23,
+      "FF": 0.211,
+      "SI": 0.146
+    },
+    "career_swstr": {
+      "CU": 0.259,
+      "FF": 0.14,
+      "SI": 0.137
+    },
+    "career_swstr_overall": 0.189,
+    "career_primary_velo": 92.92,
+    "n_seasons": 4,
+    "career_pitches": 1396
+  },
+  "608032": {
+    "name": "Estévez, Carlos",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.535
+    },
+    "career_swstr": {
+      "FF": 0.192
+    },
+    "career_swstr_overall": 0.2319,
+    "career_primary_velo": 96.82,
+    "n_seasons": 4,
+    "career_pitches": 558
+  },
+  "608331": {
+    "name": "Fried, Max",
+    "career_pitch_types": [
+      "FC",
+      "SI",
+      "CU",
+      "FF"
+    ],
+    "career_usage": {
+      "FC": 0.286,
+      "SI": 0.177,
+      "CU": 0.173,
+      "FF": 0.122
+    },
+    "career_swstr": {
+      "FC": 0.188,
+      "SI": 0.25,
+      "CU": 0.42,
+      "FF": 0.244
+    },
+    "career_swstr_overall": 0.1778,
+    "career_primary_velo": 94.45,
+    "n_seasons": 4,
+    "career_pitches": 2356
+  },
+  "608337": {
+    "name": "Giolito, Lucas",
+    "career_pitch_types": [
+      "FF",
+      "SL",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.484,
+      "SL": 0.256,
+      "CH": 0.226
+    },
+    "career_swstr": {
+      "FF": 0.16,
+      "SL": 0.321,
+      "CH": 0.267
+    },
+    "career_swstr_overall": 0.1924,
+    "career_primary_velo": 93.0,
+    "n_seasons": 3,
+    "career_pitches": 2285
+  },
+  "608372": {
+    "name": "Sugano, Tomoyuki",
+    "career_pitch_types": [
+      "FS",
+      "ST",
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "FS": 0.235,
+      "ST": 0.198,
+      "FF": 0.189,
+      "SI": 0.161
+    },
+    "career_swstr": {
+      "FS": 0.284,
+      "ST": 0.219,
+      "FF": 0.139,
+      "SI": 0.099
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 2008
+  },
+  "608379": {
+    "name": "Wacha, Michael",
+    "career_pitch_types": [
+      "CH",
+      "FF",
+      "SI",
+      "FC"
+    ],
+    "career_usage": {
+      "CH": 0.254,
+      "FF": 0.27,
+      "SI": 0.127,
+      "FC": 0.15
+    },
+    "career_swstr": {
+      "CH": 0.266,
+      "FF": 0.171,
+      "SI": 0.112,
+      "FC": 0.171
+    },
+    "career_swstr_overall": 0.1606,
+    "career_primary_velo": 92.95,
+    "n_seasons": 4,
+    "career_pitches": 2135
+  },
+  "608566": {
+    "name": "Márquez, Germán",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.353,
+      "CU": 0.319,
+      "SI": 0.198
+    },
+    "career_swstr": {
+      "FF": 0.09,
+      "CU": 0.364,
+      "SI": 0.043
+    },
+    "career_swstr_overall": 0.1259,
+    "career_primary_velo": 95.2,
+    "n_seasons": 2,
+    "career_pitches": 1816
+  },
+  "608718": {
+    "name": "Suter, Brent",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.422
+    },
+    "career_swstr": {
+      "FF": 0.183
+    },
+    "career_swstr_overall": 0.1821,
+    "career_primary_velo": 86.38,
+    "n_seasons": 4,
+    "career_pitches": 471
+  },
+  "615698": {
+    "name": "Quantrill, Cal",
+    "career_pitch_types": [
+      "FC",
+      "FS",
+      "SI"
+    ],
+    "career_usage": {
+      "FC": 0.216,
+      "FS": 0.209,
+      "SI": 0.221
+    },
+    "career_swstr": {
+      "FC": 0.212,
+      "FS": 0.239,
+      "SI": 0.146
+    },
+    "career_swstr_overall": 0.2191,
+    "career_primary_velo": 93.85,
+    "n_seasons": 4,
+    "career_pitches": 1293
+  },
+  "621051": {
+    "name": "Wilson, Steven",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.583
+    },
+    "career_swstr": {
+      "ST": 0.266
+    },
+    "career_swstr_overall": 0.2281,
+    "career_primary_velo": 94.22,
+    "n_seasons": 4,
+    "career_pitches": 568
+  },
+  "621053": {
+    "name": "Ferguson, Tyler",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.385
+    },
+    "career_swstr": {
+      "FF": 0.229
+    },
+    "career_swstr_overall": 0.2707,
+    "career_primary_velo": 95.3,
+    "n_seasons": 2,
+    "career_pitches": 381
+  },
+  "621111": {
+    "name": "Buehler, Walker",
+    "career_pitch_types": [
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.253,
+      "SI": 0.164
+    },
+    "career_swstr": {
+      "FF": 0.148,
+      "SI": 0.075
+    },
+    "career_swstr_overall": 0.1506,
+    "career_primary_velo": 94.73,
+    "n_seasons": 3,
+    "career_pitches": 913
+  },
+  "621242": {
+    "name": "Díaz, Edwin",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.473,
+      "FF": 0.526
+    },
+    "career_swstr": {
+      "SL": 0.44,
+      "FF": 0.394
+    },
+    "career_swstr_overall": 0.3896,
+    "career_primary_velo": 97.93,
+    "n_seasons": 3,
+    "career_pitches": 1066
+  },
+  "621244": {
+    "name": "Berríos, José",
+    "career_pitch_types": [
+      "SI",
+      "SV",
+      "CH",
+      "FF"
+    ],
+    "career_usage": {
+      "SI": 0.336,
+      "SV": 0.259,
+      "CH": 0.168,
+      "FF": 0.179
+    },
+    "career_swstr": {
+      "SI": 0.094,
+      "SV": 0.333,
+      "CH": 0.348,
+      "FF": 0.153
+    },
+    "career_swstr_overall": 0.2032,
+    "career_primary_velo": 93.85,
+    "n_seasons": 4,
+    "career_pitches": 2434
+  },
+  "622491": {
+    "name": "Castillo, Luis",
+    "career_pitch_types": [
+      "FF",
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.463,
+      "SI": 0.22,
+      "SL": 0.204
+    },
+    "career_swstr": {
+      "FF": 0.265,
+      "SI": 0.11,
+      "SL": 0.365
+    },
+    "career_swstr_overall": 0.298,
+    "career_primary_velo": 96.0,
+    "n_seasons": 4,
+    "career_pitches": 2648
+  },
+  "622554": {
+    "name": "Domínguez, Seranthony",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.432
+    },
+    "career_swstr": {
+      "FF": 0.268
+    },
+    "career_swstr_overall": 0.2793,
+    "career_primary_velo": 97.65,
+    "n_seasons": 4,
+    "career_pitches": 476
+  },
+  "622608": {
+    "name": "Senzatela, Antonio",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.569,
+      "SL": 0.18
+    },
+    "career_swstr": {
+      "FF": 0.129,
+      "SL": 0.266
+    },
+    "career_swstr_overall": 0.1286,
+    "career_primary_velo": 94.65,
+    "n_seasons": 2,
+    "career_pitches": 1711
+  },
+  "622663": {
+    "name": "Severino, Luis",
+    "career_pitch_types": [
+      "SI",
+      "ST",
+      "FF",
+      "FC"
+    ],
+    "career_usage": {
+      "SI": 0.202,
+      "ST": 0.248,
+      "FF": 0.28,
+      "FC": 0.176
+    },
+    "career_swstr": {
+      "SI": 0.102,
+      "ST": 0.227,
+      "FF": 0.219,
+      "FC": 0.16
+    },
+    "career_swstr_overall": 0.2121,
+    "career_primary_velo": 96.28,
+    "n_seasons": 4,
+    "career_pitches": 2475
+  },
+  "623211": {
+    "name": "Brazobán, Huascar",
+    "career_pitch_types": [
+      "CH"
+    ],
+    "career_usage": {
+      "CH": 0.381
+    },
+    "career_swstr": {
+      "CH": 0.312
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 385
+  },
+  "623352": {
+    "name": "Hader, Josh",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.542
+    },
+    "career_swstr": {
+      "SI": 0.306
+    },
+    "career_swstr_overall": 0.3049,
+    "career_primary_velo": 95.95,
+    "n_seasons": 4,
+    "career_pitches": 459
+  },
+  "623437": {
+    "name": "Topa, Justin",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.356
+    },
+    "career_swstr": {
+      "SI": 0.067
+    },
+    "career_swstr_overall": 0.0985,
+    "career_primary_velo": 94.6,
+    "n_seasons": 2,
+    "career_pitches": 349
+  },
+  "623474": {
+    "name": "Herget, Jimmy",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.308
+    },
+    "career_swstr": {
+      "ST": 0.336
+    },
+    "career_swstr_overall": 0.152,
+    "career_primary_velo": 92.1,
+    "n_seasons": 2,
+    "career_pitches": 395
+  },
+  "624133": {
+    "name": "Suarez, Ranger",
+    "career_pitch_types": [
+      "SI",
+      "CH",
+      "CU"
+    ],
+    "career_usage": {
+      "SI": 0.286,
+      "CH": 0.191,
+      "CU": 0.161
+    },
+    "career_swstr": {
+      "SI": 0.074,
+      "CH": 0.33,
+      "CU": 0.245
+    },
+    "career_swstr_overall": 0.1951,
+    "career_primary_velo": 92.43,
+    "n_seasons": 4,
+    "career_pitches": 1551
+  },
+  "628452": {
+    "name": "Iglesias, Raisel",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.401
+    },
+    "career_swstr": {
+      "FF": 0.284
+    },
+    "career_swstr_overall": 0.2773,
+    "career_primary_velo": 95.15,
+    "n_seasons": 4,
+    "career_pitches": 387
+  },
+  "640448": {
+    "name": "Finnegan, Kyle",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.583
+    },
+    "career_swstr": {
+      "FF": 0.158
+    },
+    "career_swstr_overall": 0.2131,
+    "career_primary_velo": 96.95,
+    "n_seasons": 4,
+    "career_pitches": 493
+  },
+  "640455": {
+    "name": "Manaea, Sean",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.605
+    },
+    "career_swstr": {
+      "FF": 0.232
+    },
+    "career_swstr_overall": 0.242,
+    "career_primary_velo": 92.27,
+    "n_seasons": 4,
+    "career_pitches": 663
+  },
+  "641154": {
+    "name": "López, Pablo",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.412
+    },
+    "career_swstr": {
+      "FF": 0.223
+    },
+    "career_swstr_overall": 0.2619,
+    "career_primary_velo": 94.47,
+    "n_seasons": 4,
+    "career_pitches": 518
+  },
+  "641302": {
+    "name": "Alexander, Tyler",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.261
+    },
+    "career_swstr": {
+      "FF": 0.201
+    },
+    "career_swstr_overall": 0.2041,
+    "career_primary_velo": 90.13,
+    "n_seasons": 3,
+    "career_pitches": 414
+  },
+  "641329": {
+    "name": "Baker, Bryan",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.472
+    },
+    "career_swstr": {
+      "FF": 0.278
+    },
+    "career_swstr_overall": 0.2612,
+    "career_primary_velo": 96.2,
+    "n_seasons": 3,
+    "career_pitches": 520
+  },
+  "641745": {
+    "name": "Keller, Brad",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.422
+    },
+    "career_swstr": {
+      "FF": 0.171
+    },
+    "career_swstr_overall": 0.1684,
+    "career_primary_velo": 94.7,
+    "n_seasons": 4,
+    "career_pitches": 470
+  },
+  "641755": {
+    "name": "Kinley, Tyler",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.639
+    },
+    "career_swstr": {
+      "SL": 0.333
+    },
+    "career_swstr_overall": 0.1278,
+    "career_primary_velo": 95.45,
+    "n_seasons": 2,
+    "career_pitches": 783
+  },
+  "641778": {
+    "name": "Lauer, Eric",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.465
+    },
+    "career_swstr": {
+      "FF": 0.206
+    },
+    "career_swstr_overall": 0.2598,
+    "career_primary_velo": 91.93,
+    "n_seasons": 3,
+    "career_pitches": 782
+  },
+  "641793": {
+    "name": "Littell, Zack",
+    "career_pitch_types": [
+      "FS",
+      "SL",
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "FS": 0.273,
+      "SL": 0.275,
+      "FF": 0.239,
+      "SI": 0.158
+    },
+    "career_swstr": {
+      "FS": 0.245,
+      "SL": 0.19,
+      "FF": 0.224,
+      "SI": 0.126
+    },
+    "career_swstr_overall": 0.2175,
+    "career_primary_velo": 93.28,
+    "n_seasons": 4,
+    "career_pitches": 2638
+  },
+  "641816": {
+    "name": "Mahle, Tyler",
+    "career_pitch_types": [
+      "FF",
+      "FS"
+    ],
+    "career_usage": {
+      "FF": 0.495,
+      "FS": 0.277
+    },
+    "career_swstr": {
+      "FF": 0.235,
+      "FS": 0.24
+    },
+    "career_swstr_overall": 0.2535,
+    "career_primary_velo": 92.6,
+    "n_seasons": 3,
+    "career_pitches": 1067
+  },
+  "641927": {
+    "name": "Ober, Bailey",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.359,
+      "CH": 0.289,
+      "SL": 0.177
+    },
+    "career_swstr": {
+      "FF": 0.183,
+      "CH": 0.295,
+      "SL": 0.213
+    },
+    "career_swstr_overall": 0.2302,
+    "career_primary_velo": 91.2,
+    "n_seasons": 4,
+    "career_pitches": 1945
+  },
+  "641941": {
+    "name": "Pagán, Emilio",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.612
+    },
+    "career_swstr": {
+      "FF": 0.246
+    },
+    "career_swstr_overall": 0.261,
+    "career_primary_velo": 95.45,
+    "n_seasons": 4,
+    "career_pitches": 654
+  },
+  "642100": {
+    "name": "Speier, Gabe",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.447
+    },
+    "career_swstr": {
+      "FF": 0.333
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 412
+  },
+  "642207": {
+    "name": "Williams, Devin",
+    "career_pitch_types": [
+      "CH",
+      "FF"
+    ],
+    "career_usage": {
+      "CH": 0.524,
+      "FF": 0.474
+    },
+    "career_swstr": {
+      "CH": 0.373,
+      "FF": 0.38
+    },
+    "career_swstr_overall": 0.3737,
+    "career_primary_velo": 94.22,
+    "n_seasons": 4,
+    "career_pitches": 1113
+  },
+  "642397": {
+    "name": "Soto, Gregory",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.525
+    },
+    "career_swstr": {
+      "SI": 0.162
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 541
+  },
+  "642547": {
+    "name": "Peralta, Freddy",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.535,
+      "CH": 0.212,
+      "CU": 0.151
+    },
+    "career_swstr": {
+      "FF": 0.228,
+      "CH": 0.352,
+      "CU": 0.343
+    },
+    "career_swstr_overall": 0.255,
+    "career_primary_velo": 94.03,
+    "n_seasons": 4,
+    "career_pitches": 2771
+  },
+  "642701": {
+    "name": "Santana, Dennis",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.465
+    },
+    "career_swstr": {
+      "SL": 0.36
+    },
+    "career_swstr_overall": 0.1472,
+    "career_primary_velo": 96.03,
+    "n_seasons": 3,
+    "career_pitches": 466
+  },
+  "643338": {
+    "name": "Green, Chad",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.502
+    },
+    "career_swstr": {
+      "FF": 0.219
+    },
+    "career_swstr_overall": 0.1967,
+    "career_primary_velo": 95.35,
+    "n_seasons": 2,
+    "career_pitches": 356
+  },
+  "643377": {
+    "name": "Jax, Griffin",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.44
+    },
+    "career_swstr": {
+      "ST": 0.463
+    },
+    "career_swstr_overall": 0.2416,
+    "career_primary_velo": 96.33,
+    "n_seasons": 3,
+    "career_pitches": 481
+  },
+  "643511": {
+    "name": "Rogers, Tyler",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.745
+    },
+    "career_swstr": {
+      "SI": 0.124
+    },
+    "career_swstr_overall": 0.1318,
+    "career_primary_velo": 83.08,
+    "n_seasons": 4,
+    "career_pitches": 729
+  },
+  "645261": {
+    "name": "Alcantara, Sandy",
+    "career_pitch_types": [
+      "SI",
+      "CH",
+      "FF",
+      "SL",
+      "FC"
+    ],
+    "career_usage": {
+      "SI": 0.258,
+      "CH": 0.232,
+      "FF": 0.171,
+      "SL": 0.171,
+      "FC": 0.167
+    },
+    "career_swstr": {
+      "SI": 0.125,
+      "CH": 0.279,
+      "FF": 0.17,
+      "SL": 0.217,
+      "FC": 0.279
+    },
+    "career_swstr_overall": 0.2314,
+    "career_primary_velo": 97.9,
+    "n_seasons": 3,
+    "career_pitches": 2891
+  },
+  "647336": {
+    "name": "Soroka, Michael",
+    "career_pitch_types": [
+      "FF",
+      "SV"
+    ],
+    "career_usage": {
+      "FF": 0.454,
+      "SV": 0.348
+    },
+    "career_swstr": {
+      "FF": 0.201,
+      "SV": 0.383
+    },
+    "career_swstr_overall": 0.2046,
+    "career_primary_velo": 93.55,
+    "n_seasons": 2,
+    "career_pitches": 1225
+  },
+  "650556": {
+    "name": "Abreu, Bryan",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.484,
+      "FF": 0.5
+    },
+    "career_swstr": {
+      "SL": 0.461,
+      "FF": 0.364
+    },
+    "career_swstr_overall": 0.3228,
+    "career_primary_velo": 97.2,
+    "n_seasons": 4,
+    "career_pitches": 1170
+  },
+  "650644": {
+    "name": "Civale, Aaron",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.35
+    },
+    "career_swstr": {
+      "FC": 0.249
+    },
+    "career_swstr_overall": 0.1763,
+    "career_primary_velo": 91.97,
+    "n_seasons": 3,
+    "career_pitches": 611
+  },
+  "650911": {
+    "name": "Sánchez, Cristopher",
+    "career_pitch_types": [
+      "SI",
+      "CH",
+      "SL"
+    ],
+    "career_usage": {
+      "SI": 0.46,
+      "CH": 0.374,
+      "SL": 0.166
+    },
+    "career_swstr": {
+      "SI": 0.145,
+      "CH": 0.451,
+      "SL": 0.336
+    },
+    "career_swstr_overall": 0.1326,
+    "career_primary_velo": 94.15,
+    "n_seasons": 4,
+    "career_pitches": 2896
+  },
+  "656222": {
+    "name": "Beeks, Jalen",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.524
+    },
+    "career_swstr": {
+      "FF": 0.213
+    },
+    "career_swstr_overall": 0.2217,
+    "career_primary_velo": 94.55,
+    "n_seasons": 4,
+    "career_pitches": 480
+  },
+  "656234": {
+    "name": "Bird, Jake",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.343
+    },
+    "career_swstr": {
+      "SI": 0.162
+    },
+    "career_swstr_overall": 0.1311,
+    "career_primary_velo": 94.18,
+    "n_seasons": 4,
+    "career_pitches": 328
+  },
+  "656271": {
+    "name": "Burke, Brock",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.424
+    },
+    "career_swstr": {
+      "FF": 0.204
+    },
+    "career_swstr_overall": 0.2107,
+    "career_primary_velo": 95.43,
+    "n_seasons": 4,
+    "career_pitches": 430
+  },
+  "656288": {
+    "name": "Canning, Griffin",
+    "career_pitch_types": [
+      "SL",
+      "CH"
+    ],
+    "career_usage": {
+      "SL": 0.306,
+      "CH": 0.232
+    },
+    "career_swstr": {
+      "SL": 0.341,
+      "CH": 0.221
+    },
+    "career_swstr_overall": 0.1999,
+    "career_primary_velo": 94.07,
+    "n_seasons": 3,
+    "career_pitches": 723
+  },
+  "656302": {
+    "name": "Cease, Dylan",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.421,
+      "SL": 0.408
+    },
+    "career_swstr": {
+      "FF": 0.257,
+      "SL": 0.429
+    },
+    "career_swstr_overall": 0.2236,
+    "career_primary_velo": 96.6,
+    "n_seasons": 4,
+    "career_pitches": 2526
+  },
+  "656427": {
+    "name": "Flaherty, Jack",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.469,
+      "CU": 0.254,
+      "SL": 0.236
+    },
+    "career_swstr": {
+      "FF": 0.17,
+      "CU": 0.423,
+      "SL": 0.295
+    },
+    "career_swstr_overall": 0.2042,
+    "career_primary_velo": 93.2,
+    "n_seasons": 4,
+    "career_pitches": 2714
+  },
+  "656550": {
+    "name": "Holmes, Grant",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.357,
+      "FF": 0.326
+    },
+    "career_swstr": {
+      "SL": 0.428,
+      "FF": 0.167
+    },
+    "career_swstr_overall": 0.1804,
+    "career_primary_velo": 94.55,
+    "n_seasons": 2,
+    "career_pitches": 1343
+  },
+  "656605": {
+    "name": "Keller, Mitch",
+    "career_pitch_types": [
+      "FF",
+      "ST",
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.348,
+      "ST": 0.191,
+      "SI": 0.178,
+      "SL": 0.14
+    },
+    "career_swstr": {
+      "FF": 0.171,
+      "ST": 0.27,
+      "SI": 0.135,
+      "SL": 0.271
+    },
+    "career_swstr_overall": 0.2341,
+    "career_primary_velo": 94.85,
+    "n_seasons": 4,
+    "career_pitches": 2457
+  },
+  "656641": {
+    "name": "Latz, Jacob",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.494
+    },
+    "career_swstr": {
+      "FF": 0.238
+    },
+    "career_swstr_overall": 0.2328,
+    "career_primary_velo": 94.55,
+    "n_seasons": 2,
+    "career_pitches": 685
+  },
+  "656730": {
+    "name": "Megill, Trevor",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.606
+    },
+    "career_swstr": {
+      "FF": 0.206
+    },
+    "career_swstr_overall": 0.2252,
+    "career_primary_velo": 98.8,
+    "n_seasons": 4,
+    "career_pitches": 456
+  },
+  "656731": {
+    "name": "Megill, Tylor",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.423
+    },
+    "career_swstr": {
+      "FF": 0.296
+    },
+    "career_swstr_overall": 0.2463,
+    "career_primary_velo": 95.43,
+    "n_seasons": 4,
+    "career_pitches": 522
+  },
+  "656849": {
+    "name": "Peterson, David",
+    "career_pitch_types": [
+      "SI",
+      "SL",
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.296,
+      "SL": 0.191,
+      "FF": 0.223,
+      "CH": 0.153
+    },
+    "career_swstr": {
+      "SI": 0.106,
+      "SL": 0.38,
+      "FF": 0.216,
+      "CH": 0.241
+    },
+    "career_swstr_overall": 0.2425,
+    "career_primary_velo": 92.95,
+    "n_seasons": 4,
+    "career_pitches": 2329
+  },
+  "656876": {
+    "name": "Rasmussen, Drew",
+    "career_pitch_types": [
+      "FF",
+      "FC",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.352,
+      "FC": 0.314,
+      "SI": 0.229
+    },
+    "career_swstr": {
+      "FF": 0.232,
+      "FC": 0.269,
+      "SI": 0.135
+    },
+    "career_swstr_overall": 0.2107,
+    "career_primary_velo": 95.65,
+    "n_seasons": 2,
+    "career_pitches": 2075
+  },
+  "656945": {
+    "name": "Scott, Tanner",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.526
+    },
+    "career_swstr": {
+      "FF": 0.226
+    },
+    "career_swstr_overall": 0.2918,
+    "career_primary_velo": 96.8,
+    "n_seasons": 4,
+    "career_pitches": 479
+  },
+  "656986": {
+    "name": "Sousa, Bennett",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.581
+    },
+    "career_swstr": {
+      "SL": 0.498
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 423
+  },
+  "657097": {
+    "name": "Webb, Jacob",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.445,
+      "CH": 0.347
+    },
+    "career_swstr": {
+      "FF": 0.228,
+      "CH": 0.354
+    },
+    "career_swstr_overall": 0.2651,
+    "career_primary_velo": 93.9,
+    "n_seasons": 3,
+    "career_pitches": 774
+  },
+  "657277": {
+    "name": "Webb, Logan",
+    "career_pitch_types": [
+      "SI",
+      "CH",
+      "ST"
+    ],
+    "career_usage": {
+      "SI": 0.336,
+      "CH": 0.241,
+      "ST": 0.266
+    },
+    "career_swstr": {
+      "SI": 0.13,
+      "CH": 0.318,
+      "ST": 0.29
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 2769
+  },
+  "657376": {
+    "name": "Schmidt, Clarke",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.409
+    },
+    "career_swstr": {
+      "FC": 0.243
+    },
+    "career_swstr_overall": 0.1437,
+    "career_primary_velo": 94.55,
+    "n_seasons": 2,
+    "career_pitches": 501
+  },
+  "657514": {
+    "name": "Bernardino, Brennan",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.445
+    },
+    "career_swstr": {
+      "SI": 0.088
+    },
+    "career_swstr_overall": 0.1519,
+    "career_primary_velo": 91.23,
+    "n_seasons": 3,
+    "career_pitches": 371
+  },
+  "657612": {
+    "name": "Hill, Tim",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.822
+    },
+    "career_swstr": {
+      "SI": 0.148
+    },
+    "career_swstr_overall": 0.2084,
+    "career_primary_velo": 90.93,
+    "n_seasons": 3,
+    "career_pitches": 739
+  },
+  "657649": {
+    "name": "Koenig, Jared",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.567
+    },
+    "career_swstr": {
+      "SI": 0.193
+    },
+    "career_swstr_overall": 0.1708,
+    "career_primary_velo": 93.87,
+    "n_seasons": 3,
+    "career_pitches": 591
+  },
+  "657746": {
+    "name": "Ryan, Joe",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.503
+    },
+    "career_swstr": {
+      "FF": 0.268
+    },
+    "career_swstr_overall": 0.2719,
+    "career_primary_velo": 93.0,
+    "n_seasons": 4,
+    "career_pitches": 1404
+  },
+  "660825": {
+    "name": "Bazardo, Eduard",
+    "career_pitch_types": [
+      "SI",
+      "ST"
+    ],
+    "career_usage": {
+      "SI": 0.406,
+      "ST": 0.428
+    },
+    "career_swstr": {
+      "SI": 0.18,
+      "ST": 0.214
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1021
+  },
+  "660853": {
+    "name": "De Los Santos, Enyel",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.489,
+      "SL": 0.359
+    },
+    "career_swstr": {
+      "FF": 0.254,
+      "SL": 0.363
+    },
+    "career_swstr_overall": 0.2245,
+    "career_primary_velo": 95.65,
+    "n_seasons": 4,
+    "career_pitches": 937
+  },
+  "660896": {
+    "name": "Alcala, Jorge",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.464
+    },
+    "career_swstr": {
+      "FF": 0.289
+    },
+    "career_swstr_overall": 0.2935,
+    "career_primary_velo": 97.75,
+    "n_seasons": 2,
+    "career_pitches": 491
+  },
+  "661395": {
+    "name": "Duran, Jhoan",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.399
+    },
+    "career_swstr": {
+      "SI": 0.232
+    },
+    "career_swstr_overall": 0.3226,
+    "career_primary_velo": 100.93,
+    "n_seasons": 4,
+    "career_pitches": 428
+  },
+  "661403": {
+    "name": "Clase, Emmanuel",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.689
+    },
+    "career_swstr": {
+      "FC": 0.299
+    },
+    "career_swstr_overall": 0.2899,
+    "career_primary_velo": 99.8,
+    "n_seasons": 4,
+    "career_pitches": 514
+  },
+  "661563": {
+    "name": "Gil, Luis",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.506
+    },
+    "career_swstr": {
+      "FF": 0.188
+    },
+    "career_swstr_overall": 0.2584,
+    "career_primary_velo": 95.95,
+    "n_seasons": 2,
+    "career_pitches": 491
+  },
+  "662253": {
+    "name": "Muñoz, Andrés",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.504
+    },
+    "career_swstr": {
+      "SL": 0.51
+    },
+    "career_swstr_overall": 0.237,
+    "career_primary_velo": 99.05,
+    "n_seasons": 4,
+    "career_pitches": 522
+  },
+  "663158": {
+    "name": "Suarez, Robert",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.634
+    },
+    "career_swstr": {
+      "FF": 0.24
+    },
+    "career_swstr_overall": 0.2511,
+    "career_primary_velo": 98.57,
+    "n_seasons": 3,
+    "career_pitches": 682
+  },
+  "663436": {
+    "name": "Martin, Davis",
+    "career_pitch_types": [
+      "CH",
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "CH": 0.244,
+      "FF": 0.327,
+      "SL": 0.215
+    },
+    "career_swstr": {
+      "CH": 0.179,
+      "FF": 0.215,
+      "SL": 0.301
+    },
+    "career_swstr_overall": 0.1853,
+    "career_primary_velo": 93.87,
+    "n_seasons": 3,
+    "career_pitches": 1815
+  },
+  "663460": {
+    "name": "Bubic, Kris",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.381,
+      "CH": 0.211,
+      "ST": 0.208
+    },
+    "career_swstr": {
+      "FF": 0.272,
+      "CH": 0.384,
+      "ST": 0.267
+    },
+    "career_swstr_overall": 0.2403,
+    "career_primary_velo": 92.33,
+    "n_seasons": 3,
+    "career_pitches": 1435
+  },
+  "663465": {
+    "name": "Allard, Kolby",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.389
+    },
+    "career_swstr": {
+      "FF": 0.275
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 389
+  },
+  "663554": {
+    "name": "Mize, Casey",
+    "career_pitch_types": [
+      "FF",
+      "FS"
+    ],
+    "career_usage": {
+      "FF": 0.336,
+      "FS": 0.242
+    },
+    "career_swstr": {
+      "FF": 0.206,
+      "FS": 0.332
+    },
+    "career_swstr_overall": 0.2065,
+    "career_primary_velo": 95.05,
+    "n_seasons": 2,
+    "career_pitches": 1359
+  },
+  "663559": {
+    "name": "Falter, Bailey",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.508
+    },
+    "career_swstr": {
+      "FF": 0.158
+    },
+    "career_swstr_overall": 0.1662,
+    "career_primary_velo": 91.55,
+    "n_seasons": 4,
+    "career_pitches": 992
+  },
+  "663568": {
+    "name": "Kolek, Stephen",
+    "career_pitch_types": [
+      "SI",
+      "FF"
+    ],
+    "career_usage": {
+      "SI": 0.241,
+      "FF": 0.256
+    },
+    "career_swstr": {
+      "SI": 0.131,
+      "FF": 0.154
+    },
+    "career_swstr_overall": 0.1708,
+    "career_primary_velo": 94.9,
+    "n_seasons": 2,
+    "career_pitches": 840
+  },
+  "663574": {
+    "name": "Santillan, Tony",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.65
+    },
+    "career_swstr": {
+      "FF": 0.219
+    },
+    "career_swstr_overall": 0.2371,
+    "career_primary_velo": 96.57,
+    "n_seasons": 3,
+    "career_pitches": 799
+  },
+  "663623": {
+    "name": "Irvin, Jake",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.32,
+      "CU": 0.296,
+      "SI": 0.222
+    },
+    "career_swstr": {
+      "FF": 0.175,
+      "CU": 0.251,
+      "SI": 0.104
+    },
+    "career_swstr_overall": 0.2043,
+    "career_primary_velo": 93.6,
+    "n_seasons": 3,
+    "career_pitches": 2464
+  },
+  "663687": {
+    "name": "Harris, Hogan",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.568
+    },
+    "career_swstr": {
+      "FF": 0.224
+    },
+    "career_swstr_overall": 0.2024,
+    "career_primary_velo": 93.0,
+    "n_seasons": 3,
+    "career_pitches": 639
+  },
+  "663855": {
+    "name": "Hicks, Jordan",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.544
+    },
+    "career_swstr": {
+      "SI": 0.096
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 652
+  },
+  "663893": {
+    "name": "Little, Brendon",
+    "career_pitch_types": [
+      "CU",
+      "SI"
+    ],
+    "career_usage": {
+      "CU": 0.46,
+      "SI": 0.461
+    },
+    "career_swstr": {
+      "CU": 0.556,
+      "SI": 0.319
+    },
+    "career_swstr_overall": 0.2764,
+    "career_primary_velo": 93.95,
+    "n_seasons": 2,
+    "career_pitches": 1143
+  },
+  "663903": {
+    "name": "Singer, Brady",
+    "career_pitch_types": [
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "SI": 0.406,
+      "SL": 0.284
+    },
+    "career_swstr": {
+      "SI": 0.171,
+      "SL": 0.277
+    },
+    "career_swstr_overall": 0.1453,
+    "career_primary_velo": 92.12,
+    "n_seasons": 4,
+    "career_pitches": 1966
+  },
+  "663969": {
+    "name": "Phillips, Tyler",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.314
+    },
+    "career_swstr": {
+      "SI": 0.114
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 350
+  },
+  "663978": {
+    "name": "Paddack, Chris",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.432,
+      "CH": 0.235
+    },
+    "career_swstr": {
+      "FF": 0.185,
+      "CH": 0.252
+    },
+    "career_swstr_overall": 0.2059,
+    "career_primary_velo": 93.5,
+    "n_seasons": 2,
+    "career_pitches": 1713
+  },
+  "664126": {
+    "name": "Fairbanks, Pete",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.511
+    },
+    "career_swstr": {
+      "FF": 0.219
+    },
+    "career_swstr_overall": 0.2553,
+    "career_primary_velo": 98.12,
+    "n_seasons": 4,
+    "career_pitches": 504
+  },
+  "664208": {
+    "name": "Maton, Phil",
+    "career_pitch_types": [
+      "CU"
+    ],
+    "career_usage": {
+      "CU": 0.382
+    },
+    "career_swstr": {
+      "CU": 0.416
+    },
+    "career_swstr_overall": 0.3223,
+    "career_primary_velo": 89.1,
+    "n_seasons": 4,
+    "career_pitches": 385
+  },
+  "664285": {
+    "name": "Valdez, Framber",
+    "career_pitch_types": [
+      "SI",
+      "CU",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.457,
+      "CU": 0.331,
+      "CH": 0.179
+    },
+    "career_swstr": {
+      "SI": 0.13,
+      "CU": 0.437,
+      "CH": 0.286
+    },
+    "career_swstr_overall": 0.1245,
+    "career_primary_velo": 94.72,
+    "n_seasons": 4,
+    "career_pitches": 2795
+  },
+  "664854": {
+    "name": "Helsley, Ryan",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.455,
+      "SL": 0.474
+    },
+    "career_swstr": {
+      "FF": 0.178,
+      "SL": 0.416
+    },
+    "career_swstr_overall": 0.2244,
+    "career_primary_velo": 99.55,
+    "n_seasons": 4,
+    "career_pitches": 909
+  },
+  "665152": {
+    "name": "Kremer, Dean",
+    "career_pitch_types": [
+      "FF",
+      "FS",
+      "FC",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.266,
+      "FS": 0.211,
+      "FC": 0.202,
+      "SI": 0.193
+    },
+    "career_swstr": {
+      "FF": 0.159,
+      "FS": 0.392,
+      "FC": 0.242,
+      "SI": 0.103
+    },
+    "career_swstr_overall": 0.2202,
+    "career_primary_velo": 93.7,
+    "n_seasons": 4,
+    "career_pitches": 2345
+  },
+  "665795": {
+    "name": "Cabrera, Edward",
+    "career_pitch_types": [
+      "CH",
+      "SI",
+      "CU"
+    ],
+    "career_usage": {
+      "CH": 0.258,
+      "SI": 0.204,
+      "CU": 0.236
+    },
+    "career_swstr": {
+      "CH": 0.273,
+      "SI": 0.092,
+      "CU": 0.452
+    },
+    "career_swstr_overall": 0.1854,
+    "career_primary_velo": 96.35,
+    "n_seasons": 4,
+    "career_pitches": 1571
+  },
+  "666142": {
+    "name": "Ragans, Cole",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.495
+    },
+    "career_swstr": {
+      "FF": 0.286
+    },
+    "career_swstr_overall": 0.241,
+    "career_primary_velo": 94.83,
+    "n_seasons": 4,
+    "career_pitches": 534
+  },
+  "666157": {
+    "name": "Lodolo, Nick",
+    "career_pitch_types": [
+      "CU",
+      "SI",
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "CU": 0.287,
+      "SI": 0.218,
+      "FF": 0.278,
+      "CH": 0.217
+    },
+    "career_swstr": {
+      "CU": 0.403,
+      "SI": 0.134,
+      "FF": 0.249,
+      "CH": 0.275
+    },
+    "career_swstr_overall": 0.2738,
+    "career_primary_velo": 93.93,
+    "n_seasons": 4,
+    "career_pitches": 2478
+  },
+  "666200": {
+    "name": "Luzardo, Jesús",
+    "career_pitch_types": [
+      "FF",
+      "ST",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.333,
+      "ST": 0.321,
+      "CH": 0.173
+    },
+    "career_swstr": {
+      "FF": 0.198,
+      "ST": 0.441,
+      "CH": 0.362
+    },
+    "career_swstr_overall": 0.1885,
+    "career_primary_velo": 96.17,
+    "n_seasons": 4,
+    "career_pitches": 2491
+  },
+  "666214": {
+    "name": "Wentz, Joey",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.441,
+      "SL": 0.255
+    },
+    "career_swstr": {
+      "FF": 0.179,
+      "SL": 0.296
+    },
+    "career_swstr_overall": 0.1771,
+    "career_primary_velo": 93.22,
+    "n_seasons": 4,
+    "career_pitches": 1262
+  },
+  "666374": {
+    "name": "Brash, Matt",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.606
+    },
+    "career_swstr": {
+      "SL": 0.36
+    },
+    "career_swstr_overall": 0.2357,
+    "career_primary_velo": 97.5,
+    "n_seasons": 2,
+    "career_pitches": 498
+  },
+  "666808": {
+    "name": "Doval, Camilo",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.48
+    },
+    "career_swstr": {
+      "SL": 0.411
+    },
+    "career_swstr_overall": 0.1656,
+    "career_primary_velo": 98.8,
+    "n_seasons": 2,
+    "career_pitches": 529
+  },
+  "666974": {
+    "name": "Cano, Yennier",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.458
+    },
+    "career_swstr": {
+      "SI": 0.202
+    },
+    "career_swstr_overall": 0.169,
+    "career_primary_velo": 96.5,
+    "n_seasons": 2,
+    "career_pitches": 452
+  },
+  "667463": {
+    "name": "King, John",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.592
+    },
+    "career_swstr": {
+      "SI": 0.157
+    },
+    "career_swstr_overall": 0.1387,
+    "career_primary_velo": 93.35,
+    "n_seasons": 4,
+    "career_pitches": 463
+  },
+  "667755": {
+    "name": "Soriano, José",
+    "career_pitch_types": [
+      "SI",
+      "CU"
+    ],
+    "career_usage": {
+      "SI": 0.491,
+      "CU": 0.267
+    },
+    "career_swstr": {
+      "SI": 0.161,
+      "CU": 0.429
+    },
+    "career_swstr_overall": 0.1933,
+    "career_primary_velo": 98.3,
+    "n_seasons": 2,
+    "career_pitches": 2111
+  },
+  "668678": {
+    "name": "Gallen, Zac",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "CH",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.45,
+      "CU": 0.235,
+      "CH": 0.16,
+      "SL": 0.13
+    },
+    "career_swstr": {
+      "FF": 0.129,
+      "CU": 0.389,
+      "CH": 0.302,
+      "SL": 0.197
+    },
+    "career_swstr_overall": 0.165,
+    "career_primary_velo": 93.7,
+    "n_seasons": 4,
+    "career_pitches": 3053
+  },
+  "668881": {
+    "name": "Greene, Hunter",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.542,
+      "SL": 0.35
+    },
+    "career_swstr": {
+      "FF": 0.23,
+      "SL": 0.469
+    },
+    "career_swstr_overall": 0.2547,
+    "career_primary_velo": 98.57,
+    "n_seasons": 4,
+    "career_pitches": 1558
+  },
+  "668909": {
+    "name": "Williams, Gavin",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "ST",
+      "FC"
+    ],
+    "career_usage": {
+      "FF": 0.374,
+      "CU": 0.22,
+      "ST": 0.199,
+      "FC": 0.14
+    },
+    "career_swstr": {
+      "FF": 0.233,
+      "CU": 0.344,
+      "ST": 0.44,
+      "FC": 0.181
+    },
+    "career_swstr_overall": 0.2342,
+    "career_primary_velo": 96.3,
+    "n_seasons": 3,
+    "career_pitches": 2731
+  },
+  "668933": {
+    "name": "Ashcraft, Graham",
+    "career_pitch_types": [
+      "FC",
+      "SL"
+    ],
+    "career_usage": {
+      "FC": 0.541,
+      "SL": 0.459
+    },
+    "career_swstr": {
+      "FC": 0.182,
+      "SL": 0.418
+    },
+    "career_swstr_overall": 0.2099,
+    "career_primary_velo": 96.5,
+    "n_seasons": 4,
+    "career_pitches": 1039
+  },
+  "668941": {
+    "name": "Romero, JoJo",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.379
+    },
+    "career_swstr": {
+      "ST": 0.338
+    },
+    "career_swstr_overall": 0.1128,
+    "career_primary_velo": 94.65,
+    "n_seasons": 2,
+    "career_pitches": 375
+  },
+  "668964": {
+    "name": "Myers, Tobias",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.452
+    },
+    "career_swstr": {
+      "FF": 0.147
+    },
+    "career_swstr_overall": 0.1785,
+    "career_primary_velo": 93.2,
+    "n_seasons": 2,
+    "career_pitches": 373
+  },
+  "668984": {
+    "name": "Legumina, Casey",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.492
+    },
+    "career_swstr": {
+      "FF": 0.284
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 424
+  },
+  "669022": {
+    "name": "Gore, MacKenzie",
+    "career_pitch_types": [
+      "FF",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.493,
+      "CU": 0.24
+    },
+    "career_swstr": {
+      "FF": 0.207,
+      "CU": 0.357
+    },
+    "career_swstr_overall": 0.2126,
+    "career_primary_velo": 95.25,
+    "n_seasons": 4,
+    "career_pitches": 2063
+  },
+  "669093": {
+    "name": "Estrada, Jeremiah",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.568
+    },
+    "career_swstr": {
+      "FF": 0.291
+    },
+    "career_swstr_overall": 0.3066,
+    "career_primary_velo": 97.55,
+    "n_seasons": 2,
+    "career_pitches": 702
+  },
+  "669160": {
+    "name": "May, Dustin",
+    "career_pitch_types": [
+      "SI",
+      "ST"
+    ],
+    "career_usage": {
+      "SI": 0.335,
+      "ST": 0.393
+    },
+    "career_swstr": {
+      "SI": 0.105,
+      "ST": 0.27
+    },
+    "career_swstr_overall": 0.2227,
+    "career_primary_velo": 96.35,
+    "n_seasons": 2,
+    "career_pitches": 1580
+  },
+  "669194": {
+    "name": "Nelson, Ryne",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.619
+    },
+    "career_swstr": {
+      "FF": 0.191
+    },
+    "career_swstr_overall": 0.1849,
+    "career_primary_velo": 95.1,
+    "n_seasons": 3,
+    "career_pitches": 1526
+  },
+  "669199": {
+    "name": "Bachar, Lake",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.372
+    },
+    "career_swstr": {
+      "FF": 0.252
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 425
+  },
+  "669203": {
+    "name": "Burnes, Corbin",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.55
+    },
+    "career_swstr": {
+      "FC": 0.217
+    },
+    "career_swstr_overall": 0.1867,
+    "career_primary_velo": 96.0,
+    "n_seasons": 3,
+    "career_pitches": 555
+  },
+  "669211": {
+    "name": "Akin, Keegan",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.513
+    },
+    "career_swstr": {
+      "FF": 0.252
+    },
+    "career_swstr_overall": 0.265,
+    "career_primary_velo": 93.67,
+    "n_seasons": 4,
+    "career_pitches": 543
+  },
+  "669276": {
+    "name": "Lee, Dylan",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.555
+    },
+    "career_swstr": {
+      "SL": 0.419
+    },
+    "career_swstr_overall": 0.2092,
+    "career_primary_velo": 92.87,
+    "n_seasons": 3,
+    "career_pitches": 612
+  },
+  "669302": {
+    "name": "Gilbert, Logan",
+    "career_pitch_types": [
+      "FF",
+      "SL",
+      "FS"
+    ],
+    "career_usage": {
+      "FF": 0.367,
+      "SL": 0.353,
+      "FS": 0.196
+    },
+    "career_swstr": {
+      "FF": 0.204,
+      "SL": 0.345,
+      "FS": 0.504
+    },
+    "career_swstr_overall": 0.2065,
+    "career_primary_velo": 95.95,
+    "n_seasons": 4,
+    "career_pitches": 1974
+  },
+  "669358": {
+    "name": "Baz, Shane",
+    "career_pitch_types": [
+      "FF",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.439,
+      "CU": 0.269
+    },
+    "career_swstr": {
+      "FF": 0.235,
+      "CU": 0.295
+    },
+    "career_swstr_overall": 0.2304,
+    "career_primary_velo": 96.3,
+    "n_seasons": 2,
+    "career_pitches": 1925
+  },
+  "669371": {
+    "name": "Henry, Cole",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.506
+    },
+    "career_swstr": {
+      "FF": 0.293
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 489
+  },
+  "669372": {
+    "name": "Ginn, J.T.",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.514
+    },
+    "career_swstr": {
+      "SI": 0.217
+    },
+    "career_swstr_overall": 0.2141,
+    "career_primary_velo": 92.4,
+    "n_seasons": 2,
+    "career_pitches": 810
+  },
+  "669373": {
+    "name": "Skubal, Tarik",
+    "career_pitch_types": [
+      "CH",
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "CH": 0.314,
+      "FF": 0.293,
+      "SI": 0.239
+    },
+    "career_swstr": {
+      "CH": 0.468,
+      "FF": 0.287,
+      "SI": 0.183
+    },
+    "career_swstr_overall": 0.2724,
+    "career_primary_velo": 96.1,
+    "n_seasons": 4,
+    "career_pitches": 2411
+  },
+  "669387": {
+    "name": "Mlodzinski, Carmen",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.362
+    },
+    "career_swstr": {
+      "FF": 0.179
+    },
+    "career_swstr_overall": 0.2062,
+    "career_primary_velo": 96.0,
+    "n_seasons": 3,
+    "career_pitches": 596
+  },
+  "669432": {
+    "name": "Rogers, Trevor",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.409,
+      "CH": 0.25
+    },
+    "career_swstr": {
+      "FF": 0.241,
+      "CH": 0.269
+    },
+    "career_swstr_overall": 0.2331,
+    "career_primary_velo": 93.17,
+    "n_seasons": 3,
+    "career_pitches": 1072
+  },
+  "669461": {
+    "name": "Liberatore, Matthew",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.287,
+      "SL": 0.212
+    },
+    "career_swstr": {
+      "FF": 0.125,
+      "SL": 0.319
+    },
+    "career_swstr_overall": 0.1615,
+    "career_primary_velo": 94.12,
+    "n_seasons": 4,
+    "career_pitches": 1190
+  },
+  "669467": {
+    "name": "Pallante, Andre",
+    "career_pitch_types": [
+      "FF",
+      "SL",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.441,
+      "SL": 0.285,
+      "SI": 0.133
+    },
+    "career_swstr": {
+      "FF": 0.141,
+      "SL": 0.339,
+      "SI": 0.141
+    },
+    "career_swstr_overall": 0.1421,
+    "career_primary_velo": 95.08,
+    "n_seasons": 4,
+    "career_pitches": 2336
+  },
+  "669711": {
+    "name": "Weissert, Greg",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.334
+    },
+    "career_swstr": {
+      "FF": 0.22
+    },
+    "career_swstr_overall": 0.2032,
+    "career_primary_velo": 94.05,
+    "n_seasons": 2,
+    "career_pitches": 357
+  },
+  "669724": {
+    "name": "Hanifee, Brenan",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.626
+    },
+    "career_swstr": {
+      "SI": 0.109
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 592
+  },
+  "669920": {
+    "name": "Alexander, Jason",
+    "career_pitch_types": [
+      "SI",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.399,
+      "CH": 0.327
+    },
+    "career_swstr": {
+      "SI": 0.053,
+      "CH": 0.417
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 910
+  },
+  "669923": {
+    "name": "Kirby, George",
+    "career_pitch_types": [
+      "SI",
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "SI": 0.268,
+      "FF": 0.288,
+      "SL": 0.282
+    },
+    "career_swstr": {
+      "SI": 0.115,
+      "FF": 0.307,
+      "SL": 0.311
+    },
+    "career_swstr_overall": 0.2824,
+    "career_primary_velo": 95.88,
+    "n_seasons": 4,
+    "career_pitches": 1748
+  },
+  "670102": {
+    "name": "Francis, Bowden",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.56
+    },
+    "career_swstr": {
+      "FF": 0.151
+    },
+    "career_swstr_overall": 0.1697,
+    "career_primary_velo": 93.27,
+    "n_seasons": 3,
+    "career_pitches": 639
+  },
+  "670280": {
+    "name": "Bednar, David",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.44
+    },
+    "career_swstr": {
+      "FF": 0.222
+    },
+    "career_swstr_overall": 0.2735,
+    "career_primary_velo": 96.82,
+    "n_seasons": 4,
+    "career_pitches": 451
+  },
+  "670955": {
+    "name": "Uceta, Edwin",
+    "career_pitch_types": [
+      "CH",
+      "FF"
+    ],
+    "career_usage": {
+      "CH": 0.389,
+      "FF": 0.406
+    },
+    "career_swstr": {
+      "CH": 0.36,
+      "FF": 0.387
+    },
+    "career_swstr_overall": 0.3806,
+    "career_primary_velo": 94.1,
+    "n_seasons": 2,
+    "career_pitches": 965
+  },
+  "670970": {
+    "name": "Morejon, Adrian",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.618
+    },
+    "career_swstr": {
+      "SI": 0.154
+    },
+    "career_swstr_overall": 0.1947,
+    "career_primary_velo": 96.77,
+    "n_seasons": 3,
+    "career_pitches": 617
+  },
+  "671096": {
+    "name": "Abbott, Andrew",
+    "career_pitch_types": [
+      "FF",
+      "CH",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.472,
+      "CH": 0.196,
+      "ST": 0.174
+    },
+    "career_swstr": {
+      "FF": 0.199,
+      "CH": 0.252,
+      "ST": 0.326
+    },
+    "career_swstr_overall": 0.1969,
+    "career_primary_velo": 92.77,
+    "n_seasons": 3,
+    "career_pitches": 2254
+  },
+  "671106": {
+    "name": "Allen, Logan",
+    "career_pitch_types": [
+      "FF",
+      "ST",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.332,
+      "ST": 0.235,
+      "CH": 0.183
+    },
+    "career_swstr": {
+      "FF": 0.219,
+      "ST": 0.27,
+      "CH": 0.183
+    },
+    "career_swstr_overall": 0.1845,
+    "career_primary_velo": 91.27,
+    "n_seasons": 3,
+    "career_pitches": 2033
+  },
+  "671131": {
+    "name": "Rutledge, Jackson",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.326
+    },
+    "career_swstr": {
+      "SI": 0.112
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 437
+  },
+  "671737": {
+    "name": "Bradley, Taj",
+    "career_pitch_types": [
+      "FF",
+      "FC"
+    ],
+    "career_usage": {
+      "FF": 0.386,
+      "FC": 0.226
+    },
+    "career_swstr": {
+      "FF": 0.193,
+      "FC": 0.319
+    },
+    "career_swstr_overall": 0.1985,
+    "career_primary_velo": 96.23,
+    "n_seasons": 3,
+    "career_pitches": 1391
+  },
+  "671922": {
+    "name": "Smith, Cade",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.699
+    },
+    "career_swstr": {
+      "FF": 0.322
+    },
+    "career_swstr_overall": 0.3131,
+    "career_primary_velo": 96.2,
+    "n_seasons": 2,
+    "career_pitches": 826
+  },
+  "672282": {
+    "name": "Detmers, Reid",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.454
+    },
+    "career_swstr": {
+      "FF": 0.309
+    },
+    "career_swstr_overall": 0.241,
+    "career_primary_velo": 94.3,
+    "n_seasons": 4,
+    "career_pitches": 492
+  },
+  "672391": {
+    "name": "Ort, Kaleb",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.543
+    },
+    "career_swstr": {
+      "FF": 0.264
+    },
+    "career_swstr_overall": 0.2421,
+    "career_primary_velo": 96.5,
+    "n_seasons": 4,
+    "career_pitches": 428
+  },
+  "672456": {
+    "name": "Montero, Keider",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.308
+    },
+    "career_swstr": {
+      "FF": 0.142
+    },
+    "career_swstr_overall": 0.1642,
+    "career_primary_velo": 94.3,
+    "n_seasons": 2,
+    "career_pitches": 453
+  },
+  "672578": {
+    "name": "Hernández, Carlos",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.519
+    },
+    "career_swstr": {
+      "FF": 0.19
+    },
+    "career_swstr_overall": 0.2054,
+    "career_primary_velo": 97.87,
+    "n_seasons": 4,
+    "career_pitches": 394
+  },
+  "672582": {
+    "name": "Zerpa, Angel",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.439
+    },
+    "career_swstr": {
+      "SI": 0.086
+    },
+    "career_swstr_overall": 0.2187,
+    "career_primary_velo": 95.35,
+    "n_seasons": 2,
+    "career_pitches": 483
+  },
+  "672841": {
+    "name": "Vargas, Carlos",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.619
+    },
+    "career_swstr": {
+      "SI": 0.148
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 678
+  },
+  "673513": {
+    "name": "Matsui, Yuki",
+    "career_pitch_types": [
+      "FF",
+      "FS"
+    ],
+    "career_usage": {
+      "FF": 0.395,
+      "FS": 0.322
+    },
+    "career_swstr": {
+      "FF": 0.179,
+      "FS": 0.449
+    },
+    "career_swstr_overall": 0.1851,
+    "career_primary_velo": 92.15,
+    "n_seasons": 2,
+    "career_pitches": 762
+  },
+  "673540": {
+    "name": "Senga, Kodai",
+    "career_pitch_types": [
+      "FS",
+      "FF",
+      "FC"
+    ],
+    "career_usage": {
+      "FS": 0.285,
+      "FF": 0.314,
+      "FC": 0.205
+    },
+    "career_swstr": {
+      "FS": 0.418,
+      "FF": 0.199,
+      "FC": 0.165
+    },
+    "career_swstr_overall": 0.1825,
+    "career_primary_velo": 95.2,
+    "n_seasons": 2,
+    "career_pitches": 1528
+  },
+  "673929": {
+    "name": "Leasure, Jordan",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.535,
+      "SL": 0.425
+    },
+    "career_swstr": {
+      "FF": 0.256,
+      "SL": 0.408
+    },
+    "career_swstr_overall": 0.2564,
+    "career_primary_velo": 96.15,
+    "n_seasons": 2,
+    "career_pitches": 1085
+  },
+  "674370": {
+    "name": "Bido, Osvaldo",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.38,
+      "SL": 0.298
+    },
+    "career_swstr": {
+      "FF": 0.218,
+      "SL": 0.341
+    },
+    "career_swstr_overall": 0.249,
+    "career_primary_velo": 94.67,
+    "n_seasons": 3,
+    "career_pitches": 934
+  },
+  "675848": {
+    "name": "Mejia, Juan",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.671
+    },
+    "career_swstr": {
+      "FF": 0.286
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 721
+  },
+  "675911": {
+    "name": "Strider, Spencer",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.512,
+      "SL": 0.353
+    },
+    "career_swstr": {
+      "FF": 0.153,
+      "SL": 0.483
+    },
+    "career_swstr_overall": 0.2509,
+    "career_primary_velo": 96.97,
+    "n_seasons": 3,
+    "career_pitches": 1825
+  },
+  "676083": {
+    "name": "Junk, Janson",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.377,
+      "SL": 0.276
+    },
+    "career_swstr": {
+      "FF": 0.146,
+      "SL": 0.228
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1058
+  },
+  "676106": {
+    "name": "Hancock, Emerson",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.38
+    },
+    "career_swstr": {
+      "SI": 0.1
+    },
+    "career_swstr_overall": 0.2344,
+    "career_primary_velo": 94.15,
+    "n_seasons": 2,
+    "career_pitches": 541
+  },
+  "676130": {
+    "name": "Buttó, José",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.3
+    },
+    "career_swstr": {
+      "SL": 0.37
+    },
+    "career_swstr_overall": 0.2788,
+    "career_primary_velo": 94.4,
+    "n_seasons": 3,
+    "career_pitches": 328
+  },
+  "676254": {
+    "name": "Walker, Ryan",
+    "career_pitch_types": [
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "SI": 0.619,
+      "SL": 0.375
+    },
+    "career_swstr": {
+      "SI": 0.171,
+      "SL": 0.28
+    },
+    "career_swstr_overall": 0.1767,
+    "career_primary_velo": 94.67,
+    "n_seasons": 3,
+    "career_pitches": 1012
+  },
+  "676263": {
+    "name": "Dreyer, Jack",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.462,
+      "FF": 0.451
+    },
+    "career_swstr": {
+      "SL": 0.301,
+      "FF": 0.226
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1046
+  },
+  "676282": {
+    "name": "Cantillo, Joey",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.42,
+      "CH": 0.305
+    },
+    "career_swstr": {
+      "FF": 0.149,
+      "CH": 0.494
+    },
+    "career_swstr_overall": 0.1728,
+    "career_primary_velo": 91.95,
+    "n_seasons": 2,
+    "career_pitches": 1187
+  },
+  "676395": {
+    "name": "Garcia, Robert",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.449
+    },
+    "career_swstr": {
+      "FF": 0.303
+    },
+    "career_swstr_overall": 0.2607,
+    "career_primary_velo": 94.4,
+    "n_seasons": 3,
+    "career_pitches": 436
+  },
+  "676428": {
+    "name": "Hurter, Brant",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.525
+    },
+    "career_swstr": {
+      "SI": 0.134
+    },
+    "career_swstr_overall": 0.1207,
+    "career_primary_velo": 92.1,
+    "n_seasons": 2,
+    "career_pitches": 552
+  },
+  "676440": {
+    "name": "Bibee, Tanner",
+    "career_pitch_types": [
+      "FF",
+      "SI",
+      "CH",
+      "FC",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.279,
+      "SI": 0.152,
+      "CH": 0.152,
+      "FC": 0.207,
+      "ST": 0.16
+    },
+    "career_swstr": {
+      "FF": 0.132,
+      "SI": 0.104,
+      "CH": 0.387,
+      "FC": 0.294,
+      "ST": 0.314
+    },
+    "career_swstr_overall": 0.1838,
+    "career_primary_velo": 94.63,
+    "n_seasons": 3,
+    "career_pitches": 2817
+  },
+  "676467": {
+    "name": "Gordon, Colton",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.41
+    },
+    "career_swstr": {
+      "FF": 0.157
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 595
+  },
+  "676477": {
+    "name": "Whitlock, Garrett",
+    "career_pitch_types": [
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "SI": 0.471,
+      "SL": 0.309
+    },
+    "career_swstr": {
+      "SI": 0.311,
+      "SL": 0.359
+    },
+    "career_swstr_overall": 0.2403,
+    "career_primary_velo": 94.95,
+    "n_seasons": 2,
+    "career_pitches": 921
+  },
+  "676508": {
+    "name": "Casparius, Ben",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.322
+    },
+    "career_swstr": {
+      "ST": 0.259
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 406
+  },
+  "676534": {
+    "name": "Faucher, Calvin",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.37
+    },
+    "career_swstr": {
+      "FC": 0.184
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 390
+  },
+  "676617": {
+    "name": "O'Brien, Riley",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.483
+    },
+    "career_swstr": {
+      "SI": 0.108
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 366
+  },
+  "676661": {
+    "name": "Lazar, Max",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.553
+    },
+    "career_swstr": {
+      "FF": 0.157
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 357
+  },
+  "676664": {
+    "name": "Sears, JP",
+    "career_pitch_types": [
+      "FF",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.401,
+      "ST": 0.27
+    },
+    "career_swstr": {
+      "FF": 0.203,
+      "ST": 0.261
+    },
+    "career_swstr_overall": 0.2163,
+    "career_primary_velo": 92.6,
+    "n_seasons": 4,
+    "career_pitches": 1589
+  },
+  "676684": {
+    "name": "Vest, Will",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.524
+    },
+    "career_swstr": {
+      "FF": 0.227
+    },
+    "career_swstr_overall": 0.2152,
+    "career_primary_velo": 95.8,
+    "n_seasons": 4,
+    "career_pitches": 596
+  },
+  "676755": {
+    "name": "Mattson, Isaac",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.785
+    },
+    "career_swstr": {
+      "FF": 0.231
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 610
+  },
+  "676879": {
+    "name": "Ashby, Aaron",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.513
+    },
+    "career_swstr": {
+      "SI": 0.164
+    },
+    "career_swstr_overall": 0.1765,
+    "career_primary_velo": 96.43,
+    "n_seasons": 3,
+    "career_pitches": 530
+  },
+  "676962": {
+    "name": "Brown, Ben",
+    "career_pitch_types": [
+      "FF",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.556,
+      "CU": 0.399
+    },
+    "career_swstr": {
+      "FF": 0.148,
+      "CU": 0.431
+    },
+    "career_swstr_overall": 0.161,
+    "career_primary_velo": 96.1,
+    "n_seasons": 2,
+    "career_pitches": 1679
+  },
+  "676974": {
+    "name": "Meyer, Max",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.353
+    },
+    "career_swstr": {
+      "SL": 0.427
+    },
+    "career_swstr_overall": 0.1388,
+    "career_primary_velo": 94.55,
+    "n_seasons": 2,
+    "career_pitches": 367
+  },
+  "676979": {
+    "name": "Crochet, Garrett",
+    "career_pitch_types": [
+      "FF",
+      "FC",
+      "ST",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.359,
+      "FC": 0.277,
+      "ST": 0.16,
+      "SI": 0.16
+    },
+    "career_swstr": {
+      "FF": 0.305,
+      "FC": 0.243,
+      "ST": 0.405,
+      "SI": 0.196
+    },
+    "career_swstr_overall": 0.3098,
+    "career_primary_velo": 96.8,
+    "n_seasons": 2,
+    "career_pitches": 3015
+  },
+  "677944": {
+    "name": "Cecconi, Slade",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.436,
+      "SL": 0.182
+    },
+    "career_swstr": {
+      "FF": 0.184,
+      "SL": 0.357
+    },
+    "career_swstr_overall": 0.1692,
+    "career_primary_velo": 94.27,
+    "n_seasons": 3,
+    "career_pitches": 1275
+  },
+  "677952": {
+    "name": "Ashcraft, Braxton",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.312
+    },
+    "career_swstr": {
+      "SL": 0.324
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 344
+  },
+  "678024": {
+    "name": "Vasil, Mike",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.399
+    },
+    "career_swstr": {
+      "SI": 0.146
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 657
+  },
+  "678368": {
+    "name": "Bellozo, Valente",
+    "career_pitch_types": [
+      "FC",
+      "FF"
+    ],
+    "career_usage": {
+      "FC": 0.35,
+      "FF": 0.287
+    },
+    "career_swstr": {
+      "FC": 0.178,
+      "FF": 0.155
+    },
+    "career_swstr_overall": 0.1436,
+    "career_primary_velo": 90.0,
+    "n_seasons": 2,
+    "career_pitches": 843
+  },
+  "678394": {
+    "name": "Bello, Brayan",
+    "career_pitch_types": [
+      "SI",
+      "ST",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.35,
+      "ST": 0.19,
+      "CH": 0.152
+    },
+    "career_swstr": {
+      "SI": 0.108,
+      "ST": 0.266,
+      "CH": 0.328
+    },
+    "career_swstr_overall": 0.1723,
+    "career_primary_velo": 95.3,
+    "n_seasons": 2,
+    "career_pitches": 1866
+  },
+  "678495": {
+    "name": "Rodríguez, Randy",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.446
+    },
+    "career_swstr": {
+      "SL": 0.335
+    },
+    "career_swstr_overall": 0.265,
+    "career_primary_velo": 97.5,
+    "n_seasons": 2,
+    "career_pitches": 360
+  },
+  "678606": {
+    "name": "Ferrer, Jose A.",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.618
+    },
+    "career_swstr": {
+      "SI": 0.161
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 747
+  },
+  "680573": {
+    "name": "Woods Richardson, Simeon",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.456,
+      "SL": 0.272
+    },
+    "career_swstr": {
+      "FF": 0.218,
+      "SL": 0.274
+    },
+    "career_swstr_overall": 0.2185,
+    "career_primary_velo": 93.15,
+    "n_seasons": 2,
+    "career_pitches": 1366
+  },
+  "680730": {
+    "name": "Parker, Mitchell",
+    "career_pitch_types": [
+      "FF",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.555,
+      "CU": 0.22
+    },
+    "career_swstr": {
+      "FF": 0.107,
+      "CU": 0.29
+    },
+    "career_swstr_overall": 0.1127,
+    "career_primary_velo": 92.75,
+    "n_seasons": 2,
+    "career_pitches": 2095
+  },
+  "680732": {
+    "name": "Burke, Sean",
+    "career_pitch_types": [
+      "FF",
+      "SL",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.431,
+      "SL": 0.219,
+      "CU": 0.237
+    },
+    "career_swstr": {
+      "FF": 0.247,
+      "SL": 0.264,
+      "CU": 0.271
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 2106
+  },
+  "680767": {
+    "name": "Vodnik, Victor",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.556
+    },
+    "career_swstr": {
+      "FF": 0.172
+    },
+    "career_swstr_overall": 0.1782,
+    "career_primary_velo": 98.35,
+    "n_seasons": 2,
+    "career_pitches": 511
+  },
+  "680885": {
+    "name": "Schwellenbach, Spencer",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.353
+    },
+    "career_swstr": {
+      "FF": 0.271
+    },
+    "career_swstr_overall": 0.2373,
+    "career_primary_velo": 96.6,
+    "n_seasons": 2,
+    "career_pitches": 555
+  },
+  "681190": {
+    "name": "Vásquez, Randy",
+    "career_pitch_types": [
+      "FC",
+      "SI",
+      "FF"
+    ],
+    "career_usage": {
+      "FC": 0.249,
+      "SI": 0.19,
+      "FF": 0.21
+    },
+    "career_swstr": {
+      "FC": 0.177,
+      "SI": 0.064,
+      "FF": 0.16
+    },
+    "career_swstr_overall": 0.1907,
+    "career_primary_velo": 93.9,
+    "n_seasons": 2,
+    "career_pitches": 1396
+  },
+  "681343": {
+    "name": "Smith, Shane",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.45,
+      "CH": 0.168
+    },
+    "career_swstr": {
+      "FF": 0.253,
+      "CH": 0.318
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1495
+  },
+  "681347": {
+    "name": "Burrows, Mike",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.392,
+      "CH": 0.237
+    },
+    "career_swstr": {
+      "FF": 0.168,
+      "CH": 0.431
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 967
+  },
+  "681911": {
+    "name": "Vesia, Alex",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.575
+    },
+    "career_swstr": {
+      "FF": 0.277
+    },
+    "career_swstr_overall": 0.2904,
+    "career_primary_velo": 93.65,
+    "n_seasons": 4,
+    "career_pitches": 588
+  },
+  "681982": {
+    "name": "Anderson, Grant",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.378
+    },
+    "career_swstr": {
+      "ST": 0.367
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 438
+  },
+  "682052": {
+    "name": "Lopez, Jacob",
+    "career_pitch_types": [
+      "SL",
+      "FF"
+    ],
+    "career_usage": {
+      "SL": 0.306,
+      "FF": 0.352
+    },
+    "career_swstr": {
+      "SL": 0.327,
+      "FF": 0.287
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1096
+  },
+  "682243": {
+    "name": "Miller, Bryce",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.409
+    },
+    "career_swstr": {
+      "FF": 0.23
+    },
+    "career_swstr_overall": 0.2617,
+    "career_primary_velo": 95.03,
+    "n_seasons": 3,
+    "career_pitches": 631
+  },
+  "682254": {
+    "name": "Montgomery, Mason",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.662
+    },
+    "career_swstr": {
+      "FF": 0.314
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 569
+  },
+  "682842": {
+    "name": "Uribe, Abner",
+    "career_pitch_types": [
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "SI": 0.518,
+      "SL": 0.46
+    },
+    "career_swstr": {
+      "SI": 0.201,
+      "SL": 0.466
+    },
+    "career_swstr_overall": 0.2149,
+    "career_primary_velo": 100.35,
+    "n_seasons": 2,
+    "career_pitches": 1139
+  },
+  "682847": {
+    "name": "Ortiz, Luis",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.294
+    },
+    "career_swstr": {
+      "FF": 0.323
+    },
+    "career_swstr_overall": 0.2302,
+    "career_primary_velo": 96.17,
+    "n_seasons": 3,
+    "career_pitches": 441
+  },
+  "682990": {
+    "name": "Priester, Quinn",
+    "career_pitch_types": [
+      "SI",
+      "SL",
+      "FC"
+    ],
+    "career_usage": {
+      "SI": 0.417,
+      "SL": 0.269,
+      "FC": 0.206
+    },
+    "career_swstr": {
+      "SI": 0.136,
+      "SL": 0.35,
+      "FC": 0.226
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 2201
+  },
+  "683004": {
+    "name": "Leiter, Jack",
+    "career_pitch_types": [
+      "FF",
+      "SL",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.388,
+      "SL": 0.233,
+      "CH": 0.165
+    },
+    "career_swstr": {
+      "FF": 0.22,
+      "SL": 0.263,
+      "CH": 0.322
+    },
+    "career_swstr_overall": 0.2382,
+    "career_primary_velo": 96.85,
+    "n_seasons": 2,
+    "career_pitches": 2029
+  },
+  "683232": {
+    "name": "Mears, Nick",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.535
+    },
+    "career_swstr": {
+      "FF": 0.146
+    },
+    "career_swstr_overall": 0.1676,
+    "career_primary_velo": 95.97,
+    "n_seasons": 3,
+    "career_pitches": 452
+  },
+  "683409": {
+    "name": "Chivilli, Angel",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.459
+    },
+    "career_swstr": {
+      "FF": 0.11
+    },
+    "career_swstr_overall": 0.105,
+    "career_primary_velo": 96.6,
+    "n_seasons": 2,
+    "career_pitches": 469
+  },
+  "683769": {
+    "name": "Gaddis, Hunter",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.537
+    },
+    "career_swstr": {
+      "SL": 0.36
+    },
+    "career_swstr_overall": 0.1915,
+    "career_primary_velo": 94.5,
+    "n_seasons": 3,
+    "career_pitches": 563
+  },
+  "684007": {
+    "name": "Imanaga, Shota",
+    "career_pitch_types": [
+      "FF",
+      "FS"
+    ],
+    "career_usage": {
+      "FF": 0.487,
+      "FS": 0.314
+    },
+    "career_swstr": {
+      "FF": 0.159,
+      "FS": 0.323
+    },
+    "career_swstr_overall": 0.1691,
+    "career_primary_velo": 91.25,
+    "n_seasons": 2,
+    "career_pitches": 1743
+  },
+  "684320": {
+    "name": "Rodríguez, Yariel",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.413
+    },
+    "career_swstr": {
+      "SL": 0.372
+    },
+    "career_swstr_overall": 0.2101,
+    "career_primary_velo": 94.8,
+    "n_seasons": 2,
+    "career_pitches": 478
+  },
+  "685126": {
+    "name": "Eisert, Brandon",
+    "career_pitch_types": [
+      "SL"
+    ],
+    "career_usage": {
+      "SL": 0.357
+    },
+    "career_swstr": {
+      "SL": 0.286
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 434
+  },
+  "685299": {
+    "name": "Gordon, Tanner",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.528
+    },
+    "career_swstr": {
+      "FF": 0.141
+    },
+    "career_swstr_overall": 0.1353,
+    "career_primary_velo": 92.2,
+    "n_seasons": 2,
+    "career_pitches": 657
+  },
+  "686218": {
+    "name": "Sheehan, Emmet",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.468,
+      "SL": 0.304
+    },
+    "career_swstr": {
+      "FF": 0.265,
+      "SL": 0.436
+    },
+    "career_swstr_overall": 0.2318,
+    "career_primary_velo": 95.5,
+    "n_seasons": 2,
+    "career_pitches": 884
+  },
+  "686563": {
+    "name": "Cannon, Jonathan",
+    "career_pitch_types": [
+      "SI",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.219,
+      "CH": 0.214
+    },
+    "career_swstr": {
+      "SI": 0.107,
+      "CH": 0.236
+    },
+    "career_swstr_overall": 0.25,
+    "career_primary_velo": 94.05,
+    "n_seasons": 2,
+    "career_pitches": 776
+  },
+  "686613": {
+    "name": "Brown, Hunter",
+    "career_pitch_types": [
+      "FF",
+      "SI",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.375,
+      "SI": 0.227,
+      "CU": 0.179
+    },
+    "career_swstr": {
+      "FF": 0.298,
+      "SI": 0.177,
+      "CU": 0.392
+    },
+    "career_swstr_overall": 0.2692,
+    "career_primary_velo": 96.1,
+    "n_seasons": 3,
+    "career_pitches": 2312
+  },
+  "686701": {
+    "name": "Bergert, Ryan",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.425
+    },
+    "career_swstr": {
+      "FF": 0.168
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 558
+  },
+  "686752": {
+    "name": "Pepiot, Ryan",
+    "career_pitch_types": [
+      "FF",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.45,
+      "CH": 0.251
+    },
+    "career_swstr": {
+      "FF": 0.254,
+      "CH": 0.3
+    },
+    "career_swstr_overall": 0.2751,
+    "career_primary_velo": 94.52,
+    "n_seasons": 4,
+    "career_pitches": 1889
+  },
+  "686799": {
+    "name": "Kochanowicz, Jack",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.47
+    },
+    "career_swstr": {
+      "SI": 0.145
+    },
+    "career_swstr_overall": 0.1675,
+    "career_primary_velo": 95.85,
+    "n_seasons": 2,
+    "career_pitches": 874
+  },
+  "686973": {
+    "name": "Varland, Louis",
+    "career_pitch_types": [
+      "CU",
+      "FF"
+    ],
+    "career_usage": {
+      "CU": 0.375,
+      "FF": 0.453
+    },
+    "career_swstr": {
+      "CU": 0.388,
+      "FF": 0.172
+    },
+    "career_swstr_overall": 0.2152,
+    "career_primary_velo": 96.57,
+    "n_seasons": 3,
+    "career_pitches": 883
+  },
+  "686993": {
+    "name": "Sterner, Justin",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.522
+    },
+    "career_swstr": {
+      "FF": 0.247
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 570
+  },
+  "687064": {
+    "name": "Young, Brandon",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.438
+    },
+    "career_swstr": {
+      "FF": 0.188
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 411
+  },
+  "687134": {
+    "name": "Blalock, Bradley",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.464
+    },
+    "career_swstr": {
+      "FF": 0.088
+    },
+    "career_swstr_overall": 0.1109,
+    "career_primary_velo": 94.05,
+    "n_seasons": 2,
+    "career_pitches": 479
+  },
+  "687223": {
+    "name": "Palmquist, Carson",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.525
+    },
+    "career_swstr": {
+      "FF": 0.14
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 370
+  },
+  "687330": {
+    "name": "Kelly, Kevin",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.59
+    },
+    "career_swstr": {
+      "SI": 0.133
+    },
+    "career_swstr_overall": 0.1492,
+    "career_primary_velo": 91.97,
+    "n_seasons": 3,
+    "career_pitches": 347
+  },
+  "687473": {
+    "name": "Gusto, Ryan",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.437
+    },
+    "career_swstr": {
+      "FF": 0.276
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 769
+  },
+  "687765": {
+    "name": "Spence, Mitch",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.452
+    },
+    "career_swstr": {
+      "FC": 0.197
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 612
+  },
+  "687911": {
+    "name": "King, Bryan",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.627
+    },
+    "career_swstr": {
+      "FF": 0.241
+    },
+    "career_swstr_overall": 0.2415,
+    "career_primary_velo": 92.05,
+    "n_seasons": 2,
+    "career_pitches": 656
+  },
+  "689147": {
+    "name": "Kerkering, Orion",
+    "career_pitch_types": [
+      "ST"
+    ],
+    "career_usage": {
+      "ST": 0.48
+    },
+    "career_swstr": {
+      "ST": 0.236
+    },
+    "career_swstr_overall": 0.2754,
+    "career_primary_velo": 97.55,
+    "n_seasons": 2,
+    "career_pitches": 515
+  },
+  "689254": {
+    "name": "Fluharty, Mason",
+    "career_pitch_types": [
+      "FC"
+    ],
+    "career_usage": {
+      "FC": 0.582
+    },
+    "career_swstr": {
+      "FC": 0.279
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 500
+  },
+  "690928": {
+    "name": "Dobbins, Hunter",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.405
+    },
+    "career_swstr": {
+      "FF": 0.119
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 377
+  },
+  "690990": {
+    "name": "Horton, Cade",
+    "career_pitch_types": [
+      "FF",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.503,
+      "ST": 0.216
+    },
+    "career_swstr": {
+      "FF": 0.147,
+      "ST": 0.376
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1286
+  },
+  "691587": {
+    "name": "Pérez, Eury",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.513
+    },
+    "career_swstr": {
+      "FF": 0.215
+    },
+    "career_swstr_overall": 0.2025,
+    "career_primary_velo": 97.7,
+    "n_seasons": 2,
+    "career_pitches": 859
+  },
+  "693312": {
+    "name": "Nicolas, Kyle",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.506
+    },
+    "career_swstr": {
+      "FF": 0.149
+    },
+    "career_swstr_overall": 0.176,
+    "career_primary_velo": 97.5,
+    "n_seasons": 2,
+    "career_pitches": 330
+  },
+  "693433": {
+    "name": "Woo, Bryan",
+    "career_pitch_types": [
+      "FF",
+      "SI"
+    ],
+    "career_usage": {
+      "FF": 0.473,
+      "SI": 0.255
+    },
+    "career_swstr": {
+      "FF": 0.287,
+      "SI": 0.108
+    },
+    "career_swstr_overall": 0.2873,
+    "career_primary_velo": 95.2,
+    "n_seasons": 3,
+    "career_pitches": 1977
+  },
+  "693645": {
+    "name": "Schlittler, Cam",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.559
+    },
+    "career_swstr": {
+      "FF": 0.279
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 700
+  },
+  "693821": {
+    "name": "Elder, Bryce",
+    "career_pitch_types": [
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "SI": 0.421,
+      "SL": 0.351
+    },
+    "career_swstr": {
+      "SI": 0.152,
+      "SL": 0.318
+    },
+    "career_swstr_overall": 0.191,
+    "career_primary_velo": 91.8,
+    "n_seasons": 2,
+    "career_pitches": 1942
+  },
+  "694037": {
+    "name": "Palencia, Daniel",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.716
+    },
+    "career_swstr": {
+      "FF": 0.233
+    },
+    "career_swstr_overall": 0.2195,
+    "career_primary_velo": 98.95,
+    "n_seasons": 2,
+    "career_pitches": 602
+  },
+  "694297": {
+    "name": "Pfaadt, Brandon",
+    "career_pitch_types": [
+      "SI",
+      "FF",
+      "ST",
+      "CH"
+    ],
+    "career_usage": {
+      "SI": 0.235,
+      "FF": 0.234,
+      "ST": 0.186,
+      "CH": 0.157
+    },
+    "career_swstr": {
+      "SI": 0.107,
+      "FF": 0.207,
+      "ST": 0.336,
+      "CH": 0.28
+    },
+    "career_swstr_overall": 0.2044,
+    "career_primary_velo": 93.7,
+    "n_seasons": 3,
+    "career_pitches": 2366
+  },
+  "694335": {
+    "name": "Svanson, Matt",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.474
+    },
+    "career_swstr": {
+      "SI": 0.192
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 457
+  },
+  "694477": {
+    "name": "Patrick, Chad",
+    "career_pitch_types": [
+      "FC",
+      "SI",
+      "FF"
+    ],
+    "career_usage": {
+      "FC": 0.412,
+      "SI": 0.23,
+      "FF": 0.222
+    },
+    "career_swstr": {
+      "FC": 0.271,
+      "SI": 0.121,
+      "FF": 0.255
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1738
+  },
+  "694738": {
+    "name": "Roupp, Landen",
+    "career_pitch_types": [
+      "SI",
+      "CU"
+    ],
+    "career_usage": {
+      "SI": 0.399,
+      "CU": 0.357
+    },
+    "career_swstr": {
+      "SI": 0.105,
+      "CU": 0.358
+    },
+    "career_swstr_overall": 0.0867,
+    "career_primary_velo": 93.4,
+    "n_seasons": 2,
+    "career_pitches": 1399
+  },
+  "694819": {
+    "name": "Misiorowski, Jacob",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.552
+    },
+    "career_swstr": {
+      "FF": 0.325
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 642
+  },
+  "694973": {
+    "name": "Skenes, Paul",
+    "career_pitch_types": [
+      "FF",
+      "ST",
+      "FS"
+    ],
+    "career_usage": {
+      "FF": 0.389,
+      "ST": 0.158,
+      "FS": 0.135
+    },
+    "career_swstr": {
+      "FF": 0.296,
+      "ST": 0.329,
+      "FS": 0.228
+    },
+    "career_swstr_overall": 0.2735,
+    "career_primary_velo": 98.5,
+    "n_seasons": 2,
+    "career_pitches": 2047
+  },
+  "695243": {
+    "name": "Miller, Mason",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.522,
+      "SL": 0.456
+    },
+    "career_swstr": {
+      "FF": 0.375,
+      "SL": 0.546
+    },
+    "career_swstr_overall": 0.3348,
+    "career_primary_velo": 100.13,
+    "n_seasons": 3,
+    "career_pitches": 950
+  },
+  "695418": {
+    "name": "Lord, Brad",
+    "career_pitch_types": [
+      "FF",
+      "SI",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.485,
+      "SI": 0.181,
+      "SL": 0.202
+    },
+    "career_swstr": {
+      "FF": 0.242,
+      "SI": 0.097,
+      "SL": 0.267
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1846
+  },
+  "695505": {
+    "name": "Burns, Chase",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.579
+    },
+    "career_swstr": {
+      "FF": 0.252
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 442
+  },
+  "700241": {
+    "name": "McGreevy, Michael",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.222
+    },
+    "career_swstr": {
+      "SI": 0.074
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 325
+  },
+  "700249": {
+    "name": "Povich, Cade",
+    "career_pitch_types": [
+      "FF",
+      "CU"
+    ],
+    "career_usage": {
+      "FF": 0.372,
+      "CU": 0.218
+    },
+    "career_swstr": {
+      "FF": 0.186,
+      "CU": 0.29
+    },
+    "career_swstr_overall": 0.1851,
+    "career_primary_velo": 92.3,
+    "n_seasons": 2,
+    "career_pitches": 1163
+  },
+  "701542": {
+    "name": "Warren, Will",
+    "career_pitch_types": [
+      "FF",
+      "SI",
+      "ST"
+    ],
+    "career_usage": {
+      "FF": 0.416,
+      "SI": 0.21,
+      "ST": 0.206
+    },
+    "career_swstr": {
+      "FF": 0.232,
+      "SI": 0.136,
+      "ST": 0.33
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 2331
+  },
+  "702070": {
+    "name": "Cameron, Noah",
+    "career_pitch_types": [
+      "FF",
+      "CU",
+      "FC",
+      "CH"
+    ],
+    "career_usage": {
+      "FF": 0.264,
+      "CU": 0.193,
+      "FC": 0.216,
+      "CH": 0.186
+    },
+    "career_swstr": {
+      "FF": 0.126,
+      "CU": 0.297,
+      "FC": 0.227,
+      "CH": 0.417
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 1858
+  },
+  "702352": {
+    "name": "Bivens, Spencer",
+    "career_pitch_types": [
+      "SI"
+    ],
+    "career_usage": {
+      "SI": 0.376
+    },
+    "career_swstr": {
+      "SI": 0.075
+    },
+    "career_swstr_overall": 0.0891,
+    "career_primary_velo": 94.85,
+    "n_seasons": 2,
+    "career_pitches": 486
+  },
+  "801403": {
+    "name": "Dollander, Chase",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.488
+    },
+    "career_swstr": {
+      "FF": 0.199
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 867
+  },
+  "805673": {
+    "name": "Matthews, Zebby",
+    "career_pitch_types": [
+      "FF",
+      "SL"
+    ],
+    "career_usage": {
+      "FF": 0.412,
+      "SL": 0.249
+    },
+    "career_swstr": {
+      "FF": 0.224,
+      "SL": 0.392
+    },
+    "career_swstr_overall": 0.2077,
+    "career_primary_velo": 95.55,
+    "n_seasons": 2,
+    "career_pitches": 894
+  },
+  "806185": {
+    "name": "Birdsong, Hayden",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.441
+    },
+    "career_swstr": {
+      "FF": 0.211
+    },
+    "career_swstr_overall": 0.1953,
+    "career_primary_velo": 95.65,
+    "n_seasons": 2,
+    "career_pitches": 527
+  },
+  "806960": {
+    "name": "Morales, Luis",
+    "career_pitch_types": [
+      "FF"
+    ],
+    "career_usage": {
+      "FF": 0.515
+    },
+    "career_swstr": {
+      "FF": 0.157
+    },
+    "career_swstr_overall": NaN,
+    "career_primary_velo": NaN,
+    "n_seasons": 1,
+    "career_pitches": 423
+  },
+  "808967": {
+    "name": "Yamamoto, Yoshinobu",
+    "career_pitch_types": [
+      "FS",
+      "FF",
+      "CU"
+    ],
+    "career_usage": {
+      "FS": 0.255,
+      "FF": 0.352,
+      "CU": 0.176
+    },
+    "career_swstr": {
+      "FS": 0.421,
+      "FF": 0.192,
+      "CU": 0.367
+    },
+    "career_swstr_overall": 0.186,
+    "career_primary_velo": 95.45,
+    "n_seasons": 2,
+    "career_pitches": 2183
+  }
+}

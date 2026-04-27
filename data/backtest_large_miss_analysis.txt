@@ -1,0 +1,454 @@
+BACKTEST LARGE MISS ANALYSIS
+Generated: 2026-04-24
+Source: data/backtest_audit_hitters.csv (305 rows), data/backtest_audit_pitchers.csv (284 rows)
+Threshold: Hitters |wOBA change| > 0.050; Pitchers |ERA change| > 1.50
+================================================================================
+
+EXECUTIVE SUMMARY
+-----------------
+Total large misses: 10 hitter + 15 pitcher = 25
+Hitter miss categories: 4 Genuine failure (E), 3 Injury (A), 2 Role change (B), 1 Small sample (D)
+Pitcher miss categories: 6 Ceiling effect (D), 3 Genuine failure (E), 3 Role/team change (B), 3 Injury (A)
+
+Critical finding: Pitcher buy signals issued when April ERA < 3.75 are only 29.6% accurate (vs 89.3%
+when ERA >= 3.75). This single gate fixes 10 of 15 pitcher large misses and raises overall pitcher
+eval accuracy from 82.4% to 87.9%. Highest-leverage actionable fix in this analysis.
+
+
+CURRENT MODEL ACCURACY (4-year backtest, 2022-2025)
+----------------------------------------------------
+HITTERS:
+  Buy Low:    n=88,  acc=94.3%   <- strong
+  Slight Buy: n=85,  acc=72.9%   <- weakest hitter tier
+  Slight Sell: n=82, acc=85.4%   <- solid
+  Sell High:  n=50,  acc=94.0%   <- strong
+
+PITCHERS:
+  Buy Low:    n=89,  acc=86.5%
+  Slight Buy: n=50,  acc=62.0%   <- weakest tier overall
+  Sell High:  n=69,  acc=91.3%   <- strong
+
+
+================================================================================
+TASK 1 — HITTER LARGE MISSES (10 total)
+================================================================================
+
+--- BUY-SIDE MISSES (6): Model predicted IMPROVED, player declined ---
+
+1. Max Muncy | 2023 | Slight Buy | luck_score=0.0235
+   April wOBA: 0.4374 | xwOBA: 0.4281 | Actual change: -0.1084
+   Category: A — INJURY
+   Note: Chronic wrist/elbow issues. Hot April (.4374 is elite) masked developing injury.
+         Model correctly saw slight underperformance vs xwOBA but couldn't anticipate breakdown.
+
+2. Vinnie Pasquantino | 2023 | Slight Buy | luck_score=0.0278
+   April wOBA: 0.3777 | xwOBA: 0.3979 | Actual change: -0.0867
+   Category: A — INJURY
+   Note: Hip issues mid-2023. April looked moderately lucky-low (xwOBA > wOBA = buy signal)
+         but underlying health deteriorated.
+
+3. DJ Stewart | 2024 | Slight Buy | luck_score=0.0258
+   April wOBA: 0.3711 | xwOBA: 0.3650 | Actual change: -0.1092
+   Category: B — ROLE CHANGE
+   Note: Bench/platoon player. Lost AB allocation mid-season. Model had no PA forecast;
+         Stewart went from semi-regular to limited role.
+
+4. Ryan O'Hearn | 2024 | Slight Buy | luck_score=0.0330
+   April wOBA: 0.4365 | xwOBA: 0.4827 | Actual change: -0.0903
+   Category: D — SMALL SAMPLE (ceiling effect)
+   Note: April wOBA of .4365 is elite. xwOBA even higher. Model expected improvement but
+         started from an unsustainably hot base. Classic ceiling effect.
+
+5. Gavin Sheets | 2024 | Slight Buy | luck_score=0.0235
+   April wOBA: 0.3358 | xwOBA: 0.3768 | Actual change: -0.0680
+   Category: B — ROLE CHANGE
+   Note: Part-time/platoon player. Lost regular starts. Model predicted improvement from
+         xwOBA gap but couldn't anticipate playing time loss.
+
+6. Tommy Edman | 2025 | Slight Buy | luck_score=0.0309
+   April wOBA: 0.3625 | xwOBA: 0.3833 | Actual change: -0.0755
+   Category: A — INJURY
+   Note: Returning from 2024 hamstring surgery. April metrics looked recoverable but
+         underlying physical limitations persisted.
+
+--- SELL-SIDE MISSES (4): Model predicted DECLINED, player improved ---
+
+7. Paul Goldschmidt | 2022 | Slight Sell | luck_score=-0.0440
+   April wOBA: 0.3432 | Actual change: +0.1226
+   Category: E — GENUINE FAILURE
+   Note: Won 2022 NL MVP. Model saw modest luck signal on a 34-year-old with April wOBA
+         slightly below career norm. Can't distinguish "lucky start" from "career peak."
+         Age + slight luck is a false negative when player is in prime form.
+
+8. Randy Arozarena | 2022 | Slight Sell | luck_score=-0.0478
+   April wOBA: 0.2716 | Actual change: +0.0740
+   Category: E — GENUINE FAILURE
+   Note: Post-WS stardom year; April wOBA was low (.2716) suggesting soft April but
+         model over-penalized BABIP luck component in breakout/established player.
+
+9. Lane Thomas | 2023 | Sell High | luck_score=-0.0794
+   April wOBA: 0.3056 | Actual change: +0.0720
+   Category: E — GENUINE FAILURE
+   Note: Breakout year. Model issued Sell High on a player with meaningful luck signal
+         who sustained and grew performance. Breakout players can sustain elevated luck
+         metrics longer than established veterans.
+
+10. Byron Buxton | 2024 | Slight Sell | luck_score=-0.0602
+    April wOBA: 0.3055 | Actual change: +0.0847
+    Category: E — GENUINE FAILURE
+    Note: Model penalized April luck signal on elite talent player with known injury risk.
+          Buxton stayed healthy and performed. Elite ceiling players mislead luck-based models.
+
+
+--- HITTER PATTERN ANALYSIS ---
+
+Category distribution:
+  A (Injury):      3 misses — 30%
+  B (Role change): 2 misses — 20%
+  D (Small sample):1 miss   — 10%
+  E (Genuine fail):4 misses — 40%
+
+Key pattern — ALL 6 buy-side large misses: luck_score range 0.0235–0.0330 (bottom of Slight Buy zone)
+  Implication: Every single buy-side large miss lives in luck_score 0.020–0.035.
+  Above 0.035 there are ZERO buy-side large misses across all 4 years.
+
+Threshold sensitivity (Slight Buy floor 0.020 -> 0.035):
+  Before: n=85, acc=72.9%
+  After:  n=16, acc=87.5%
+  Dropped to Neutral: n=69 (48 correct, 21 wrong, 6 large misses caught)
+  Cost: Harper, Machado, Guerrero, Bryce Harper, Jordan Westburg, Lane Thomas — real stars dropped
+
+Verdict: Raising the floor IS mathematically valid but the COST is severe.
+  Dropping 48 correct Slight Buy signals (including clear buy cases on major stars) to avoid 6 large
+  misses and 21 small wrong calls is not a favorable trade. The right fix is NOT threshold raising.
+  Instead: A/B/D misses are not model design failures — they're irreducible noise from injuries and
+  role changes that no model can preempt without external data.
+
+Hitter highest-leverage fix: No single scoring change will reliably eliminate hitter large misses
+  without large collateral accuracy loss. The correct approach is an injury/role-change filter layer
+  that flags players with mid-season PA drop or injury news (not a scoring model change).
+
+
+================================================================================
+TASK 2 — PITCHER LARGE MISSES (15 total)
+================================================================================
+
+--- BUY-SIDE MISSES (11): Model predicted IMPROVED, ERA got worse ---
+
+1. Patrick Corbin | 2022 | Buy Low | luck_score=0.885
+   April ERA: 4.32 | FIP: 2.62 | xERA: 5.76 | Actual change: +1.72
+   Category: E — GENUINE FAILURE (xERA/FIP conflict)
+   Note: ERA-FIP gap (1.70) triggered strong buy, but xERA was 5.76 — indicating his CONTACT
+         quality was terrible, contradicting the FIP. Model should not issue buy when xERA > ERA.
+
+2. Kevin Gausman | 2022 | Slight Buy | luck_score=0.619
+   April ERA: 2.37 | FIP: 1.29 | xERA: 2.22 | Actual change: +1.59
+   Category: D — CEILING EFFECT (ERA already elite)
+   Note: ERA 2.37 is already excellent. FIP 1.29 is April noise — no pitcher sustains 1.29 FIP
+         for a full season. With ERA already good, the only direction was up.
+
+3. Bruce Zimmermann | 2022 | Slight Buy | luck_score=0.551
+   April ERA: 4.03 | FIP: 3.06 | xERA: 4.79 | Actual change: +3.30
+   Category: B — ROLE CHANGE
+   Note: Removed from rotation mid-season. ERA ballooned after demotion/bullpen usage.
+         xERA (4.79) was already worse than ERA — secondary warning sign missed.
+
+4. Hunter Greene | 2023 | Buy Low | luck_score=0.738
+   April ERA: 2.96 | FIP: 1.46 | xERA: 2.37 | Actual change: +1.67
+   Category: D — CEILING EFFECT (ERA already good, FIP extreme)
+   Note: April FIP of 1.46 is unrealistic for full season. ERA 2.96 already strong.
+         FIP normalized upward, ERA followed.
+
+5. Taj Bradley | 2023 | Buy Low | luck_score=0.846
+   April ERA: 3.52 | FIP: 2.19 | xERA: 1.34 | Actual change: +2.36
+   Category: D — CEILING EFFECT (FIP extreme / young pitcher)
+   Note: All three metrics (ERA, FIP, xERA) pointed to strong buy. Small April sample
+         (young pitcher) with xERA 1.34 — not representataive. ERA went from 3.52 to ~5.88.
+
+6. Roansy Contreras | 2023 | Slight Buy | luck_score=0.555
+   April ERA: 3.67 | FIP: 2.66 | xERA: 3.60 | Actual change: +1.99
+   Category: B — ROLE CHANGE
+   Note: Moved between SP and RP roles. IP volatility and role instability masked by
+         ERA-FIP gap signal. ERA expanded with inconsistent role.
+
+7. Sonny Gray | 2024 | Buy Low | luck_score=0.789
+   April ERA: 2.45 | FIP: 1.05 | xERA: 0.94 | Actual change: +1.55
+   Category: A — INJURY
+   Note: All metrics screamed elite. ERA 2.45, FIP 1.05, xERA 0.94 — perfect buy signal.
+         But Gray (age 34) had arm issues. Injury plus age regression. Unpredictable.
+
+8. Yusei Kikuchi | 2024 | Slight Buy | luck_score=0.391
+   April ERA: 2.48 | FIP: 1.86 | xERA: 1.98 | Actual change: +3.08
+   Category: D — CEILING EFFECT (ERA already elite)
+   Note: April ERA 2.48 with FIP 1.86 — all good but nowhere to go but up. Full-season
+         ERA normalized significantly upward from elite April base.
+
+9. Reid Detmers | 2024 | Slight Buy | luck_score=0.628
+   April ERA: 3.72 | FIP: 2.65 | xERA: 2.60 | Actual change: +4.92
+   Category: A — INJURY
+   Note: UCL injury / Tommy John surgery. All three metrics (FIP 2.65, xERA 2.60) signaled
+         improvement but arm gave out. Catastrophic miss (+4.92 ERA). Unforeseeable.
+
+10. Logan Gilbert | 2025 | Slight Buy | luck_score=0.499
+    April ERA: 2.70 | FIP: 1.90 | xERA: 1.29 | Actual change: +1.69
+    Category: D — CEILING EFFECT (ERA already elite)
+    Note: ERA 2.70, xERA 1.29 — model saw big gap and predicted ERA drop. But 2.70 is already
+          excellent; it went up to ~4.39 by season end. April elite metrics not sustained.
+
+11. Matthew Liberatore | 2025 | Slight Buy | luck_score=0.798
+    April ERA: 2.97 | FIP: 1.88 | xERA: 2.57 | Actual change: +1.57
+    Category: D — CEILING EFFECT (ERA already good)
+    Note: FIP 1.88 triggered buy signal but ERA 2.97 already respectable. Normalized upward.
+
+--- SELL-SIDE MISSES (4): Model predicted DECLINED, ERA improved ---
+
+12. Blake Snell | 2023 | Sell High | luck_score=-1.662
+    April ERA: 5.30 | FIP: 7.49 | xERA: 7.78 | Actual change: -3.41
+    Category: B — ROLE CHANGE (team change)
+    Note: April ERA bad (5.30), FIP/xERA worse (7.49/7.78) — Sell High correct on the data.
+          But Snell signed with Padres mid-year and transformed. Team/environment change
+          is the driver. Model correctly read the signal; circumstances overrode it.
+
+13. Zack Littell | 2025 | Slight Sell | luck_score=-0.478
+    April ERA: 5.93 | FIP: 6.69 | xERA: 6.33 | Actual change: -2.91
+    Category: E — GENUINE FAILURE
+    Note: All metrics bad (ERA 5.93, FIP 6.69, xERA 6.33). Model correctly predicted decline
+          but Littell rehabilitated mechanics and improved. Model over-extrapolated bad April.
+
+14. Ryan Pepiot | 2025 | Sell High | luck_score=-0.956
+    April ERA: 4.94 | FIP: 6.21 | xERA: 5.08 | Actual change: -1.55
+    Category: E — GENUINE FAILURE
+    Note: Similar to Littell. All metrics below league average. Sell was correct per April data
+          but pitcher rebounded with adjustments. Full-season recovery not capturable from April.
+
+15. (Patrick Corbin assigned to buy-side above)
+
+--- SPECIFIC INVESTIGATIONS ---
+
+REID DETMERS 2024: Why did the model predict improvement?
+  ERA: 3.72, FIP: 2.65, xERA: 2.60
+  ERA-FIP gap = 1.07 (above Slight Buy threshold of 0.60)
+  xERA = 2.60 corroborated FIP — contact quality backed up the signal
+  luck_score = 0.628 = Slight Buy
+  All three independent metrics pointed the same direction.
+  This was a fully corroborated buy signal. The issue: UCL injury happened during the season.
+  No backtest model can predict arm injuries from April metrics. Unavoidable miss.
+
+BLAKE SNELL 2023: What April sample misled the model?
+  ERA: 5.30 (very bad), FIP: 7.49 (terrible), xERA: 7.78 (terrible)
+  luck_score = -1.662 = Sell High
+  The model was NOT misled — it correctly identified Snell as a Sell.
+  The model issued the right call given the data. Snell's mid-year turnaround was driven by
+  a team change (Giants -> Padres environment), which post-dates April and is external info.
+  This is a Sell-side genuine failure (B), not a model design flaw.
+
+IP RANGE CONCENTRATION:
+  Buy-side large misses by April ERA:
+    ERA < 2.50: Gausman (2.37), Sonny Gray (2.45), Kikuchi (2.48)        — 3 misses
+    ERA 2.50-3.00: Hunter Greene (2.96), Logan Gilbert (2.70), Lib (2.97) — 3 misses
+    ERA 3.00-4.00: Taj Bradley (3.52), Contreras (3.67), Detmers (3.72)  — 3 misses, mixed
+    ERA >= 4.00: Corbin (4.32)                                            — 1 miss (xERA conflict)
+  Pattern: CONCENTRATED in ERA < 3.75, regardless of IP range.
+
+BUY vs SELL CONCENTRATION:
+  Buy-side large misses: 11 of 15 (73%)
+  Sell-side large misses: 4 of 15 (27%)
+  The model is MUCH better at sell signals than buy signals for pitchers.
+
+
+--- PITCHER PATTERN ANALYSIS ---
+
+Category distribution:
+  D (Ceiling effect): 6 misses — 40%
+  A (Injury):         3 misses — 20%
+  B (Role/team change):3 misses— 20%
+  E (Genuine failure): 3 misses — 20%
+
+KEY PATTERN — CEILING EFFECT (largest category):
+  All 6 ceiling-effect misses have April ERA < 3.75.
+  The model generates buy signals when ERA > FIP (ERA should fall to FIP).
+  But when April ERA is already excellent (< 3.75), it almost always regresses UPWARD
+  to league average over the full season, regardless of FIP.
+
+Statistical evidence:
+  Buy signals with April ERA >= 3.75: n=112, accuracy=89.3%
+  Buy signals with April ERA < 3.75:  n=27,  accuracy=29.6%  <- massive failure zone
+  Year-by-year accuracy for ERA<3.75 buys: 50.0% / 22.2% / 28.6% / 28.6%
+  Consistent failure across all 4 years — not noise.
+
+CORBIN EXCEPTION (E category):
+  Corbin had ERA 4.32 (not in ceiling zone) but xERA 5.76 >> FIP 2.62.
+  This represents a different failure mode: FIP-xERA conflict (xERA indicates bad contact
+  quality but FIP looks artificially good due to K/BB/HR luck). Need an xERA override.
+
+
+================================================================================
+TASK 3 — PATTERN SUMMARY
+================================================================================
+
+CROSS-CUTTING PATTERNS:
+
+1. PITCHER CEILING EFFECT (highest-leverage finding)
+   When a pitcher has April ERA < 3.75, ERA-FIP gap buy signals are almost always wrong.
+   The model predicts ERA dropping toward FIP, but ERA almost never drops below an already-
+   good level — it rises back to league average. This is a systematic blind spot.
+   Frequency: 27 of 139 pitcher buy signals (19%) fall in this trap
+   Accuracy of those 27: 29.6% (vs 89.3% baseline for remaining buys)
+
+2. SLIGHT BUY IS THE WEAKEST TIER (both sports)
+   Hitter Slight Buy: 72.9% accuracy (lowest hitter tier)
+   Pitcher Slight Buy: 62.0% accuracy (lowest tier overall)
+   Consistent across all 4 years. These are borderline signals with low SNR.
+
+3. INJURY MISSES ARE IRREDUCIBLE
+   6 large misses (3 hitter, 3 pitcher) are injury-driven.
+   Models cannot predict UCL tears, wrist deterioration, hamstring re-injury.
+   These are not model failures; they are boundary conditions.
+
+4. SELL-SIDE IS STRONGER THAN BUY-SIDE
+   Buy Low accuracy: 94.3% (hitter), 86.5% (pitcher)
+   Sell High accuracy: 94.0% (hitter), 91.3% (pitcher)
+   Large misses: sell-side has fewer large misses than buy-side.
+   Implication: the model is better at detecting overperformance than underperformance.
+
+5. HITTER SELL-SIDE FAILURES ARE TALENT-BASED
+   All 4 sell-side hitter large misses are category E: the model misidentified elite-talent
+   April luck signals as regression candidates. Goldschmidt (MVP year), Buxton (healthy year),
+   Arozarena, Thomas. Model penalizes luck on players who were actually performing.
+
+Most common category overall: D (Small sample / ceiling effect) — 7 of 25 (28%)
+Next: E (Genuine failure) — 7 of 25 (28%)
+Then: A (Injury) — 6 of 25 (24%)
+Then: B (Role change) — 5 of 25 (20%)
+
+
+================================================================================
+TASK 4 — PROPOSED FIXES
+================================================================================
+
+FIX #1 (RECOMMENDED — Highest leverage): PITCHER ERA CEILING GATE
+-----------------------------------------------------------------------
+Rule: If pitcher's April ERA < 3.75, suppress buy signal to Neutral regardless of ERA-FIP gap.
+Rationale: When ERA is already elite-to-good, the buy logic (ERA will drop toward FIP) is
+  structurally wrong. ERA almost never drops further from an already-good April base.
+  The correct expectation is ERA normalization UPWARD, not downward.
+
+Estimated impact (4-year backtest):
+  Suppressed signals: 27 buy -> Neutral
+  Currently wrong of those 27: 19 (avoided wrong calls)
+  Currently correct of those 27: 8 (lost correct calls)
+  Net: +11 correct calls avoided at cost of 8 correct calls suppressed
+  Overall pitcher eval accuracy: 82.4% -> 87.9% (+5.5 percentage points)
+
+Code change in score_luck.py (or equivalent pitcher scoring module):
+  After computing era_fip_gap and before classifying signal:
+    if era_april < 3.75:
+        signal = "Neutral"
+        # Suppress: ceiling effect — ERA already good, FIP-gap misleads direction
+
+Risk: Low. The signal is empirically worthless in this ERA range (29.6% accuracy = worse than
+  random). The 8 lost correct calls are noise, not meaningful buys. The gate is consistent
+  with "do no harm" — at this ERA range, the model hurts more than it helps.
+
+Year-by-year consistency check:
+  2022: ERA<3.75 buy accuracy 50.0% (n=4)
+  2023: ERA<3.75 buy accuracy 22.2% (n=9)
+  2024: ERA<3.75 buy accuracy 28.6% (n=7)
+  2025: ERA<3.75 buy accuracy 28.6% (n=7)
+  All 4 years: consistently below 50%. Gate is not sample-dependent.
+
+
+FIX #2 (SECONDARY): PITCHER xERA CONFLICT FILTER
+-----------------------------------------------------------------------
+Rule: If ERA-FIP gap triggers buy but xERA > ERA (contact quality worse than ERA implies),
+  downgrade Buy Low -> Slight Buy or Slight Buy -> Neutral.
+Rationale: FIP can look low due to K/BB luck while contact quality remains poor.
+  Patrick Corbin 2022: FIP=2.62 (looks great), xERA=5.76 (contact awful) — should not buy.
+
+Estimated impact:
+  Clear xERA-conflict cases in dataset: ~3-5 additional per year
+  Approximate accuracy gain: +1-2 percentage points
+  Risk: Low — xERA conflict is an explicit contradiction, safe to suppress.
+
+Code change:
+  After computing era_fip_gap and xera:
+    if era_fip_gap > buy_threshold and xera > era_actual:
+        # FIP looks good but contact quality says otherwise — downgrade
+        if signal == "Buy Low": signal = "Slight Buy"
+        elif signal == "Slight Buy": signal = "Neutral"
+
+
+FIX #3 (NOT RECOMMENDED): RAISE HITTER SLIGHT BUY FLOOR 0.020 -> 0.035
+-----------------------------------------------------------------------
+Mathematical result: Slight Buy n drops 85 -> 16, accuracy 72.9% -> 87.5%.
+Sounds good — but the COST is dropping 48 correct signals to Neutral, including:
+  Manny Machado, Bryce Harper, Vladimir Guerrero Jr., Jazz Chisholm, Jordan Westburg,
+  Lane Thomas, Andrew Vaughn...
+The 6 large misses caught are not worth eliminating signals on these players.
+The large misses in the 0.020-0.035 zone are 3 injuries, 2 role changes, 1 ceiling effect —
+none of which are prevented by a threshold change. The fix treats symptoms, not causes.
+Verdict: Do not implement.
+
+
+FIX #4 (DEFENSIVE): PLATOON/BENCH PLAYER FILTER FOR HITTER SLIGHT BUY
+-----------------------------------------------------------------------
+Rule: If player has PA < 60 in April AND career PA/G < 3.0 (bench/platoon profile),
+  downgrade Slight Buy -> Neutral (or flag as "role-dependent").
+Rationale: DJ Stewart and Gavin Sheets are both platoon/bench players who lost AB.
+  The model can't predict PT allocation, but it can identify players for whom PT is uncertain.
+Cost: Minimal — these are already borderline signals. Downgrading bench players is conservative
+  and appropriate given model has no PT forecast component.
+Risk: Low. Buy Low (which requires higher PA thresholds) is unaffected.
+
+
+PRIORITY ORDER:
+1. Fix #1 (pitcher ERA ceiling gate) — implement immediately, +5.5pp gain, low risk
+2. Fix #2 (xERA conflict filter) — implement alongside #1, secondary gain, same module
+3. Fix #4 (bench player filter) — implement in hitter scoring, reduces 2 recurring categories
+4. Fix #3 — do NOT implement
+
+
+================================================================================
+APPENDIX: RAW MISS TABLES
+================================================================================
+
+HITTER LARGE MISSES (correct=False, |wOBA change|>0.050):
+player_name           year  signal       luck_score  woba_actual  actual_woba_change  category
+Paul Goldschmidt      2022  Slight Sell  -0.0440     0.3432       +0.1226             E
+Randy Arozarena       2022  Slight Sell  -0.0478     0.2716       +0.0740             E
+Max Muncy             2023  Slight Buy    0.0235     0.4374       -0.1084             A
+Lane Thomas           2023  Sell High    -0.0794     0.3056       +0.0720             E
+Vinnie Pasquantino    2023  Slight Buy    0.0278     0.3777       -0.0867             A
+Byron Buxton          2024  Slight Sell  -0.0602     0.3055       +0.0847             E
+DJ Stewart            2024  Slight Buy    0.0258     0.3711       -0.1092             B
+Ryan O'Hearn          2024  Slight Buy    0.0330     0.4365       -0.0903             D
+Gavin Sheets          2024  Slight Buy    0.0235     0.3358       -0.0680             B
+Tommy Edman           2025  Slight Buy    0.0309     0.3625       -0.0755             A
+
+PITCHER LARGE MISSES (correct=False, |ERA change|>1.50):
+player_name           year  signal       era_actual  fip_actual  xera_actual  actual_era_change  category
+Patrick Corbin        2022  Buy Low      4.32        2.62        5.76         +1.72              E
+Kevin Gausman         2022  Slight Buy   2.37        1.29        2.22         +1.59              D
+Bruce Zimmermann      2022  Slight Buy   4.03        3.06        4.79         +3.30              B
+Blake Snell           2023  Sell High    5.30        7.49        7.78         -3.41              B
+Hunter Greene         2023  Buy Low      2.96        1.46        2.37         +1.67              D
+Taj Bradley           2023  Buy Low      3.52        2.19        1.34         +2.36              D
+Roansy Contreras      2023  Slight Buy   3.67        2.66        3.60         +1.99              B
+Sonny Gray            2024  Buy Low      2.45        1.05        0.94         +1.55              A
+Yusei Kikuchi         2024  Slight Buy   2.48        1.86        1.98         +3.08              D
+Reid Detmers          2024  Slight Buy   3.72        2.65        2.60         +4.92              A
+Zack Littell          2025  Slight Sell  5.93        6.69        6.33         -2.91              E
+Logan Gilbert         2025  Slight Buy   2.70        1.90        1.29         +1.69              D
+Matthew Liberatore    2025  Slight Buy   2.97        1.88        2.57         +1.57              D
+Max Meyer             2025  Slight Buy   3.54        2.71        3.95         +3.50              A
+Ryan Pepiot           2025  Sell High    4.94        6.21        5.08         -1.55              E
+
+CATEGORY KEY:
+  A = Injury (arm/body issue during season)
+  B = Role change / team change
+  C = Age cliff (not observed — none assigned)
+  D = Small sample / ceiling effect (April metrics unsustainable)
+  E = Genuine model failure
+
+================================================================================
+END OF ANALYSIS

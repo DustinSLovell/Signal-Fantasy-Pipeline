@@ -1,0 +1,31 @@
+team_name,team_id,total_oaa,team_abbr,oaa_tier,babip_adj
+Cubs,112,36,CHC,top,-0.008
+Cardinals,138,36,STL,top,-0.008
+Brewers,158,34,MIL,top,-0.008
+Astros,117,31,HOU,top,-0.008
+Royals,118,30,KC,top,-0.008
+Rangers,140,27,TEX,top,-0.008
+Blue Jays,141,21,TOR,top,-0.008
+Pirates,134,19,PIT,top,-0.008
+Marlins,146,17,MIA,middle,0.0
+Dodgers,119,14,LAD,middle,0.0
+Phillies,143,11,PHI,middle,0.0
+Red Sox,111,9,BOS,middle,0.0
+D-backs,109,8,ARI,middle,0.0
+Braves,144,3,ATL,middle,0.0
+Reds,113,1,CIN,middle,0.0
+Tigers,116,-1,DET,middle,0.0
+Guardians,114,-2,CLE,middle,0.0
+Yankees,147,-4,NYY,middle,0.0
+Padres,135,-8,SD,middle,0.0
+Twins,142,-10,MIN,middle,0.0
+Mets,121,-12,NYM,middle,0.0
+Athletics,133,-16,OAK,middle,0.0
+Giants,137,-22,SF,bottom,0.008
+Orioles,110,-23,BAL,bottom,0.008
+White Sox,145,-24,CWS,bottom,0.008
+Rockies,115,-26,COL,bottom,0.008
+Mariners,136,-27,SEA,bottom,0.008
+Rays,139,-32,TB,bottom,0.008
+Nationals,120,-33,WSH,bottom,0.008
+Angels,108,-54,LAA,bottom,0.008

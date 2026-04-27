@@ -1,0 +1,26 @@
+version,tier,4yr_weighted_accuracy,avg_era_delta,vs_donothing_pp
+A,Buy low,0.8652,-2.9,16.5
+A,Slight buy,0.62,-2.033,-8.0
+A,Slight sell,0.8289,1.77,12.9
+A,Sell high,0.913,2.466,21.3
+A,Overall,0.8239,,12.4
+B,Buy low,0.5797,-1.617,-12.0
+B,Slight buy,0.2,-2.6,-50.0
+B,Slight sell,0.8182,1.783,11.8
+B,Sell high,0.9226,2.03,22.3
+B,Overall,0.8048,,10.5
+C,Buy low,0.5405,-1.617,-15.9
+C,Slight buy,0.4286,-0.653,-27.1
+C,Slight sell,0.8571,1.775,15.7
+C,Sell high,0.9478,2.128,24.8
+C,Overall,0.7966,,9.7
+D,Buy low,0.6333,-1.716,-6.7
+D,Slight buy,0.3333,-1.16,-36.7
+D,Slight sell,0.8421,1.979,14.2
+D,Sell high,0.9457,2.125,24.6
+D,Overall,0.8318,,13.2
+E,Buy low,0.8571,-1.955,15.7
+E,Slight buy,1.0,-1.18,30.0
+E,Slight sell,0.8421,1.979,14.2
+E,Sell high,0.9457,2.125,24.6
+E,Overall,0.9222,,22.2

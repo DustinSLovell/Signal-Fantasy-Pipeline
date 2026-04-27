@@ -1,0 +1,5 @@
+pitcher_id,name,position,team,notes
+# Contract year 2026 pitchers — manually curated
+# Source: public contract data (Spotrac/MLBTR) — verify before each season
+# Format: pitcher_id = MLB MLBAM player ID
+# IMPORTANT: This file needs manual update at season start each year.

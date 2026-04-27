@@ -1,0 +1,319 @@
+pitcher_id,name,stuff_plus_avg,best_pitch_stuff,best_pitch_type,best_pitch_name,total_pitches
+687134,"Blalock, Bradley",145.3,145.3,FF,4-Seam Fastball,479
+683409,"Chivilli, Angel",134.3,134.3,FF,4-Seam Fastball,469
+687223,"Palmquist, Carson",134.3,134.3,FF,4-Seam Fastball,370
+643338,"Green, Chad",128.3,128.3,FF,4-Seam Fastball,356
+656234,"Bird, Jake",125.3,125.3,SI,Sinker,328
+608566,"Márquez, Germán",122.4,136.3,FF,4-Seam Fastball,1816
+686563,"Cannon, Jonathan",120.4,130.3,SI,Sinker,776
+676467,"Gordon, Colton",120.3,120.3,FF,4-Seam Fastball,595
+687330,"Kelly, Kevin",120.3,120.3,SI,Sinker,347
+674370,"Bido, Osvaldo",119.4,127.3,FF,4-Seam Fastball,934
+622608,"Senzatela, Antonio",119.1,119.3,FF,4-Seam Fastball,1711
+685126,"Eisert, Brandon",117.3,117.3,SL,Slider,434
+682254,"Montgomery, Mason",116.3,116.3,FF,4-Seam Fastball,569
+801403,"Dollander, Chase",116.3,116.3,FF,4-Seam Fastball,867
+592866,"Williams, Trevor",116.3,116.3,FF,4-Seam Fastball,613
+682243,"Miller, Bryce",115.3,115.3,FF,4-Seam Fastball,631
+623211,"Brazobán, Huascar",114.3,114.3,CH,Changeup,385
+450203,"Morton, Charlie",113.4,122.3,FF,4-Seam Fastball,2063
+686799,"Kochanowicz, Jack",113.3,113.3,SI,Sinker,874
+671131,"Rutledge, Jackson",113.3,113.3,SI,Sinker,437
+663554,"Mize, Casey",113.0,122.3,FS,Split-Finger,1359
+676962,"Brown, Ben",112.4,115.3,FF,4-Seam Fastball,1679
+685299,"Gordon, Tanner",112.3,112.3,FF,4-Seam Fastball,657
+593958,"Rodriguez, Eduardo",112.3,121.3,CH,Changeup,1738
+669211,"Akin, Keegan",112.3,112.3,FF,4-Seam Fastball,543
+663623,"Irvin, Jake",111.9,120.3,FF,4-Seam Fastball,2464
+571760,"Heaney, Andrew",111.9,115.3,FF,4-Seam Fastball,1270
+805673,"Matthews, Zebby",111.7,117.3,FF,4-Seam Fastball,894
+656945,"Scott, Tanner",111.3,111.3,FF,4-Seam Fastball,479
+687765,"Spence, Mitch",111.3,111.3,FC,Cutter,612
+671106,"Allen, Logan",111.1,115.3,CH,Changeup,2033
+607200,"Fedde, Erick",110.6,116.3,FC,Cutter,2067
+673513,"Matsui, Yuki",110.3,114.3,FF,4-Seam Fastball,762
+680730,"Parker, Mitchell",110.1,117.3,CU,Curveball,2095
+573124,"Rogers, Taylor",110.0,127.3,SI,Sinker,894
+571945,"Mikolas, Miles",109.9,115.3,FF,4-Seam Fastball,1688
+678368,"Bellozo, Valente",109.8,115.3,FF,4-Seam Fastball,843
+542881,"Anderson, Tyler",109.5,120.3,FC,Cutter,2167
+660896,"Alcala, Jorge",109.3,109.3,FF,4-Seam Fastball,491
+670102,"Francis, Bowden",109.3,109.3,FF,4-Seam Fastball,639
+668964,"Myers, Tobias",109.3,109.3,FF,4-Seam Fastball,373
+605400,"Nola, Aaron",109.3,109.3,CU,Curveball,457
+675911,"Strider, Spencer",108.5,109.3,FF,4-Seam Fastball,1825
+663855,"Hicks, Jordan",108.3,108.3,SI,Sinker,652
+700249,"Povich, Cade",108.2,118.3,CU,Curveball,1163
+669920,"Alexander, Jason",107.9,112.3,CH,Changeup,910
+666214,"Wentz, Joey",107.8,109.3,FF,4-Seam Fastball,1262
+676664,"Sears, JP",107.7,115.3,FF,4-Seam Fastball,1589
+677944,"Cecconi, Slade",107.7,118.3,SL,Slider,1275
+615698,"Quantrill, Cal",107.5,122.3,FS,Split-Finger,1293
+607536,"Freeland, Kyle",107.5,116.3,FF,4-Seam Fastball,1795
+689147,"Kerkering, Orion",107.3,107.3,ST,Sweeper,515
+690928,"Dobbins, Hunter",107.3,107.3,FF,4-Seam Fastball,377
+676130,"Buttó, José",107.3,107.3,SL,Slider,328
+642397,"Soto, Gregory",107.3,107.3,SI,Sinker,541
+664854,"Helsley, Ryan",107.2,137.3,FF,4-Seam Fastball,909
+694297,"Pfaadt, Brandon",107.2,119.3,ST,Sweeper,2366
+694738,"Roupp, Landen",107.1,111.3,SI,Sinker,1399
+592836,"Walker, Taijuan",107.1,121.3,FS,Split-Finger,1500
+500779,"Quintana, Jose",107.0,108.3,CH,Changeup,1435
+547179,"Lorenzen, Michael",107.0,118.3,FF,4-Seam Fastball,1330
+693821,"Elder, Bryce",106.7,110.3,SI,Sinker,1942
+656550,"Holmes, Grant",106.5,124.3,FF,4-Seam Fastball,1343
+672578,"Hernández, Carlos",106.3,106.3,FF,4-Seam Fastball,394
+650644,"Civale, Aaron",106.3,106.3,FC,Cutter,611
+682847,"Ortiz, Luis",106.3,106.3,FF,4-Seam Fastball,441
+672456,"Montero, Keider",106.3,106.3,FF,4-Seam Fastball,453
+669160,"May, Dustin",106.3,113.3,SI,Sinker,1580
+676661,"Lazar, Max",106.3,106.3,FF,4-Seam Fastball,357
+680732,"Burke, Sean",106.2,116.3,SL,Slider,2106
+695418,"Lord, Brad",106.1,121.3,SL,Slider,1846
+621111,"Buehler, Walker",106.1,118.3,FF,4-Seam Fastball,913
+434378,"Verlander, Justin",106.0,109.3,SL,Slider,1789
+608372,"Sugano, Tomoyuki",105.7,113.3,FF,4-Seam Fastball,2008
+663978,"Paddack, Chris",105.6,115.3,CH,Changeup,1713
+668678,"Gallen, Zac",105.6,131.3,SL,Slider,3053
+663436,"Martin, Davis",105.5,114.3,SL,Slider,1815
+621244,"Berríos, José",105.4,111.3,SV,Slurve,2434
+806960,"Morales, Luis",105.3,105.3,FF,4-Seam Fastball,423
+676106,"Hancock, Emerson",105.3,105.3,SI,Sinker,541
+579328,"Kikuchi, Yusei",105.3,115.3,FF,4-Seam Fastball,3054
+667463,"King, John",105.3,105.3,SI,Sinker,463
+605447,"Romano, Jordan",105.3,105.3,SL,Slider,443
+663687,"Harris, Hogan",105.3,105.3,FF,4-Seam Fastball,639
+669724,"Hanifee, Brenan",105.3,105.3,SI,Sinker,592
+605488,"Springs, Jeffrey",105.2,109.3,FF,4-Seam Fastball,2506
+641927,"Ober, Bailey",105.2,122.3,SL,Slider,1945
+684007,"Imanaga, Shota",105.2,112.3,FF,4-Seam Fastball,1743
+641793,"Littell, Zack",105.1,109.3,FS,Split-Finger,2638
+669467,"Pallante, Andre",105.1,111.3,FF,4-Seam Fastball,2336
+607625,"Lugo, Seth",104.4,108.3,SI,Sinker,1396
+806185,"Birdsong, Hayden",104.3,104.3,FF,4-Seam Fastball,527
+683232,"Mears, Nick",104.3,104.3,FF,4-Seam Fastball,452
+543294,"Hendricks, Kyle",104.3,111.3,SI,Sinker,1974
+623474,"Herget, Jimmy",104.3,104.3,ST,Sweeper,395
+607259,"Martinez, Nick",104.3,116.3,FF,4-Seam Fastball,2026
+592426,"Jackson, Luke",104.3,104.3,SL,Slider,382
+621053,"Ferguson, Tyler",104.3,104.3,FF,4-Seam Fastball,381
+547184,"Kelly, Michael",104.3,104.3,ST,Sweeper,332
+623437,"Topa, Justin",104.3,104.3,SI,Sinker,349
+680767,"Vodnik, Victor",104.3,104.3,FF,4-Seam Fastball,511
+671737,"Bradley, Taj",104.2,108.3,FF,4-Seam Fastball,1391
+571578,"Corbin, Patrick",103.9,112.3,SL,Slider,2264
+668933,"Ashcraft, Graham",103.5,116.3,FC,Cutter,1039
+472610,"García, Luis",103.3,103.3,SI,Sinker,377
+607481,"Bummer, Aaron",103.3,103.3,CU,Curveball,327
+669022,"Gore, MacKenzie",103.0,103.3,FF,4-Seam Fastball,2063
+656849,"Peterson, David",102.9,115.3,FF,4-Seam Fastball,2329
+656427,"Flaherty, Jack",102.9,106.3,CU,Curveball,2714
+676282,"Cantillo, Joey",102.8,108.3,FF,4-Seam Fastball,1187
+673929,"Leasure, Jordan",102.8,114.3,FF,4-Seam Fastball,1085
+676440,"Bibee, Tanner",102.6,111.3,CH,Changeup,2817
+669461,"Liberatore, Matthew",102.5,106.3,FF,4-Seam Fastball,1190
+645261,"Alcantara, Sandy",102.4,115.3,FF,4-Seam Fastball,2891
+686752,"Pepiot, Ryan",102.4,105.3,FF,4-Seam Fastball,1889
+605483,"Snell, Blake",102.3,102.3,FF,4-Seam Fastball,448
+571948,"Milner, Hoby",102.3,102.3,SI,Sinker,386
+702352,"Bivens, Spencer",102.3,102.3,SI,Sinker,486
+641302,"Alexander, Tyler",102.3,102.3,FF,4-Seam Fastball,414
+676508,"Casparius, Ben",102.3,102.3,ST,Sweeper,406
+667755,"Soriano, José",102.3,102.3,SI,Sinker,2111
+607067,"Rea, Colin",102.3,102.3,FF,4-Seam Fastball,1051
+663903,"Singer, Brady",102.1,108.3,SI,Sinker,1966
+702070,"Cameron, Noah",102.0,111.3,FC,Cutter,1858
+668909,"Williams, Gavin",101.9,111.3,FF,4-Seam Fastball,2731
+673540,"Senga, Kodai",101.9,113.3,FF,4-Seam Fastball,1528
+622663,"Severino, Luis",101.8,106.3,FF,4-Seam Fastball,2475
+656302,"Cease, Dylan",101.8,103.3,FF,4-Seam Fastball,2526
+666142,"Ragans, Cole",101.3,101.3,FF,4-Seam Fastball,534
+680573,"Woods Richardson, Simeon",101.3,101.3,FF,4-Seam Fastball,1366
+656222,"Beeks, Jalen",101.3,101.3,FF,4-Seam Fastball,480
+663559,"Falter, Bailey",101.3,101.3,FF,4-Seam Fastball,992
+641329,"Baker, Bryan",101.3,101.3,FF,4-Seam Fastball,520
+669387,"Mlodzinski, Carmen",101.3,101.3,FF,4-Seam Fastball,596
+669199,"Bachar, Lake",101.3,101.3,FF,4-Seam Fastball,425
+656605,"Keller, Mitch",101.2,111.3,SL,Slider,2457
+666157,"Lodolo, Nick",101.2,106.3,FF,4-Seam Fastball,2478
+543243,"Gray, Sonny",101.0,109.3,FF,4-Seam Fastball,1602
+518876,"Kelly, Merrill",100.9,137.3,SI,Sinker,2361
+665152,"Kremer, Dean",100.9,107.3,FF,4-Seam Fastball,2345
+608337,"Giolito, Lucas",100.8,103.3,CH,Changeup,2285
+669358,"Baz, Shane",100.8,103.3,CU,Curveball,1925
+678394,"Bello, Brayan",100.8,106.3,ST,Sweeper,1866
+660853,"De Los Santos, Enyel",100.7,105.3,FF,4-Seam Fastball,937
+682990,"Priester, Quinn",100.6,106.3,FC,Cutter,2201
+681347,"Burrows, Mike",100.5,113.3,FF,4-Seam Fastball,967
+647336,"Soroka, Michael",100.5,108.3,FF,4-Seam Fastball,1225
+605135,"Bassitt, Chris",100.5,106.3,FC,Cutter,2113
+687473,"Gusto, Ryan",100.3,100.3,FF,4-Seam Fastball,769
+592773,"Stanek, Ryne",100.3,100.3,FF,4-Seam Fastball,607
+572955,"Johnson, Pierce",100.3,100.3,CU,Curveball,698
+672391,"Ort, Kaleb",100.3,100.3,FF,4-Seam Fastball,428
+605540,"Woodruff, Brandon",100.3,100.3,FF,4-Seam Fastball,296
+701542,"Warren, Will",100.3,120.3,ST,Sweeper,2331
+669203,"Burnes, Corbin",100.3,100.3,FC,Cutter,555
+669093,"Estrada, Jeremiah",100.3,100.3,FF,4-Seam Fastball,702
+656730,"Megill, Trevor",100.3,100.3,FF,4-Seam Fastball,456
+570632,"Ureña, José",100.3,100.3,SI,Sinker,339
+661563,"Gil, Luis",100.3,100.3,FF,4-Seam Fastball,491
+669923,"Kirby, George",100.1,110.3,SI,Sinker,1748
+664285,"Valdez, Framber",99.8,111.3,CH,Changeup,2795
+605280,"Holmes, Clay",99.7,110.3,ST,Sweeper,2089
+670280,"Bednar, David",99.3,99.3,FF,4-Seam Fastball,451
+687064,"Young, Brandon",99.3,99.3,FF,4-Seam Fastball,411
+592454,"Kahnle, Tommy",99.3,99.3,CH,Changeup,886
+608718,"Suter, Brent",99.3,99.3,FF,4-Seam Fastball,471
+592791,"Taillon, Jameson",99.3,99.3,FF,4-Seam Fastball,753
+622554,"Domínguez, Seranthony",99.3,99.3,FF,4-Seam Fastball,476
+687911,"King, Bryan",99.3,99.3,FF,4-Seam Fastball,656
+693312,"Nicolas, Kyle",99.3,99.3,FF,4-Seam Fastball,330
+669372,"Ginn, J.T.",99.3,99.3,SI,Sinker,810
+640455,"Manaea, Sean",99.3,99.3,FF,4-Seam Fastball,663
+622491,"Castillo, Luis",98.9,103.3,SI,Sinker,2648
+665795,"Cabrera, Edward",98.9,113.3,SI,Sinker,1571
+669302,"Gilbert, Logan",98.8,105.3,SL,Slider,1974
+676083,"Junk, Janson",98.5,102.3,FF,4-Seam Fastball,1058
+676974,"Meyer, Max",98.3,98.3,SL,Slider,367
+656271,"Burke, Brock",98.3,98.3,FF,4-Seam Fastball,430
+694819,"Misiorowski, Jacob",98.3,98.3,FF,4-Seam Fastball,642
+683004,"Leiter, Jack",98.3,109.3,CH,Changeup,2029
+477132,"Kershaw, Clayton",98.3,104.3,FF,4-Seam Fastball,1344
+596133,"Weaver, Luke",98.3,98.3,FF,4-Seam Fastball,621
+453286,"Scherzer, Max",98.3,98.3,FF,4-Seam Fastball,674
+676684,"Vest, Will",98.3,98.3,FF,4-Seam Fastball,596
+682052,"Lopez, Jacob",98.2,103.3,FF,4-Seam Fastball,1096
+593974,"Peralta, Wandy",98.0,100.3,CH,Changeup,911
+676254,"Walker, Ryan",97.8,105.3,SL,Slider,1012
+663893,"Little, Brendon",97.8,105.3,SI,Sinker,1143
+656288,"Canning, Griffin",97.8,107.3,SL,Slider,723
+657277,"Webb, Logan",97.4,105.3,ST,Sweeper,2769
+675848,"Mejia, Juan",97.3,97.3,FF,4-Seam Fastball,721
+668984,"Legumina, Casey",97.3,97.3,FF,4-Seam Fastball,424
+592662,"Ray, Robbie",97.3,97.3,FF,4-Seam Fastball,2286
+676428,"Hurter, Brant",97.3,97.3,SI,Sinker,552
+686701,"Bergert, Ryan",97.3,97.3,FF,4-Seam Fastball,558
+694477,"Patrick, Chad",97.0,99.3,FC,Cutter,1738
+686973,"Varland, Louis",96.9,97.3,FF,4-Seam Fastball,883
+608379,"Wacha, Michael",96.5,125.3,SI,Sinker,2135
+664126,"Fairbanks, Pete",96.3,96.3,FF,4-Seam Fastball,504
+672582,"Zerpa, Angel",96.3,96.3,SI,Sinker,483
+623352,"Hader, Josh",96.3,96.3,SI,Sinker,459
+596001,"Junis, Jakob",96.3,96.3,SL,Slider,459
+605288,"Houser, Adrian",96.3,96.3,SI,Sinker,868
+663568,"Kolek, Stephen",96.3,97.3,FF,4-Seam Fastball,840
+657612,"Hill, Tim",96.3,96.3,SI,Sinker,739
+681190,"Vásquez, Randy",95.8,113.3,FC,Cutter,1396
+670955,"Uceta, Edwin",95.4,97.3,FF,4-Seam Fastball,965
+666200,"Luzardo, Jesús",95.4,103.3,FF,4-Seam Fastball,2491
+656731,"Megill, Tylor",95.3,95.3,FF,4-Seam Fastball,522
+606160,"Montero, Rafael",95.3,95.3,FS,Split-Finger,511
+672841,"Vargas, Carlos",95.3,95.3,SI,Sinker,678
+607192,"Glasnow, Tyler",95.3,95.3,FF,4-Seam Fastball,537
+643377,"Jax, Griffin",95.3,95.3,ST,Sweeper,481
+571510,"Boyd, Matthew",95.2,104.3,SL,Slider,2352
+608331,"Fried, Max",95.2,105.3,FF,4-Seam Fastball,2356
+642547,"Peralta, Freddy",95.2,97.3,FF,4-Seam Fastball,2771
+641816,"Mahle, Tyler",95.1,98.3,FF,4-Seam Fastball,1067
+607074,"Rodón, Carlos",94.4,98.3,FF,4-Seam Fastball,2774
+695505,"Burns, Chase",94.3,94.3,FF,4-Seam Fastball,442
+694037,"Palencia, Daniel",94.3,94.3,FF,4-Seam Fastball,602
+657376,"Schmidt, Clarke",94.3,94.3,FC,Cutter,501
+554430,"Wheeler, Zack",94.3,101.3,SI,Sinker,1388
+592094,"Adam, Jason",94.3,94.3,CH,Changeup,363
+681982,"Anderson, Grant",94.3,94.3,ST,Sweeper,438
+607455,"Banda, Anthony",94.3,94.3,SL,Slider,524
+621051,"Wilson, Steven",94.3,94.3,ST,Sweeper,568
+669371,"Henry, Cole",94.3,94.3,FF,4-Seam Fastball,489
+663460,"Bubic, Kris",94.2,97.3,CH,Changeup,1435
+642207,"Williams, Devin",94.1,98.3,FF,4-Seam Fastball,1113
+624133,"Suarez, Ranger",93.6,100.3,SI,Sinker,1551
+678606,"Ferrer, Jose A.",93.3,93.3,SI,Sinker,747
+686993,"Sterner, Justin",93.3,93.3,FF,4-Seam Fastball,570
+676395,"Garcia, Robert",93.3,93.3,FF,4-Seam Fastball,436
+671096,"Abbott, Andrew",93.3,96.3,CH,Changeup,2254
+666974,"Cano, Yennier",93.3,93.3,SI,Sinker,452
+676534,"Faucher, Calvin",93.3,93.3,FC,Cutter,390
+678495,"Rodríguez, Randy",93.3,93.3,SL,Slider,360
+689254,"Fluharty, Mason",93.3,93.3,FC,Cutter,500
+666374,"Brash, Matt",93.3,93.3,SL,Slider,498
+666808,"Doval, Camilo",93.3,93.3,SL,Slider,529
+543135,"Eovaldi, Nathan",93.2,104.3,FF,4-Seam Fastball,1035
+676979,"Crochet, Garrett",92.9,110.3,FF,4-Seam Fastball,3015
+519242,"Sale, Chris",92.9,108.3,FF,4-Seam Fastball,1806
+690990,"Horton, Cade",92.5,95.3,ST,Sweeper,1286
+686218,"Sheehan, Emmet",92.5,106.3,FF,4-Seam Fastball,884
+592332,"Gausman, Kevin",92.4,95.3,FS,Split-Finger,2761
+691587,"Pérez, Eury",92.3,92.3,FF,4-Seam Fastball,859
+640448,"Finnegan, Kyle",92.3,92.3,FF,4-Seam Fastball,493
+677952,"Ashcraft, Braxton",92.3,92.3,SL,Slider,344
+678024,"Vasil, Mike",92.3,92.3,SI,Sinker,657
+663574,"Santillan, Tony",92.3,92.3,FF,4-Seam Fastball,799
+661403,"Clase, Emmanuel",92.3,92.3,FC,Cutter,514
+641778,"Lauer, Eric",92.3,92.3,FF,4-Seam Fastball,782
+571927,"Matz, Steven",91.3,91.3,SI,Sinker,677
+608032,"Estévez, Carlos",91.3,91.3,FF,4-Seam Fastball,558
+681343,"Smith, Shane",91.3,107.3,CH,Changeup,1495
+657746,"Ryan, Joe",91.3,91.3,FF,4-Seam Fastball,1404
+601713,"Pivetta, Nick",90.8,95.3,CU,Curveball,2517
+650556,"Abreu, Bryan",90.4,95.3,FF,4-Seam Fastball,1170
+676755,"Mattson, Isaac",90.3,90.3,FF,4-Seam Fastball,610
+518585,"Cruz, Fernando",90.3,90.3,FS,Split-Finger,479
+650911,"Sánchez, Cristopher",90.3,102.3,SL,Slider,2896
+641941,"Pagán, Emilio",90.3,90.3,FF,4-Seam Fastball,654
+573204,"Thielbar, Caleb",90.3,90.3,FF,4-Seam Fastball,351
+663465,"Allard, Kolby",90.3,90.3,FF,4-Seam Fastball,389
+663969,"Phillips, Tyler",90.3,90.3,SI,Sinker,350
+686613,"Brown, Hunter",89.6,94.3,SI,Sinker,2312
+693645,"Schlittler, Cam",89.3,89.3,FF,4-Seam Fastball,700
+682842,"Uribe, Abner",89.3,90.3,SL,Slider,1139
+681911,"Vesia, Alex",89.3,89.3,FF,4-Seam Fastball,588
+672282,"Detmers, Reid",89.3,89.3,FF,4-Seam Fastball,492
+656876,"Rasmussen, Drew",88.7,95.3,SI,Sinker,2075
+594798,"deGrom, Jacob",88.6,91.3,SL,Slider,2186
+657097,"Webb, Jacob",88.5,91.3,CH,Changeup,774
+694973,"Skenes, Paul",88.4,99.3,FS,Split-Finger,2047
+657649,"Koenig, Jared",88.3,88.3,SI,Sinker,591
+641154,"López, Pablo",88.3,88.3,FF,4-Seam Fastball,518
+669711,"Weissert, Greg",88.3,88.3,FF,4-Seam Fastball,357
+683769,"Gaddis, Hunter",88.3,88.3,SL,Slider,563
+669194,"Nelson, Ryne",88.3,88.3,FF,4-Seam Fastball,1526
+642701,"Santana, Dennis",88.3,88.3,SL,Slider,466
+676879,"Ashby, Aaron",88.3,88.3,SI,Sinker,530
+693433,"Woo, Bryan",88.1,91.3,SI,Sinker,1977
+808967,"Yamamoto, Yoshinobu",87.5,93.3,CU,Curveball,2183
+519141,"Pomeranz, Drew",87.3,87.3,FF,4-Seam Fastball,614
+657514,"Bernardino, Brennan",87.3,87.3,SI,Sinker,371
+656641,"Latz, Jacob",87.3,87.3,FF,4-Seam Fastball,685
+676617,"O'Brien, Riley",87.3,87.3,SI,Sinker,366
+668881,"Greene, Hunter",87.2,96.3,SL,Slider,1558
+621242,"Díaz, Edwin",86.8,87.3,FF,4-Seam Fastball,1066
+641745,"Keller, Brad",86.3,86.3,FF,4-Seam Fastball,470
+641755,"Kinley, Tyler",86.3,86.3,SL,Slider,783
+571946,"Miller, Shelby",86.3,86.3,FF,4-Seam Fastball,436
+669276,"Lee, Dylan",86.3,86.3,SL,Slider,612
+445276,"Jansen, Kenley",85.3,85.3,FC,Cutter,707
+680885,"Schwellenbach, Spencer",85.3,85.3,FF,4-Seam Fastball,555
+595345,"Okert, Steven",85.2,93.3,FF,4-Seam Fastball,1043
+695243,"Miller, Mason",85.0,101.3,FF,4-Seam Fastball,950
+676477,"Whitlock, Garrett",84.7,86.3,SI,Sinker,921
+671922,"Smith, Cade",84.3,84.3,FF,4-Seam Fastball,826
+669373,"Skubal, Tarik",84.1,90.3,SI,Sinker,2411
+642100,"Speier, Gabe",82.3,82.3,FF,4-Seam Fastball,412
+669432,"Rogers, Trevor",82.3,87.3,CH,Changeup,1072
+676263,"Dreyer, Jack",82.3,84.3,SL,Slider,1046
+656986,"Sousa, Bennett",82.3,82.3,SL,Slider,423
+660825,"Bazardo, Eduard",82.0,87.3,ST,Sweeper,1021
+663158,"Suarez, Robert",81.3,81.3,FF,4-Seam Fastball,682
+684320,"Rodríguez, Yariel",80.3,80.3,SL,Slider,478
+694335,"Svanson, Matt",79.3,79.3,SI,Sinker,457
+664208,"Maton, Phil",78.3,78.3,CU,Curveball,385
+668941,"Romero, JoJo",78.3,78.3,ST,Sweeper,375
+643511,"Rogers, Tyler",78.3,78.3,SI,Sinker,729
+670970,"Morejon, Adrian",77.3,77.3,SI,Sinker,617
+552640,"Kittredge, Andrew",75.3,75.3,SL,Slider,406
+662253,"Muñoz, Andrés",75.3,75.3,SL,Slider,522
+661395,"Duran, Jhoan",74.3,74.3,SI,Sinker,428
+700241,"McGreevy, Michael",72.3,72.3,SI,Sinker,325
+628452,"Iglesias, Raisel",67.3,67.3,FF,4-Seam Fastball,387

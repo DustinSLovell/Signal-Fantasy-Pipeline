@@ -1,0 +1,46 @@
+batter_id,name,annual_salary_m,years_remaining,prove_it,cohort_override,notes
+# Financial motivation framework — manually curated + Wayback Machine (build_spotrac_contracts.py)
+# annual_salary_m = AAV in millions (use Spotrac AAV, even if deferred-heavy)
+# years_remaining  = years left on deal AFTER 2026 season (0 = contract year / final year)
+# prove_it         = 1 if on 1-2yr deal following injury or down year (manual flag)
+# cohort_override  = explicit cohort code to bypass auto-logic (usually leave blank)
+#   Codes: 1-payday | 2-prove-it | 3-secured | 4-post-prime | 5-mid-contract
+# Source: Spotrac via Wayback Machine CDX API (build_spotrac_contracts.py) or manual curation
+# Cohort 3 auto-threshold: annual_salary_m >= 20.0 AND years_remaining >= 3
+# Cohort 1 auto-threshold: age 25-31 AND years_remaining <= 2 (or pre-arb with no data)
+#
+# ── Cohort 3 (Already Secured — salary >= $20M AND 3+ years remaining) ──
+660271,Shohei Ohtani,70.0,7,,,$700M/10yr through 2033; AAV=$70M (heavily deferred)
+592450,Aaron Judge,40.0,5,,,$360M/9yr through 2031; AAV=$40M
+545361,Mike Trout,35.5,4,,,$426M/12yr through 2030; AAV=$35.5M
+547180,Bryce Harper,25.4,5,,,$330M/13yr through 2031; AAV=$25.4M
+608369,Corey Seager,32.5,5,,,$325M/10yr through 2031; AAV=$32.5M
+596019,Francisco Lindor,34.1,5,,,$341M/10yr through 2031; AAV=$34.1M
+607208,Trea Turner,27.3,6,,,$300M/11yr through 2032; AAV=$27.3M
+592518,Manny Machado,31.8,7,,,$350M/11yr through 2033; AAV=$31.8M
+663586,Austin Riley,21.2,6,,,$212M/10yr through 2032; AAV=$21.2M
+677951,Bobby Witt,26.25,9,,,$288.75M/11yr through 2035; AAV=$26.25M; age 26 locked up long-term
+677594,Julio Rodríguez,20.93,8,,,$210M/10yr through 2034; AAV=$20.93M; age 26 locked up long-term
+# ── Cohort 1 (Generational Payday — salary < $20M, short-deal, approaching monster FA) ──
+660670,Ronald Acuña,12.5,2,,,$100M/8yr through 2028; AAV=$12.5M; age 29 prime FA incoming
+670541,Yordan Álvarez,19.2,1,,,$115M/6yr through 2027; AAV=$19.2M; age 29 FA after 2027
+# ── Rows below populated by build_spotrac_contracts.py ──
+# ── Rows below merged from spotrac_contracts_raw.csv ──
+608070,José Ramírez,20.14,3,,,Spotrac via Wayback (2023): 7yr/$141.0M total; AAV=$20.14M; through 2029
+621020,Dansby Swanson,25.29,4,,,Spotrac via Wayback (2024): 7yr/$177.0M total; AAV=$25.29M; through 2030
+656941,Kyle Schwarber,19.75,0,,,Spotrac via Wayback (2024): 4yr/$79.0M total; AAV=$19.75M; through 2026
+678662,Ezequiel Tovar,9.07,4,,,Spotrac via Wayback (2024): 7yr/$63.5M total; AAV=$9.07M; through 2030
+521692,Salvador Pérez,20.5,1,,,Spotrac via Wayback (2024): 4yr/$82.0M total; AAV=$20.50M; through 2027
+593428,Xander Bogaerts,25.45,8,,,Spotrac via Wayback (2024): 11yr/$280.0M total; AAV=$25.45M; through 2034
+656305,Matt Chapman,18.0,0,,,Spotrac via Wayback (2024): 3yr/$54.0M total; AAV=$18.00M; through 2026
+607625,Seth Lugo,15.0,0,,,Spotrac via Wayback (2024): 3yr/$45.0M total; AAV=$15.00M; through 2026
+519317,Giancarlo Stanton,25.0,3,,,Spotrac via Wayback (2024): 13yr/$325.0M total; AAV=$25.00M; through 2029
+592662,Robbie Ray,23.0,1,,,Spotrac via Wayback (2024): 5yr/$115.0M total; AAV=$23.00M; through 2027
+690993,Colt Keith,4.77,3,,,Spotrac via Wayback (2024): 6yr/$28.64M total; AAV=$4.77M; through 2029
+621566,Matt Olson,21.0,5,,,Spotrac via Wayback (2024): 8yr/$168.0M total; AAV=$21.00M; through 2031
+622491,Luis Castillo,21.6,1,,,Spotrac via Wayback (2023): 5yr/$108.0M total; AAV=$21.60M; through 2027
+657277,Logan Webb,18.0,1,,,Spotrac via Wayback (2023): 5yr/$90.0M total; AAV=$18.00M; through 2027
+605400,Aaron Nola,24.57,4,,,Spotrac via Wayback (2024): 7yr/$172.0M total; AAV=$24.57M; through 2030
+592885,Christian Yelich,26.93,4,,,Spotrac via Wayback (2024): 7yr/$188.5M total; AAV=$26.93M; through 2030
+808982,Jung hoo Lee,18.83,2,,,Spotrac via Wayback (2023): 6yr/$113.0M total; AAV=$18.83M; through 2028
+622608,Antonio Senzatela,10.1,1,,,Spotrac via Wayback (2023): 5yr/$50.5M total; AAV=$10.10M; through 2027

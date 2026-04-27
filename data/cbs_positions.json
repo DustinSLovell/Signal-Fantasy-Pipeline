@@ -1,0 +1,4073 @@
+{
+  "generated": "2026-04-18",
+  "source": "CBS Sports fantasy baseball + MLB Stats API fallback",
+  "players": {
+    "663757": {
+      "name": "Trent Grisham",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "trent-grisham"
+    },
+    "647304": {
+      "name": "Josh Naylor",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "josh-naylor"
+    },
+    "608070": {
+      "name": "Jos\u00e9 Ram\u00edrez",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-ramirez"
+    },
+    "805300": {
+      "name": "Jakob Marsee",
+      "position": "OF",
+      "source": "CBS Sports",
+      "cbs_slug": "jakob-marsee"
+    },
+    "672695": {
+      "name": "Geraldo Perdomo",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "geraldo-perdomo"
+    },
+    "678246": {
+      "name": "Miguel Vargas",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "miguel-vargas"
+    },
+    "686469": {
+      "name": "Vinnie Pasquantino",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "vinnie-pasquantino"
+    },
+    "630105": {
+      "name": "Jake Cronenworth",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "jake-cronenworth"
+    },
+    "664761": {
+      "name": "Alec Bohm",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "alec-bohm"
+    },
+    "545361": {
+      "name": "Mike Trout",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "mike-trout"
+    },
+    "521692": {
+      "name": "Salvador P\u00e9rez",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "salvador-perez"
+    },
+    "683002": {
+      "name": "Gunnar Henderson",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "gunnar-henderson"
+    },
+    "608369": {
+      "name": "Corey Seager",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "corey-seager"
+    },
+    "663647": {
+      "name": "Ke'bryan Hayes",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "kebryan-hayes"
+    },
+    "683737": {
+      "name": "Michael Busch",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "michael-busch"
+    },
+    "702332": {
+      "name": "Caleb Durbin",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "caleb-durbin"
+    },
+    "671056": {
+      "name": "Iv\u00e1n Herrera",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "ivan-herrera"
+    },
+    "670770": {
+      "name": "Tj Friedl",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "800050": {
+      "name": "Chase Delauter",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "chase-delauter"
+    },
+    "694212": {
+      "name": "Samuel Basallo",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "samuel-basallo"
+    },
+    "663728": {
+      "name": "Cal Raleigh",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "cal-raleigh"
+    },
+    "807712": {
+      "name": "Luke Keaschall",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "luke-keaschall"
+    },
+    "666018": {
+      "name": "Jonathan Aranda",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "jonathan-aranda"
+    },
+    "686217": {
+      "name": "Sal Frelick",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "sal-frelick"
+    },
+    "656775": {
+      "name": "Cedric Mullins",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "cedric-mullins"
+    },
+    "677587": {
+      "name": "Brayan Rocchio",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "brayan-rocchio"
+    },
+    "808959": {
+      "name": "Munetaka Murakami",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "munetaka-murakami"
+    },
+    "694384": {
+      "name": "Nolan Schanuel",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "nolan-schanuel"
+    },
+    "691785": {
+      "name": "Marcelo Mayer",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "marcelo-mayer"
+    },
+    "596019": {
+      "name": "Francisco Lindor",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "francisco-lindor"
+    },
+    "669224": {
+      "name": "Austin Wells",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "austin-wells"
+    },
+    "691016": {
+      "name": "Tyler Soderstrom",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-soderstrom"
+    },
+    "671732": {
+      "name": "Lawrence Butler",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "lawrence-butler"
+    },
+    "680776": {
+      "name": "Jarren Duran",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "jarren-duran"
+    },
+    "543760": {
+      "name": "Marcus Semien",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "marcus-semien"
+    },
+    "681351": {
+      "name": "Logan O'hoppe",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "logan-ohoppe"
+    },
+    "682668": {
+      "name": "Luisangel Acu\u00f1a",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "luisangel-acuna"
+    },
+    "669701": {
+      "name": "Josh Smith",
+      "position": "SS",
+      "source": "MLB API"
+    },
+    "672275": {
+      "name": "Patrick Bailey",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "patrick-bailey"
+    },
+    "701807": {
+      "name": "Carson Benge",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "carson-benge"
+    },
+    "593871": {
+      "name": "Jorge Polanco",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "jorge-polanco"
+    },
+    "664056": {
+      "name": "Harrison Bader",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "677950": {
+      "name": "Alek Thomas",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "592518": {
+      "name": "Manny Machado",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "manny-machado"
+    },
+    "593428": {
+      "name": "Xander Bogaerts",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "xander-bogaerts"
+    },
+    "592450": {
+      "name": "Aaron Judge",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "aaron-judge"
+    },
+    "621020": {
+      "name": "Dansby Swanson",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "dansby-swanson"
+    },
+    "606466": {
+      "name": "Ketel Marte",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "ketel-marte"
+    },
+    "681082": {
+      "name": "Bryson Stott",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "bryson-stott"
+    },
+    "542303": {
+      "name": "Marcell Ozuna",
+      "position": "DH",
+      "source": "MLB API"
+    },
+    "694497": {
+      "name": "Evan Carter",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "evan-carter"
+    },
+    "663697": {
+      "name": "Jonathan India",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jonathan-india"
+    },
+    "683083": {
+      "name": "Nasim Nu\u00f1ez",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "nasim-nunez"
+    },
+    "681715": {
+      "name": "Heriberto Hernandez",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "802139": {
+      "name": "JJ Wetherholt",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jj-wetherholt"
+    },
+    "660162": {
+      "name": "Yo\u00e1n Moncada",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "yoan-moncada"
+    },
+    "543807": {
+      "name": "George Springer",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "george-springer"
+    },
+    "680574": {
+      "name": "Matt Mclain",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "matt-mclain"
+    },
+    "668715": {
+      "name": "Spencer Steer",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "spencer-steer"
+    },
+    "691406": {
+      "name": "Junior Caminero",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "junior-caminero"
+    },
+    "650859": {
+      "name": "Luis Rengifo",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "luis-rengifo"
+    },
+    "605170": {
+      "name": "V\u00edctor Caratini",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "victor-caratini"
+    },
+    "571448": {
+      "name": "Nolan Arenado",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "nolan-arenado"
+    },
+    "673237": {
+      "name": "Yainer Diaz",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "yainer-diaz"
+    },
+    "691720": {
+      "name": "Kyle Karros",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-karros"
+    },
+    "667670": {
+      "name": "Brent Rooker",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "691026": {
+      "name": "Masyn Winn",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "masyn-winn"
+    },
+    "641857": {
+      "name": "Ryan Mcmahon",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "ryan-mcmahon"
+    },
+    "701350": {
+      "name": "Roman Anthony",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "roman-anthony"
+    },
+    "666139": {
+      "name": "Josh Lowe",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "641343": {
+      "name": "Jake Bauers",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "jake-bauers"
+    },
+    "689414": {
+      "name": "Liam Hicks",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "liam-hicks"
+    },
+    "672580": {
+      "name": "Maikel Garc\u00eda",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "maikel-garcia"
+    },
+    "694374": {
+      "name": "Tim Tawa",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "tim-tawa"
+    },
+    "666310": {
+      "name": "Bo Naylor",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "bo-naylor"
+    },
+    "663886": {
+      "name": "Tyler Stephenson",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-stephenson"
+    },
+    "687597": {
+      "name": "Jordan Beck",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "608324": {
+      "name": "Alex Bregman",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "alex-bregman"
+    },
+    "672960": {
+      "name": "Kazuma Okamoto",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "kazuma-okamoto"
+    },
+    "669357": {
+      "name": "Nolan Gorman",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "nolan-gorman"
+    },
+    "596115": {
+      "name": "Trevor Story",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "trevor-story"
+    },
+    "666152": {
+      "name": "David Hamilton",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "david-hamilton"
+    },
+    "671739": {
+      "name": "Michael Harris",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "michael-harris"
+    },
+    "695600": {
+      "name": "Carter Jensen",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "carter-jensen"
+    },
+    "663586": {
+      "name": "Austin Riley",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "austin-riley"
+    },
+    "695657": {
+      "name": "Colson Montgomery",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "colson-montgomery"
+    },
+    "701538": {
+      "name": "Jackson Merrill",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "jackson-merrill"
+    },
+    "664023": {
+      "name": "Ian Happ",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "ian-happ"
+    },
+    "805779": {
+      "name": "Jacob Wilson",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "jacob-wilson"
+    },
+    "693307": {
+      "name": "Dillon Dingler",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "dillon-dingler"
+    },
+    "671277": {
+      "name": "Luis Garc\u00eda",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "luis-garcia"
+    },
+    "650402": {
+      "name": "Gleyber Torres",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "gleyber-torres"
+    },
+    "641487": {
+      "name": "J. p. Crawford",
+      "position": "SS",
+      "source": "MLB API"
+    },
+    "686797": {
+      "name": "Brooks Lee",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "brooks-lee"
+    },
+    "691723": {
+      "name": "Coby Mayo",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "coby-mayo"
+    },
+    "679529": {
+      "name": "Spencer Torkelson",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "spencer-torkelson"
+    },
+    "694671": {
+      "name": "Wyatt Langford",
+      "position": "OF",
+      "source": "CBS Sports",
+      "cbs_slug": "wyatt-langford"
+    },
+    "676475": {
+      "name": "Alec Burleson",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "alec-burleson"
+    },
+    "665487": {
+      "name": "Fernando Tat\u00eds",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "665862": {
+      "name": "Jazz Chisholm",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jazz-chisholm"
+    },
+    "641355": {
+      "name": "Cody Bellinger",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "cody-bellinger"
+    },
+    "700337": {
+      "name": "Edgar Quero",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "edgar-quero"
+    },
+    "656555": {
+      "name": "Rhys Hoskins",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "rhys-hoskins"
+    },
+    "810938": {
+      "name": "Ben Williamson",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "ben-williamson"
+    },
+    "660670": {
+      "name": "Ronald Acu\u00f1a",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "701675": {
+      "name": "Nathan Church",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "702284": {
+      "name": "Cole Young",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "cole-young"
+    },
+    "664983": {
+      "name": "Jake Mccarthy",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "686527": {
+      "name": "Dominic Canzone",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "dominic-canzone"
+    },
+    "678554": {
+      "name": "Curtis Mead",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "curtis-mead"
+    },
+    "687363": {
+      "name": "Victor Scott",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "621439": {
+      "name": "Byron Buxton",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "byron-buxton"
+    },
+    "693304": {
+      "name": "Nick Gonzales",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-gonzales"
+    },
+    "645277": {
+      "name": "Ozzie Albies",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "ozzie-albies"
+    },
+    "670541": {
+      "name": "Yordan \u00c1lvarez",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "yordan-alvarez"
+    },
+    "641584": {
+      "name": "Jake Fraley",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "687401": {
+      "name": "Joey Ortiz",
+      "position": "SS",
+      "source": "MLB API"
+    },
+    "700932": {
+      "name": "Kyle Manzardo",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-manzardo"
+    },
+    "624413": {
+      "name": "Pete Alonso",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "pete-alonso"
+    },
+    "571970": {
+      "name": "Max Muncy",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "max-muncy"
+    },
+    "681198": {
+      "name": "TJ Rumfield",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "tj-rumfield"
+    },
+    "666182": {
+      "name": "Bo Bichette",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "bo-bichette"
+    },
+    "701398": {
+      "name": "Sal Stewart",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "sal-stewart"
+    },
+    "696285": {
+      "name": "Jacob Young",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "jacob-young"
+    },
+    "660688": {
+      "name": "Keibert Ruiz",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "keibert-ruiz"
+    },
+    "660271": {
+      "name": "Shohei Ohtani",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "shohei-ohtani"
+    },
+    "592206": {
+      "name": "Nick Castellanos",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "656941": {
+      "name": "Kyle Schwarber",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "677594": {
+      "name": "Julio Rodr\u00edguez",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "julio-rodriguez"
+    },
+    "665019": {
+      "name": "Kody Clemens",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "kody-clemens"
+    },
+    "688363": {
+      "name": "Graham Pauley",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "graham-pauley"
+    },
+    "662139": {
+      "name": "Daulton Varsho",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "daulton-varsho"
+    },
+    "596142": {
+      "name": "Gary S\u00e1nchez",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "gary-sanchez"
+    },
+    "683146": {
+      "name": "Brett Baty",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "brett-baty"
+    },
+    "656716": {
+      "name": "Zach Mckinstry",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "zach-mckinstry"
+    },
+    "680779": {
+      "name": "Henry Davis",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "henry-davis"
+    },
+    "681297": {
+      "name": "Colton Cowser",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "805367": {
+      "name": "Chase Meidroth",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "chase-meidroth"
+    },
+    "687637": {
+      "name": "Dylan Beavers",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "dylan-beavers"
+    },
+    "672820": {
+      "name": "Lenyn Sosa",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "lenyn-sosa"
+    },
+    "666160": {
+      "name": "Mickey Moniak",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "mickey-moniak"
+    },
+    "690976": {
+      "name": "Alex Freeland",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "alex-freeland"
+    },
+    "664770": {
+      "name": "Nathan Lukes",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "682877": {
+      "name": "Juan Brito",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "juan-brito"
+    },
+    "605137": {
+      "name": "Josh Bell",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "josh-bell"
+    },
+    "676609": {
+      "name": "Jos\u00e9 Caballero",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-caballero"
+    },
+    "691718": {
+      "name": "Pete Crow-armstrong",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "pete-crow-armstrong"
+    },
+    "660821": {
+      "name": "Jes\u00fas S\u00e1nchez",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "jesus-sanchez"
+    },
+    "680757": {
+      "name": "Steven Kwan",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "steven-kwan"
+    },
+    "807713": {
+      "name": "Matt Shaw",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "matt-shaw"
+    },
+    "668901": {
+      "name": "Mark Vientos",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "mark-vientos"
+    },
+    "624585": {
+      "name": "Jorge Soler",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "jorge-soler"
+    },
+    "676914": {
+      "name": "Davis Schneider",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "davis-schneider"
+    },
+    "681481": {
+      "name": "Kerry Carpenter",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "kerry-carpenter"
+    },
+    "646240": {
+      "name": "Rafael Devers",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "rafael-devers"
+    },
+    "691781": {
+      "name": "Brady House",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "brady-house"
+    },
+    "602104": {
+      "name": "Ram\u00f3n Ur\u00edas",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "ramon-urias"
+    },
+    "642708": {
+      "name": "Amed Rosario",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "amed-rosario"
+    },
+    "670623": {
+      "name": "Isaac Paredes",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "isaac-paredes"
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "freddie-freeman"
+    },
+    "666397": {
+      "name": "Edouard Julien",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "edouard-julien"
+    },
+    "657041": {
+      "name": "Lane Thomas",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "666969": {
+      "name": "Adolis Garc\u00eda",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "adolis-garcia"
+    },
+    "686780": {
+      "name": "Pedro Pag\u00e9s",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "pedro-pages"
+    },
+    "673357": {
+      "name": "Luis Robert",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "luis-robert"
+    },
+    "808982": {
+      "name": "Jung hoo Lee",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "jung-hoo-lee"
+    },
+    "694728": {
+      "name": "Brice Matthews",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "brice-matthews"
+    },
+    "805808": {
+      "name": "Kevin McGonigle",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "kevin-mcgonigle"
+    },
+    "682626": {
+      "name": "Francisco \u00c1lvarez",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "francisco-alvarez"
+    },
+    "666126": {
+      "name": "Carlos Cortes",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "carlos-cortes"
+    },
+    "663656": {
+      "name": "Kyle Tucker",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-tucker"
+    },
+    "670242": {
+      "name": "Matt Wallner",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "matt-wallner"
+    },
+    "665966": {
+      "name": "Carlos Narv\u00e1ez",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "carlos-narvaez"
+    },
+    "665161": {
+      "name": "Jeremy Pe\u00f1a",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "jeremy-pena"
+    },
+    "663368": {
+      "name": "Blake Perkins",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "686452": {
+      "name": "Drew Millas",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "drew-millas"
+    },
+    "607208": {
+      "name": "Trea Turner",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "trea-turner"
+    },
+    "666023": {
+      "name": "Freddy Fermin",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "freddy-fermin"
+    },
+    "573262": {
+      "name": "Mike Yastrzemski",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "mike-yastrzemski"
+    },
+    "547180": {
+      "name": "Bryce Harper",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "bryce-harper"
+    },
+    "676356": {
+      "name": "Jonny Deluca",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "jonny-deluca"
+    },
+    "666181": {
+      "name": "Will Benson",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "663837": {
+      "name": "Matt Vierling",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "663698": {
+      "name": "Joey Bart",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "joey-bart"
+    },
+    "572233": {
+      "name": "Christian Walker",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "christian-walker"
+    },
+    "663616": {
+      "name": "Trevor Larnach",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "trevor-larnach"
+    },
+    "641933": {
+      "name": "Tyler O'neill",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "676694": {
+      "name": "Jake Meyers",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "680700": {
+      "name": "Richie Palacios",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "518595": {
+      "name": "Travis D'arnaud",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "travis-darnaud"
+    },
+    "687957": {
+      "name": "Dustin Harris",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "665877": {
+      "name": "Jos\u00e9 Ferm\u00edn",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-fermin"
+    },
+    "622761": {
+      "name": "Jorge Mateo",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "jorge-mateo"
+    },
+    "643396": {
+      "name": "Isiah Kiner-falefa",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "isiah-kiner-falefa"
+    },
+    "687221": {
+      "name": "Dalton Rushing",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "dalton-rushing"
+    },
+    "642201": {
+      "name": "Eli White",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "686681": {
+      "name": "Michael Massey",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "michael-massey"
+    },
+    "545341": {
+      "name": "Randal Grichuk",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "641555": {
+      "name": "J. c. Escarra",
+      "position": "C",
+      "source": "MLB API"
+    },
+    "669743": {
+      "name": "Alex Call",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "668670": {
+      "name": "Jake Rogers",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "jake-rogers"
+    },
+    "663330": {
+      "name": "Jahmai Jones",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "691783": {
+      "name": "Jordan Lawlar",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "jordan-lawlar"
+    },
+    "642851": {
+      "name": "Austin Wynns",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "austin-wynns"
+    },
+    "641598": {
+      "name": "Mitch Garver",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "mitch-garver"
+    },
+    "682622": {
+      "name": "Noelvi Marte",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "noelvi-marte"
+    },
+    "543309": {
+      "name": "Kyle Higashioka",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-higashioka"
+    },
+    "500743": {
+      "name": "Miguel Rojas",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "miguel-rojas"
+    },
+    "672356": {
+      "name": "Gabriel Arias",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "gabriel-arias"
+    },
+    "677592": {
+      "name": "Everson Pereira",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "808975": {
+      "name": "Hyeseong Kim",
+      "position": "2B",
+      "source": "MLB API"
+    },
+    "596103": {
+      "name": "Austin Slater",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "595978": {
+      "name": "Austin Hedges",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "austin-hedges"
+    },
+    "624641": {
+      "name": "Edmundo Sosa",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "edmundo-sosa"
+    },
+    "664034": {
+      "name": "Ty France",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "ty-france"
+    },
+    "621438": {
+      "name": "Tyrone Taylor",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "624424": {
+      "name": "Michael Conforto",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "605141": {
+      "name": "Mookie Betts",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "mookie-betts"
+    },
+    "680728": {
+      "name": "Adrian Del castillo",
+      "position": "C",
+      "source": "MLB API"
+    },
+    "667472": {
+      "name": "Dane Myers",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "663993": {
+      "name": "Nathaniel Lowe",
+      "position": "1B",
+      "source": "MLB API"
+    },
+    "623168": {
+      "name": "Tyler Heineman",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-heineman"
+    },
+    "665052": {
+      "name": "Griffin Conine",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "692216": {
+      "name": "C. j. Kayfus",
+      "position": "1B",
+      "source": "MLB API"
+    },
+    "666464": {
+      "name": "Jerar Encarnacion",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "656537": {
+      "name": "Derek Hill",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "678218": {
+      "name": "Brandon Valenzuela",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "brandon-valenzuela"
+    },
+    "657136": {
+      "name": "Connor Wong",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "connor-wong"
+    },
+    "676724": {
+      "name": "Jared Young",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "jared-young"
+    },
+    "666211": {
+      "name": "Taylor Trammell",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "467793": {
+      "name": "Carlos Santana",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "carlos-santana"
+    },
+    "680718": {
+      "name": "Addison Barger",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "addison-barger"
+    },
+    "805249": {
+      "name": "Otto Kemp",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "otto-kemp"
+    },
+    "669707": {
+      "name": "Jared Triolo",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "jared-triolo"
+    },
+    "665561": {
+      "name": "Rafael March\u00e1n",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "rafael-marchan"
+    },
+    "641680": {
+      "name": "Jonah Heim",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "jonah-heim"
+    },
+    "691740": {
+      "name": "Daniel Susac",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "daniel-susac"
+    },
+    "672386": {
+      "name": "Alejandro Kirk",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "alejandro-kirk"
+    },
+    "655316": {
+      "name": "Andruw Monasterio",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "andruw-monasterio"
+    },
+    "676439": {
+      "name": "Hunter Feduccia",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "hunter-feduccia"
+    },
+    "668723": {
+      "name": "Ryan Vilade",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "608701": {
+      "name": "Rob Refsnyder",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "695020": {
+      "name": "Tanner Murray",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "tanner-murray"
+    },
+    "687231": {
+      "name": "Darell Hernaiz",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "darell-hernaiz"
+    },
+    "669397": {
+      "name": "Nick Allen",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-allen"
+    },
+    "664702": {
+      "name": "Myles Straw",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "516782": {
+      "name": "Starling Marte",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "681546": {
+      "name": "James Outman",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "700246": {
+      "name": "Carson Williams",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "carson-williams"
+    },
+    "502671": {
+      "name": "Paul Goldschmidt",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "paul-goldschmidt"
+    },
+    "600869": {
+      "name": "Jeimer Candelario",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "jeimer-candelario"
+    },
+    "669326": {
+      "name": "Bryce Teodosio",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "669720": {
+      "name": "Austin Hays",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "665742": {
+      "name": "Juan Soto",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "664954": {
+      "name": "Brett Sullivan",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "brett-sullivan"
+    },
+    "457705": {
+      "name": "Andrew Mccutchen",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "543510": {
+      "name": "James Mccann",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "james-mccann"
+    },
+    "803011": {
+      "name": "Sam Antonacci",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "sam-antonacci"
+    },
+    "645302": {
+      "name": "V\u00edctor Robles",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "669369": {
+      "name": "Bryce Johnson",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "668952": {
+      "name": "Ryan Kreidler",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "663624": {
+      "name": "Ryan Mountcastle",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "ryan-mountcastle"
+    },
+    "682641": {
+      "name": "Luis Matos",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "650968": {
+      "name": "Yohel Pozo",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "yohel-pozo"
+    },
+    "669289": {
+      "name": "Santiago Espinal",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "santiago-espinal"
+    },
+    "628451": {
+      "name": "Andy Ib\u00e1\u00f1ez",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "andy-ibanez"
+    },
+    "687093": {
+      "name": "Vaughn Grissom",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "vaughn-grissom"
+    },
+    "620443": {
+      "name": "Luis Torrens",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "luis-torrens"
+    },
+    "672761": {
+      "name": "Wenceel P\u00e9rez",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "677956": {
+      "name": "Rece Hinds",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "664059": {
+      "name": "Sam Haggerty",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "679845": {
+      "name": "Nick Loftin",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-loftin"
+    },
+    "624512": {
+      "name": "Reese Mcguire",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "reese-mcguire"
+    },
+    "624431": {
+      "name": "Jose Trevino",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-trevino"
+    },
+    "681807": {
+      "name": "David Fry",
+      "position": "1B",
+      "source": "MLB API"
+    },
+    "671218": {
+      "name": "Heliot Ramos",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "heliot-ramos"
+    },
+    "694377": {
+      "name": "Nick Yorke",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-yorke"
+    },
+    "677942": {
+      "name": "Blaze Alexander",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "blaze-alexander"
+    },
+    "804606": {
+      "name": "Konnor Griffin",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "konnor-griffin"
+    },
+    "695336": {
+      "name": "Thomas Saggese",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "thomas-saggese"
+    },
+    "671289": {
+      "name": "Tyler Freeman",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-freeman"
+    },
+    "592626": {
+      "name": "Joc Pederson",
+      "position": "1B",
+      "source": "MLB API"
+    },
+    "660844": {
+      "name": "Leo Rivas",
+      "position": "2B",
+      "source": "MLB API"
+    },
+    "668904": {
+      "name": "Royce Lewis",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "royce-lewis"
+    },
+    "701358": {
+      "name": "Cam Smith",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "cam-smith"
+    },
+    "656484": {
+      "name": "Tristan Gray",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "tristan-gray"
+    },
+    "677951": {
+      "name": "Bobby Witt",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "bobby-witt"
+    },
+    "669134": {
+      "name": "Luis Campusano",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "luis-campusano"
+    },
+    "676391": {
+      "name": "Ernie Clement",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "ernie-clement"
+    },
+    "668939": {
+      "name": "Adley Rutschman",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "adley-rutschman"
+    },
+    "678009": {
+      "name": "Parker Meadows",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "672724": {
+      "name": "Oswald Peraza",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "oswald-peraza"
+    },
+    "672016": {
+      "name": "Denzel Clarke",
+      "position": "CF",
+      "source": "MLB API"
+    },
+    "595879": {
+      "name": "Javier B\u00e1ez",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "javier-baez"
+    },
+    "673548": {
+      "name": "Seiya Suzuki",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "686555": {
+      "name": "Isaac Collins",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "671976": {
+      "name": "Tristan Peters",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "669394": {
+      "name": "Jake Burger",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "jake-burger"
+    },
+    "678662": {
+      "name": "Ezequiel Tovar",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "ezequiel-tovar"
+    },
+    "663743": {
+      "name": "Nick Fortes",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-fortes"
+    },
+    "665804": {
+      "name": "Miguel Amaya",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "miguel-amaya"
+    },
+    "669257": {
+      "name": "Will Smith",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "will-smith"
+    },
+    "670764": {
+      "name": "Taylor Walls",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "taylor-walls"
+    },
+    "677649": {
+      "name": "Ezequiel Duran",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "ezequiel-duran"
+    },
+    "656811": {
+      "name": "Ryan O'hearn",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "ryan-ohearn"
+    },
+    "682657": {
+      "name": "Angel Mart\u00ednez",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "angel-martinez"
+    },
+    "695734": {
+      "name": "Daylen Lile",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "daylen-lile"
+    },
+    "669016": {
+      "name": "Brandon Marsh",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "brandon-marsh"
+    },
+    "663968": {
+      "name": "Jake Mangum",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "664728": {
+      "name": "Kyle Isbel",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-isbel"
+    },
+    "543877": {
+      "name": "Christian V\u00e1zquez",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "christian-vazquez"
+    },
+    "677588": {
+      "name": "Jos\u00e9 Tena",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-tena"
+    },
+    "682985": {
+      "name": "Riley Greene",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "riley-greene"
+    },
+    "657656": {
+      "name": "Ram\u00f3n Laureano",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "ramon-laureano"
+    },
+    "807799": {
+      "name": "Masataka Yoshida",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "665926": {
+      "name": "Andr\u00e9s Gim\u00e9nez",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "andres-gimenez"
+    },
+    "643376": {
+      "name": "Danny Jansen",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "danny-jansen"
+    },
+    "642086": {
+      "name": "Dominic Smith",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "dominic-smith"
+    },
+    "672515": {
+      "name": "Gabriel Moreno",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "gabriel-moreno"
+    },
+    "680777": {
+      "name": "Ryan Jeffers",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "ryan-jeffers"
+    },
+    "681393": {
+      "name": "Connor Norby",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "connor-norby"
+    },
+    "687859": {
+      "name": "Troy Johnston",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "troy-johnston"
+    },
+    "643217": {
+      "name": "Andrew Benintendi",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "643446": {
+      "name": "Jeff Mcneil",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jeff-mcneil"
+    },
+    "621043": {
+      "name": "Carlos Correa",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "carlos-correa"
+    },
+    "682663": {
+      "name": "Agust\u00edn Ram\u00edrez",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "agustin-ramirez"
+    },
+    "680977": {
+      "name": "Brendan Donovan",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "brendan-donovan"
+    },
+    "624428": {
+      "name": "Adam Frazier",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "adam-frazier"
+    },
+    "686668": {
+      "name": "Brenton Doyle",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "brenton-doyle"
+    },
+    "657757": {
+      "name": "Gavin Sheets",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "gavin-sheets"
+    },
+    "678391": {
+      "name": "Jorbit Vivas",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jorbit-vivas"
+    },
+    "663604": {
+      "name": "Brandon Lockridge",
+      "position": "OF",
+      "source": "CBS Sports",
+      "cbs_slug": "brandon-lockridge"
+    },
+    "664040": {
+      "name": "Brandon Lowe",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "brandon-lowe"
+    },
+    "702222": {
+      "name": "Justin Crawford",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "justin-crawford"
+    },
+    "682829": {
+      "name": "Elly De la cruz",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "elly-de-la-cruz"
+    },
+    "661388": {
+      "name": "William Contreras",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "william-contreras"
+    },
+    "592663": {
+      "name": "J. t. Realmuto",
+      "position": "C",
+      "source": "MLB API"
+    },
+    "650333": {
+      "name": "Luis Arr\u00e1ez",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "luis-arraez"
+    },
+    "687462": {
+      "name": "Spencer Horwitz",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "spencer-horwitz"
+    },
+    "678882": {
+      "name": "Ceddanne Rafaela",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "ceddanne-rafaela"
+    },
+    "609280": {
+      "name": "Miguel And\u00fajar",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "miguel-andujar"
+    },
+    "678489": {
+      "name": "Jorge Barrosa",
+      "position": "LF",
+      "source": "MLB API"
+    },
+    "682177": {
+      "name": "Daniel Schneemann",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "daniel-schneemann"
+    },
+    "668885": {
+      "name": "Austin Martin",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "austin-martin"
+    },
+    "608348": {
+      "name": "Carson Kelly",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "carson-kelly"
+    },
+    "694208": {
+      "name": "Mois\u00e9s Ballesteros",
+      "position": "C",
+      "source": "MLB API"
+    },
+    "668930": {
+      "name": "Brice Turang",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "brice-turang"
+    },
+    "691594": {
+      "name": "Javier Sanoja",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "javier-sanoja"
+    },
+    "666176": {
+      "name": "Jo Adell",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "jo-adell"
+    },
+    "668227": {
+      "name": "Randy Arozarena",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "randy-arozarena"
+    },
+    "673962": {
+      "name": "Josh Jung",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "josh-jung"
+    },
+    "519317": {
+      "name": "Giancarlo Stanton",
+      "position": "DH",
+      "source": "CBS Sports",
+      "cbs_slug": "giancarlo-stanton"
+    },
+    "668804": {
+      "name": "Bryan Reynolds",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "bryan-reynolds"
+    },
+    "650489": {
+      "name": "Willi Castro",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "willi-castro"
+    },
+    "694388": {
+      "name": "Joey Loperfido",
+      "position": "OF",
+      "source": "CBS Sports",
+      "cbs_slug": "joey-loperfido"
+    },
+    "686894": {
+      "name": "Joey Wiemer",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "joey-wiemer"
+    },
+    "669236": {
+      "name": "Jeremiah Jackson",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "jeremiah-jackson"
+    },
+    "683357": {
+      "name": "Owen Caissie",
+      "position": "OF",
+      "source": "CBS Sports",
+      "cbs_slug": "owen-caissie"
+    },
+    "665489": {
+      "name": "Vladimir Guerrero",
+      "position": "1B",
+      "source": "MLB API"
+    },
+    "642715": {
+      "name": "Willy Adames",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "willy-adames"
+    },
+    "699912": {
+      "name": "Jose Fernandez",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-fernandez"
+    },
+    "553993": {
+      "name": "Eugenio Su\u00e1rez",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "eugenio-suarez"
+    },
+    "695578": {
+      "name": "James Wood",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "james-wood"
+    },
+    "643289": {
+      "name": "Mauricio Dub\u00f3n",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "mauricio-dubon"
+    },
+    "592885": {
+      "name": "Christian Yelich",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "christian-yelich"
+    },
+    "687263": {
+      "name": "Zach Neto",
+      "position": "SS",
+      "source": "MLB API"
+    },
+    "802415": {
+      "name": "Chandler Simpson",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "chandler-simpson"
+    },
+    "665750": {
+      "name": "Leody Taveras",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "leody-taveras"
+    },
+    "682928": {
+      "name": "Cj Abrams",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "cj-abrams"
+    },
+    "690993": {
+      "name": "Colt Keith",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "colt-keith"
+    },
+    "669477": {
+      "name": "Casey Schmitt",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "casey-schmitt"
+    },
+    "650490": {
+      "name": "Yandy D\u00edaz",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "yandy-diaz"
+    },
+    "677800": {
+      "name": "Wilyer Abreu",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "wilyer-abreu"
+    },
+    "606192": {
+      "name": "Teoscar Hern\u00e1ndez",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "teoscar-hernandez"
+    },
+    "545121": {
+      "name": "Ildemaro Vargas",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "ildemaro-vargas"
+    },
+    "663538": {
+      "name": "Nico Hoerner",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "nico-hoerner"
+    },
+    "701762": {
+      "name": "Nick Kurtz",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-kurtz"
+    },
+    "695506": {
+      "name": "Jac Caglianone",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "jac-caglianone"
+    },
+    "691023": {
+      "name": "Jordan Walker",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "jordan-walker"
+    },
+    "669364": {
+      "name": "Xavier Edwards",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "xavier-edwards"
+    },
+    "656305": {
+      "name": "Matt Chapman",
+      "position": "3B",
+      "source": "CBS Sports",
+      "cbs_slug": "matt-chapman"
+    },
+    "686948": {
+      "name": "Drake Baldwin",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "drake-baldwin"
+    },
+    "514888": {
+      "name": "Jos\u00e9 Altuve",
+      "position": "2B",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-altuve"
+    },
+    "696100": {
+      "name": "Hunter Goodman",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "hunter-goodman"
+    },
+    "672640": {
+      "name": "Otto Lopez",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "otto-lopez"
+    },
+    "575929": {
+      "name": "Willson Contreras",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "willson-contreras"
+    },
+    "669127": {
+      "name": "Shea Langeliers",
+      "position": "C",
+      "source": "CBS Sports",
+      "cbs_slug": "shea-langeliers"
+    },
+    "607043": {
+      "name": "Brandon Nimmo",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "brandon-nimmo"
+    },
+    "621566": {
+      "name": "Matt Olson",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "matt-olson"
+    },
+    "700250": {
+      "name": "Ben Rice",
+      "position": "1B",
+      "source": "CBS Sports",
+      "cbs_slug": "ben-rice"
+    },
+    "621493": {
+      "name": "Taylor Ward",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "taylor-ward"
+    },
+    "682998": {
+      "name": "Corbin Carroll",
+      "position": "LF",
+      "source": "CBS Sports",
+      "cbs_slug": "corbin-carroll"
+    },
+    "670042": {
+      "name": "Luke Raley",
+      "position": "RF",
+      "source": "CBS Sports",
+      "cbs_slug": "luke-raley"
+    },
+    "665833": {
+      "name": "Oneil Cruz",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "oneil-cruz"
+    },
+    "669003": {
+      "name": "Garrett Mitchell",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "garrett-mitchell"
+    },
+    "691777": {
+      "name": "Max Muncy",
+      "position": "SS",
+      "source": "CBS Sports",
+      "cbs_slug": "max-muncy"
+    },
+    "681624": {
+      "name": "Andy Pages",
+      "position": "CF",
+      "source": "CBS Sports",
+      "cbs_slug": "andy-pages"
+    },
+    "677870": {
+      "name": "Leo Jimenez",
+      "position": "SS",
+      "source": "MLB API"
+    },
+    "671655": {
+      "name": "George Valera",
+      "position": "RF",
+      "source": "MLB API"
+    },
+    "666200": {
+      "name": "Jes\u00fas Luzardo",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "592836": {
+      "name": "Taijuan Walker",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "571945": {
+      "name": "Miles Mikolas",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "547179": {
+      "name": "Michael Lorenzen",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669160": {
+      "name": "Dustin May",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "680694": {
+      "name": "Kyle Bradish",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "673540": {
+      "name": "Kodai Senga",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "641816": {
+      "name": "Tyler Mahle",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "622491": {
+      "name": "Luis Castillo",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "681347": {
+      "name": "Mike Burrows",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "579328": {
+      "name": "Yusei Kikuchi",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656849": {
+      "name": "David Peterson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669432": {
+      "name": "Trevor Rogers",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "trevor-rogers"
+    },
+    "671212": {
+      "name": "Joe Boyle",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663978": {
+      "name": "Chris Paddack",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663903": {
+      "name": "Brady Singer",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "657746": {
+      "name": "Joe Ryan",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "joe-ryan"
+    },
+    "680573": {
+      "name": "Simeon Woods richardson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "641778": {
+      "name": "Eric Lauer",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "694297": {
+      "name": "Brandon Pfaadt",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "605400": {
+      "name": "Aaron Nola",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "aaron-nola"
+    },
+    "677952": {
+      "name": "Braxton Ashcraft",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "braxton-ashcraft"
+    },
+    "605135": {
+      "name": "Chris Bassitt",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669358": {
+      "name": "Shane Baz",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676083": {
+      "name": "Janson Junk",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "janson-junk"
+    },
+    "605540": {
+      "name": "Brandon Woodruff",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "brandon-woodruff"
+    },
+    "650911": {
+      "name": "Cristopher S\u00e1nchez",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "cristopher-sanchez"
+    },
+    "693645": {
+      "name": "Cam Schlittler",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "691587": {
+      "name": "Eury P\u00e9rez",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "eury-perez"
+    },
+    "690953": {
+      "name": "Mick Abel",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "mick-abel"
+    },
+    "663623": {
+      "name": "Jake Irvin",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "592332": {
+      "name": "Kevin Gausman",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "kevin-gausman"
+    },
+    "641927": {
+      "name": "Bailey Ober",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "bailey-ober"
+    },
+    "680732": {
+      "name": "Sean Burke",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "641793": {
+      "name": "Zack Littell",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "592791": {
+      "name": "Jameson Taillon",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "622663": {
+      "name": "Luis Severino",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "693433": {
+      "name": "Bryan Woo",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "bryan-woo"
+    },
+    "607192": {
+      "name": "Tyler Glasnow",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-glasnow"
+    },
+    "543243": {
+      "name": "Sonny Gray",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "sonny-gray"
+    },
+    "677960": {
+      "name": "Ryan Weathers",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "ryan-weathers"
+    },
+    "664285": {
+      "name": "Framber Valdez",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "framber-valdez"
+    },
+    "801403": {
+      "name": "Chase Dollander",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "chase-dollander"
+    },
+    "656302": {
+      "name": "Dylan Cease",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "dylan-cease"
+    },
+    "669302": {
+      "name": "Logan Gilbert",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "logan-gilbert"
+    },
+    "657277": {
+      "name": "Logan Webb",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "logan-webb"
+    },
+    "682052": {
+      "name": "Jacob Lopez",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "640455": {
+      "name": "Sean Manaea",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "607200": {
+      "name": "Erick Fedde",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "701542": {
+      "name": "Will Warren",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "will-warren"
+    },
+    "676282": {
+      "name": "Joey Cantillo",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "joey-cantillo"
+    },
+    "683004": {
+      "name": "Jack Leiter",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "jack-leiter"
+    },
+    "687075": {
+      "name": "Brandon Sproat",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669467": {
+      "name": "Andre Pallante",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676440": {
+      "name": "Tanner Bibee",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "608331": {
+      "name": "Max Fried",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "max-fried"
+    },
+    "543135": {
+      "name": "Nathan Eovaldi",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "nathan-eovaldi"
+    },
+    "669923": {
+      "name": "George Kirby",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "george-kirby"
+    },
+    "677944": {
+      "name": "Slade Cecconi",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "641755": {
+      "name": "Tyler Kinley",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-kinley"
+    },
+    "682254": {
+      "name": "Mason Montgomery",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "mason-montgomery"
+    },
+    "663542": {
+      "name": "Bryan Hudson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "657514": {
+      "name": "Brennan Bernardino",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "594580": {
+      "name": "Sam Moll",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "sam-moll"
+    },
+    "500779": {
+      "name": "Jose Quintana",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "621383": {
+      "name": "Tanner Banks",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "669276": {
+      "name": "Dylan Lee",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663738": {
+      "name": "Daniel Lynch",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "693855": {
+      "name": "Ian Seymour",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "667297": {
+      "name": "Tommy Nance",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "667463": {
+      "name": "John King",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "john-king"
+    },
+    "677955": {
+      "name": "Jaden Hill",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "641745": {
+      "name": "Brad Keller",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656464": {
+      "name": "Kevin Ginkel",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "687330": {
+      "name": "Kevin Kelly",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "kevin-kelly"
+    },
+    "628452": {
+      "name": "Raisel Iglesias",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "raisel-iglesias"
+    },
+    "663158": {
+      "name": "Robert Suarez",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "robert-suarez"
+    },
+    "688883": {
+      "name": "Peyton Pallette",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "679358": {
+      "name": "Eric Orze",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "681892": {
+      "name": "Kody Funderburk",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "683232": {
+      "name": "Nick Mears",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656945": {
+      "name": "Tanner Scott",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "tanner-scott"
+    },
+    "643410": {
+      "name": "Mark Leiter",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "681867": {
+      "name": "Cooper Criswell",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "cooper-criswell"
+    },
+    "666808": {
+      "name": "Camilo Doval",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "656730": {
+      "name": "Trevor Megill",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "690990": {
+      "name": "Cade Horton",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "681217": {
+      "name": "Chase Silseth",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "664875": {
+      "name": "Justin Lawrence",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "806960": {
+      "name": "Luis Morales",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "677961": {
+      "name": "Cole Wilcox",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "572955": {
+      "name": "Pierce Johnson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "641401": {
+      "name": "Connor Brogdon",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "connor-brogdon"
+    },
+    "664854": {
+      "name": "Ryan Helsley",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "ryan-helsley"
+    },
+    "669711": {
+      "name": "Greg Weissert",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "642232": {
+      "name": "Ryan Yarbrough",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "680767": {
+      "name": "Victor Vodnik",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676395": {
+      "name": "Robert Garcia",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669084": {
+      "name": "Dl Hall",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656271": {
+      "name": "Brock Burke",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "brock-burke"
+    },
+    "687606": {
+      "name": "Paxton Schultz",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "676263": {
+      "name": "Jack Dreyer",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "jack-dreyer"
+    },
+    "665622": {
+      "name": "Luis Medina",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "694918": {
+      "name": "Blade Tidwell",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "571948": {
+      "name": "Hoby Milner",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "542888": {
+      "name": "Shawn Armstrong",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "666661": {
+      "name": "Juan Morillo",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663465": {
+      "name": "Kolby Allard",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656638": {
+      "name": "Alex Lange",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "675989": {
+      "name": "Cody Bolton",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "664141": {
+      "name": "Jt Brubaker",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "623149": {
+      "name": "Paul Sewald",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "paul-sewald"
+    },
+    "656848": {
+      "name": "Michael Petersen",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "michael-petersen"
+    },
+    "682842": {
+      "name": "Abner Uribe",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "abner-uribe"
+    },
+    "657424": {
+      "name": "Matt Gage",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "matt-gage"
+    },
+    "681870": {
+      "name": "Erik Sabrowski",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676775": {
+      "name": "Keaton Winn",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656222": {
+      "name": "Jalen Beeks",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "592773": {
+      "name": "Ryne Stanek",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "663485": {
+      "name": "Cole Sands",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "681911": {
+      "name": "Alex Vesia",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "alex-vesia"
+    },
+    "641329": {
+      "name": "Bryan Baker",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "bryan-baker"
+    },
+    "672335": {
+      "name": "Cionel P\u00e9rez",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "695418": {
+      "name": "Brad Lord",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "brad-lord"
+    },
+    "601713": {
+      "name": "Nick Pivetta",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-pivetta"
+    },
+    "676879": {
+      "name": "Aaron Ashby",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "aaron-ashby"
+    },
+    "808963": {
+      "name": "Roki Sasaki",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676979": {
+      "name": "Garrett Crochet",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "688642": {
+      "name": "Zach Agnos",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656641": {
+      "name": "Jacob Latz",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "jacob-latz"
+    },
+    "663556": {
+      "name": "Shane Mcclanahan",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "678394": {
+      "name": "Brayan Bello",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "608718": {
+      "name": "Brent Suter",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "brent-suter"
+    },
+    "690986": {
+      "name": "Kyle Harrison",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-harrison"
+    },
+    "671096": {
+      "name": "Andrew Abbott",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "691725": {
+      "name": "Andrew Painter",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "andrew-painter"
+    },
+    "680802": {
+      "name": "Ryan Weiss",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "686218": {
+      "name": "Emmet Sheehan",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "emmet-sheehan"
+    },
+    "677958": {
+      "name": "Kumar Rocker",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "606996": {
+      "name": "Kyle Hart",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "678906": {
+      "name": "Kai-wei Teng",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "kai-wei-teng"
+    },
+    "663372": {
+      "name": "Ryan Feltner",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "686993": {
+      "name": "Justin Sterner",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663969": {
+      "name": "Tyler Phillips",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-phillips"
+    },
+    "608566": {
+      "name": "Germ\u00e1n M\u00e1rquez",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "700249": {
+      "name": "Cade Povich",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "cade-povich"
+    },
+    "622608": {
+      "name": "Antonio Senzatela",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "antonio-senzatela"
+    },
+    "641312": {
+      "name": "Shaun Anderson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "641835": {
+      "name": "Tim Mayza",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "670245": {
+      "name": "Ryan Watson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "687396": {
+      "name": "Brent Headrick",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "brent-headrick"
+    },
+    "676962": {
+      "name": "Ben Brown",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "ben-brown"
+    },
+    "683175": {
+      "name": "Connor Phillips",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "connor-phillips"
+    },
+    "660761": {
+      "name": "Jos\u00e9 Suarez",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663687": {
+      "name": "Hogan Harris",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "hogan-harris"
+    },
+    "672782": {
+      "name": "Yoendrys G\u00f3mez",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "668933": {
+      "name": "Graham Ashcraft",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "graham-ashcraft"
+    },
+    "453286": {
+      "name": "Max Scherzer",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "668941": {
+      "name": "Jojo Romero",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "jojo-romero"
+    },
+    "678368": {
+      "name": "Valente Bellozo",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "642121": {
+      "name": "Cole Sulser",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676917": {
+      "name": "Cade Cavalli",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "686973": {
+      "name": "Louis Varland",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656876": {
+      "name": "Drew Rasmussen",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "drew-rasmussen"
+    },
+    "677865": {
+      "name": "Justin Bruihl",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "696147": {
+      "name": "Sam Bachman",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "668390": {
+      "name": "Cole Winn",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "cole-winn"
+    },
+    "680755": {
+      "name": "Braydon Fisher",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "braydon-fisher"
+    },
+    "688158": {
+      "name": "David Morgan",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "david-morgan"
+    },
+    "642701": {
+      "name": "Dennis Santana",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "dennis-santana"
+    },
+    "642528": {
+      "name": "Jonathan Lo\u00e1isiga",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "665871": {
+      "name": "Javier Assad",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "670329": {
+      "name": "Rico Garcia",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "rico-garcia"
+    },
+    "670990": {
+      "name": "Yohan Ram\u00edrez",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "yohan-ramirez"
+    },
+    "674370": {
+      "name": "Osvaldo Bido",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "osvaldo-bido"
+    },
+    "672582": {
+      "name": "Angel Zerpa",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "656794": {
+      "name": "Sean Newcomb",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "668964": {
+      "name": "Tobias Myers",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669330": {
+      "name": "Tyler Wells",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "623474": {
+      "name": "Jimmy Herget",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "jimmy-herget"
+    },
+    "595345": {
+      "name": "Steven Okert",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "693686": {
+      "name": "Spencer Miles",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676755": {
+      "name": "Isaac Mattson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676571": {
+      "name": "Pj Poulin",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "pj-poulin"
+    },
+    "641941": {
+      "name": "Emilio Pag\u00e1n",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "emilio-pagan"
+    },
+    "805123": {
+      "name": "Aj Blubaugh",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663558": {
+      "name": "Jovani Mor\u00e1n",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "jovani-moran"
+    },
+    "686610": {
+      "name": "Ken Waldichuk",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "666171": {
+      "name": "Ryan Zeferjahn",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "ryan-zeferjahn"
+    },
+    "673929": {
+      "name": "Jordan Leasure",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "jordan-leasure"
+    },
+    "664299": {
+      "name": "Cristian Javier",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "665660": {
+      "name": "Elvis Alvarado",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676760": {
+      "name": "Ron Marinaccio",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669438": {
+      "name": "Mason Englert",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "689296": {
+      "name": "Anthony Nunez",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "anthony-nunez"
+    },
+    "669947": {
+      "name": "Jesse Scholtens",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "jesse-scholtens"
+    },
+    "596001": {
+      "name": "Jakob Junis",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "694335": {
+      "name": "Matt Svanson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "643511": {
+      "name": "Tyler Rogers",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "642397": {
+      "name": "Gregory Soto",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "gregory-soto"
+    },
+    "691799": {
+      "name": "Grant Taylor",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "664199": {
+      "name": "Taylor Clarke",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "taylor-clarke"
+    },
+    "668984": {
+      "name": "Casey Legumina",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "657612": {
+      "name": "Tim Hill",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676617": {
+      "name": "Riley O'brien",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "riley-obrien"
+    },
+    "671922": {
+      "name": "Cade Smith",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "cade-smith"
+    },
+    "670970": {
+      "name": "Adri\u00e1n Morej\u00f3n",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "640448": {
+      "name": "Kyle Finnegan",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-finnegan"
+    },
+    "641302": {
+      "name": "Tyler Alexander",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "tyler-alexander"
+    },
+    "681982": {
+      "name": "Grant Anderson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "571578": {
+      "name": "Patrick Corbin",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "695243": {
+      "name": "Mason Miller",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "mason-miller"
+    },
+    "605130": {
+      "name": "Scott Barlow",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "666277": {
+      "name": "George Soriano",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "george-soriano"
+    },
+    "593974": {
+      "name": "Wandy Peralta",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "661563": {
+      "name": "Luis Gil",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "663855": {
+      "name": "Jordan Hicks",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "670036": {
+      "name": "Matt Festa",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "623211": {
+      "name": "Huascar Brazob\u00e1n",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "huascar-brazoban"
+    },
+    "699134": {
+      "name": "Bradgley Rodriguez",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "bradgley-rodriguez"
+    },
+    "656546": {
+      "name": "Jeff Hoffman",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "jeff-hoffman"
+    },
+    "663992": {
+      "name": "Richard Lovelady",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "660825": {
+      "name": "Eduard Bazardo",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "700669": {
+      "name": "Gordon Graceffo",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "gordon-graceffo"
+    },
+    "607455": {
+      "name": "Anthony Banda",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "657756": {
+      "name": "Connor Seabold",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "connor-seabold"
+    },
+    "837227": {
+      "name": "Tatsuya Imai",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669199": {
+      "name": "Lake Bachar",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "623454": {
+      "name": "Drew Anderson",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "664991": {
+      "name": "Grant Wolfram",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "grant-wolfram"
+    },
+    "670280": {
+      "name": "David Bednar",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "david-bednar"
+    },
+    "690925": {
+      "name": "Clayton Beeter",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "clayton-beeter"
+    },
+    "663574": {
+      "name": "Tony Santillan",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "tony-santillan"
+    },
+    "623437": {
+      "name": "Justin Topa",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "675848": {
+      "name": "Juan Mejia",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676477": {
+      "name": "Garrett Whitlock",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "676684": {
+      "name": "Will Vest",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "608371": {
+      "name": "Lucas Sims",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "650556": {
+      "name": "Bryan Abreu",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "682995": {
+      "name": "Hunter Barco",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "687911": {
+      "name": "Bryan King",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "bryan-king"
+    },
+    "689254": {
+      "name": "Mason Fluharty",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676534": {
+      "name": "Calvin Faucher",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "518585": {
+      "name": "Fernando Cruz",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "519141": {
+      "name": "Drew Pomeranz",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "676254": {
+      "name": "Ryan Walker",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669371": {
+      "name": "Cole Henry",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669622": {
+      "name": "Anthony Bender",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669093": {
+      "name": "Jeremiah Estrada",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669212": {
+      "name": "Eli Morgan",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "668873": {
+      "name": "Caleb Kilian",
+      "position": "N/A",
+      "source": "MLB API"
+    },
+    "694738": {
+      "name": "Landen Roupp",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "landen-roupp"
+    },
+    "672282": {
+      "name": "Reid Detmers",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "reid-detmers"
+    },
+    "605288": {
+      "name": "Adrian Houser",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "669372": {
+      "name": "J. t. Ginn",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "571927": {
+      "name": "Steven Matz",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "steven-matz"
+    },
+    "607067": {
+      "name": "Colin Rea",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "colin-rea"
+    },
+    "663554": {
+      "name": "Casey Mize",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "casey-mize"
+    },
+    "669194": {
+      "name": "Ryne Nelson",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "ryne-nelson"
+    },
+    "669461": {
+      "name": "Matthew Liberatore",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "621111": {
+      "name": "Walker Buehler",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "walker-buehler"
+    },
+    "695076": {
+      "name": "Rhett Lowder",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "rhett-lowder"
+    },
+    "676106": {
+      "name": "Emerson Hancock",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "emerson-hancock"
+    },
+    "669373": {
+      "name": "Tarik Skubal",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "tarik-skubal"
+    },
+    "656550": {
+      "name": "Grant Holmes",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "grant-holmes"
+    },
+    "702070": {
+      "name": "Noah Cameron",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "noah-cameron"
+    },
+    "663460": {
+      "name": "Kris Bubic",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "kris-bubic"
+    },
+    "665795": {
+      "name": "Edward Cabrera",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "edward-cabrera"
+    },
+    "647336": {
+      "name": "Michael Soroka",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "681190": {
+      "name": "Randy V\u00e1squez",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "randy-vasquez"
+    },
+    "672456": {
+      "name": "Keider Montero",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "keider-montero"
+    },
+    "671737": {
+      "name": "Taj Bradley",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "taj-bradley"
+    },
+    "676974": {
+      "name": "Max Meyer",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "max-meyer"
+    },
+    "656605": {
+      "name": "Mitch Keller",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "mitch-keller"
+    },
+    "624133": {
+      "name": "Ranger Su\u00e1rez",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "ranger-suarez"
+    },
+    "669022": {
+      "name": "Mackenzie Gore",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "mackenzie-gore"
+    },
+    "681517": {
+      "name": "Kyle Leahy",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-leahy"
+    },
+    "625643": {
+      "name": "Reynaldo L\u00f3pez",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "reynaldo-lopez"
+    },
+    "693821": {
+      "name": "Bryce Elder",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "bryce-elder"
+    },
+    "669387": {
+      "name": "Carmen Mlodzinski",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "carmen-mlodzinski"
+    },
+    "668678": {
+      "name": "Zac Gallen",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "zac-gallen"
+    },
+    "607625": {
+      "name": "Seth Lugo",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "seth-lugo"
+    },
+    "650644": {
+      "name": "Aaron Civale",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "aaron-civale"
+    },
+    "621121": {
+      "name": "Lance Mccullers",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "lance-mccullers"
+    },
+    "607536": {
+      "name": "Kyle Freeland",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "kyle-freeland"
+    },
+    "656492": {
+      "name": "Foster Griffin",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "foster-griffin"
+    },
+    "684007": {
+      "name": "Shota Imanaga",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "shota-imanaga"
+    },
+    "594798": {
+      "name": "Jacob Degrom",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "jacob-degrom"
+    },
+    "694819": {
+      "name": "Jacob Misiorowski",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "jacob-misiorowski"
+    },
+    "656427": {
+      "name": "Jack Flaherty",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "jack-flaherty"
+    },
+    "686799": {
+      "name": "Jack Kochanowicz",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "jack-kochanowicz"
+    },
+    "645261": {
+      "name": "Sandy Alc\u00e1ntara",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "sandy-alcantara"
+    },
+    "695505": {
+      "name": "Chase Burns",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "chase-burns"
+    },
+    "666142": {
+      "name": "Cole Ragans",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "519242": {
+      "name": "Chris Sale",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "chris-sale"
+    },
+    "680736": {
+      "name": "Justin Wrobleski",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "justin-wrobleski"
+    },
+    "605488": {
+      "name": "Jeffrey Springs",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "jeffrey-springs"
+    },
+    "690997": {
+      "name": "Nolan Mclean",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "nolan-mclean"
+    },
+    "682227": {
+      "name": "Brandon Williamson",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "brandon-williamson"
+    },
+    "663436": {
+      "name": "Davis Martin",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "davis-martin"
+    },
+    "696149": {
+      "name": "Bubba Chandler",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "bubba-chandler"
+    },
+    "808967": {
+      "name": "Yoshinobu Yamamoto",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "yoshinobu-yamamoto"
+    },
+    "650633": {
+      "name": "Mike King",
+      "position": "P",
+      "source": "MLB API"
+    },
+    "608372": {
+      "name": "Tomoyuki Sugano",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "tomoyuki-sugano"
+    },
+    "813349": {
+      "name": "Connelly Early",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "connelly-early"
+    },
+    "593958": {
+      "name": "Eduardo Rodr\u00edguez",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "eduardo-rodriguez"
+    },
+    "607259": {
+      "name": "Nick Mart\u00ednez",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "nick-martinez"
+    },
+    "592662": {
+      "name": "Robbie Ray",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "robbie-ray"
+    },
+    "527048": {
+      "name": "Mart\u00edn P\u00e9rez",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "martin-perez"
+    },
+    "668909": {
+      "name": "Gavin Williams",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "gavin-williams"
+    },
+    "694973": {
+      "name": "Paul Skenes",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "paul-skenes"
+    },
+    "694477": {
+      "name": "Chad Patrick",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "chad-patrick"
+    },
+    "605280": {
+      "name": "Clay Holmes",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "clay-holmes"
+    },
+    "800048": {
+      "name": "Parker Messick",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "parker-messick"
+    },
+    "641743": {
+      "name": "Anthony Kay",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "anthony-kay"
+    },
+    "642547": {
+      "name": "Freddy Peralta",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "freddy-peralta"
+    },
+    "700241": {
+      "name": "Michael Mcgreevy",
+      "position": "P",
+      "source": "CBS Sports",
+      "cbs_slug": "michael-mcgreevy"
+    },
+    "667755": {
+      "name": "Jos\u00e9 Soriano",
+      "position": "RP",
+      "source": "CBS Sports",
+      "cbs_slug": "jose-soriano"
+    },
+    "608379": {
+      "name": "Michael Wacha",
+      "position": "SP",
+      "source": "CBS Sports",
+      "cbs_slug": "michael-wacha"
+    }
+  }
+}

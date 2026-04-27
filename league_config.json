@@ -1,0 +1,112 @@
+{
+  "_comment": "Fantasy league settings for the valuation engine (score_value.py).",
+
+  "leagues": {
+    "league1": {
+      "name": "League 1",
+      "teams": 14,
+
+      "hitter_categories": ["R", "HR", "RBI", "SB", "OBP"],
+      "pitcher_categories": ["ERA", "WHIP", "K", "W", "SVH"],
+
+      "svh_weights": {
+        "_comment": "Weight applied to each raw component when computing the combined SVH stat.",
+        "SV": 1,
+        "H":  1
+      },
+
+      "roster": {
+        "_comment": "Active hitter spots per team.  MI = middle infield (2B/SS), CI = corner infield (1B/3B), U = utility (any).",
+        "C":  2,
+        "1B": 1,
+        "2B": 1,
+        "3B": 1,
+        "SS": 1,
+        "MI": 1,
+        "CI": 1,
+        "OF": 5,
+        "U":  1,
+        "hitter_bench":   7,
+        "pitcher_active": 9,
+        "pitcher_bench":  2
+      }
+    },
+
+    "league2": {
+      "name": "League 2",
+      "teams": 14,
+
+      "hitter_categories": ["R", "HR", "RBI", "SB", "AVG"],
+      "pitcher_categories": ["ERA", "WHIP", "K", "W", "SVH"],
+
+      "svh_weights": {
+        "_comment": "Weighted saves/holds: SV counts triple, H counts double (League 2 scoring rule).",
+        "SV": 3,
+        "H":  2
+      },
+
+      "roster": {
+        "C":  1,
+        "1B": 1,
+        "2B": 1,
+        "3B": 1,
+        "SS": 1,
+        "MI": 1,
+        "CI": 1,
+        "OF": 5,
+        "U":  2,
+        "hitter_bench":   5,
+        "pitcher_active": 9,
+        "pitcher_bench":  2
+      }
+    }
+  },
+
+  "projection": {
+    "_comment": "Season constants used in score_value.py projection formulas.",
+    "season_start":           "2026-03-27",
+    "season_total_days":      180,
+    "pa_full_season":         600,
+    "ip_full_starter":        175,
+    "ip_full_reliever":       65,
+    "starter_ip_per_day":     0.95,
+    "_starter_ip_note":       "Pitchers averaging > 0.95 IP/day are classified as starters.  At 18 days, threshold is ~17 IP.",
+
+    "lg_xwoba":               0.320,
+    "lg_xba":                 0.250,
+    "lg_bb_pct":              0.082,
+    "lg_sprint_speed":        27.0,
+    "lg_era":                 4.00,
+    "lg_babip_allowed":       0.300,
+    "lg_k_pct":               0.225,
+    "lg_bb_pct_pitcher":      0.082
+  },
+
+  "position_slot_eligibility": {
+    "_comment": "Maps MLB Stats API primary position abbreviations to the fantasy roster slot(s) that position can fill.",
+    "C":  ["C", "U"],
+    "1B": ["1B", "CI", "U"],
+    "2B": ["2B", "MI", "U"],
+    "3B": ["3B", "CI", "U"],
+    "SS": ["SS", "MI", "U"],
+    "LF": ["OF", "U"],
+    "CF": ["OF", "U"],
+    "RF": ["OF", "U"],
+    "OF": ["OF", "U"],
+    "DH": ["U"],
+    "P":  []
+  },
+
+  "slot_eligible_positions": {
+    "_comment": "Inverse mapping: which MLB positions can fill each roster slot.",
+    "C":  ["C"],
+    "1B": ["1B"],
+    "2B": ["2B"],
+    "3B": ["3B"],
+    "SS": ["SS"],
+    "MI": ["2B", "SS"],
+    "CI": ["1B", "3B"],
+    "OF": ["LF", "CF", "RF", "OF"],
+    "U":  ["C", "1B", "2B", "3B", "SS", "LF", "CF", "RF", "OF", "DH"]
+  }
+}

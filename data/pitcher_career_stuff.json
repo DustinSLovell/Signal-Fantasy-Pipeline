@@ -1,0 +1,6468 @@
+{
+  "669203": {
+    "name": "Burnes, Corbin",
+    "career_swstr_pct": 0.1867,
+    "career_fb_velo": 96.0,
+    "career_spin_rate": 2317.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 695
+  },
+  "607074": {
+    "name": "Rod\u00f3n, Carlos",
+    "career_swstr_pct": 0.2373,
+    "career_fb_velo": 95.08,
+    "career_spin_rate": 2356.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5374
+  },
+  "669302": {
+    "name": "Gilbert, Logan",
+    "career_swstr_pct": 0.2065,
+    "career_fb_velo": 95.95,
+    "career_spin_rate": 2071.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4569
+  },
+  "663474": {
+    "name": "McKenzie, Triston",
+    "career_swstr_pct": 0.17,
+    "career_fb_velo": 91.8,
+    "career_spin_rate": 2270.5,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 2258
+  },
+  "664285": {
+    "name": "Valdez, Framber",
+    "career_swstr_pct": 0.1245,
+    "career_fb_velo": 94.72,
+    "career_spin_rate": 2178.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5410
+  },
+  "543037": {
+    "name": "Cole, Gerrit",
+    "career_swstr_pct": 0.2551,
+    "career_fb_velo": 96.8,
+    "career_spin_rate": 2400.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 4129
+  },
+  "601713": {
+    "name": "Pivetta, Nick",
+    "career_swstr_pct": 0.2317,
+    "career_fb_velo": 93.92,
+    "career_spin_rate": 2323.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5285
+  },
+  "571578": {
+    "name": "Corbin, Patrick",
+    "career_swstr_pct": 0.1288,
+    "career_fb_velo": 91.63,
+    "career_spin_rate": 2131.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1668
+  },
+  "664299": {
+    "name": "Javier, Cristian",
+    "career_swstr_pct": 0.2639,
+    "career_fb_velo": 92.78,
+    "career_spin_rate": 2316.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3680
+  },
+  "675911": {
+    "name": "Strider, Spencer",
+    "career_swstr_pct": 0.2509,
+    "career_fb_velo": 96.97,
+    "career_spin_rate": 2335.0,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 4432
+  },
+  "657746": {
+    "name": "Ryan, Joe",
+    "career_swstr_pct": 0.2719,
+    "career_fb_velo": 93.0,
+    "career_spin_rate": 2245.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5385
+  },
+  "656302": {
+    "name": "Cease, Dylan",
+    "career_swstr_pct": 0.2236,
+    "career_fb_velo": 96.6,
+    "career_spin_rate": 2533.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5322
+  },
+  "664353": {
+    "name": "Urquidy, Jos\u00e9",
+    "career_swstr_pct": 0.1882,
+    "career_fb_velo": 93.3,
+    "career_spin_rate": 2228.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1805
+  },
+  "592332": {
+    "name": "Gausman, Kevin",
+    "career_swstr_pct": 0.1697,
+    "career_fb_velo": 94.55,
+    "career_spin_rate": 2272.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 6028
+  },
+  "628711": {
+    "name": "Ur\u00edas, Julio",
+    "career_swstr_pct": 0.2277,
+    "career_fb_velo": 92.9,
+    "career_spin_rate": 2483.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 2123
+  },
+  "663903": {
+    "name": "Singer, Brady",
+    "career_swstr_pct": 0.1453,
+    "career_fb_velo": 92.12,
+    "career_spin_rate": 2295.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3203
+  },
+  "592662": {
+    "name": "Ray, Robbie",
+    "career_swstr_pct": 0.2471,
+    "career_fb_velo": 93.7,
+    "career_spin_rate": 2321.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3091
+  },
+  "608337": {
+    "name": "Giolito, Lucas",
+    "career_swstr_pct": 0.1924,
+    "career_fb_velo": 93.0,
+    "career_spin_rate": 2192.0,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3793
+  },
+  "615698": {
+    "name": "Quantrill, Cal",
+    "career_swstr_pct": 0.2191,
+    "career_fb_velo": 93.85,
+    "career_spin_rate": 2189.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1289
+  },
+  "434378": {
+    "name": "Verlander, Justin",
+    "career_swstr_pct": 0.1863,
+    "career_fb_velo": 94.18,
+    "career_spin_rate": 2420.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4565
+  },
+  "668678": {
+    "name": "Gallen, Zac",
+    "career_swstr_pct": 0.165,
+    "career_fb_velo": 93.7,
+    "career_spin_rate": 2333.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5594
+  },
+  "641540": {
+    "name": "Dunning, Dane",
+    "career_swstr_pct": 0.1153,
+    "career_fb_velo": 89.43,
+    "career_spin_rate": 2105.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2568
+  },
+  "640455": {
+    "name": "Manaea, Sean",
+    "career_swstr_pct": 0.242,
+    "career_fb_velo": 92.27,
+    "career_spin_rate": 2029.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2999
+  },
+  "641482": {
+    "name": "Cortes, Nestor",
+    "career_swstr_pct": 0.2353,
+    "career_fb_velo": 91.4,
+    "career_spin_rate": 2275.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3209
+  },
+  "594835": {
+    "name": "Gonzales, Marco",
+    "career_swstr_pct": 0.1501,
+    "career_fb_velo": 88.85,
+    "career_spin_rate": 2005.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1150
+  },
+  "656629": {
+    "name": "Kopech, Michael",
+    "career_swstr_pct": 0.28,
+    "career_fb_velo": 96.27,
+    "career_spin_rate": 2549.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3629
+  },
+  "641154": {
+    "name": "L\u00f3pez, Pablo",
+    "career_swstr_pct": 0.2619,
+    "career_fb_velo": 94.47,
+    "career_spin_rate": 2208.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3898
+  },
+  "502171": {
+    "name": "Cobb, Alex",
+    "career_swstr_pct": 0.1325,
+    "career_fb_velo": 95.5,
+    "career_spin_rate": 2058.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1999
+  },
+  "605483": {
+    "name": "Snell, Blake",
+    "career_swstr_pct": 0.2172,
+    "career_fb_velo": 95.58,
+    "career_spin_rate": 2438.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4108
+  },
+  "624133": {
+    "name": "Suarez, Ranger",
+    "career_swstr_pct": 0.1951,
+    "career_fb_velo": 92.43,
+    "career_spin_rate": 1956.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1705
+  },
+  "450203": {
+    "name": "Morton, Charlie",
+    "career_swstr_pct": 0.2081,
+    "career_fb_velo": 94.52,
+    "career_spin_rate": 2312.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3392
+  },
+  "668881": {
+    "name": "Greene, Hunter",
+    "career_swstr_pct": 0.2547,
+    "career_fb_velo": 98.57,
+    "career_spin_rate": 2381.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4682
+  },
+  "656756": {
+    "name": "Montgomery, Jordan",
+    "career_swstr_pct": 0.173,
+    "career_fb_velo": 92.77,
+    "career_spin_rate": 2316.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1097
+  },
+  "663460": {
+    "name": "Bubic, Kris",
+    "career_swstr_pct": 0.2403,
+    "career_fb_velo": 92.33,
+    "career_spin_rate": 2305.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2032
+  },
+  "605540": {
+    "name": "Woodruff, Brandon",
+    "career_swstr_pct": 0.2996,
+    "career_fb_velo": 95.07,
+    "career_spin_rate": 2368.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1698
+  },
+  "573186": {
+    "name": "Stroman, Marcus",
+    "career_swstr_pct": 0.1322,
+    "career_fb_velo": 89.75,
+    "career_spin_rate": 2352.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1193
+  },
+  "657006": {
+    "name": "Steele, Justin",
+    "career_swstr_pct": 0.2095,
+    "career_fb_velo": 91.87,
+    "career_spin_rate": 2437.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 4045
+  },
+  "641778": {
+    "name": "Lauer, Eric",
+    "career_swstr_pct": 0.2598,
+    "career_fb_velo": 91.93,
+    "career_spin_rate": 2239.0,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2329
+  },
+  "621076": {
+    "name": "Kaprielian, James",
+    "career_swstr_pct": 0.1913,
+    "career_fb_velo": 93.15,
+    "career_spin_rate": 2005.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1530
+  },
+  "641816": {
+    "name": "Mahle, Tyler",
+    "career_swstr_pct": 0.2535,
+    "career_fb_velo": 92.6,
+    "career_spin_rate": 2327.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1990
+  },
+  "645261": {
+    "name": "Alcantara, Sandy",
+    "career_swstr_pct": 0.2314,
+    "career_fb_velo": 97.9,
+    "career_spin_rate": 2246.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1904
+  },
+  "592351": {
+    "name": "Gray, Jon",
+    "career_swstr_pct": 0.1703,
+    "career_fb_velo": 95.5,
+    "career_spin_rate": 2018.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2755
+  },
+  "500779": {
+    "name": "Quintana, Jose",
+    "career_swstr_pct": 0.2086,
+    "career_fb_velo": 90.62,
+    "career_spin_rate": 2082.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2170
+  },
+  "669456": {
+    "name": "Bieber, Shane",
+    "career_swstr_pct": 0.1387,
+    "career_fb_velo": 91.73,
+    "career_spin_rate": 2287.0,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1906
+  },
+  "666201": {
+    "name": "Manoah, Alek",
+    "career_swstr_pct": 0.2556,
+    "career_fb_velo": 93.35,
+    "career_spin_rate": 2358.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1541
+  },
+  "669467": {
+    "name": "Pallante, Andre",
+    "career_swstr_pct": 0.1421,
+    "career_fb_velo": 95.08,
+    "career_spin_rate": 2253.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3855
+  },
+  "605288": {
+    "name": "Houser, Adrian",
+    "career_swstr_pct": 0.1967,
+    "career_fb_velo": 94.33,
+    "career_spin_rate": 2236.0,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 998
+  },
+  "596001": {
+    "name": "Junis, Jakob",
+    "career_swstr_pct": 0.1455,
+    "career_fb_velo": 92.33,
+    "career_spin_rate": 2118.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1217
+  },
+  "641771": {
+    "name": "Kuhl, Chad",
+    "career_swstr_pct": 0.1252,
+    "career_fb_velo": 94.0,
+    "career_spin_rate": 2220.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1466
+  },
+  "605135": {
+    "name": "Bassitt, Chris",
+    "career_swstr_pct": 0.242,
+    "career_fb_velo": 92.37,
+    "career_spin_rate": 2165.0,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 938
+  },
+  "663738": {
+    "name": "Lynch IV, Daniel",
+    "career_swstr_pct": 0.1743,
+    "career_fb_velo": 93.4,
+    "career_spin_rate": 2179.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1866
+  },
+  "660271": {
+    "name": "Ohtani, Shohei",
+    "career_swstr_pct": 0.2394,
+    "career_fb_velo": 97.5,
+    "career_spin_rate": 2314.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1697
+  },
+  "570632": {
+    "name": "Ure\u00f1a, Jos\u00e9",
+    "career_swstr_pct": 0.1304,
+    "career_fb_velo": 96.08,
+    "career_spin_rate": 2158.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2207
+  },
+  "669432": {
+    "name": "Rogers, Trevor",
+    "career_swstr_pct": 0.2331,
+    "career_fb_velo": 93.17,
+    "career_spin_rate": 2421.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2399
+  },
+  "608331": {
+    "name": "Fried, Max",
+    "career_swstr_pct": 0.1778,
+    "career_fb_velo": 94.45,
+    "career_spin_rate": 2202.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2557
+  },
+  "608344": {
+    "name": "Irvin, Cole",
+    "career_swstr_pct": 0.2084,
+    "career_fb_velo": 91.6,
+    "career_spin_rate": 2011.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1755
+  },
+  "641712": {
+    "name": "Hudson, Dakota",
+    "career_swstr_pct": 0.1334,
+    "career_fb_velo": 90.8,
+    "career_spin_rate": 2150.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 987
+  },
+  "518876": {
+    "name": "Kelly, Merrill",
+    "career_swstr_pct": 0.2424,
+    "career_fb_velo": 92.15,
+    "career_spin_rate": 2364.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2660
+  },
+  "543475": {
+    "name": "Lyles, Jordan",
+    "career_swstr_pct": 0.1687,
+    "career_fb_velo": 91.5,
+    "career_spin_rate": 2228.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1812
+  },
+  "542881": {
+    "name": "Anderson, Tyler",
+    "career_swstr_pct": 0.1778,
+    "career_fb_velo": 89.9,
+    "career_spin_rate": 2207.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3980
+  },
+  "669923": {
+    "name": "Kirby, George",
+    "career_swstr_pct": 0.2824,
+    "career_fb_velo": 95.88,
+    "career_spin_rate": 2225.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3703
+  },
+  "592791": {
+    "name": "Taillon, Jameson",
+    "career_swstr_pct": 0.1941,
+    "career_fb_velo": 93.08,
+    "career_spin_rate": 2327.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3390
+  },
+  "605488": {
+    "name": "Springs, Jeffrey",
+    "career_swstr_pct": 0.1972,
+    "career_fb_velo": 90.63,
+    "career_spin_rate": 2184.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2319
+  },
+  "554430": {
+    "name": "Wheeler, Zack",
+    "career_swstr_pct": 0.3011,
+    "career_fb_velo": 95.78,
+    "career_spin_rate": 2447.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4639
+  },
+  "605400": {
+    "name": "Nola, Aaron",
+    "career_swstr_pct": 0.2178,
+    "career_fb_velo": 92.47,
+    "career_spin_rate": 2310.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3298
+  },
+  "668933": {
+    "name": "Ashcraft, Graham",
+    "career_swstr_pct": 0.2099,
+    "career_fb_velo": 96.5,
+    "career_spin_rate": 2304.3,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1825
+  },
+  "622072": {
+    "name": "Wood, Alex",
+    "career_swstr_pct": 0.2313,
+    "career_fb_velo": 90.47,
+    "career_spin_rate": 2049.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2118
+  },
+  "453286": {
+    "name": "Scherzer, Max",
+    "career_swstr_pct": 0.2233,
+    "career_fb_velo": 93.45,
+    "career_spin_rate": 2359.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3093
+  },
+  "607200": {
+    "name": "Fedde, Erick",
+    "career_swstr_pct": 0.1487,
+    "career_fb_velo": 91.9,
+    "career_spin_rate": 2029.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2633
+  },
+  "477132": {
+    "name": "Kershaw, Clayton",
+    "career_swstr_pct": 0.0912,
+    "career_fb_velo": 90.13,
+    "career_spin_rate": 2347.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2094
+  },
+  "680686": {
+    "name": "Gray, Josiah",
+    "career_swstr_pct": 0.1901,
+    "career_fb_velo": 94.0,
+    "career_spin_rate": 2177.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1409
+  },
+  "641745": {
+    "name": "Keller, Brad",
+    "career_swstr_pct": 0.1684,
+    "career_fb_velo": 94.7,
+    "career_spin_rate": 2336.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1827
+  },
+  "592866": {
+    "name": "Williams, Trevor",
+    "career_swstr_pct": 0.1745,
+    "career_fb_velo": 89.38,
+    "career_spin_rate": 2214.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2871
+  },
+  "672282": {
+    "name": "Detmers, Reid",
+    "career_swstr_pct": 0.241,
+    "career_fb_velo": 94.3,
+    "career_spin_rate": 2127.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3095
+  },
+  "680694": {
+    "name": "Bradish, Kyle",
+    "career_swstr_pct": 0.168,
+    "career_fb_velo": 94.53,
+    "career_spin_rate": 2362.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1722
+  },
+  "592836": {
+    "name": "Walker, Taijuan",
+    "career_swstr_pct": 0.2285,
+    "career_fb_velo": 93.25,
+    "career_spin_rate": 2134.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1243
+  },
+  "605200": {
+    "name": "Davies, Zach",
+    "career_swstr_pct": 0.1825,
+    "career_fb_velo": 89.55,
+    "career_spin_rate": 2202.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 757
+  },
+  "448179": {
+    "name": "Hill, Rich",
+    "career_swstr_pct": 0.2294,
+    "career_fb_velo": 88.45,
+    "career_spin_rate": 2228.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1572
+  },
+  "502043": {
+    "name": "Gibson, Kyle",
+    "career_swstr_pct": 0.1228,
+    "career_fb_velo": 91.83,
+    "career_spin_rate": 2256.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1104
+  },
+  "663556": {
+    "name": "McClanahan, Shane",
+    "career_swstr_pct": 0.2373,
+    "career_fb_velo": 96.75,
+    "career_spin_rate": 2237.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1639
+  },
+  "623167": {
+    "name": "Flexen, Chris",
+    "career_swstr_pct": 0.1491,
+    "career_fb_velo": 91.83,
+    "career_spin_rate": 2159.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2901
+  },
+  "571945": {
+    "name": "Mikolas, Miles",
+    "career_swstr_pct": 0.1932,
+    "career_fb_velo": 93.25,
+    "career_spin_rate": 2260.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3128
+  },
+  "608566": {
+    "name": "M\u00e1rquez, Germ\u00e1n",
+    "career_swstr_pct": 0.1259,
+    "career_fb_velo": 95.2,
+    "career_spin_rate": 2171.0,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1615
+  },
+  "663776": {
+    "name": "Sandoval, Patrick",
+    "career_swstr_pct": 0.1451,
+    "career_fb_velo": 93.27,
+    "career_spin_rate": 2019.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1449
+  },
+  "656271": {
+    "name": "Burke, Brock",
+    "career_swstr_pct": 0.2107,
+    "career_fb_velo": 95.43,
+    "career_spin_rate": 2259.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2137
+  },
+  "506433": {
+    "name": "Darvish, Yu",
+    "career_swstr_pct": 0.19,
+    "career_fb_velo": 94.6,
+    "career_spin_rate": 2380.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1362
+  },
+  "446372": {
+    "name": "Kluber, Corey",
+    "career_swstr_pct": 0.1003,
+    "career_fb_velo": 88.6,
+    "career_spin_rate": 2276.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 919
+  },
+  "624522": {
+    "name": "Thompson, Keegan",
+    "career_swstr_pct": 0.2015,
+    "career_fb_velo": 93.57,
+    "career_spin_rate": 2451.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1295
+  },
+  "621244": {
+    "name": "Berr\u00edos, Jos\u00e9",
+    "career_swstr_pct": 0.2032,
+    "career_fb_velo": 93.85,
+    "career_spin_rate": 2191.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2374
+  },
+  "605280": {
+    "name": "Holmes, Clay",
+    "career_swstr_pct": 0.2226,
+    "career_fb_velo": 96.8,
+    "career_spin_rate": 2281.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2104
+  },
+  "592789": {
+    "name": "Syndergaard, Noah",
+    "career_swstr_pct": 0.1918,
+    "career_fb_velo": 93.15,
+    "career_spin_rate": 2169.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 555
+  },
+  "640448": {
+    "name": "Finnegan, Kyle",
+    "career_swstr_pct": 0.2131,
+    "career_fb_velo": 96.95,
+    "career_spin_rate": 2107.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2816
+  },
+  "622608": {
+    "name": "Senzatela, Antonio",
+    "career_swstr_pct": 0.1286,
+    "career_fb_velo": 94.65,
+    "career_spin_rate": 2181.0,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 2109
+  },
+  "592767": {
+    "name": "Smyly, Drew",
+    "career_swstr_pct": 0.1844,
+    "career_fb_velo": 91.0,
+    "career_spin_rate": 2236.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2043
+  },
+  "656876": {
+    "name": "Rasmussen, Drew",
+    "career_swstr_pct": 0.2107,
+    "career_fb_velo": 95.65,
+    "career_spin_rate": 2439.5,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1615
+  },
+  "656945": {
+    "name": "Scott, Tanner",
+    "career_swstr_pct": 0.2918,
+    "career_fb_velo": 96.8,
+    "career_spin_rate": 2568.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2220
+  },
+  "672851": {
+    "name": "Adon, Joan",
+    "career_swstr_pct": 0.1741,
+    "career_fb_velo": 94.75,
+    "career_spin_rate": 2204.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1140
+  },
+  "672710": {
+    "name": "Contreras, Roansy",
+    "career_swstr_pct": 0.1517,
+    "career_fb_velo": 94.87,
+    "career_spin_rate": 2356.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1629
+  },
+  "621363": {
+    "name": "Poche, Colin",
+    "career_swstr_pct": 0.2305,
+    "career_fb_velo": 92.3,
+    "career_spin_rate": 2235.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1728
+  },
+  "596295": {
+    "name": "Gomber, Austin",
+    "career_swstr_pct": 0.1124,
+    "career_fb_velo": 90.35,
+    "career_spin_rate": 2151.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3199
+  },
+  "669022": {
+    "name": "Gore, MacKenzie",
+    "career_swstr_pct": 0.2126,
+    "career_fb_velo": 95.25,
+    "career_spin_rate": 2273.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5276
+  },
+  "471911": {
+    "name": "Carrasco, Carlos",
+    "career_swstr_pct": 0.1789,
+    "career_fb_velo": 92.53,
+    "career_spin_rate": 2227.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1786
+  },
+  "458681": {
+    "name": "Lynn, Lance",
+    "career_swstr_pct": 0.3113,
+    "career_fb_velo": 92.57,
+    "career_spin_rate": 2442.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3257
+  },
+  "605397": {
+    "name": "Musgrove, Joe",
+    "career_swstr_pct": 0.2349,
+    "career_fb_velo": 93.0,
+    "career_spin_rate": 2597.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1424
+  },
+  "608723": {
+    "name": "Voth, Austin",
+    "career_swstr_pct": 0.2298,
+    "career_fb_velo": 93.43,
+    "career_spin_rate": 2329.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1248
+  },
+  "664062": {
+    "name": "Gonsolin, Tony",
+    "career_swstr_pct": 0.1739,
+    "career_fb_velo": 93.0,
+    "career_spin_rate": 2258.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1688
+  },
+  "656605": {
+    "name": "Keller, Mitch",
+    "career_swstr_pct": 0.2341,
+    "career_fb_velo": 94.85,
+    "career_spin_rate": 2403.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3513
+  },
+  "622491": {
+    "name": "Castillo, Luis",
+    "career_swstr_pct": 0.298,
+    "career_fb_velo": 96.0,
+    "career_spin_rate": 2250.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4922
+  },
+  "665152": {
+    "name": "Kremer, Dean",
+    "career_swstr_pct": 0.2202,
+    "career_fb_velo": 93.7,
+    "career_spin_rate": 2275.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3134
+  },
+  "608718": {
+    "name": "Suter, Brent",
+    "career_swstr_pct": 0.1821,
+    "career_fb_velo": 86.38,
+    "career_spin_rate": 2205.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1952
+  },
+  "579328": {
+    "name": "Kikuchi, Yusei",
+    "career_swstr_pct": 0.2579,
+    "career_fb_velo": 95.08,
+    "career_spin_rate": 2271.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4660
+  },
+  "543243": {
+    "name": "Gray, Sonny",
+    "career_swstr_pct": 0.1725,
+    "career_fb_velo": 92.27,
+    "career_spin_rate": 2523.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2457
+  },
+  "622663": {
+    "name": "Severino, Luis",
+    "career_swstr_pct": 0.2121,
+    "career_fb_velo": 96.28,
+    "career_spin_rate": 2257.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3296
+  },
+  "571760": {
+    "name": "Heaney, Andrew",
+    "career_swstr_pct": 0.2349,
+    "career_fb_velo": 91.8,
+    "career_spin_rate": 2407.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4576
+  },
+  "456501": {
+    "name": "Cueto, Johnny",
+    "career_swstr_pct": 0.2492,
+    "career_fb_velo": 91.8,
+    "career_spin_rate": 2205.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 748
+  },
+  "425844": {
+    "name": "Greinke, Zack",
+    "career_swstr_pct": 0.1558,
+    "career_fb_velo": 89.35,
+    "career_spin_rate": 2267.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1459
+  },
+  "605182": {
+    "name": "Clevinger, Mike",
+    "career_swstr_pct": 0.1914,
+    "career_fb_velo": 94.0,
+    "career_spin_rate": 2292.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1720
+  },
+  "669060": {
+    "name": "Wilson, Bryse",
+    "career_swstr_pct": 0.2285,
+    "career_fb_velo": 93.15,
+    "career_spin_rate": 2067.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 685
+  },
+  "548389": {
+    "name": "Stripling, Ross",
+    "career_swstr_pct": 0.2111,
+    "career_fb_velo": 92.0,
+    "career_spin_rate": 2141.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1492
+  },
+  "608379": {
+    "name": "Wacha, Michael",
+    "career_swstr_pct": 0.1606,
+    "career_fb_velo": 92.95,
+    "career_spin_rate": 2120.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2595
+  },
+  "605154": {
+    "name": "Brebbia, John",
+    "career_swstr_pct": 0.2464,
+    "career_fb_velo": 93.82,
+    "career_spin_rate": 2297.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1513
+  },
+  "593423": {
+    "name": "Montas, Frankie",
+    "career_swstr_pct": 0.2445,
+    "career_fb_velo": 95.85,
+    "career_spin_rate": 2372.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1527
+  },
+  "605218": {
+    "name": "Edwards Jr., Carl",
+    "career_swstr_pct": 0.1956,
+    "career_fb_velo": 94.1,
+    "career_spin_rate": 2543.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1046
+  },
+  "621112": {
+    "name": "Blackburn, Paul",
+    "career_swstr_pct": 0.1423,
+    "career_fb_velo": 91.95,
+    "career_spin_rate": 2173.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 917
+  },
+  "607536": {
+    "name": "Freeland, Kyle",
+    "career_swstr_pct": 0.131,
+    "career_fb_velo": 90.57,
+    "career_spin_rate": 2374.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2290
+  },
+  "643511": {
+    "name": "Rogers, Tyler",
+    "career_swstr_pct": 0.1318,
+    "career_fb_velo": 83.08,
+    "career_spin_rate": 1986.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2529
+  },
+  "543135": {
+    "name": "Eovaldi, Nathan",
+    "career_swstr_pct": 0.1715,
+    "career_fb_velo": 95.08,
+    "career_spin_rate": 2178.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2895
+  },
+  "608032": {
+    "name": "Est\u00e9vez, Carlos",
+    "career_swstr_pct": 0.2319,
+    "career_fb_velo": 96.82,
+    "career_spin_rate": 2177.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2526
+  },
+  "642547": {
+    "name": "Peralta, Freddy",
+    "career_swstr_pct": 0.255,
+    "career_fb_velo": 94.03,
+    "career_spin_rate": 2410.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 5497
+  },
+  "518886": {
+    "name": "Kimbrel, Craig",
+    "career_swstr_pct": 0.2759,
+    "career_fb_velo": 95.17,
+    "career_spin_rate": 2312.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2125
+  },
+  "656849": {
+    "name": "Peterson, David",
+    "career_swstr_pct": 0.2425,
+    "career_fb_velo": 92.95,
+    "career_spin_rate": 2121.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2350
+  },
+  "662253": {
+    "name": "Mu\u00f1oz, Andr\u00e9s",
+    "career_swstr_pct": 0.237,
+    "career_fb_velo": 99.05,
+    "career_spin_rate": 2280.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1298
+  },
+  "622253": {
+    "name": "Tate, Dillon",
+    "career_swstr_pct": 0.0939,
+    "career_fb_velo": 93.3,
+    "career_spin_rate": 1973.5,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 871
+  },
+  "663455": {
+    "name": "Pilkington, Konnor",
+    "career_swstr_pct": 0.2373,
+    "career_fb_velo": 93.3,
+    "career_spin_rate": 2289.5,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 954
+  },
+  "669330": {
+    "name": "Wells, Tyler",
+    "career_swstr_pct": 0.2396,
+    "career_fb_velo": 93.0,
+    "career_spin_rate": 2451.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1403
+  },
+  "676664": {
+    "name": "Sears, JP",
+    "career_swstr_pct": 0.2163,
+    "career_fb_velo": 92.6,
+    "career_spin_rate": 2098.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 4029
+  },
+  "663372": {
+    "name": "Feltner, Ryan",
+    "career_swstr_pct": 0.185,
+    "career_fb_velo": 94.63,
+    "career_spin_rate": 2328.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1729
+  },
+  "671345": {
+    "name": "Foley, Jason",
+    "career_swstr_pct": 0.1436,
+    "career_fb_velo": 97.1,
+    "career_spin_rate": 2113.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1818
+  },
+  "641329": {
+    "name": "Baker, Bryan",
+    "career_swstr_pct": 0.2612,
+    "career_fb_velo": 96.2,
+    "career_spin_rate": 2316.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1628
+  },
+  "621242": {
+    "name": "D\u00edaz, Edwin",
+    "career_swstr_pct": 0.3896,
+    "career_fb_velo": 97.93,
+    "career_spin_rate": 2342.7,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1425
+  },
+  "641835": {
+    "name": "Mayza, Tim",
+    "career_swstr_pct": 0.2041,
+    "career_fb_velo": 92.52,
+    "career_spin_rate": 2055.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1944
+  },
+  "643377": {
+    "name": "Jax, Griffin",
+    "career_swstr_pct": 0.2416,
+    "career_fb_velo": 96.33,
+    "career_spin_rate": 2419.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 950
+  },
+  "573124": {
+    "name": "Rogers, Taylor",
+    "career_swstr_pct": 0.1432,
+    "career_fb_velo": 93.17,
+    "career_spin_rate": 2101.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1814
+  },
+  "669211": {
+    "name": "Akin, Keegan",
+    "career_swstr_pct": 0.265,
+    "career_fb_velo": 93.67,
+    "career_spin_rate": 2338.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2150
+  },
+  "592826": {
+    "name": "Velasquez, Vince",
+    "career_swstr_pct": 0.2268,
+    "career_fb_velo": 93.2,
+    "career_spin_rate": 2444.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 840
+  },
+  "445276": {
+    "name": "Jansen, Kenley",
+    "career_swstr_pct": 0.2754,
+    "career_fb_velo": 94.0,
+    "career_spin_rate": 2271.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1451
+  },
+  "476595": {
+    "name": "Luetge, Lucas",
+    "career_swstr_pct": 0.2689,
+    "career_fb_velo": 88.15,
+    "career_spin_rate": 2616.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1205
+  },
+  "445926": {
+    "name": "Chavez, Jesse",
+    "career_swstr_pct": 0.116,
+    "career_fb_velo": 91.1,
+    "career_spin_rate": 1969.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 597
+  },
+  "664747": {
+    "name": "D\u00edaz, Alexis",
+    "career_swstr_pct": 0.2773,
+    "career_fb_velo": 94.4,
+    "career_spin_rate": 2607.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2024
+  },
+  "676879": {
+    "name": "Ashby, Aaron",
+    "career_swstr_pct": 0.1765,
+    "career_fb_velo": 96.43,
+    "career_spin_rate": 2197.7,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1385
+  },
+  "472610": {
+    "name": "Garc\u00eda, Luis",
+    "career_swstr_pct": 0.1395,
+    "career_fb_velo": 96.87,
+    "career_spin_rate": 2219.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1364
+  },
+  "623352": {
+    "name": "Hader, Josh",
+    "career_swstr_pct": 0.3049,
+    "career_fb_velo": 95.95,
+    "career_spin_rate": 2156.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2708
+  },
+  "595345": {
+    "name": "Okert, Steven",
+    "career_swstr_pct": 0.2069,
+    "career_fb_velo": 93.17,
+    "career_spin_rate": 2232.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1137
+  },
+  "660761": {
+    "name": "Suarez, Jos\u00e9",
+    "career_swstr_pct": 0.2169,
+    "career_fb_velo": 92.67,
+    "career_spin_rate": 2282.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1240
+  },
+  "625643": {
+    "name": "L\u00f3pez, Reynaldo",
+    "career_swstr_pct": 0.2142,
+    "career_fb_velo": 96.93,
+    "career_spin_rate": 2170.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2476
+  },
+  "541640": {
+    "name": "Ram\u00edrez, Erasmo",
+    "career_swstr_pct": 0.1258,
+    "career_fb_velo": 92.85,
+    "career_spin_rate": 2192.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 761
+  },
+  "676477": {
+    "name": "Whitlock, Garrett",
+    "career_swstr_pct": 0.2403,
+    "career_fb_velo": 94.95,
+    "career_spin_rate": 2164.0,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1124
+  },
+  "641360": {
+    "name": "Bickford, Phil",
+    "career_swstr_pct": 0.2818,
+    "career_fb_velo": 93.9,
+    "career_spin_rate": 2357.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1545
+  },
+  "681911": {
+    "name": "Vesia, Alex",
+    "career_swstr_pct": 0.2904,
+    "career_fb_velo": 93.65,
+    "career_spin_rate": 2388.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2467
+  },
+  "661403": {
+    "name": "Clase, Emmanuel",
+    "career_swstr_pct": 0.2899,
+    "career_fb_velo": 99.8,
+    "career_spin_rate": 2538.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3721
+  },
+  "676684": {
+    "name": "Vest, Will",
+    "career_swstr_pct": 0.2152,
+    "career_fb_velo": 95.8,
+    "career_spin_rate": 2158.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2255
+  },
+  "641729": {
+    "name": "Jim\u00e9nez, Joe",
+    "career_swstr_pct": 0.2627,
+    "career_fb_velo": 95.17,
+    "career_spin_rate": 2430.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1680
+  },
+  "666159": {
+    "name": "Manning, Matt",
+    "career_swstr_pct": 0.1879,
+    "career_fb_velo": 93.5,
+    "career_spin_rate": 2141.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1280
+  },
+  "664854": {
+    "name": "Helsley, Ryan",
+    "career_swstr_pct": 0.2244,
+    "career_fb_velo": 99.55,
+    "career_spin_rate": 2593.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1757
+  },
+  "669373": {
+    "name": "Skubal, Tarik",
+    "career_swstr_pct": 0.2724,
+    "career_fb_velo": 96.1,
+    "career_spin_rate": 2231.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2724
+  },
+  "689225": {
+    "name": "Brieske, Beau",
+    "career_swstr_pct": 0.1709,
+    "career_fb_velo": 95.63,
+    "career_spin_rate": 2439.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1288
+  },
+  "661309": {
+    "name": "Martinez, Adri\u00e1n",
+    "career_swstr_pct": 0.1371,
+    "career_fb_velo": 93.8,
+    "career_spin_rate": 2133.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1058
+  },
+  "519326": {
+    "name": "Strickland, Hunter",
+    "career_swstr_pct": 0.2135,
+    "career_fb_velo": 94.6,
+    "career_spin_rate": 2334.5,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 925
+  },
+  "650671": {
+    "name": "Quijada, Jos\u00e9",
+    "career_swstr_pct": 0.3313,
+    "career_fb_velo": 94.2,
+    "career_spin_rate": 2218.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 944
+  },
+  "642207": {
+    "name": "Williams, Devin",
+    "career_swstr_pct": 0.3737,
+    "career_fb_velo": 94.22,
+    "career_spin_rate": 2328.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1511
+  },
+  "666808": {
+    "name": "Doval, Camilo",
+    "career_swstr_pct": 0.1656,
+    "career_fb_velo": 98.8,
+    "career_spin_rate": 2338.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 631
+  },
+  "621345": {
+    "name": "Minter, A.J.",
+    "career_swstr_pct": 0.2672,
+    "career_fb_velo": 95.63,
+    "career_spin_rate": 2424.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1303
+  },
+  "666157": {
+    "name": "Lodolo, Nick",
+    "career_swstr_pct": 0.2738,
+    "career_fb_velo": 93.93,
+    "career_spin_rate": 2305.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1954
+  },
+  "650644": {
+    "name": "Civale, Aaron",
+    "career_swstr_pct": 0.1763,
+    "career_fb_velo": 91.97,
+    "career_spin_rate": 2403.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 782
+  },
+  "642528": {
+    "name": "Lo\u00e1isiga, Jonathan",
+    "career_swstr_pct": 0.2127,
+    "career_fb_velo": 97.4,
+    "career_spin_rate": 2403.0,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 752
+  },
+  "571901": {
+    "name": "Loup, Aaron",
+    "career_swstr_pct": 0.1177,
+    "career_fb_velo": 91.55,
+    "career_spin_rate": 2277.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 925
+  },
+  "650556": {
+    "name": "Abreu, Bryan",
+    "career_swstr_pct": 0.3228,
+    "career_fb_velo": 97.2,
+    "career_spin_rate": 2342.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2151
+  },
+  "592773": {
+    "name": "Stanek, Ryne",
+    "career_swstr_pct": 0.2712,
+    "career_fb_velo": 98.22,
+    "career_spin_rate": 2333.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2263
+  },
+  "605447": {
+    "name": "Romano, Jordan",
+    "career_swstr_pct": 0.2864,
+    "career_fb_velo": 96.37,
+    "career_spin_rate": 2294.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1153
+  },
+  "571479": {
+    "name": "Bellatti, Andrew",
+    "career_swstr_pct": 0.2868,
+    "career_fb_velo": 94.25,
+    "career_spin_rate": 2472.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 605
+  },
+  "543521": {
+    "name": "McHugh, Collin",
+    "career_swstr_pct": 0.2678,
+    "career_fb_velo": 91.15,
+    "career_spin_rate": 2317.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1994
+  },
+  "502085": {
+    "name": "Robertson, David",
+    "career_swstr_pct": 0.299,
+    "career_fb_velo": 93.23,
+    "career_spin_rate": 2407.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3457
+  },
+  "676710": {
+    "name": "Crawford, Kutter",
+    "career_swstr_pct": 0.2332,
+    "career_fb_velo": 93.6,
+    "career_spin_rate": 2471.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2273
+  },
+  "543294": {
+    "name": "Hendricks, Kyle",
+    "career_swstr_pct": 0.1681,
+    "career_fb_velo": 87.22,
+    "career_spin_rate": 2073.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1445
+  },
+  "519043": {
+    "name": "Moore, Matt",
+    "career_swstr_pct": 0.2375,
+    "career_fb_velo": 93.53,
+    "career_spin_rate": 2319.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1386
+  },
+  "640462": {
+    "name": "Puk, A.J.",
+    "career_swstr_pct": 0.2848,
+    "career_fb_velo": 96.03,
+    "career_spin_rate": 2247.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1479
+  },
+  "656638": {
+    "name": "Lange, Alex",
+    "career_swstr_pct": 0.2021,
+    "career_fb_velo": 96.0,
+    "career_spin_rate": 2276.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 835
+  },
+  "493603": {
+    "name": "Ottavino, Adam",
+    "career_swstr_pct": 0.1574,
+    "career_fb_velo": 94.0,
+    "career_spin_rate": 2363.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 731
+  },
+  "647315": {
+    "name": "Pop, Zach",
+    "career_swstr_pct": 0.2016,
+    "career_fb_velo": 96.3,
+    "career_spin_rate": 2182.5,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 952
+  },
+  "642585": {
+    "name": "Bautista, F\u00e9lix",
+    "career_swstr_pct": 0.3076,
+    "career_fb_velo": 98.83,
+    "career_spin_rate": 2369.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1669
+  },
+  "669212": {
+    "name": "Morgan, Eli",
+    "career_swstr_pct": 0.2251,
+    "career_fb_velo": 92.27,
+    "career_spin_rate": 2264.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1302
+  },
+  "663559": {
+    "name": "Falter, Bailey",
+    "career_swstr_pct": 0.1662,
+    "career_fb_velo": 91.55,
+    "career_spin_rate": 2071.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2990
+  },
+  "656222": {
+    "name": "Beeks, Jalen",
+    "career_swstr_pct": 0.2217,
+    "career_fb_velo": 94.55,
+    "career_spin_rate": 2128.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1937
+  },
+  "641941": {
+    "name": "Pag\u00e1n, Emilio",
+    "career_swstr_pct": 0.261,
+    "career_fb_velo": 95.45,
+    "career_spin_rate": 2557.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2163
+  },
+  "554340": {
+    "name": "Garc\u00eda, Yimi",
+    "career_swstr_pct": 0.3195,
+    "career_fb_velo": 95.8,
+    "career_spin_rate": 2516.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1061
+  },
+  "656234": {
+    "name": "Bird, Jake",
+    "career_swstr_pct": 0.1311,
+    "career_fb_velo": 94.18,
+    "career_spin_rate": 2039.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1882
+  },
+  "670124": {
+    "name": "Oller, Adam",
+    "career_swstr_pct": 0.1591,
+    "career_fb_velo": 93.55,
+    "career_spin_rate": 2202.5,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 783
+  },
+  "571948": {
+    "name": "Milner, Hoby",
+    "career_swstr_pct": 0.1806,
+    "career_fb_velo": 88.95,
+    "career_spin_rate": 1993.5,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 684
+  },
+  "607259": {
+    "name": "Martinez, Nick",
+    "career_swstr_pct": 0.1778,
+    "career_fb_velo": 92.97,
+    "career_spin_rate": 2341.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1675
+  },
+  "593958": {
+    "name": "Rodriguez, Eduardo",
+    "career_swstr_pct": 0.2174,
+    "career_fb_velo": 91.97,
+    "career_spin_rate": 2227.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3172
+  },
+  "572971": {
+    "name": "Keuchel, Dallas",
+    "career_swstr_pct": 0.1332,
+    "career_fb_velo": 87.7,
+    "career_spin_rate": 2096.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 743
+  },
+  "519293": {
+    "name": "Smith, Will",
+    "career_swstr_pct": 0.129,
+    "career_fb_velo": 92.25,
+    "career_spin_rate": 2191.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 742
+  },
+  "663436": {
+    "name": "Martin, Davis",
+    "career_swstr_pct": 0.1853,
+    "career_fb_velo": 93.87,
+    "career_spin_rate": 2384.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1491
+  },
+  "623149": {
+    "name": "Sewald, Paul",
+    "career_swstr_pct": 0.2785,
+    "career_fb_velo": 92.03,
+    "career_spin_rate": 2509.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1462
+  },
+  "670950": {
+    "name": "Richards, Trevor",
+    "career_swstr_pct": 0.1867,
+    "career_fb_velo": 92.83,
+    "career_spin_rate": 2247.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1635
+  },
+  "656412": {
+    "name": "Faedo, Alex",
+    "career_swstr_pct": 0.1731,
+    "career_fb_velo": 93.2,
+    "career_spin_rate": 2352.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1357
+  },
+  "667463": {
+    "name": "King, John",
+    "career_swstr_pct": 0.1387,
+    "career_fb_velo": 93.35,
+    "career_spin_rate": 2121.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1646
+  },
+  "605130": {
+    "name": "Barlow, Scott",
+    "career_swstr_pct": 0.1888,
+    "career_fb_velo": 92.58,
+    "career_spin_rate": 2398.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1028
+  },
+  "660853": {
+    "name": "De Los Santos, Enyel",
+    "career_swstr_pct": 0.2245,
+    "career_fb_velo": 95.65,
+    "career_spin_rate": 2252.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2241
+  },
+  "606149": {
+    "name": "Gallegos, Giovanny",
+    "career_swstr_pct": 0.2005,
+    "career_fb_velo": 94.0,
+    "career_spin_rate": 2361.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 915
+  },
+  "670036": {
+    "name": "Festa, Matt",
+    "career_swstr_pct": 0.2859,
+    "career_fb_velo": 92.35,
+    "career_spin_rate": 2422.5,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 711
+  },
+  "621237": {
+    "name": "Alvarado, Jos\u00e9",
+    "career_swstr_pct": 0.1833,
+    "career_fb_velo": 98.25,
+    "career_spin_rate": 2053.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1830
+  },
+  "573204": {
+    "name": "Thielbar, Caleb",
+    "career_swstr_pct": 0.2339,
+    "career_fb_velo": 92.97,
+    "career_spin_rate": 2297.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1479
+  },
+  "640451": {
+    "name": "Harvey, Hunter",
+    "career_swstr_pct": 0.2551,
+    "career_fb_velo": 98.13,
+    "career_spin_rate": 2050.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1663
+  },
+  "666200": {
+    "name": "Luzardo, Jes\u00fas",
+    "career_swstr_pct": 0.1885,
+    "career_fb_velo": 96.17,
+    "career_spin_rate": 2231.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3101
+  },
+  "453268": {
+    "name": "Bard, Daniel",
+    "career_swstr_pct": 0.1784,
+    "career_fb_velo": 96.3,
+    "career_spin_rate": 2605.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 887
+  },
+  "676265": {
+    "name": "Abbott, Cory",
+    "career_swstr_pct": 0.1653,
+    "career_fb_velo": 91.8,
+    "career_spin_rate": 2285.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 753
+  },
+  "642232": {
+    "name": "Yarbrough, Ryan",
+    "career_swstr_pct": 0.1541,
+    "career_fb_velo": 86.77,
+    "career_spin_rate": 1859.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 951
+  },
+  "641302": {
+    "name": "Alexander, Tyler",
+    "career_swstr_pct": 0.2041,
+    "career_fb_velo": 90.13,
+    "career_spin_rate": 2268.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1166
+  },
+  "657612": {
+    "name": "Hill, Tim",
+    "career_swstr_pct": 0.2084,
+    "career_fb_velo": 90.93,
+    "career_spin_rate": 2190.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 818
+  },
+  "614179": {
+    "name": "Ruiz, Jos\u00e9",
+    "career_swstr_pct": 0.2768,
+    "career_fb_velo": 96.6,
+    "career_spin_rate": 2314.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1021
+  },
+  "693821": {
+    "name": "Elder, Bryce",
+    "career_swstr_pct": 0.191,
+    "career_fb_velo": 91.8,
+    "career_spin_rate": 2179.0,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 669
+  },
+  "608717": {
+    "name": "Stratton, Chris",
+    "career_swstr_pct": 0.2467,
+    "career_fb_velo": 92.57,
+    "career_spin_rate": 2527.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1587
+  },
+  "674072": {
+    "name": "Henry, Tommy",
+    "career_swstr_pct": 0.1597,
+    "career_fb_velo": 90.7,
+    "career_spin_rate": 2162.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1350
+  },
+  "656353": {
+    "name": "Davidson, Tucker",
+    "career_swstr_pct": 0.131,
+    "career_fb_velo": 92.25,
+    "career_spin_rate": 1993.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 675
+  },
+  "670280": {
+    "name": "Bednar, David",
+    "career_swstr_pct": 0.2735,
+    "career_fb_velo": 96.82,
+    "career_spin_rate": 2415.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2111
+  },
+  "672578": {
+    "name": "Hern\u00e1ndez, Carlos",
+    "career_swstr_pct": 0.2054,
+    "career_fb_velo": 97.87,
+    "career_spin_rate": 2408.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1903
+  },
+  "594798": {
+    "name": "deGrom, Jacob",
+    "career_swstr_pct": 0.2494,
+    "career_fb_velo": 98.37,
+    "career_spin_rate": 2528.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1884
+  },
+  "656730": {
+    "name": "Megill, Trevor",
+    "career_swstr_pct": 0.2252,
+    "career_fb_velo": 98.8,
+    "career_spin_rate": 2475.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1792
+  },
+  "547179": {
+    "name": "Lorenzen, Michael",
+    "career_swstr_pct": 0.177,
+    "career_fb_velo": 94.18,
+    "career_spin_rate": 2408.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2229
+  },
+  "593974": {
+    "name": "Peralta, Wandy",
+    "career_swstr_pct": 0.1777,
+    "career_fb_velo": 95.4,
+    "career_spin_rate": 2161.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1419
+  },
+  "664208": {
+    "name": "Maton, Phil",
+    "career_swstr_pct": 0.3223,
+    "career_fb_velo": 89.1,
+    "career_spin_rate": 2359.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3140
+  },
+  "665795": {
+    "name": "Cabrera, Edward",
+    "career_swstr_pct": 0.1854,
+    "career_fb_velo": 96.35,
+    "career_spin_rate": 2293.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1508
+  },
+  "606160": {
+    "name": "Montero, Rafael",
+    "career_swstr_pct": 0.3079,
+    "career_fb_velo": 95.75,
+    "career_spin_rate": 2374.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1868
+  },
+  "518489": {
+    "name": "Brasier, Ryan",
+    "career_swstr_pct": 0.2372,
+    "career_fb_velo": 95.8,
+    "career_spin_rate": 2281.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 761
+  },
+  "675916": {
+    "name": "Karinchak, James",
+    "career_swstr_pct": 0.2722,
+    "career_fb_velo": 95.0,
+    "career_spin_rate": 2303.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 833
+  },
+  "670912": {
+    "name": "Oviedo, Johan",
+    "career_swstr_pct": 0.1889,
+    "career_fb_velo": 95.77,
+    "career_spin_rate": 2294.7,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1828
+  },
+  "661395": {
+    "name": "Duran, Jhoan",
+    "career_swstr_pct": 0.3226,
+    "career_fb_velo": 100.93,
+    "career_spin_rate": 2103.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1698
+  },
+  "621051": {
+    "name": "Wilson, Steven",
+    "career_swstr_pct": 0.2281,
+    "career_fb_velo": 94.22,
+    "career_spin_rate": 2420.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1370
+  },
+  "650911": {
+    "name": "S\u00e1nchez, Cristopher",
+    "career_swstr_pct": 0.1326,
+    "career_fb_velo": 94.15,
+    "career_spin_rate": 1956.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3729
+  },
+  "656546": {
+    "name": "Hoffman, Jeff",
+    "career_swstr_pct": 0.2443,
+    "career_fb_velo": 96.15,
+    "career_spin_rate": 2556.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1437
+  },
+  "656731": {
+    "name": "Megill, Tylor",
+    "career_swstr_pct": 0.2463,
+    "career_fb_velo": 95.43,
+    "career_spin_rate": 2202.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2852
+  },
+  "593576": {
+    "name": "Neris, H\u00e9ctor",
+    "career_swstr_pct": 0.2402,
+    "career_fb_velo": 93.15,
+    "career_spin_rate": 2422.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1702
+  },
+  "669459": {
+    "name": "Nelson, Kyle",
+    "career_swstr_pct": 0.132,
+    "career_fb_velo": 91.95,
+    "career_spin_rate": 2182.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 504
+  },
+  "678394": {
+    "name": "Bello, Brayan",
+    "career_swstr_pct": 0.1723,
+    "career_fb_velo": 95.3,
+    "career_spin_rate": 2122.0,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 948
+  },
+  "663986": {
+    "name": "Stephan, Trevor",
+    "career_swstr_pct": 0.224,
+    "career_fb_velo": 95.7,
+    "career_spin_rate": 2503.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1027
+  },
+  "663765": {
+    "name": "Woodford, Jake",
+    "career_swstr_pct": 0.0891,
+    "career_fb_velo": 91.9,
+    "career_spin_rate": 2203.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 739
+  },
+  "605177": {
+    "name": "Chafin, Andrew",
+    "career_swstr_pct": 0.1762,
+    "career_fb_velo": 90.55,
+    "career_spin_rate": 2119.0,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 494
+  },
+  "681806": {
+    "name": "Wantz, Andrew",
+    "career_swstr_pct": 0.2828,
+    "career_fb_velo": 93.9,
+    "career_spin_rate": 2398.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 662
+  },
+  "593334": {
+    "name": "Germ\u00e1n, Domingo",
+    "career_swstr_pct": 0.1731,
+    "career_fb_velo": 92.5,
+    "career_spin_rate": 2525.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 755
+  },
+  "518617": {
+    "name": "Diekman, Jake",
+    "career_swstr_pct": 0.3125,
+    "career_fb_velo": 95.37,
+    "career_spin_rate": 2293.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1099
+  },
+  "519008": {
+    "name": "McFarland, T.J.",
+    "career_swstr_pct": 0.1167,
+    "career_fb_velo": 88.75,
+    "career_spin_rate": 1960.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 714
+  },
+  "656061": {
+    "name": "Abreu, Albert",
+    "career_swstr_pct": 0.1856,
+    "career_fb_velo": 97.05,
+    "career_spin_rate": 2121.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 908
+  },
+  "657024": {
+    "name": "Swanson, Erik",
+    "career_swstr_pct": 0.2601,
+    "career_fb_velo": 93.73,
+    "career_spin_rate": 2276.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1182
+  },
+  "667427": {
+    "name": "Jackson, Zach",
+    "career_swstr_pct": 0.2447,
+    "career_fb_velo": 93.75,
+    "career_spin_rate": 2124.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 700
+  },
+  "621016": {
+    "name": "Cuas, Jose",
+    "career_swstr_pct": 0.2504,
+    "career_fb_velo": 92.65,
+    "career_spin_rate": 2047.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 653
+  },
+  "596133": {
+    "name": "Weaver, Luke",
+    "career_swstr_pct": 0.2321,
+    "career_fb_velo": 94.93,
+    "career_spin_rate": 2419.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2657
+  },
+  "670970": {
+    "name": "Morejon, Adrian",
+    "career_swstr_pct": 0.1947,
+    "career_fb_velo": 96.77,
+    "career_spin_rate": 2486.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1237
+  },
+  "594580": {
+    "name": "Moll, Sam",
+    "career_swstr_pct": 0.2136,
+    "career_fb_velo": 93.57,
+    "career_spin_rate": 2554.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 832
+  },
+  "643410": {
+    "name": "Leiter Jr., Mark",
+    "career_swstr_pct": 0.1285,
+    "career_fb_velo": 91.88,
+    "career_spin_rate": 1992.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1151
+  },
+  "676596": {
+    "name": "Fleming, Josh",
+    "career_swstr_pct": 0.2181,
+    "career_fb_velo": 91.03,
+    "career_spin_rate": 1765.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 901
+  },
+  "664875": {
+    "name": "Lawrence, Justin",
+    "career_swstr_pct": 0.1396,
+    "career_fb_velo": 95.57,
+    "career_spin_rate": 2401.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1655
+  },
+  "628452": {
+    "name": "Iglesias, Raisel",
+    "career_swstr_pct": 0.2773,
+    "career_fb_velo": 95.15,
+    "career_spin_rate": 2315.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1326
+  },
+  "542888": {
+    "name": "Armstrong, Shawn",
+    "career_swstr_pct": 0.3472,
+    "career_fb_velo": 94.03,
+    "career_spin_rate": 2319.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 994
+  },
+  "641927": {
+    "name": "Ober, Bailey",
+    "career_swstr_pct": 0.2302,
+    "career_fb_velo": 91.2,
+    "career_spin_rate": 2301.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3356
+  },
+  "621389": {
+    "name": "Blach, Ty",
+    "career_swstr_pct": 0.1176,
+    "career_fb_velo": 90.1,
+    "career_spin_rate": 2133.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1636
+  },
+  "621074": {
+    "name": "Rucker, Michael",
+    "career_swstr_pct": 0.1792,
+    "career_fb_velo": 94.65,
+    "career_spin_rate": 2282.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 673
+  },
+  "600921": {
+    "name": "Machado, Andr\u00e9s",
+    "career_swstr_pct": 0.2329,
+    "career_fb_velo": 96.1,
+    "career_spin_rate": 2116.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 540
+  },
+  "642701": {
+    "name": "Santana, Dennis",
+    "career_swstr_pct": 0.1472,
+    "career_fb_velo": 96.03,
+    "career_spin_rate": 2488.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 965
+  },
+  "607179": {
+    "name": "Weems, Jordan",
+    "career_swstr_pct": 0.2114,
+    "career_fb_velo": 96.37,
+    "career_spin_rate": 2115.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1364
+  },
+  "672335": {
+    "name": "P\u00e9rez, Cionel",
+    "career_swstr_pct": 0.2265,
+    "career_fb_velo": 96.77,
+    "career_spin_rate": 2166.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 846
+  },
+  "543272": {
+    "name": "Hand, Brad",
+    "career_swstr_pct": 0.1749,
+    "career_fb_velo": 92.6,
+    "career_spin_rate": 2331.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 542
+  },
+  "455119": {
+    "name": "Martin, Chris",
+    "career_swstr_pct": 0.2685,
+    "career_fb_velo": 95.23,
+    "career_spin_rate": 2179.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 821
+  },
+  "675921": {
+    "name": "Howard, Spencer",
+    "career_swstr_pct": 0.1533,
+    "career_fb_velo": 94.1,
+    "career_spin_rate": 2120.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 622
+  },
+  "657571": {
+    "name": "Ferguson, Caleb",
+    "career_swstr_pct": 0.2507,
+    "career_fb_velo": 94.57,
+    "career_spin_rate": 2287.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1827
+  },
+  "664294": {
+    "name": "Moreta, Dauri",
+    "career_swstr_pct": 0.2059,
+    "career_fb_velo": 95.55,
+    "career_spin_rate": 2292.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 593
+  },
+  "592094": {
+    "name": "Adam, Jason",
+    "career_swstr_pct": 0.2971,
+    "career_fb_velo": 94.88,
+    "career_spin_rate": 2629.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1263
+  },
+  "641401": {
+    "name": "Brogdon, Connor",
+    "career_swstr_pct": 0.296,
+    "career_fb_velo": 95.3,
+    "career_spin_rate": 2291.5,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 579
+  },
+  "621111": {
+    "name": "Buehler, Walker",
+    "career_swstr_pct": 0.1506,
+    "career_fb_velo": 94.73,
+    "career_spin_rate": 2265.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1303
+  },
+  "686752": {
+    "name": "Pepiot, Ryan",
+    "career_swstr_pct": 0.2751,
+    "career_fb_velo": 94.52,
+    "career_spin_rate": 2386.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3041
+  },
+  "669276": {
+    "name": "Lee, Dylan",
+    "career_swstr_pct": 0.2092,
+    "career_fb_velo": 92.87,
+    "career_spin_rate": 2289.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 970
+  },
+  "670990": {
+    "name": "Ram\u00edrez, Yohan",
+    "career_swstr_pct": 0.157,
+    "career_fb_velo": 95.1,
+    "career_spin_rate": 2246.0,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1119
+  },
+  "606303": {
+    "name": "Payamps, Joel",
+    "career_swstr_pct": 0.3352,
+    "career_fb_velo": 95.0,
+    "career_spin_rate": 2456.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 793
+  },
+  "641793": {
+    "name": "Littell, Zack",
+    "career_swstr_pct": 0.2175,
+    "career_fb_velo": 93.28,
+    "career_spin_rate": 2058.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2016
+  },
+  "607625": {
+    "name": "Lugo, Seth",
+    "career_swstr_pct": 0.189,
+    "career_fb_velo": 92.92,
+    "career_spin_rate": 2307.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2317
+  },
+  "666374": {
+    "name": "Brash, Matt",
+    "career_swstr_pct": 0.2357,
+    "career_fb_velo": 97.5,
+    "career_spin_rate": 2253.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 775
+  },
+  "623474": {
+    "name": "Herget, Jimmy",
+    "career_swstr_pct": 0.152,
+    "career_fb_velo": 92.1,
+    "career_spin_rate": 2287.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 628
+  },
+  "622098": {
+    "name": "Smith, Drew",
+    "career_swstr_pct": 0.2503,
+    "career_fb_velo": 95.35,
+    "career_spin_rate": 2503.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1071
+  },
+  "571656": {
+    "name": "Farmer, Buck",
+    "career_swstr_pct": 0.2055,
+    "career_fb_velo": 93.73,
+    "career_spin_rate": 2329.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1135
+  },
+  "621383": {
+    "name": "Banks, Tanner",
+    "career_swstr_pct": 0.2383,
+    "career_fb_velo": 92.95,
+    "career_spin_rate": 2236.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1352
+  },
+  "656427": {
+    "name": "Flaherty, Jack",
+    "career_swstr_pct": 0.2042,
+    "career_fb_velo": 93.2,
+    "career_spin_rate": 2279.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 3861
+  },
+  "669424": {
+    "name": "Lambert, Jimmy",
+    "career_swstr_pct": 0.2118,
+    "career_fb_velo": 94.15,
+    "career_spin_rate": 2235.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 659
+  },
+  "663558": {
+    "name": "Mor\u00e1n, Jovani",
+    "career_swstr_pct": 0.2156,
+    "career_fb_velo": 93.35,
+    "career_spin_rate": 2247.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 684
+  },
+  "571670": {
+    "name": "Floro, Dylan",
+    "career_swstr_pct": 0.2699,
+    "career_fb_velo": 92.35,
+    "career_spin_rate": 2177.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 543
+  },
+  "656557": {
+    "name": "Houck, Tanner",
+    "career_swstr_pct": 0.1502,
+    "career_fb_velo": 95.13,
+    "career_spin_rate": 2241.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1393
+  },
+  "670167": {
+    "name": "Schreiber, John",
+    "career_swstr_pct": 0.2948,
+    "career_fb_velo": 93.58,
+    "career_spin_rate": 2202.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1086
+  },
+  "664199": {
+    "name": "Clarke, Taylor",
+    "career_swstr_pct": 0.1535,
+    "career_fb_velo": 95.2,
+    "career_spin_rate": 2258.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 674
+  },
+  "573009": {
+    "name": "Mantiply, Joe",
+    "career_swstr_pct": 0.1436,
+    "career_fb_velo": 90.07,
+    "career_spin_rate": 2188.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 960
+  },
+  "672391": {
+    "name": "Ort, Kaleb",
+    "career_swstr_pct": 0.2421,
+    "career_fb_velo": 96.5,
+    "career_spin_rate": 2339.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1223
+  },
+  "656529": {
+    "name": "Hentges, Sam",
+    "career_swstr_pct": 0.2421,
+    "career_fb_velo": 95.8,
+    "career_spin_rate": 2194.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 544
+  },
+  "686610": {
+    "name": "Waldichuk, Ken",
+    "career_swstr_pct": 0.1847,
+    "career_fb_velo": 93.7,
+    "career_spin_rate": 2317.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1717
+  },
+  "571927": {
+    "name": "Matz, Steven",
+    "career_swstr_pct": 0.2192,
+    "career_fb_velo": 93.33,
+    "career_spin_rate": 2183.2,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2585
+  },
+  "663432": {
+    "name": "Rainey, Tanner",
+    "career_swstr_pct": 0.219,
+    "career_fb_velo": 95.5,
+    "career_spin_rate": 2415.5,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1032
+  },
+  "657044": {
+    "name": "Thompson, Ryan",
+    "career_swstr_pct": 0.1613,
+    "career_fb_velo": 91.33,
+    "career_spin_rate": 2141.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 925
+  },
+  "666168": {
+    "name": "Thompson, Mason",
+    "career_swstr_pct": 0.1361,
+    "career_fb_velo": 95.0,
+    "career_spin_rate": 2241.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 769
+  },
+  "666214": {
+    "name": "Wentz, Joey",
+    "career_swstr_pct": 0.1771,
+    "career_fb_velo": 93.22,
+    "career_spin_rate": 2262.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2356
+  },
+  "656464": {
+    "name": "Ginkel, Kevin",
+    "career_swstr_pct": 0.2049,
+    "career_fb_velo": 95.75,
+    "career_spin_rate": 2401.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1654
+  },
+  "600917": {
+    "name": "Leclerc, Jos\u00e9",
+    "career_swstr_pct": 0.2991,
+    "career_fb_velo": 95.63,
+    "career_spin_rate": 2573.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1055
+  },
+  "608678": {
+    "name": "Leone, Dominic",
+    "career_swstr_pct": 0.2297,
+    "career_fb_velo": 95.55,
+    "career_spin_rate": 2313.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 635
+  },
+  "657376": {
+    "name": "Schmidt, Clarke",
+    "career_swstr_pct": 0.1437,
+    "career_fb_velo": 94.55,
+    "career_spin_rate": 2631.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 950
+  },
+  "676760": {
+    "name": "Marinaccio, Ron",
+    "career_swstr_pct": 0.2729,
+    "career_fb_velo": 94.0,
+    "career_spin_rate": 2268.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 996
+  },
+  "663158": {
+    "name": "Suarez, Robert",
+    "career_swstr_pct": 0.2511,
+    "career_fb_velo": 98.57,
+    "career_spin_rate": 2379.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1718
+  },
+  "666142": {
+    "name": "Ragans, Cole",
+    "career_swstr_pct": 0.241,
+    "career_fb_velo": 94.83,
+    "career_spin_rate": 2502.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 2780
+  },
+  "676092": {
+    "name": "Snider, Collin",
+    "career_swstr_pct": 0.2203,
+    "career_fb_velo": 95.1,
+    "career_spin_rate": 2502.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 564
+  },
+  "663423": {
+    "name": "Thornton, Trent",
+    "career_swstr_pct": 0.2101,
+    "career_fb_velo": 94.57,
+    "career_spin_rate": 2463.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 720
+  },
+  "669674": {
+    "name": "Long, Sam",
+    "career_swstr_pct": 0.1772,
+    "career_fb_velo": 94.02,
+    "career_spin_rate": 2282.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1249
+  },
+  "680704": {
+    "name": "Sandlin, Nick",
+    "career_swstr_pct": 0.2391,
+    "career_fb_velo": 92.35,
+    "career_spin_rate": 2338.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 567
+  },
+  "656794": {
+    "name": "Newcomb, Sean",
+    "career_swstr_pct": 0.2302,
+    "career_fb_velo": 93.8,
+    "career_spin_rate": 2336.0,
+    "seasons": [
+      2022,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 767
+  },
+  "675627": {
+    "name": "Grove, Michael",
+    "career_swstr_pct": 0.0956,
+    "career_fb_velo": 94.6,
+    "career_spin_rate": 2209.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 607
+  },
+  "628708": {
+    "name": "Marte, Yunior",
+    "career_swstr_pct": 0.172,
+    "career_fb_velo": 98.05,
+    "career_spin_rate": 2378.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 562
+  },
+  "657265": {
+    "name": "Strzelecki, Peter",
+    "career_swstr_pct": 0.2979,
+    "career_fb_velo": 92.75,
+    "career_spin_rate": 2413.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 556
+  },
+  "622554": {
+    "name": "Dom\u00ednguez, Seranthony",
+    "career_swstr_pct": 0.2793,
+    "career_fb_velo": 97.65,
+    "career_spin_rate": 2369.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1549
+  },
+  "650893": {
+    "name": "Cabrera, G\u00e9nesis",
+    "career_swstr_pct": 0.1946,
+    "career_fb_velo": 96.0,
+    "career_spin_rate": 2242.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 590
+  },
+  "668868": {
+    "name": "Thompson, Zack",
+    "career_swstr_pct": 0.1871,
+    "career_fb_velo": 94.15,
+    "career_spin_rate": 1903.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 938
+  },
+  "607481": {
+    "name": "Bummer, Aaron",
+    "career_swstr_pct": 0.1571,
+    "career_fb_velo": 93.5,
+    "career_spin_rate": 2251.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1101
+  },
+  "657508": {
+    "name": "Baumann, Mike",
+    "career_swstr_pct": 0.1985,
+    "career_fb_velo": 96.23,
+    "career_spin_rate": 2237.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1261
+  },
+  "657649": {
+    "name": "Koenig, Jared",
+    "career_swstr_pct": 0.1708,
+    "career_fb_velo": 93.87,
+    "career_spin_rate": 2315.3,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1436
+  },
+  "547973": {
+    "name": "Chapman, Aroldis",
+    "career_swstr_pct": 0.3106,
+    "career_fb_velo": 98.18,
+    "career_spin_rate": 2399.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1594
+  },
+  "519151": {
+    "name": "Pressly, Ryan",
+    "career_swstr_pct": 0.14,
+    "career_fb_velo": 94.1,
+    "career_spin_rate": 2550.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1029
+  },
+  "489119": {
+    "name": "Miley, Wade",
+    "career_swstr_pct": 0.1911,
+    "career_fb_velo": 89.75,
+    "career_spin_rate": 2220.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 782
+  },
+  "663546": {
+    "name": "Hjelle, Sean",
+    "career_swstr_pct": 0.1017,
+    "career_fb_velo": 93.83,
+    "career_spin_rate": 2112.3,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1200
+  },
+  "669461": {
+    "name": "Liberatore, Matthew",
+    "career_swstr_pct": 0.1615,
+    "career_fb_velo": 94.12,
+    "career_spin_rate": 2119.0,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1675
+  },
+  "642546": {
+    "name": "Hern\u00e1ndez, Jonathan",
+    "career_swstr_pct": 0.1386,
+    "career_fb_velo": 97.4,
+    "career_spin_rate": 2225.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 763
+  },
+  "650633": {
+    "name": "King, Michael",
+    "career_swstr_pct": 0.2646,
+    "career_fb_velo": 94.03,
+    "career_spin_rate": 2346.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1388
+  },
+  "660787": {
+    "name": "De los Santos, Yerry",
+    "career_swstr_pct": 0.1203,
+    "career_fb_velo": 95.17,
+    "career_spin_rate": 2186.3,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 814
+  },
+  "663485": {
+    "name": "Sands, Cole",
+    "career_swstr_pct": 0.2485,
+    "career_fb_velo": 94.1,
+    "career_spin_rate": 2290.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 932
+  },
+  "664139": {
+    "name": "Gibaut, Ian",
+    "career_swstr_pct": 0.2723,
+    "career_fb_velo": 95.45,
+    "career_spin_rate": 2253.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 841
+  },
+  "641627": {
+    "name": "Gott, Trevor",
+    "career_swstr_pct": 0.3138,
+    "career_fb_velo": 94.25,
+    "career_spin_rate": 2173.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 461
+  },
+  "543507": {
+    "name": "May, Trevor",
+    "career_swstr_pct": 0.3042,
+    "career_fb_velo": 95.4,
+    "career_spin_rate": 2282.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 573
+  },
+  "621381": {
+    "name": "Strahm, Matt",
+    "career_swstr_pct": 0.2865,
+    "career_fb_velo": 93.33,
+    "career_spin_rate": 2444.5,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1806
+  },
+  "657240": {
+    "name": "Merryweather, Julian",
+    "career_swstr_pct": 0.1859,
+    "career_fb_velo": 97.7,
+    "career_spin_rate": 2312.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 714
+  },
+  "666818": {
+    "name": "Fr\u00edas, Luis",
+    "career_swstr_pct": 0.1838,
+    "career_fb_velo": 96.5,
+    "career_spin_rate": 2238.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 428
+  },
+  "670059": {
+    "name": "Holderman, Colin",
+    "career_swstr_pct": 0.1343,
+    "career_fb_velo": 97.07,
+    "career_spin_rate": 2262.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 894
+  },
+  "592741": {
+    "name": "Shreve, Chasen",
+    "career_swstr_pct": 0.2104,
+    "career_fb_velo": 90.55,
+    "career_spin_rate": 2313.0,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 480
+  },
+  "664126": {
+    "name": "Fairbanks, Pete",
+    "career_swstr_pct": 0.2553,
+    "career_fb_velo": 98.12,
+    "career_spin_rate": 2435.8,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4,
+    "career_pitch_count": 1447
+  },
+  "677053": {
+    "name": "Nardi, Andrew",
+    "career_swstr_pct": 0.2712,
+    "career_fb_velo": 94.33,
+    "career_spin_rate": 2293.0,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1372
+  },
+  "622250": {
+    "name": "Sborz, Josh",
+    "career_swstr_pct": 0.3319,
+    "career_fb_velo": 96.95,
+    "career_spin_rate": 2326.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 519
+  },
+  "661527": {
+    "name": "Martinez, Seth",
+    "career_swstr_pct": 0.1946,
+    "career_fb_velo": 91.27,
+    "career_spin_rate": 2155.7,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 780
+  },
+  "641755": {
+    "name": "Kinley, Tyler",
+    "career_swstr_pct": 0.1278,
+    "career_fb_velo": 95.45,
+    "career_spin_rate": 2374.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 673
+  },
+  "607455": {
+    "name": "Banda, Anthony",
+    "career_swstr_pct": 0.2088,
+    "career_fb_velo": 96.0,
+    "career_spin_rate": 2186.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 517
+  },
+  "622065": {
+    "name": "Young, Alex",
+    "career_swstr_pct": 0.2554,
+    "career_fb_velo": 91.45,
+    "career_spin_rate": 2315.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 644
+  },
+  "669194": {
+    "name": "Nelson, Ryne",
+    "career_swstr_pct": 0.1849,
+    "career_fb_velo": 95.1,
+    "career_spin_rate": 2232.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 4150
+  },
+  "518397": {
+    "name": "Alexander, Scott",
+    "career_swstr_pct": 0.1309,
+    "career_fb_velo": 91.87,
+    "career_spin_rate": 2218.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1090
+  },
+  "669358": {
+    "name": "Baz, Shane",
+    "career_swstr_pct": 0.2304,
+    "career_fb_velo": 96.3,
+    "career_spin_rate": 2437.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1772
+  },
+  "665625": {
+    "name": "Peguero, Elvis",
+    "career_swstr_pct": 0.1686,
+    "career_fb_velo": 96.4,
+    "career_spin_rate": 1863.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 857
+  },
+  "665871": {
+    "name": "Assad, Javier",
+    "career_swstr_pct": 0.1925,
+    "career_fb_velo": 92.27,
+    "career_spin_rate": 2064.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 975
+  },
+  "669713": {
+    "name": "Wesneski, Hayden",
+    "career_swstr_pct": 0.1582,
+    "career_fb_velo": 94.45,
+    "career_spin_rate": 2130.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 814
+  },
+  "643338": {
+    "name": "Green, Chad",
+    "career_swstr_pct": 0.1967,
+    "career_fb_velo": 95.35,
+    "career_spin_rate": 2471.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 859
+  },
+  "663574": {
+    "name": "Santillan, Tony",
+    "career_swstr_pct": 0.2371,
+    "career_fb_velo": 96.57,
+    "career_spin_rate": 2305.0,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1305
+  },
+  "543339": {
+    "name": "Hudson, Daniel",
+    "career_swstr_pct": 0.2689,
+    "career_fb_velo": 96.05,
+    "career_spin_rate": 2452.0,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 710
+  },
+  "681217": {
+    "name": "Silseth, Chase",
+    "career_swstr_pct": 0.2288,
+    "career_fb_velo": 95.2,
+    "career_spin_rate": 2377.5,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 517
+  },
+  "572955": {
+    "name": "Johnson, Pierce",
+    "career_swstr_pct": 0.2307,
+    "career_fb_velo": 95.57,
+    "career_spin_rate": 2330.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 827
+  },
+  "608638": {
+    "name": "Chargois, JT",
+    "career_swstr_pct": 0.1136,
+    "career_fb_velo": 95.0,
+    "career_spin_rate": 2363.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 642
+  },
+  "669622": {
+    "name": "Bender, Anthony",
+    "career_swstr_pct": 0.096,
+    "career_fb_velo": 95.55,
+    "career_spin_rate": 2354.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 641
+  },
+  "663978": {
+    "name": "Paddack, Chris",
+    "career_swstr_pct": 0.2059,
+    "career_fb_velo": 93.5,
+    "career_spin_rate": 2229.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1735
+  },
+  "686973": {
+    "name": "Varland, Louis",
+    "career_swstr_pct": 0.2152,
+    "career_fb_velo": 96.57,
+    "career_spin_rate": 2181.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1331
+  },
+  "670955": {
+    "name": "Uceta, Edwin",
+    "career_swstr_pct": 0.3806,
+    "career_fb_velo": 94.1,
+    "career_spin_rate": 2402.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 762
+  },
+  "686613": {
+    "name": "Brown, Hunter",
+    "career_swstr_pct": 0.2692,
+    "career_fb_velo": 96.1,
+    "career_spin_rate": 2271.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3377
+  },
+  "666205": {
+    "name": "Muller, Kyle",
+    "career_swstr_pct": 0.1791,
+    "career_fb_velo": 93.05,
+    "career_spin_rate": 2390.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1136
+  },
+  "682847": {
+    "name": "Ortiz, Luis",
+    "career_swstr_pct": 0.2302,
+    "career_fb_velo": 96.17,
+    "career_spin_rate": 2276.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1382
+  },
+  "605463": {
+    "name": "Scott, Tayler",
+    "career_swstr_pct": 0.2714,
+    "career_fb_velo": 92.35,
+    "career_spin_rate": 2106.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 839
+  },
+  "669160": {
+    "name": "May, Dustin",
+    "career_swstr_pct": 0.2227,
+    "career_fb_velo": 96.35,
+    "career_spin_rate": 2334.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 563
+  },
+  "666974": {
+    "name": "Cano, Yennier",
+    "career_swstr_pct": 0.169,
+    "career_fb_velo": 96.5,
+    "career_spin_rate": 2264.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1074
+  },
+  "675540": {
+    "name": "Curry, Xzavion",
+    "career_swstr_pct": 0.1925,
+    "career_fb_velo": 92.3,
+    "career_spin_rate": 2096.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1039
+  },
+  "669711": {
+    "name": "Weissert, Greg",
+    "career_swstr_pct": 0.2032,
+    "career_fb_velo": 94.05,
+    "career_spin_rate": 2328.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 577
+  },
+  "623437": {
+    "name": "Topa, Justin",
+    "career_swstr_pct": 0.0985,
+    "career_fb_velo": 94.6,
+    "career_spin_rate": 2141.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 816
+  },
+  "518585": {
+    "name": "Cruz, Fernando",
+    "career_swstr_pct": 0.1559,
+    "career_fb_velo": 94.5,
+    "career_spin_rate": 2255.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 760
+  },
+  "672582": {
+    "name": "Zerpa, Angel",
+    "career_swstr_pct": 0.2187,
+    "career_fb_velo": 95.35,
+    "career_spin_rate": 2015.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 463
+  },
+  "607192": {
+    "name": "Glasnow, Tyler",
+    "career_swstr_pct": 0.2191,
+    "career_fb_velo": 96.13,
+    "career_spin_rate": 2526.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2272
+  },
+  "519242": {
+    "name": "Sale, Chris",
+    "career_swstr_pct": 0.2289,
+    "career_fb_velo": 94.5,
+    "career_spin_rate": 2238.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2643
+  },
+  "489446": {
+    "name": "Yates, Kirby",
+    "career_swstr_pct": 0.3261,
+    "career_fb_velo": 93.2,
+    "career_spin_rate": 2333.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1632
+  },
+  "608371": {
+    "name": "Sims, Lucas",
+    "career_swstr_pct": 0.2253,
+    "career_fb_velo": 94.2,
+    "career_spin_rate": 2617.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 735
+  },
+  "571510": {
+    "name": "Boyd, Matthew",
+    "career_swstr_pct": 0.1987,
+    "career_fb_velo": 92.23,
+    "career_spin_rate": 2387.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2007
+  },
+  "669854": {
+    "name": "Blanco, Ronel",
+    "career_swstr_pct": 0.1865,
+    "career_fb_velo": 93.7,
+    "career_spin_rate": 2251.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1702
+  },
+  "571946": {
+    "name": "Miller, Shelby",
+    "career_swstr_pct": 0.2515,
+    "career_fb_velo": 94.07,
+    "career_spin_rate": 2390.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1333
+  },
+  "663947": {
+    "name": "Holton, Tyler",
+    "career_swstr_pct": 0.2656,
+    "career_fb_velo": 91.75,
+    "career_spin_rate": 2230.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 536
+  },
+  "683769": {
+    "name": "Gaddis, Hunter",
+    "career_swstr_pct": 0.1915,
+    "career_fb_velo": 94.5,
+    "career_spin_rate": 2276.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1032
+  },
+  "668941": {
+    "name": "Romero, JoJo",
+    "career_swstr_pct": 0.1128,
+    "career_fb_velo": 94.65,
+    "career_spin_rate": 2283.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 677
+  },
+  "669093": {
+    "name": "Estrada, Jeremiah",
+    "career_swstr_pct": 0.3066,
+    "career_fb_velo": 97.55,
+    "career_spin_rate": 2210.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1268
+  },
+  "663554": {
+    "name": "Mize, Casey",
+    "career_swstr_pct": 0.2065,
+    "career_fb_velo": 95.05,
+    "career_spin_rate": 2255.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1474
+  },
+  "682243": {
+    "name": "Miller, Bryce",
+    "career_swstr_pct": 0.2617,
+    "career_fb_velo": 95.03,
+    "career_spin_rate": 2528.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3004
+  },
+  "676440": {
+    "name": "Bibee, Tanner",
+    "career_swstr_pct": 0.1838,
+    "career_fb_velo": 94.63,
+    "career_spin_rate": 2302.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3155
+  },
+  "671106": {
+    "name": "Allen, Logan",
+    "career_swstr_pct": 0.1845,
+    "career_fb_velo": 91.27,
+    "career_spin_rate": 2173.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2482
+  },
+  "673540": {
+    "name": "Senga, Kodai",
+    "career_swstr_pct": 0.1825,
+    "career_fb_velo": 95.2,
+    "career_spin_rate": 2331.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1630
+  },
+  "671096": {
+    "name": "Abbott, Andrew",
+    "career_swstr_pct": 0.1969,
+    "career_fb_velo": 92.77,
+    "career_spin_rate": 2245.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 3457
+  },
+  "680570": {
+    "name": "Rodriguez, Grayson",
+    "career_swstr_pct": 0.2544,
+    "career_fb_velo": 96.75,
+    "career_spin_rate": 2278.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1939
+  },
+  "671737": {
+    "name": "Bradley, Taj",
+    "career_swstr_pct": 0.1985,
+    "career_fb_velo": 96.23,
+    "career_spin_rate": 2307.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2651
+  },
+  "572020": {
+    "name": "Paxton, James",
+    "career_swstr_pct": 0.1831,
+    "career_fb_velo": 94.25,
+    "career_spin_rate": 2151.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1835
+  },
+  "665622": {
+    "name": "Medina, Luis",
+    "career_swstr_pct": 0.1218,
+    "career_fb_velo": 96.0,
+    "career_spin_rate": 2346.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1105
+  },
+  "543859": {
+    "name": "Tonkin, Michael",
+    "career_swstr_pct": 0.2261,
+    "career_fb_velo": 93.03,
+    "career_spin_rate": 2334.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1546
+  },
+  "607067": {
+    "name": "Rea, Colin",
+    "career_swstr_pct": 0.21,
+    "career_fb_velo": 93.37,
+    "career_spin_rate": 2175.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1952
+  },
+  "668909": {
+    "name": "Williams, Gavin",
+    "career_swstr_pct": 0.2342,
+    "career_fb_velo": 96.3,
+    "career_spin_rate": 2279.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2565
+  },
+  "691587": {
+    "name": "P\u00e9rez, Eury",
+    "career_swstr_pct": 0.2025,
+    "career_fb_velo": 97.7,
+    "career_spin_rate": 2660.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1556
+  },
+  "663623": {
+    "name": "Irvin, Jake",
+    "career_swstr_pct": 0.2043,
+    "career_fb_velo": 93.6,
+    "career_spin_rate": 2347.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2864
+  },
+  "694297": {
+    "name": "Pfaadt, Brandon",
+    "career_swstr_pct": 0.2044,
+    "career_fb_velo": 93.7,
+    "career_spin_rate": 2531.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2341
+  },
+  "656288": {
+    "name": "Canning, Griffin",
+    "career_swstr_pct": 0.1999,
+    "career_fb_velo": 94.07,
+    "career_spin_rate": 2135.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2264
+  },
+  "693433": {
+    "name": "Woo, Bryan",
+    "career_swstr_pct": 0.2873,
+    "career_fb_velo": 95.2,
+    "career_spin_rate": 2261.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 2800
+  },
+  "663567": {
+    "name": "Lambert, Peter",
+    "career_swstr_pct": 0.1483,
+    "career_fb_velo": 93.85,
+    "career_spin_rate": 2223.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1045
+  },
+  "628317": {
+    "name": "Maeda, Kenta",
+    "career_swstr_pct": 0.1876,
+    "career_fb_velo": 90.9,
+    "career_spin_rate": 2278.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 900
+  },
+  "663687": {
+    "name": "Harris, Hogan",
+    "career_swstr_pct": 0.2024,
+    "career_fb_velo": 93.0,
+    "career_spin_rate": 2274.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1838
+  },
+  "657514": {
+    "name": "Bernardino, Brennan",
+    "career_swstr_pct": 0.1519,
+    "career_fb_velo": 91.23,
+    "career_spin_rate": 1959.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1253
+  },
+  "676254": {
+    "name": "Walker, Ryan",
+    "career_swstr_pct": 0.1767,
+    "career_fb_velo": 94.67,
+    "career_spin_rate": 2318.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1820
+  },
+  "686218": {
+    "name": "Sheehan, Emmet",
+    "career_swstr_pct": 0.2318,
+    "career_fb_velo": 95.5,
+    "career_spin_rate": 2367.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1154
+  },
+  "641656": {
+    "name": "Hamilton, Ian",
+    "career_swstr_pct": 0.1975,
+    "career_fb_velo": 95.8,
+    "career_spin_rate": 2274.0,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 531
+  },
+  "543518": {
+    "name": "McGough, Scott",
+    "career_swstr_pct": 0.1794,
+    "career_fb_velo": 93.3,
+    "career_spin_rate": 2344.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 912
+  },
+  "674003": {
+    "name": "Bradford, Cody",
+    "career_swstr_pct": 0.2005,
+    "career_fb_velo": 90.1,
+    "career_spin_rate": 2110.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1146
+  },
+  "687330": {
+    "name": "Kelly, Kevin",
+    "career_swstr_pct": 0.1492,
+    "career_fb_velo": 91.97,
+    "career_spin_rate": 2139.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1492
+  },
+  "681857": {
+    "name": "Olson, Reese",
+    "career_swstr_pct": 0.1379,
+    "career_fb_velo": 94.43,
+    "career_spin_rate": 2279.7,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1185
+  },
+  "676272": {
+    "name": "Miller, Bobby",
+    "career_swstr_pct": 0.1884,
+    "career_fb_velo": 98.35,
+    "career_spin_rate": 2322.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 885
+  },
+  "663878": {
+    "name": "Pearson, Nate",
+    "career_swstr_pct": 0.2213,
+    "career_fb_velo": 97.8,
+    "career_spin_rate": 2279.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 942
+  },
+  "677960": {
+    "name": "Weathers, Ryan",
+    "career_swstr_pct": 0.1749,
+    "career_fb_velo": 95.97,
+    "career_spin_rate": 2299.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1421
+  },
+  "594902": {
+    "name": "Lively, Ben",
+    "career_swstr_pct": 0.1759,
+    "career_fb_velo": 90.13,
+    "career_spin_rate": 2017.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1425
+  },
+  "663941": {
+    "name": "Beck, Tristan",
+    "career_swstr_pct": 0.1827,
+    "career_fb_velo": 94.7,
+    "career_spin_rate": 2116.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 745
+  },
+  "657097": {
+    "name": "Webb, Jacob",
+    "career_swstr_pct": 0.2651,
+    "career_fb_velo": 93.9,
+    "career_spin_rate": 2470.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1302
+  },
+  "679525": {
+    "name": "Marsh, Alec",
+    "career_swstr_pct": 0.2346,
+    "career_fb_velo": 94.2,
+    "career_spin_rate": 2480.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1299
+  },
+  "641703": {
+    "name": "Honeywell, Brent",
+    "career_swstr_pct": 0.1556,
+    "career_fb_velo": 94.8,
+    "career_spin_rate": 2160.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 728
+  },
+  "668674": {
+    "name": "Erceg, Lucas",
+    "career_swstr_pct": 0.2523,
+    "career_fb_velo": 98.07,
+    "career_spin_rate": 2145.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 869
+  },
+  "592426": {
+    "name": "Jackson, Luke",
+    "career_swstr_pct": 0.2014,
+    "career_fb_velo": 94.45,
+    "career_spin_rate": 2307.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 554
+  },
+  "694363": {
+    "name": "Shuster, Jared",
+    "career_swstr_pct": 0.136,
+    "career_fb_velo": 91.95,
+    "career_spin_rate": 2156.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 862
+  },
+  "674370": {
+    "name": "Bido, Osvaldo",
+    "career_swstr_pct": 0.249,
+    "career_fb_velo": 94.67,
+    "career_spin_rate": 2405.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1206
+  },
+  "666277": {
+    "name": "Soriano, George",
+    "career_swstr_pct": 0.1843,
+    "career_fb_velo": 94.35,
+    "career_spin_rate": 2126.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 580
+  },
+  "690986": {
+    "name": "Harrison, Kyle",
+    "career_swstr_pct": 0.2392,
+    "career_fb_velo": 93.57,
+    "career_spin_rate": 2246.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1897
+  },
+  "642048": {
+    "name": "Saucedo, Tayler",
+    "career_swstr_pct": 0.1848,
+    "career_fb_velo": 92.2,
+    "career_spin_rate": 2439.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 598
+  },
+  "682842": {
+    "name": "Uribe, Abner",
+    "career_swstr_pct": 0.2149,
+    "career_fb_velo": 100.35,
+    "career_spin_rate": 2330.0,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 925
+  },
+  "670102": {
+    "name": "Francis, Bowden",
+    "career_swstr_pct": 0.1697,
+    "career_fb_velo": 93.27,
+    "career_spin_rate": 2361.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1716
+  },
+  "676130": {
+    "name": "Butt\u00f3, Jos\u00e9",
+    "career_swstr_pct": 0.2788,
+    "career_fb_velo": 94.4,
+    "career_spin_rate": 2400.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1092
+  },
+  "695243": {
+    "name": "Miller, Mason",
+    "career_swstr_pct": 0.3348,
+    "career_fb_velo": 100.13,
+    "career_spin_rate": 2480.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1495
+  },
+  "613534": {
+    "name": "Adams, Austin",
+    "career_swstr_pct": 0.3605,
+    "career_fb_velo": 93.65,
+    "career_spin_rate": 2634.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 919
+  },
+  "667755": {
+    "name": "Soriano, Jos\u00e9",
+    "career_swstr_pct": 0.1933,
+    "career_fb_velo": 98.3,
+    "career_spin_rate": 2203.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 498
+  },
+  "677944": {
+    "name": "Cecconi, Slade",
+    "career_swstr_pct": 0.1692,
+    "career_fb_velo": 94.27,
+    "career_spin_rate": 2348.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1853
+  },
+  "694037": {
+    "name": "Palencia, Daniel",
+    "career_swstr_pct": 0.2195,
+    "career_fb_velo": 98.95,
+    "career_spin_rate": 2348.0,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 919
+  },
+  "669387": {
+    "name": "Mlodzinski, Carmen",
+    "career_swstr_pct": 0.2062,
+    "career_fb_velo": 96.0,
+    "career_spin_rate": 2210.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1249
+  },
+  "658648": {
+    "name": "Avila, Pedro",
+    "career_swstr_pct": 0.1893,
+    "career_fb_velo": 93.75,
+    "career_spin_rate": 2242.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 825
+  },
+  "700363": {
+    "name": "Smith-Shawver, AJ",
+    "career_swstr_pct": 0.1488,
+    "career_fb_velo": 95.05,
+    "career_spin_rate": 2148.5,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 577
+  },
+  "687396": {
+    "name": "Headrick, Brent",
+    "career_swstr_pct": 0.2231,
+    "career_fb_velo": 92.85,
+    "career_spin_rate": 2352.0,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 512
+  },
+  "605513": {
+    "name": "Turnbull, Spencer",
+    "career_swstr_pct": 0.1884,
+    "career_fb_velo": 92.45,
+    "career_spin_rate": 2479.0,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 547
+  },
+  "676395": {
+    "name": "Garcia, Robert",
+    "career_swstr_pct": 0.2607,
+    "career_fb_velo": 94.4,
+    "career_spin_rate": 2232.0,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1189
+  },
+  "682120": {
+    "name": "Herrin, Tim",
+    "career_swstr_pct": 0.1901,
+    "career_fb_velo": 96.05,
+    "career_spin_rate": 2399.5,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 456
+  },
+  "647336": {
+    "name": "Soroka, Michael",
+    "career_swstr_pct": 0.2046,
+    "career_fb_velo": 93.55,
+    "career_spin_rate": 2530.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1161
+  },
+  "683232": {
+    "name": "Mears, Nick",
+    "career_swstr_pct": 0.1676,
+    "career_fb_velo": 95.97,
+    "career_spin_rate": 2262.3,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3,
+    "career_pitch_count": 1288
+  },
+  "681190": {
+    "name": "V\u00e1squez, Randy",
+    "career_swstr_pct": 0.1907,
+    "career_fb_velo": 93.9,
+    "career_spin_rate": 2402.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 926
+  },
+  "663542": {
+    "name": "Hudson, Bryan",
+    "career_swstr_pct": 0.1966,
+    "career_fb_velo": 90.9,
+    "career_spin_rate": 2251.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 695
+  },
+  "660896": {
+    "name": "Alcala, Jorge",
+    "career_swstr_pct": 0.2935,
+    "career_fb_velo": 97.75,
+    "career_spin_rate": 2477.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 899
+  },
+  "676979": {
+    "name": "Crochet, Garrett",
+    "career_swstr_pct": 0.3098,
+    "career_fb_velo": 96.8,
+    "career_spin_rate": 2479.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 2416
+  },
+  "680767": {
+    "name": "Vodnik, Victor",
+    "career_swstr_pct": 0.1782,
+    "career_fb_velo": 98.35,
+    "career_spin_rate": 2296.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1359
+  },
+  "671212": {
+    "name": "Boyle, Joe",
+    "career_swstr_pct": 0.2596,
+    "career_fb_velo": 98.1,
+    "career_spin_rate": 2542.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1023
+  },
+  "693312": {
+    "name": "Nicolas, Kyle",
+    "career_swstr_pct": 0.176,
+    "career_fb_velo": 97.5,
+    "career_spin_rate": 2370.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 853
+  },
+  "676106": {
+    "name": "Hancock, Emerson",
+    "career_swstr_pct": 0.2344,
+    "career_fb_velo": 94.15,
+    "career_spin_rate": 2387.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 723
+  },
+  "684007": {
+    "name": "Imanaga, Shota",
+    "career_swstr_pct": 0.1691,
+    "career_fb_velo": 91.25,
+    "career_spin_rate": 2462.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 2402
+  },
+  "680730": {
+    "name": "Parker, Mitchell",
+    "career_swstr_pct": 0.1127,
+    "career_fb_velo": 92.75,
+    "career_spin_rate": 2179.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 2669
+  },
+  "661563": {
+    "name": "Gil, Luis",
+    "career_swstr_pct": 0.2584,
+    "career_fb_velo": 95.95,
+    "career_spin_rate": 2453.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1790
+  },
+  "668964": {
+    "name": "Myers, Tobias",
+    "career_swstr_pct": 0.1785,
+    "career_fb_velo": 93.2,
+    "career_spin_rate": 2253.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1245
+  },
+  "680573": {
+    "name": "Woods Richardson, Simeon",
+    "career_swstr_pct": 0.2185,
+    "career_fb_velo": 93.15,
+    "career_spin_rate": 2219.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1780
+  },
+  "694973": {
+    "name": "Skenes, Paul",
+    "career_swstr_pct": 0.2735,
+    "career_fb_velo": 98.5,
+    "career_spin_rate": 2249.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 2001
+  },
+  "686799": {
+    "name": "Kochanowicz, Jack",
+    "career_swstr_pct": 0.1675,
+    "career_fb_velo": 95.85,
+    "career_spin_rate": 2206.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 971
+  },
+  "671922": {
+    "name": "Smith, Cade",
+    "career_swstr_pct": 0.3131,
+    "career_fb_velo": 96.2,
+    "career_spin_rate": 2300.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1632
+  },
+  "672456": {
+    "name": "Montero, Keider",
+    "career_swstr_pct": 0.1642,
+    "career_fb_velo": 94.3,
+    "career_spin_rate": 2195.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1091
+  },
+  "686563": {
+    "name": "Cannon, Jonathan",
+    "career_swstr_pct": 0.25,
+    "career_fb_velo": 94.05,
+    "career_spin_rate": 2233.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 574
+  },
+  "806185": {
+    "name": "Birdsong, Hayden",
+    "career_swstr_pct": 0.1953,
+    "career_fb_velo": 95.65,
+    "career_spin_rate": 2347.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1146
+  },
+  "684320": {
+    "name": "Rodr\u00edguez, Yariel",
+    "career_swstr_pct": 0.2101,
+    "career_fb_velo": 94.8,
+    "career_spin_rate": 2401.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1089
+  },
+  "808967": {
+    "name": "Yamamoto, Yoshinobu",
+    "career_swstr_pct": 0.186,
+    "career_fb_velo": 95.45,
+    "career_spin_rate": 2179.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1577
+  },
+  "689147": {
+    "name": "Kerkering, Orion",
+    "career_swstr_pct": 0.2754,
+    "career_fb_velo": 97.55,
+    "career_spin_rate": 2384.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 673
+  },
+  "680885": {
+    "name": "Schwellenbach, Spencer",
+    "career_swstr_pct": 0.2373,
+    "career_fb_velo": 96.6,
+    "career_spin_rate": 2291.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1099
+  },
+  "676962": {
+    "name": "Brown, Ben",
+    "career_swstr_pct": 0.161,
+    "career_fb_velo": 96.1,
+    "career_spin_rate": 2217.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1510
+  },
+  "689017": {
+    "name": "Knack, Landon",
+    "career_swstr_pct": 0.1827,
+    "career_fb_velo": 93.3,
+    "career_spin_rate": 2425.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 907
+  },
+  "683627": {
+    "name": "Molina, Anthony",
+    "career_swstr_pct": 0.149,
+    "career_fb_velo": 95.2,
+    "career_spin_rate": 2141.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 776
+  },
+  "700249": {
+    "name": "Povich, Cade",
+    "career_swstr_pct": 0.1851,
+    "career_fb_velo": 92.3,
+    "career_spin_rate": 2338.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1299
+  },
+  "673513": {
+    "name": "Matsui, Yuki",
+    "career_swstr_pct": 0.1851,
+    "career_fb_velo": 92.15,
+    "career_spin_rate": 2439.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 850
+  },
+  "694738": {
+    "name": "Roupp, Landen",
+    "career_swstr_pct": 0.0867,
+    "career_fb_velo": 93.4,
+    "career_spin_rate": 2057.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1098
+  },
+  "678368": {
+    "name": "Bellozo, Valente",
+    "career_swstr_pct": 0.1436,
+    "career_fb_velo": 90.0,
+    "career_spin_rate": 2118.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 791
+  },
+  "656550": {
+    "name": "Holmes, Grant",
+    "career_swstr_pct": 0.1804,
+    "career_fb_velo": 94.55,
+    "career_spin_rate": 2314.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1023
+  },
+  "676974": {
+    "name": "Meyer, Max",
+    "career_swstr_pct": 0.1388,
+    "career_fb_velo": 94.55,
+    "career_spin_rate": 2449.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 614
+  },
+  "678495": {
+    "name": "Rodr\u00edguez, Randy",
+    "career_swstr_pct": 0.265,
+    "career_fb_velo": 97.5,
+    "career_spin_rate": 2591.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 875
+  },
+  "663893": {
+    "name": "Little, Brendon",
+    "career_swstr_pct": 0.2764,
+    "career_fb_velo": 93.95,
+    "career_spin_rate": 2048.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 969
+  },
+  "687863": {
+    "name": "Hodge, Porter",
+    "career_swstr_pct": 0.2142,
+    "career_fb_velo": 95.75,
+    "career_spin_rate": 2390.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 707
+  },
+  "680736": {
+    "name": "Wrobleski, Justin",
+    "career_swstr_pct": 0.2875,
+    "career_fb_velo": 95.55,
+    "career_spin_rate": 2394.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 662
+  },
+  "683004": {
+    "name": "Leiter, Jack",
+    "career_swstr_pct": 0.2382,
+    "career_fb_velo": 96.85,
+    "career_spin_rate": 2387.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1345
+  },
+  "656641": {
+    "name": "Latz, Jacob",
+    "career_swstr_pct": 0.2328,
+    "career_fb_velo": 94.55,
+    "career_spin_rate": 2308.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1087
+  },
+  "676428": {
+    "name": "Hurter, Brant",
+    "career_swstr_pct": 0.1207,
+    "career_fb_velo": 92.1,
+    "career_spin_rate": 2101.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 877
+  },
+  "701581": {
+    "name": "Festa, David",
+    "career_swstr_pct": 0.1739,
+    "career_fb_velo": 94.4,
+    "career_spin_rate": 2383.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 720
+  },
+  "702352": {
+    "name": "Bivens, Spencer",
+    "career_swstr_pct": 0.0891,
+    "career_fb_velo": 94.85,
+    "career_spin_rate": 1989.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 849
+  },
+  "458677": {
+    "name": "Wilson, Justin",
+    "career_swstr_pct": 0.31,
+    "career_fb_velo": 95.0,
+    "career_spin_rate": 2232.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 787
+  },
+  "621053": {
+    "name": "Ferguson, Tyler",
+    "career_swstr_pct": 0.2707,
+    "career_fb_velo": 95.3,
+    "career_spin_rate": 2327.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 697
+  },
+  "592155": {
+    "name": "Booser, Cam",
+    "career_swstr_pct": 0.2342,
+    "career_fb_velo": 95.4,
+    "career_spin_rate": 2109.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 547
+  },
+  "663568": {
+    "name": "Kolek, Stephen",
+    "career_swstr_pct": 0.1708,
+    "career_fb_velo": 94.9,
+    "career_spin_rate": 2217.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 761
+  },
+  "673929": {
+    "name": "Leasure, Jordan",
+    "career_swstr_pct": 0.2564,
+    "career_fb_velo": 96.15,
+    "career_spin_rate": 2328.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 940
+  },
+  "669372": {
+    "name": "Ginn, J.T.",
+    "career_swstr_pct": 0.2141,
+    "career_fb_velo": 92.4,
+    "career_spin_rate": 1880.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1069
+  },
+  "676282": {
+    "name": "Cantillo, Joey",
+    "career_swstr_pct": 0.1728,
+    "career_fb_velo": 91.95,
+    "career_spin_rate": 1861.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 1034
+  },
+  "685299": {
+    "name": "Gordon, Tanner",
+    "career_swstr_pct": 0.1353,
+    "career_fb_velo": 92.2,
+    "career_spin_rate": 2220.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 959
+  },
+  "681517": {
+    "name": "Leahy, Kyle",
+    "career_swstr_pct": 0.2075,
+    "career_fb_velo": 95.45,
+    "career_spin_rate": 2324.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 716
+  },
+  "687134": {
+    "name": "Blalock, Bradley",
+    "career_swstr_pct": 0.1109,
+    "career_fb_velo": 94.05,
+    "career_spin_rate": 2060.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 740
+  },
+  "805673": {
+    "name": "Matthews, Zebby",
+    "career_swstr_pct": 0.2077,
+    "career_fb_velo": 95.55,
+    "career_spin_rate": 2280.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 864
+  },
+  "683409": {
+    "name": "Chivilli, Angel",
+    "career_swstr_pct": 0.105,
+    "career_fb_velo": 96.6,
+    "career_spin_rate": 2283.0,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 682
+  },
+  "687911": {
+    "name": "King, Bryan",
+    "career_swstr_pct": 0.2415,
+    "career_fb_velo": 92.05,
+    "career_spin_rate": 2172.5,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2,
+    "career_pitch_count": 874
+  }
+}

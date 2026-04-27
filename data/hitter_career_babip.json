@@ -1,0 +1,6373 @@
+{
+  "572191": {
+    "name": "Taylor, Michael A.",
+    "career_pa_equiv": 1469.0,
+    "career_babip": 0.2723,
+    "career_hard_hit": 0.3769,
+    "career_barrel": 0.102,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "656716": {
+    "name": "McKinstry, Zach",
+    "career_pa_equiv": 1539.0,
+    "career_babip": 0.2832,
+    "career_hard_hit": 0.3195,
+    "career_barrel": 0.0602,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "542303": {
+    "name": "Ozuna, Marcell",
+    "career_pa_equiv": 2379.0,
+    "career_babip": 0.3115,
+    "career_hard_hit": 0.4807,
+    "career_barrel": 0.143,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682985": {
+    "name": "Greene, Riley",
+    "career_pa_equiv": 2073.0,
+    "career_babip": 0.3143,
+    "career_hard_hit": 0.4626,
+    "career_barrel": 0.133,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "663624": {
+    "name": "Mountcastle, Ryan",
+    "career_pa_equiv": 1943.0,
+    "career_babip": 0.3106,
+    "career_hard_hit": 0.458,
+    "career_barrel": 0.1201,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "700932": {
+    "name": "Manzardo, Kyle",
+    "career_pa_equiv": 687.0,
+    "career_babip": 0.284,
+    "career_hard_hit": 0.429,
+    "career_barrel": 0.1126,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "664774": {
+    "name": "Wade Jr., LaMonte",
+    "career_pa_equiv": 1413.0,
+    "career_babip": 0.2829,
+    "career_hard_hit": 0.3858,
+    "career_barrel": 0.0848,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666158": {
+    "name": "Lux, Gavin",
+    "career_pa_equiv": 1461.0,
+    "career_babip": 0.3153,
+    "career_hard_hit": 0.3926,
+    "career_barrel": 0.0523,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "687462": {
+    "name": "Horwitz, Spencer",
+    "career_pa_equiv": 792.0,
+    "career_babip": 0.3187,
+    "career_hard_hit": 0.3632,
+    "career_barrel": 0.0807,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "666134": {
+    "name": "Jones, Nolan",
+    "career_pa_equiv": 1218.0,
+    "career_babip": 0.2966,
+    "career_hard_hit": 0.445,
+    "career_barrel": 0.1079,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668709": {
+    "name": "Bleday, JJ",
+    "career_pa_equiv": 1527.0,
+    "career_babip": 0.2665,
+    "career_hard_hit": 0.3624,
+    "career_barrel": 0.0787,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669397": {
+    "name": "Allen, Nick",
+    "career_pa_equiv": 1176.0,
+    "career_babip": 0.2628,
+    "career_hard_hit": 0.2292,
+    "career_barrel": 0.0082,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "514888": {
+    "name": "Altuve, Jose",
+    "career_pa_equiv": 2350.0,
+    "career_babip": 0.3405,
+    "career_hard_hit": 0.3077,
+    "career_barrel": 0.0702,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "661388": {
+    "name": "Contreras, William",
+    "career_pa_equiv": 2325.0,
+    "career_babip": 0.3266,
+    "career_hard_hit": 0.4857,
+    "career_barrel": 0.093,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "606466": {
+    "name": "Marte, Ketel",
+    "career_pa_equiv": 2347.0,
+    "career_babip": 0.323,
+    "career_hard_hit": 0.4628,
+    "career_barrel": 0.0992,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "624503": {
+    "name": "Gordon, Nick",
+    "career_pa_equiv": 811.0,
+    "career_babip": 0.2937,
+    "career_hard_hit": 0.3859,
+    "career_barrel": 0.0767,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663698": {
+    "name": "Bart, Joey",
+    "career_pa_equiv": 1000.0,
+    "career_babip": 0.2907,
+    "career_hard_hit": 0.3988,
+    "career_barrel": 0.0955,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666397": {
+    "name": "Julien, Edouard",
+    "career_pa_equiv": 917.0,
+    "career_babip": 0.2815,
+    "career_hard_hit": 0.4194,
+    "career_barrel": 0.118,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "493329": {
+    "name": "Gurriel, Yuli",
+    "career_pa_equiv": 978.0,
+    "career_babip": 0.2929,
+    "career_hard_hit": 0.3568,
+    "career_barrel": 0.0186,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "666181": {
+    "name": "Benson, Will",
+    "career_pa_equiv": 1031.0,
+    "career_babip": 0.2759,
+    "career_hard_hit": 0.4391,
+    "career_barrel": 0.1152,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672761": {
+    "name": "P\u00e9rez, Wenceel",
+    "career_pa_equiv": 808.0,
+    "career_babip": 0.2929,
+    "career_hard_hit": 0.3503,
+    "career_barrel": 0.064,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "518595": {
+    "name": "d'Arnaud, Travis",
+    "career_pa_equiv": 1290.0,
+    "career_babip": 0.289,
+    "career_hard_hit": 0.4018,
+    "career_barrel": 0.0957,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669911": {
+    "name": "Toglia, Michael",
+    "career_pa_equiv": 1067.0,
+    "career_babip": 0.2509,
+    "career_hard_hit": 0.4602,
+    "career_barrel": 0.1224,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672284": {
+    "name": "Kelenic, Jarred",
+    "career_pa_equiv": 1111.0,
+    "career_babip": 0.2715,
+    "career_hard_hit": 0.4332,
+    "career_barrel": 0.1053,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "570482": {
+    "name": "Urshela, Gio",
+    "career_pa_equiv": 1437.0,
+    "career_babip": 0.3196,
+    "career_hard_hit": 0.3344,
+    "career_barrel": 0.0515,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669065": {
+    "name": "Stowers, Kyle",
+    "career_pa_equiv": 764.0,
+    "career_babip": 0.3126,
+    "career_hard_hit": 0.5155,
+    "career_barrel": 0.1587,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "650391": {
+    "name": "Jim\u00e9nez, Eloy",
+    "career_pa_equiv": 1165.0,
+    "career_babip": 0.3178,
+    "career_hard_hit": 0.4961,
+    "career_barrel": 0.1028,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663728": {
+    "name": "Raleigh, Cal",
+    "career_pa_equiv": 2317.0,
+    "career_babip": 0.2794,
+    "career_hard_hit": 0.459,
+    "career_barrel": 0.1589,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681146": {
+    "name": "Bride, Jonah",
+    "career_pa_equiv": 690.0,
+    "career_babip": 0.2723,
+    "career_hard_hit": 0.3314,
+    "career_barrel": 0.0368,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "687263": {
+    "name": "Neto, Zach",
+    "career_pa_equiv": 1485.0,
+    "career_babip": 0.2966,
+    "career_hard_hit": 0.4198,
+    "career_barrel": 0.1053,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "668804": {
+    "name": "Reynolds, Bryan",
+    "career_pa_equiv": 2600.0,
+    "career_babip": 0.3117,
+    "career_hard_hit": 0.4545,
+    "career_barrel": 0.0971,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "521692": {
+    "name": "Perez, Salvador",
+    "career_pa_equiv": 2346.0,
+    "career_babip": 0.3039,
+    "career_hard_hit": 0.4598,
+    "career_barrel": 0.119,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666018": {
+    "name": "Aranda, Jonathan",
+    "career_pa_equiv": 755.0,
+    "career_babip": 0.3246,
+    "career_hard_hit": 0.5096,
+    "career_barrel": 0.1202,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641943": {
+    "name": "Palacios, Joshua",
+    "career_pa_equiv": 536.0,
+    "career_babip": 0.2756,
+    "career_hard_hit": 0.4308,
+    "career_barrel": 0.0775,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "606132": {
+    "name": "Tapia, Raimel",
+    "career_pa_equiv": 602.0,
+    "career_babip": 0.3078,
+    "career_hard_hit": 0.3713,
+    "career_barrel": 0.0542,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "687363": {
+    "name": "Scott II, Victor",
+    "career_pa_equiv": 618.0,
+    "career_babip": 0.2564,
+    "career_hard_hit": 0.2789,
+    "career_barrel": 0.0422,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "660644": {
+    "name": "Bruj\u00e1n, Vidal",
+    "career_pa_equiv": 619.0,
+    "career_babip": 0.2548,
+    "career_hard_hit": 0.263,
+    "career_barrel": 0.0162,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "664761": {
+    "name": "Bohm, Alec",
+    "career_pa_equiv": 2352.0,
+    "career_babip": 0.3299,
+    "career_hard_hit": 0.4407,
+    "career_barrel": 0.0639,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669224": {
+    "name": "Wells, Austin",
+    "career_pa_equiv": 937.0,
+    "career_babip": 0.2743,
+    "career_hard_hit": 0.4215,
+    "career_barrel": 0.1006,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "656976": {
+    "name": "Smith, Pavin",
+    "career_pa_equiv": 951.0,
+    "career_babip": 0.2812,
+    "career_hard_hit": 0.4152,
+    "career_barrel": 0.1066,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "592669": {
+    "name": "Renfroe, Hunter",
+    "career_pa_equiv": 1602.0,
+    "career_babip": 0.2854,
+    "career_hard_hit": 0.4036,
+    "career_barrel": 0.0779,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "657557": {
+    "name": "DeJong, Paul",
+    "career_pa_equiv": 1327.0,
+    "career_babip": 0.2593,
+    "career_hard_hit": 0.3797,
+    "career_barrel": 0.0905,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "502671": {
+    "name": "Goldschmidt, Paul",
+    "career_pa_equiv": 2526.0,
+    "career_babip": 0.3259,
+    "career_hard_hit": 0.4798,
+    "career_barrel": 0.1061,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "596847": {
+    "name": "Choi, Ji Man",
+    "career_pa_equiv": 536.0,
+    "career_babip": 0.2668,
+    "career_hard_hit": 0.5021,
+    "career_barrel": 0.137,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "641355": {
+    "name": "Bellinger, Cody",
+    "career_pa_equiv": 2331.0,
+    "career_babip": 0.3162,
+    "career_hard_hit": 0.3509,
+    "career_barrel": 0.0702,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "543685": {
+    "name": "Rendon, Anthony",
+    "career_pa_equiv": 614.0,
+    "career_babip": 0.2766,
+    "career_hard_hit": 0.3855,
+    "career_barrel": 0.0486,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "656305": {
+    "name": "Chapman, Matt",
+    "career_pa_equiv": 2384.0,
+    "career_babip": 0.2872,
+    "career_hard_hit": 0.5078,
+    "career_barrel": 0.1313,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "665742": {
+    "name": "Soto, Juan",
+    "career_pa_equiv": 2800.0,
+    "career_babip": 0.3174,
+    "career_hard_hit": 0.5384,
+    "career_barrel": 0.1587,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669016": {
+    "name": "Marsh, Brandon",
+    "career_pa_equiv": 1834.0,
+    "career_babip": 0.3127,
+    "career_hard_hit": 0.4515,
+    "career_barrel": 0.0869,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "663656": {
+    "name": "Tucker, Kyle",
+    "career_pa_equiv": 2219.0,
+    "career_babip": 0.3223,
+    "career_hard_hit": 0.4332,
+    "career_barrel": 0.1087,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "664023": {
+    "name": "Happ, Ian",
+    "career_pa_equiv": 2652.0,
+    "career_babip": 0.3014,
+    "career_hard_hit": 0.4219,
+    "career_barrel": 0.0936,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "649966": {
+    "name": "Ur\u00edas, Luis",
+    "career_pa_equiv": 1088.0,
+    "career_babip": 0.2755,
+    "career_hard_hit": 0.328,
+    "career_barrel": 0.0666,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "679032": {
+    "name": "Rojas, Johan",
+    "career_pa_equiv": 699.0,
+    "career_babip": 0.3017,
+    "career_hard_hit": 0.2945,
+    "career_barrel": 0.0236,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "595281": {
+    "name": "Kiermaier, Kevin",
+    "career_pa_equiv": 910.0,
+    "career_babip": 0.2863,
+    "career_hard_hit": 0.3353,
+    "career_barrel": 0.0442,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663647": {
+    "name": "Hayes, Ke'Bryan",
+    "career_pa_equiv": 2051.0,
+    "career_babip": 0.2964,
+    "career_hard_hit": 0.4522,
+    "career_barrel": 0.047,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "624585": {
+    "name": "Soler, Jorge",
+    "career_pa_equiv": 1775.0,
+    "career_babip": 0.2839,
+    "career_hard_hit": 0.4497,
+    "career_barrel": 0.1337,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641680": {
+    "name": "Heim, Jonah",
+    "career_pa_equiv": 1875.0,
+    "career_babip": 0.2802,
+    "career_hard_hit": 0.3767,
+    "career_barrel": 0.0674,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672356": {
+    "name": "Arias, Gabriel",
+    "career_pa_equiv": 1034.0,
+    "career_babip": 0.2655,
+    "career_hard_hit": 0.4272,
+    "career_barrel": 0.1001,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "474832": {
+    "name": "Belt, Brandon",
+    "career_pa_equiv": 702.0,
+    "career_babip": 0.2849,
+    "career_hard_hit": 0.393,
+    "career_barrel": 0.1388,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "693307": {
+    "name": "Dingler, Dillon",
+    "career_pa_equiv": 556.0,
+    "career_babip": 0.3122,
+    "career_hard_hit": 0.4604,
+    "career_barrel": 0.0842,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "673490": {
+    "name": "Kim, Ha-Seong",
+    "career_pa_equiv": 1869.0,
+    "career_babip": 0.2976,
+    "career_hard_hit": 0.3243,
+    "career_barrel": 0.0445,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "663898": {
+    "name": "Rodgers, Brendan",
+    "career_pa_equiv": 1440.0,
+    "career_babip": 0.3101,
+    "career_hard_hit": 0.4464,
+    "career_barrel": 0.076,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682626": {
+    "name": "Alvarez, Francisco",
+    "career_pa_equiv": 1042.0,
+    "career_babip": 0.2805,
+    "career_hard_hit": 0.4644,
+    "career_barrel": 0.1058,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "808982": {
+    "name": "Lee, Jung Hoo",
+    "career_pa_equiv": 775.0,
+    "career_babip": 0.3151,
+    "career_hard_hit": 0.3409,
+    "career_barrel": 0.0387,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "455117": {
+    "name": "Maldonado, Mart\u00edn",
+    "career_pa_equiv": 1094.0,
+    "career_babip": 0.2315,
+    "career_hard_hit": 0.3773,
+    "career_barrel": 0.0842,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "680474": {
+    "name": "Schuemann, Max",
+    "career_pa_equiv": 672.0,
+    "career_babip": 0.262,
+    "career_hard_hit": 0.3584,
+    "career_barrel": 0.0456,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "691023": {
+    "name": "Walker, Jordan",
+    "career_pa_equiv": 1039.0,
+    "career_babip": 0.2914,
+    "career_hard_hit": 0.4526,
+    "career_barrel": 0.0905,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "605612": {
+    "name": "Castro, Harold",
+    "career_pa_equiv": 713.0,
+    "career_babip": 0.3142,
+    "career_hard_hit": 0.3164,
+    "career_barrel": 0.0502,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "608701": {
+    "name": "Refsnyder, Rob",
+    "career_pa_equiv": 936.0,
+    "career_babip": 0.3251,
+    "career_hard_hit": 0.4307,
+    "career_barrel": 0.0893,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "596129": {
+    "name": "Vogelbach, Daniel",
+    "career_pa_equiv": 859.0,
+    "career_babip": 0.2808,
+    "career_hard_hit": 0.442,
+    "career_barrel": 0.0999,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663743": {
+    "name": "Fortes, Nick",
+    "career_pa_equiv": 1140.0,
+    "career_babip": 0.2716,
+    "career_hard_hit": 0.3214,
+    "career_barrel": 0.0382,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "624428": {
+    "name": "Frazier, Adam",
+    "career_pa_equiv": 1810.0,
+    "career_babip": 0.2904,
+    "career_hard_hit": 0.2299,
+    "career_barrel": 0.0224,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641820": {
+    "name": "Mancini, Trey",
+    "career_pa_equiv": 850.0,
+    "career_babip": 0.2875,
+    "career_hard_hit": 0.4046,
+    "career_barrel": 0.0805,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "664238": {
+    "name": "Moore, Dylan",
+    "career_pa_equiv": 1104.0,
+    "career_babip": 0.2568,
+    "career_hard_hit": 0.3711,
+    "career_barrel": 0.1082,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "673962": {
+    "name": "Jung, Josh",
+    "career_pa_equiv": 1316.0,
+    "career_babip": 0.3054,
+    "career_hard_hit": 0.4493,
+    "career_barrel": 0.0999,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672275": {
+    "name": "Bailey, Patrick",
+    "career_pa_equiv": 1253.0,
+    "career_babip": 0.2796,
+    "career_hard_hit": 0.3943,
+    "career_barrel": 0.0679,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "657041": {
+    "name": "Thomas, Lane",
+    "career_pa_equiv": 1900.0,
+    "career_babip": 0.2944,
+    "career_hard_hit": 0.3821,
+    "career_barrel": 0.0777,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "458015": {
+    "name": "Votto, Joey",
+    "career_pa_equiv": 618.0,
+    "career_babip": 0.2538,
+    "career_hard_hit": 0.4067,
+    "career_barrel": 0.1106,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "572233": {
+    "name": "Walker, Christian",
+    "career_pa_equiv": 2520.0,
+    "career_babip": 0.2973,
+    "career_hard_hit": 0.4436,
+    "career_barrel": 0.1219,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "667472": {
+    "name": "Myers, Dane",
+    "career_pa_equiv": 511.0,
+    "career_babip": 0.2949,
+    "career_hard_hit": 0.4458,
+    "career_barrel": 0.0763,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "592206": {
+    "name": "Castellanos, Nick",
+    "career_pa_equiv": 2477.0,
+    "career_babip": 0.3097,
+    "career_hard_hit": 0.3788,
+    "career_barrel": 0.082,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668942": {
+    "name": "Rojas, Josh",
+    "career_pa_equiv": 1547.0,
+    "career_babip": 0.2882,
+    "career_hard_hit": 0.352,
+    "career_barrel": 0.0457,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "593160": {
+    "name": "Merrifield, Whit",
+    "career_pa_equiv": 1477.0,
+    "career_babip": 0.3027,
+    "career_hard_hit": 0.2629,
+    "career_barrel": 0.0308,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "694671": {
+    "name": "Langford, Wyatt",
+    "career_pa_equiv": 1130.0,
+    "career_babip": 0.2974,
+    "career_hard_hit": 0.4575,
+    "career_barrel": 0.1151,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "672724": {
+    "name": "Peraza, Oswald",
+    "career_pa_equiv": 513.0,
+    "career_babip": 0.2414,
+    "career_hard_hit": 0.3386,
+    "career_barrel": 0.0552,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "672580": {
+    "name": "Garcia, Maikel",
+    "career_pa_equiv": 1807.0,
+    "career_babip": 0.3128,
+    "career_hard_hit": 0.4574,
+    "career_barrel": 0.0448,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "646240": {
+    "name": "Devers, Rafael",
+    "career_pa_equiv": 2600.0,
+    "career_babip": 0.3228,
+    "career_hard_hit": 0.5369,
+    "career_barrel": 0.1327,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "683002": {
+    "name": "Henderson, Gunnar",
+    "career_pa_equiv": 2124.0,
+    "career_babip": 0.32,
+    "career_hard_hit": 0.5185,
+    "career_barrel": 0.1032,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669134": {
+    "name": "Campusano, Luis",
+    "career_pa_equiv": 523.0,
+    "career_babip": 0.3106,
+    "career_hard_hit": 0.3663,
+    "career_barrel": 0.0572,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "609280": {
+    "name": "Andujar, Miguel",
+    "career_pa_equiv": 890.0,
+    "career_babip": 0.3366,
+    "career_hard_hit": 0.3487,
+    "career_barrel": 0.0405,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "656811": {
+    "name": "O'Hearn, Ryan",
+    "career_pa_equiv": 1551.0,
+    "career_babip": 0.3234,
+    "career_hard_hit": 0.4435,
+    "career_barrel": 0.0791,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "677649": {
+    "name": "Duran, Ezequiel",
+    "career_pa_equiv": 1163.0,
+    "career_babip": 0.3007,
+    "career_hard_hit": 0.3705,
+    "career_barrel": 0.0537,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "693304": {
+    "name": "Gonzales, Nick",
+    "career_pa_equiv": 923.0,
+    "career_babip": 0.3081,
+    "career_hard_hit": 0.3656,
+    "career_barrel": 0.0585,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "676572": {
+    "name": "Wagaman, Eric",
+    "career_pa_equiv": 588.0,
+    "career_babip": 0.3,
+    "career_hard_hit": 0.4568,
+    "career_barrel": 0.0664,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "624512": {
+    "name": "McGuire, Reese",
+    "career_pa_equiv": 778.0,
+    "career_babip": 0.2987,
+    "career_hard_hit": 0.2988,
+    "career_barrel": 0.0471,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "650489": {
+    "name": "Castro, Willi",
+    "career_pa_equiv": 1890.0,
+    "career_babip": 0.2928,
+    "career_hard_hit": 0.3463,
+    "career_barrel": 0.0604,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "676116": {
+    "name": "Noda, Ryan",
+    "career_pa_equiv": 606.0,
+    "career_babip": 0.2607,
+    "career_hard_hit": 0.4222,
+    "career_barrel": 0.1123,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2
+  },
+  "547180": {
+    "name": "Harper, Bryce",
+    "career_pa_equiv": 2183.0,
+    "career_babip": 0.3307,
+    "career_hard_hit": 0.4762,
+    "career_barrel": 0.126,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "643396": {
+    "name": "Kiner-Falefa, Isiah",
+    "career_pa_equiv": 1847.0,
+    "career_babip": 0.31,
+    "career_hard_hit": 0.3099,
+    "career_barrel": 0.019,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "457759": {
+    "name": "Turner, Justin",
+    "career_pa_equiv": 1888.0,
+    "career_babip": 0.3161,
+    "career_hard_hit": 0.3685,
+    "career_barrel": 0.0585,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "663757": {
+    "name": "Grisham, Trent",
+    "career_pa_equiv": 1869.0,
+    "career_babip": 0.2551,
+    "career_hard_hit": 0.4152,
+    "career_barrel": 0.1159,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "657077": {
+    "name": "Verdugo, Alex",
+    "career_pa_equiv": 2080.0,
+    "career_babip": 0.3073,
+    "career_hard_hit": 0.3753,
+    "career_barrel": 0.0529,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669743": {
+    "name": "Call, Alex",
+    "career_pa_equiv": 1005.0,
+    "career_babip": 0.2929,
+    "career_hard_hit": 0.301,
+    "career_barrel": 0.0447,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "663993": {
+    "name": "Lowe, Nathaniel",
+    "career_pa_equiv": 2543.0,
+    "career_babip": 0.3155,
+    "career_hard_hit": 0.4209,
+    "career_barrel": 0.0738,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681297": {
+    "name": "Cowser, Colton",
+    "career_pa_equiv": 998.0,
+    "career_babip": 0.267,
+    "career_hard_hit": 0.4581,
+    "career_barrel": 0.1299,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "650402": {
+    "name": "Torres, Gleyber",
+    "career_pa_equiv": 2537.0,
+    "career_babip": 0.3112,
+    "career_hard_hit": 0.3984,
+    "career_barrel": 0.0819,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "628451": {
+    "name": "Ib\u00e1\u00f1ez, Andy",
+    "career_pa_equiv": 948.0,
+    "career_babip": 0.2968,
+    "career_hard_hit": 0.3879,
+    "career_barrel": 0.0669,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "571657": {
+    "name": "Farmer, Kyle",
+    "career_pa_equiv": 1494.0,
+    "career_babip": 0.2932,
+    "career_hard_hit": 0.3324,
+    "career_barrel": 0.0544,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "664702": {
+    "name": "Straw, Myles",
+    "career_pa_equiv": 1413.0,
+    "career_babip": 0.2859,
+    "career_hard_hit": 0.2549,
+    "career_barrel": 0.0132,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "671221": {
+    "name": "Waters, Drew",
+    "career_pa_equiv": 665.0,
+    "career_babip": 0.2852,
+    "career_hard_hit": 0.3229,
+    "career_barrel": 0.0825,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "621438": {
+    "name": "Taylor, Tyrone",
+    "career_pa_equiv": 1334.0,
+    "career_babip": 0.2845,
+    "career_hard_hit": 0.3672,
+    "career_barrel": 0.0702,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "608070": {
+    "name": "Ram\u00edrez, Jos\u00e9",
+    "career_pa_equiv": 2731.0,
+    "career_babip": 0.331,
+    "career_hard_hit": 0.3853,
+    "career_barrel": 0.0731,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "516416": {
+    "name": "Segura, Jean",
+    "career_pa_equiv": 713.0,
+    "career_babip": 0.3002,
+    "career_hard_hit": 0.3858,
+    "career_barrel": 0.0398,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "518692": {
+    "name": "Freeman, Freddie",
+    "career_pa_equiv": 2703.0,
+    "career_babip": 0.3598,
+    "career_hard_hit": 0.444,
+    "career_barrel": 0.1015,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "573262": {
+    "name": "Yastrzemski, Mike",
+    "career_pa_equiv": 1971.0,
+    "career_babip": 0.2773,
+    "career_hard_hit": 0.4244,
+    "career_barrel": 0.0994,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681624": {
+    "name": "Pages, Andy",
+    "career_pa_equiv": 1067.0,
+    "career_babip": 0.3124,
+    "career_hard_hit": 0.3835,
+    "career_barrel": 0.0932,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "663616": {
+    "name": "Larnach, Trevor",
+    "career_pa_equiv": 1359.0,
+    "career_babip": 0.2957,
+    "career_hard_hit": 0.4579,
+    "career_barrel": 0.0938,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682998": {
+    "name": "Carroll, Corbin",
+    "career_pa_equiv": 2086.0,
+    "career_babip": 0.308,
+    "career_hard_hit": 0.431,
+    "career_barrel": 0.0939,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668800": {
+    "name": "Knizner, Andrew",
+    "career_pa_equiv": 715.0,
+    "career_babip": 0.2677,
+    "career_hard_hit": 0.3456,
+    "career_barrel": 0.0476,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641531": {
+    "name": "Dozier, Hunter",
+    "career_pa_equiv": 591.0,
+    "career_babip": 0.2787,
+    "career_hard_hit": 0.3856,
+    "career_barrel": 0.0715,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "676914": {
+    "name": "Schneider, Davis",
+    "career_pa_equiv": 822.0,
+    "career_babip": 0.2665,
+    "career_hard_hit": 0.3893,
+    "career_barrel": 0.1348,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "670032": {
+    "name": "Lopez, Nicky",
+    "career_pa_equiv": 1187.0,
+    "career_babip": 0.283,
+    "career_hard_hit": 0.2126,
+    "career_barrel": 0.0143,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "678662": {
+    "name": "Tovar, Ezequiel",
+    "career_pa_equiv": 1700.0,
+    "career_babip": 0.3095,
+    "career_hard_hit": 0.3818,
+    "career_barrel": 0.0882,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "665489": {
+    "name": "Guerrero Jr., Vladimir",
+    "career_pa_equiv": 2765.0,
+    "career_babip": 0.3384,
+    "career_hard_hit": 0.5132,
+    "career_barrel": 0.1206,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "518735": {
+    "name": "Grandal, Yasmani",
+    "career_pa_equiv": 1024.0,
+    "career_babip": 0.2711,
+    "career_hard_hit": 0.3846,
+    "career_barrel": 0.0599,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "571771": {
+    "name": "Hern\u00e1ndez, Enrique",
+    "career_pa_equiv": 1559.0,
+    "career_babip": 0.2759,
+    "career_hard_hit": 0.3663,
+    "career_barrel": 0.0566,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669707": {
+    "name": "Triolo, Jared",
+    "career_pa_equiv": 1031.0,
+    "career_babip": 0.2851,
+    "career_hard_hit": 0.3775,
+    "career_barrel": 0.0576,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "668472": {
+    "name": "Pratto, Nick",
+    "career_pa_equiv": 527.0,
+    "career_babip": 0.2648,
+    "career_hard_hit": 0.3997,
+    "career_barrel": 0.0968,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "665923": {
+    "name": "Ruiz, Esteury",
+    "career_pa_equiv": 562.0,
+    "career_babip": 0.2987,
+    "career_hard_hit": 0.2085,
+    "career_barrel": 0.0329,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2
+  },
+  "691406": {
+    "name": "Caminero, Junior",
+    "career_pa_equiv": 830.0,
+    "career_babip": 0.3107,
+    "career_hard_hit": 0.4989,
+    "career_barrel": 0.1346,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "602104": {
+    "name": "Ur\u00edas, Ram\u00f3n",
+    "career_pa_equiv": 1533.0,
+    "career_babip": 0.3013,
+    "career_hard_hit": 0.416,
+    "career_barrel": 0.0834,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "683146": {
+    "name": "Baty, Brett",
+    "career_pa_equiv": 1034.0,
+    "career_babip": 0.2815,
+    "career_hard_hit": 0.432,
+    "career_barrel": 0.0945,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "519317": {
+    "name": "Stanton, Giancarlo",
+    "career_pa_equiv": 1607.0,
+    "career_babip": 0.2723,
+    "career_hard_hit": 0.5263,
+    "career_barrel": 0.1922,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "807799": {
+    "name": "Yoshida, Masataka",
+    "career_pa_equiv": 1206.0,
+    "career_babip": 0.3319,
+    "career_hard_hit": 0.4013,
+    "career_barrel": 0.062,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "668670": {
+    "name": "Rogers, Jake",
+    "career_pa_equiv": 844.0,
+    "career_babip": 0.2554,
+    "career_hard_hit": 0.4312,
+    "career_barrel": 0.1066,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "669289": {
+    "name": "Espinal, Santiago",
+    "career_pa_equiv": 1464.0,
+    "career_babip": 0.3026,
+    "career_hard_hit": 0.2789,
+    "career_barrel": 0.0197,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "676609": {
+    "name": "Caballero, Jos\u00e9",
+    "career_pa_equiv": 1133.0,
+    "career_babip": 0.2784,
+    "career_hard_hit": 0.2654,
+    "career_barrel": 0.0499,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "594777": {
+    "name": "Calhoun, Kole",
+    "career_pa_equiv": 598.0,
+    "career_babip": 0.2528,
+    "career_hard_hit": 0.4399,
+    "career_barrel": 0.0876,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "543333": {
+    "name": "Hosmer, Eric",
+    "career_pa_equiv": 519.0,
+    "career_babip": 0.3119,
+    "career_hard_hit": 0.3882,
+    "career_barrel": 0.0572,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "681546": {
+    "name": "Outman, James",
+    "career_pa_equiv": 871.0,
+    "career_babip": 0.2625,
+    "career_hard_hit": 0.3954,
+    "career_barrel": 0.109,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "664034": {
+    "name": "France, Ty",
+    "career_pa_equiv": 2303.0,
+    "career_babip": 0.3046,
+    "career_hard_hit": 0.3963,
+    "career_barrel": 0.0672,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "643393": {
+    "name": "Kemp, Tony",
+    "career_pa_equiv": 977.0,
+    "career_babip": 0.2738,
+    "career_hard_hit": 0.1727,
+    "career_barrel": 0.0143,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "683737": {
+    "name": "Busch, Michael",
+    "career_pa_equiv": 1240.0,
+    "career_babip": 0.2997,
+    "career_hard_hit": 0.4422,
+    "career_barrel": 0.1388,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "666182": {
+    "name": "Bichette, Bo",
+    "career_pa_equiv": 2262.0,
+    "career_babip": 0.3409,
+    "career_hard_hit": 0.4741,
+    "career_barrel": 0.0834,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "665019": {
+    "name": "Clemens, Kody",
+    "career_pa_equiv": 781.0,
+    "career_babip": 0.2561,
+    "career_hard_hit": 0.4407,
+    "career_barrel": 0.091,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "687597": {
+    "name": "Beck, Jordan",
+    "career_pa_equiv": 772.0,
+    "career_babip": 0.2923,
+    "career_hard_hit": 0.3706,
+    "career_barrel": 0.0893,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "542364": {
+    "name": "Ortega, Rafael",
+    "career_pa_equiv": 507.0,
+    "career_babip": 0.2856,
+    "career_hard_hit": 0.32,
+    "career_barrel": 0.0361,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "660766": {
+    "name": "Yepez, Juan",
+    "career_pa_equiv": 588.0,
+    "career_babip": 0.3097,
+    "career_hard_hit": 0.3372,
+    "career_barrel": 0.0758,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "543228": {
+    "name": "Gomes, Yan",
+    "career_pa_equiv": 808.0,
+    "career_babip": 0.2937,
+    "career_hard_hit": 0.34,
+    "career_barrel": 0.0633,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "660757": {
+    "name": "Gonzalez, Oscar",
+    "career_pa_equiv": 623.0,
+    "career_babip": 0.3158,
+    "career_hard_hit": 0.4079,
+    "career_barrel": 0.0736,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "621020": {
+    "name": "Swanson, Dansby",
+    "career_pa_equiv": 2572.0,
+    "career_babip": 0.3025,
+    "career_hard_hit": 0.4424,
+    "career_barrel": 0.1068,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668904": {
+    "name": "Lewis, Royce",
+    "career_pa_equiv": 1008.0,
+    "career_babip": 0.3051,
+    "career_hard_hit": 0.3986,
+    "career_barrel": 0.1001,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "608369": {
+    "name": "Seager, Corey",
+    "career_pa_equiv": 2177.0,
+    "career_babip": 0.3286,
+    "career_hard_hit": 0.5023,
+    "career_barrel": 0.1373,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669701": {
+    "name": "Smith, Josh",
+    "career_pa_equiv": 1640.0,
+    "career_babip": 0.287,
+    "career_hard_hit": 0.3359,
+    "career_barrel": 0.0484,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "595777": {
+    "name": "Profar, Jurickson",
+    "career_pa_equiv": 2218.0,
+    "career_babip": 0.3041,
+    "career_hard_hit": 0.3771,
+    "career_barrel": 0.055,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "686797": {
+    "name": "Lee, Brooks",
+    "career_pa_equiv": 712.0,
+    "career_babip": 0.282,
+    "career_hard_hit": 0.3474,
+    "career_barrel": 0.0534,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "650490": {
+    "name": "D\u00edaz, Yandy",
+    "career_pa_equiv": 2430.0,
+    "career_babip": 0.3513,
+    "career_hard_hit": 0.5107,
+    "career_barrel": 0.0761,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682177": {
+    "name": "Schneemann, Daniel",
+    "career_pa_equiv": 643.0,
+    "career_babip": 0.2599,
+    "career_hard_hit": 0.4054,
+    "career_barrel": 0.0927,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "665926": {
+    "name": "Gim\u00e9nez, Andr\u00e9s",
+    "career_pa_equiv": 2175.0,
+    "career_babip": 0.3056,
+    "career_hard_hit": 0.3019,
+    "career_barrel": 0.0442,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "453568": {
+    "name": "Blackmon, Charlie",
+    "career_pa_equiv": 1489.0,
+    "career_babip": 0.3156,
+    "career_hard_hit": 0.2973,
+    "career_barrel": 0.048,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663527": {
+    "name": "Nevin, Tyler",
+    "career_pa_equiv": 573.0,
+    "career_babip": 0.2511,
+    "career_hard_hit": 0.393,
+    "career_barrel": 0.0677,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "642180": {
+    "name": "Wade, Tyler",
+    "career_pa_equiv": 501.0,
+    "career_babip": 0.269,
+    "career_hard_hit": 0.1716,
+    "career_barrel": 0.0116,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "519203": {
+    "name": "Rizzo, Anthony",
+    "career_pa_equiv": 1344.0,
+    "career_babip": 0.2812,
+    "career_hard_hit": 0.3753,
+    "career_barrel": 0.0763,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "657136": {
+    "name": "Wong, Connor",
+    "career_pa_equiv": 1134.0,
+    "career_babip": 0.2954,
+    "career_hard_hit": 0.3487,
+    "career_barrel": 0.0691,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "683734": {
+    "name": "Vaughn, Andrew",
+    "career_pa_equiv": 2236.0,
+    "career_babip": 0.3073,
+    "career_hard_hit": 0.4642,
+    "career_barrel": 0.0925,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "663697": {
+    "name": "India, Jonathan",
+    "career_pa_equiv": 2164.0,
+    "career_babip": 0.2932,
+    "career_hard_hit": 0.3554,
+    "career_barrel": 0.066,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "686823": {
+    "name": "Brennan, Will",
+    "career_pa_equiv": 853.0,
+    "career_babip": 0.3201,
+    "career_hard_hit": 0.3124,
+    "career_barrel": 0.0345,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "669222": {
+    "name": "Senzel, Nick",
+    "career_pa_equiv": 1017.0,
+    "career_babip": 0.2736,
+    "career_hard_hit": 0.3217,
+    "career_barrel": 0.0439,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "621512": {
+    "name": "Nido, Tom\u00e1s",
+    "career_pa_equiv": 514.0,
+    "career_babip": 0.2632,
+    "career_hard_hit": 0.3468,
+    "career_barrel": 0.0668,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "542583": {
+    "name": "Aguilar, Jes\u00fas",
+    "career_pa_equiv": 622.0,
+    "career_babip": 0.2826,
+    "career_hard_hit": 0.349,
+    "career_barrel": 0.0688,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "543281": {
+    "name": "Harrison, Josh",
+    "career_pa_equiv": 539.0,
+    "career_babip": 0.2951,
+    "career_hard_hit": 0.3095,
+    "career_barrel": 0.0351,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "592518": {
+    "name": "Machado, Manny",
+    "career_pa_equiv": 2566.0,
+    "career_babip": 0.3265,
+    "career_hard_hit": 0.4887,
+    "career_barrel": 0.1109,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672386": {
+    "name": "Kirk, Alejandro",
+    "career_pa_equiv": 1855.0,
+    "career_babip": 0.3196,
+    "career_hard_hit": 0.4434,
+    "career_barrel": 0.073,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669127": {
+    "name": "Langeliers, Shea",
+    "career_pa_equiv": 1700.0,
+    "career_babip": 0.2864,
+    "career_hard_hit": 0.44,
+    "career_barrel": 0.1216,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "671289": {
+    "name": "Freeman, Tyler",
+    "career_pa_equiv": 1065.0,
+    "career_babip": 0.2969,
+    "career_hard_hit": 0.3689,
+    "career_barrel": 0.0261,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "572138": {
+    "name": "Singleton, Jon",
+    "career_pa_equiv": 510.0,
+    "career_babip": 0.2689,
+    "career_hard_hit": 0.3858,
+    "career_barrel": 0.0822,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2
+  },
+  "605119": {
+    "name": "Anderson, Brian",
+    "career_pa_equiv": 744.0,
+    "career_babip": 0.2739,
+    "career_hard_hit": 0.3969,
+    "career_barrel": 0.0998,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "667670": {
+    "name": "Rooker, Brent",
+    "career_pa_equiv": 1839.0,
+    "career_babip": 0.318,
+    "career_hard_hit": 0.475,
+    "career_barrel": 0.1495,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "664040": {
+    "name": "Lowe, Brandon",
+    "career_pa_equiv": 1680.0,
+    "career_babip": 0.2912,
+    "career_hard_hit": 0.4508,
+    "career_barrel": 0.1181,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "545121": {
+    "name": "Vargas, Ildemaro",
+    "career_pa_equiv": 932.0,
+    "career_babip": 0.305,
+    "career_hard_hit": 0.3179,
+    "career_barrel": 0.0214,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681393": {
+    "name": "Norby, Connor",
+    "career_pa_equiv": 531.0,
+    "career_babip": 0.2959,
+    "career_hard_hit": 0.3778,
+    "career_barrel": 0.1123,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "666149": {
+    "name": "Fitzgerald, Tyler",
+    "career_pa_equiv": 584.0,
+    "career_babip": 0.3031,
+    "career_hard_hit": 0.3003,
+    "career_barrel": 0.065,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "643217": {
+    "name": "Benintendi, Andrew",
+    "career_pa_equiv": 2134.0,
+    "career_babip": 0.3096,
+    "career_hard_hit": 0.3378,
+    "career_barrel": 0.06,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "518626": {
+    "name": "Donaldson, Josh",
+    "career_pa_equiv": 735.0,
+    "career_babip": 0.2539,
+    "career_hard_hit": 0.4537,
+    "career_barrel": 0.1145,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "664983": {
+    "name": "McCarthy, Jake",
+    "career_pa_equiv": 1383.0,
+    "career_babip": 0.3118,
+    "career_hard_hit": 0.2702,
+    "career_barrel": 0.0357,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669261": {
+    "name": "Suwinski, Jack",
+    "career_pa_equiv": 1361.0,
+    "career_babip": 0.2489,
+    "career_hard_hit": 0.4081,
+    "career_barrel": 0.1269,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "605137": {
+    "name": "Bell, Josh",
+    "career_pa_equiv": 2400.0,
+    "career_babip": 0.3004,
+    "career_hard_hit": 0.4259,
+    "career_barrel": 0.0912,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "592325": {
+    "name": "Gamel, Ben",
+    "career_pa_equiv": 522.0,
+    "career_babip": 0.2846,
+    "career_hard_hit": 0.3746,
+    "career_barrel": 0.0694,
+    "seasons": [
+      2022,
+      2024
+    ],
+    "n_seasons": 2
+  },
+  "641658": {
+    "name": "Hampson, Garrett",
+    "career_pa_equiv": 800.0,
+    "career_babip": 0.2804,
+    "career_hard_hit": 0.2791,
+    "career_barrel": 0.0373,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666023": {
+    "name": "Fermin, Freddy",
+    "career_pa_equiv": 950.0,
+    "career_babip": 0.316,
+    "career_hard_hit": 0.361,
+    "career_barrel": 0.0518,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "596019": {
+    "name": "Lindor, Francisco",
+    "career_pa_equiv": 2814.0,
+    "career_babip": 0.3162,
+    "career_hard_hit": 0.4424,
+    "career_barrel": 0.1024,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "547989": {
+    "name": "Abreu, Jos\u00e9",
+    "career_pa_equiv": 1393.0,
+    "career_babip": 0.3105,
+    "career_hard_hit": 0.4598,
+    "career_barrel": 0.0855,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "518792": {
+    "name": "Heyward, Jason",
+    "career_pa_equiv": 881.0,
+    "career_babip": 0.2814,
+    "career_hard_hit": 0.3832,
+    "career_barrel": 0.0643,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "694192": {
+    "name": "Chourio, Jackson",
+    "career_pa_equiv": 1162.0,
+    "career_babip": 0.3224,
+    "career_hard_hit": 0.4356,
+    "career_barrel": 0.0878,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "608671": {
+    "name": "Jankowski, Travis",
+    "career_pa_equiv": 608.0,
+    "career_babip": 0.28,
+    "career_hard_hit": 0.256,
+    "career_barrel": 0.0024,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "642350": {
+    "name": "Siri, Jose",
+    "career_pa_equiv": 1137.0,
+    "career_babip": 0.2564,
+    "career_hard_hit": 0.3773,
+    "career_barrel": 0.1165,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663853": {
+    "name": "Gonzalez, Romy",
+    "career_pa_equiv": 763.0,
+    "career_babip": 0.3223,
+    "career_hard_hit": 0.5273,
+    "career_barrel": 0.1102,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "514917": {
+    "name": "Hern\u00e1ndez, C\u00e9sar",
+    "career_pa_equiv": 617.0,
+    "career_babip": 0.298,
+    "career_hard_hit": 0.297,
+    "career_barrel": 0.024,
+    "seasons": [
+      2022
+    ],
+    "n_seasons": 1
+  },
+  "666624": {
+    "name": "Morel, Christopher",
+    "career_pa_equiv": 1770.0,
+    "career_babip": 0.2713,
+    "career_hard_hit": 0.4421,
+    "career_barrel": 0.1308,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "656180": {
+    "name": "Adams, Riley",
+    "career_pa_equiv": 729.0,
+    "career_babip": 0.2612,
+    "career_hard_hit": 0.4653,
+    "career_barrel": 0.0835,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672820": {
+    "name": "Sosa, Lenyn",
+    "career_pa_equiv": 1086.0,
+    "career_babip": 0.3005,
+    "career_hard_hit": 0.4157,
+    "career_barrel": 0.085,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "702616": {
+    "name": "Holliday, Jackson",
+    "career_pa_equiv": 857.0,
+    "career_babip": 0.2806,
+    "career_hard_hit": 0.4172,
+    "career_barrel": 0.0789,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "666971": {
+    "name": "Gurriel Jr., Lourdes",
+    "career_pa_equiv": 2184.0,
+    "career_babip": 0.3188,
+    "career_hard_hit": 0.4244,
+    "career_barrel": 0.0664,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "596115": {
+    "name": "Story, Trevor",
+    "career_pa_equiv": 1324.0,
+    "career_babip": 0.298,
+    "career_hard_hit": 0.4303,
+    "career_barrel": 0.0998,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "671213": {
+    "name": "Casas, Triston",
+    "career_pa_equiv": 952.0,
+    "career_babip": 0.2912,
+    "career_hard_hit": 0.4551,
+    "career_barrel": 0.1219,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "691718": {
+    "name": "Crow-Armstrong, Pete",
+    "career_pa_equiv": 1057.0,
+    "career_babip": 0.2931,
+    "career_hard_hit": 0.3975,
+    "career_barrel": 0.1084,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "686668": {
+    "name": "Doyle, Brenton",
+    "career_pa_equiv": 1572.0,
+    "career_babip": 0.2861,
+    "career_hard_hit": 0.4097,
+    "career_barrel": 0.1016,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "805779": {
+    "name": "Wilson, Jacob",
+    "career_pa_equiv": 626.0,
+    "career_babip": 0.3514,
+    "career_hard_hit": 0.238,
+    "career_barrel": 0.0185,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "687401": {
+    "name": "Ortiz, Joey",
+    "career_pa_equiv": 1017.0,
+    "career_babip": 0.2842,
+    "career_hard_hit": 0.3567,
+    "career_barrel": 0.0388,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "691016": {
+    "name": "Soderstrom, Tyler",
+    "career_pa_equiv": 975.0,
+    "career_babip": 0.3018,
+    "career_hard_hit": 0.4846,
+    "career_barrel": 0.1138,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "570731": {
+    "name": "Schoop, Jonathan",
+    "career_pa_equiv": 661.0,
+    "career_babip": 0.2543,
+    "career_hard_hit": 0.386,
+    "career_barrel": 0.0463,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "571466": {
+    "name": "Barnhart, Tucker",
+    "career_pa_equiv": 527.0,
+    "career_babip": 0.2595,
+    "career_hard_hit": 0.2502,
+    "career_barrel": 0.0212,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "671056": {
+    "name": "Herrera, Iv\u00e1n",
+    "career_pa_equiv": 711.0,
+    "career_babip": 0.3402,
+    "career_hard_hit": 0.4645,
+    "career_barrel": 0.1014,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "686469": {
+    "name": "Pasquantino, Vinnie",
+    "career_pa_equiv": 1794.0,
+    "career_babip": 0.316,
+    "career_hard_hit": 0.4499,
+    "career_barrel": 0.0882,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682657": {
+    "name": "Mart\u00ednez, Angel",
+    "career_pa_equiv": 653.0,
+    "career_babip": 0.2761,
+    "career_hard_hit": 0.3005,
+    "career_barrel": 0.0303,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "669720": {
+    "name": "Hays, Austin",
+    "career_pa_equiv": 1819.0,
+    "career_babip": 0.3118,
+    "career_hard_hit": 0.3894,
+    "career_barrel": 0.0768,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "444482": {
+    "name": "Peralta, David",
+    "career_pa_equiv": 1172.0,
+    "career_babip": 0.3076,
+    "career_hard_hit": 0.4387,
+    "career_barrel": 0.0645,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "543592": {
+    "name": "Nola, Austin",
+    "career_pa_equiv": 592.0,
+    "career_babip": 0.2708,
+    "career_hard_hit": 0.366,
+    "career_barrel": 0.0188,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "660162": {
+    "name": "Moncada, Yo\u00e1n",
+    "career_pa_equiv": 1079.0,
+    "career_babip": 0.2835,
+    "career_hard_hit": 0.393,
+    "career_barrel": 0.106,
+    "seasons": [
+      2022,
+      2023,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "665506": {
+    "name": "Pache, Cristian",
+    "career_pa_equiv": 538.0,
+    "career_babip": 0.2389,
+    "career_hard_hit": 0.407,
+    "career_barrel": 0.0447,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "462101": {
+    "name": "Andrus, Elvis",
+    "career_pa_equiv": 983.0,
+    "career_babip": 0.2998,
+    "career_hard_hit": 0.3325,
+    "career_barrel": 0.0372,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "650559": {
+    "name": "De La Cruz, Bryan",
+    "career_pa_equiv": 1603.0,
+    "career_babip": 0.2968,
+    "career_hard_hit": 0.4332,
+    "career_barrel": 0.096,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "575929": {
+    "name": "Contreras, Willson",
+    "career_pa_equiv": 1903.0,
+    "career_babip": 0.306,
+    "career_hard_hit": 0.4795,
+    "career_barrel": 0.1208,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "671218": {
+    "name": "Ramos, Heliot",
+    "career_pa_equiv": 1273.0,
+    "career_babip": 0.308,
+    "career_hard_hit": 0.472,
+    "career_barrel": 0.1133,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "621563": {
+    "name": "Wendle, Joey",
+    "career_pa_equiv": 689.0,
+    "career_babip": 0.2883,
+    "career_hard_hit": 0.3705,
+    "career_barrel": 0.0233,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "701538": {
+    "name": "Merrill, Jackson",
+    "career_pa_equiv": 1076.0,
+    "career_babip": 0.3302,
+    "career_hard_hit": 0.4348,
+    "career_barrel": 0.1202,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "677950": {
+    "name": "Thomas, Alek",
+    "career_pa_equiv": 1385.0,
+    "career_babip": 0.2832,
+    "career_hard_hit": 0.391,
+    "career_barrel": 0.0576,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "696285": {
+    "name": "Young, Jacob",
+    "career_pa_equiv": 1006.0,
+    "career_babip": 0.2964,
+    "career_hard_hit": 0.3106,
+    "career_barrel": 0.0152,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "607208": {
+    "name": "Turner, Trea",
+    "career_pa_equiv": 2577.0,
+    "career_babip": 0.3407,
+    "career_hard_hit": 0.4169,
+    "career_barrel": 0.072,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "595909": {
+    "name": "Cave, Jake",
+    "career_pa_equiv": 726.0,
+    "career_babip": 0.2809,
+    "career_hard_hit": 0.3784,
+    "career_barrel": 0.0711,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "691026": {
+    "name": "Winn, Masyn",
+    "career_pa_equiv": 1311.0,
+    "career_babip": 0.3016,
+    "career_hard_hit": 0.3386,
+    "career_barrel": 0.0397,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "666135": {
+    "name": "Kirilloff, Alex",
+    "career_pa_equiv": 653.0,
+    "career_babip": 0.2964,
+    "career_hard_hit": 0.4056,
+    "career_barrel": 0.0819,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "676801": {
+    "name": "McCormick, Chas",
+    "career_pa_equiv": 1247.0,
+    "career_babip": 0.2944,
+    "career_hard_hit": 0.3665,
+    "career_barrel": 0.0947,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672515": {
+    "name": "Moreno, Gabriel",
+    "career_pa_equiv": 1113.0,
+    "career_babip": 0.3312,
+    "career_hard_hit": 0.4132,
+    "career_barrel": 0.0589,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "678009": {
+    "name": "Meadows, Parker",
+    "career_pa_equiv": 656.0,
+    "career_babip": 0.2821,
+    "career_hard_hit": 0.3238,
+    "career_barrel": 0.0713,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "571970": {
+    "name": "Muncy, Max",
+    "career_pa_equiv": 1825.0,
+    "career_babip": 0.267,
+    "career_hard_hit": 0.4687,
+    "career_barrel": 0.1342,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "642715": {
+    "name": "Adames, Willy",
+    "career_pa_equiv": 2629.0,
+    "career_babip": 0.2832,
+    "career_hard_hit": 0.4094,
+    "career_barrel": 0.1249,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "670541": {
+    "name": "Alvarez, Yordan",
+    "career_pa_equiv": 1891.0,
+    "career_babip": 0.3499,
+    "career_hard_hit": 0.5357,
+    "career_barrel": 0.1716,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "624641": {
+    "name": "Sosa, Edmundo",
+    "career_pa_equiv": 1025.0,
+    "career_babip": 0.305,
+    "career_hard_hit": 0.3571,
+    "career_barrel": 0.0687,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "596146": {
+    "name": "Kepler, Max",
+    "career_pa_equiv": 1810.0,
+    "career_babip": 0.2887,
+    "career_hard_hit": 0.4252,
+    "career_barrel": 0.0939,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "553869": {
+    "name": "D\u00edaz, Elias",
+    "career_pa_equiv": 1541.0,
+    "career_babip": 0.296,
+    "career_hard_hit": 0.3775,
+    "career_barrel": 0.0599,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "700250": {
+    "name": "Rice, Ben",
+    "career_pa_equiv": 708.0,
+    "career_babip": 0.2858,
+    "career_hard_hit": 0.5168,
+    "career_barrel": 0.1545,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "543068": {
+    "name": "Cron, C.J.",
+    "career_pa_equiv": 910.0,
+    "career_babip": 0.3041,
+    "career_hard_hit": 0.4157,
+    "career_barrel": 0.1176,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "666176": {
+    "name": "Adell, Jo",
+    "career_pa_equiv": 1371.0,
+    "career_babip": 0.273,
+    "career_hard_hit": 0.455,
+    "career_barrel": 0.1373,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "677551": {
+    "name": "Franco, Wander",
+    "career_pa_equiv": 835.0,
+    "career_babip": 0.3293,
+    "career_hard_hit": 0.399,
+    "career_barrel": 0.0637,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "677587": {
+    "name": "Rocchio, Brayan",
+    "career_pa_equiv": 911.0,
+    "career_babip": 0.2714,
+    "career_hard_hit": 0.2772,
+    "career_barrel": 0.0335,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "664728": {
+    "name": "Isbel, Kyle",
+    "career_pa_equiv": 1426.0,
+    "career_babip": 0.2861,
+    "career_hard_hit": 0.3851,
+    "career_barrel": 0.0375,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "657757": {
+    "name": "Sheets, Gavin",
+    "career_pa_equiv": 1800.0,
+    "career_babip": 0.2848,
+    "career_hard_hit": 0.3834,
+    "career_barrel": 0.0694,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641313": {
+    "name": "Anderson, Tim",
+    "career_pa_equiv": 1206.0,
+    "career_babip": 0.3044,
+    "career_hard_hit": 0.3801,
+    "career_barrel": 0.0343,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "605170": {
+    "name": "Caratini, Victor",
+    "career_pa_equiv": 1200.0,
+    "career_babip": 0.2966,
+    "career_hard_hit": 0.4269,
+    "career_barrel": 0.0637,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641598": {
+    "name": "Garver, Mitch",
+    "career_pa_equiv": 1279.0,
+    "career_babip": 0.2642,
+    "career_hard_hit": 0.4186,
+    "career_barrel": 0.0953,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "630105": {
+    "name": "Cronenworth, Jake",
+    "career_pa_equiv": 2377.0,
+    "career_babip": 0.2887,
+    "career_hard_hit": 0.3562,
+    "career_barrel": 0.0608,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666139": {
+    "name": "Lowe, Josh",
+    "career_pa_equiv": 1521.0,
+    "career_babip": 0.3003,
+    "career_hard_hit": 0.4087,
+    "career_barrel": 0.0865,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "657656": {
+    "name": "Laureano, Ram\u00f3n",
+    "career_pa_equiv": 1584.0,
+    "career_babip": 0.296,
+    "career_hard_hit": 0.417,
+    "career_barrel": 0.1203,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "660670": {
+    "name": "Acu\u00f1a Jr., Ronald",
+    "career_pa_equiv": 1902.0,
+    "career_babip": 0.3498,
+    "career_hard_hit": 0.5247,
+    "career_barrel": 0.1406,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "696100": {
+    "name": "Goodman, Hunter",
+    "career_pa_equiv": 880.0,
+    "career_babip": 0.2993,
+    "career_hard_hit": 0.4479,
+    "career_barrel": 0.126,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "605131": {
+    "name": "Barnes, Austin",
+    "career_pa_equiv": 568.0,
+    "career_babip": 0.2648,
+    "career_hard_hit": 0.2992,
+    "career_barrel": 0.0334,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "665161": {
+    "name": "Pe\u00f1a, Jeremy",
+    "career_pa_equiv": 2385.0,
+    "career_babip": 0.3211,
+    "career_hard_hit": 0.385,
+    "career_barrel": 0.0665,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "656582": {
+    "name": "Joe, Connor",
+    "career_pa_equiv": 1435.0,
+    "career_babip": 0.2851,
+    "career_hard_hit": 0.3622,
+    "career_barrel": 0.0583,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "650859": {
+    "name": "Rengifo, Luis",
+    "career_pa_equiv": 1801.0,
+    "career_babip": 0.3127,
+    "career_hard_hit": 0.3391,
+    "career_barrel": 0.0528,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "456781": {
+    "name": "Solano, Donovan",
+    "career_pa_equiv": 1242.0,
+    "career_babip": 0.3283,
+    "career_hard_hit": 0.4054,
+    "career_barrel": 0.0511,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "572041": {
+    "name": "Pollock, AJ",
+    "career_pa_equiv": 671.0,
+    "career_babip": 0.2785,
+    "career_hard_hit": 0.4194,
+    "career_barrel": 0.0886,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "643565": {
+    "name": "Tauchman, Mike",
+    "career_pa_equiv": 1136.0,
+    "career_babip": 0.3045,
+    "career_hard_hit": 0.399,
+    "career_barrel": 0.0654,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "543305": {
+    "name": "Hicks, Aaron",
+    "career_pa_equiv": 828.0,
+    "career_babip": 0.2755,
+    "career_hard_hit": 0.318,
+    "career_barrel": 0.051,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663886": {
+    "name": "Stephenson, Tyler",
+    "career_pa_equiv": 1557.0,
+    "career_babip": 0.3053,
+    "career_hard_hit": 0.4364,
+    "career_barrel": 0.093,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "673237": {
+    "name": "Diaz, Yainer",
+    "career_pa_equiv": 1563.0,
+    "career_babip": 0.3292,
+    "career_hard_hit": 0.4471,
+    "career_barrel": 0.0942,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "680776": {
+    "name": "Duran, Jarren",
+    "career_pa_equiv": 2016.0,
+    "career_babip": 0.3204,
+    "career_hard_hit": 0.4469,
+    "career_barrel": 0.0855,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "660271": {
+    "name": "Ohtani, Shohei",
+    "career_pa_equiv": 2723.0,
+    "career_babip": 0.3423,
+    "career_hard_hit": 0.5589,
+    "career_barrel": 0.2041,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "665833": {
+    "name": "Cruz, Oneil",
+    "career_pa_equiv": 1504.0,
+    "career_babip": 0.2824,
+    "career_hard_hit": 0.5292,
+    "career_barrel": 0.1607,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "543877": {
+    "name": "V\u00e1zquez, Christian",
+    "career_pa_equiv": 1310.0,
+    "career_babip": 0.2844,
+    "career_hard_hit": 0.3409,
+    "career_barrel": 0.0409,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "673548": {
+    "name": "Suzuki, Seiya",
+    "career_pa_equiv": 2265.0,
+    "career_babip": 0.3185,
+    "career_hard_hit": 0.4716,
+    "career_barrel": 0.1259,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "606192": {
+    "name": "Hern\u00e1ndez, Teoscar",
+    "career_pa_equiv": 2411.0,
+    "career_babip": 0.3109,
+    "career_hard_hit": 0.4879,
+    "career_barrel": 0.1379,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "645277": {
+    "name": "Albies, Ozzie",
+    "career_pa_equiv": 2031.0,
+    "career_babip": 0.3061,
+    "career_hard_hit": 0.3309,
+    "career_barrel": 0.063,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666310": {
+    "name": "Naylor, Bo",
+    "career_pa_equiv": 1033.0,
+    "career_babip": 0.2566,
+    "career_hard_hit": 0.364,
+    "career_barrel": 0.0878,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "543309": {
+    "name": "Higashioka, Kyle",
+    "career_pa_equiv": 1098.0,
+    "career_babip": 0.2817,
+    "career_hard_hit": 0.4295,
+    "career_barrel": 0.0996,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "606115": {
+    "name": "Arcia, Orlando",
+    "career_pa_equiv": 1583.0,
+    "career_babip": 0.2852,
+    "career_hard_hit": 0.3904,
+    "career_barrel": 0.0577,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672695": {
+    "name": "Perdomo, Geraldo",
+    "career_pa_equiv": 2103.0,
+    "career_babip": 0.3052,
+    "career_hard_hit": 0.2638,
+    "career_barrel": 0.0345,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "543257": {
+    "name": "Grossman, Robbie",
+    "career_pa_equiv": 1142.0,
+    "career_babip": 0.2705,
+    "career_hard_hit": 0.3238,
+    "career_barrel": 0.0469,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "606992": {
+    "name": "Haase, Eric",
+    "career_pa_equiv": 790.0,
+    "career_babip": 0.2829,
+    "career_hard_hit": 0.3807,
+    "career_barrel": 0.0755,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "621028": {
+    "name": "Newman, Kevin",
+    "career_pa_equiv": 989.0,
+    "career_babip": 0.3115,
+    "career_hard_hit": 0.2677,
+    "career_barrel": 0.019,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "686780": {
+    "name": "Pag\u00e9s, Pedro",
+    "career_pa_equiv": 607.0,
+    "career_babip": 0.2829,
+    "career_hard_hit": 0.3791,
+    "career_barrel": 0.064,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "608324": {
+    "name": "Bregman, Alex",
+    "career_pa_equiv": 2509.0,
+    "career_babip": 0.3128,
+    "career_hard_hit": 0.3991,
+    "career_barrel": 0.0638,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "578428": {
+    "name": "Iglesias, Jose",
+    "career_pa_equiv": 1101.0,
+    "career_babip": 0.3355,
+    "career_hard_hit": 0.287,
+    "career_barrel": 0.0139,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "608841": {
+    "name": "Meneses, Joey",
+    "career_pa_equiv": 1210.0,
+    "career_babip": 0.3234,
+    "career_hard_hit": 0.4214,
+    "career_barrel": 0.0605,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "656555": {
+    "name": "Hoskins, Rhys",
+    "career_pa_equiv": 1517.0,
+    "career_babip": 0.2835,
+    "career_hard_hit": 0.4405,
+    "career_barrel": 0.1146,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "527038": {
+    "name": "Flores, Wilmer",
+    "career_pa_equiv": 1761.0,
+    "career_babip": 0.2935,
+    "career_hard_hit": 0.3131,
+    "career_barrel": 0.0626,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "553993": {
+    "name": "Su\u00e1rez, Eugenio",
+    "career_pa_equiv": 2620.0,
+    "career_babip": 0.2882,
+    "career_hard_hit": 0.4414,
+    "career_barrel": 0.1335,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "670042": {
+    "name": "Raley, Luke",
+    "career_pa_equiv": 1152.0,
+    "career_babip": 0.2849,
+    "career_hard_hit": 0.4312,
+    "career_barrel": 0.1171,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "607680": {
+    "name": "Pillar, Kevin",
+    "career_pa_equiv": 563.0,
+    "career_babip": 0.2769,
+    "career_hard_hit": 0.322,
+    "career_barrel": 0.0523,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "519058": {
+    "name": "Moustakas, Mike",
+    "career_pa_equiv": 671.0,
+    "career_babip": 0.2837,
+    "career_hard_hit": 0.3628,
+    "career_barrel": 0.0586,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "607043": {
+    "name": "Nimmo, Brandon",
+    "career_pa_equiv": 2670.0,
+    "career_babip": 0.3093,
+    "career_hard_hit": 0.4624,
+    "career_barrel": 0.0857,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "621035": {
+    "name": "Taylor, Chris",
+    "career_pa_equiv": 1209.0,
+    "career_babip": 0.2684,
+    "career_hard_hit": 0.3564,
+    "career_barrel": 0.0907,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "642136": {
+    "name": "Thaiss, Matt",
+    "career_pa_equiv": 764.0,
+    "career_babip": 0.2631,
+    "career_hard_hit": 0.4071,
+    "career_barrel": 0.0794,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666185": {
+    "name": "Carlson, Dylan",
+    "career_pa_equiv": 1249.0,
+    "career_babip": 0.2709,
+    "career_hard_hit": 0.2971,
+    "career_barrel": 0.0477,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "680574": {
+    "name": "McLain, Matt",
+    "career_pa_equiv": 980.0,
+    "career_babip": 0.2992,
+    "career_hard_hit": 0.4141,
+    "career_barrel": 0.0899,
+    "seasons": [
+      2023,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "621043": {
+    "name": "Correa, Carlos",
+    "career_pa_equiv": 2121.0,
+    "career_babip": 0.3241,
+    "career_hard_hit": 0.4536,
+    "career_barrel": 0.0922,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "650333": {
+    "name": "Arraez, Luis",
+    "career_pa_equiv": 2567.0,
+    "career_babip": 0.368,
+    "career_hard_hit": 0.2373,
+    "career_barrel": 0.0236,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "656775": {
+    "name": "Mullins, Cedric",
+    "career_pa_equiv": 2124.0,
+    "career_babip": 0.2878,
+    "career_hard_hit": 0.3602,
+    "career_barrel": 0.0552,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "594807": {
+    "name": "Duvall, Adam",
+    "career_pa_equiv": 998.0,
+    "career_babip": 0.2646,
+    "career_hard_hit": 0.3884,
+    "career_barrel": 0.1216,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "667452": {
+    "name": "Julks, Corey",
+    "career_pa_equiv": 512.0,
+    "career_babip": 0.284,
+    "career_hard_hit": 0.3351,
+    "career_barrel": 0.043,
+    "seasons": [
+      2023,
+      2024
+    ],
+    "n_seasons": 2
+  },
+  "679529": {
+    "name": "Torkelson, Spencer",
+    "career_pa_equiv": 2118.0,
+    "career_babip": 0.2767,
+    "career_hard_hit": 0.454,
+    "career_barrel": 0.1149,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "702332": {
+    "name": "Durbin, Caleb",
+    "career_pa_equiv": 506.0,
+    "career_babip": 0.306,
+    "career_hard_hit": 0.269,
+    "career_barrel": 0.04,
+    "seasons": [
+      2025
+    ],
+    "n_seasons": 1
+  },
+  "664913": {
+    "name": "Brown, Seth",
+    "career_pa_equiv": 1409.0,
+    "career_babip": 0.276,
+    "career_hard_hit": 0.4251,
+    "career_barrel": 0.1129,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "608336": {
+    "name": "Gallo, Joey",
+    "career_pa_equiv": 1002.0,
+    "career_babip": 0.2156,
+    "career_hard_hit": 0.4932,
+    "career_barrel": 0.1691,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663611": {
+    "name": "Madrigal, Nick",
+    "career_pa_equiv": 616.0,
+    "career_babip": 0.3017,
+    "career_hard_hit": 0.2506,
+    "career_barrel": 0.0039,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "443558": {
+    "name": "Cruz, Nelson",
+    "career_pa_equiv": 659.0,
+    "career_babip": 0.2865,
+    "career_hard_hit": 0.4653,
+    "career_barrel": 0.0928,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "664770": {
+    "name": "Lukes, Nathan",
+    "career_pa_equiv": 529.0,
+    "career_babip": 0.3134,
+    "career_hard_hit": 0.3538,
+    "career_barrel": 0.0461,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "668227": {
+    "name": "Arozarena, Randy",
+    "career_pa_equiv": 2656.0,
+    "career_babip": 0.294,
+    "career_hard_hit": 0.4588,
+    "career_barrel": 0.1,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "680977": {
+    "name": "Donovan, Brendan",
+    "career_pa_equiv": 2006.0,
+    "career_babip": 0.3321,
+    "career_hard_hit": 0.3904,
+    "career_barrel": 0.0598,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "543760": {
+    "name": "Semien, Marcus",
+    "career_pa_equiv": 2729.0,
+    "career_babip": 0.2994,
+    "career_hard_hit": 0.3558,
+    "career_barrel": 0.0664,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "572761": {
+    "name": "Carpenter, Matt",
+    "career_pa_equiv": 548.0,
+    "career_babip": 0.2822,
+    "career_hard_hit": 0.3376,
+    "career_barrel": 0.1067,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "605141": {
+    "name": "Betts, Mookie",
+    "career_pa_equiv": 2511.0,
+    "career_babip": 0.3298,
+    "career_hard_hit": 0.4212,
+    "career_barrel": 0.0843,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "671277": {
+    "name": "Garc\u00eda Jr., Luis",
+    "career_pa_equiv": 1913.0,
+    "career_babip": 0.3183,
+    "career_hard_hit": 0.4053,
+    "career_barrel": 0.076,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "686527": {
+    "name": "Canzone, Dominic",
+    "career_pa_equiv": 639.0,
+    "career_babip": 0.2973,
+    "career_hard_hit": 0.4606,
+    "career_barrel": 0.128,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "805367": {
+    "name": "Meidroth, Chase",
+    "career_pa_equiv": 505.0,
+    "career_babip": 0.303,
+    "career_hard_hit": 0.361,
+    "career_barrel": 0.016,
+    "seasons": [
+      2025
+    ],
+    "n_seasons": 1
+  },
+  "542194": {
+    "name": "Bethancourt, Christian",
+    "career_pa_equiv": 812.0,
+    "career_babip": 0.2833,
+    "career_hard_hit": 0.4267,
+    "career_barrel": 0.0943,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "641487": {
+    "name": "Crawford, J.P.",
+    "career_pa_equiv": 2346.0,
+    "career_babip": 0.2977,
+    "career_hard_hit": 0.3426,
+    "career_barrel": 0.0433,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "665487": {
+    "name": "Tatis Jr., Fernando",
+    "career_pa_equiv": 1764.0,
+    "career_babip": 0.316,
+    "career_hard_hit": 0.519,
+    "career_barrel": 0.1184,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "622534": {
+    "name": "Margot, Manuel",
+    "career_pa_equiv": 1042.0,
+    "career_babip": 0.3087,
+    "career_hard_hit": 0.3643,
+    "career_barrel": 0.0417,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "641857": {
+    "name": "McMahon, Ryan",
+    "career_pa_equiv": 2455.0,
+    "career_babip": 0.2863,
+    "career_hard_hit": 0.4768,
+    "career_barrel": 0.1116,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666160": {
+    "name": "Moniak, Mickey",
+    "career_pa_equiv": 1314.0,
+    "career_babip": 0.2986,
+    "career_hard_hit": 0.3941,
+    "career_barrel": 0.1165,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666801": {
+    "name": "Castro, Rodolfo",
+    "career_pa_equiv": 533.0,
+    "career_babip": 0.2729,
+    "career_hard_hit": 0.3505,
+    "career_barrel": 0.0721,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "605204": {
+    "name": "Davis, J.D.",
+    "career_pa_equiv": 1068.0,
+    "career_babip": 0.2931,
+    "career_hard_hit": 0.4836,
+    "career_barrel": 0.1151,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "656413": {
+    "name": "Fairchild, Stuart",
+    "career_pa_equiv": 653.0,
+    "career_babip": 0.275,
+    "career_hard_hit": 0.3473,
+    "career_barrel": 0.086,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "541645": {
+    "name": "Garc\u00eda, Avisa\u00edl",
+    "career_pa_equiv": 549.0,
+    "career_babip": 0.2681,
+    "career_hard_hit": 0.441,
+    "career_barrel": 0.0758,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "446334": {
+    "name": "Longoria, Evan",
+    "career_pa_equiv": 535.0,
+    "career_babip": 0.2849,
+    "career_hard_hit": 0.4896,
+    "career_barrel": 0.1162,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "621566": {
+    "name": "Olson, Matt",
+    "career_pa_equiv": 2828.0,
+    "career_babip": 0.3106,
+    "career_hard_hit": 0.518,
+    "career_barrel": 0.1418,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "543510": {
+    "name": "McCann, James",
+    "career_pa_equiv": 787.0,
+    "career_babip": 0.2756,
+    "career_hard_hit": 0.4271,
+    "career_barrel": 0.0759,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "642731": {
+    "name": "Estrada, Thairo",
+    "career_pa_equiv": 1617.0,
+    "career_babip": 0.3023,
+    "career_hard_hit": 0.3199,
+    "career_barrel": 0.0448,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "647304": {
+    "name": "Naylor, Josh",
+    "career_pa_equiv": 2230.0,
+    "career_babip": 0.3252,
+    "career_hard_hit": 0.4166,
+    "career_barrel": 0.0793,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "656941": {
+    "name": "Schwarber, Kyle",
+    "career_pa_equiv": 2805.0,
+    "career_babip": 0.2762,
+    "career_hard_hit": 0.5469,
+    "career_barrel": 0.1827,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "593428": {
+    "name": "Bogaerts, Xander",
+    "career_pa_equiv": 2311.0,
+    "career_babip": 0.3311,
+    "career_hard_hit": 0.3669,
+    "career_barrel": 0.0619,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "572228": {
+    "name": "Voit, Luke",
+    "career_pa_equiv": 642.0,
+    "career_babip": 0.2754,
+    "career_hard_hit": 0.4344,
+    "career_barrel": 0.1388,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "623912": {
+    "name": "Ram\u00edrez, Harold",
+    "career_pa_equiv": 1115.0,
+    "career_babip": 0.3463,
+    "career_hard_hit": 0.3939,
+    "career_barrel": 0.0437,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "647351": {
+    "name": "Toro, Abraham",
+    "career_pa_equiv": 1000.0,
+    "career_babip": 0.2707,
+    "career_hard_hit": 0.3097,
+    "career_barrel": 0.0522,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "600869": {
+    "name": "Candelario, Jeimer",
+    "career_pa_equiv": 1597.0,
+    "career_babip": 0.2763,
+    "career_hard_hit": 0.349,
+    "career_barrel": 0.0809,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "662139": {
+    "name": "Varsho, Daulton",
+    "career_pa_equiv": 1957.0,
+    "career_babip": 0.2755,
+    "career_hard_hit": 0.3599,
+    "career_barrel": 0.0908,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "672640": {
+    "name": "Lopez, Otto",
+    "career_pa_equiv": 1028.0,
+    "career_babip": 0.306,
+    "career_hard_hit": 0.3855,
+    "career_barrel": 0.0627,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "656896": {
+    "name": "Rivera, Emmanuel",
+    "career_pa_equiv": 1071.0,
+    "career_babip": 0.2942,
+    "career_hard_hit": 0.4128,
+    "career_barrel": 0.0693,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "690993": {
+    "name": "Keith, Colt",
+    "career_pa_equiv": 1024.0,
+    "career_babip": 0.3083,
+    "career_hard_hit": 0.3897,
+    "career_barrel": 0.0717,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "649557": {
+    "name": "D\u00edaz, Aledmys",
+    "career_pa_equiv": 671.0,
+    "career_babip": 0.286,
+    "career_hard_hit": 0.3507,
+    "career_barrel": 0.0434,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "678246": {
+    "name": "Vargas, Miguel",
+    "career_pa_equiv": 1160.0,
+    "career_babip": 0.2553,
+    "career_hard_hit": 0.3549,
+    "career_barrel": 0.0754,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "677594": {
+    "name": "Rodr\u00edguez, Julio",
+    "career_pa_equiv": 2597.0,
+    "career_babip": 0.3241,
+    "career_hard_hit": 0.4975,
+    "career_barrel": 0.1115,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "607054": {
+    "name": "Peterson, Jace",
+    "career_pa_equiv": 758.0,
+    "career_babip": 0.2717,
+    "career_hard_hit": 0.3152,
+    "career_barrel": 0.0577,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "655316": {
+    "name": "Monasterio, Andruw",
+    "career_pa_equiv": 592.0,
+    "career_babip": 0.3007,
+    "career_hard_hit": 0.3553,
+    "career_barrel": 0.0629,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "665828": {
+    "name": "Cabrera, Oswaldo",
+    "career_pa_equiv": 949.0,
+    "career_babip": 0.284,
+    "career_hard_hit": 0.34,
+    "career_barrel": 0.036,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "645444": {
+    "name": "Herrera, Jose",
+    "career_pa_equiv": 562.0,
+    "career_babip": 0.2503,
+    "career_hard_hit": 0.1953,
+    "career_barrel": 0.0029,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "670623": {
+    "name": "Paredes, Isaac",
+    "career_pa_equiv": 2031.0,
+    "career_babip": 0.2885,
+    "career_hard_hit": 0.311,
+    "career_barrel": 0.0564,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668731": {
+    "name": "Baddoo, Akil",
+    "career_pa_equiv": 664.0,
+    "career_babip": 0.254,
+    "career_hard_hit": 0.3467,
+    "career_barrel": 0.0609,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "669304": {
+    "name": "Miranda, Jose",
+    "career_pa_equiv": 1064.0,
+    "career_babip": 0.3164,
+    "career_hard_hit": 0.4029,
+    "career_barrel": 0.0574,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "687952": {
+    "name": "Encarnacion-Strand, Christian",
+    "career_pa_equiv": 501.0,
+    "career_babip": 0.2818,
+    "career_hard_hit": 0.4435,
+    "career_barrel": 0.0953,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "571912": {
+    "name": "Maile, Luke",
+    "career_pa_equiv": 613.0,
+    "career_babip": 0.2681,
+    "career_hard_hit": 0.2972,
+    "career_barrel": 0.069,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "553882": {
+    "name": "Narv\u00e1ez, Omar",
+    "career_pa_equiv": 511.0,
+    "career_babip": 0.2498,
+    "career_hard_hit": 0.2215,
+    "career_barrel": 0.0354,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "516782": {
+    "name": "Marte, Starling",
+    "career_pa_equiv": 1545.0,
+    "career_babip": 0.3222,
+    "career_hard_hit": 0.3862,
+    "career_barrel": 0.0676,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669477": {
+    "name": "Schmitt, Casey",
+    "career_pa_equiv": 738.0,
+    "career_babip": 0.2776,
+    "career_hard_hit": 0.3882,
+    "career_barrel": 0.0803,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "663586": {
+    "name": "Riley, Austin",
+    "career_pa_equiv": 2324.0,
+    "career_babip": 0.3196,
+    "career_hard_hit": 0.5071,
+    "career_barrel": 0.1488,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "592192": {
+    "name": "Canha, Mark",
+    "career_pa_equiv": 1636.0,
+    "career_babip": 0.3039,
+    "career_hard_hit": 0.3656,
+    "career_barrel": 0.0419,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "676694": {
+    "name": "Meyers, Jake",
+    "career_pa_equiv": 1395.0,
+    "career_babip": 0.2932,
+    "career_hard_hit": 0.3544,
+    "career_barrel": 0.0599,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "596103": {
+    "name": "Slater, Austin",
+    "career_pa_equiv": 904.0,
+    "career_babip": 0.2942,
+    "career_hard_hit": 0.4219,
+    "career_barrel": 0.0988,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "502054": {
+    "name": "Pham, Tommy",
+    "career_pa_equiv": 2030.0,
+    "career_babip": 0.2958,
+    "career_hard_hit": 0.4692,
+    "career_barrel": 0.0811,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "621439": {
+    "name": "Buxton, Byron",
+    "career_pa_equiv": 1659.0,
+    "career_babip": 0.298,
+    "career_hard_hit": 0.5001,
+    "career_barrel": 0.1565,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "457705": {
+    "name": "McCutchen, Andrew",
+    "career_pa_equiv": 2119.0,
+    "career_babip": 0.2905,
+    "career_hard_hit": 0.4093,
+    "career_barrel": 0.0892,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "670770": {
+    "name": "Friedl, TJ",
+    "career_pa_equiv": 1840.0,
+    "career_babip": 0.3069,
+    "career_hard_hit": 0.3026,
+    "career_barrel": 0.0324,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "592696": {
+    "name": "Rosario, Eddie",
+    "career_pa_equiv": 1105.0,
+    "career_babip": 0.2712,
+    "career_hard_hit": 0.3691,
+    "career_barrel": 0.0728,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "593871": {
+    "name": "Polanco, Jorge",
+    "career_pa_equiv": 1781.0,
+    "career_babip": 0.2935,
+    "career_hard_hit": 0.4108,
+    "career_barrel": 0.1058,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641645": {
+    "name": "Guillorme, Luis",
+    "career_pa_equiv": 642.0,
+    "career_babip": 0.2955,
+    "career_hard_hit": 0.2397,
+    "career_barrel": 0.0216,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "624414": {
+    "name": "Arroyo, Christian",
+    "career_pa_equiv": 506.0,
+    "career_babip": 0.3183,
+    "career_hard_hit": 0.3839,
+    "career_barrel": 0.0569,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "678882": {
+    "name": "Rafaela, Ceddanne",
+    "career_pa_equiv": 1247.0,
+    "career_babip": 0.2972,
+    "career_hard_hit": 0.3759,
+    "career_barrel": 0.082,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "665804": {
+    "name": "Amaya, Miguel",
+    "career_pa_equiv": 622.0,
+    "career_babip": 0.2866,
+    "career_hard_hit": 0.336,
+    "career_barrel": 0.0608,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "502110": {
+    "name": "Martinez, J.D.",
+    "career_pa_equiv": 1570.0,
+    "career_babip": 0.3114,
+    "career_hard_hit": 0.4702,
+    "career_barrel": 0.1459,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "608385": {
+    "name": "Winker, Jesse",
+    "career_pa_equiv": 1333.0,
+    "career_babip": 0.28,
+    "career_hard_hit": 0.3582,
+    "career_barrel": 0.0716,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "608348": {
+    "name": "Kelly, Carson",
+    "career_pa_equiv": 1239.0,
+    "career_babip": 0.2804,
+    "career_hard_hit": 0.3824,
+    "career_barrel": 0.0671,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "571448": {
+    "name": "Arenado, Nolan",
+    "career_pa_equiv": 2303.0,
+    "career_babip": 0.3192,
+    "career_hard_hit": 0.3546,
+    "career_barrel": 0.0575,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "408234": {
+    "name": "Cabrera, Miguel",
+    "career_pa_equiv": 803.0,
+    "career_babip": 0.3054,
+    "career_hard_hit": 0.3792,
+    "career_barrel": 0.0447,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "500743": {
+    "name": "Rojas, Miguel",
+    "career_pa_equiv": 1584.0,
+    "career_babip": 0.3012,
+    "career_hard_hit": 0.2936,
+    "career_barrel": 0.027,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "676475": {
+    "name": "Burleson, Alec",
+    "career_pa_equiv": 1541.0,
+    "career_babip": 0.3181,
+    "career_hard_hit": 0.4222,
+    "career_barrel": 0.0753,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "518934": {
+    "name": "LeMahieu, DJ",
+    "career_pa_equiv": 1473.0,
+    "career_babip": 0.2955,
+    "career_hard_hit": 0.4214,
+    "career_barrel": 0.0551,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "663837": {
+    "name": "Vierling, Matt",
+    "career_pa_equiv": 1554.0,
+    "career_babip": 0.3046,
+    "career_hard_hit": 0.4329,
+    "career_barrel": 0.0621,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "571745": {
+    "name": "Haniger, Mitch",
+    "career_pa_equiv": 899.0,
+    "career_babip": 0.2691,
+    "career_hard_hit": 0.4653,
+    "career_barrel": 0.103,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "680718": {
+    "name": "Barger, Addison",
+    "career_pa_equiv": 727.0,
+    "career_babip": 0.279,
+    "career_hard_hit": 0.4714,
+    "career_barrel": 0.1058,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "621550": {
+    "name": "Wisdom, Patrick",
+    "career_pa_equiv": 1010.0,
+    "career_babip": 0.2498,
+    "career_hard_hit": 0.4914,
+    "career_barrel": 0.162,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "694384": {
+    "name": "Schanuel, Nolan",
+    "career_pa_equiv": 1303.0,
+    "career_babip": 0.3087,
+    "career_hard_hit": 0.2704,
+    "career_barrel": 0.0383,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "673357": {
+    "name": "Robert Jr., Luis",
+    "career_pa_equiv": 1852.0,
+    "career_babip": 0.3013,
+    "career_hard_hit": 0.4193,
+    "career_barrel": 0.1143,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666969": {
+    "name": "Garc\u00eda, Adolis",
+    "career_pa_equiv": 2473.0,
+    "career_babip": 0.2867,
+    "career_hard_hit": 0.4799,
+    "career_barrel": 0.1326,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "624413": {
+    "name": "Alonso, Pete",
+    "career_pa_equiv": 2747.0,
+    "career_babip": 0.3012,
+    "career_hard_hit": 0.4659,
+    "career_barrel": 0.1479,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641933": {
+    "name": "O'Neill, Tyler",
+    "career_pa_equiv": 1331.0,
+    "career_babip": 0.2779,
+    "career_hard_hit": 0.4435,
+    "career_barrel": 0.143,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681807": {
+    "name": "Fry, David",
+    "career_pa_equiv": 662.0,
+    "career_babip": 0.2892,
+    "career_hard_hit": 0.3838,
+    "career_barrel": 0.0873,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "643376": {
+    "name": "Jansen, Danny",
+    "career_pa_equiv": 1210.0,
+    "career_babip": 0.2754,
+    "career_hard_hit": 0.3771,
+    "career_barrel": 0.0957,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "677800": {
+    "name": "Abreu, Wilyer",
+    "career_pa_equiv": 949.0,
+    "career_babip": 0.3058,
+    "career_hard_hit": 0.4784,
+    "career_barrel": 0.115,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "682663": {
+    "name": "Ram\u00edrez, Agust\u00edn",
+    "career_pa_equiv": 585.0,
+    "career_babip": 0.281,
+    "career_hard_hit": 0.47,
+    "career_barrel": 0.11,
+    "seasons": [
+      2025
+    ],
+    "n_seasons": 1
+  },
+  "680911": {
+    "name": "Miller, Owen",
+    "career_pa_equiv": 786.0,
+    "career_babip": 0.3003,
+    "career_hard_hit": 0.3104,
+    "career_barrel": 0.0346,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "620443": {
+    "name": "Torrens, Luis",
+    "career_pa_equiv": 579.0,
+    "career_babip": 0.2764,
+    "career_hard_hit": 0.4728,
+    "career_barrel": 0.0827,
+    "seasons": [
+      2022,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "676391": {
+    "name": "Clement, Ernie",
+    "career_pa_equiv": 1271.0,
+    "career_babip": 0.3143,
+    "career_hard_hit": 0.2526,
+    "career_barrel": 0.0306,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "624424": {
+    "name": "Conforto, Michael",
+    "career_pa_equiv": 1444.0,
+    "career_babip": 0.2754,
+    "career_hard_hit": 0.4332,
+    "career_barrel": 0.0984,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "680757": {
+    "name": "Kwan, Steven",
+    "career_pa_equiv": 2589.0,
+    "career_babip": 0.3314,
+    "career_hard_hit": 0.2044,
+    "career_barrel": 0.017,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "642133": {
+    "name": "Tellez, Rowdy",
+    "career_pa_equiv": 1683.0,
+    "career_babip": 0.2761,
+    "career_hard_hit": 0.4248,
+    "career_barrel": 0.1122,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "670764": {
+    "name": "Walls, Taylor",
+    "career_pa_equiv": 1384.0,
+    "career_babip": 0.243,
+    "career_hard_hit": 0.2725,
+    "career_barrel": 0.0422,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "595879": {
+    "name": "B\u00e1ez, Javier",
+    "career_pa_equiv": 1863.0,
+    "career_babip": 0.2793,
+    "career_hard_hit": 0.3926,
+    "career_barrel": 0.0655,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "623993": {
+    "name": "Santander, Anthony",
+    "career_pa_equiv": 2189.0,
+    "career_babip": 0.2877,
+    "career_hard_hit": 0.4336,
+    "career_barrel": 0.1059,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "643446": {
+    "name": "McNeil, Jeff",
+    "career_pa_equiv": 2171.0,
+    "career_babip": 0.3234,
+    "career_hard_hit": 0.3008,
+    "career_barrel": 0.0284,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "666163": {
+    "name": "Rortvedt, Ben",
+    "career_pa_equiv": 535.0,
+    "career_babip": 0.2419,
+    "career_hard_hit": 0.2829,
+    "career_barrel": 0.0382,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "592273": {
+    "name": "Drury, Brandon",
+    "career_pa_equiv": 1451.0,
+    "career_babip": 0.2894,
+    "career_hard_hit": 0.4202,
+    "career_barrel": 0.0893,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663368": {
+    "name": "Perkins, Blake",
+    "career_pa_equiv": 773.0,
+    "career_babip": 0.2822,
+    "career_hard_hit": 0.3524,
+    "career_barrel": 0.041,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "682641": {
+    "name": "Matos, Luis",
+    "career_pa_equiv": 593.0,
+    "career_babip": 0.281,
+    "career_hard_hit": 0.347,
+    "career_barrel": 0.0422,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "663457": {
+    "name": "Nootbaar, Lars",
+    "career_pa_equiv": 1838.0,
+    "career_babip": 0.2924,
+    "career_hard_hit": 0.4585,
+    "career_barrel": 0.101,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "665120": {
+    "name": "Walsh, Jared",
+    "career_pa_equiv": 630.0,
+    "career_babip": 0.2518,
+    "career_hard_hit": 0.3993,
+    "career_barrel": 0.0907,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "680869": {
+    "name": "Gelof, Zack",
+    "career_pa_equiv": 948.0,
+    "career_babip": 0.2769,
+    "career_hard_hit": 0.3953,
+    "career_barrel": 0.0991,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "677951": {
+    "name": "Witt Jr., Bobby",
+    "career_pa_equiv": 2722.0,
+    "career_babip": 0.3406,
+    "career_hard_hit": 0.4545,
+    "career_barrel": 0.1185,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "592178": {
+    "name": "Bryant, Kris",
+    "career_pa_equiv": 671.0,
+    "career_babip": 0.3019,
+    "career_hard_hit": 0.309,
+    "career_barrel": 0.0606,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "596059": {
+    "name": "Odor, Rougned",
+    "career_pa_equiv": 629.0,
+    "career_babip": 0.256,
+    "career_hard_hit": 0.3433,
+    "career_barrel": 0.066,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "622761": {
+    "name": "Mateo, Jorge",
+    "career_pa_equiv": 1174.0,
+    "career_babip": 0.2686,
+    "career_hard_hit": 0.3514,
+    "career_barrel": 0.0529,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "660688": {
+    "name": "Ruiz, Keibert",
+    "career_pa_equiv": 1747.0,
+    "career_babip": 0.2971,
+    "career_hard_hit": 0.3006,
+    "career_barrel": 0.04,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "680777": {
+    "name": "Jeffers, Ryan",
+    "career_pa_equiv": 1500.0,
+    "career_babip": 0.2961,
+    "career_hard_hit": 0.3954,
+    "career_barrel": 0.0907,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668715": {
+    "name": "Steer, Spencer",
+    "career_pa_equiv": 1997.0,
+    "career_babip": 0.2934,
+    "career_hard_hit": 0.3663,
+    "career_barrel": 0.0681,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668930": {
+    "name": "Turang, Brice",
+    "career_pa_equiv": 1726.0,
+    "career_babip": 0.307,
+    "career_hard_hit": 0.3541,
+    "career_barrel": 0.0452,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "641584": {
+    "name": "Fraley, Jake",
+    "career_pa_equiv": 1226.0,
+    "career_babip": 0.311,
+    "career_hard_hit": 0.2878,
+    "career_barrel": 0.0526,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "680779": {
+    "name": "Davis, Henry",
+    "career_pa_equiv": 660.0,
+    "career_babip": 0.2315,
+    "career_hard_hit": 0.3867,
+    "career_barrel": 0.087,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "669364": {
+    "name": "Edwards, Xavier",
+    "career_pa_equiv": 1006.0,
+    "career_babip": 0.3469,
+    "career_hard_hit": 0.2658,
+    "career_barrel": 0.0115,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "624431": {
+    "name": "Trevino, Jose",
+    "career_pa_equiv": 1057.0,
+    "career_babip": 0.282,
+    "career_hard_hit": 0.3617,
+    "career_barrel": 0.0457,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "642086": {
+    "name": "Smith, Dominic",
+    "career_pa_equiv": 1270.0,
+    "career_babip": 0.2983,
+    "career_hard_hit": 0.3513,
+    "career_barrel": 0.071,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "596142": {
+    "name": "S\u00e1nchez, Gary",
+    "career_pa_equiv": 1119.0,
+    "career_babip": 0.2641,
+    "career_hard_hit": 0.4766,
+    "career_barrel": 0.1299,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681481": {
+    "name": "Carpenter, Kerry",
+    "career_pa_equiv": 1332.0,
+    "career_babip": 0.3177,
+    "career_hard_hit": 0.4491,
+    "career_barrel": 0.1272,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "595978": {
+    "name": "Hedges, Austin",
+    "career_pa_equiv": 876.0,
+    "career_babip": 0.2164,
+    "career_hard_hit": 0.2684,
+    "career_barrel": 0.0224,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682928": {
+    "name": "Abrams, CJ",
+    "career_pa_equiv": 2153.0,
+    "career_babip": 0.2989,
+    "career_hard_hit": 0.3736,
+    "career_barrel": 0.0638,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682622": {
+    "name": "Marte, Noelvi",
+    "career_pa_equiv": 725.0,
+    "career_babip": 0.306,
+    "career_hard_hit": 0.3798,
+    "career_barrel": 0.0803,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "643289": {
+    "name": "Dub\u00f3n, Mauricio",
+    "career_pa_equiv": 1583.0,
+    "career_babip": 0.3054,
+    "career_hard_hit": 0.2794,
+    "career_barrel": 0.0283,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "671739": {
+    "name": "Harris II, Michael",
+    "career_pa_equiv": 2091.0,
+    "career_babip": 0.3234,
+    "career_hard_hit": 0.4588,
+    "career_barrel": 0.0973,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669221": {
+    "name": "Murphy, Sean",
+    "career_pa_equiv": 1651.0,
+    "career_babip": 0.282,
+    "career_hard_hit": 0.4207,
+    "career_barrel": 0.123,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "686681": {
+    "name": "Massey, Michael",
+    "career_pa_equiv": 1288.0,
+    "career_babip": 0.2931,
+    "career_hard_hit": 0.3707,
+    "career_barrel": 0.0742,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "660707": {
+    "name": "Montero, Elehuris",
+    "career_pa_equiv": 739.0,
+    "career_babip": 0.2765,
+    "career_hard_hit": 0.4211,
+    "career_barrel": 0.0755,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "592450": {
+    "name": "Judge, Aaron",
+    "career_pa_equiv": 2537.0,
+    "career_babip": 0.3621,
+    "career_hard_hit": 0.6103,
+    "career_barrel": 0.2629,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "695578": {
+    "name": "Wood, James",
+    "career_pa_equiv": 1025.0,
+    "career_babip": 0.3087,
+    "career_hard_hit": 0.5483,
+    "career_barrel": 0.1435,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "592885": {
+    "name": "Yelich, Christian",
+    "career_pa_equiv": 2262.0,
+    "career_babip": 0.3221,
+    "career_hard_hit": 0.4813,
+    "career_barrel": 0.0903,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "683011": {
+    "name": "Volpe, Anthony",
+    "career_pa_equiv": 1886.0,
+    "career_babip": 0.273,
+    "career_hard_hit": 0.3973,
+    "career_barrel": 0.0751,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "669357": {
+    "name": "Gorman, Nolan",
+    "career_pa_equiv": 1581.0,
+    "career_babip": 0.268,
+    "career_hard_hit": 0.4313,
+    "career_barrel": 0.1427,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "680700": {
+    "name": "Palacios, Richie",
+    "career_pa_equiv": 589.0,
+    "career_babip": 0.2914,
+    "career_hard_hit": 0.3006,
+    "career_barrel": 0.0389,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "682829": {
+    "name": "De La Cruz, Elly",
+    "career_pa_equiv": 1822.0,
+    "career_babip": 0.3057,
+    "career_hard_hit": 0.4513,
+    "career_barrel": 0.1074,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "670242": {
+    "name": "Wallner, Matt",
+    "career_pa_equiv": 972.0,
+    "career_babip": 0.2797,
+    "career_hard_hit": 0.4853,
+    "career_barrel": 0.1572,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "641343": {
+    "name": "Bauers, Jake",
+    "career_pa_equiv": 836.0,
+    "career_babip": 0.2598,
+    "career_hard_hit": 0.4553,
+    "career_barrel": 0.1394,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "669004": {
+    "name": "Melendez, MJ",
+    "career_pa_equiv": 1652.0,
+    "career_babip": 0.2654,
+    "career_hard_hit": 0.4623,
+    "career_barrel": 0.101,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "676369": {
+    "name": "Vel\u00e1zquez, Nelson",
+    "career_pa_equiv": 615.0,
+    "career_babip": 0.2619,
+    "career_hard_hit": 0.4309,
+    "career_barrel": 0.1395,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "500871": {
+    "name": "Escobar, Eduardo",
+    "career_pa_equiv": 851.0,
+    "career_babip": 0.2849,
+    "career_hard_hit": 0.3505,
+    "career_barrel": 0.0736,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "545361": {
+    "name": "Trout, Mike",
+    "career_pa_equiv": 1543.0,
+    "career_babip": 0.3057,
+    "career_hard_hit": 0.4977,
+    "career_barrel": 0.1731,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "543939": {
+    "name": "Wong, Kolten",
+    "career_pa_equiv": 747.0,
+    "career_babip": 0.2784,
+    "career_hard_hit": 0.3267,
+    "career_barrel": 0.0417,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "643265": {
+    "name": "Cooper, Garrett",
+    "career_pa_equiv": 1042.0,
+    "career_babip": 0.3006,
+    "career_hard_hit": 0.4173,
+    "career_barrel": 0.1042,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "543063": {
+    "name": "Crawford, Brandon",
+    "career_pa_equiv": 858.0,
+    "career_babip": 0.2625,
+    "career_hard_hit": 0.3785,
+    "career_barrel": 0.0795,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "665750": {
+    "name": "Taveras, Leody",
+    "career_pa_equiv": 1604.0,
+    "career_babip": 0.296,
+    "career_hard_hit": 0.3828,
+    "career_barrel": 0.0609,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "467793": {
+    "name": "Santana, Carlos",
+    "career_pa_equiv": 2193.0,
+    "career_babip": 0.2765,
+    "career_hard_hit": 0.3955,
+    "career_barrel": 0.0706,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669242": {
+    "name": "Edman, Tommy",
+    "career_pa_equiv": 1688.0,
+    "career_babip": 0.298,
+    "career_hard_hit": 0.3836,
+    "career_barrel": 0.052,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "665862": {
+    "name": "Chisholm Jr., Jazz",
+    "career_pa_equiv": 1776.0,
+    "career_babip": 0.3005,
+    "career_hard_hit": 0.4263,
+    "career_barrel": 0.1268,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "686217": {
+    "name": "Frelick, Sal",
+    "career_pa_equiv": 1341.0,
+    "career_babip": 0.32,
+    "career_hard_hit": 0.2369,
+    "career_barrel": 0.021,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "666152": {
+    "name": "Hamilton, David",
+    "career_pa_equiv": 511.0,
+    "career_babip": 0.2788,
+    "career_hard_hit": 0.3024,
+    "career_barrel": 0.054,
+    "seasons": [
+      2024,
+      2025
+    ],
+    "n_seasons": 2
+  },
+  "543807": {
+    "name": "Springer, George",
+    "career_pa_equiv": 2466.0,
+    "career_babip": 0.3122,
+    "career_hard_hit": 0.4159,
+    "career_barrel": 0.1016,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681351": {
+    "name": "O'Hoppe, Logan",
+    "career_pa_equiv": 1172.0,
+    "career_babip": 0.2807,
+    "career_hard_hit": 0.466,
+    "career_barrel": 0.1315,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "658668": {
+    "name": "Olivares, Edward",
+    "career_pa_equiv": 755.0,
+    "career_babip": 0.3083,
+    "career_hard_hit": 0.3742,
+    "career_barrel": 0.0716,
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "n_seasons": 3
+  },
+  "663538": {
+    "name": "Hoerner, Nico",
+    "career_pa_equiv": 2495.0,
+    "career_babip": 0.3338,
+    "career_hard_hit": 0.311,
+    "career_barrel": 0.0195,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "671732": {
+    "name": "Butler, Lawrence",
+    "career_pa_equiv": 1210.0,
+    "career_babip": 0.2923,
+    "career_hard_hit": 0.4475,
+    "career_barrel": 0.0988,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "621493": {
+    "name": "Ward, Taylor",
+    "career_pa_equiv": 2299.0,
+    "career_babip": 0.3013,
+    "career_hard_hit": 0.4289,
+    "career_barrel": 0.1214,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "545341": {
+    "name": "Grichuk, Randal",
+    "career_pa_equiv": 1581.0,
+    "career_babip": 0.3115,
+    "career_hard_hit": 0.4594,
+    "career_barrel": 0.0858,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "645302": {
+    "name": "Robles, Victor",
+    "career_pa_equiv": 942.0,
+    "career_babip": 0.3135,
+    "career_hard_hit": 0.2613,
+    "career_barrel": 0.0422,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "624415": {
+    "name": "Biggio, Cavan",
+    "career_pa_equiv": 948.0,
+    "career_babip": 0.2606,
+    "career_hard_hit": 0.2973,
+    "career_barrel": 0.0587,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "614177": {
+    "name": "Reyes, Franmil",
+    "career_pa_equiv": 538.0,
+    "career_babip": 0.267,
+    "career_hard_hit": 0.455,
+    "career_barrel": 0.1186,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "656308": {
+    "name": "Chavis, Michael",
+    "career_pa_equiv": 522.0,
+    "career_babip": 0.2812,
+    "career_hard_hit": 0.3737,
+    "career_barrel": 0.065,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "n_seasons": 2
+  },
+  "607732": {
+    "name": "Stallings, Jacob",
+    "career_pa_equiv": 1070.0,
+    "career_babip": 0.265,
+    "career_hard_hit": 0.3416,
+    "career_barrel": 0.0469,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "542932": {
+    "name": "Berti, Jon",
+    "career_pa_equiv": 1009.0,
+    "career_babip": 0.313,
+    "career_hard_hit": 0.3401,
+    "career_barrel": 0.0472,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669257": {
+    "name": "Smith, Will",
+    "career_pa_equiv": 2112.0,
+    "career_babip": 0.314,
+    "career_hard_hit": 0.4315,
+    "career_barrel": 0.0984,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "676059": {
+    "name": "Westburg, Jordan",
+    "career_pa_equiv": 1027.0,
+    "career_babip": 0.3135,
+    "career_hard_hit": 0.4483,
+    "career_barrel": 0.1046,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "664056": {
+    "name": "Bader, Harrison",
+    "career_pa_equiv": 1595.0,
+    "career_babip": 0.2994,
+    "career_hard_hit": 0.3405,
+    "career_barrel": 0.0659,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "660821": {
+    "name": "S\u00e1nchez, Jes\u00fas",
+    "career_pa_equiv": 1779.0,
+    "career_babip": 0.2906,
+    "career_hard_hit": 0.4585,
+    "career_barrel": 0.1144,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "681082": {
+    "name": "Stott, Bryson",
+    "career_pa_equiv": 2237.0,
+    "career_babip": 0.3061,
+    "career_hard_hit": 0.33,
+    "career_barrel": 0.0446,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "669394": {
+    "name": "Burger, Jake",
+    "career_pa_equiv": 1678.0,
+    "career_babip": 0.2967,
+    "career_hard_hit": 0.4769,
+    "career_barrel": 0.1432,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668901": {
+    "name": "Vientos, Mark",
+    "career_pa_equiv": 1150.0,
+    "career_babip": 0.2911,
+    "career_hard_hit": 0.4901,
+    "career_barrel": 0.122,
+    "seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 3
+  },
+  "592663": {
+    "name": "Realmuto, J.T.",
+    "career_pa_equiv": 2065.0,
+    "career_babip": 0.3128,
+    "career_hard_hit": 0.4563,
+    "career_barrel": 0.1042,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "592626": {
+    "name": "Pederson, Joc",
+    "career_pa_equiv": 1613.0,
+    "career_babip": 0.2956,
+    "career_hard_hit": 0.4916,
+    "career_barrel": 0.126,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "668939": {
+    "name": "Rutschman, Adley",
+    "career_pa_equiv": 2160.0,
+    "career_babip": 0.3042,
+    "career_hard_hit": 0.3762,
+    "career_barrel": 0.0715,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  },
+  "642708": {
+    "name": "Rosario, Amed",
+    "career_pa_equiv": 1752.0,
+    "career_babip": 0.3255,
+    "career_hard_hit": 0.3898,
+    "career_barrel": 0.0435,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_seasons": 4
+  }
+}

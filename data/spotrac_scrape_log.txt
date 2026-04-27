@@ -1,0 +1,198 @@
+======================================================================
+Spotrac Wayback Machine Scraper — target season 2026
+Mode: FULL
+======================================================================
+  Chase Delauter (Hitter, age 25, CLE) ... CDX: no snapshots found
+  José Ramírez (Hitter, age 34, CLE) ... CDX OK (20231210) ... AAV=$20.1M, yrs_rem=3
+  Alec Bohm (Hitter, age 30, PHI) ... CDX OK (20240217) ... AAV=$4.0M, yrs_rem=0
+  Iván Herrera (Hitter, age 26, STL) ... CDX OK (20230725) ... AAV=$0.7M, yrs_rem=0
+  Vinnie Pasquantino (Hitter, age 29, KC) ... CDX: no snapshots found
+  Trent Grisham (Hitter, age 30, NYY) ... CDX: no snapshots found
+  Manny Machado (Hitter, age 34, SD) ... CDX OK (20240323) ... AAV=$31.8M, yrs_rem=8
+  Jesús Luzardo (Pitcher, age 29, PHI) ... CDX: no snapshots found
+  Joe Ryan (Pitcher, age 30, MIN) ... CDX OK (20230622) ... AAV=$0.7M, yrs_rem=0
+  Ronald Acuña (Hitter, age 29, ATL) ... CDX OK (20240422) ... AAV=$12.5M, yrs_rem=3
+  Ke'bryan Hayes (Hitter, age 29, CIN) ... CDX: no snapshots found
+  Corey Seager (Hitter, age 32, TEX) ... CDX OK (20240328) ... AAV=$32.5M, yrs_rem=6
+  Dillon Dingler (Hitter, age 28, DET) ... CDX: no snapshots found
+  Kyle Karros (Hitter, age 24, COL) ... CDX OK (20230718) ... parse failed — raw: 
+  Trea Turner (Hitter, age 33, PHI) ... CDX OK (20240414) ... AAV=$27.3M, yrs_rem=8
+  Aaron Judge (Hitter, age 34, NYY) ... CDX OK (20231004) ... AAV=$40.0M, yrs_rem=5
+  Cristopher Sánchez (Pitcher, age 30, PHI) ... CDX: no snapshots found
+  Gunnar Henderson (Hitter, age 25, BAL) ...     Error: timed out — http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/baltimore-orioles/gunn
+CDX OK (20240320) ... AAV=$0.8M, yrs_rem=0
+  Jackson Merrill (Hitter, age 23, SD) ... CDX OK (20240320) ... parse failed — raw: 
+  Dansby Swanson (Hitter, age 32, CHC) ... CDX OK (20240328) ... AAV=$25.3M, yrs_rem=4
+  Caleb Durbin (Hitter, age 26, BOS) ... CDX: no snapshots found
+  Jakob Marsee (Hitter, age 25, MIA) ... CDX: no snapshots found
+  Marcell Ozuna (Hitter, age 36, PIT) ... CDX: no snapshots found
+  Austin Wells (Hitter, age 27, NYY) ... CDX OK (20231216) ... parse failed — raw: 
+  Kyle Schwarber (Hitter, age 33, PHI) ... CDX OK (20240323) ... AAV=$19.8M, yrs_rem=0
+  Alec Burleson (Hitter, age 28, STL) ... CDX: no snapshots found
+  Michael Busch (Hitter, age 29, CHC) ... CDX: no snapshots found
+  Carson Benge (Hitter, age 23, NYM) ... CDX: no snapshots found
+  Yordan Álvarez (Hitter, age 29, HOU) ... CDX OK (20230602) ... AAV=$19.2M, yrs_rem=2
+  Jonathan Aranda (Hitter, age 28, TB) ... CDX OK (20230816) ... AAV=$0.7M, yrs_rem=0
+  Tj Friedl (Hitter, age 31, CIN) ... CDX: no snapshots found
+  Austin Riley (Hitter, age 29, ATL) ... CDX OK (20240416) ... AAV=$21.2M, yrs_rem=7
+  Evan Carter (Hitter, age 24, TEX) ... CDX: no snapshots found
+  Logan Gilbert (Pitcher, age 29, SEA) ... CDX OK (20231212) ... AAV=$0.8M, yrs_rem=0
+  Jake Cronenworth (Hitter, age 32, SD) ... CDX OK (20230404) ... AAV=$4.2M, yrs_rem=0
+  Mike Trout (Hitter, age 35, LAA) ... CDX OK (20240422) ... AAV=$35.5M, yrs_rem=5
+  Luke Keaschall (Hitter, age 24, MIN) ... CDX: no snapshots found
+  TJ Rumfield (Hitter, age 26, COL) ... CDX: no snapshots found
+  J. p. Crawford (Hitter, age 31, SEA) ... CDX: no snapshots found
+  Sal Stewart (Hitter, age 23, CIN) ... CDX: no snapshots found
+  Luis Rengifo (Hitter, age 29, MIL) ... CDX: no snapshots found
+  Ezequiel Tovar (Hitter, age 25, COL) ... CDX OK (20240410) ... AAV=$9.1M, yrs_rem=4
+  Bryson Stott (Hitter, age 29, PHI) ... CDX OK (20231129) ... AAV=$0.7M, yrs_rem=0
+  Salvador Pérez (Hitter, age 36, KC) ... CDX OK (20240419) ... AAV=$20.5M, yrs_rem=1
+  Matt Mclain (Hitter, age 27, CIN) ... CDX: no snapshots found
+  Nolan Schanuel (Hitter, age 24, LAA) ... CDX: no snapshots found
+  Shohei Ohtani (Hitter, age 32, LAD) ... CDX OK (20240331) ... AAV=$70.0M, yrs_rem=7
+  Josh Smith (Hitter, age 29, TEX) ... CDX: no snapshots found
+  Cody Bellinger (Hitter, age 31, NYY) ... CDX: no snapshots found
+  Tyler Soderstrom (Hitter, age 25, ATH) ... CDX: no snapshots found
+  Ketel Marte (Hitter, age 33, AZ) ... CDX: no snapshots found
+  Josh Naylor (Hitter, age 29, SEA) ... CDX: no snapshots found
+  Kyle Bradish (Pitcher, age 30, BAL) ... CDX: no snapshots found
+  Munetaka Murakami (Hitter, age 26, CWS) ... CDX: no snapshots found
+  Steven Kwan (Hitter, age 29, CLE) ... CDX OK (20230725) ... AAV=$0.7M, yrs_rem=0
+  Tyler Stephenson (Hitter, age 30, CIN) ... CDX: no snapshots found
+  Miguel Vargas (Hitter, age 27, CWS) ... CDX: no snapshots found
+  Víctor Caratini (Hitter, age 33, MIN) ... CDX: no snapshots found
+  Xander Bogaerts (Hitter, age 34, SD) ... CDX OK (20240323) ... AAV=$25.4M, yrs_rem=8
+  Shane Baz (Pitcher, age 27, BAL) ... CDX: no snapshots found
+  Bryce Harper (Hitter, age 34, PHI) ...     HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/philadelphia-phillies/
+CDX OK (20240218) ... AAV=$25.4M, yrs_rem=6
+  Matt Chapman (Hitter, age 33, SF) ... CDX OK (20240410) ... AAV=$18.0M, yrs_rem=0
+  Garrett Mitchell (Hitter, age 28, MIL) ... CDX OK (20230416) ... AAV=$0.7M, yrs_rem=0
+  José Soriano (Pitcher, age 28, LAA) ... CDX OK (20230710) ... AAV=$0.7M, yrs_rem=0
+  Ben Rice (Hitter, age 27, NYY) ... CDX: no snapshots found
+  Michael Wacha (Pitcher, age 35, KC) ... CDX OK (20240417) ... AAV=$16.0M, yrs_rem=0
+  Nick Martínez (Pitcher, age 36, TB) ...     Error: timed out — http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/tampa-bay-rays/nick-ma
+CDX: no snapshots found
+  José Caballero (Hitter, age 30, NYY) ... CDX: no snapshots found
+  Heliot Ramos (Hitter, age 27, SF) ... CDX OK (20230719) ... AAV=$0.7M, yrs_rem=0
+  Luke Raley (Hitter, age 32, SEA) ... CDX: no snapshots found
+  Davis Martin (Pitcher, age 29, CWS) ... CDX: no snapshots found
+  Daniel Schneemann (Hitter, age 29, CLE) ... CDX: no snapshots found
+  Max Muncy (Hitter, age 24, LAD) ... CDX OK (20240402) ... AAV=$12.0M, yrs_rem=0
+  Max Muncy (Hitter, age 24, ATH) ... CDX: no snapshots found
+  Seth Lugo (Pitcher, age 37, KC) ... CDX OK (20240417) ... AAV=$15.0M, yrs_rem=0
+  Michael Mcgreevy (Pitcher, age 26, STL) ... CDX: no snapshots found
+  Riley Greene (Hitter, age 26, DET) ... CDX OK (20230130) ... parse failed — raw: Riley Greene signed a 1 year / - contract with the Detroit Tigers, including an 
+  Taylor Ward (Hitter, age 33, BAL) ... CDX: no snapshots found
+  Eduardo Rodríguez (Pitcher, age 33, AZ) ...     Error: timed out — http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/*/eduardo-rodriguez*&o
+CDX: no snapshots found
+  Otto Lopez (Hitter, age 28, MIA) ...     HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/miami-marlins/otto-lop
+CDX OK (20240416) ... AAV=$0.7M, yrs_rem=0
+  Shea Langeliers (Hitter, age 29, ATH) ...     HTTP 503: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/*/shea-langeliers*&out
+CDX: no snapshots found
+  Andy Pages (Hitter, age 26, LAD) ... CDX OK (20240417) ... AAV=$0.7M, yrs_rem=0
+  Tomoyuki Sugano (Pitcher, age 37, COL) ...     Error: timed out — http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/colorado-rockies/tomoy
+CDX: no snapshots found
+  Clay Holmes (Pitcher, age 33, NYM) ... CDX: no snapshots found
+  Corbin Carroll (Hitter, age 26, AZ) ... CDX: no snapshots found
+  Max Muncy (Hitter, age 36, LAD) ...     Error: timed out — http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/los-angeles-dodgers/ma
+CDX: no snapshots found
+  Max Muncy (Hitter, age 36, ATH) ... CDX: no snapshots found
+  Mike King (Pitcher, age 31, SD) ...     HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/san-diego-padres/mike-
+CDX: no snapshots found
+  Carson Kelly (Hitter, age 32, CHC) ... CDX: no snapshots found
+  Xavier Edwards (Hitter, age 27, MIA) ... CDX: no snapshots found
+  Owen Caissie (Hitter, age 24, MIA) ... CDX: no snapshots found
+  Ildemaro Vargas (Hitter, age 35, AZ) ... CDX: no snapshots found
+  Randy Arozarena (Hitter, age 31, SEA) ... CDX: no snapshots found
+  Giancarlo Stanton (Hitter, age 37, NYY) ... CDX OK (20240402) ... AAV=$25.0M, yrs_rem=3
+  Moisés Ballesteros (Hitter, age 23, CHC) ...     HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/chicago-cubs/moises-ba
+CDX: no snapshots found
+  Oswald Peraza (Hitter, age 26, LAA) ... CDX: no snapshots found
+  Jordan Walker (Hitter, age 24, STL) ... CDX OK (20230603) ... AAV=$0.7M, yrs_rem=0
+  Oneil Cruz (Hitter, age 28, PIT) ...     HTTP 503: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/pittsburgh-pirates/one
+CDX OK (20230418) ... AAV=$0.7M, yrs_rem=0
+  Jack Kochanowicz (Pitcher, age 26, LAA) ... CDX: no snapshots found
+  Casey Schmitt (Hitter, age 27, SF) ... CDX OK (20230807) ... AAV=$0.7M, yrs_rem=0
+  Connelly Early (Pitcher, age 24, BOS) ... CDX: no snapshots found
+  Parker Messick (Pitcher, age 26, CLE) ...     Error: timed out — http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/cleveland-guardians/pa
+CDX: no snapshots found
+  Jose Fernandez (Hitter, age 23, AZ) ... CDX: no snapshots found
+  Shota Imanaga (Pitcher, age 33, CHC) ... CDX: no snapshots found
+  Robbie Ray (Pitcher, age 35, SF) ... CDX OK (20240418) ... AAV=$23.0M, yrs_rem=1
+  Colt Keith (Hitter, age 25, DET) ... CDX OK (20240416) ... AAV=$4.8M, yrs_rem=3
+  Randy Vásquez (Pitcher, age 28, SD) ... CDX OK (20240421) ... AAV=$0.7M, yrs_rem=0
+  Brandon Lockridge (Hitter, age 29, MIL) ... CDX: no snapshots found
+  Matt Olson (Hitter, age 32, ATL) ... CDX OK (20240311) ... AAV=$21.0M, yrs_rem=5
+  Masyn Winn (Hitter, age 24, STL) ... CDX: no snapshots found
+  Nick Kurtz (Hitter, age 23, ATH) ...     HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/*/nick-kurtz*&output=j
+CDX: no snapshots found
+  Martín Pérez (Pitcher, age 35, ATL) ... CDX: no snapshots found
+  Paul Skenes (Pitcher, age 24, PIT) ... CDX OK (20230718) ... parse failed — raw: 
+  Chandler Simpson (Hitter, age 26, TB) ... CDX: no snapshots found
+  Heriberto Hernandez (Hitter, age 27, MIA) ... CDX: no snapshots found
+  Gleyber Torres (Hitter, age 30, DET) ... CDX: no snapshots found
+  Logan O'hoppe (Hitter, age 26, LAA) ... CDX OK (20230608) ... AAV=$0.7M, yrs_rem=0
+  Cal Raleigh (Hitter, age 30, SEA) ... CDX OK (20240205) ... AAV=$0.8M, yrs_rem=0
+  Roman Anthony (Hitter, age 22, BOS) ... CDX: no snapshots found
+  Lawrence Butler (Hitter, age 26, ATH) ... CDX: no snapshots found
+  Luis Castillo (Pitcher, age 34, SEA) ... CDX OK (20231005) ... AAV=$21.6M, yrs_rem=1
+  Bryan Woo (Pitcher, age 26, SEA) ... CDX OK (20230804) ... AAV=$0.7M, yrs_rem=0
+  Trevor Rogers (Pitcher, age 29, BAL) ... CDX: no snapshots found
+  Cam Smith (Hitter, age 23, HOU) ... CDX: no snapshots found
+  Jordan Beck (Hitter, age 25, COL) ... CDX: no snapshots found
+  Spencer Steer (Hitter, age 29, CIN) ... CDX: no snapshots found
+  Francisco Lindor (Hitter, age 33, NYM) ... CDX OK (20240302) ... AAV=$34.1M, yrs_rem=7
+  Logan Webb (Pitcher, age 30, SF) ... CDX OK (20231202) ... AAV=$18.0M, yrs_rem=1
+  Samuel Basallo (Hitter, age 22, BAL) ... CDX: no snapshots found
+  Coby Mayo (Hitter, age 25, BAL) ... CDX: no snapshots found
+  Aaron Nola (Pitcher, age 33, PHI) ... CDX OK (20240402) ... AAV=$24.6M, yrs_rem=4
+  Bailey Ober (Pitcher, age 31, MIN) ... CDX OK (20230829) ... AAV=$0.7M, yrs_rem=0
+  Janson Junk (Pitcher, age 30, MIA) ... CDX: no snapshots found
+  Jake Irvin (Pitcher, age 29, WSH) ... CDX: no snapshots found
+  Ryan O'hearn (Hitter, age 33, PIT) ... CDX: no snapshots found
+  Austin Martin (Hitter, age 27, MIN) ... CDX OK (20240402) ... AAV=$0.7M, yrs_rem=0
+  Willson Contreras (Hitter, age 34, BOS) ... CDX: no snapshots found
+  Jac Caglianone (Hitter, age 23, KC) ... CDX: no snapshots found
+  Drake Baldwin (Hitter, age 25, ATL) ... CDX: no snapshots found
+  Ernie Clement (Hitter, age 30, TOR) ... CDX OK (20230829) ... AAV=$0.7M, yrs_rem=0
+  Kyle Isbel (Hitter, age 29, KC) ... CDX: no snapshots found
+  Joey Wiemer (Hitter, age 27, WSH) ... CDX: no snapshots found
+  Pete Crow-armstrong (Hitter, age 24, CHC) ... CDX: no snapshots found
+  Yandy Díaz (Hitter, age 35, TB) ... CDX OK (20230731) ... AAV=$8.0M, yrs_rem=0
+  Javier Sanoja (Hitter, age 24, MIA) ... CDX: no snapshots found
+  Nick Gonzales (Hitter, age 27, PIT) ... CDX OK (20230804) ... AAV=$0.7M, yrs_rem=0
+  Miguel Andújar (Hitter, age 31, SD) ... CDX: no snapshots found
+  Brett Baty (Hitter, age 27, NYM) ... CDX: no snapshots found
+  Mauricio Dubón (Hitter, age 32, ATL) ... CDX: no snapshots found
+  Brady House (Hitter, age 23, WSH) ... CDX: no snapshots found
+  Christian Yelich (Hitter, age 35, MIL) ... CDX OK (20240301) ... AAV=$26.9M, yrs_rem=4
+  Justin Wrobleski (Pitcher, age 26, LAD) ... CDX: no snapshots found
+  Taj Bradley (Pitcher, age 25, MIN) ... CDX: no snapshots found
+  Ozzie Albies (Hitter, age 29, ATL) ... CDX: no snapshots found
+  Eugenio Suárez (Hitter, age 35, CIN) ... CDX: no snapshots found
+  Chase Burns (Pitcher, age 23, CIN) ... CDX: no snapshots found
+  Joey Loperfido (Hitter, age 27, HOU) ... CDX: no snapshots found
+  Willi Castro (Hitter, age 29, COL) ... CDX: no snapshots found
+  Gavin Williams (Pitcher, age 27, CLE) ... CDX OK (20230622) ... AAV=$0.7M, yrs_rem=0
+  Hunter Goodman (Hitter, age 27, COL) ...     HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/colorado-rockies/hunte
+    HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/colorado-rockies/hunte
+CDX: no snapshots found
+  Jung hoo Lee (Hitter, age 28, SF) ... CDX OK (20231224) ... AAV=$18.8M, yrs_rem=2
+  Freddy Peralta (Pitcher, age 30, NYM) ... CDX: no snapshots found
+  Chad Patrick (Pitcher, age 28, MIL) ... CDX: no snapshots found
+  Foster Griffin (Pitcher, age 31, WSH) ... CDX: no snapshots found
+  Troy Johnston (Hitter, age 29, COL) ... CDX: no snapshots found
+  Edouard Julien (Hitter, age 27, COL) ... CDX: no snapshots found
+  Isaac Collins (Hitter, age 29, KC) ... CDX: no snapshots found
+  Konnor Griffin (Hitter, age 20, PIT) ... CDX: no snapshots found
+  Grant Holmes (Pitcher, age 30, ATL) ...     Error: timed out — http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/atlanta-braves/grant-h
+CDX OK (20240104) ... parse failed — raw: 
+  Antonio Senzatela (Pitcher, age 31, COL) ... CDX OK (20230130) ... AAV=$10.1M, yrs_rem=1
+  Anthony Kay (Pitcher, age 31, CWS) ...     HTTP 504: http://web.archive.org/cdx/search/cdx?url=spotrac.com/mlb/chicago-white-sox/anth
+CDX: no snapshots found
+
+Results: 58 success, 113 failed
+Failed: Chase Delauter, Vinnie Pasquantino, Trent Grisham, Jesús Luzardo, Ke'bryan Hayes, Dillon Dingler, Kyle Karros, Cristopher Sánchez, Jackson Merrill, Caleb Durbin, Jakob Marsee, Marcell Ozuna, Austin Wells, Alec Burleson, Michael Busch, Carson Benge, Tj Friedl, Evan Carter, Luke Keaschall, TJ Rumfield
+
+Saved → C:\Users\dusti\fantasy-baseball\data\spotrac_contracts_raw.csv
+NEXT STEP: Review spotrac_contracts_raw.csv then merge into contract_year_2026.csv
