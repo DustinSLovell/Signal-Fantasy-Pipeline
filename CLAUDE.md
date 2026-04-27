@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: April 28, 2026
+# Last updated: April 26, 2026
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -510,6 +510,35 @@ without clear labeling would corrupt the published track record.
 
 ### TRADE TOOL FOUNDATION
 
+**CBS FPTS Model — BUILT (April 2026):**
+- build_cbs_fpts.py scrapes CBS full-season stats (2024+2025); Ridge regression (α=0.1).
+- Train R²=0.983 hitters / 0.927 pitchers. OOS R²=0.983 / 0.909. Both pass ≥0.85 guard.
+- Constants in config.py: CBS_H_COEF_*, CBS_P_COEF_*, CBS_H/P_INTERCEPT, CBS_H/P_R2_*.
+- Wired into trade_analyzer.py: _compute_cbs_fpts() + replacement_level.py surplus calc.
+- Data files: data/cbs_{hitter,pitcher}_fpts_{2024,2025}.csv, data/cbs_regression_results.txt
+
+**CRITICAL — CBS coefficient interpretation:**
+Individual CBS coefficients are NOT interpretable as "CBS points per stat" due to multicollinearity
+(R/HR/RBI correlated; ERA/WHIP correlated). Use full-vector prediction ONLY. The combined model
+is accurate (R²=0.983 OOS); individual coefs reflect marginal contribution after collinearity.
+Do NOT use HR coef (0.430) to manually estimate HR value — the model uses all five stats together.
+
+**Replacement Level — BUILT (April 2026):**
+- replacement_level.py: N = roster_spots × 12 teams per position (default 12-team standard).
+- surplus_value = projected CBS FPTS − replacement FPTS at position.
+- Surplus displayed in trade_analyzer.py player card and verdict section.
+- `python trade_analyzer.py --replacement-table` shows full position table.
+- 12-team standard replacement levels (April 2026):
+  C: 289.8 (William Contreras, N=12) | 1B: 275.7 (Josh Bell, N=24)
+  2B: 277.7 (Marcus Semien, N=18) | 3B: 267.0 (Ramón Urías, N=24)
+  SS: 293.9 (Bo Bichette, N=18) | OF: 296.3 (Jake Mangum, N=36)
+  SP: 221.5 (Randy Vásquez, N=60) | RP: 157.0 (Raisel Iglesias, N=36)
+- Skenes/Rice surplus result: Rice surplus +44 (C pool) > Skenes surplus +33 (SP pool).
+  Verdict does NOT flip — Rice has more surplus, but luck model correctly shows higher regression
+  risk (luck delta -0.266 AVOID). The tension is intentional and informative.
+- Note: Ben Rice CBS position = C (retains C eligibility). Surplus vs C repl = +44.
+  If treating as 1B: surplus = +58. Either way Rice surplus > Skenes surplus (+33).
+
 - **CBS Rankings Reverse Engineering** — Reverse engineer CBS end-of-season overall rankings using
   linear regression against final player stats for 2022-2024.
   X = [HR, R, RBI, SB, AVG, ERA, WHIP, K, W, SV], y = CBS overall rank (inverted).
@@ -522,8 +551,7 @@ without clear labeling would corrupt the published track record.
   ratio determines whether a trade is fair. Exposes CBS coefficients in config.py; import into
   score_value.py + trade_analyzer.py. Prerequisite: CBS regression above must reach R² >= 0.90.
 
-- **Replacement level calculator** — Foundational for rankings. Find the Nth best player where
-  N = roster spots × league size. Sets the floor below which a player has no fantasy value.
+- **Replacement level calculator** — BUILT April 2026 (replacement_level.py). See above.
 
 - **Fantasy points conversion engine** — Multiply projected stats × CBS-derived point values
   per category. Enables apples-to-apples comparison across positions and categories.
@@ -543,6 +571,11 @@ without clear labeling would corrupt the published track record.
   Prerequisite: build_cbs_fpts.py already scrapes CBS; extend to ESPN/FantasyPros endpoints.
 
 ### CONTENT PIPELINE
+
+- **White paper** — signal_fantasy_whitepaper.docx, 11 sections drafted (April 2026).
+  Sections 1-8 final. Section 10 (live track record table) needs 2-3 more weeks of data.
+  Publish to whitepapersonline.com after Section 10 update + GitHub push.
+  Establishes methodology timestamp and IP protection alongside repo commit history.
 
 - **"Why April Signals Matter Most" article** — Explainer on why April is the highest-value window
   for luck detection. Model detects mispricing in April, validates against May-August core fantasy
@@ -574,10 +607,31 @@ without clear labeling would corrupt the published track record.
   INCREASED 5pp+ may be making mechanical adjustments toward a power-friendly approach.
   Consider as optional bullish buy modifier (×1.05?). Needs backtest before wiring.
 
+### IP Protection
+- **Private GitHub repo:** DustinSLovell/Signal-Fantasy-Pipeline (created April 26, 2026)
+  All code committed with timestamps for IP protection. Push after every session:
+  ```
+  cd C:\Users\dusti\fantasy-baseball
+  git add .
+  git commit -m "Session update - [date]"
+  git push
+  ```
+  First commit timestamped April 26, 2026 — establishes prior art for all scoring logic,
+  backtest methodology, and CBS FPTS regression coefficients.
+
+- **White paper:** signal_fantasy_whitepaper.docx — 11 sections drafted (April 2026).
+  Sections 1-8 final. Section 10 (live track record) needs 2-3 weeks of tracker movement.
+  Publish to whitepapersonline.com after GitHub push. Serves as timestamped methodology proof.
+  Add copyright notice to every new Substack article: "© 2026 Dustin Lovell / Signal Fantasy."
+
+- **Copyright on articles** — Add to every Substack post footer before publishing.
+
 ### Operations
 - **Check console.anthropic.com monthly** for Claude Code API token consumption tracking.
   Commercial project — cost monitoring is important hygiene for budget management.
-- **Career lessons database** (career_lessons_database.html) is maintained in the Claude.ai web interface — NOT updated by Claude Code. Add new lessons manually at end of each session. New lessons from April 26-27 to add: Worry Index / model silence as signal; Temporal validity (April vs in-season signals); Content flywheel architecture; Financial motivation score vs binary CY flag; Two-path luck normalization (wOBA declining vs xwOBA improving).
+- **Career lessons database** (career_lessons_database.html) is maintained in the Claude.ai web interface — NOT updated by Claude Code. Add new lessons manually at end of each session.
+  Session 7 (April 26-28) lessons COMPLETED: Worry Index / model silence as signal | Temporal validity | Content flywheel architecture | Financial motivation score vs binary CY flag | Two-path luck normalization.
+  File: outputs/career_lessons_database.html
 
 ---
 
@@ -587,7 +641,14 @@ Before closing any Claude Code session:
 1. Confirm validate_formulas.py still 37/37 PASS
 2. Note any files modified
 3. Note any parking lot items resolved or added
-4. Tell Dustin to update thread_handoff.md in Claude.ai before closing
+4. Push to GitHub (IP protection — run every session without exception):
+   ```
+   cd C:\Users\dusti\fantasy-baseball
+   git add .
+   git commit -m "Session update - [date]"
+   git push
+   ```
+5. Tell Dustin to update thread_handoff.md in Claude.ai before closing
 
 ERA floor fix: April 25 — score_pitcher_luck.py line ~967
 Slight Buy thresholds: April 25 — score_luck.py (floor 0.065→0.100, gap 0.015→0.030, ceiling 0.380)
@@ -689,11 +750,39 @@ Week 2 article generated: April 28 — full pipeline run + weekly_update.py --up
   - Tracker shows all calls "too early" at 1 week — expected per significance thresholds
   - Article draft ready for Tuesday April 29 publication; pending manual review/publish
 
+--- April 28-29, 2026 (continued) ---
+CBS FPTS scraper: April 28 — build_cbs_fpts.py; scraped CBS 2024+2025; Ridge regression
+  - data/cbs_{hitter,pitcher}_fpts_{2024,2025}.csv saved; data/cbs_regression_results.txt
+  - Train R²: hitters=0.985, pitchers=0.927 | OOS R²: hitters=0.983, pitchers=0.909
+  - Constants added to config.py: CBS_H_COEF_* + CBS_P_COEF_* + intercepts + R² guards
+  - 37/37 PASS
+CBS FPTS + surplus wired into trade_analyzer.py: April 28-29
+  - _compute_cbs_fpts() uses CBS coefficients from config.py
+  - Projected FPTS displayed in player card with CBS projected stats line
+  - Verdict section shows FPTS delta (give vs get)
+  - 37/37 PASS
+Projection diagnostic (April 28-29): two stat_projections.py bugs identified and fixed
+  - Fix 1 (BABIP-only sell): project_hitter_counting() now accepts xwoba_gap param;
+    sell-high HR multiplier suppressed when xwoba_gap > -0.020 (BABIP-driven, not contact-driven)
+  - Fix 2 (thin career baseline): career_pa < 1000 → career weight × 0.85; current weight boosted
+  - Rice projection after fixes: HR 17→21, AVG .280→.290, FPTS 312→334
+  - 37/37 PASS; projections_2026.csv regenerated
+Replacement level calculator: April 29 — replacement_level.py
+  - FANTASY_POS_MAP: raw MLB pos → fantasy pos (LF/RF/CF→OF, DH→1B, etc.)
+  - DEFAULT_ROSTER_N: 12-team standard N per position (C=12, 1B=24, 2B=18, 3B=24, SS=18, OF=36, SP=60, RP=36)
+  - surplus_value = projected CBS FPTS − Nth-best at position FPTS
+  - Wired into trade_analyzer.py: surplus shown in player card + verdict surplus delta line
+  - `python trade_analyzer.py --replacement-table` for position table
+  - Result: Rice surplus +44 (C pool) vs Skenes surplus +33 (SP pool) — verdict does not flip
+  - 37/37 PASS
+GitHub repo: DustinSLovell/Signal-Fantasy-Pipeline (private) — first commit April 26, 2026
+
 PENDING MANUAL ACTIONS:
   - Review and publish Week 2 article in Substack (Tuesday April 29 deadline)
-  - Update career_lessons_database.html in Claude.ai with 5 new lessons:
-    Worry Index / model silence as signal | Temporal validity | Content flywheel architecture |
-    Financial motivation score vs binary CY flag | Two-path luck normalization
+  - Career lessons database (Session 7, April 26-28) — COMPLETED per user; file at outputs/career_lessons_database.html
+  - Push code to GitHub: git add . && git commit -m "Session update - April 29" && git push
+  - Update thread_handoff.md in Claude.ai with today's session work
+  - White paper: update Section 10 (live track record) in 2-3 weeks, then publish to whitepapersonline.com
 
 ---
 *This file is the persistent memory for Claude Code sessions.*

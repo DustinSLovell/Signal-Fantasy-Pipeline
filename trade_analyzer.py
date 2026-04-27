@@ -27,6 +27,10 @@ from config import (
     CBS_P_COEF_W, CBS_P_COEF_ERA, CBS_P_COEF_WHIP, CBS_P_COEF_K,
     CBS_P_COEF_SV, CBS_P_INTERCEPT,
 )
+from replacement_level import (
+    load_replacement_levels, load_position_map,
+    get_surplus, FANTASY_POS_MAP, build_replacement_table,
+)
 
 BASE_DIR      = Path(__file__).parent
 HITTER_CSV    = BASE_DIR / "luck_scores.csv"
@@ -62,6 +66,10 @@ if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
         pass
+
+# Replacement levels loaded once at import time — safe to cache since
+# projections_2026.csv is static within a session.
+_REPL_LEVELS: dict[str, float] = load_replacement_levels()
 
 
 # ---------------------------------------------------------------------------
@@ -250,6 +258,22 @@ def _load_players() -> pd.DataFrame:
             on="_norm_proj", how="left"
         ).drop(columns=["_norm_proj"]).copy()
 
+    # Merge fantasy positions from player_values.json (id-based for accuracy)
+    pos_map = load_position_map()  # {mlbam_id: fantasy_pos}
+    def _get_fpos(row):
+        pid = row.get("batter") if row.get("_type") == "hitter" else row.get("pitcher")
+        try:
+            fpos = pos_map.get(int(pid)) if pd.notna(pid) else None
+        except (TypeError, ValueError):
+            fpos = None
+        if fpos:
+            return fpos
+        # Fallback: pitchers use _derive_pos; hitters unknown
+        if row.get("_type") == "pitcher":
+            return "SP" if _derive_pos(row) == "SP" else "RP"
+        return None
+
+    combined["_fpos"] = combined.apply(_get_fpos, axis=1)
     combined["_norm"] = combined["name"].apply(_norm)
     combined["_user_pos"] = None
     return combined
@@ -424,9 +448,13 @@ def _display_player(row: pd.Series, config: dict) -> None:
         conf_str = f"  |  Phase: {conf}" if conf else ""
         print(f"     ERA/FIP  : {era} / {fip}  |  xERA: {xera}  |  ERA-FIP: {gap}  |  IP: {ip}{conf_str}")
 
-    # CBS projected FPTS
+    # CBS projected FPTS + positional surplus
     cbs_fpts = _compute_cbs_fpts(row)
     if cbs_fpts is not None:
+        fpos = row.get("_fpos")
+        surplus = get_surplus(cbs_fpts, fpos, _REPL_LEVELS)
+        surplus_str = (f"  |  Surplus vs {fpos}: {surplus:+.0f}"
+                       if surplus is not None else "")
         if ptype == "hitter":
             proj_line = (f"R {row.get('proj_r','?'):.0f}  HR {row.get('proj_hr','?'):.0f}"
                          f"  RBI {row.get('proj_rbi','?'):.0f}  SB {row.get('proj_sb','?'):.0f}"
@@ -435,7 +463,7 @@ def _display_player(row: pd.Series, config: dict) -> None:
             proj_line = (f"W {row.get('proj_w','?'):.0f}  ERA {row.get('proj_era','?'):.2f}"
                          f"  WHIP {row.get('proj_whip','?'):.2f}  K {row.get('proj_k','?'):.0f}"
                          f"  SV {row.get('proj_sv_h','?'):.0f}")
-        print(f"     Proj FPTS: {cbs_fpts:.0f}  ({proj_line})")
+        print(f"     Proj FPTS: {cbs_fpts:.0f}{surplus_str}  ({proj_line})")
 
     # Ownership
     owned = row.get("owned_pct")
@@ -639,12 +667,26 @@ def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
 
     verdict = _trade_verdict_v2(raw_delta, total_delta)
 
-    # --- CBS FPTS totals ---
+    # --- CBS FPTS and surplus totals ---
     give_fpts_vals = [_compute_cbs_fpts(r) for r in give_rows]
     get_fpts_vals  = [_compute_cbs_fpts(r) for r in get_rows]
     give_fpts_total = sum(v for v in give_fpts_vals if v is not None) or None
     get_fpts_total  = sum(v for v in get_fpts_vals  if v is not None) or None
     fpts_delta = (get_fpts_total - give_fpts_total) if (give_fpts_total and get_fpts_total) else None
+
+    give_surplus_vals = [
+        get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in give_rows
+    ]
+    get_surplus_vals  = [
+        get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in get_rows
+    ]
+    give_surplus_total = sum(v for v in give_surplus_vals if v is not None) or None
+    get_surplus_total  = sum(v for v in get_surplus_vals  if v is not None) or None
+    surplus_delta = (
+        (get_surplus_total - give_surplus_total)
+        if (give_surplus_total is not None and get_surplus_total is not None)
+        else None
+    )
 
     # --- Verdict display ---
     print()
@@ -658,12 +700,16 @@ def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
     print(f"  Give side score : {give_str}   |   Get side score: {get_str}")
     print(f"  Luck delta      : {raw_str}  (positive = better luck incoming)")
 
-    if fpts_delta is not None:
+    if surplus_delta is not None:
+        sg_str  = f"{give_surplus_total:+.0f}" if give_surplus_total is not None else "N/A"
+        sge_str = f"{get_surplus_total:+.0f}"  if get_surplus_total  is not None else "N/A"
+        note = "value edge incoming" if surplus_delta >= 0 else "value edge outgoing"
+        print(f"  Surplus (give/get): {sg_str} / {sge_str}  |  delta {surplus_delta:+.0f} ({note})")
+    elif fpts_delta is not None:
         fpts_give_str = f"{give_fpts_total:.0f}" if give_fpts_total else "N/A"
         fpts_get_str  = f"{get_fpts_total:.0f}"  if get_fpts_total  else "N/A"
-        fpts_delta_str = f"{fpts_delta:+.0f}"
         note = "more proj FPTS incoming" if fpts_delta >= 0 else "fewer proj FPTS incoming"
-        print(f"  FPTS (give/get) : {fpts_give_str} / {fpts_get_str}  |  delta {fpts_delta_str} ({note})")
+        print(f"  FPTS (give/get) : {fpts_give_str} / {fpts_get_str}  |  delta {fpts_delta:+.0f} ({note})")
 
     all_notes = scarcity_notes + trajectory_notes
     if all_notes:
@@ -872,9 +918,10 @@ def _resolve_player_silent(name: str, players: pd.DataFrame) -> Optional[pd.Seri
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Signal Fantasy Trade Analyzer v2")
-    parser.add_argument("--setup",   action="store_true", help="Configure league settings")
-    parser.add_argument("--test",    action="store_true", help="Run non-interactive test suite")
-    parser.add_argument("--history", action="store_true", help="Show trade history")
+    parser.add_argument("--setup",             action="store_true", help="Configure league settings")
+    parser.add_argument("--test",              action="store_true", help="Run non-interactive test suite")
+    parser.add_argument("--history",           action="store_true", help="Show trade history")
+    parser.add_argument("--replacement-table", action="store_true", help="Show replacement level table")
     args = parser.parse_args()
 
     if args.setup:
@@ -883,6 +930,18 @@ def main() -> None:
 
     if args.history:
         _show_history()
+        return
+
+    if args.replacement_table:
+        print()
+        print(DIVIDER)
+        print("  REPLACEMENT LEVEL TABLE (12-team standard)")
+        print(DIVIDER)
+        print(build_replacement_table())
+        print()
+        for pos, fpts in sorted(_REPL_LEVELS.items()):
+            print(f"  {pos:4s} replacement FPTS: {fpts:.1f}")
+        print()
         return
 
     config = load_config()
