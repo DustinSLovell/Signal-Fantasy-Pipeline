@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Single source of truth. Overwrite at end of every session.
-# Last updated: April 28, 2026 (Session 9)
+# Last updated: April 26, 2026 (Session 9)
 
 # Official project start: April 12-14, 2026
 # First public article: April 22, 2026
@@ -427,10 +427,10 @@ Known edits still needed:
 
 ---
 
-## WEEK 2 ARTICLE — PLANNED
+## WEEK 2 ARTICLE — PUBLISHED ✅
 
 **Title:** "Before the Regression Hits"
-**Publish target:** Wednesday April 29, 2026
+**Published:** Tuesday April 29, 2026
 **Length target:** 1,200-1,500 words
 
 ### Structure:
@@ -493,13 +493,17 @@ BUY LOW requires: ownership >10% minimum + projected improvement meaningful
 
 ---
 
-## PARKING LOT — PRIORITIZED (updated April 28, 2026)
+## PARKING LOT — PRIORITIZED (updated April 26, 2026)
 
-### TIER 1 — Do immediately after Week 2 publishes:
+### TIER 1 — Do immediately (Week 2 published, Week 3 next):
 - **Weekly tracker mechanism classifier** — HIGHEST PRIORITY. Implement wOBA vs xwOBA decomposition
   in weekly_update.py. Same luck score movement = two opposite meanings (results declining vs contact
   improving). Mechanism values: Normalizing | Re-evaluate | Confirmed | Refuted | Watch.
   This is the content engine for the entire May-August publishing schedule.
+- **Week 3 article** (May 5-6 deadline): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  First week where tracker may show confirmed/refuted calls (wOBA_THRESH=0.020, XWOBA_THRESH=0.015).
+- **White paper Section 10 update** — After 2-3 more weeks of live tracker data, then publish to
+  whitepapersonline.com. Add copyright notice to all new Substack articles.
 - **April Big Board** — Consolidated view of all April calls, current status, model expectations.
   Publish as Week 3 content. The track record proof-of-work document.
 
@@ -866,14 +870,39 @@ not just the luck score signal. A 2pp SwStr% improvement = ~1.5 K/9 = ~17 projec
   Moved apply() to after df["age"] = ... line; post-fix distribution: 1-payday=161, 3-secured=11, 4-post-prime=62, 5-mid-contract=164
 - run_pipeline.py subprocess encoding fix (April 28): UnicodeDecodeError crash on Windows tqdm output
   Added encoding="utf-8", errors="replace" to Popen call; all 6 pipeline steps now complete cleanly; permanent fix
-- Week 2 article generated (April 28): pipeline run + weekly_update.py --update + --report --top 15
+- Week 2 article PUBLISHED (April 29): "Before the Regression Hits" — Substack live ✅
   Lead: Corey Seager (wOBA .332/xwOBA .378/score +0.344, Buy Low)
   Feature: Dingler (xwOBA .459/gap+.105), Ramírez (fp7/score+0.483), Judge (fp1/score+0.282), Acuña (score+0.394)
   New Worry Index section: Devers (fp16, wOBA .241/xwOBA .265/3yr xwOBA .371 — real struggle, not luck)
   Yordan tracker: wOBA .510/xwOBA .595 consistent Week 1→2; Buy Low holding
   Pitcher buys: Luzardo (6.41 ERA/3.14 FIP), Joe Ryan (5.29/3.12), C.Sánchez (3.82/2.51)
-  Tracker: all 169 calls show "too early" at 1 week — expected, significance thresholds not yet met
-  Status: draft ready; PENDING Dustin review + Substack publish (Tuesday April 29 deadline)
+  Tracker: all 169 calls show "too early" at 1 week — expected per significance thresholds
+  Copyright footer "© 2026 Dustin Lovell / Signal Fantasy" added to Week 2 article ✅
+  Copyright footer added to Week 1 article retroactively ✅
+  Substack global footer set ✅
+- White paper published (April 2026): signal_fantasy_whitepaper.docx — 11 sections, 3 visuals embedded ✅
+  Pushed to GitHub (DustinSLovell/Signal-Fantasy-Pipeline) for IP timestamp ✅
+  Pending publish to whitepapersonline.com after Section 10 live track record update (2-3 more weeks)
+- ERA simulation COMPLETE (April 29): era_simulation.py — 389 pitchers, 7 verdict changes (1.8%) ✅
+  Decision: KEEP filtered ERA (qualifying starts, MIN_START_IP=2.0)
+  Key findings:
+    Skenes: Sell High → Slight Sell under ERA_all_sc (ERA-FIP gap collapses -1.58→-0.05)
+    Crochet, Suarez: Neutral → Buy Low — FALSE SIGNALS from excluded disaster starts
+    López: Neutral → Slight Buy (borderline, FIP 4.45 near gate)
+  Conclusion: ERA_all_sc creates phantom buy signals from blowup outings — qualifying filter is correct
+  Saved: era_simulation.py (diagnostic only, not production)
+- Financial motivation backtest PRELIMINARY (April 29): data/spotrac_contract_backtest.csv ✅
+  Source: MLB_Contracts_3.xlsx (1,000 rows, Spotrac export, user-provided)
+  data/spotrac_contracts_clean.csv: 506 hitter rows, 308 unique players (hitter positions only)
+  Match rate: 112/211 (53%) — 99 unmatched are pre-arb/arb players (no FA deal in Spotrac)
+  Sanity checks ALL PASS: Betts 2022=False, Judge 2022=True, Seager 2022=False
+  Cohort 3 (Secured, $20M+ AAV, 3+ yr): 96.4% overall accuracy n=28 — preliminary positive signal
+  ALL cohort/signal combinations n<10 except Cohort 5 — no publishable conclusions
+  Need: 50+ players per cohort for statistical reliability
+  Next step: expand match rate by adding arb-year salary data
+- Career lessons database updated (April 2026): 8 new lessons added (Sessions 7-8) ✅
+- GitHub DustinSLovell/Signal-Fantasy-Pipeline: current — commit e418a0b ✅
+- Claude Code credits exhausted — reset before next session
 
 ---
 
@@ -1020,6 +1049,13 @@ Open in any browser — fully searchable by category
 - Content Flywheel Architecture (April calls → Big Board → rolling tracker → accountability audit forms a self-reinforcing loop. Week N article references Week N-1 calls, builds credibility, drives subscriptions that fund more tooling.)
 - Financial Motivation vs Binary Flag (contract year = yes/no misses the magnitude of financial incentive. A player on a $2M prove-it deal has different motivation than one on a $10M one-year extension. The security gap — how far below market is their current deal — is the real variable.)
 - Two-Path Luck Normalization (wOBA declining while xwOBA stays flat = BABIP luck depleting. xwOBA improving while wOBA lags = contact quality recovering. Both paths produce identical luck score movement but have different recovery timelines. Decompose when writing article analysis.)
+
+### New lessons from April 29 session (Session 9 — add to database):
+- Simulation as Architecture Test (before changing a production constant, simulate all records against the alternative — 7 verdict changes across 389 pitchers told a clearer story than any single-player analysis. Run the whole population; edge cases you'd never think to check appear automatically.)
+- False Signal Archaeology (ERA_all_sc created phantom buy signals for Crochet and Suarez — excluded disaster starts inflated their ERA. The qualifying-start filter existed to prevent exactly this. When a change creates signals, ask: are these real or are they artifacts of what the filter was filtering?)
+- Baseline Coverage as Research Risk (53% match rate on a name join isn't a data quality failure — it reveals the true scope of the underlying population. Pre-arb players aren't in the Spotrac free-agent database because they're not free agents. Understanding WHY data is missing is as important as getting more data.)
+- Preliminary vs Validated (Cohort 3 at 96.4% is a promising signal, not a finding. n=9 in the strongest cohort means a single misclassification swings accuracy 11pp. Never cite preliminary results in the same sentence as validated backtest numbers — they carry different authority levels.)
+- N<10 as a Hard Stop (any cohort/signal combination with n<10 gets an explicit warning flag. This isn't hedging — it's an accuracy threshold. Below 10 observations, coin-flip variance dominates the signal. The flag prevents future-you from citing the number without the caveat.)
 
 ### New lessons from April 25 session (add to database):
 - Sensitivity Analysis (systematic parameter testing — vary one thing at a time, hold all else constant, measure signal count AND accuracy, use 2025 OOS as the guard rail)
