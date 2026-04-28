@@ -123,6 +123,14 @@ def _compute_deltas(df: pd.DataFrame) -> pd.DataFrame:
         else:
             df[col] = float("nan")
 
+    # luck_delta: used by sell refuted check — negative means sell signal deepened
+    init_luck = "week1_luck"
+    curr_luck_col = f"{latest}_luck"
+    if init_luck in df.columns and curr_luck_col in df.columns:
+        df["luck_delta"] = pd.to_numeric(df[curr_luck_col], errors="coerce") - pd.to_numeric(df[init_luck], errors="coerce")
+    else:
+        df["luck_delta"] = float("nan")
+
     df["mechanism"]         = df.apply(_classify_mechanism, axis=1)
     df["prediction_correct"] = df.apply(_classify_correct, axis=1)
     df["last_updated"]       = str(date.today())
@@ -134,11 +142,13 @@ def _classify_mechanism(row) -> str:
     Classify the mechanism driving wOBA/xwOBA movement.
 
     Sign convention (from _compute_deltas):
-      woba_delta  > 0  = prediction moving toward correct  (wOBA up for buy; ERA down for sell pitcher)
-      xwoba_delta > 0  = underlying quality moving toward correct (xwOBA up for buy; FIP down for sell pitcher)
-      For SELL calls the prediction is results get WORSE, so:
-        woba_delta < 0 = bad results getting worse  = prediction moving correct
-        xwoba_delta > 0 = underlying quality improving = re-evaluate the sell
+      woba_delta  > 0  = results improving   (wOBA up for hitters; ERA down for pitchers)
+      woba_delta  < 0  = results declining   (wOBA down for hitters; ERA up for pitchers)
+      xwoba_delta > 0  = underlying quality improving  (xwOBA up for hitters; FIP down for pitchers)
+      xwoba_delta < 0  = underlying quality declining  (xwOBA down for hitters; FIP up for pitchers)
+
+      For BUY calls:  prediction-correct = woba_delta > 0 (results improving as expected)
+      For SELL calls: prediction-correct = woba_delta < 0 (results declining / ERA rising as expected)
 
     BUY mechanisms:
       results_improving     — wOBA up, xwOBA stable      → Normalizing (luck clearing)
@@ -195,6 +205,17 @@ def _classify_mechanism(row) -> str:
         if woba_sig_neg and xwoba_sig_neg:
             return "genuine_decline"         # both declining — confirmed genuine decline
         if woba_sig_pos and xwoba_sig_pos:
+            # ERA and FIP both dropped in absolute terms, but check if the
+            # ERA-FIP gap widened (luck score deepened). If luck deepened by
+            # >0.02 the sell signal is actually stronger — ERA dropped less
+            # than FIP in gap terms. Label as results_declining, not refuted.
+            ld = row.get("luck_delta", float("nan"))
+            try:
+                ld = float(ld)
+            except (TypeError, ValueError):
+                ld = float("nan")
+            if not math.isnan(ld) and ld < -0.02:
+                return "results_declining"   # luck deepened — sell signal stronger despite absolute improvement
             return "refuted"                 # both improving — sell call wrong
         if xwoba_sig_pos:
             return "contact_improving"       # xwOBA improving — re-evaluate

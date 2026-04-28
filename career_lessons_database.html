@@ -472,6 +472,23 @@ lesson:"Expected vs actual performance gaps are universal in business analytics.
 interview:"The xwOBA gap measures how much better a player's contact quality is than their actual results. I use the exact same framework in CPG — comparing a retail account's actual performance to its modeled potential based on demographics, traffic, and competitive context. A store underperforming its model is a buy-low opportunity. A store overperforming is a sell-high risk. The math is different but the analytical instinct is identical."},
 
 // ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// APRIL 26, 2026 — SESSION 8 ADDITIONS
+// ═══════════════════════════════════════════════════════
+
+{concept:"Blast Radius Testing Before Architecture Changes",tags:["ml","eng"],session:"Apr 26 S8",accent:"#4ade80",
+lesson:"Before changing any global model parameter, simulate the full impact across all data points first. A change that looks like an improvement for one player may generate false signals for dozens of others. The correct sequence is always: diagnose → simulate → measure blast radius → decide.",
+interview:"We considered switching our pitcher ERA calculation from a qualifying-starts filter to an all-starts approach to better capture Paul Skenes' true performance. Before touching production code, we ran a simulation across all 389 pitchers. Two pitchers — Garrett Crochet and José Suarez — would have received false buy signals driven entirely by disaster starts that the 2 IP minimum correctly excluded. That blast radius test confirmed the original architecture was right. The cost of the Skenes edge case was lower than the cost of systemic false signals for pitchers with early-season blowups."},
+
+{concept:"Sample Size Discipline in Subgroup Analysis",tags:["ml","stats"],session:"Apr 26 S8",accent:"#4ade80",
+lesson:"When running subgroup analysis, report preliminary signals honestly while resisting the temptation to draw conclusions from small samples. n<10 per cohort is not a finding — it is a hypothesis. The correct response is to document it clearly, label it explicitly as preliminary, and design a data collection plan to validate it with adequate sample size. Premature conclusions from small samples are how model credibility gets destroyed.",
+interview:"Our contract year financial motivation backtest returned n<10 for most cohorts — statistically meaningless for drawing conclusions. We documented the preliminary signal from Cohort 3 (Secured players, 96.4% accuracy, n=28) but explicitly labeled it as a hypothesis requiring more data. We resisted the temptation to wire it as a model modifier until we have adequate sample size. That discipline is what separates a validated model from wishful thinking."},
+
+{concept:"When a Model Works Best Is As Valuable As Accuracy Numbers",tags:["ml","prod"],session:"Apr 26 S8",accent:"#4ade80",
+lesson:"Understanding the conditions under which a model performs best is as analytically valuable as knowing its overall accuracy. If a specific subgroup consistently outperforms — and you understand WHY — that insight shapes how you weight signals, communicate confidence levels, and build product features. Model understanding is not just about average performance.",
+interview:"Our highest-accuracy cohort was players already secured on long-term guaranteed deals — Cohort 3, 96.4% accuracy. The hypothesis is that these players have zero financial motivation distortion: no contract year pressure, no prove-it desperation, no post-prime anxiety. The luck signal fires cleanest when there are fewer confounding behavioral variables. Knowing WHERE your model works best is how you build a product that surfaces the right signals to the right users at the right time."},
+
+// ═══════════════════════════════════════════════════════
 // APRIL 26-28, 2026 — SESSION 7 ADDITIONS
 // ═══════════════════════════════════════════════════════
 

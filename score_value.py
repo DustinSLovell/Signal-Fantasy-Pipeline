@@ -426,7 +426,7 @@ def load_career_quality() -> dict:
     if not os.path.exists(CQS_PATH):
         print(f"  WARNING: {CQS_PATH} not found — CQS floors disabled. Run compute_career_quality.py first.")
         return {}
-    with open(CQS_PATH) as f:
+    with open(CQS_PATH, encoding="utf-8", errors="replace") as f:
         records = json.load(f)
     result = {}
     for rec in records:

@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Single source of truth. Overwrite at end of every session.
-# Last updated: April 26, 2026 (Session 9)
+# Last updated: April 27, 2026 (Session 10)
 
 # Official project start: April 12-14, 2026
 # First public article: April 22, 2026
@@ -508,9 +508,17 @@ BUY LOW requires: ownership >10% minimum + projected improvement meaningful
   Publish as Week 3 content. The track record proof-of-work document.
 
 ### TIER 2 — This week:
-- **Pitcher Slight Buy sensitivity analysis** — n=4 historically too thin to validate.
-  Ablation test ERA floor (4.00→3.75?), luck score window width, IP threshold independently.
+- **Pitcher Slight Buy sensitivity analysis** — n=6 historically (updated from n=4) too thin to validate.
+  Priority: SB ERA floor ablation (4.00 → 3.75) to grow SB sample before any gate testing.
+  If SB n reaches ≥8 train, retest Gate B (HR/FB > +0.03 above career) as first confirmation gate.
+  Secondary: Gate B + SB ERA floor lowered is the best-validated diagnostic path.
+  Files: backtest_pitcher_sb_gate.py (all 15 OR-gate combinations), backtest_pitcher_lob_swap.py,
+  backtest_pitcher_zscore.py — all diagnostic, NOT production code.
 - **is_article_worthy() gate** — filter signals worth featuring from borderline cases.
+- **xwOBA slot replacement (pitcher buy score β=0.25)** — authoritative backtest confirmed xwOBA is
+  a drag (+3.8pp OOS when removed). Root cause: both xwOBA_gap and LOB_gap means are negative at
+  the population level, so the β=0.25 slot always reduces the raw score. Best replacement unclear;
+  revisit after 2026 full-season data when SB sample is larger. Do not implement now.
 
 ### RESEARCH AGENDA (post-2026 season):
 - Worry Index sensitivity: validate WORRY_WOBA_GAP=0.040 / WORRY_LUCK_BAND=0.085 after full season
@@ -903,6 +911,45 @@ not just the luck score signal. A 2pp SwStr% improvement = ~1.5 K/9 = ~17 projec
 - Career lessons database updated (April 2026): 8 new lessons added (Sessions 7-8) ✅
 - GitHub DustinSLovell/Signal-Fantasy-Pipeline: current — commit e418a0b ✅
 - Claude Code credits exhausted — reset before next session
+
+--- April 27, 2026 (Session 10) ---
+- McGreevy mechanism fix: calls_tracker mechanism column corrected ✅
+- Week 3 tracker update: weekly_update.py --update run, deltas refreshed ✅
+- Week 3 article draft complete: ready for Tuesday publish ✅
+- model_architecture_explainer.md: new file, project root, full 4-layer architecture doc ✅
+- 10 pitcher buy score diagnostic tests — ALL CORRECTLY REJECTED (no production changes):
+  1. ERA/FIP ratio sweep: VERDICT-NEUTRAL (no threshold improves OOS)
+  2. Coefficient sensitivity sweep: VERDICT-NEUTRAL (best combo +0.1pp train, 0% OOS)
+  3. Component replacement — LOB% as γ=0.15: VERDICT-NEUTRAL (better corr, same accuracy)
+  4. Component replacement — SwStr% as γ=0.15: DISQUALIFIED (wrong sign, r=−0.071)
+  5. Component replacement — HR/FB as γ=0.15: VERDICT-NEUTRAL (r=+0.314, no accuracy gain)
+  6. Z-score normalization diagnostic: looked promising (+12pp BL OOS in diagnostic)
+  7. T_SB threshold sweep: T_SB=+0.20 found as sweet spot in diagnostic space
+  8. Authoritative z-score backtest: MARGINAL, Guard FAIL (population stats shifted when
+     computed from all qualifying pitchers; diagnostic used buy-signal-enriched subset)
+  9. Raw LOB swap (xwOBA → LOB, β=0.25, no normalization): NO IMPROVEMENT, Guard FAIL
+     BL OOS dropped 75.0% → 72.7%; xwOBA_gap mean −0.006 and LOB_gap mean −0.018 both
+     negative across population — neither slot moves scores in buy direction
+  10. SB confirmation gate diagnostic (15 OR-combinations of 4 gates A/B/C/D):
+     No combination passes all guards (SBn<8 guard fails structurally — only 6 train SB signals)
+     Gate A (LOB stranding) fires on 0/6 training SB pitchers — wrong direction entirely
+     Gate B (HR/FB > +0.03 above career): best gate, OOS 80.0% (+7.8pp), but n=3 SB OOS
+     Gate B_BLgated: 85.7% OOS, PASS — but BL drops 12→4 signals (too aggressive)
+     Root cause: SB tier structurally undertrained (n≈2/year after all ERA/qualification gates)
+     Architecture is correct; sample is too thin to validate any gate
+- Root cause confirmed: ERA_minus_FIP contributes 99-107% of raw buy score in all formulations.
+  Secondary components (β=0.25, γ=0.15) are noise at population means. Tier gap (0.065 window)
+  exceeds what any raw secondary component can contribute.
+- xwOBA slot (β=0.25) confirmed as drag in authoritative backtest: removing it +3.8pp OOS.
+  This is the weakest component — if future architecture revisits, target this slot first.
+- New parking lot items:
+  - Gate B (HR/FB > +0.03 above career) is strongest individual SB confirmation signal.
+    Retest when SB sample grows. Files: backtest_pitcher_sb_gate.py, backtest_pitcher_lob_swap.py,
+    backtest_pitcher_zscore.py (all diagnostic, not production code).
+  - SB ERA floor ablation (4.00 → 3.75) to grow SB sample. Currently n≈2/year after gates.
+    If lowering floor raises SB n to ≥8 train, rerun gate diagnostic on that sample.
+  - Revisit full pitcher buy score architecture after 2026 full-season data (autumn 2026).
+- 37/37 PASS confirmed throughout — no production code touched this session ✅
 
 ---
 

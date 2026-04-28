@@ -82,7 +82,8 @@ def run_step(step_num: int, total: int, script: str, description: str) -> float:
 
     output_lines = []
     for line in proc.stdout:
-        print(f"  {line}", end="")
+        safe_line = line.replace("�", "?")
+        print(f"  {safe_line}", end="")
         output_lines.append(line)
 
     proc.wait()

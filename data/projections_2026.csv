@@ -1,806 +1,813 @@
 name,team,type,signal,luck_score,proj_avg,proj_hr,proj_r,proj_rbi,proj_sb,proj_era,proj_whip,proj_k,proj_w,proj_sv_h,proj_ip,confidence,games_remaining,generated_date
-Alec Bohm,PHI,hitter,Buy low,0.4983,0.297,9.0,58.0,51.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Chase Delauter,CLE,hitter,Buy low,0.4868,0.287,13.0,59.0,52.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-José Ramírez,CLE,hitter,Buy low,0.4834,0.342,16.0,71.0,61.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Iván Herrera,STL,hitter,Buy low,0.4754,0.344,16.0,71.0,63.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Vinnie Pasquantino,KC,hitter,Buy low,0.4615,0.282,13.0,58.0,51.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Trent Grisham,NYY,hitter,Buy low,0.4228,0.257,13.0,56.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ronald Acuña,ATL,hitter,Buy low,0.3939,0.326,18.0,69.0,63.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Manny Machado,SD,hitter,Buy low,0.3802,0.293,11.0,59.0,50.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Corey Seager,TEX,hitter,Buy low,0.3441,0.31,17.0,66.0,59.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Ke'bryan Hayes,CIN,hitter,Buy low,0.3402,0.261,13.0,55.0,49.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kyle Karros,COL,hitter,Buy low,0.3386,0.271,11.0,56.0,47.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Dillon Dingler,DET,hitter,Buy low,0.3172,0.325,21.0,70.0,66.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Dansby Swanson,CHC,hitter,Buy low,0.3081,0.302,15.0,64.0,56.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Marcell Ozuna,PIT,hitter,Buy low,0.3006,0.277,15.0,59.0,54.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Alec Burleson,STL,hitter,Buy low,0.2979,0.297,15.0,63.0,56.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Gunnar Henderson,BAL,hitter,Buy low,0.2937,0.303,16.0,64.0,58.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Aaron Judge,NYY,hitter,Buy low,0.2822,0.36,25.0,78.0,72.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Trea Turner,PHI,hitter,Buy low,0.2765,0.308,12.0,61.0,54.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Jackson Merrill,SD,hitter,Buy low,0.2663,0.296,17.0,64.0,58.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Austin Wells,NYY,hitter,Buy low,0.2584,0.262,11.0,55.0,46.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kyle Schwarber,PHI,hitter,Buy low,0.2575,0.294,18.0,65.0,57.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Caleb Durbin,BOS,hitter,Buy low,0.2566,0.271,9.0,54.0,47.0,15.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Evan Carter,TEX,hitter,Buy low,0.2564,0.279,14.0,59.0,52.0,15.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Michael Busch,CHC,hitter,Buy low,0.2563,0.264,14.0,56.0,50.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Jake Cronenworth,SD,hitter,Buy low,0.2551,0.262,12.0,55.0,48.0,15.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Tj Friedl,CIN,hitter,Buy low,0.2508,0.272,10.0,55.0,48.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Jakob Marsee,MIA,hitter,Buy low,0.2499,0.31,10.0,61.0,52.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Jonathan Aranda,TB,hitter,Buy low,0.2469,0.316,14.0,66.0,56.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Luke Keaschall,MIN,hitter,Buy low,0.2431,0.32,11.0,63.0,56.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Carson Benge,NYM,hitter,Buy low,0.2429,0.263,11.0,54.0,48.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-TJ Rumfield,COL,hitter,Buy low,0.2388,0.282,14.0,58.0,53.0,3.0,,,,,,,High (100+ PA),137,2026-04-26
-Sal Stewart,CIN,hitter,Buy low,0.2353,0.338,25.0,75.0,70.0,3.0,,,,,,,High (100+ PA),137,2026-04-26
-Austin Riley,ATL,hitter,Buy low,0.2342,0.286,14.0,59.0,53.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Yordan Álvarez,HOU,hitter,Buy low,0.2267,0.354,25.0,77.0,72.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Mike Trout,LAA,hitter,Buy low,0.2236,0.327,22.0,72.0,64.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Matt Mclain,CIN,hitter,Buy low,0.2196,0.278,14.0,59.0,51.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Nolan Schanuel,LAA,hitter,Buy low,0.2194,0.274,9.0,54.0,47.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-J. p. Crawford,SEA,hitter,Buy low,0.2156,0.281,14.0,59.0,52.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Tyler Soderstrom,ATH,hitter,Buy low,0.2109,0.282,17.0,61.0,56.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Josh Naylor,SEA,hitter,Buy low,0.2102,0.291,13.0,59.0,53.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Ezequiel Tovar,COL,hitter,Buy low,0.2079,0.274,13.0,56.0,52.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Bryson Stott,PHI,hitter,Buy low,0.2059,0.271,12.0,55.0,50.0,15.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Salvador Pérez,KC,hitter,Buy low,0.1996,0.269,15.0,57.0,53.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Luis Rengifo,MIL,hitter,Buy low,0.1993,0.278,13.0,57.0,52.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Josh Smith,TEX,hitter,Buy low,0.1974,0.255,12.0,54.0,47.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Cody Bellinger,NYY,hitter,Buy low,0.1941,0.308,13.0,64.0,54.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Munetaka Murakami,CWS,hitter,Buy low,0.1938,0.316,19.0,69.0,60.0,3.0,,,,,,,High (100+ PA),137,2026-04-26
-Shohei Ohtani,LAD,hitter,Buy low,0.1915,0.324,22.0,71.0,65.0,15.0,,,,,,,High (100+ PA),137,2026-04-26
-Steven Kwan,CLE,hitter,Buy low,0.1913,0.298,9.0,58.0,50.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Miguel Vargas,CWS,hitter,Buy low,0.1744,0.277,15.0,59.0,52.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Tyler Stephenson,CIN,hitter,Buy low,0.173,0.283,14.0,59.0,52.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Víctor Caratini,MIN,hitter,Buy low,0.1651,0.274,12.0,56.0,50.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ketel Marte,AZ,hitter,Buy low,0.1569,0.309,16.0,65.0,59.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Xander Bogaerts,SD,hitter,Buy low,0.1548,0.31,13.0,63.0,55.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Bryce Harper,PHI,hitter,Neutral,0.1493,0.316,18.0,67.0,61.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Heriberto Hernandez,MIA,hitter,Slight buy,0.1466,0.274,10.0,56.0,47.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Sal Frelick,MIL,hitter,Neutral,0.1369,0.27,9.0,54.0,46.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Gleyber Torres,DET,hitter,Slight buy,0.1337,0.279,10.0,57.0,47.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Roman Anthony,BOS,hitter,Slight buy,0.1329,0.301,16.0,64.0,57.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Cedric Mullins,TB,hitter,Neutral,0.1296,0.237,10.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Spencer Torkelson,DET,hitter,Neutral,0.1293,0.252,14.0,55.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jarren Duran,BOS,hitter,Neutral,0.1293,0.27,15.0,57.0,53.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jake Burger,TEX,hitter,Neutral,0.1279,0.247,12.0,51.0,47.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Lawrence Butler,ATH,hitter,Slight buy,0.1274,0.254,11.0,53.0,46.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Josh Bell,MIN,hitter,Neutral,0.1271,0.271,12.0,56.0,49.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Logan O'hoppe,LAA,hitter,Slight buy,0.1239,0.239,12.0,52.0,45.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Cam Smith,HOU,hitter,Slight buy,0.1174,0.276,17.0,60.0,55.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Spencer Steer,CIN,hitter,Slight buy,0.116,0.268,17.0,59.0,55.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Junior Caminero,TB,hitter,Neutral,0.115,0.294,16.0,62.0,57.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Jordan Beck,COL,hitter,Slight buy,0.1145,0.249,8.0,49.0,43.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Cal Raleigh,SEA,hitter,Slight buy,0.113,0.255,15.0,56.0,49.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Coby Mayo,BAL,hitter,Slight buy,0.1108,0.232,11.0,49.0,43.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Samuel Basallo,BAL,hitter,Slight buy,0.1108,0.228,12.0,50.0,43.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Yainer Diaz,HOU,hitter,Neutral,0.1089,0.278,11.0,56.0,51.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Francisco Lindor,NYM,hitter,Slight buy,0.1071,0.276,15.0,59.0,54.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Geraldo Perdomo,AZ,hitter,Neutral,0.1032,0.254,9.0,51.0,44.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-JJ Wetherholt,STL,hitter,Neutral,0.1017,0.265,9.0,54.0,45.0,3.0,,,,,,,High (100+ PA),137,2026-04-26
-Will Smith,LAD,hitter,Neutral,0.1008,0.265,14.0,56.0,51.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Freddie Freeman,LAD,hitter,Neutral,0.0997,0.325,19.0,69.0,65.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Luis Robert,NYM,hitter,Neutral,0.0995,0.256,10.0,53.0,45.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Bo Naylor,CLE,hitter,Neutral,0.0994,0.218,12.0,47.0,42.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Luisangel Acuña,CWS,hitter,Neutral,0.0956,0.247,9.0,50.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kyle Tucker,LAD,hitter,Neutral,0.0953,0.273,12.0,56.0,50.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Josh Lowe,LAA,hitter,Neutral,0.0917,0.249,11.0,51.0,46.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Curtis Mead,WSH,hitter,Neutral,0.0889,0.26,12.0,54.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-William Contreras,MIL,hitter,Neutral,0.0874,0.279,13.0,58.0,52.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Jonathan India,KC,hitter,Neutral,0.0844,0.245,11.0,51.0,45.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Pete Alonso,BAL,hitter,Neutral,0.0834,0.257,12.0,54.0,47.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-George Springer,TOR,hitter,Neutral,0.0833,0.263,14.0,56.0,50.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Bobby Witt,KC,hitter,Neutral,0.0827,0.299,15.0,62.0,56.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Colson Montgomery,CWS,hitter,Neutral,0.0806,0.269,15.0,58.0,52.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Edgar Quero,CWS,hitter,Neutral,0.0805,0.268,7.0,52.0,44.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ryan Mcmahon,NYY,hitter,Neutral,0.0801,0.245,13.0,53.0,46.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Patrick Bailey,SF,hitter,Neutral,0.0794,0.231,9.0,48.0,41.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Elly De la cruz,CIN,hitter,Neutral,0.0729,0.305,18.0,65.0,60.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Rafael Marchán,PHI,hitter,Neutral,0.0724,0.237,10.0,48.0,44.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Isaac Paredes,HOU,hitter,Neutral,0.0694,0.239,11.0,50.0,45.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Alex Bregman,CHC,hitter,Neutral,0.0688,0.268,13.0,56.0,50.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Nasim Nuñez,WSH,hitter,Neutral,0.0686,0.238,7.0,48.0,40.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Marcus Semien,NYM,hitter,Neutral,0.0674,0.249,13.0,53.0,48.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Maikel García,KC,hitter,Neutral,0.0654,0.275,12.0,57.0,50.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Ramón Urías,STL,hitter,Neutral,0.0649,0.252,13.0,53.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Juan Brito,CLE,hitter,Neutral,0.0642,0.248,9.0,50.0,44.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-James Wood,WSH,hitter,Neutral,0.0639,0.311,22.0,69.0,63.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Cj Abrams,WSH,hitter,Neutral,0.0622,0.303,15.0,63.0,57.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Wenceel Pérez,DET,hitter,Neutral,0.0606,0.25,13.0,53.0,48.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Byron Buxton,MIN,hitter,Neutral,0.059,0.254,17.0,56.0,53.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Amed Rosario,NYY,hitter,Neutral,0.058,0.289,14.0,60.0,55.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Alek Thomas,AZ,hitter,Neutral,0.0569,0.235,11.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Marcelo Mayer,BOS,hitter,Neutral,0.056,0.235,13.0,51.0,46.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Nick Yorke,PIT,hitter,Neutral,0.0559,0.248,9.0,50.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Nick Castellanos,SD,hitter,Neutral,0.0552,0.26,11.0,53.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jacob Young,WSH,hitter,Neutral,0.0551,0.251,10.0,51.0,45.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jorge Polanco,NYM,hitter,Neutral,0.0532,0.242,10.0,50.0,44.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kody Clemens,MIN,hitter,Neutral,0.0516,0.244,15.0,54.0,49.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Lane Thomas,KC,hitter,Neutral,0.0503,0.245,8.0,50.0,41.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Matt Vierling,DET,hitter,Neutral,0.0493,0.255,9.0,51.0,45.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jesús Sánchez,TOR,hitter,Neutral,0.0478,0.265,13.0,55.0,50.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Justin Crawford,PHI,hitter,Neutral,0.0478,0.248,8.0,50.0,43.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Nico Hoerner,CHC,hitter,Neutral,0.0464,0.308,9.0,60.0,52.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Harrison Bader,SF,hitter,Neutral,0.0462,0.251,12.0,52.0,47.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Liam Hicks,MIA,hitter,Neutral,0.0458,0.29,12.0,58.0,53.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Yoán Moncada,LAA,hitter,Neutral,0.045,0.243,11.0,52.0,44.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Tim Tawa,AZ,hitter,Neutral,0.044,0.205,9.0,44.0,37.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Leo Rivas,SEA,hitter,Neutral,0.0439,0.239,8.0,49.0,41.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Bo Bichette,NYM,hitter,Neutral,0.0432,0.29,10.0,57.0,52.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Jacob Wilson,ATH,hitter,Neutral,0.0427,0.301,8.0,57.0,52.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Jake Bauers,MIL,hitter,Neutral,0.0419,0.246,12.0,52.0,46.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Mickey Moniak,COL,hitter,Neutral,0.0414,0.269,14.0,56.0,52.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Joey Ortiz,MIL,hitter,Neutral,0.0412,0.234,9.0,48.0,41.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Luis García,WSH,hitter,Neutral,0.0401,0.268,11.0,54.0,49.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Royce Lewis,MIN,hitter,Neutral,0.0398,0.269,13.0,57.0,50.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Nathan Church,STL,hitter,Neutral,0.0394,0.217,10.0,46.0,41.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Brent Rooker,ATH,hitter,Neutral,0.0388,0.265,16.0,57.0,53.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Nathaniel Lowe,CIN,hitter,Neutral,0.0376,0.281,14.0,59.0,53.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Davis Schneider,TOR,hitter,Neutral,0.0341,0.238,14.0,53.0,45.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Brice Matthews,HOU,hitter,Neutral,0.034,0.175,10.0,39.0,34.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Henry Davis,PIT,hitter,Neutral,0.0336,0.186,8.0,40.0,34.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jake Mccarthy,COL,hitter,Neutral,0.0322,0.262,11.0,53.0,48.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Keibert Ruiz,WSH,hitter,Neutral,0.0308,0.247,11.0,51.0,46.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Blaze Alexander,BAL,hitter,Neutral,0.0298,0.239,7.0,47.0,41.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Lenyn Sosa,CWS,hitter,Neutral,0.0292,0.246,10.0,50.0,45.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Nolan Arenado,AZ,hitter,Neutral,0.0291,0.269,13.0,55.0,51.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Rob Refsnyder,SEA,hitter,Neutral,0.0286,0.275,13.0,57.0,51.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Drew Millas,WSH,hitter,Neutral,0.0266,0.277,9.0,55.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Nolan Gorman,STL,hitter,Neutral,0.0262,0.224,10.0,47.0,41.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Michael Harris,ATL,hitter,Neutral,0.0257,0.304,19.0,65.0,62.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kerry Carpenter,DET,hitter,Neutral,0.0257,0.283,14.0,59.0,53.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Andrew Benintendi,CWS,hitter,Neutral,0.025,0.259,13.0,54.0,49.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Thomas Saggese,STL,hitter,Neutral,0.0234,0.25,8.0,50.0,43.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Brandon Valenzuela,TOR,hitter,Neutral,0.0233,0.248,11.0,51.0,46.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Rece Hinds,CIN,hitter,Neutral,0.0214,0.194,9.0,41.0,36.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brandon Marsh,PHI,hitter,Neutral,0.021,0.273,12.0,56.0,51.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Victor Scott,STL,hitter,Neutral,0.021,0.207,6.0,42.0,35.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Dylan Beavers,BAL,hitter,Neutral,0.0202,0.242,11.0,51.0,45.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Francisco Álvarez,NYM,hitter,Neutral,0.0182,0.252,15.0,55.0,50.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jazz Chisholm,NYY,hitter,Neutral,0.0157,0.25,10.0,51.0,45.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Nathan Lukes,TOR,hitter,Neutral,0.0156,0.259,7.0,50.0,44.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ty France,SD,hitter,Neutral,0.0129,0.272,15.0,57.0,53.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Cole Young,SEA,hitter,Neutral,0.0124,0.257,11.0,53.0,46.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Freddy Fermin,SD,hitter,Neutral,0.0121,0.264,7.0,52.0,43.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Rhys Hoskins,CLE,hitter,Neutral,0.0112,0.233,12.0,50.0,44.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kyle Higashioka,TEX,hitter,Neutral,0.0111,0.234,13.0,51.0,46.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jeremy Peña,HOU,hitter,Neutral,0.0099,0.274,11.0,56.0,50.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Trevor Story,BOS,hitter,Neutral,0.0096,0.247,8.0,49.0,43.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Eli White,ATL,hitter,Neutral,0.0094,0.226,11.0,47.0,43.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Blake Perkins,MIL,hitter,Neutral,0.0092,0.232,9.0,48.0,41.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brandon Lowe,PIT,hitter,Neutral,0.0082,0.275,13.0,57.0,51.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Dane Myers,CIN,hitter,Neutral,0.0076,0.282,14.0,59.0,52.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jake Fraley,TB,hitter,Neutral,0.0073,0.262,14.0,55.0,50.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-José Altuve,HOU,hitter,Neutral,0.0073,0.291,13.0,60.0,53.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Sam Antonacci,CWS,hitter,Neutral,0.0067,0.263,13.0,55.0,50.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Andruw Monasterio,BOS,hitter,Neutral,0.0062,0.262,12.0,54.0,48.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brett Sullivan,COL,hitter,Neutral,0.005,0.203,6.0,41.0,35.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Ryan Jeffers,MIN,hitter,Neutral,0.0046,0.272,15.0,59.0,52.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Will Benson,CIN,hitter,Neutral,0.0042,0.224,10.0,48.0,41.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Gary Sánchez,MIL,hitter,Neutral,0.0032,0.26,15.0,57.0,50.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Austin Wynns,ATH,hitter,Neutral,0.0024,0.259,12.0,54.0,48.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Daulton Varsho,TOR,hitter,Neutral,0.0008,0.239,11.0,50.0,45.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Drew Gilbert,SF,hitter,Neutral,0.0008,0.216,11.0,46.0,41.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Zach Mckinstry,DET,hitter,Neutral,0.0002,0.233,11.0,49.0,44.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Paul Goldschmidt,NYY,hitter,Neutral,0.0,0.284,15.0,60.0,54.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Noelvi Marte,CIN,hitter,Neutral,0.0,0.254,8.0,50.0,44.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Reese Mcguire,CWS,hitter,Neutral,0.0,0.248,8.0,49.0,44.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jake Rogers,DET,hitter,Neutral,0.0,0.206,15.0,47.0,44.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Luis Torrens,NYM,hitter,Neutral,0.0,0.228,8.0,46.0,41.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Nick Loftin,KC,hitter,Neutral,0.0,0.24,10.0,50.0,43.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Zack Gelof,ATH,hitter,Neutral,0.0,0.225,11.0,47.0,43.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jorge Mateo,ATL,hitter,Neutral,0.0,0.223,11.0,48.0,42.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Griffin Conine,MIA,hitter,Neutral,0.0,0.292,19.0,64.0,60.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jerar Encarnacion,SF,hitter,Neutral,0.0,0.217,9.0,45.0,40.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-C. j. Kayfus,CLE,hitter,Neutral,0.0,0.232,16.0,52.0,48.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Gabriel Arias,CLE,hitter,Neutral,0.0,0.224,12.0,48.0,43.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Mookie Betts,LAD,hitter,Neutral,0.0,0.291,15.0,61.0,55.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Ryan Vilade,TB,hitter,Neutral,0.0,0.182,4.0,37.0,29.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Starling Marte,KC,hitter,Neutral,0.0,0.272,13.0,56.0,52.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Dustin Harris,CWS,hitter,Neutral,0.0,0.236,9.0,50.0,41.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Austin Slater,MIA,hitter,Neutral,0.0,0.244,9.0,50.0,43.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Johnathan Rodríguez,BAL,hitter,Neutral,0.0,0.199,7.0,43.0,33.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Ronny Mauricio,NYM,hitter,Neutral,0.0,0.234,8.0,47.0,42.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Shay Whitcomb,HOU,hitter,Neutral,0.0,0.185,11.0,42.0,37.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Connor Joe,SEA,hitter,Neutral,0.0,0.246,13.0,53.0,47.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Weston Wilson,BAL,hitter,Neutral,0.0,0.278,15.0,59.0,53.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Ryan Mountcastle,BAL,hitter,Neutral,0.0,0.26,10.0,53.0,46.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Felix Reyes,PHI,hitter,Neutral,0.0,0.256,9.0,51.0,46.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Tommy Pham,NYM,hitter,Neutral,0.0,0.246,10.0,50.0,44.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-P. j. Higgins,CIN,hitter,Neutral,0.0,0.231,9.0,48.0,41.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-J. c. Escarra,NYY,hitter,Neutral,0.0,0.205,12.0,45.0,41.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jose Trevino,CIN,hitter,Neutral,0.0,0.232,9.0,48.0,41.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Dylan Moore,PHI,hitter,Neutral,0.0,0.207,10.0,45.0,38.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Víctor Robles,SEA,hitter,Neutral,0.0,0.263,13.0,54.0,51.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Austin Hays,CWS,hitter,Neutral,0.0,0.262,12.0,54.0,49.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Eloy Jiménez,TOR,hitter,Neutral,0.0,0.268,12.0,55.0,49.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jahmai Jones,DET,hitter,Neutral,0.0,0.3,21.0,66.0,64.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Tanner Murray,CWS,hitter,Neutral,0.0,0.248,11.0,51.0,46.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Darell Hernaiz,ATH,hitter,Neutral,0.0,0.228,7.0,46.0,38.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Hao-Yu  Lee,DET,hitter,Neutral,0.0,0.248,15.0,54.0,50.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Andy Ibáñez,ATH,hitter,Neutral,0.0,0.247,8.0,49.0,43.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Ryan Kreidler,MIN,hitter,Neutral,0.0,0.204,10.0,45.0,37.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Bryce Johnson,SD,hitter,Neutral,0.0,0.24,7.0,47.0,41.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Lourdes Gurriel,AZ,hitter,Neutral,0.0,0.269,11.0,55.0,49.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Sam Haggerty,TEX,hitter,Neutral,0.0,0.248,9.0,50.0,44.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jordan Lawlar,AZ,hitter,Neutral,0.0,0.205,9.0,43.0,38.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Mj Melendez,NYM,hitter,Neutral,0.0,0.226,13.0,49.0,44.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Yohel Pozo,STL,hitter,Neutral,0.0,0.231,7.0,46.0,40.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Daniel Susac,SF,hitter,Neutral,0.0,0.267,11.0,54.0,49.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-James Outman,MIN,hitter,Neutral,0.0,0.215,9.0,45.0,39.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jared Young,NYM,hitter,Neutral,0.0,0.227,16.0,51.0,48.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Carlos Santana,AZ,hitter,Neutral,0.0,0.226,10.0,47.0,42.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Addison Barger,TOR,hitter,Neutral,0.0,0.229,8.0,47.0,39.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Santiago Espinal,LAD,hitter,Neutral,0.0,0.256,9.0,51.0,45.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Alejandro Kirk,TOR,hitter,Neutral,0.0,0.272,12.0,56.0,50.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jared Triolo,PIT,hitter,Neutral,0.0,0.237,10.0,49.0,43.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Otto Kemp,PHI,hitter,Neutral,0.0,0.234,9.0,47.0,42.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Kyle Stowers,MIA,hitter,Neutral,0.0,0.277,12.0,57.0,50.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Luis Matos,MIL,hitter,Neutral,0.0,0.231,8.0,46.0,41.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Nick Allen,HOU,hitter,Neutral,0.0,0.213,7.0,44.0,37.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jeimer Candelario,LAA,hitter,Neutral,0.0,0.226,10.0,47.0,42.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Carson Williams,TB,hitter,Neutral,0.0,0.178,6.0,37.0,31.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Travis D'arnaud,LAA,hitter,Neutral,0.0,0.241,16.0,54.0,50.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Alex Call,LAD,hitter,Neutral,-0.0007,0.253,11.0,53.0,46.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-George Valera,CLE,hitter,Neutral,-0.0008,0.22,9.0,45.0,40.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Masataka Yoshida,BOS,hitter,Neutral,-0.001,0.282,9.0,56.0,47.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Gavin Sheets,SD,hitter,Neutral,-0.001,0.243,13.0,52.0,47.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Hunter Feduccia,TB,hitter,Neutral,-0.0029,0.182,6.0,39.0,31.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Bryce Teodosio,LAA,hitter,Neutral,-0.0038,0.194,8.0,41.0,36.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Tyler Heineman,TOR,hitter,Neutral,-0.0045,0.245,8.0,49.0,43.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Edmundo Sosa,PHI,hitter,Neutral,-0.0046,0.255,11.0,52.0,47.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brice Turang,MIL,hitter,Neutral,-0.0047,0.299,13.0,62.0,53.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Jo Adell,LAA,hitter,Neutral,-0.0048,0.241,11.0,49.0,46.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Mitch Garver,SEA,hitter,Neutral,-0.0059,0.218,12.0,48.0,42.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Randal Grichuk,NYY,hitter,Neutral,-0.0059,0.261,15.0,56.0,52.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Tyler Freeman,COL,hitter,Neutral,-0.006,0.25,8.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Miguel Amaya,CHC,hitter,Neutral,-0.0064,0.239,10.0,50.0,43.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Gabriel Moreno,AZ,hitter,Neutral,-0.0065,0.283,13.0,58.0,53.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Wyatt Langford,TEX,hitter,Neutral,-0.0066,0.247,11.0,51.0,46.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Pedro Pagés,STL,hitter,Neutral,-0.0066,0.247,11.0,51.0,46.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Michael Conforto,CHC,hitter,Neutral,-0.0067,0.242,11.0,51.0,44.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Myles Straw,TOR,hitter,Neutral,-0.0071,0.253,10.0,52.0,45.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-José Fermín,STL,hitter,Neutral,-0.0074,0.227,8.0,46.0,40.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Derek Hill,CWS,hitter,Neutral,-0.0076,0.25,9.0,51.0,43.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Andrew Mccutchen,TEX,hitter,Neutral,-0.008,0.24,12.0,51.0,46.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Michael Massey,KC,hitter,Neutral,-0.0081,0.243,12.0,51.0,46.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Parker Meadows,DET,hitter,Neutral,-0.0083,0.232,10.0,48.0,43.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Tyler O'neill,BAL,hitter,Neutral,-0.0087,0.229,12.0,49.0,44.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Richie Palacios,TB,hitter,Neutral,-0.0095,0.273,11.0,56.0,48.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brendan Donovan,SEA,hitter,Neutral,-0.0098,0.29,10.0,58.0,50.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Tyrone Taylor,NYM,hitter,Neutral,-0.0102,0.234,11.0,49.0,44.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Luis Arráez,SF,hitter,Neutral,-0.0102,0.318,7.0,60.0,53.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Spencer Horwitz,PIT,hitter,Neutral,-0.0103,0.273,9.0,55.0,46.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Austin Hedges,CLE,hitter,Neutral,-0.0104,0.177,5.0,36.0,30.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Joey Bart,PIT,hitter,Neutral,-0.0109,0.24,12.0,51.0,46.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-J. t. Realmuto,PHI,hitter,Neutral,-0.0112,0.263,10.0,53.0,47.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jake Meyers,HOU,hitter,Neutral,-0.0114,0.249,13.0,53.0,48.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Vaughn Grissom,LAA,hitter,Neutral,-0.0115,0.266,10.0,54.0,46.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Connor Wong,BOS,hitter,Neutral,-0.0119,0.244,11.0,51.0,45.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brenton Doyle,COL,hitter,Neutral,-0.0128,0.235,9.0,48.0,42.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jonah Heim,ATL,hitter,Neutral,-0.0128,0.23,10.0,48.0,42.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Dominic Canzone,SEA,hitter,Neutral,-0.013,0.27,16.0,58.0,54.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ezequiel Duran,TEX,hitter,Neutral,-0.0156,0.251,10.0,51.0,45.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-David Hamilton,MIL,hitter,Neutral,-0.0158,0.221,8.0,46.0,38.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Matt Wallner,MIN,hitter,Neutral,-0.0159,0.237,13.0,51.0,46.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Adrian Del castillo,AZ,hitter,Neutral,-0.0162,0.27,12.0,55.0,51.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Mark Vientos,NYM,hitter,Neutral,-0.0167,0.239,10.0,49.0,44.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Tristan Peters,CWS,hitter,Neutral,-0.0169,0.082,5.0,21.0,16.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Taylor Trammell,HOU,hitter,Neutral,-0.0179,0.196,10.0,43.0,37.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Adley Rutschman,BAL,hitter,Neutral,-0.019,0.264,13.0,55.0,50.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Fernando Tatís,SD,hitter,Neutral,-0.0192,0.274,15.0,59.0,53.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-David Fry,CLE,hitter,Neutral,-0.0193,0.244,12.0,52.0,45.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Trevor Larnach,MIN,hitter,Neutral,-0.0202,0.265,12.0,56.0,47.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jonny Deluca,TB,hitter,Neutral,-0.0202,0.253,11.0,52.0,47.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Colton Cowser,BAL,hitter,Neutral,-0.022,0.219,13.0,49.0,43.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Isiah Kiner-falefa,BOS,hitter,Neutral,-0.0223,0.26,9.0,52.0,45.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brayan Rocchio,CLE,hitter,Neutral,-0.023,0.242,8.0,49.0,42.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Graham Pauley,MIA,hitter,Neutral,-0.0232,0.209,9.0,44.0,39.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-James Mccann,AZ,hitter,Neutral,-0.0237,0.226,11.0,47.0,43.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Denzel Clarke,ATH,hitter,Neutral,-0.0247,0.23,8.0,46.0,40.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Juan Soto,NYM,hitter,Neutral,-0.0248,0.284,18.0,62.0,57.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Brooks Lee,MIN,hitter,Neutral,-0.0263,0.242,9.0,49.0,43.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Rafael Devers,SF,hitter,Neutral,-0.0267,0.272,13.0,56.0,52.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Carlos Narváez,BOS,hitter,Neutral,-0.0268,0.241,12.0,50.0,46.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Dalton Rushing,LAD,hitter,Neutral,-0.0272,0.251,14.0,54.0,49.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Luis Campusano,SD,hitter,Neutral,-0.0286,0.266,13.0,56.0,50.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jorge Barrosa,AZ,hitter,Neutral,-0.0295,0.167,7.0,35.0,30.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kyle Manzardo,CLE,hitter,Neutral,-0.0309,0.234,12.0,50.0,45.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Zach Neto,LAA,hitter,Neutral,-0.031,0.268,13.0,57.0,49.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Miguel Rojas,LAD,hitter,Neutral,-0.0346,0.262,11.0,54.0,48.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Carlos Cortes,ATH,hitter,Neutral,-0.0348,0.336,19.0,70.0,66.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jeff Mcneil,ATH,hitter,Neutral,-0.0354,0.276,10.0,55.0,49.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Daylen Lile,WSH,hitter,Neutral,-0.0356,0.304,11.0,60.0,53.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Tristan Gray,MIN,hitter,Neutral,-0.0373,0.234,13.0,50.0,46.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Julio Rodríguez,SEA,hitter,Neutral,-0.0383,0.274,11.0,56.0,49.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Dominic Smith,ATL,hitter,Neutral,-0.0413,0.285,13.0,58.0,54.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Joc Pederson,TEX,hitter,Neutral,-0.0433,0.251,10.0,52.0,44.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Willy Adames,SF,hitter,Neutral,-0.0438,0.235,14.0,51.0,47.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Danny Jansen,TEX,hitter,Neutral,-0.048,0.225,11.0,48.0,42.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Taylor Walls,TB,hitter,Neutral,-0.0493,0.193,7.0,40.0,34.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Christian Walker,HOU,hitter,Neutral,-0.05,0.279,15.0,60.0,54.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-José Tena,WSH,hitter,Neutral,-0.0509,0.252,8.0,50.0,44.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Ian Happ,CHC,hitter,Neutral,-0.0517,0.273,15.0,59.0,52.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Kazuma Okamoto,TOR,hitter,Neutral,-0.0517,0.269,14.0,57.0,51.0,3.0,,,,,,,High (100+ PA),137,2026-04-26
-Teoscar Hernández,LAD,hitter,Neutral,-0.0521,0.262,14.0,56.0,51.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Christian Vázquez,HOU,hitter,Neutral,-0.0554,0.242,9.0,49.0,43.0,2.0,,,,,,,Low (<50 PA),137,2026-04-26
-Jorbit Vivas,WSH,hitter,Neutral,-0.0561,0.196,6.0,40.0,33.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Josh Jung,TEX,hitter,Neutral,-0.0579,0.277,11.0,56.0,50.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Hyeseong Kim,LAD,hitter,Neutral,-0.0588,0.289,11.0,58.0,51.0,14.0,,,,,,,Low (<50 PA),137,2026-04-26
-Connor Norby,MIA,hitter,Neutral,-0.0595,0.252,12.0,53.0,47.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ben Williamson,TB,hitter,Neutral,-0.0596,0.253,6.0,49.0,41.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Brandon Nimmo,TEX,hitter,Neutral,-0.0598,0.285,15.0,60.0,55.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Alex Freeland,LAD,hitter,Neutral,-0.0645,0.223,13.0,49.0,44.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Andrés Giménez,TOR,hitter,Neutral,-0.0651,0.256,9.0,51.0,46.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Agustín Ramírez,MIA,hitter,Neutral,-0.0655,0.231,9.0,48.0,41.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Vladimir Guerrero,TOR,hitter,Neutral,-0.0664,0.302,16.0,64.0,57.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Jake Mangum,PIT,hitter,Neutral,-0.0665,0.296,7.0,56.0,49.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ramón Laureano,SD,hitter,Neutral,-0.0679,0.27,15.0,58.0,53.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Nick Fortes,TB,hitter,Neutral,-0.068,0.233,8.0,47.0,41.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Wilyer Abreu,BOS,hitter,Neutral,-0.0693,0.298,15.0,62.0,57.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Matt Shaw,CHC,hitter,Neutral,-0.0697,0.262,12.0,54.0,49.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Everson Pereira,CWS,hitter,Neutral,-0.0699,0.219,10.0,46.0,41.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Leody Taveras,BAL,hitter,Neutral,-0.0701,0.265,10.0,54.0,46.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Bryan Reynolds,PIT,hitter,Neutral,-0.0709,0.274,12.0,57.0,49.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Angel Martínez,CLE,hitter,Neutral,-0.0711,0.264,14.0,55.0,52.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Javier Báez,DET,hitter,Neutral,-0.0719,0.238,9.0,48.0,43.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jorge Soler,LAA,hitter,Neutral,-0.0739,0.249,13.0,53.0,47.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jeremiah Jackson,BAL,hitter,Neutral,-0.0752,0.28,14.0,58.0,54.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ceddanne Rafaela,BOS,hitter,Neutral,-0.0764,0.247,11.0,51.0,46.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Adam Frazier,LAA,hitter,Neutral,-0.077,0.24,10.0,50.0,43.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Chase Meidroth,CWS,hitter,Neutral,-0.0785,0.253,8.0,51.0,44.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Adolis García,PHI,hitter,Neutral,-0.0795,0.256,12.0,53.0,48.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Mike Yastrzemski,ATL,hitter,Neutral,-0.0821,0.227,10.0,47.0,42.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Konnor Griffin,PIT,hitter,Neutral,-0.0822,0.248,13.0,52.0,48.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Carlos Correa,HOU,hitter,Neutral,-0.0844,0.292,14.0,61.0,54.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Isaac Collins,KC,hitter,Slight sell,-0.0852,0.249,11.0,51.0,45.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Seiya Suzuki,CHC,hitter,Slight sell,-0.0865,0.288,14.0,59.0,53.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Kevin McGonigle,DET,hitter,Slight sell,-0.0874,0.294,16.0,62.0,55.0,3.0,,,,,,,High (100+ PA),137,2026-04-26
-Carter Jensen,KC,hitter,Slight sell,-0.0923,0.296,15.0,62.0,56.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Edouard Julien,COL,hitter,Slight sell,-0.0924,0.249,12.0,52.0,46.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jung hoo Lee,SF,hitter,Slight sell,-0.0944,0.27,8.0,52.0,46.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Hunter Goodman,COL,hitter,Slight sell,-0.1007,0.264,14.0,55.0,50.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Willi Castro,COL,hitter,Slight sell,-0.1055,0.236,11.0,48.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Joey Loperfido,HOU,hitter,Slight sell,-0.1063,0.24,10.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Eugenio Suárez,CIN,hitter,Slight sell,-0.1069,0.231,12.0,49.0,45.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Troy Johnston,COL,hitter,Slight sell,-0.1093,0.269,10.0,53.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ozzie Albies,ATL,hitter,Slight sell,-0.1093,0.258,9.0,51.0,46.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Christian Yelich,MIL,hitter,Slight sell,-0.1144,0.263,12.0,54.0,48.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Brady House,WSH,hitter,Slight sell,-0.1148,0.231,12.0,49.0,45.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Mauricio Dubón,ATL,hitter,Slight sell,-0.1158,0.248,10.0,50.0,45.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Nick Gonzales,PIT,hitter,Slight sell,-0.1161,0.249,8.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Brett Baty,NYM,hitter,Slight sell,-0.1187,0.224,12.0,48.0,44.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Miguel Andújar,SD,hitter,Slight sell,-0.1198,0.278,7.0,52.0,47.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Javier Sanoja,MIA,hitter,Slight sell,-0.1241,0.234,8.0,48.0,41.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Yandy Díaz,TB,hitter,Slight sell,-0.1256,0.302,12.0,60.0,54.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Pete Crow-armstrong,CHC,hitter,Slight sell,-0.1265,0.232,10.0,48.0,43.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Drake Baldwin,ATL,hitter,Slight sell,-0.132,0.301,18.0,64.0,59.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Kyle Isbel,KC,hitter,Slight sell,-0.1366,0.238,10.0,48.0,44.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ernie Clement,TOR,hitter,Slight sell,-0.1382,0.255,6.0,48.0,43.0,14.0,,,,,,,High (100+ PA),137,2026-04-26
-Matt Olson,ATL,hitter,Slight sell,-0.1408,0.284,18.0,62.0,56.0,2.0,,,,,,,High (100+ PA),137,2026-04-26
-Joey Wiemer,WSH,hitter,Slight sell,-0.148,0.212,9.0,45.0,38.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Brandon Lockridge,MIL,hitter,Slight sell,-0.149,0.219,7.0,45.0,37.0,14.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Chandler Simpson,TB,hitter,Sell high,-0.1505,0.277,5.0,52.0,44.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Nick Kurtz,ATH,hitter,Sell high,-0.1517,0.308,19.0,67.0,57.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Masyn Winn,STL,hitter,Sell high,-0.156,0.236,8.0,48.0,41.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jac Caglianone,KC,hitter,Sell high,-0.156,0.193,13.0,43.0,39.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Willson Contreras,BOS,hitter,Sell high,-0.159,0.271,16.0,57.0,53.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Austin Martin,MIN,hitter,Sell high,-0.1602,0.272,9.0,55.0,45.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Colt Keith,DET,hitter,Sell high,-0.1611,0.25,12.0,52.0,47.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ryan O'hearn,PIT,hitter,Slight sell,-0.1696,0.298,13.0,60.0,53.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Jose Fernandez,AZ,hitter,Sell high,-0.1722,0.237,10.0,48.0,44.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Oneil Cruz,PIT,hitter,Sell high,-0.1905,0.258,19.0,57.0,54.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Ildemaro Vargas,AZ,hitter,Sell high,-0.1965,0.283,12.0,56.0,52.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Owen Caissie,MIA,hitter,Sell high,-0.1994,0.2,11.0,43.0,39.0,3.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Xavier Edwards,MIA,hitter,Sell high,-0.2006,0.28,10.0,56.0,49.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Oswald Peraza,LAA,hitter,Sell high,-0.2014,0.234,12.0,49.0,44.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Moisés Ballesteros,CHC,hitter,Sell high,-0.2019,0.306,15.0,63.0,58.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Giancarlo Stanton,NYY,hitter,Sell high,-0.2033,0.221,16.0,49.0,46.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Casey Schmitt,SF,hitter,Sell high,-0.205,0.235,14.0,51.0,48.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Max Muncy,LAD,hitter,Sell high,-0.2124,0.271,19.0,59.0,55.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Carson Kelly,CHC,hitter,Sell high,-0.2132,0.239,12.0,51.0,45.0,2.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Jordan Walker,STL,hitter,Sell high,-0.2174,0.265,18.0,58.0,54.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Corbin Carroll,AZ,hitter,Sell high,-0.2261,0.266,15.0,56.0,51.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Randy Arozarena,SEA,hitter,Sell high,-0.2274,0.246,12.0,52.0,45.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Shea Langeliers,ATH,hitter,Sell high,-0.2489,0.264,14.0,55.0,50.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Otto Lopez,MIA,hitter,Sell high,-0.249,0.268,13.0,55.0,52.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Taylor Ward,BAL,hitter,Sell high,-0.2536,0.266,10.0,55.0,46.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Riley Greene,DET,hitter,Sell high,-0.264,0.286,16.0,60.0,54.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Daniel Schneemann,CLE,hitter,Sell high,-0.2693,0.245,12.0,52.0,45.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Andy Pages,LAD,hitter,Sell high,-0.2722,0.273,11.0,55.0,49.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Max Muncy,LAD,hitter,Sell high,-0.2124,0.271,19.0,59.0,55.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Luke Raley,SEA,hitter,Sell high,-0.2869,0.254,17.0,55.0,52.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Heliot Ramos,SF,hitter,Sell high,-0.2926,0.248,15.0,53.0,49.0,6.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-José Caballero,NYY,hitter,Sell high,-0.293,0.215,8.0,44.0,39.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Ben Rice,NYY,hitter,Sell high,-0.4165,0.29,21.0,65.0,58.0,6.0,,,,,,,High (100+ PA),137,2026-04-26
-Garrett Mitchell,MIL,hitter,Sell high,-0.4249,0.25,13.0,54.0,45.0,13.0,,,,,,,Medium (50-100 PA),137,2026-04-26
-Matt Chapman,SF,hitter,Sell high,-0.4535,0.223,9.0,46.0,40.0,13.0,,,,,,,High (100+ PA),137,2026-04-26
-Leo Jimenez,MIA,hitter,Neutral,0.0,0.224,8.0,47.0,38.0,6.0,,,,,,,Low (<50 PA),137,2026-04-26
-Greg Jones,MIL,hitter,Neutral,0.0,0.162,10.0,36.0,33.0,3.0,,,,,,,Low (<50 PA),137,2026-04-26
-Michael Lorenzen,COL,pitcher,Neutral,0.3836,,,,,,4.32,1.41,108.0,7.0,0.0,122.6,Medium (20-40 IP),137,2026-04-26
-Jesús Luzardo,PHI,pitcher,Buy low,0.3686,,,,,,3.48,1.27,133.0,7.0,0.0,127.9,Medium (20-40 IP),137,2026-04-26
-Joe Ryan,MIN,pitcher,Buy low,0.3605,,,,,,3.17,1.21,129.0,7.0,0.0,127.5,Medium (20-40 IP),137,2026-04-26
-Yusei Kikuchi,LAA,pitcher,Neutral,0.3136,,,,,,4.22,1.42,123.0,7.0,0.0,122.6,Medium (20-40 IP),137,2026-04-26
-Cristopher Sánchez,PHI,pitcher,Buy low,0.2701,,,,,,2.87,1.17,136.0,7.0,0.0,128.4,Medium (20-40 IP),137,2026-04-26
-Logan Gilbert,SEA,pitcher,Buy low,0.2262,,,,,,3.07,1.18,133.0,7.0,0.0,126.8,Medium (20-40 IP),137,2026-04-26
-Tarik Skubal,DET,pitcher,Neutral,0.2105,,,,,,2.53,1.07,126.0,7.0,0.0,130.7,Medium (20-40 IP),137,2026-04-26
-Cam Schlittler,NYY,pitcher,Neutral,0.1877,,,,,,2.16,1.08,134.0,7.0,0.0,131.0,Medium (20-40 IP),137,2026-04-26
-Kyle Bradish,BAL,pitcher,Buy low,0.178,,,,,,3.2,1.23,130.0,7.0,0.0,125.8,Medium (20-40 IP),137,2026-04-26
-Cade Cavalli,WSH,pitcher,Neutral,0.1622,,,,,,4.62,1.61,93.0,0.0,0.0,93.0,Medium (20-40 IP),137,2026-04-26
-Shane Baz,BAL,pitcher,Buy low,0.1574,,,,,,3.89,1.37,122.0,7.0,0.0,128.4,Medium (20-40 IP),137,2026-04-26
-Will Warren,NYY,pitcher,Neutral,0.1441,,,,,,4.77,1.57,125.0,7.0,0.0,126.9,Medium (20-40 IP),137,2026-04-26
-Braxton Ashcraft,PIT,pitcher,Neutral,0.1434,,,,,,2.24,1.08,131.0,7.0,0.0,130.3,Medium (20-40 IP),137,2026-04-26
-Luis Castillo,SEA,pitcher,Slight buy,0.1293,,,,,,3.4,1.23,122.0,7.0,0.0,125.7,Medium (20-40 IP),137,2026-04-26
-Keider Montero,DET,pitcher,Neutral,0.1242,,,,,,3.17,1.38,114.0,7.0,0.0,127.4,Medium (20-40 IP),137,2026-04-26
-Bryan Woo,SEA,pitcher,Slight buy,0.1239,,,,,,3.22,1.16,119.0,7.0,0.0,129.7,Medium (20-40 IP),137,2026-04-26
-Trevor Rogers,BAL,pitcher,Slight buy,0.1161,,,,,,3.6,1.37,117.0,7.0,0.0,124.2,Medium (20-40 IP),137,2026-04-26
-Dustin May,STL,pitcher,Neutral,0.115,,,,,,4.35,1.46,115.0,7.0,0.0,123.3,Medium (20-40 IP),137,2026-04-26
-Mike Burrows,HOU,pitcher,Neutral,0.1123,,,,,,4.17,1.4,124.0,7.0,0.0,125.1,Medium (20-40 IP),137,2026-04-26
-Ben Brown,CHC,pitcher,Neutral,0.1029,,,,,,3.84,1.52,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Logan Webb,SF,pitcher,Slight buy,0.1012,,,,,,3.21,1.18,122.0,7.0,0.0,131.6,Medium (20-40 IP),137,2026-04-26
-Aaron Nola,PHI,pitcher,Slight buy,0.0956,,,,,,4.0,1.35,128.0,7.0,0.0,126.7,Medium (20-40 IP),137,2026-04-26
-Jack Leiter,TEX,pitcher,Neutral,0.0948,,,,,,4.8,1.53,124.0,7.0,0.0,126.7,Medium (20-40 IP),137,2026-04-26
-Tyler Glasnow,LAD,pitcher,Neutral,0.0942,,,,,,2.5,1.13,143.0,7.0,0.0,137.8,Medium (20-40 IP),137,2026-04-26
-Javier Assad,CHC,pitcher,Neutral,0.0922,,,,,,3.59,1.24,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Chris Paddack,MIA,pitcher,Neutral,0.0921,,,,,,4.76,1.57,120.0,7.0,0.0,123.8,Medium (20-40 IP),137,2026-04-26
-Taijuan Walker,PHI,pitcher,Neutral,0.0898,,,,,,4.97,1.49,115.0,7.0,0.0,125.5,Medium (20-40 IP),137,2026-04-26
-Miles Mikolas,WSH,pitcher,Neutral,0.0861,,,,,,4.88,1.49,83.0,0.0,0.0,93.0,Medium (20-40 IP),137,2026-04-26
-Dylan Cease,TOR,pitcher,Neutral,0.0801,,,,,,3.18,1.29,143.0,7.0,0.0,126.5,Medium (20-40 IP),137,2026-04-26
-Bailey Ober,MIN,pitcher,Slight buy,0.0791,,,,,,3.84,1.32,120.0,7.0,0.0,127.7,Medium (20-40 IP),137,2026-04-26
-David Peterson,NYM,pitcher,Neutral,0.0789,,,,,,4.08,1.37,116.0,7.0,0.0,124.6,Medium (20-40 IP),137,2026-04-26
-Adrian Houser,SF,pitcher,Neutral,0.0765,,,,,,4.88,1.49,95.0,7.0,0.0,124.0,Medium (20-40 IP),137,2026-04-26
-Janson Junk,MIA,pitcher,Slight buy,0.0743,,,,,,4.14,1.51,106.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Walker Buehler,SD,pitcher,Neutral,0.0741,,,,,,4.51,1.54,112.0,7.0,0.0,116.7,Medium (20-40 IP),137,2026-04-26
-Max Scherzer,TOR,pitcher,Neutral,0.0731,,,,,,4.06,1.29,83.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kevin Gausman,TOR,pitcher,Neutral,0.0708,,,,,,3.21,1.22,126.0,7.0,0.0,129.8,Medium (20-40 IP),137,2026-04-26
-Garrett Crochet,BOS,pitcher,Neutral,0.0697,,,,,,3.06,1.17,125.0,7.0,0.0,127.1,Medium (20-40 IP),137,2026-04-26
-Brandon Woodruff,MIL,pitcher,Neutral,0.0669,,,,,,2.99,1.13,118.0,7.0,0.0,128.6,Medium (20-40 IP),137,2026-04-26
-Sean Manaea,NYM,pitcher,Neutral,0.0656,,,,,,4.37,1.43,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Andrew Abbott,CIN,pitcher,Neutral,0.0616,,,,,,3.78,1.27,112.0,7.0,0.0,125.8,Medium (20-40 IP),137,2026-04-26
-Simeon Woods richardson,MIN,pitcher,Neutral,0.0609,,,,,,4.38,1.41,112.0,7.0,0.0,127.3,Medium (20-40 IP),137,2026-04-26
-Nathan Eovaldi,TEX,pitcher,Neutral,0.0594,,,,,,4.11,1.25,122.0,7.0,0.0,127.7,Medium (20-40 IP),137,2026-04-26
-Shane Mcclanahan,TB,pitcher,Neutral,0.0583,,,,,,3.04,1.13,121.0,7.0,0.0,125.4,Medium (20-40 IP),137,2026-04-26
-Reid Detmers,LAA,pitcher,Neutral,0.0566,,,,,,3.56,1.41,131.0,7.0,0.0,129.4,Medium (20-40 IP),137,2026-04-26
-Sean Burke,CWS,pitcher,Neutral,0.0511,,,,,,3.97,1.33,115.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Andrew Painter,PHI,pitcher,Neutral,0.0479,,,,,,4.04,1.4,116.0,7.0,0.0,125.5,Medium (20-40 IP),137,2026-04-26
-Brayan Bello,BOS,pitcher,Neutral,0.04,,,,,,4.97,1.45,110.0,7.0,0.0,123.6,Medium (20-40 IP),137,2026-04-26
-Jake Irvin,WSH,pitcher,Slight buy,0.0332,,,,,,4.62,1.48,125.0,7.0,0.0,126.6,Medium (20-40 IP),137,2026-04-26
-Mick Abel,MIN,pitcher,Neutral,0.0312,,,,,,5.64,1.69,124.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Brady Singer,CIN,pitcher,Neutral,0.0307,,,,,,4.35,1.4,112.0,7.0,0.0,125.8,Medium (20-40 IP),137,2026-04-26
-Drew Rasmussen,TB,pitcher,Neutral,0.0288,,,,,,2.85,1.07,121.0,7.0,0.0,126.5,Medium (20-40 IP),137,2026-04-26
-Michael Soroka,AZ,pitcher,Neutral,0.0264,,,,,,4.22,1.47,138.0,7.0,0.0,127.0,Medium (20-40 IP),137,2026-04-26
-Nolan Mclean,NYM,pitcher,Neutral,0.0238,,,,,,1.94,0.94,131.0,7.0,0.0,130.7,Medium (20-40 IP),137,2026-04-26
-Lance Mccullers,HOU,pitcher,Neutral,0.0225,,,,,,4.82,1.5,119.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Chris Bassitt,BAL,pitcher,Neutral,0.0186,,,,,,4.26,1.35,109.0,7.0,0.0,124.9,Medium (20-40 IP),137,2026-04-26
-Carmen Mlodzinski,PIT,pitcher,Neutral,0.0172,,,,,,3.11,1.23,122.0,7.0,0.0,124.7,Medium (20-40 IP),137,2026-04-26
-Slade Cecconi,CLE,pitcher,Neutral,0.0141,,,,,,5.37,1.57,115.0,7.0,0.0,126.0,Medium (20-40 IP),137,2026-04-26
-Eury Pérez,MIA,pitcher,Neutral,0.014,,,,,,4.57,1.32,124.0,7.0,0.0,124.9,Medium (20-40 IP),137,2026-04-26
-Noah Cameron,KC,pitcher,Neutral,0.014,,,,,,3.66,1.18,118.0,7.0,0.0,127.1,Medium (20-40 IP),137,2026-04-26
-Ryan Feltner,COL,pitcher,Neutral,0.0129,,,,,,5.18,1.57,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kris Bubic,KC,pitcher,Neutral,0.0109,,,,,,4.08,1.35,123.0,7.0,0.0,128.6,Medium (20-40 IP),137,2026-04-26
-Cole Ragans,KC,pitcher,Neutral,0.0071,,,,,,4.58,1.32,127.0,7.0,0.0,119.2,Medium (20-40 IP),137,2026-04-26
-Eric Lauer,TOR,pitcher,Neutral,0.0043,,,,,,4.24,1.36,117.0,7.0,0.0,125.7,Medium (20-40 IP),137,2026-04-26
-Brad Lord,WSH,pitcher,Neutral,0.0041,,,,,,4.34,1.41,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Taylor Rogers,MIN,pitcher,Neutral,0.0,,,,,,3.7,1.3,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Enmanuel De jesus,DET,pitcher,Neutral,0.0,,,,,,5.02,1.7,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Joe Mantiply,TOR,pitcher,Neutral,0.0,,,,,,4.43,1.48,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Edgardo Henriquez,LAD,pitcher,Neutral,0.0,,,,,,2.54,1.05,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Aroldis Chapman,BOS,pitcher,Neutral,0.0,,,,,,3.12,1.16,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Paxton Schultz,WSH,pitcher,Neutral,0.0,,,,,,4.52,1.41,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jack Anderson,BOS,pitcher,Neutral,0.0,,,,,,4.28,1.39,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Edward Cabrera,CHC,pitcher,Neutral,0.0,,,,,,3.88,1.34,118.0,7.0,0.0,129.4,Medium (20-40 IP),137,2026-04-26
-Jacob Misiorowski,MIL,pitcher,Neutral,0.0,,,,,,3.72,1.37,150.0,7.0,0.0,127.7,Medium (20-40 IP),137,2026-04-26
-Luis Severino,ATH,pitcher,Neutral,0.0,,,,,,4.61,1.45,122.0,7.0,0.0,127.3,Medium (20-40 IP),137,2026-04-26
-Mitchell Parker,WSH,pitcher,Neutral,0.0,,,,,,4.13,1.54,97.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tanner Gordon,COL,pitcher,Neutral,0.0,,,,,,5.52,1.64,123.0,7.0,0.0,118.8,Low (<20 IP),137,2026-04-26
-Bryan Abreu,HOU,pitcher,Neutral,0.0,,,,,,2.78,1.06,92.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Robert Garcia,TEX,pitcher,Neutral,0.0,,,,,,3.79,1.29,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jeremiah Estrada,SD,pitcher,Neutral,0.0,,,,,,3.6,1.26,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tatsuya Imai,HOU,pitcher,Neutral,0.0,,,,,,3.94,1.42,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Fernando Cruz,NYY,pitcher,Neutral,0.0,,,,,,4.47,1.42,95.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Yennier Cano,BAL,pitcher,Neutral,0.0,,,,,,4.19,1.38,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Pete Fairbanks,MIA,pitcher,Neutral,0.0,,,,,,2.4,1.09,102.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Raisel Iglesias,ATL,pitcher,Neutral,0.0,,,,,,1.99,1.01,99.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Brooks Raley,NYM,pitcher,Neutral,0.0,,,,,,2.74,1.07,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Andrew Nardi,MIA,pitcher,Neutral,0.0,,,,,,4.72,1.5,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Riley Martin,CHC,pitcher,Neutral,0.0,,,,,,3.99,1.37,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Camilo Doval,NYY,pitcher,Neutral,0.0,,,,,,3.48,1.25,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cody Bolton,HOU,pitcher,Neutral,0.0,,,,,,5.46,1.7,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kolby Allard,CLE,pitcher,Neutral,0.0,,,,,,4.91,1.52,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Joey Cantillo,CLE,pitcher,Neutral,0.0,,,,,,3.73,1.29,124.0,7.0,0.0,126.5,Medium (20-40 IP),137,2026-04-26
-Tanner Bibee,CLE,pitcher,Neutral,0.0,,,,,,3.95,1.29,116.0,7.0,0.0,126.1,Medium (20-40 IP),137,2026-04-26
-Zac Gallen,AZ,pitcher,Neutral,0.0,,,,,,3.76,1.29,111.0,7.0,0.0,125.6,Medium (20-40 IP),137,2026-04-26
-Landen Roupp,SF,pitcher,Neutral,0.0,,,,,,3.01,1.26,128.0,7.0,0.0,128.4,Medium (20-40 IP),137,2026-04-26
-Lucas Sims,CWS,pitcher,Neutral,0.0,,,,,,5.28,1.6,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Caleb Thielbar,CHC,pitcher,Neutral,0.0,,,,,,3.64,1.29,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Borucki,SF,pitcher,Neutral,0.0,,,,,,4.48,1.45,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Matt Waldron,SD,pitcher,Neutral,0.0,,,,,,4.92,1.55,118.0,7.0,0.0,127.1,Low (<20 IP),137,2026-04-26
-Kody Funderburk,MIN,pitcher,Neutral,0.0,,,,,,4.6,1.44,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jack Flaherty,DET,pitcher,Neutral,0.0,,,,,,4.59,1.43,120.0,7.0,0.0,123.1,Medium (20-40 IP),137,2026-04-26
-Tyler Mahle,SF,pitcher,Neutral,0.0,,,,,,4.07,1.29,121.0,7.0,0.0,126.7,Medium (20-40 IP),137,2026-04-26
-Zack Littell,WSH,pitcher,Neutral,0.0,,,,,,4.54,1.36,113.0,7.0,0.0,127.0,Medium (20-40 IP),137,2026-04-26
-Jameson Taillon,CHC,pitcher,Neutral,0.0,,,,,,4.51,1.34,119.0,7.0,0.0,127.3,Medium (20-40 IP),137,2026-04-26
-Brandon Pfaadt,AZ,pitcher,Neutral,0.0,,,,,,5.0,1.54,110.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Lucas Erceg,KC,pitcher,Neutral,0.0,,,,,,3.67,1.28,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Trevor Megill,MIL,pitcher,Neutral,0.0,,,,,,3.46,1.24,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Yarbrough,NYY,pitcher,Neutral,0.0,,,,,,4.15,1.37,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Bryan Baker,TB,pitcher,Neutral,0.0,,,,,,3.41,1.3,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Nick Mears,KC,pitcher,Neutral,0.0,,,,,,4.53,1.46,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Colton Gordon,HOU,pitcher,Neutral,0.0,,,,,,6.0,1.74,95.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Zack Kelly,BOS,pitcher,Neutral,0.0,,,,,,4.36,1.36,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Griffin Jax,TB,pitcher,Neutral,0.0,,,,,,4.2,1.28,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Erik Miller,SF,pitcher,Neutral,0.0,,,,,,2.9,1.19,94.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-John Schreiber,KC,pitcher,Neutral,0.0,,,,,,3.56,1.23,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Garrett Whitlock,BOS,pitcher,Neutral,0.0,,,,,,3.58,1.25,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Orion Kerkering,PHI,pitcher,Neutral,0.0,,,,,,2.86,1.13,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jacob Webb,CHC,pitcher,Neutral,0.0,,,,,,3.44,1.23,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Emmet Sheehan,LAD,pitcher,Neutral,0.0,,,,,,3.83,1.31,123.0,7.0,0.0,127.2,Medium (20-40 IP),137,2026-04-26
-Brandon Sproat,MIL,pitcher,Neutral,0.0,,,,,,4.99,1.52,116.0,7.0,0.0,123.0,Medium (20-40 IP),137,2026-04-26
-Ryne Nelson,AZ,pitcher,Neutral,0.0,,,,,,4.52,1.4,112.0,7.0,0.0,117.7,Medium (20-40 IP),137,2026-04-26
-Reynaldo López,ATL,pitcher,Neutral,0.0,,,,,,2.85,1.09,117.0,7.0,0.0,123.7,Medium (20-40 IP),137,2026-04-26
-Steven Matz,TB,pitcher,Neutral,0.0,,,,,,4.52,1.35,120.0,7.0,0.0,123.8,Medium (20-40 IP),137,2026-04-26
-Kyle Leahy,STL,pitcher,Neutral,0.0,,,,,,4.34,1.36,111.0,7.0,0.0,125.6,Medium (20-40 IP),137,2026-04-26
-Jacob Lopez,ATH,pitcher,Neutral,0.0,,,,,,4.47,1.47,107.0,7.0,0.0,122.6,Medium (20-40 IP),137,2026-04-26
-Cristian Javier,HOU,pitcher,Neutral,0.0,,,,,,4.08,1.33,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Alex Vesia,LAD,pitcher,Neutral,0.0,,,,,,2.7,1.09,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-José Alvarado,PHI,pitcher,Neutral,0.0,,,,,,3.25,1.23,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Weiss,HOU,pitcher,Neutral,0.0,,,,,,4.39,1.42,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Yohan Ramírez,PIT,pitcher,Neutral,0.0,,,,,,4.85,1.56,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Aaron Ashby,MIL,pitcher,Neutral,0.0,,,,,,2.98,1.27,111.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Aj Blubaugh,HOU,pitcher,Neutral,0.0,,,,,,2.08,0.93,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tobias Myers,NYM,pitcher,Neutral,0.0,,,,,,3.22,1.14,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Roki Sasaki,LAD,pitcher,Neutral,0.0,,,,,,4.94,1.47,118.0,7.0,0.0,124.4,Medium (20-40 IP),137,2026-04-26
-Zach Agnos,COL,pitcher,Neutral,0.0,,,,,,5.32,1.65,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Shaun Anderson,LAA,pitcher,Neutral,0.0,,,,,,5.51,1.65,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kyle Freeland,COL,pitcher,Neutral,0.0,,,,,,4.28,1.46,113.0,7.0,0.0,126.0,Low (<20 IP),137,2026-04-26
-Jovani Morán,BOS,pitcher,Neutral,0.0,,,,,,3.86,1.34,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Sean Newcomb,CWS,pitcher,Neutral,0.0,,,,,,4.14,1.42,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Brent Suter,LAA,pitcher,Neutral,0.0,,,,,,3.33,1.3,92.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Joe Boyle,TB,pitcher,Neutral,0.0,,,,,,4.93,1.55,122.0,7.0,0.0,127.8,Low (<20 IP),137,2026-04-26
-José Suarez,ATL,pitcher,Neutral,0.0,,,,,,4.68,1.58,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kumar Rocker,TEX,pitcher,Neutral,0.0,,,,,,4.92,1.61,119.0,7.0,0.0,127.0,Medium (20-40 IP),137,2026-04-26
-Ron Marinaccio,SD,pitcher,Neutral,0.0,,,,,,3.3,1.16,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Justin Bruihl,STL,pitcher,Neutral,0.0,,,,,,4.79,1.59,82.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Gordon Graceffo,STL,pitcher,Neutral,0.0,,,,,,5.62,1.67,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tim Mayza,PHI,pitcher,Neutral,0.0,,,,,,3.43,1.26,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Grant Taylor,CWS,pitcher,Neutral,0.0,,,,,,4.76,1.52,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Patrick Corbin,TOR,pitcher,Neutral,0.0,,,,,,5.36,1.6,117.0,7.0,0.0,126.2,Low (<20 IP),137,2026-04-26
-Pj Poulin,WSH,pitcher,Neutral,0.0,,,,,,4.15,1.29,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Louis Varland,TOR,pitcher,Neutral,0.0,,,,,,2.97,1.44,107.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kodai Senga,NYM,pitcher,Neutral,0.0,,,,,,3.63,1.26,127.0,7.0,0.0,119.5,Low (<20 IP),137,2026-04-26
-Kyle Harrison,MIL,pitcher,Neutral,0.0,,,,,,4.37,1.43,120.0,7.0,0.0,125.8,Low (<20 IP),137,2026-04-26
-Kai-wei Teng,HOU,pitcher,Neutral,0.0,,,,,,5.15,1.62,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Connor Phillips,CIN,pitcher,Neutral,0.0,,,,,,4.87,1.52,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tyler Phillips,MIA,pitcher,Neutral,0.0,,,,,,3.93,1.39,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Watson,BOS,pitcher,Neutral,0.0,,,,,,4.6,1.41,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tyler Wells,BAL,pitcher,Neutral,0.0,,,,,,3.58,1.33,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Nick Pivetta,SD,pitcher,Neutral,0.0,,,,,,3.66,1.32,124.0,7.0,0.0,126.6,Low (<20 IP),137,2026-04-26
-Matt Festa,CLE,pitcher,Neutral,0.0,,,,,,4.26,1.43,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Lake Bachar,MIA,pitcher,Neutral,0.0,,,,,,3.12,1.3,97.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Matt Boyd,CHC,pitcher,Neutral,0.0,,,,,,3.43,1.27,131.0,7.0,0.0,125.6,Low (<20 IP),137,2026-04-26
-Grant Anderson,MIL,pitcher,Neutral,0.0,,,,,,4.23,1.47,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Spencer Miles,TOR,pitcher,Neutral,0.0,,,,,,3.88,1.39,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Justin Sterner,ATH,pitcher,Neutral,0.0,,,,,,2.62,1.24,97.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Mason Miller,SD,pitcher,Neutral,0.0,,,,,,2.56,1.07,101.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tyler Rogers,TOR,pitcher,Neutral,0.0,,,,,,2.75,1.12,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Yoendrys Gómez,TB,pitcher,Neutral,0.0,,,,,,5.18,1.53,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Hogan Harris,ATH,pitcher,Neutral,0.0,,,,,,2.95,1.43,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Luis Gil,NYY,pitcher,Neutral,0.0,,,,,,3.89,1.26,115.0,7.0,0.0,127.8,Low (<20 IP),137,2026-04-26
-Jesse Scholtens,TB,pitcher,Neutral,0.0,,,,,,5.11,1.58,119.0,7.0,0.0,127.8,Low (<20 IP),137,2026-04-26
-Noah Schultz,CWS,pitcher,Neutral,0.0,,,,,,4.06,1.38,123.0,7.0,0.0,127.8,Low (<20 IP),137,2026-04-26
-Isaac Mattson,PIT,pitcher,Neutral,0.0,,,,,,2.9,1.1,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Drew Anderson,DET,pitcher,Neutral,0.0,,,,,,3.98,1.39,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jacob Latz,TEX,pitcher,Neutral,0.0,,,,,,2.57,1.1,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Dylan Lee,ATL,pitcher,Neutral,0.0,,,,,,2.07,1.03,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Juan Morillo,AZ,pitcher,Neutral,0.0,,,,,,3.92,1.37,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jojo Romero,STL,pitcher,Neutral,0.0,,,,,,3.24,1.17,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Brent Headrick,NYY,pitcher,Neutral,0.0,,,,,,4.55,1.51,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jose Quintana,COL,pitcher,Neutral,0.0,,,,,,4.14,1.29,107.0,7.0,0.0,125.0,Low (<20 IP),137,2026-04-26
-Cionel Pérez,WSH,pitcher,Neutral,0.0,,,,,,3.84,1.35,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Erik Sabrowski,CLE,pitcher,Neutral,0.0,,,,,,1.8,0.9,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tyler Alexander,TEX,pitcher,Neutral,0.0,,,,,,4.1,1.51,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Riley O'brien,STL,pitcher,Neutral,0.0,,,,,,2.83,1.24,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kyle Hart,SD,pitcher,Neutral,0.0,,,,,,5.43,1.68,83.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cole Sulser,TB,pitcher,Neutral,0.0,,,,,,4.04,1.36,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Graham Ashcraft,CIN,pitcher,Neutral,0.0,,,,,,4.41,1.49,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Matt Svanson,STL,pitcher,Neutral,0.0,,,,,,2.63,1.01,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Gregory Soto,PIT,pitcher,Neutral,0.0,,,,,,3.0,1.28,106.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Adrián Morejón,SD,pitcher,Neutral,0.0,,,,,,2.79,1.21,94.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jakob Junis,TEX,pitcher,Neutral,0.0,,,,,,3.34,1.26,83.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-David Morgan,SD,pitcher,Neutral,0.0,,,,,,2.69,1.11,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kevin Kelly,TB,pitcher,Neutral,0.0,,,,,,4.17,1.23,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Albert Suárez,BAL,pitcher,Neutral,0.0,,,,,,3.72,1.27,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Hoby Milner,CHC,pitcher,Neutral,0.0,,,,,,3.74,1.26,83.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Scott Barlow,ATH,pitcher,Neutral,0.0,,,,,,3.81,1.29,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Justin Lawrence,PIT,pitcher,Neutral,0.0,,,,,,4.88,1.51,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jimmy Herget,COL,pitcher,Neutral,0.0,,,,,,2.89,1.11,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tyler Kinley,ATL,pitcher,Neutral,0.0,,,,,,4.01,1.42,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jordan Leasure,CWS,pitcher,Neutral,0.0,,,,,,4.93,1.5,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Braydon Fisher,TOR,pitcher,Neutral,0.0,,,,,,2.52,1.09,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Sam Bachman,LAA,pitcher,Neutral,0.0,,,,,,4.51,1.5,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cade Smith,CLE,pitcher,Neutral,0.0,,,,,,2.61,1.07,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Dennis Santana,PIT,pitcher,Neutral,0.0,,,,,,3.77,1.3,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Steven Okert,HOU,pitcher,Neutral,0.0,,,,,,3.72,1.29,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Zeferjahn,LAA,pitcher,Neutral,0.0,,,,,,3.81,1.39,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cooper Criswell,SEA,pitcher,Neutral,0.0,,,,,,4.26,1.41,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Robert Suarez,ATL,pitcher,Neutral,0.0,,,,,,2.25,1.1,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jordan Hicks,CWS,pitcher,Neutral,0.0,,,,,,4.68,1.52,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Justin Topa,MIN,pitcher,Neutral,0.0,,,,,,3.39,1.22,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Angel Zerpa,MIL,pitcher,Neutral,0.0,,,,,,4.32,1.39,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Eric Orze,MIN,pitcher,Neutral,0.0,,,,,,3.89,1.36,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Sam Moll,CIN,pitcher,Neutral,0.0,,,,,,3.45,1.23,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Walker,SF,pitcher,Neutral,0.0,,,,,,3.02,1.16,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tyler Holton,DET,pitcher,Neutral,0.0,,,,,,2.53,1.1,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jose Ferrer,SEA,pitcher,Neutral,0.0,,,,,,3.98,1.47,82.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Emilio Pagán,CIN,pitcher,Neutral,0.0,,,,,,3.94,1.27,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Mason Englert,TB,pitcher,Neutral,0.0,,,,,,4.89,1.54,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jt Brubaker,SF,pitcher,Neutral,0.0,,,,,,4.47,1.47,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cade Povich,BAL,pitcher,Neutral,0.0,,,,,,4.39,1.5,107.0,7.0,0.0,132.6,Low (<20 IP),137,2026-04-26
-Kyle Finnegan,DET,pitcher,Neutral,0.0,,,,,,3.67,1.27,82.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Bradgley Rodriguez,SD,pitcher,Neutral,0.0,,,,,,1.8,0.91,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Brock Burke,CIN,pitcher,Neutral,0.0,,,,,,3.14,1.22,94.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-George Soriano,STL,pitcher,Neutral,0.0,,,,,,5.14,1.66,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Mason Montgomery,PIT,pitcher,Neutral,0.0,,,,,,4.04,1.56,120.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Pierce Johnson,CIN,pitcher,Neutral,0.0,,,,,,3.77,1.29,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tanner Scott,LAD,pitcher,Neutral,0.0,,,,,,3.32,1.17,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Wandy Peralta,SD,pitcher,Neutral,0.0,,,,,,3.19,1.18,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jonathan Loáisiga,AZ,pitcher,Neutral,0.0,,,,,,3.7,1.3,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Brad Keller,PHI,pitcher,Neutral,0.0,,,,,,3.85,1.38,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Dean Kremer,BAL,pitcher,Neutral,0.0,,,,,,4.07,1.32,130.0,7.0,0.0,128.5,Low (<20 IP),137,2026-04-26
-Taylor Clarke,AZ,pitcher,Neutral,0.0,,,,,,4.44,1.44,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jalen Beeks,TEX,pitcher,Neutral,0.0,,,,,,3.57,1.34,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Anthony Nunez,BAL,pitcher,Neutral,0.0,,,,,,3.96,1.36,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Richard Lovelady,NYM,pitcher,Neutral,0.0,,,,,,5.04,1.61,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cole Winn,TEX,pitcher,Neutral,0.0,,,,,,3.52,1.26,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Rico Garcia,BAL,pitcher,Neutral,0.0,,,,,,4.39,1.48,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Peyton Pallette,CLE,pitcher,Neutral,0.0,,,,,,4.22,1.39,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ian Seymour,TB,pitcher,Neutral,0.0,,,,,,3.31,1.28,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tim Hill,NYY,pitcher,Neutral,0.0,,,,,,3.66,1.28,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-David Bednar,NYY,pitcher,Neutral,0.0,,,,,,2.91,1.21,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Matt Gage,SF,pitcher,Neutral,0.0,,,,,,2.96,1.09,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Will Vest,DET,pitcher,Neutral,0.0,,,,,,3.26,1.24,92.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Greg Weissert,BOS,pitcher,Neutral,0.0,,,,,,3.71,1.23,102.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Andrew Hoffmann,AZ,pitcher,Neutral,0.0,,,,,,5.7,1.69,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Valente Bellozo,COL,pitcher,Neutral,0.0,,,,,,5.6,1.42,81.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Victor Vodnik,COL,pitcher,Neutral,0.0,,,,,,4.4,1.41,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Juan Mejia,COL,pitcher,Neutral,0.0,,,,,,3.04,1.42,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Bryan Hudson,CWS,pitcher,Neutral,0.0,,,,,,3.26,1.19,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Mark Leiter,ATH,pitcher,Neutral,0.0,,,,,,4.25,1.41,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tony Santillan,CIN,pitcher,Neutral,0.0,,,,,,3.19,1.17,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Andrés Muñoz,SEA,pitcher,Neutral,0.0,,,,,,2.57,1.03,94.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Huascar Brazobán,NYM,pitcher,Neutral,0.0,,,,,,3.39,1.28,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Casey Legumina,SEA,pitcher,Neutral,0.0,,,,,,6.09,1.69,83.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Dl Hall,MIL,pitcher,Neutral,0.0,,,,,,4.4,1.43,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Shawn Armstrong,CLE,pitcher,Neutral,0.0,,,,,,3.54,1.23,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Clayton Beeter,WSH,pitcher,Neutral,0.0,,,,,,4.45,1.41,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryne Stanek,STL,pitcher,Neutral,0.0,,,,,,4.22,1.45,97.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jaden Hill,COL,pitcher,Neutral,0.0,,,,,,3.86,1.33,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Gus Varland,WSH,pitcher,Neutral,0.0,,,,,,4.81,1.54,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Chase Silseth,LAA,pitcher,Neutral,0.0,,,,,,4.69,1.5,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Osvaldo Bido,ATL,pitcher,Neutral,0.0,,,,,,5.02,1.56,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Will Klein,LAD,pitcher,Neutral,0.0,,,,,,5.17,1.62,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Peter Lambert,HOU,pitcher,Neutral,0.0,,,,,,4.97,1.63,130.0,7.0,0.0,128.5,Low (<20 IP),137,2026-04-26
-Caleb Kilian,SF,pitcher,Neutral,0.0,,,,,,4.93,1.62,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jeff Hoffman,TOR,pitcher,Neutral,0.0,,,,,,3.21,1.24,103.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-John King,MIA,pitcher,Neutral,0.0,,,,,,3.24,1.21,92.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Walbert Urena,LAA,pitcher,Neutral,0.0,,,,,,4.08,1.43,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Eduard Bazardo,SEA,pitcher,Neutral,0.0,,,,,,3.01,1.2,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Spencer Arrighetti,HOU,pitcher,Neutral,0.0,,,,,,4.64,1.49,125.0,7.0,0.0,128.5,Low (<20 IP),137,2026-04-26
-Tommy Nance,TOR,pitcher,Neutral,0.0,,,,,,3.53,1.27,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cole Wilcox,SEA,pitcher,Neutral,0.0,,,,,,5.21,1.66,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Mason Fluharty,TOR,pitcher,Neutral,0.0,,,,,,3.73,1.43,98.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Grant Wolfram,BAL,pitcher,Neutral,0.0,,,,,,4.91,1.61,94.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Gabe Speier,SEA,pitcher,Neutral,0.0,,,,,,3.53,1.26,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Matt Brash,SEA,pitcher,Neutral,0.0,,,,,,3.32,1.19,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Drew Pomeranz,LAA,pitcher,Neutral,0.0,,,,,,2.48,1.01,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Blade Tidwell,SF,pitcher,Neutral,0.0,,,,,,5.05,1.61,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Paul Sewald,AZ,pitcher,Neutral,0.0,,,,,,3.49,1.22,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Hunter Brown,HOU,pitcher,Neutral,0.0,,,,,,2.93,1.24,137.0,7.0,0.0,127.8,Low (<20 IP),137,2026-04-26
-Jake Woodford,MIL,pitcher,Neutral,0.0,,,,,,5.52,1.69,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Michael Petersen,MIA,pitcher,Neutral,0.0,,,,,,4.58,1.53,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Bryan King,HOU,pitcher,Neutral,0.0,,,,,,3.59,1.12,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Connor Seabold,DET,pitcher,Neutral,0.0,,,,,,4.97,1.64,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Brandon Young,BAL,pitcher,Neutral,0.0,,,,,,5.32,1.64,109.0,7.0,0.0,127.4,Low (<20 IP),137,2026-04-26
-Brennan Bernardino,COL,pitcher,Neutral,0.0,,,,,,3.27,1.24,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Connor Brogdon,CLE,pitcher,Neutral,0.0,,,,,,5.01,1.54,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Keaton Winn,SF,pitcher,Neutral,0.0,,,,,,5.13,1.63,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Thompson,AZ,pitcher,Neutral,0.0,,,,,,3.63,1.27,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kyle Backhus,PHI,pitcher,Neutral,0.0,,,,,,4.48,1.46,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Eli Morgan,KC,pitcher,Neutral,0.0,,,,,,3.44,1.3,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jack Perkins,ATH,pitcher,Neutral,0.0,,,,,,4.02,1.38,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Enyel De los santos,HOU,pitcher,Neutral,0.0,,,,,,4.34,1.35,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Elvis Alvarado,ATH,pitcher,Neutral,0.0,,,,,,3.68,1.22,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ken Waldichuk,WSH,pitcher,Neutral,0.0,,,,,,5.62,1.59,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Anthony Banda,MIN,pitcher,Neutral,0.0,,,,,,4.11,1.37,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Daniel Lynch,KC,pitcher,Neutral,0.0,,,,,,3.77,1.36,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jack Dreyer,LAD,pitcher,Neutral,0.0,,,,,,2.77,1.14,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kevin Ginkel,AZ,pitcher,Neutral,0.0,,,,,,3.32,1.28,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cole Sands,MIN,pitcher,Neutral,0.0,,,,,,3.81,1.39,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Alex Lange,KC,pitcher,Neutral,0.0,,,,,,3.5,1.29,92.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Brant Hurter,DET,pitcher,Neutral,0.0,,,,,,2.72,1.05,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Abner Uribe,MIL,pitcher,Neutral,0.0,,,,,,2.46,1.03,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Aaron Bummer,ATL,pitcher,Neutral,0.0,,,,,,4.53,1.44,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Blake Treinen,LAD,pitcher,Neutral,0.0,,,,,,3.67,1.23,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Luis Morales,ATH,pitcher,Neutral,0.0,,,,,,4.68,1.37,81.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Danny Coulombe,BOS,pitcher,Neutral,0.0,,,,,,2.56,1.04,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cole Henry,WSH,pitcher,Neutral,0.0,,,,,,3.72,1.43,90.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Hunter Barco,PIT,pitcher,Neutral,0.0,,,,,,1.8,0.95,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Andrew Morris,MIN,pitcher,Neutral,0.0,,,,,,3.79,1.41,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Didier Fuentes,ATL,pitcher,Neutral,0.0,,,,,,5.22,1.65,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tanner Banks,PHI,pitcher,Neutral,0.0,,,,,,3.73,1.32,89.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Anthony Bender,MIA,pitcher,Neutral,0.0,,,,,,3.17,1.22,92.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Seranthony Domínguez,CWS,pitcher,Neutral,0.0,,,,,,4.13,1.29,96.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Luke Weaver,NYM,pitcher,Neutral,0.0,,,,,,4.92,1.52,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Luis Medina,ATH,pitcher,Neutral,0.0,,,,,,5.39,1.6,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Matt Strahm,KC,pitcher,Neutral,0.0,,,,,,2.99,1.14,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Helsley,BAL,pitcher,Neutral,0.0,,,,,,2.51,1.09,95.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cal Quantrill,TEX,pitcher,Neutral,0.0,,,,,,4.73,1.49,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Devin Williams,NYM,pitcher,Neutral,0.0,,,,,,2.8,1.13,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Tyler Samaniego,BOS,pitcher,Neutral,0.0,,,,,,4.05,1.37,88.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jeffrey Springs,ATH,pitcher,Neutral,0.0,,,,,,3.28,1.19,121.0,7.0,0.0,129.8,Medium (20-40 IP),137,2026-04-26
-Hunter Bigge,TB,pitcher,Neutral,0.0,,,,,,2.83,1.06,84.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Shane Smith,CWS,pitcher,Neutral,0.0,,,,,,4.28,1.46,99.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Paul Blackburn,NYY,pitcher,Neutral,0.0,,,,,,4.63,1.49,85.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jordan Romano,LAA,pitcher,Neutral,0.0,,,,,,4.25,1.42,91.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Ryan Weathers,NYY,pitcher,Neutral,0.0,,,,,,4.55,1.48,129.0,7.0,0.0,128.1,Medium (20-40 IP),137,2026-04-26
-Calvin Faucher,MIA,pitcher,Neutral,0.0,,,,,,3.99,1.44,107.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Christian Roa,HOU,pitcher,Neutral,0.0,,,,,,1.8,0.95,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Cade Horton,CHC,pitcher,Neutral,0.0,,,,,,2.81,1.07,82.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kenley Jansen,DET,pitcher,Neutral,0.0,,,,,,3.52,1.21,93.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jake Bird,NYY,pitcher,Neutral,0.0,,,,,,4.2,1.48,98.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Zach Pop,PHI,pitcher,Neutral,0.0,,,,,,5.51,1.63,86.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Kyle Nicolas,CIN,pitcher,Neutral,0.0,,,,,,4.82,1.53,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Joel Kuhnel,ATH,pitcher,Neutral,0.0,,,,,,5.78,1.67,82.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Jacob Degrom,TEX,pitcher,Neutral,-0.0043,,,,,,2.9,1.13,128.0,7.0,0.0,126.8,Medium (20-40 IP),137,2026-04-26
-J. t. Ginn,ATH,pitcher,Neutral,-0.0063,,,,,,4.11,1.43,80.0,0.0,0.0,93.0,Medium (20-40 IP),137,2026-04-26
-Bubba Chandler,PIT,pitcher,Neutral,-0.007,,,,,,4.45,1.37,116.0,7.0,0.0,125.5,Medium (20-40 IP),137,2026-04-26
-Mackenzie Gore,TEX,pitcher,Neutral,-0.0124,,,,,,4.21,1.38,130.0,7.0,0.0,127.0,Medium (20-40 IP),137,2026-04-26
-Mitch Keller,PIT,pitcher,Neutral,-0.0139,,,,,,4.02,1.37,118.0,7.0,0.0,128.7,Medium (20-40 IP),137,2026-04-26
-Germán Márquez,SD,pitcher,Neutral,-0.0145,,,,,,5.62,1.66,110.0,7.0,0.0,124.6,Medium (20-40 IP),137,2026-04-26
-Erick Fedde,CWS,pitcher,Neutral,-0.0152,,,,,,4.62,1.47,109.0,7.0,0.0,126.5,Medium (20-40 IP),137,2026-04-26
-Framber Valdez,DET,pitcher,Neutral,-0.0154,,,,,,3.33,1.2,117.0,7.0,0.0,129.1,Medium (20-40 IP),137,2026-04-26
-Colin Rea,CHC,pitcher,Neutral,-0.0156,,,,,,4.08,1.38,111.0,7.0,0.0,120.8,Medium (20-40 IP),137,2026-04-26
-Chase Dollander,COL,pitcher,Neutral,-0.0195,,,,,,3.93,1.52,127.0,7.0,0.0,115.0,Medium (20-40 IP),137,2026-04-26
-Sonny Gray,BOS,pitcher,Neutral,-0.0196,,,,,,3.8,1.26,110.0,7.0,0.0,124.9,Medium (20-40 IP),137,2026-04-26
-Max Fried,NYY,pitcher,Neutral,-0.0206,,,,,,2.56,1.09,123.0,7.0,0.0,135.2,Medium (20-40 IP),137,2026-04-26
-Max Meyer,MIA,pitcher,Neutral,-0.0208,,,,,,4.53,1.54,126.0,7.0,0.0,123.4,Medium (20-40 IP),137,2026-04-26
-Sandy Alcántara,MIA,pitcher,Neutral,-0.0238,,,,,,3.69,1.3,117.0,7.0,0.0,135.0,High (40+ IP),137,2026-04-26
-Yoshinobu Yamamoto,LAD,pitcher,Neutral,-0.0241,,,,,,2.81,1.07,122.0,7.0,0.0,131.6,Medium (20-40 IP),137,2026-04-26
-Andre Pallante,STL,pitcher,Neutral,-0.0304,,,,,,4.57,1.42,114.0,7.0,0.0,126.2,Medium (20-40 IP),137,2026-04-26
-George Kirby,SEA,pitcher,Neutral,-0.0326,,,,,,3.47,1.25,119.0,7.0,0.0,131.9,Medium (20-40 IP),137,2026-04-26
-Ranger Suárez,BOS,pitcher,Neutral,-0.0332,,,,,,3.74,1.27,116.0,7.0,0.0,127.7,Medium (20-40 IP),137,2026-04-26
-Casey Mize,DET,pitcher,Neutral,-0.0367,,,,,,3.79,1.37,127.0,7.0,0.0,128.5,Medium (20-40 IP),137,2026-04-26
-Shohei Ohtani,LAD,pitcher,Buy low,0.1915,,,,,,,,,,,,High (100+ PA),137,2026-04-26
-Chris Sale,ATL,pitcher,Neutral,-0.0392,,,,,,3.07,1.13,123.0,7.0,0.0,129.5,Medium (20-40 IP),137,2026-04-26
-Emerson Hancock,SEA,pitcher,Neutral,-0.043,,,,,,4.33,1.43,123.0,7.0,0.0,128.8,Medium (20-40 IP),137,2026-04-26
-Brandon Williamson,CIN,pitcher,Neutral,-0.0495,,,,,,4.88,1.43,110.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Aaron Civale,ATH,pitcher,Neutral,-0.0559,,,,,,4.25,1.41,115.0,7.0,0.0,126.5,Medium (20-40 IP),137,2026-04-26
-Matthew Liberatore,STL,pitcher,Neutral,-0.058,,,,,,4.93,1.49,112.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Bryce Elder,ATL,pitcher,Neutral,-0.0609,,,,,,4.07,1.42,120.0,7.0,0.0,131.3,Medium (20-40 IP),137,2026-04-26
-Rhett Lowder,CIN,pitcher,Neutral,-0.0651,,,,,,1.8,0.92,113.0,7.0,0.0,129.6,Medium (20-40 IP),137,2026-04-26
-Anthony Kay,CWS,pitcher,Slight sell,-0.0723,,,,,,6.37,1.72,105.0,7.0,0.0,123.0,Medium (20-40 IP),137,2026-04-26
-Antonio Senzatela,COL,pitcher,Slight sell,-0.0817,,,,,,3.95,1.57,87.0,0.0,0.0,93.0,Low (<20 IP),137,2026-04-26
-Grant Holmes,ATL,pitcher,Slight sell,-0.0839,,,,,,4.14,1.33,114.0,7.0,0.0,127.9,Medium (20-40 IP),137,2026-04-26
-Foster Griffin,WSH,pitcher,Slight sell,-0.0987,,,,,,5.46,1.64,115.0,7.0,0.0,127.7,Medium (20-40 IP),137,2026-04-26
-Chad Patrick,MIL,pitcher,Slight sell,-0.0988,,,,,,3.9,1.29,100.0,7.0,0.0,123.6,Medium (20-40 IP),137,2026-04-26
-Freddy Peralta,NYM,pitcher,Slight sell,-0.0991,,,,,,3.59,1.26,122.0,7.0,0.0,128.1,Medium (20-40 IP),137,2026-04-26
-Gavin Williams,CLE,pitcher,Slight sell,-0.1011,,,,,,3.91,1.27,128.0,7.0,0.0,129.8,Medium (20-40 IP),137,2026-04-26
-Chase Burns,CIN,pitcher,Slight sell,-0.1069,,,,,,4.34,1.44,123.0,7.0,0.0,128.4,Medium (20-40 IP),137,2026-04-26
-Taj Bradley,MIN,pitcher,Slight sell,-0.1103,,,,,,4.5,1.52,126.0,7.0,0.0,129.3,Medium (20-40 IP),137,2026-04-26
-Justin Wrobleski,LAD,pitcher,Slight sell,-0.112,,,,,,4.63,1.49,105.0,7.0,0.0,130.7,Medium (20-40 IP),137,2026-04-26
-Paul Skenes,PIT,pitcher,Sell high,-0.1506,,,,,,1.99,0.97,114.0,7.0,0.0,125.1,Medium (20-40 IP),137,2026-04-26
-Martín Pérez,ATL,pitcher,Sell high,-0.1512,,,,,,4.35,1.35,103.0,7.0,0.0,124.9,Medium (20-40 IP),137,2026-04-26
-Randy Vásquez,SD,pitcher,Sell high,-0.1609,,,,,,4.06,1.39,122.0,7.0,0.0,128.3,Medium (20-40 IP),137,2026-04-26
-Robbie Ray,SF,pitcher,Sell high,-0.1637,,,,,,4.24,1.36,118.0,7.0,0.0,128.4,Medium (20-40 IP),137,2026-04-26
-Shota Imanaga,CHC,pitcher,Sell high,-0.1706,,,,,,3.14,1.2,123.0,7.0,0.0,130.0,Medium (20-40 IP),137,2026-04-26
-Parker Messick,CLE,pitcher,Sell high,-0.1772,,,,,,2.89,1.13,117.0,7.0,0.0,129.9,Medium (20-40 IP),137,2026-04-26
-Connelly Early,BOS,pitcher,Sell high,-0.1818,,,,,,3.16,1.09,113.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Jack Kochanowicz,LAA,pitcher,Sell high,-0.1867,,,,,,5.65,1.71,103.0,7.0,0.0,130.3,Medium (20-40 IP),137,2026-04-26
-Mike King,SD,pitcher,Sell high,-0.2201,,,,,,3.36,1.19,115.0,7.0,0.0,128.1,Medium (20-40 IP),137,2026-04-26
-Clay Holmes,NYM,pitcher,Sell high,-0.2378,,,,,,3.64,1.23,111.0,7.0,0.0,129.9,Medium (20-40 IP),137,2026-04-26
-Tomoyuki Sugano,COL,pitcher,Sell high,-0.2418,,,,,,5.37,1.5,103.0,7.0,0.0,126.3,Medium (20-40 IP),137,2026-04-26
-Eduardo Rodríguez,AZ,pitcher,Sell high,-0.251,,,,,,4.82,1.47,107.0,7.0,0.0,128.8,Medium (20-40 IP),137,2026-04-26
-Michael Mcgreevy,STL,pitcher,Sell high,-0.2746,,,,,,4.72,1.37,103.0,7.0,0.0,127.5,Medium (20-40 IP),137,2026-04-26
-Seth Lugo,KC,pitcher,Sell high,-0.2751,,,,,,3.65,1.28,117.0,7.0,0.0,131.4,Medium (20-40 IP),137,2026-04-26
-Davis Martin,CWS,pitcher,Sell high,-0.285,,,,,,4.47,1.44,114.0,7.0,0.0,132.1,Medium (20-40 IP),137,2026-04-26
-Nick Martínez,TB,pitcher,Sell high,-0.3217,,,,,,4.09,1.34,110.0,7.0,0.0,130.0,Medium (20-40 IP),137,2026-04-26
-Michael Wacha,KC,pitcher,Sell high,-0.3705,,,,,,3.9,1.28,116.0,7.0,0.0,132.4,Medium (20-40 IP),137,2026-04-26
-José Soriano,LAA,pitcher,Sell high,-0.4425,,,,,,2.83,1.29,134.0,7.0,0.0,134.8,Medium (20-40 IP),137,2026-04-26
+Alec Bohm,PHI,hitter,Buy low,0.5378,0.297,9.0,57.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+José Ramírez,CLE,hitter,Buy low,0.5053,0.338,16.0,70.0,60.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Trent Grisham,NYY,hitter,Buy low,0.4703,0.252,12.0,54.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Chase Delauter,CLE,hitter,Buy low,0.4414,0.287,13.0,59.0,52.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Vinnie Pasquantino,KC,hitter,Buy low,0.4319,0.282,13.0,58.0,51.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Corey Seager,TEX,hitter,Buy low,0.4011,0.308,16.0,65.0,58.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Manny Machado,SD,hitter,Buy low,0.3893,0.302,12.0,61.0,52.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Kyle Karros,COL,hitter,Buy low,0.3818,0.267,10.0,54.0,45.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Iván Herrera,STL,hitter,Buy low,0.372,0.342,15.0,70.0,60.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Ke'bryan Hayes,CIN,hitter,Buy low,0.3639,0.263,15.0,56.0,51.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+TJ Rumfield,COL,hitter,Buy low,0.3324,0.282,13.0,58.0,52.0,3.0,,,,,,,High (100+ PA),136,2026-04-27
+Aaron Judge,NYY,hitter,Buy low,0.329,0.36,25.0,78.0,72.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Dansby Swanson,CHC,hitter,Buy low,0.3265,0.297,15.0,63.0,55.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Ronald Acuña,ATL,hitter,Buy low,0.3181,0.327,17.0,68.0,61.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Dillon Dingler,DET,hitter,Buy low,0.3172,0.325,21.0,69.0,66.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Evan Carter,TEX,hitter,Buy low,0.3048,0.289,14.0,60.0,52.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Alec Burleson,STL,hitter,Buy low,0.298,0.296,14.0,61.0,54.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Mike Trout,LAA,hitter,Buy low,0.2918,0.327,24.0,73.0,66.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Marcell Ozuna,PIT,hitter,Buy low,0.2885,0.277,15.0,58.0,53.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jakob Marsee,MIA,hitter,Buy low,0.2854,0.31,9.0,60.0,51.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Sal Stewart,CIN,hitter,Buy low,0.2836,0.338,25.0,74.0,70.0,3.0,,,,,,,High (100+ PA),136,2026-04-27
+J. p. Crawford,SEA,hitter,Buy low,0.2796,0.277,13.0,57.0,50.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jake Cronenworth,SD,hitter,Buy low,0.2678,0.258,12.0,54.0,47.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Gunnar Henderson,BAL,hitter,Buy low,0.2663,0.308,16.0,64.0,58.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Trea Turner,PHI,hitter,Buy low,0.2661,0.308,11.0,60.0,53.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Kyle Schwarber,PHI,hitter,Buy low,0.2644,0.298,19.0,66.0,59.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Austin Riley,ATL,hitter,Buy low,0.2631,0.286,14.0,59.0,53.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Caleb Durbin,BOS,hitter,Buy low,0.251,0.271,9.0,53.0,47.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Ezequiel Tovar,COL,hitter,Buy low,0.2497,0.274,13.0,56.0,52.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Tj Friedl,CIN,hitter,Buy low,0.2464,0.272,10.0,54.0,47.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Luis Rengifo,MIL,hitter,Buy low,0.2427,0.278,13.0,57.0,51.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nolan Schanuel,LAA,hitter,Buy low,0.2369,0.274,9.0,54.0,47.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Jackson Merrill,SD,hitter,Buy low,0.2352,0.296,16.0,63.0,57.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Cody Bellinger,NYY,hitter,Buy low,0.2328,0.307,13.0,63.0,54.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Luke Keaschall,MIN,hitter,Buy low,0.2325,0.32,11.0,63.0,56.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Jonathan Aranda,TB,hitter,Buy low,0.2318,0.313,14.0,65.0,55.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Munetaka Murakami,CWS,hitter,Buy low,0.228,0.311,18.0,67.0,59.0,3.0,,,,,,,High (100+ PA),136,2026-04-27
+Jarren Duran,BOS,hitter,Buy low,0.2264,0.286,15.0,59.0,55.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Michael Busch,CHC,hitter,Buy low,0.2254,0.264,14.0,56.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Carson Benge,NYM,hitter,Buy low,0.2238,0.263,10.0,53.0,47.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Austin Wells,NYY,hitter,Buy low,0.2107,0.262,11.0,54.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Josh Naylor,SEA,hitter,Buy low,0.2102,0.291,13.0,59.0,53.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Bryson Stott,PHI,hitter,Buy low,0.2102,0.271,12.0,55.0,50.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Matt Mclain,CIN,hitter,Buy low,0.2099,0.279,13.0,58.0,50.0,15.0,,,,,,,High (100+ PA),136,2026-04-27
+Yordan Álvarez,HOU,hitter,Buy low,0.2032,0.354,25.0,77.0,72.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Salvador Pérez,KC,hitter,Buy low,0.1966,0.269,14.0,56.0,52.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Spencer Steer,CIN,hitter,Buy low,0.188,0.273,17.0,59.0,55.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tyler Soderstrom,ATH,hitter,Buy low,0.1872,0.284,17.0,61.0,55.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Steven Kwan,CLE,hitter,Buy low,0.1863,0.298,9.0,58.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Tyler Stephenson,CIN,hitter,Buy low,0.1862,0.281,14.0,59.0,52.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Josh Bell,MIN,hitter,Buy low,0.1781,0.285,14.0,59.0,53.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Miguel Vargas,CWS,hitter,Buy low,0.1763,0.275,14.0,58.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+JJ Wetherholt,STL,hitter,Buy low,0.1691,0.291,12.0,59.0,51.0,3.0,,,,,,,High (100+ PA),136,2026-04-27
+Ketel Marte,AZ,hitter,Buy low,0.1665,0.305,16.0,64.0,58.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Víctor Caratini,MIN,hitter,Buy low,0.1651,0.274,12.0,56.0,50.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Heriberto Hernandez,MIA,hitter,Buy low,0.1649,0.282,11.0,57.0,49.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Roman Anthony,BOS,hitter,Buy low,0.161,0.31,15.0,65.0,56.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Cedric Mullins,TB,hitter,Buy low,0.1608,0.251,11.0,51.0,46.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Sal Frelick,MIL,hitter,Buy low,0.1598,0.286,9.0,56.0,48.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Pete Alonso,BAL,hitter,Buy low,0.1589,0.276,13.0,57.0,50.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Bryce Harper,PHI,hitter,Buy low,0.1586,0.328,19.0,69.0,64.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Josh Smith,TEX,hitter,Buy low,0.1579,0.257,12.0,54.0,47.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Xander Bogaerts,SD,hitter,Buy low,0.1522,0.308,12.0,61.0,54.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Junior Caminero,TB,hitter,Buy low,0.151,0.307,16.0,64.0,58.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Jordan Beck,COL,hitter,Buy low,0.1502,0.256,9.0,51.0,45.0,15.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Luis Robert,NYM,hitter,Slight buy,0.1455,0.262,10.0,54.0,46.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+William Contreras,MIL,hitter,Neutral,0.1433,0.278,13.0,57.0,52.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Lawrence Butler,ATH,hitter,Slight buy,0.1324,0.255,10.0,52.0,45.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Cam Smith,HOU,hitter,Slight buy,0.1279,0.276,16.0,59.0,54.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Freddie Freeman,LAD,hitter,Neutral,0.1274,0.319,19.0,67.0,64.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Colson Montgomery,CWS,hitter,Neutral,0.1264,0.27,16.0,58.0,53.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Curtis Mead,WSH,hitter,Slight buy,0.1252,0.26,11.0,54.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Logan O'hoppe,LAA,hitter,Slight buy,0.1239,0.239,12.0,52.0,45.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jake Burger,TEX,hitter,Neutral,0.1227,0.247,13.0,52.0,48.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Cal Raleigh,SEA,hitter,Slight buy,0.1182,0.258,16.0,57.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Luisangel Acuña,CWS,hitter,Slight buy,0.1139,0.254,9.0,52.0,45.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Alex Bregman,CHC,hitter,Neutral,0.1112,0.269,13.0,56.0,50.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Yainer Diaz,HOU,hitter,Neutral,0.1089,0.278,11.0,55.0,50.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Francisco Lindor,NYM,hitter,Slight buy,0.1071,0.276,15.0,58.0,53.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Geraldo Perdomo,AZ,hitter,Neutral,0.1032,0.254,9.0,51.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Will Smith,LAD,hitter,Neutral,0.1008,0.265,14.0,56.0,50.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Patrick Bailey,SF,hitter,Neutral,0.0997,0.232,9.0,47.0,41.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Bo Naylor,CLE,hitter,Neutral,0.0994,0.218,12.0,47.0,42.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Samuel Basallo,BAL,hitter,Neutral,0.0976,0.227,12.0,49.0,43.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Kyle Tucker,LAD,hitter,Neutral,0.0974,0.273,13.0,57.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Luis García,WSH,hitter,Neutral,0.0966,0.268,12.0,55.0,50.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Cj Abrams,WSH,hitter,Neutral,0.096,0.299,14.0,61.0,55.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Brent Rooker,ATH,hitter,Neutral,0.0931,0.265,16.0,57.0,52.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Coby Mayo,BAL,hitter,Neutral,0.091,0.225,11.0,48.0,42.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Rafael Marchán,PHI,hitter,Neutral,0.0893,0.237,10.0,48.0,44.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Matt Vierling,DET,hitter,Neutral,0.0872,0.255,9.0,51.0,44.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Ryan Mcmahon,NYY,hitter,Neutral,0.0853,0.246,12.0,52.0,46.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Bobby Witt,KC,hitter,Neutral,0.0847,0.303,15.0,62.0,56.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Jonathan India,KC,hitter,Neutral,0.0844,0.245,11.0,51.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+George Springer,TOR,hitter,Neutral,0.0833,0.263,13.0,55.0,49.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jesús Sánchez,TOR,hitter,Neutral,0.0806,0.269,13.0,55.0,51.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Edgar Quero,CWS,hitter,Neutral,0.0805,0.268,7.0,52.0,43.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Maikel García,KC,hitter,Neutral,0.0794,0.275,12.0,56.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Shohei Ohtani,LAD,hitter,Neutral,0.0794,0.314,20.0,68.0,62.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Marcus Semien,NYM,hitter,Neutral,0.0762,0.249,12.0,52.0,47.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Wenceel Pérez,DET,hitter,Neutral,0.0758,0.251,14.0,53.0,49.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Ramón Urías,STL,hitter,Neutral,0.0682,0.252,13.0,53.0,48.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Bo Bichette,NYM,hitter,Neutral,0.0679,0.29,10.0,57.0,51.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Isaac Paredes,HOU,hitter,Neutral,0.0672,0.241,11.0,50.0,45.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nick Yorke,PIT,hitter,Neutral,0.067,0.245,9.0,50.0,43.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nathaniel Lowe,CIN,hitter,Neutral,0.0663,0.281,14.0,58.0,53.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Nasim Nuñez,WSH,hitter,Neutral,0.0632,0.238,7.0,47.0,40.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Royce Lewis,MIN,hitter,Neutral,0.0616,0.264,13.0,55.0,49.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Josh Lowe,LAA,hitter,Neutral,0.0595,0.249,11.0,51.0,46.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Byron Buxton,MIN,hitter,Neutral,0.059,0.254,17.0,55.0,52.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Juan Brito,CLE,hitter,Neutral,0.0589,0.248,9.0,50.0,44.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Davis Schneider,TOR,hitter,Neutral,0.0587,0.233,14.0,52.0,45.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tim Tawa,AZ,hitter,Neutral,0.0582,0.211,9.0,45.0,38.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Amed Rosario,NYY,hitter,Neutral,0.058,0.289,14.0,59.0,55.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Drew Millas,WSH,hitter,Neutral,0.0558,0.277,9.0,54.0,48.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Marcelo Mayer,BOS,hitter,Neutral,0.0555,0.23,12.0,49.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nick Castellanos,SD,hitter,Neutral,0.0552,0.26,11.0,53.0,47.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jorge Polanco,NYM,hitter,Neutral,0.0532,0.242,10.0,49.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Blaze Alexander,BAL,hitter,Neutral,0.0521,0.24,7.0,47.0,41.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nico Hoerner,CHC,hitter,Neutral,0.0512,0.309,9.0,59.0,52.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Gleyber Torres,DET,hitter,Neutral,0.0509,0.277,11.0,56.0,48.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Dylan Beavers,BAL,hitter,Neutral,0.0493,0.239,11.0,50.0,44.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Kody Clemens,MIN,hitter,Neutral,0.0488,0.238,15.0,52.0,48.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jacob Young,WSH,hitter,Neutral,0.0486,0.251,9.0,50.0,44.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Justin Crawford,PHI,hitter,Neutral,0.0478,0.248,8.0,49.0,43.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Victor Scott,STL,hitter,Neutral,0.0452,0.207,6.0,41.0,35.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jacob Wilson,ATH,hitter,Neutral,0.0448,0.301,8.0,56.0,52.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Michael Harris,ATL,hitter,Neutral,0.0437,0.319,21.0,68.0,66.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Nathan Church,STL,hitter,Neutral,0.0437,0.23,12.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Lane Thomas,KC,hitter,Neutral,0.0416,0.25,9.0,51.0,43.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Joey Ortiz,MIL,hitter,Neutral,0.0412,0.234,9.0,48.0,41.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Liam Hicks,MIA,hitter,Neutral,0.0405,0.289,11.0,57.0,52.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Alek Thomas,AZ,hitter,Neutral,0.0386,0.234,11.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Leo Rivas,SEA,hitter,Neutral,0.0371,0.239,8.0,48.0,41.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Brice Matthews,HOU,hitter,Neutral,0.0364,0.178,10.0,40.0,34.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Elly De la cruz,CIN,hitter,Neutral,0.0362,0.299,17.0,63.0,58.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Rob Refsnyder,SEA,hitter,Neutral,0.0345,0.276,14.0,57.0,52.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Henry Davis,PIT,hitter,Neutral,0.0336,0.186,8.0,40.0,34.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Matt Wallner,MIN,hitter,Neutral,0.0332,0.236,13.0,50.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Brice Turang,MIL,hitter,Neutral,0.0331,0.295,12.0,60.0,51.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Harrison Bader,SF,hitter,Neutral,0.0321,0.251,12.0,52.0,47.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Keibert Ruiz,WSH,hitter,Neutral,0.0308,0.247,11.0,51.0,45.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Lenyn Sosa,CWS,hitter,Neutral,0.0302,0.246,10.0,49.0,45.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Brandon Valenzuela,TOR,hitter,Neutral,0.0293,0.248,11.0,50.0,46.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+James Wood,WSH,hitter,Neutral,0.0273,0.311,21.0,68.0,61.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Andrew Benintendi,CWS,hitter,Neutral,0.0254,0.259,13.0,54.0,49.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tanner Murray,CWS,hitter,Neutral,0.0248,0.253,13.0,53.0,48.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Rhys Hoskins,CLE,hitter,Neutral,0.0235,0.233,11.0,50.0,42.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Thomas Saggese,STL,hitter,Neutral,0.0234,0.25,8.0,49.0,43.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tyler Freeman,COL,hitter,Neutral,0.022,0.249,8.0,49.0,43.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Brandon Marsh,PHI,hitter,Neutral,0.0217,0.271,12.0,55.0,50.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Rece Hinds,CIN,hitter,Neutral,0.0214,0.194,9.0,41.0,36.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Eli White,ATL,hitter,Neutral,0.0202,0.232,12.0,49.0,45.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Mickey Moniak,COL,hitter,Neutral,0.017,0.268,14.0,56.0,52.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nathan Lukes,TOR,hitter,Neutral,0.0156,0.259,7.0,50.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Francisco Álvarez,NYM,hitter,Neutral,0.0136,0.249,15.0,54.0,49.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Darell Hernaiz,ATH,hitter,Neutral,0.013,0.221,7.0,45.0,37.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Ty France,SD,hitter,Neutral,0.0129,0.272,15.0,57.0,53.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Freddy Fermin,SD,hitter,Neutral,0.0121,0.264,7.0,52.0,43.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Daulton Varsho,TOR,hitter,Neutral,0.0115,0.238,11.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Kyle Higashioka,TEX,hitter,Neutral,0.0111,0.234,13.0,50.0,45.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Yoán Moncada,LAA,hitter,Neutral,0.0102,0.242,11.0,51.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Dustin Harris,HOU,hitter,Neutral,0.01,0.232,9.0,48.0,40.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jeremy Peña,HOU,hitter,Neutral,0.0099,0.274,11.0,55.0,49.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Trevor Story,BOS,hitter,Neutral,0.0096,0.247,8.0,49.0,43.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Blake Perkins,MIL,hitter,Neutral,0.0092,0.232,9.0,48.0,41.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Will Benson,CIN,hitter,Neutral,0.0091,0.224,10.0,47.0,40.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Brandon Lowe,PIT,hitter,Neutral,0.0082,0.275,13.0,57.0,50.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Brett Sullivan,COL,hitter,Neutral,0.0081,0.203,6.0,40.0,35.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Andruw Monasterio,BOS,hitter,Neutral,0.0078,0.259,12.0,53.0,48.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Paul Goldschmidt,NYY,hitter,Neutral,0.0075,0.287,17.0,61.0,56.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+José Altuve,HOU,hitter,Neutral,0.0073,0.291,13.0,60.0,53.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Luis Arráez,SF,hitter,Neutral,0.0068,0.318,7.0,59.0,52.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Sam Antonacci,CWS,hitter,Neutral,0.0067,0.263,13.0,55.0,49.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Gary Sánchez,MIL,hitter,Neutral,0.005,0.257,14.0,55.0,48.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tyrone Taylor,NYM,hitter,Neutral,0.0043,0.236,11.0,49.0,44.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Austin Wynns,ATH,hitter,Neutral,0.0024,0.259,12.0,53.0,48.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jahmai Jones,DET,hitter,Neutral,0.0017,0.3,20.0,65.0,62.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Dane Myers,CIN,hitter,Neutral,0.0004,0.282,13.0,58.0,51.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Zach Mckinstry,DET,hitter,Neutral,0.0002,0.233,10.0,48.0,42.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Carlos Santana,AZ,hitter,Neutral,0.0,0.226,10.0,47.0,41.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Travis D'arnaud,LAA,hitter,Neutral,0.0,0.242,15.0,53.0,48.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Griffin Conine,MIA,hitter,Neutral,0.0,0.292,19.0,63.0,59.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Zack Gelof,ATH,hitter,Neutral,0.0,0.225,11.0,47.0,43.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Ryan Vilade,TB,hitter,Neutral,0.0,0.182,4.0,37.0,29.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Gabriel Arias,CLE,hitter,Neutral,0.0,0.224,12.0,48.0,43.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Connor Joe,SEA,hitter,Neutral,0.0,0.24,12.0,50.0,45.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Ryan Mountcastle,BAL,hitter,Neutral,0.0,0.26,10.0,52.0,46.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Yohel Pozo,STL,hitter,Neutral,0.0,0.231,7.0,45.0,40.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jordan Lawlar,AZ,hitter,Neutral,0.0,0.205,9.0,43.0,37.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Ronny Mauricio,NYM,hitter,Neutral,0.0,0.234,8.0,46.0,41.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jose Trevino,CIN,hitter,Neutral,0.0,0.232,9.0,47.0,41.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Dylan Moore,PHI,hitter,Neutral,0.0,0.207,10.0,45.0,38.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Tommy Pham,NYM,hitter,Neutral,0.0,0.246,10.0,50.0,44.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Nick Allen,HOU,hitter,Neutral,0.0,0.213,7.0,43.0,36.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Luis Matos,MIL,hitter,Neutral,0.0,0.231,8.0,46.0,40.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Addison Barger,TOR,hitter,Neutral,0.0,0.229,8.0,47.0,39.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jared Young,NYM,hitter,Neutral,0.0,0.227,16.0,51.0,47.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Lourdes Gurriel,AZ,hitter,Neutral,0.0,0.269,11.0,54.0,49.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Alejandro Kirk,TOR,hitter,Neutral,0.0,0.272,12.0,55.0,50.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jared Triolo,PIT,hitter,Neutral,0.0,0.237,10.0,49.0,43.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Otto Kemp,PHI,hitter,Neutral,0.0,0.234,9.0,47.0,42.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Sam Haggerty,TEX,hitter,Neutral,0.0,0.248,9.0,50.0,44.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jeimer Candelario,LAA,hitter,Neutral,0.0,0.226,10.0,47.0,41.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Carson Williams,TB,hitter,Neutral,0.0,0.178,6.0,37.0,31.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Hao-Yu  Lee,DET,hitter,Neutral,0.0,0.265,17.0,57.0,54.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Felix Reyes,PHI,hitter,Neutral,0.0,0.254,9.0,50.0,45.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Andy Ibáñez,ATH,hitter,Neutral,0.0,0.247,8.0,49.0,43.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Ryan Kreidler,MIN,hitter,Neutral,0.0,0.204,10.0,45.0,37.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Bryce Johnson,SD,hitter,Neutral,0.0,0.24,7.0,47.0,41.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Víctor Robles,SEA,hitter,Neutral,0.0,0.263,13.0,54.0,50.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Daniel Susac,SF,hitter,Neutral,0.0,0.267,11.0,54.0,49.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Mj Melendez,NYM,hitter,Neutral,0.0,0.221,14.0,49.0,44.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Eloy Jiménez,TOR,hitter,Neutral,0.0,0.268,12.0,55.0,49.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+J. c. Escarra,NYY,hitter,Neutral,0.0,0.202,11.0,44.0,39.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jorge Mateo,ATL,hitter,Neutral,0.0,0.222,11.0,47.0,42.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Reese Mcguire,CWS,hitter,Neutral,0.0,0.248,8.0,49.0,44.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Noelvi Marte,CIN,hitter,Neutral,0.0,0.254,8.0,50.0,44.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Billy Cook,PIT,hitter,Neutral,0.0,0.236,8.0,47.0,42.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Santiago Espinal,LAD,hitter,Neutral,0.0,0.253,9.0,50.0,44.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+C. j. Kayfus,CLE,hitter,Neutral,0.0,0.232,16.0,52.0,48.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+James Outman,MIN,hitter,Neutral,0.0,0.215,9.0,44.0,39.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Kyle Stowers,MIA,hitter,Neutral,0.0,0.274,12.0,56.0,50.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jerar Encarnacion,SF,hitter,Neutral,0.0,0.217,9.0,44.0,39.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Mookie Betts,LAD,hitter,Neutral,0.0,0.291,15.0,61.0,55.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Luis Torrens,NYM,hitter,Neutral,0.0,0.228,7.0,44.0,39.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Austin Hays,CWS,hitter,Neutral,0.0,0.262,12.0,54.0,49.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Austin Slater,MIA,hitter,Neutral,0.0,0.244,9.0,50.0,42.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Weston Wilson,BAL,hitter,Neutral,0.0,0.278,15.0,59.0,53.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+P. j. Higgins,CIN,hitter,Neutral,0.0,0.231,8.0,46.0,40.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Christian Koss,SF,hitter,Neutral,0.0,0.264,8.0,51.0,46.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Shay Whitcomb,HOU,hitter,Neutral,0.0,0.185,11.0,41.0,36.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Johnathan Rodríguez,BAL,hitter,Neutral,0.0,0.199,7.0,43.0,33.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Daniel Johnson,HOU,hitter,Neutral,0.0,0.199,6.0,41.0,34.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Nick Loftin,KC,hitter,Neutral,0.0,0.241,9.0,50.0,42.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jake Fraley,TB,hitter,Neutral,-0.0006,0.261,13.0,55.0,49.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Edmundo Sosa,PHI,hitter,Neutral,-0.0006,0.256,12.0,53.0,48.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Alex Call,LAD,hitter,Neutral,-0.0007,0.253,11.0,52.0,45.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Ryan Jeffers,MIN,hitter,Neutral,-0.0007,0.271,15.0,58.0,51.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Masataka Yoshida,BOS,hitter,Neutral,-0.001,0.282,9.0,55.0,47.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+George Valera,CLE,hitter,Neutral,-0.001,0.22,9.0,45.0,40.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Spencer Torkelson,DET,hitter,Neutral,-0.0014,0.276,16.0,59.0,53.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Brooks Lee,MIN,hitter,Neutral,-0.0021,0.248,9.0,50.0,44.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Starling Marte,KC,hitter,Neutral,-0.0023,0.272,13.0,56.0,51.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Julio Rodríguez,SEA,hitter,Neutral,-0.0026,0.274,11.0,55.0,49.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Ian Happ,CHC,hitter,Neutral,-0.0026,0.269,15.0,58.0,51.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Jake Mccarthy,COL,hitter,Neutral,-0.0032,0.262,11.0,53.0,47.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Teoscar Hernández,LAD,hitter,Neutral,-0.0033,0.265,14.0,56.0,51.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tyler O'neill,BAL,hitter,Neutral,-0.0039,0.229,12.0,49.0,44.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Tyler Heineman,TOR,hitter,Neutral,-0.0045,0.245,8.0,48.0,43.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Trevor Larnach,MIN,hitter,Neutral,-0.0052,0.262,11.0,55.0,46.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Myles Straw,TOR,hitter,Neutral,-0.0056,0.252,10.0,51.0,45.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Randal Grichuk,NYY,hitter,Neutral,-0.0059,0.261,15.0,56.0,52.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Drew Gilbert,SF,hitter,Neutral,-0.006,0.216,10.0,45.0,40.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Joey Bart,PIT,hitter,Neutral,-0.0063,0.24,12.0,50.0,45.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Gavin Sheets,SD,hitter,Neutral,-0.0063,0.241,12.0,50.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Miguel Amaya,CHC,hitter,Neutral,-0.0064,0.239,10.0,50.0,43.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Gabriel Moreno,AZ,hitter,Neutral,-0.0065,0.283,13.0,58.0,53.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Pedro Pagés,STL,hitter,Neutral,-0.0066,0.247,11.0,50.0,45.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Wyatt Langford,TEX,hitter,Neutral,-0.0066,0.247,11.0,51.0,45.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Michael Conforto,CHC,hitter,Neutral,-0.0067,0.242,11.0,51.0,44.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Bryce Teodosio,LAA,hitter,Neutral,-0.007,0.194,8.0,41.0,35.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Fernando Tatís,SD,hitter,Neutral,-0.0072,0.274,15.0,58.0,53.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+José Fermín,STL,hitter,Neutral,-0.0074,0.227,7.0,45.0,38.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Mitch Garver,SEA,hitter,Neutral,-0.0074,0.217,12.0,47.0,42.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Brenton Doyle,COL,hitter,Neutral,-0.0077,0.235,9.0,48.0,42.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Parker Meadows,DET,hitter,Neutral,-0.0083,0.232,10.0,48.0,42.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Daylen Lile,WSH,hitter,Neutral,-0.0085,0.299,11.0,59.0,52.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Derek Hill,CWS,hitter,Neutral,-0.0094,0.243,9.0,49.0,42.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Richie Palacios,TB,hitter,Neutral,-0.0095,0.273,11.0,56.0,48.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Michael Massey,KC,hitter,Neutral,-0.0096,0.243,11.0,50.0,45.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Spencer Horwitz,PIT,hitter,Neutral,-0.0097,0.271,9.0,54.0,45.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jake Rogers,DET,hitter,Neutral,-0.0097,0.206,14.0,46.0,43.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Brendan Donovan,SEA,hitter,Neutral,-0.0098,0.29,10.0,57.0,50.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+James Mccann,AZ,hitter,Neutral,-0.0104,0.226,10.0,46.0,42.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Andrew Mccutchen,TEX,hitter,Neutral,-0.0105,0.24,12.0,50.0,45.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+J. t. Realmuto,PHI,hitter,Neutral,-0.0112,0.263,10.0,53.0,46.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jake Meyers,HOU,hitter,Neutral,-0.0114,0.249,13.0,52.0,47.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Kerry Carpenter,DET,hitter,Neutral,-0.0114,0.282,14.0,59.0,53.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Vaughn Grissom,LAA,hitter,Neutral,-0.0115,0.266,10.0,54.0,46.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Connor Wong,BOS,hitter,Neutral,-0.0118,0.244,11.0,51.0,45.0,14.0,,,,,,,Low (<50 PA),136,2026-04-27
+Hunter Feduccia,TB,hitter,Neutral,-0.0123,0.185,6.0,39.0,31.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jonah Heim,ATL,hitter,Neutral,-0.0128,0.23,10.0,48.0,42.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Dominic Canzone,SEA,hitter,Neutral,-0.0137,0.27,15.0,57.0,53.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Mark Vientos,NYM,hitter,Neutral,-0.0138,0.239,10.0,49.0,44.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nolan Gorman,STL,hitter,Neutral,-0.0145,0.223,10.0,47.0,41.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Kazuma Okamoto,TOR,hitter,Neutral,-0.0147,0.264,14.0,56.0,50.0,3.0,,,,,,,High (100+ PA),136,2026-04-27
+Ezequiel Duran,TEX,hitter,Neutral,-0.0156,0.251,10.0,51.0,45.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Adrian Del castillo,AZ,hitter,Neutral,-0.0175,0.27,12.0,55.0,50.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Taylor Trammell,HOU,hitter,Neutral,-0.0179,0.196,9.0,42.0,36.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Austin Hedges,CLE,hitter,Neutral,-0.019,0.185,5.0,37.0,31.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Graham Pauley,MIA,hitter,Neutral,-0.0191,0.209,9.0,43.0,38.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Joc Pederson,TEX,hitter,Neutral,-0.0201,0.25,10.0,52.0,44.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jonny Deluca,TB,hitter,Neutral,-0.0202,0.253,11.0,51.0,46.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+David Fry,CLE,hitter,Neutral,-0.0206,0.243,12.0,51.0,45.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Brayan Rocchio,CLE,hitter,Neutral,-0.0207,0.239,8.0,48.0,41.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jeff Mcneil,ATH,hitter,Neutral,-0.021,0.276,10.0,55.0,48.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jake Bauers,MIL,hitter,Neutral,-0.0213,0.245,12.0,51.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Adley Rutschman,BAL,hitter,Neutral,-0.0217,0.269,13.0,56.0,50.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Isiah Kiner-falefa,BOS,hitter,Neutral,-0.0223,0.26,9.0,51.0,45.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Jo Adell,LAA,hitter,Neutral,-0.0226,0.24,11.0,49.0,45.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Javier Báez,DET,hitter,Neutral,-0.0234,0.237,9.0,47.0,43.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Denzel Clarke,ATH,hitter,Neutral,-0.0247,0.23,8.0,46.0,40.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nolan Arenado,AZ,hitter,Neutral,-0.0258,0.269,12.0,55.0,50.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Carlos Narváez,BOS,hitter,Neutral,-0.0268,0.241,12.0,50.0,46.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jazz Chisholm,NYY,hitter,Neutral,-0.0281,0.25,10.0,51.0,44.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Jorge Barrosa,AZ,hitter,Neutral,-0.0295,0.167,7.0,35.0,30.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Kyle Manzardo,CLE,hitter,Neutral,-0.031,0.234,12.0,49.0,44.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Juan Soto,NYM,hitter,Neutral,-0.0338,0.299,18.0,64.0,58.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Rafael Devers,SF,hitter,Neutral,-0.0339,0.272,13.0,56.0,51.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Dalton Rushing,LAD,hitter,Neutral,-0.034,0.251,14.0,54.0,49.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+David Hamilton,MIL,hitter,Neutral,-0.0342,0.221,9.0,46.0,39.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Brandon Nimmo,TEX,hitter,Neutral,-0.0353,0.285,15.0,59.0,55.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Jeremiah Jackson,BAL,hitter,Neutral,-0.0367,0.276,13.0,56.0,52.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tristan Gray,MIN,hitter,Neutral,-0.0373,0.234,13.0,49.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Tristan Peters,CWS,hitter,Neutral,-0.0384,0.085,5.0,22.0,17.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Luis Campusano,SD,hitter,Neutral,-0.0385,0.275,13.0,57.0,51.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Carter Jensen,KC,hitter,Neutral,-0.04,0.303,16.0,63.0,58.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Dominic Smith,ATL,hitter,Neutral,-0.0413,0.285,13.0,58.0,53.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Danny Jansen,TEX,hitter,Neutral,-0.0414,0.225,11.0,48.0,42.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Connor Norby,MIA,hitter,Neutral,-0.0435,0.248,11.0,51.0,45.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Adolis García,PHI,hitter,Neutral,-0.0436,0.251,12.0,52.0,47.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Willy Adames,SF,hitter,Neutral,-0.0438,0.235,13.0,50.0,46.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Miguel Rojas,LAD,hitter,Neutral,-0.044,0.261,12.0,54.0,48.0,2.0,,,,,,,Low (<50 PA),136,2026-04-27
+Christian Vázquez,HOU,hitter,Neutral,-0.046,0.245,8.0,49.0,42.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Colton Cowser,BAL,hitter,Neutral,-0.0482,0.219,13.0,48.0,43.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Brett Baty,NYM,hitter,Neutral,-0.0483,0.231,11.0,48.0,43.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+José Tena,WSH,hitter,Neutral,-0.0499,0.252,8.0,49.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Wilyer Abreu,BOS,hitter,Neutral,-0.0499,0.307,16.0,64.0,59.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Jorbit Vivas,WSH,hitter,Neutral,-0.0506,0.195,6.0,40.0,33.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Carlos Correa,HOU,hitter,Neutral,-0.0529,0.294,14.0,61.0,54.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Bryan Reynolds,PIT,hitter,Neutral,-0.0555,0.274,12.0,57.0,48.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Chase Meidroth,CWS,hitter,Neutral,-0.0611,0.253,8.0,50.0,43.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Jake Mangum,PIT,hitter,Neutral,-0.0617,0.296,7.0,56.0,48.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Hyeseong Kim,LAD,hitter,Neutral,-0.0617,0.286,10.0,57.0,49.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Cole Young,SEA,hitter,Neutral,-0.0618,0.259,11.0,53.0,47.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Andrés Giménez,TOR,hitter,Neutral,-0.0651,0.256,9.0,51.0,45.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Nick Fortes,TB,hitter,Neutral,-0.0654,0.232,8.0,46.0,41.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Agustín Ramírez,MIA,hitter,Neutral,-0.0655,0.231,9.0,47.0,41.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Matt Shaw,CHC,hitter,Neutral,-0.0656,0.259,12.0,53.0,48.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Alex Freeland,LAD,hitter,Neutral,-0.0666,0.221,12.0,48.0,42.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Leody Taveras,BAL,hitter,Neutral,-0.0701,0.265,10.0,54.0,46.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Kevin McGonigle,DET,hitter,Neutral,-0.0717,0.302,17.0,64.0,58.0,3.0,,,,,,,High (100+ PA),136,2026-04-27
+Josh Jung,TEX,hitter,Neutral,-0.0731,0.282,12.0,57.0,51.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Ben Williamson,TB,hitter,Neutral,-0.0755,0.253,6.0,49.0,41.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Ryan O'hearn,PIT,hitter,Neutral,-0.0782,0.304,12.0,61.0,54.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Seiya Suzuki,CHC,hitter,Neutral,-0.0782,0.292,13.0,59.0,53.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Hunter Goodman,COL,hitter,Neutral,-0.0796,0.276,14.0,57.0,52.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Konnor Griffin,PIT,hitter,Neutral,-0.0804,0.248,12.0,52.0,47.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Taylor Walls,TB,hitter,Neutral,-0.0814,0.193,7.0,40.0,34.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Mike Yastrzemski,ATL,hitter,Neutral,-0.0821,0.227,10.0,47.0,41.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Carlos Cortes,ATH,hitter,Neutral,-0.0829,0.336,20.0,71.0,66.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Brady House,WSH,hitter,Neutral,-0.0836,0.235,11.0,49.0,44.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Ramón Laureano,SD,hitter,Neutral,-0.0844,0.269,15.0,57.0,52.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Willi Castro,COL,hitter,Neutral,-0.0844,0.243,11.0,50.0,45.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Christian Yelich,MIL,hitter,Slight sell,-0.0858,0.263,12.0,53.0,48.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Everson Pereira,CWS,hitter,Slight sell,-0.0918,0.204,10.0,43.0,38.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Ozzie Albies,ATL,hitter,Slight sell,-0.0953,0.257,9.0,50.0,45.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Isaac Collins,KC,hitter,Slight sell,-0.0986,0.249,11.0,51.0,45.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Yandy Díaz,TB,hitter,Slight sell,-0.1055,0.309,12.0,61.0,54.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Joey Loperfido,HOU,hitter,Slight sell,-0.1063,0.24,9.0,48.0,42.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Eugenio Suárez,CIN,hitter,Slight sell,-0.1069,0.231,12.0,49.0,45.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Kyle Isbel,KC,hitter,Slight sell,-0.1093,0.238,10.0,48.0,44.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Angel Martínez,CLE,hitter,Slight sell,-0.1108,0.256,13.0,52.0,48.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Pete Crow-armstrong,CHC,hitter,Slight sell,-0.1123,0.232,10.0,48.0,43.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Christian Walker,HOU,hitter,Slight sell,-0.1156,0.278,16.0,59.0,53.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Matt Olson,ATL,hitter,Slight sell,-0.1187,0.286,18.0,61.0,56.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Vladimir Guerrero,TOR,hitter,Slight sell,-0.1222,0.298,18.0,63.0,58.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Miguel Andújar,SD,hitter,Slight sell,-0.1225,0.278,9.0,53.0,48.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Javier Sanoja,MIA,hitter,Slight sell,-0.1241,0.234,8.0,47.0,40.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Edouard Julien,COL,hitter,Slight sell,-0.1241,0.251,12.0,52.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Zach Neto,LAA,hitter,Slight sell,-0.1248,0.262,13.0,55.0,48.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Ceddanne Rafaela,BOS,hitter,Slight sell,-0.129,0.241,11.0,49.0,44.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jorge Soler,LAA,hitter,Slight sell,-0.131,0.248,14.0,53.0,48.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Masyn Winn,STL,hitter,Slight sell,-0.133,0.244,9.0,48.0,43.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Troy Johnston,COL,hitter,Slight sell,-0.1367,0.269,9.0,52.0,47.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Willson Contreras,BOS,hitter,Slight sell,-0.1408,0.284,17.0,60.0,55.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Mauricio Dubón,ATL,hitter,Slight sell,-0.1444,0.248,11.0,50.0,46.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Nick Kurtz,ATH,hitter,Slight sell,-0.1479,0.315,18.0,67.0,57.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Joey Wiemer,WSH,hitter,Slight sell,-0.148,0.212,9.0,45.0,38.0,14.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Ernie Clement,TOR,hitter,Slight sell,-0.1506,0.255,6.0,48.0,43.0,14.0,,,,,,,High (100+ PA),136,2026-04-27
+Colt Keith,DET,hitter,Sell high,-0.1551,0.248,12.0,51.0,46.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Xavier Edwards,MIA,hitter,Sell high,-0.1587,0.28,10.0,55.0,49.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Austin Martin,MIN,hitter,Sell high,-0.1602,0.272,8.0,55.0,43.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Owen Caissie,MIA,hitter,Sell high,-0.1624,0.198,11.0,42.0,38.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Nick Gonzales,PIT,hitter,Sell high,-0.164,0.243,7.0,47.0,40.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Drake Baldwin,ATL,hitter,Slight sell,-0.1702,0.306,18.0,64.0,59.0,2.0,,,,,,,High (100+ PA),136,2026-04-27
+Jung hoo Lee,SF,hitter,Sell high,-0.172,0.266,9.0,52.0,46.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Jac Caglianone,KC,hitter,Sell high,-0.1726,0.198,14.0,44.0,40.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Chandler Simpson,TB,hitter,Sell high,-0.1807,0.277,5.0,51.0,44.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Brandon Lockridge,MIL,hitter,Sell high,-0.181,0.213,6.0,42.0,36.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Adam Frazier,LAA,hitter,Sell high,-0.1828,0.226,8.0,46.0,39.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Oneil Cruz,PIT,hitter,Sell high,-0.1905,0.258,19.0,56.0,54.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Casey Schmitt,SF,hitter,Sell high,-0.2002,0.244,17.0,53.0,51.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Moisés Ballesteros,CHC,hitter,Sell high,-0.2019,0.306,15.0,62.0,57.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Giancarlo Stanton,NYY,hitter,Sell high,-0.2033,0.221,16.0,49.0,45.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Oswald Peraza,LAA,hitter,Sell high,-0.2057,0.232,12.0,49.0,43.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Randy Arozarena,SEA,hitter,Sell high,-0.207,0.242,12.0,50.0,44.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Otto Lopez,MIA,hitter,Sell high,-0.2071,0.266,13.0,55.0,51.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Heliot Ramos,SF,hitter,Sell high,-0.2117,0.253,17.0,55.0,52.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Max Muncy,LAD,hitter,Sell high,-0.2124,0.271,18.0,58.0,54.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Carson Kelly,CHC,hitter,Sell high,-0.2127,0.237,12.0,50.0,44.0,2.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Taylor Ward,BAL,hitter,Sell high,-0.2187,0.264,10.0,54.0,45.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Riley Greene,DET,hitter,Sell high,-0.2255,0.283,15.0,59.0,53.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Shea Langeliers,ATH,hitter,Sell high,-0.2282,0.267,14.0,55.0,51.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Luke Raley,SEA,hitter,Sell high,-0.2312,0.252,16.0,54.0,50.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Jose Fernandez,AZ,hitter,Sell high,-0.243,0.244,11.0,50.0,46.0,3.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Andy Pages,LAD,hitter,Sell high,-0.2597,0.272,10.0,54.0,48.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Jordan Walker,STL,hitter,Sell high,-0.2609,0.266,17.0,57.0,53.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Corbin Carroll,AZ,hitter,Sell high,-0.2624,0.263,13.0,55.0,49.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+José Caballero,NYY,hitter,Sell high,-0.2724,0.215,8.0,43.0,39.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Max Muncy,LAD,hitter,Sell high,-0.2124,0.271,18.0,58.0,54.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Daniel Schneemann,CLE,hitter,Sell high,-0.2893,0.242,12.0,51.0,44.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Ben Rice,NYY,hitter,Sell high,-0.3275,0.29,20.0,64.0,56.0,6.0,,,,,,,High (100+ PA),136,2026-04-27
+Ildemaro Vargas,AZ,hitter,Sell high,-0.3444,0.285,11.0,56.0,52.0,6.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Garrett Mitchell,MIL,hitter,Sell high,-0.3938,0.247,13.0,53.0,45.0,13.0,,,,,,,Medium (50-100 PA),136,2026-04-27
+Matt Chapman,SF,hitter,Sell high,-0.4307,0.225,9.0,46.0,40.0,13.0,,,,,,,High (100+ PA),136,2026-04-27
+Leo Jimenez,MIA,hitter,Neutral,0.0,0.224,8.0,46.0,38.0,6.0,,,,,,,Low (<50 PA),136,2026-04-27
+Greg Jones,MIL,hitter,Neutral,0.0,0.162,10.0,36.0,33.0,3.0,,,,,,,Low (<50 PA),136,2026-04-27
+Michael Lorenzen,COL,pitcher,Neutral,0.3846,,,,,,4.32,1.41,108.0,7.0,0.0,122.6,Medium (20-40 IP),136,2026-04-27
+Jesús Luzardo,PHI,pitcher,Buy low,0.3695,,,,,,3.47,1.27,133.0,7.0,0.0,127.9,Medium (20-40 IP),136,2026-04-27
+Joe Ryan,MIN,pitcher,Buy low,0.3619,,,,,,3.17,1.21,129.0,7.0,0.0,127.5,Medium (20-40 IP),136,2026-04-27
+Yusei Kikuchi,LAA,pitcher,Neutral,0.3145,,,,,,4.22,1.42,123.0,7.0,0.0,122.6,Medium (20-40 IP),136,2026-04-27
+Cristopher Sánchez,PHI,pitcher,Buy low,0.2719,,,,,,2.86,1.17,136.0,7.0,0.0,128.4,Medium (20-40 IP),136,2026-04-27
+Logan Gilbert,SEA,pitcher,Buy low,0.2276,,,,,,3.07,1.18,133.0,7.0,0.0,126.8,Medium (20-40 IP),136,2026-04-27
+Tarik Skubal,DET,pitcher,Neutral,0.213,,,,,,2.53,1.07,126.0,7.0,0.0,130.7,Medium (20-40 IP),136,2026-04-27
+Cam Schlittler,NYY,pitcher,Neutral,0.1877,,,,,,2.16,1.08,134.0,7.0,0.0,131.0,Medium (20-40 IP),136,2026-04-27
+Carmen Mlodzinski,PIT,pitcher,Buy low,0.1868,,,,,,2.96,1.16,127.0,7.0,0.0,125.1,Medium (20-40 IP),136,2026-04-27
+Kyle Bradish,BAL,pitcher,Buy low,0.174,,,,,,3.39,1.23,127.0,7.0,0.0,125.6,Medium (20-40 IP),136,2026-04-27
+Aaron Ashby,MIL,pitcher,Neutral,0.1716,,,,,,2.98,1.28,111.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cade Cavalli,WSH,pitcher,Neutral,0.1626,,,,,,4.62,1.61,92.0,0.0,0.0,92.0,Medium (20-40 IP),136,2026-04-27
+Shane Baz,BAL,pitcher,Buy low,0.1574,,,,,,3.89,1.37,122.0,7.0,0.0,128.4,Medium (20-40 IP),136,2026-04-27
+Will Warren,NYY,pitcher,Neutral,0.1441,,,,,,4.77,1.57,125.0,7.0,0.0,126.9,Medium (20-40 IP),136,2026-04-27
+Braxton Ashcraft,PIT,pitcher,Neutral,0.1434,,,,,,2.24,1.08,131.0,7.0,0.0,130.3,Medium (20-40 IP),136,2026-04-27
+Aaron Nola,PHI,pitcher,Neutral,0.1318,,,,,,4.34,1.39,126.0,7.0,0.0,126.1,Medium (20-40 IP),136,2026-04-27
+Luis Castillo,SEA,pitcher,Slight buy,0.1293,,,,,,3.4,1.23,122.0,7.0,0.0,125.7,Medium (20-40 IP),136,2026-04-27
+Bryan Woo,SEA,pitcher,Slight buy,0.1252,,,,,,3.21,1.16,119.0,7.0,0.0,129.7,Medium (20-40 IP),136,2026-04-27
+Kodai Senga,NYM,pitcher,Neutral,0.1246,,,,,,3.96,1.27,94.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Keider Montero,DET,pitcher,Neutral,0.1197,,,,,,3.51,1.39,115.0,7.0,0.0,126.8,Medium (20-40 IP),136,2026-04-27
+Trevor Rogers,BAL,pitcher,Slight buy,0.1169,,,,,,3.6,1.37,117.0,7.0,0.0,124.2,Medium (20-40 IP),136,2026-04-27
+Dustin May,STL,pitcher,Neutral,0.1152,,,,,,4.35,1.46,115.0,7.0,0.0,123.3,Medium (20-40 IP),136,2026-04-27
+Mike Burrows,HOU,pitcher,Neutral,0.1125,,,,,,4.17,1.4,124.0,7.0,0.0,125.1,Medium (20-40 IP),136,2026-04-27
+Reid Detmers,LAA,pitcher,Slight buy,0.103,,,,,,3.46,1.38,132.0,7.0,0.0,128.3,Medium (20-40 IP),136,2026-04-27
+Ben Brown,CHC,pitcher,Neutral,0.1029,,,,,,3.84,1.52,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Logan Webb,SF,pitcher,Slight buy,0.1012,,,,,,3.21,1.18,122.0,7.0,0.0,131.6,Medium (20-40 IP),136,2026-04-27
+Tyler Glasnow,LAD,pitcher,Neutral,0.0957,,,,,,2.5,1.13,143.0,7.0,0.0,137.8,Medium (20-40 IP),136,2026-04-27
+Jack Leiter,TEX,pitcher,Neutral,0.0948,,,,,,4.8,1.53,124.0,7.0,0.0,126.7,Medium (20-40 IP),136,2026-04-27
+Javier Assad,CHC,pitcher,Neutral,0.0922,,,,,,3.59,1.24,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Chris Paddack,MIA,pitcher,Neutral,0.0921,,,,,,4.76,1.57,120.0,7.0,0.0,123.8,Medium (20-40 IP),136,2026-04-27
+Taijuan Walker,PHI,pitcher,Neutral,0.0898,,,,,,4.97,1.49,115.0,7.0,0.0,125.5,Medium (20-40 IP),136,2026-04-27
+Miles Mikolas,WSH,pitcher,Neutral,0.0861,,,,,,4.88,1.49,82.0,0.0,0.0,92.0,Medium (20-40 IP),136,2026-04-27
+Simeon Woods richardson,MIN,pitcher,Neutral,0.0815,,,,,,4.41,1.41,112.0,7.0,0.0,126.8,Medium (20-40 IP),136,2026-04-27
+Dylan Cease,TOR,pitcher,Neutral,0.0807,,,,,,3.18,1.29,143.0,7.0,0.0,126.5,Medium (20-40 IP),136,2026-04-27
+David Peterson,NYM,pitcher,Neutral,0.0793,,,,,,4.08,1.37,116.0,7.0,0.0,124.6,Medium (20-40 IP),136,2026-04-27
+Bailey Ober,MIN,pitcher,Slight buy,0.0791,,,,,,3.84,1.32,120.0,7.0,0.0,127.7,Medium (20-40 IP),136,2026-04-27
+Adrian Houser,SF,pitcher,Neutral,0.0768,,,,,,4.88,1.49,95.0,7.0,0.0,124.0,Medium (20-40 IP),136,2026-04-27
+Janson Junk,MIA,pitcher,Slight buy,0.0743,,,,,,4.14,1.51,106.0,7.0,0.0,126.3,Medium (20-40 IP),136,2026-04-27
+Walker Buehler,SD,pitcher,Neutral,0.0741,,,,,,4.51,1.54,112.0,7.0,0.0,116.7,Medium (20-40 IP),136,2026-04-27
+Max Scherzer,TOR,pitcher,Neutral,0.0731,,,,,,4.06,1.29,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kevin Gausman,TOR,pitcher,Neutral,0.0708,,,,,,3.21,1.22,126.0,7.0,0.0,129.8,Medium (20-40 IP),136,2026-04-27
+Garrett Crochet,BOS,pitcher,Neutral,0.0697,,,,,,3.06,1.17,125.0,7.0,0.0,127.1,Medium (20-40 IP),136,2026-04-27
+Brandon Woodruff,MIL,pitcher,Neutral,0.0669,,,,,,2.99,1.13,118.0,7.0,0.0,128.6,Medium (20-40 IP),136,2026-04-27
+Sean Manaea,NYM,pitcher,Neutral,0.0658,,,,,,4.37,1.43,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Andrew Abbott,CIN,pitcher,Neutral,0.0619,,,,,,3.78,1.27,112.0,7.0,0.0,125.8,Medium (20-40 IP),136,2026-04-27
+Nathan Eovaldi,TEX,pitcher,Neutral,0.0597,,,,,,4.11,1.25,122.0,7.0,0.0,127.7,Medium (20-40 IP),136,2026-04-27
+Shane Mcclanahan,TB,pitcher,Neutral,0.0583,,,,,,3.04,1.13,121.0,7.0,0.0,125.4,Medium (20-40 IP),136,2026-04-27
+Slade Cecconi,CLE,pitcher,Neutral,0.0493,,,,,,5.23,1.57,116.0,7.0,0.0,126.5,Medium (20-40 IP),136,2026-04-27
+Andrew Painter,PHI,pitcher,Neutral,0.0479,,,,,,4.04,1.4,116.0,7.0,0.0,125.5,Medium (20-40 IP),136,2026-04-27
+Sean Burke,CWS,pitcher,Neutral,0.0432,,,,,,3.63,1.3,113.0,7.0,0.0,128.0,Medium (20-40 IP),136,2026-04-27
+Brayan Bello,BOS,pitcher,Neutral,0.04,,,,,,4.97,1.45,110.0,7.0,0.0,123.6,Medium (20-40 IP),136,2026-04-27
+Seth Lugo,KC,pitcher,Neutral,0.038,,,,,,3.48,1.25,120.0,7.0,0.0,132.3,Medium (20-40 IP),136,2026-04-27
+Ryne Nelson,AZ,pitcher,Neutral,0.0361,,,,,,4.61,1.41,111.0,7.0,0.0,118.8,Medium (20-40 IP),136,2026-04-27
+Max Meyer,MIA,pitcher,Neutral,0.035,,,,,,4.61,1.54,124.0,7.0,0.0,124.2,Medium (20-40 IP),136,2026-04-27
+Sandy Alcántara,MIA,pitcher,Neutral,0.0347,,,,,,3.69,1.3,117.0,7.0,0.0,135.0,High (40+ IP),136,2026-04-27
+Jake Irvin,WSH,pitcher,Slight buy,0.0332,,,,,,4.62,1.48,125.0,7.0,0.0,126.6,Medium (20-40 IP),136,2026-04-27
+Mick Abel,MIN,pitcher,Neutral,0.0312,,,,,,5.64,1.69,124.0,7.0,0.0,126.3,Medium (20-40 IP),136,2026-04-27
+Brady Singer,CIN,pitcher,Neutral,0.0307,,,,,,4.35,1.4,112.0,7.0,0.0,125.8,Medium (20-40 IP),136,2026-04-27
+Michael Soroka,AZ,pitcher,Neutral,0.0293,,,,,,4.22,1.47,138.0,7.0,0.0,127.0,Medium (20-40 IP),136,2026-04-27
+Drew Rasmussen,TB,pitcher,Neutral,0.0286,,,,,,2.85,1.07,121.0,7.0,0.0,126.5,Medium (20-40 IP),136,2026-04-27
+Lance Mccullers,HOU,pitcher,Neutral,0.0227,,,,,,4.82,1.5,119.0,7.0,0.0,126.3,Medium (20-40 IP),136,2026-04-27
+Chris Bassitt,BAL,pitcher,Neutral,0.0185,,,,,,4.26,1.35,109.0,7.0,0.0,124.9,Medium (20-40 IP),136,2026-04-27
+Eury Pérez,MIA,pitcher,Neutral,0.0145,,,,,,4.57,1.32,124.0,7.0,0.0,124.9,Medium (20-40 IP),136,2026-04-27
+Noah Cameron,KC,pitcher,Neutral,0.014,,,,,,3.66,1.18,118.0,7.0,0.0,127.1,Medium (20-40 IP),136,2026-04-27
+Ryan Feltner,COL,pitcher,Neutral,0.013,,,,,,5.19,1.57,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kris Bubic,KC,pitcher,Neutral,0.0114,,,,,,4.08,1.35,123.0,7.0,0.0,128.6,Medium (20-40 IP),136,2026-04-27
+Cole Ragans,KC,pitcher,Neutral,0.0071,,,,,,4.58,1.32,127.0,7.0,0.0,119.2,Medium (20-40 IP),136,2026-04-27
+Eric Lauer,TOR,pitcher,Neutral,0.0059,,,,,,4.24,1.36,117.0,7.0,0.0,125.7,Medium (20-40 IP),136,2026-04-27
+Brad Lord,WSH,pitcher,Neutral,0.0041,,,,,,4.34,1.41,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jeremiah Estrada,SD,pitcher,Neutral,0.0,,,,,,3.6,1.26,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cody Bolton,HOU,pitcher,Neutral,0.0,,,,,,5.46,1.7,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kolby Allard,CLE,pitcher,Neutral,0.0,,,,,,4.91,1.52,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Mitchell Parker,WSH,pitcher,Neutral,0.0,,,,,,4.12,1.54,96.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Taylor Rogers,MIN,pitcher,Neutral,0.0,,,,,,3.7,1.3,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Hunter Bigge,TB,pitcher,Neutral,0.0,,,,,,2.83,1.06,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Bryan Abreu,HOU,pitcher,Neutral,0.0,,,,,,2.78,1.06,91.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Riley Martin,CHC,pitcher,Neutral,0.0,,,,,,3.99,1.37,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Joel Kuhnel,ATH,pitcher,Neutral,0.0,,,,,,5.76,1.67,82.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Edgardo Henriquez,LAD,pitcher,Neutral,0.0,,,,,,2.59,1.05,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tanner Gordon,COL,pitcher,Neutral,0.0,,,,,,5.52,1.64,123.0,7.0,0.0,118.8,Low (<20 IP),136,2026-04-27
+Tyler Samaniego,BOS,pitcher,Neutral,0.0,,,,,,4.05,1.37,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Evan Sisk,PIT,pitcher,Neutral,0.0,,,,,,3.48,1.28,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jack Anderson,BOS,pitcher,Neutral,0.0,,,,,,4.28,1.39,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Enmanuel De jesus,DET,pitcher,Neutral,0.0,,,,,,5.02,1.7,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Shane Smith,CWS,pitcher,Neutral,0.0,,,,,,4.28,1.46,98.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Robert Garcia,TEX,pitcher,Neutral,0.0,,,,,,3.79,1.29,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jordan Romano,LAA,pitcher,Neutral,0.0,,,,,,4.25,1.42,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jeffrey Springs,ATH,pitcher,Neutral,0.0,,,,,,3.28,1.19,121.0,7.0,0.0,129.8,Medium (20-40 IP),136,2026-04-27
+Camilo Doval,NYY,pitcher,Neutral,0.0,,,,,,3.48,1.25,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Chase Shugart,PHI,pitcher,Neutral,0.0,,,,,,3.22,1.25,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kyle Nicolas,CIN,pitcher,Neutral,0.0,,,,,,4.82,1.53,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Zach Pop,PHI,pitcher,Neutral,0.0,,,,,,5.51,1.63,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Blake Treinen,LAD,pitcher,Neutral,0.0,,,,,,3.67,1.23,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kenley Jansen,DET,pitcher,Neutral,0.0,,,,,,3.52,1.21,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Christian Roa,HOU,pitcher,Neutral,0.0,,,,,,1.8,0.95,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jose Franco,CIN,pitcher,Neutral,0.0,,,,,,4.37,1.42,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jameson Taillon,CHC,pitcher,Neutral,0.0,,,,,,4.51,1.34,119.0,7.0,0.0,127.3,Medium (20-40 IP),136,2026-04-27
+Edward Cabrera,CHC,pitcher,Neutral,0.0,,,,,,3.88,1.34,118.0,7.0,0.0,129.4,Medium (20-40 IP),136,2026-04-27
+Joey Cantillo,CLE,pitcher,Neutral,0.0,,,,,,3.73,1.29,124.0,7.0,0.0,126.5,Medium (20-40 IP),136,2026-04-27
+Tanner Bibee,CLE,pitcher,Neutral,0.0,,,,,,3.95,1.29,116.0,7.0,0.0,126.1,Medium (20-40 IP),136,2026-04-27
+Jacob Lopez,ATH,pitcher,Neutral,0.0,,,,,,4.47,1.47,104.0,7.0,0.0,119.2,Medium (20-40 IP),136,2026-04-27
+Zack Littell,WSH,pitcher,Neutral,0.0,,,,,,4.54,1.36,113.0,7.0,0.0,127.0,Medium (20-40 IP),136,2026-04-27
+Tyler Mahle,SF,pitcher,Neutral,0.0,,,,,,4.07,1.29,121.0,7.0,0.0,126.7,Medium (20-40 IP),136,2026-04-27
+Jack Flaherty,DET,pitcher,Neutral,0.0,,,,,,4.59,1.43,120.0,7.0,0.0,123.1,Medium (20-40 IP),136,2026-04-27
+Emmet Sheehan,LAD,pitcher,Neutral,0.0,,,,,,3.83,1.31,123.0,7.0,0.0,127.2,Medium (20-40 IP),136,2026-04-27
+Brandon Pfaadt,AZ,pitcher,Neutral,0.0,,,,,,4.99,1.54,110.0,7.0,0.0,126.3,Medium (20-40 IP),136,2026-04-27
+Calvin Faucher,MIA,pitcher,Neutral,0.0,,,,,,4.32,1.47,100.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+John Schreiber,KC,pitcher,Neutral,0.0,,,,,,3.56,1.23,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jacob Webb,CHC,pitcher,Neutral,0.0,,,,,,3.44,1.23,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Paxton Schultz,WSH,pitcher,Neutral,0.0,,,,,,4.52,1.41,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+José Alvarado,PHI,pitcher,Neutral,0.0,,,,,,3.25,1.23,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Yennier Cano,BAL,pitcher,Neutral,0.0,,,,,,4.14,1.37,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ken Waldichuk,WSH,pitcher,Neutral,0.0,,,,,,5.62,1.59,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cristian Javier,HOU,pitcher,Neutral,0.0,,,,,,4.08,1.33,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Elvis Alvarado,ATH,pitcher,Neutral,0.0,,,,,,3.68,1.22,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Alex Vesia,LAD,pitcher,Neutral,0.0,,,,,,2.7,1.09,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Zack Kelly,BOS,pitcher,Neutral,0.0,,,,,,4.36,1.36,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Andrew Nardi,MIA,pitcher,Neutral,0.0,,,,,,4.94,1.52,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Joe Mantiply,TOR,pitcher,Neutral,0.0,,,,,,4.43,1.48,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Matt Strahm,KC,pitcher,Neutral,0.0,,,,,,2.99,1.14,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Brooks Raley,NYM,pitcher,Neutral,0.0,,,,,,2.71,1.06,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kody Funderburk,MIN,pitcher,Neutral,0.0,,,,,,4.61,1.44,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kyle Leahy,STL,pitcher,Neutral,0.0,,,,,,4.34,1.36,111.0,7.0,0.0,125.6,Medium (20-40 IP),136,2026-04-27
+Luis Severino,ATH,pitcher,Neutral,0.0,,,,,,4.61,1.45,122.0,7.0,0.0,127.3,Medium (20-40 IP),136,2026-04-27
+Steven Matz,TB,pitcher,Neutral,0.0,,,,,,4.52,1.35,120.0,7.0,0.0,123.8,Medium (20-40 IP),136,2026-04-27
+Kyle Backhus,PHI,pitcher,Neutral,0.0,,,,,,4.48,1.46,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Helsley,BAL,pitcher,Neutral,0.0,,,,,,2.51,1.09,94.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Keaton Winn,SF,pitcher,Neutral,0.0,,,,,,5.13,1.63,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Luis Medina,ATH,pitcher,Neutral,0.0,,,,,,5.39,1.6,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Nick Mears,KC,pitcher,Neutral,0.0,,,,,,4.56,1.46,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cole Wilcox,SEA,pitcher,Neutral,0.0,,,,,,5.21,1.66,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Matt Brash,SEA,pitcher,Neutral,0.0,,,,,,3.32,1.19,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Blade Tidwell,SF,pitcher,Neutral,0.0,,,,,,5.05,1.61,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Grant Wolfram,BAL,pitcher,Neutral,0.0,,,,,,4.93,1.62,93.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Mason Fluharty,TOR,pitcher,Neutral,0.0,,,,,,3.73,1.43,97.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Garrett Whitlock,BOS,pitcher,Neutral,0.0,,,,,,3.58,1.25,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Paul Sewald,AZ,pitcher,Neutral,0.0,,,,,,3.49,1.22,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tanner Banks,PHI,pitcher,Neutral,0.0,,,,,,3.73,1.32,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Will Klein,LAD,pitcher,Neutral,0.0,,,,,,5.17,1.62,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Bryan Baker,TB,pitcher,Neutral,0.0,,,,,,3.44,1.29,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Lucas Erceg,KC,pitcher,Neutral,0.0,,,,,,3.65,1.28,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Reynaldo López,ATL,pitcher,Neutral,0.0,,,,,,2.85,1.09,117.0,7.0,0.0,123.7,Medium (20-40 IP),136,2026-04-27
+Brandon Sproat,MIL,pitcher,Neutral,0.0,,,,,,4.99,1.52,116.0,7.0,0.0,123.0,Medium (20-40 IP),136,2026-04-27
+Roki Sasaki,LAD,pitcher,Neutral,0.0,,,,,,4.94,1.47,118.0,7.0,0.0,124.4,Medium (20-40 IP),136,2026-04-27
+Tobias Myers,NYM,pitcher,Neutral,0.0,,,,,,3.22,1.14,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Weiss,HOU,pitcher,Neutral,0.0,,,,,,4.39,1.42,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Weathers,NYY,pitcher,Neutral,0.0,,,,,,4.55,1.48,129.0,7.0,0.0,128.1,Medium (20-40 IP),136,2026-04-27
+Jacob Misiorowski,MIL,pitcher,Neutral,0.0,,,,,,3.58,1.37,150.0,7.0,0.0,127.7,Medium (20-40 IP),136,2026-04-27
+Erik Miller,SF,pitcher,Neutral,0.0,,,,,,2.91,1.19,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Drew Pomeranz,LAA,pitcher,Neutral,0.0,,,,,,2.6,1.01,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Yarbrough,NYY,pitcher,Neutral,0.0,,,,,,4.17,1.36,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Trevor Megill,MIL,pitcher,Neutral,0.0,,,,,,3.47,1.24,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Thompson,AZ,pitcher,Neutral,0.0,,,,,,3.62,1.27,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Daniel Lynch,KC,pitcher,Neutral,0.0,,,,,,3.77,1.36,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Osvaldo Bido,ATL,pitcher,Neutral,0.0,,,,,,5.02,1.56,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Chase Silseth,LAA,pitcher,Neutral,0.0,,,,,,4.69,1.5,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Enyel De los santos,HOU,pitcher,Neutral,0.0,,,,,,4.34,1.36,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Eli Morgan,KC,pitcher,Neutral,0.0,,,,,,3.44,1.3,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Michael Petersen,MIA,pitcher,Neutral,0.0,,,,,,4.58,1.53,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Valente Bellozo,COL,pitcher,Neutral,0.0,,,,,,5.6,1.42,80.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Hunter Brown,HOU,pitcher,Neutral,0.0,,,,,,2.93,1.24,137.0,7.0,0.0,127.8,Low (<20 IP),136,2026-04-27
+Connor Seabold,DET,pitcher,Neutral,0.0,,,,,,4.97,1.64,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Brandon Young,BAL,pitcher,Neutral,0.0,,,,,,5.32,1.64,109.0,7.0,0.0,127.4,Low (<20 IP),136,2026-04-27
+Greg Weissert,BOS,pitcher,Neutral,0.0,,,,,,3.71,1.23,101.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Yoendrys Gómez,TB,pitcher,Neutral,0.0,,,,,,5.18,1.53,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kyle Freeland,COL,pitcher,Neutral,0.0,,,,,,4.28,1.46,113.0,7.0,0.0,126.0,Low (<20 IP),136,2026-04-27
+Jovani Morán,BOS,pitcher,Neutral,0.0,,,,,,3.85,1.34,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Shaun Anderson,LAA,pitcher,Neutral,0.0,,,,,,5.51,1.65,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Watson,BOS,pitcher,Neutral,0.0,,,,,,4.6,1.41,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tyler Wells,BAL,pitcher,Neutral,0.0,,,,,,3.58,1.33,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Nick Pivetta,SD,pitcher,Neutral,0.0,,,,,,3.66,1.32,124.0,7.0,0.0,126.6,Low (<20 IP),136,2026-04-27
+Sean Newcomb,CWS,pitcher,Neutral,0.0,,,,,,4.14,1.42,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Hogan Harris,ATH,pitcher,Neutral,0.0,,,,,,2.81,1.42,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tyler Phillips,MIA,pitcher,Neutral,0.0,,,,,,3.93,1.39,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Brent Suter,LAA,pitcher,Neutral,0.0,,,,,,3.33,1.31,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Connor Phillips,CIN,pitcher,Neutral,0.0,,,,,,4.87,1.52,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kai-wei Teng,HOU,pitcher,Neutral,0.0,,,,,,5.15,1.62,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Zach Agnos,COL,pitcher,Neutral,0.0,,,,,,5.32,1.65,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Aj Blubaugh,HOU,pitcher,Neutral,0.0,,,,,,2.08,0.93,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Yohan Ramírez,PIT,pitcher,Neutral,0.0,,,,,,4.85,1.56,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Gordon Graceffo,STL,pitcher,Neutral,0.0,,,,,,5.62,1.67,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Justin Sterner,ATH,pitcher,Neutral,0.0,,,,,,2.61,1.23,98.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Justin Bruihl,STL,pitcher,Neutral,0.0,,,,,,4.79,1.59,81.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Zeferjahn,LAA,pitcher,Neutral,0.0,,,,,,3.81,1.38,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Braydon Fisher,TOR,pitcher,Neutral,0.0,,,,,,2.52,1.09,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jacob Latz,TEX,pitcher,Neutral,0.0,,,,,,2.57,1.1,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Matt Svanson,STL,pitcher,Neutral,0.0,,,,,,2.63,1.01,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ron Marinaccio,SD,pitcher,Neutral,0.0,,,,,,3.21,1.17,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tim Mayza,PHI,pitcher,Neutral,0.0,,,,,,3.43,1.26,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Isaac Mattson,PIT,pitcher,Neutral,0.0,,,,,,2.9,1.1,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Drew Anderson,DET,pitcher,Neutral,0.0,,,,,,3.98,1.39,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Louis Varland,TOR,pitcher,Neutral,0.0,,,,,,3.14,1.44,105.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Noah Schultz,CWS,pitcher,Neutral,0.0,,,,,,4.06,1.38,123.0,7.0,0.0,127.8,Low (<20 IP),136,2026-04-27
+Joe Boyle,TB,pitcher,Neutral,0.0,,,,,,4.93,1.55,122.0,7.0,0.0,127.8,Low (<20 IP),136,2026-04-27
+Cole Sulser,TB,pitcher,Neutral,0.0,,,,,,4.04,1.36,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+José Suarez,ATL,pitcher,Neutral,0.0,,,,,,4.68,1.58,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Grant Anderson,MIL,pitcher,Neutral,0.0,,,,,,4.23,1.47,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Matt Festa,CLE,pitcher,Neutral,0.0,,,,,,4.26,1.43,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Matt Boyd,CHC,pitcher,Neutral,0.0,,,,,,3.43,1.27,131.0,7.0,0.0,125.6,Low (<20 IP),136,2026-04-27
+Brock Burke,CIN,pitcher,Neutral,0.0,,,,,,3.13,1.24,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tyler Alexander,TEX,pitcher,Neutral,0.0,,,,,,4.1,1.51,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jose Ferrer,SEA,pitcher,Neutral,0.0,,,,,,3.98,1.45,79.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Juan Morillo,AZ,pitcher,Neutral,0.0,,,,,,3.88,1.37,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jojo Romero,STL,pitcher,Neutral,0.0,,,,,,3.28,1.17,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Gregory Soto,PIT,pitcher,Neutral,0.0,,,,,,3.0,1.28,105.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Riley O'brien,STL,pitcher,Neutral,0.0,,,,,,2.83,1.24,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kyle Hart,SD,pitcher,Neutral,0.0,,,,,,5.43,1.68,82.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Graham Ashcraft,CIN,pitcher,Neutral,0.0,,,,,,4.41,1.49,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Pj Poulin,WSH,pitcher,Neutral,0.0,,,,,,4.15,1.29,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Sam Bachman,LAA,pitcher,Neutral,0.0,,,,,,4.51,1.51,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Grant Taylor,CWS,pitcher,Neutral,0.0,,,,,,4.76,1.52,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tyler Rogers,TOR,pitcher,Neutral,0.0,,,,,,2.74,1.11,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Bradgley Rodriguez,SD,pitcher,Neutral,0.0,,,,,,1.8,0.91,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Hoby Milner,CHC,pitcher,Neutral,0.0,,,,,,3.81,1.26,82.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Steven Okert,HOU,pitcher,Neutral,0.0,,,,,,3.72,1.29,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Rico Garcia,BAL,pitcher,Neutral,0.0,,,,,,4.39,1.48,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Richard Lovelady,NYM,pitcher,Neutral,0.0,,,,,,5.04,1.61,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cade Smith,CLE,pitcher,Neutral,0.0,,,,,,2.61,1.07,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Justin Lawrence,PIT,pitcher,Neutral,0.0,,,,,,4.86,1.5,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Huascar Brazobán,NYM,pitcher,Neutral,0.0,,,,,,3.39,1.29,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Anthony Nunez,BAL,pitcher,Neutral,0.0,,,,,,3.96,1.36,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jordan Leasure,CWS,pitcher,Neutral,0.0,,,,,,4.93,1.5,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Adrián Morejón,SD,pitcher,Neutral,0.0,,,,,,2.79,1.21,93.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kyle Finnegan,DET,pitcher,Neutral,0.0,,,,,,3.57,1.26,81.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Mason Miller,SD,pitcher,Neutral,0.0,,,,,,2.56,1.07,100.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jakob Junis,TEX,pitcher,Neutral,0.0,,,,,,3.34,1.26,82.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Spencer Miles,TOR,pitcher,Neutral,0.0,,,,,,3.88,1.39,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Lake Bachar,MIA,pitcher,Neutral,0.0,,,,,,3.12,1.3,96.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cade Povich,BAL,pitcher,Neutral,0.0,,,,,,4.39,1.5,107.0,7.0,0.0,132.6,Low (<20 IP),136,2026-04-27
+Emilio Pagán,CIN,pitcher,Neutral,0.0,,,,,,3.94,1.27,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Eduard Bazardo,SEA,pitcher,Neutral,0.0,,,,,,3.0,1.19,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Mason Englert,TB,pitcher,Neutral,0.0,,,,,,4.89,1.54,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jt Brubaker,SF,pitcher,Neutral,0.0,,,,,,4.47,1.47,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Albert Suárez,BAL,pitcher,Neutral,0.0,,,,,,3.72,1.27,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cionel Pérez,WSH,pitcher,Neutral,0.0,,,,,,3.84,1.35,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cooper Criswell,SEA,pitcher,Neutral,0.0,,,,,,4.26,1.41,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+David Morgan,SD,pitcher,Neutral,0.0,,,,,,2.69,1.12,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Erik Sabrowski,CLE,pitcher,Neutral,0.0,,,,,,1.8,0.9,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Dylan Lee,ATL,pitcher,Neutral,0.0,,,,,,2.07,1.03,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Justin Topa,MIN,pitcher,Neutral,0.0,,,,,,3.36,1.22,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Brent Headrick,NYY,pitcher,Neutral,0.0,,,,,,4.55,1.51,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Robert Suarez,ATL,pitcher,Neutral,0.0,,,,,,2.21,1.09,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Juan Mejia,COL,pitcher,Neutral,0.0,,,,,,3.04,1.39,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Dennis Santana,PIT,pitcher,Neutral,0.0,,,,,,3.77,1.3,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryne Stanek,STL,pitcher,Neutral,0.0,,,,,,4.03,1.42,100.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tyler Holton,DET,pitcher,Neutral,0.0,,,,,,2.53,1.1,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Peyton Pallette,CLE,pitcher,Neutral,0.0,,,,,,4.22,1.39,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Pierce Johnson,CIN,pitcher,Neutral,0.0,,,,,,3.84,1.29,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Wandy Peralta,SD,pitcher,Neutral,0.0,,,,,,3.17,1.18,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Taylor Clarke,AZ,pitcher,Neutral,0.0,,,,,,4.44,1.44,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jeff Hoffman,TOR,pitcher,Neutral,0.0,,,,,,3.2,1.24,101.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tyler Kinley,ATL,pitcher,Neutral,0.0,,,,,,4.01,1.42,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cole Winn,TEX,pitcher,Neutral,0.0,,,,,,3.52,1.26,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jimmy Herget,COL,pitcher,Neutral,0.0,,,,,,2.89,1.11,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Scott Barlow,ATH,pitcher,Neutral,0.0,,,,,,3.81,1.29,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Sam Moll,CIN,pitcher,Neutral,0.0,,,,,,3.45,1.24,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jalen Beeks,TEX,pitcher,Neutral,0.0,,,,,,3.57,1.34,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kevin Kelly,TB,pitcher,Neutral,0.0,,,,,,4.17,1.23,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Bryan Hudson,CWS,pitcher,Neutral,0.0,,,,,,3.26,1.18,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jonathan Loáisiga,AZ,pitcher,Neutral,0.0,,,,,,3.75,1.3,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Kevin Ginkel,AZ,pitcher,Neutral,0.0,,,,,,3.32,1.28,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jack Perkins,ATH,pitcher,Neutral,0.0,,,,,,3.97,1.38,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Gus Varland,WSH,pitcher,Neutral,0.0,,,,,,4.78,1.53,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jack Dreyer,LAD,pitcher,Neutral,0.0,,,,,,2.77,1.14,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Dl Hall,MIL,pitcher,Neutral,0.0,,,,,,4.4,1.43,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+George Soriano,STL,pitcher,Neutral,0.0,,,,,,5.14,1.66,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Casey Legumina,SEA,pitcher,Neutral,0.0,,,,,,6.09,1.69,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Alex Lange,KC,pitcher,Neutral,0.0,,,,,,3.5,1.29,91.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Victor Vodnik,COL,pitcher,Neutral,0.0,,,,,,4.5,1.41,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jordan Hicks,CWS,pitcher,Neutral,0.0,,,,,,4.68,1.52,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Will Vest,DET,pitcher,Neutral,0.0,,,,,,3.17,1.22,91.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Bryan King,HOU,pitcher,Neutral,0.0,,,,,,3.59,1.11,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Eric Orze,MIN,pitcher,Neutral,0.0,,,,,,3.89,1.36,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Angel Zerpa,MIL,pitcher,Neutral,0.0,,,,,,4.32,1.39,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Walker,SF,pitcher,Neutral,0.0,,,,,,3.02,1.16,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ian Seymour,TB,pitcher,Neutral,0.0,,,,,,3.31,1.28,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Abner Uribe,MIL,pitcher,Neutral,0.0,,,,,,2.44,1.03,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Caleb Kilian,SF,pitcher,Neutral,0.0,,,,,,4.93,1.62,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Brant Hurter,DET,pitcher,Neutral,0.0,,,,,,2.72,1.05,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Peter Lambert,HOU,pitcher,Neutral,0.0,,,,,,4.97,1.63,130.0,7.0,0.0,128.5,Low (<20 IP),136,2026-04-27
+Paul Blackburn,NYY,pitcher,Neutral,0.0,,,,,,4.5,1.48,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tim Hill,NYY,pitcher,Neutral,0.0,,,,,,3.66,1.28,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tommy Nance,TOR,pitcher,Neutral,0.0,,,,,,3.53,1.27,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cole Sands,MIN,pitcher,Neutral,0.0,,,,,,3.81,1.39,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tony Santillan,CIN,pitcher,Neutral,0.0,,,,,,3.19,1.17,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Mark Leiter,ATH,pitcher,Neutral,0.0,,,,,,4.25,1.41,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Andrés Muñoz,SEA,pitcher,Neutral,0.0,,,,,,2.57,1.03,93.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Brad Keller,PHI,pitcher,Neutral,0.0,,,,,,3.85,1.38,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Mason Montgomery,PIT,pitcher,Neutral,0.0,,,,,,4.04,1.56,119.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jaden Hill,COL,pitcher,Neutral,0.0,,,,,,3.86,1.33,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tanner Scott,LAD,pitcher,Neutral,0.0,,,,,,3.32,1.17,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Griffin Jax,TB,pitcher,Neutral,0.0,,,,,,3.05,1.25,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Gabe Speier,SEA,pitcher,Neutral,0.0,,,,,,3.65,1.26,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+David Bednar,NYY,pitcher,Neutral,0.0,,,,,,2.91,1.21,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Matt Gage,SF,pitcher,Neutral,0.0,,,,,,2.96,1.09,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Brennan Bernardino,COL,pitcher,Neutral,0.0,,,,,,3.27,1.24,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jake Woodford,MIL,pitcher,Neutral,0.0,,,,,,5.52,1.69,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Luke Weaver,NYM,pitcher,Neutral,0.0,,,,,,4.88,1.53,83.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Connor Brogdon,CLE,pitcher,Neutral,0.0,,,,,,5.01,1.54,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Andrew Hoffmann,AZ,pitcher,Neutral,0.0,,,,,,5.7,1.69,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Clayton Beeter,WSH,pitcher,Neutral,0.0,,,,,,4.45,1.41,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Aroldis Chapman,BOS,pitcher,Neutral,0.0,,,,,,3.11,1.15,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Caleb Thielbar,CHC,pitcher,Neutral,0.0,,,,,,3.64,1.29,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Raisel Iglesias,ATL,pitcher,Neutral,0.0,,,,,,1.99,1.01,98.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Ryan Borucki,SF,pitcher,Neutral,0.0,,,,,,4.48,1.45,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Pete Fairbanks,MIA,pitcher,Neutral,0.0,,,,,,2.4,1.09,101.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Tatsuya Imai,HOU,pitcher,Neutral,0.0,,,,,,3.94,1.42,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Fernando Cruz,NYY,pitcher,Neutral,0.0,,,,,,4.47,1.42,94.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Lucas Sims,CWS,pitcher,Neutral,0.0,,,,,,5.28,1.6,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Matt Waldron,SD,pitcher,Neutral,0.0,,,,,,4.92,1.55,118.0,7.0,0.0,127.1,Low (<20 IP),136,2026-04-27
+Colton Gordon,HOU,pitcher,Neutral,0.0,,,,,,6.0,1.74,94.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Orion Kerkering,PHI,pitcher,Neutral,0.0,,,,,,2.86,1.13,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Aaron Bummer,ATL,pitcher,Neutral,0.0,,,,,,4.64,1.44,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Zac Gallen,AZ,pitcher,Neutral,0.0,,,,,,3.76,1.29,111.0,7.0,0.0,125.6,Medium (20-40 IP),136,2026-04-27
+Landen Roupp,SF,pitcher,Neutral,0.0,,,,,,3.05,1.24,128.0,7.0,0.0,131.0,Medium (20-40 IP),136,2026-04-27
+Danny Coulombe,BOS,pitcher,Neutral,0.0,,,,,,2.56,1.04,85.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cade Horton,CHC,pitcher,Neutral,0.0,,,,,,2.81,1.07,81.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Shawn Armstrong,CLE,pitcher,Neutral,0.0,,,,,,3.54,1.23,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Anthony Bender,MIA,pitcher,Neutral,0.0,,,,,,3.16,1.21,90.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Walbert Urena,LAA,pitcher,Neutral,0.0,,,,,,4.08,1.43,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+John King,MIA,pitcher,Neutral,0.0,,,,,,3.24,1.21,91.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Seranthony Domínguez,CWS,pitcher,Neutral,0.0,,,,,,4.48,1.29,93.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Anthony Banda,MIN,pitcher,Neutral,0.0,,,,,,4.08,1.37,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Dean Kremer,BAL,pitcher,Neutral,0.0,,,,,,4.07,1.32,130.0,7.0,0.0,128.5,Low (<20 IP),136,2026-04-27
+Andrew Morris,MIN,pitcher,Neutral,0.0,,,,,,3.79,1.41,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cal Quantrill,TEX,pitcher,Neutral,0.0,,,,,,4.73,1.49,87.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Didier Fuentes,ATL,pitcher,Neutral,0.0,,,,,,5.22,1.65,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Cole Henry,WSH,pitcher,Neutral,0.0,,,,,,3.72,1.43,89.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Hunter Barco,PIT,pitcher,Neutral,0.0,,,,,,1.8,0.95,84.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Joel Payamps,ATL,pitcher,Neutral,0.0,,,,,,3.66,1.24,88.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jake Bird,NYY,pitcher,Neutral,0.0,,,,,,4.2,1.48,97.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Luis Morales,ATH,pitcher,Neutral,0.0,,,,,,4.68,1.37,80.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Devin Williams,NYM,pitcher,Neutral,0.0,,,,,,2.75,1.12,92.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Jacob Degrom,TEX,pitcher,Neutral,-0.0043,,,,,,2.9,1.13,128.0,7.0,0.0,126.8,Medium (20-40 IP),136,2026-04-27
+Bubba Chandler,PIT,pitcher,Neutral,-0.0066,,,,,,4.45,1.37,116.0,7.0,0.0,125.5,Medium (20-40 IP),136,2026-04-27
+Nolan Mclean,NYM,pitcher,Neutral,-0.0097,,,,,,1.99,0.95,131.0,7.0,0.0,129.8,Medium (20-40 IP),136,2026-04-27
+Mackenzie Gore,TEX,pitcher,Neutral,-0.0111,,,,,,4.21,1.38,130.0,7.0,0.0,127.0,Medium (20-40 IP),136,2026-04-27
+Mitch Keller,PIT,pitcher,Neutral,-0.0139,,,,,,4.02,1.37,118.0,7.0,0.0,128.7,Medium (20-40 IP),136,2026-04-27
+Germán Márquez,SD,pitcher,Neutral,-0.0145,,,,,,5.62,1.66,110.0,7.0,0.0,124.6,Medium (20-40 IP),136,2026-04-27
+Erick Fedde,CWS,pitcher,Neutral,-0.0152,,,,,,4.62,1.47,109.0,7.0,0.0,126.5,Medium (20-40 IP),136,2026-04-27
+Framber Valdez,DET,pitcher,Neutral,-0.0154,,,,,,3.33,1.2,117.0,7.0,0.0,129.1,Medium (20-40 IP),136,2026-04-27
+Colin Rea,CHC,pitcher,Neutral,-0.0156,,,,,,4.08,1.38,111.0,7.0,0.0,120.8,Medium (20-40 IP),136,2026-04-27
+Rhett Lowder,CIN,pitcher,Neutral,-0.0167,,,,,,1.8,0.92,116.0,7.0,0.0,129.1,Medium (20-40 IP),136,2026-04-27
+Jose Quintana,COL,pitcher,Neutral,-0.0182,,,,,,3.93,1.27,110.0,7.0,0.0,125.8,Low (<20 IP),136,2026-04-27
+Max Fried,NYY,pitcher,Neutral,-0.0194,,,,,,2.55,1.09,123.0,7.0,0.0,135.2,Medium (20-40 IP),136,2026-04-27
+Sonny Gray,BOS,pitcher,Neutral,-0.0196,,,,,,3.8,1.26,110.0,7.0,0.0,124.9,Medium (20-40 IP),136,2026-04-27
+J. t. Ginn,ATH,pitcher,Neutral,-0.0202,,,,,,4.19,1.43,78.0,0.0,0.0,92.0,Medium (20-40 IP),136,2026-04-27
+Yoshinobu Yamamoto,LAD,pitcher,Neutral,-0.0241,,,,,,2.81,1.07,122.0,7.0,0.0,131.6,Medium (20-40 IP),136,2026-04-27
+Andre Pallante,STL,pitcher,Neutral,-0.0311,,,,,,4.57,1.42,114.0,7.0,0.0,126.2,Medium (20-40 IP),136,2026-04-27
+George Kirby,SEA,pitcher,Neutral,-0.0323,,,,,,3.47,1.25,119.0,7.0,0.0,131.9,Medium (20-40 IP),136,2026-04-27
+Ranger Suárez,BOS,pitcher,Neutral,-0.0326,,,,,,3.74,1.27,116.0,7.0,0.0,127.7,Medium (20-40 IP),136,2026-04-27
+Casey Mize,DET,pitcher,Neutral,-0.0367,,,,,,3.79,1.37,127.0,7.0,0.0,128.5,Medium (20-40 IP),136,2026-04-27
+Shohei Ohtani,LAD,pitcher,Neutral,0.0794,,,,,,,,,,,,High (100+ PA),136,2026-04-27
+Luis Gil,NYY,pitcher,Neutral,-0.0374,,,,,,4.01,1.27,113.0,7.0,0.0,127.0,Low (<20 IP),136,2026-04-27
+Patrick Corbin,TOR,pitcher,Neutral,-0.0396,,,,,,5.27,1.6,115.0,7.0,0.0,124.5,Low (<20 IP),136,2026-04-27
+Kyle Harrison,MIL,pitcher,Neutral,-0.0428,,,,,,3.99,1.4,127.0,7.0,0.0,124.4,Medium (20-40 IP),136,2026-04-27
+Kumar Rocker,TEX,pitcher,Neutral,-0.0431,,,,,,5.07,1.61,117.0,7.0,0.0,127.7,Medium (20-40 IP),136,2026-04-27
+Shota Imanaga,CHC,pitcher,Neutral,-0.0466,,,,,,2.99,1.16,128.0,7.0,0.0,129.5,Medium (20-40 IP),136,2026-04-27
+Jesse Scholtens,TB,pitcher,Neutral,-0.0474,,,,,,5.11,1.59,117.0,7.0,0.0,127.4,Low (<20 IP),136,2026-04-27
+Brandon Williamson,CIN,pitcher,Neutral,-0.0495,,,,,,4.88,1.43,110.0,7.0,0.0,126.3,Medium (20-40 IP),136,2026-04-27
+Aaron Civale,ATH,pitcher,Neutral,-0.056,,,,,,4.25,1.41,115.0,7.0,0.0,126.5,Medium (20-40 IP),136,2026-04-27
+Matthew Liberatore,STL,pitcher,Neutral,-0.058,,,,,,4.93,1.49,112.0,7.0,0.0,126.3,Medium (20-40 IP),136,2026-04-27
+Bryce Elder,ATL,pitcher,Neutral,-0.0609,,,,,,4.07,1.42,120.0,7.0,0.0,131.3,Medium (20-40 IP),136,2026-04-27
+Anthony Kay,CWS,pitcher,Slight sell,-0.0725,,,,,,6.37,1.72,105.0,7.0,0.0,123.0,Medium (20-40 IP),136,2026-04-27
+Antonio Senzatela,COL,pitcher,Slight sell,-0.0817,,,,,,3.95,1.57,86.0,0.0,0.0,92.0,Low (<20 IP),136,2026-04-27
+Grant Holmes,ATL,pitcher,Slight sell,-0.0838,,,,,,4.14,1.33,114.0,7.0,0.0,127.9,Medium (20-40 IP),136,2026-04-27
+Chad Patrick,MIL,pitcher,Slight sell,-0.099,,,,,,3.89,1.29,100.0,7.0,0.0,123.6,Medium (20-40 IP),136,2026-04-27
+Gavin Williams,CLE,pitcher,Slight sell,-0.101,,,,,,3.91,1.27,128.0,7.0,0.0,129.8,Medium (20-40 IP),136,2026-04-27
+Freddy Peralta,NYM,pitcher,Slight sell,-0.1052,,,,,,3.61,1.26,122.0,7.0,0.0,128.1,Medium (20-40 IP),136,2026-04-27
+Chase Burns,CIN,pitcher,Slight sell,-0.107,,,,,,4.34,1.44,123.0,7.0,0.0,128.4,Medium (20-40 IP),136,2026-04-27
+Taj Bradley,MIN,pitcher,Slight sell,-0.1103,,,,,,4.5,1.52,126.0,7.0,0.0,129.3,Medium (20-40 IP),136,2026-04-27
+Paul Skenes,PIT,pitcher,Sell high,-0.1506,,,,,,1.99,0.97,114.0,7.0,0.0,125.1,Medium (20-40 IP),136,2026-04-27
+Martín Pérez,ATL,pitcher,Sell high,-0.1512,,,,,,4.35,1.35,103.0,7.0,0.0,124.9,Medium (20-40 IP),136,2026-04-27
+Spencer Arrighetti,HOU,pitcher,Sell high,-0.1563,,,,,,5.0,1.54,120.0,7.0,0.0,129.9,Low (<20 IP),136,2026-04-27
+Randy Vásquez,SD,pitcher,Sell high,-0.1609,,,,,,4.06,1.39,122.0,7.0,0.0,128.3,Medium (20-40 IP),136,2026-04-27
+Robbie Ray,SF,pitcher,Sell high,-0.1637,,,,,,4.24,1.36,118.0,7.0,0.0,128.4,Medium (20-40 IP),136,2026-04-27
+Parker Messick,CLE,pitcher,Sell high,-0.1772,,,,,,2.89,1.13,117.0,7.0,0.0,129.9,Medium (20-40 IP),136,2026-04-27
+Chris Sale,ATL,pitcher,Sell high,-0.1782,,,,,,3.25,1.17,121.0,7.0,0.0,129.9,Medium (20-40 IP),136,2026-04-27
+Chase Dollander,COL,pitcher,Sell high,-0.1867,,,,,,4.16,1.6,122.0,7.0,0.0,118.5,Medium (20-40 IP),136,2026-04-27
+Jack Kochanowicz,LAA,pitcher,Sell high,-0.1867,,,,,,5.65,1.71,103.0,7.0,0.0,130.3,Medium (20-40 IP),136,2026-04-27
+Emerson Hancock,SEA,pitcher,Sell high,-0.2374,,,,,,5.01,1.52,115.0,7.0,0.0,129.2,Medium (20-40 IP),136,2026-04-27
+Clay Holmes,NYM,pitcher,Sell high,-0.2379,,,,,,3.64,1.23,111.0,7.0,0.0,129.9,Medium (20-40 IP),136,2026-04-27
+Tomoyuki Sugano,COL,pitcher,Sell high,-0.2418,,,,,,5.37,1.5,103.0,7.0,0.0,126.3,Medium (20-40 IP),136,2026-04-27
+Justin Wrobleski,LAD,pitcher,Sell high,-0.2448,,,,,,4.8,1.54,105.0,7.0,0.0,130.7,Medium (20-40 IP),136,2026-04-27
+Eduardo Rodríguez,AZ,pitcher,Sell high,-0.251,,,,,,4.82,1.47,107.0,7.0,0.0,128.8,Medium (20-40 IP),136,2026-04-27
+Foster Griffin,WSH,pitcher,Sell high,-0.2655,,,,,,5.55,1.68,114.0,7.0,0.0,128.9,Medium (20-40 IP),136,2026-04-27
+Davis Martin,CWS,pitcher,Sell high,-0.285,,,,,,4.47,1.44,114.0,7.0,0.0,132.1,Medium (20-40 IP),136,2026-04-27
+Connelly Early,BOS,pitcher,Sell high,-0.3114,,,,,,3.28,1.08,112.0,7.0,0.0,127.5,Medium (20-40 IP),136,2026-04-27
+Nick Martínez,TB,pitcher,Sell high,-0.3217,,,,,,4.09,1.34,110.0,7.0,0.0,130.0,Medium (20-40 IP),136,2026-04-27
+Mike King,SD,pitcher,Sell high,-0.334,,,,,,3.37,1.18,117.0,7.0,0.0,128.5,Medium (20-40 IP),136,2026-04-27
+Michael Wacha,KC,pitcher,Sell high,-0.3705,,,,,,3.89,1.28,116.0,7.0,0.0,132.4,Medium (20-40 IP),136,2026-04-27
+Michael Mcgreevy,STL,pitcher,Sell high,-0.4018,,,,,,4.73,1.36,103.0,7.0,0.0,127.5,Medium (20-40 IP),136,2026-04-27
+José Soriano,LAA,pitcher,Sell high,-0.4425,,,,,,2.83,1.29,134.0,7.0,0.0,134.8,Medium (20-40 IP),136,2026-04-27
