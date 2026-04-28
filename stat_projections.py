@@ -28,6 +28,12 @@ from typing import Optional
 
 import pandas as pd
 
+try:
+    from lineup_context import compute_lineup_multipliers as _compute_lineup_mult
+except Exception:
+    def _compute_lineup_mult(mlbam_id: int, team: str) -> tuple:
+        return 1.0, 1.0
+
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
@@ -628,7 +634,9 @@ def project_hitter_counting(blended: dict,
                              games_remaining: int,
                              batting_order_pos: int = 4,
                              signal: str = "Neutral",
-                             xwoba_gap: float = None) -> dict:
+                             xwoba_gap: float = None,
+                             r_mult: float = 1.0,
+                             rbi_mult: float = 1.0) -> dict:
     """Convert blended rate stats to rest-of-season counting stats."""
     pa_per_game = {1: 4.4, 2: 4.4, 3: 4.2, 4: 4.2, 5: 4.2}.get(
         batting_order_pos, 4.1 if batting_order_pos >= 6 else 4.1
@@ -678,6 +686,10 @@ def project_hitter_counting(blended: dict,
     SB   = round(SB   * mult["sb"])
     R    = round(R    * mult["avg"])
     RBI  = round(RBI  * mult["avg"])
+
+    # Lineup context multipliers (backtest-validated; default 1.0 = no change)
+    R   = max(0, round(R   * r_mult))
+    RBI = max(0, round(RBI * rbi_mult))
 
     return {
         "projected_avg":  avg,
@@ -1024,8 +1036,16 @@ def project_player(name: str,
 
         blended       = blend_projection(true_talent, baseline, weight)
         xwoba_gap_val = _safe_float(row.get("xwOBA_gap"), None)
+
+        # Lineup context multipliers — adjust R and RBI for batting slot/team quality
+        r_mult, rbi_mult = _compute_lineup_mult(batter_id, team)
+        # Sell High players are already overperforming — don't amplify with favorable context
+        if verdict == "Sell high":
+            rbi_mult = min(rbi_mult, 1.05)
+
         proj_counting = project_hitter_counting(
-            blended, games_rem, signal=verdict, xwoba_gap=xwoba_gap_val
+            blended, games_rem, signal=verdict, xwoba_gap=xwoba_gap_val,
+            r_mult=r_mult, rbi_mult=rbi_mult,
         )
         proj_counting["sample_confidence"] = _sample_confidence_label(pa)
         warnings      = _sanity_check_hitter(proj_counting, row)

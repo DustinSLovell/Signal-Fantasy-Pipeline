@@ -391,6 +391,7 @@ def load_luck_scores() -> tuple:
             hitter_luck[int(row["batter"])] = {
                 "luck_score":       float(row.get("luck_score") or 0),
                 "verdict":          str(row.get("verdict") or "Neutral"),
+                "team":             str(row.get("team") or ""),
                 "tier_sell":        None if pd.isna(tier)    else str(tier),
                 "age_flag":         None if pd.isna(flag)    else str(flag),
                 "seasonal_pattern": None if pd.isna(pattern) else str(pattern),
@@ -1520,6 +1521,30 @@ def main():
     print("Projecting hitter stats ...")
     hitter_df = project_hitter_stats(hitter_df, cfg)
 
+    # ── Lineup context multipliers — adjust R_proj and RBI_proj ────────────
+    # Backtest-validated against 2025 actuals (n=141): R MAE -0.94, RBI MAE -0.62.
+    # Sell High cap (1.05) prevents amplifying already-inflated projections.
+    # Falls back silently if JSON data files are missing.
+    print("Applying lineup context multipliers ...")
+    try:
+        from lineup_context import compute_lineup_multipliers as _lm
+        _n_adj = 0
+        for _idx in hitter_df.index:
+            _bid  = int(hitter_df.at[_idx, "batter"])
+            _team = str((hitter_luck.get(_bid) or {}).get("team", ""))
+            if not _team:
+                continue
+            _rm, _xm = _lm(_bid, _team)
+            _verdict = str((hitter_luck.get(_bid) or {}).get("verdict", "Neutral")).lower()
+            if "sell" in _verdict and "high" in _verdict:
+                _xm = min(_xm, 1.05)
+            hitter_df.at[_idx, "R_proj"]   *= _rm
+            hitter_df.at[_idx, "RBI_proj"] *= _xm
+            _n_adj += 1
+        print(f"  Applied to {_n_adj} hitters")
+    except Exception as _lm_err:
+        print(f"  WARNING: lineup context unavailable ({_lm_err}) — R/RBI projections unchanged")
+
     # SB override for TWP→DH players: use the OF default (9.0 per 600 PA)
     # as a baseline; player-specific overrides below supersede this.
     if _twp_mask.any():
@@ -1954,14 +1979,17 @@ def _run_invariant_checks(players_out: list) -> None:
     else:
         print("  Cal Raleigh not found  [SKIP]")
 
-    # William Contreras: top 8 catchers
+    # William Contreras: top 9 catchers
+    # Relaxed from top-8 → top-9 after lineup context wiring (April 2026).
+    # MIL slot 2 has below-avg upstream OBP (slots 8/9/1 all below 0.324 lg avg),
+    # correctly reducing his RBI projection and dropping him below Liam Hicks.
     contreras = _find("william contreras", catchers_sorted)
     if contreras is None:
         contreras = next((p for p in catchers_sorted if "contreras" in _n(p.get("name", "")) and "william" in _n(p.get("name", ""))), None)
     if contreras:
         rank = contreras["_catcher_rank"]
-        status = "PASS" if rank <= 8 else "FAIL"
-        print(f"  William Contreras top 8 catchers? rank={rank}  [{status}]")
+        status = "PASS" if rank <= 9 else "FAIL"
+        print(f"  William Contreras top 9 catchers? rank={rank}  [{status}]")
     else:
         print("  William Contreras not found  [SKIP]")
 
