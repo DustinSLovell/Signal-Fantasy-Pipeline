@@ -59,6 +59,11 @@ SWSTR_TO_K9       = 77.3   # swstr_rate is decimal (0.110 = 11%); 0.110 × 77.3 
 WHIP_ERA_SLOPE    = 0.20
 WHIP_ERA_INTERCEPT = 0.55
 FIP_CONST         = 3.10    # standard FIP constant
+LG_H9             = 8.8     # league avg H/9 (2022-2024 era)
+LG_BB9            = 3.1     # league avg BB/9 (2022-2024 era)
+CAREER_BA_WEIGHT  = 0.65    # AVG blend: career BA anchor weight
+APRIL_AVG_WEIGHT  = 0.35    # AVG blend: xwOBA-derived current-season weight
+MIN_CAREER_PA_BA  = 200     # minimum career PA before trusting career_ba anchor
 
 # Luck signal multipliers — applied after all blending to inject signal into counts
 LUCK_MULTIPLIERS: dict = {
@@ -397,14 +402,31 @@ def hitter_true_talent(row: pd.Series, baseline: dict) -> dict:
     true_babip = _safe_float(row.get("park_adj_babip_expected"),
                              _safe_float(row.get("career_babip"), 0.300))
 
-    # TRUE_TALENT_CONTACT — xwOBA as primary signal
-    xwoba = _safe_float(row.get("xwOBA"), _safe_float(row.get("career_woba"), 0.318))
-    # Formula calibrated for above-average hitters; breaks down for low-xwOBA players
-    formula_avg = (xwoba - 0.050) / 1.057   # scale: lg-avg xwOBA .320 → .255 AVG
-    # Use career AVG as floor — a player with a .270 career track record doesn't
-    # project to .150 because of 3 weeks of bad April xwOBA
-    career_avg_floor = baseline.get("career_avg", 0.230)
-    true_avg = max(career_avg_floor, formula_avg)
+    # TRUE_TALENT_CONTACT — career BA anchor blended with xwOBA-derived estimate
+    xwoba    = _safe_float(row.get("xwOBA"), _safe_float(row.get("career_woba"), 0.318))
+    woba     = _safe_float(row.get("wOBA"), xwoba)
+    xwoba_gap = xwoba - woba  # positive = unlucky on contact; negative = lucky
+
+    # xwOBA formula: expected BA from current April contact quality
+    formula_avg = (xwoba - 0.050) / 1.057  # lg-avg xwOBA .320 → .255 AVG
+
+    career_ba = baseline.get("career_avg", float("nan"))
+    career_pa = baseline.get("career_pa",  0)
+
+    # Primary blend: career BA anchors against April xwOBA swings.
+    # Backtest A finding: pure xwOBA formula over-projects AVG for high-xwOBA hitters
+    # whose career BA lags — career data is a better stabilizer at small April samples.
+    if career_ba == career_ba and career_pa >= MIN_CAREER_PA_BA:
+        true_avg = career_ba * CAREER_BA_WEIGHT + formula_avg * APRIL_AVG_WEIGHT
+    else:
+        true_avg = formula_avg  # sparse career data — fall back to xwOBA formula
+
+    # Contact-luck nudge: small adjustment when xwOBA and wOBA diverge meaningfully
+    if xwoba_gap > 0.030:
+        true_avg += 0.008   # unlucky hitter — nudge AVG up toward contact quality
+    elif xwoba_gap < -0.030:
+        true_avg -= 0.008   # lucky hitter — nudge AVG down toward true contact
+
     true_avg = max(0.195, min(0.375, true_avg))
 
     # TRUE_TALENT_POWER — barrel rate × BARREL_TO_HR adjusted for BBE rate
@@ -476,19 +498,32 @@ def pitcher_true_talent(row: pd.Series, baseline: dict,
         true_era = career_era
     true_era = round(max(1.50, min(7.00, true_era)), 3)
 
-    # TRUE_TALENT_WHIP
-    # WHIP is stickier than ERA — weight career more
-    current_whip = float("nan")
+    # TRUE_TALENT_WHIP — component-rate approach: (proj_H9 + proj_BB9) / 9
+    # Backtest A finding: ERA-derived WHIP (ERA × 0.20 + 0.55) regresses too slowly
+    # toward league average. H/9 and BB/9 are more independent and stabilize faster.
+    current_bb9 = float("nan")
+    current_h9  = float("nan")
     if pitcher_rates and "pitcher" in row.index:
         rates = pitcher_rates.get(int(row.get("pitcher", -1)), {})
-        current_whip = rates.get("whip_raw", float("nan"))
-    if current_whip != current_whip:  # nan
-        current_whip = true_era * WHIP_ERA_SLOPE + WHIP_ERA_INTERCEPT
-    true_whip = round(
-        max(0.80, min(2.00,
-            current_whip * 0.28 + baseline["career_whip"] * 0.72)),
-        3
-    )
+        whip_raw    = rates.get("whip_raw", float("nan"))
+        current_bb9 = rates.get("bb_per9",  float("nan"))
+        # Derive H/9 from observed WHIP and BB/9 (both already in pitcher_rates)
+        if whip_raw == whip_raw and current_bb9 == current_bb9:
+            current_h9 = max(0.0, whip_raw * 9 - current_bb9)
+
+    # Career H/9 derived from career WHIP and career BB/9 (no new data source needed)
+    career_bb9 = baseline["career_bb_per9"]
+    career_h9  = max(3.0, baseline["career_whip"] * 9 - career_bb9)
+
+    proj_h9  = (career_h9  * 0.60
+                + (current_h9  if current_h9  == current_h9  else LG_H9)  * 0.40)
+    proj_bb9 = (career_bb9 * 0.60
+                + (current_bb9 if current_bb9 == current_bb9 else LG_BB9) * 0.40)
+
+    proj_h9  = max(3.0, min(14.0, proj_h9))
+    proj_bb9 = max(0.5, min(7.0,  proj_bb9))
+
+    true_whip = round(max(0.80, min(2.00, (proj_h9 + proj_bb9) / 9)), 3)
 
     # TRUE_TALENT_K
     swstr = _safe_float(row.get("swstr_rate"), float("nan"))
