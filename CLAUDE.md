@@ -424,6 +424,24 @@ understanding their personal baseline; the 2019 league average does not transfer
 ### Backtest Formula vs Production (Two Rulers)
 See "MEASUREMENT FRAMEWORK — TWO RULERS, BOTH VALID" section above.
 
+### Product Positioning vs Steamer/ZiPS (established April 2026 via Backtest C)
+Signal Fantasy does NOT compete with preseason projection systems on raw MAE. Backtest C (Session 12)
+confirms we lose to Steamer and ZiPS on every metric (K, ERA, WHIP, HR, AVG, R, RBI, wOBA).
+This is expected and irreducible: they use full preseason context; we project from April data only.
+
+**Our actual advantage is signal direction accuracy**: 88.6% Buy Low / 88.0% Sell High (Backtest B).
+Steamer and ZiPS cannot detect in-season luck-driven mispricing because they're preseason systems.
+April luck signals identify players mispriced by the market right now — Steamer can't do that.
+
+**Correct framing for all published content:**
+- "Our projections are solid but not competing with Steamer on raw counting stats" — accurate
+- "Our luck signals identify mispriced players Steamer can't detect" — the real differentiator
+- "Complementary to Steamer" is the honest positioning, not "beats Steamer"
+- Do NOT publish head-to-head raw MAE comparisons against Steamer — they will not favor us
+
+**One notable exception:** ERA bias — our bias is +0.25 vs Steamer's +0.41. We are LESS biased
+on ERA despite higher MAE. This is publishable as "better calibrated on ERA direction."
+
 ### Two-Track In-Season Signal System
 
 **Track 1 — April Signals (validated, PRODUCTION)**
@@ -452,6 +470,19 @@ without clear labeling would corrupt the published track record.
 ## PARKING LOT
 
 ### TIER 1 — Do immediately after Week 2 publishes
+
+- **Playing time / injury module** — HIGHEST PRIORITY after Backtest C (Session 12 finding).
+  Fixes K, R, RBI, and HR projection errors simultaneously. The is_sp fix proved IP is the root
+  cause of K MAE (39.4 vs Steamer 21.9). The remaining gap is not K/9 error — it's IP error.
+  Design: for starters, load real IP projections from Steamer (already have the CSV) rather than
+  the fixed 22 starts × 5.6 IP formula. For relievers, use Steamer appearances. This makes our
+  IP match Steamer IP, so counting stat projections should close most of the accuracy gap.
+  Implementation: add steamer_ip field to all pitcher projections. For hitters, Steamer's PA
+  projection replaces 4.1 PA/game × games_rem. One source of truth for playing time.
+  Benefit: projection accuracy improves on K (biggest gap), R, RBI, HR without changing signal logic.
+  Note: this is a BACKTEST improvement only — production stat_projections.py uses real in-season
+  data which self-corrects for PT. The backtest needs PT from an external source because it
+  projects from April data forward without knowing who got hurt.
 
 - **Weekly tracker mechanism classifier** — HIGHEST PRIORITY build after Week 2. This is the core
   accountability engine and the content foundation for the entire May-August publishing schedule.
