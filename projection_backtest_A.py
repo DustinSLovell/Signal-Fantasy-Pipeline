@@ -82,6 +82,8 @@ LG_ERA     = 4.20
 LG_WHIP    = 1.30
 LG_K9      = 8.50
 
+RP_APPS_PER_SEASON = 60   # avg full-time reliever appearances / 162 games
+
 # Events used to classify outcomes
 HIT_EVENTS = {"single", "double", "triple", "home_run"}
 BB_EVENTS  = {"walk", "intent_walk"}
@@ -403,7 +405,8 @@ def project_rtm(april_row: pd.Series, games_rem: int) -> dict:
 
 
 def project_pitcher_model(pitcher_id: int, april_row: pd.Series,
-                           pitcher_career: dict, games_rem: int) -> dict:
+                           pitcher_career: dict, games_rem: int,
+                           steamer_gs: int = 0) -> dict:
     """Run pitcher projection with 2022-2024 career baselines."""
     career_data = {"pitcher": pitcher_career}
     baseline    = get_pitcher_baseline(pitcher_id, career_data)
@@ -435,11 +438,12 @@ def project_pitcher_model(pitcher_id: int, april_row: pd.Series,
         weight = min(weight, 0.25)
     blended = blend_projection(true_talent, baseline, weight)
 
-    is_sp = (ip / max(1, ip / 5.0)) >= 4.5  # avg IP per start ≥ 4.5
+    is_sp = steamer_gs >= 10  # use Steamer GS for SP/RP classification
     return project_pitcher_counting(blended, games_rem, is_starter=is_sp, signal="Neutral")
 
 
-def project_pitcher_naive(april_row: pd.Series, games_rem: int) -> dict:
+def project_pitcher_naive(april_row: pd.Series, games_rem: int,
+                           steamer_gs: int = 0) -> dict:
     ip = april_row.get("ip_approx", 0)
     if ip == 0:
         return {"projected_era": LG_ERA, "projected_whip": LG_WHIP,
@@ -450,15 +454,21 @@ def project_pitcher_naive(april_row: pd.Series, games_rem: int) -> dict:
     if math.isnan(era): era = LG_ERA
     if math.isnan(whip): whip = LG_WHIP
     if math.isnan(k9): k9 = LG_K9
-    starts_rem = int(games_rem / 5 * 0.85)
-    proj_ip = starts_rem * 5.6
+    if steamer_gs >= 10:  # starter
+        starts_rem = int(games_rem / 5 * 0.85)
+        proj_ip = starts_rem * 5.6
+        w = int(starts_rem * 0.33)
+    else:  # reliever
+        appearances_rem = int(games_rem / 162 * RP_APPS_PER_SEASON * 0.85)
+        proj_ip = appearances_rem * 1.0
+        w = 0
     k = int(k9 / 9 * proj_ip)
-    w = int(starts_rem * 0.33)
     return {"projected_era": round(era, 2), "projected_whip": round(whip, 2),
             "projected_k": k, "projected_w": w, "projected_ip": proj_ip}
 
 
-def project_pitcher_rtm(april_row: pd.Series, games_rem: int) -> dict:
+def project_pitcher_rtm(april_row: pd.Series, games_rem: int,
+                         steamer_gs: int = 0) -> dict:
     ip = april_row.get("ip_approx", 0)
     era_raw  = april_row.get("era_approx", float("nan"))
     whip_raw = april_row.get("whip_approx", float("nan"))
@@ -471,10 +481,15 @@ def project_pitcher_rtm(april_row: pd.Series, games_rem: int) -> dict:
     era  = _clamp(era,  1.8, 9.0)
     whip = _clamp(whip, 0.7, 2.5)
 
-    starts_rem = int(games_rem / 5 * 0.85)
-    proj_ip = starts_rem * 5.6
+    if steamer_gs >= 10:  # starter
+        starts_rem = int(games_rem / 5 * 0.85)
+        proj_ip = starts_rem * 5.6
+        w = int(starts_rem * 0.33)
+    else:  # reliever
+        appearances_rem = int(games_rem / 162 * RP_APPS_PER_SEASON * 0.85)
+        proj_ip = appearances_rem * 1.0
+        w = 0
     k = int(k9 / 9 * proj_ip)
-    w = int(starts_rem * 0.33)
     return {"projected_era": round(era, 2), "projected_whip": round(whip, 2),
             "projected_k": k, "projected_w": w, "projected_ip": proj_ip}
 
@@ -564,6 +579,26 @@ def main():
 
     print(f"  CBS hitters: {len(cbs_h)} with ≥{MIN_GP} GP (≈≥150 PA)")
     print(f"  CBS pitchers: {len(cbs_p_filtered)} with ≥{MIN_PITCHER_IP} IP approx")
+
+    # --- Step 5b: Steamer pitcher GS for SP/RP classification ---
+    print("\n[5b] Loading Steamer pitcher GS for SP/RP classification...")
+    STEAMER_P_PATH = BASE_DIR / "Steamers 2025 pitchers.csv"
+    steamer_p_gs: dict[str, int] = {}
+    if STEAMER_P_PATH.exists():
+        s_df = pd.read_csv(STEAMER_P_PATH, encoding="utf-8-sig", low_memory=False)
+        for _, srow in s_df.iterrows():
+            pid_s = str(srow.get("MLBAMID", "")).strip()
+            try:
+                gs_val = int(float(srow.get("GS", 0) or 0))
+            except Exception:
+                gs_val = 0
+            if pid_s and pid_s not in ("nan", ""):
+                steamer_p_gs[pid_s] = gs_val
+        n_sp = sum(1 for v in steamer_p_gs.values() if v >= 10)
+        n_rp = sum(1 for v in steamer_p_gs.values() if v < 10)
+        print(f"  Steamer GS loaded: {len(steamer_p_gs)} pitchers  (GS≥10: {n_sp} SP, GS<10: {n_rp} RP)")
+    else:
+        print(f"  WARNING: {STEAMER_P_PATH} not found — all pitchers classified as SP")
 
     # =========================================================================
     # HITTER BACKTEST
@@ -681,13 +716,15 @@ def main():
         if apr["ip_approx"] < 5:
             continue
 
+        steamer_gs = steamer_p_gs.get(str(pid), 0)
         apr_series = pd.Series(apr)
         try:
-            m_proj = project_pitcher_model(pid, apr_series, pitcher_career, GAMES_REM)
+            m_proj = project_pitcher_model(pid, apr_series, pitcher_career, GAMES_REM,
+                                           steamer_gs=steamer_gs)
         except Exception as e:
             continue
-        n_proj = project_pitcher_naive(apr_series, GAMES_REM)
-        r_proj = project_pitcher_rtm(apr_series, GAMES_REM)
+        n_proj = project_pitcher_naive(apr_series, GAMES_REM, steamer_gs=steamer_gs)
+        r_proj = project_pitcher_rtm(apr_series, GAMES_REM, steamer_gs=steamer_gs)
 
         # K counting stat: scale to full-season
         for proj in [m_proj, n_proj, r_proj]:

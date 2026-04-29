@@ -968,19 +968,71 @@ Files:
   data/backtest_B_hitters_2025.csv, data/backtest_B_pitchers_2025.csv — Backtest B outputs with signal columns
   data/backtest_B_results_v2.csv — tier-level MAE + direction accuracy summary (15 rows)
 
-STEAMER COMPARISON: PENDING — Tier 0 priority next session.
-  Goal: compare our projection MAE against Steamer 2025 projections on same player pool.
-  Action: manually download Steamer 2025 ROS projections from FanGraphs (blocked to scraper).
-  Target: does our Model beat or tie Steamer on HR, wOBA? Beat Steamer on ERA?
-  If we beat Steamer on any category → publishable differentiator for Substack white paper.
+STEAMER COMPARISON: COMPLETED — See Backtest C (Session 12).
+  Result: we do NOT beat Steamer or ZiPS on any metric when comparing raw MAE.
+  Our value-add is signal direction accuracy (88.6%/88.0% BL/SH) and April-informed
+  luck detection — not preseason projection accuracy.
+
+--- Session 12 (is_sp fix + Backtest C six-way comparison) ---
+is_sp tautology bug fix: projection_backtest_A.py
+  - Old formula: `(ip / max(1, ip / 5.0)) >= 4.5` — always True for ip ≥ 4.5 (mathematical proof)
+  - Fix: `steamer_gs >= 10` using Steamer 2025 pitcher GS data (loaded in main(), keyed by MLBAMID)
+  - Same fix applied to project_pitcher_naive() and project_pitcher_rtm() — both now branch on is_sp
+  - Reliever formula: appearances_rem = int(games_rem / 162 × RP_APPS_PER_SEASON × 0.85)
+    proj_ip = appearances_rem × 1.0 (where RP_APPS_PER_SEASON=60)
+    → ~42 ROS appearances → 42 IP ROS → 50 IP full-season equivalent
+  - Steamer GS loaded: 5,214 pitchers (189 SP GS≥10, 5,025 RP GS<10)
+
+K MAE impact from is_sp fix:
+  - Before fix: K MAE = 45.8, bias = +23.0 (massive over-projection from treating all as starters)
+  - After fix:  K MAE = 39.4, bias = −12.4 (significant improvement, now slight under-projection)
+  - Steamer K MAE: 21.9 — we still don't beat Steamer, but gap narrowed from +23.9 to +17.5
+  - Root: IP error contribution: +36.5 (before fix) → resolved
+    Remaining gap: our IP projection for starters still volatile (early-season-only data)
+  - Production code confirmed unchanged: stat_projections.py NOT in git diff
+  - 37/37 PASS
+
+Backtest C (six-way comparison — Naive/RTM/Steamer/ZiPS/Model/Signal):
+  Files: projection_backtest_C.py (new), data/backtest_C_hitters_2025.csv, data/backtest_C_pitchers_2025.csv
+  Pool: 235 hitters / 165 pitchers (100% Steamer match rate, 99.6% hitter / 100% pitcher)
+
+  TABLE 1 — Six-way MAE summary:
+  Hitters:
+    HR:   ZiPS=5.18  Steamer=5.92  Model=6.30  Signal=6.26  → Ours loses
+    AVG:  ZiPS=0.018 Steamer=0.019 Model=0.022 Signal=0.022 → Ours loses
+    R:    ZiPS=13.55 Steamer=15.12 Model=17.19              → Ours loses
+    RBI:  ZiPS=15.96 Steamer=16.49 Model=17.01              → Ours loses
+    wOBA: Steamer=ZiPS=0.0277       Model=0.0350 Signal=0.0342 → Ours loses
+  Pitchers:
+    ERA:  Steamer=0.786 ZiPS=0.849  Model=0.882 Signal=0.878 → Ours loses
+    WHIP: ZiPS=0.133   Steamer=0.136 Model=0.194             → Ours loses
+    K:    Steamer=21.9  ZiPS=25.4   Model=39.4  Signal=39.4  → Ours loses
+
+  Success criteria: [FAIL] both hitter and pitcher (0 metrics beat BOTH Steamer & ZiPS)
+
+  KEY INTERPRETATION — This is expected and doesn't undermine the product:
+  - Steamer/ZiPS are professional systems trained on decades of historical data
+  - We project ROS from 1 month of April data; Steamer/ZiPS use full preseason context
+  - Our ADVANTAGE is signal detection (luck mispricing), not raw projection accuracy
+  - Signal direction accuracy (88.6% BL, 88.0% SH) is the real differentiator
+  - The correct framing: "Our luck signals identify mispriced players; our projections
+    are decent but not competing with preseason projection systems on raw accuracy"
+
+  Bias summary (Backtest C post-fix):
+    ERA bias: Steamer=+0.41, ZiPS=+0.41, Model=+0.25 (we're LESS biased than Steamer/ZiPS on ERA)
+    K bias: Steamer=−4.5, Model=−12.4, ZiPS=−16.2 (Steamer least biased on K)
+    wOBA bias: Steamer=−0.008, Model=−0.012 (both slight under-projection)
+
+  Notable wins vs Steamer (Table 5):
+    wOBA: Cam Smith (margin +0.051), Nick Allen (+0.044) — under-priced April breakouts we caught
+    HR: Gunnar Henderson (margin +14.3), Ben Rice (+14.2) — thin baseline fix working
 
 PENDING MANUAL ACTIONS:
-  - Review and publish Week 2 article in Substack (Tuesday April 29 deadline)
-  - Career lessons database (Sessions 8-11) — add new lessons manually in Claude.ai
+  - Review and publish Week 2 article in Substack (if not yet done)
+  - Career lessons database (Sessions 8-12) — add new lessons manually in Claude.ai
   - Update thread_handoff.md in Claude.ai with full session summary
   - White paper: update Section 10 (live track record) in 2-3 weeks, then publish to whitepapersonline.com
   - Week 3 article: May 5-6 deadline — run_pipeline.py --write → weekly_update.py --update → --report --top 15
-  - Steamer comparison: download FanGraphs Steamer 2025 ROS projections manually (scraper blocked)
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
