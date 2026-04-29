@@ -1060,10 +1060,30 @@ Backtest C (six-way comparison — Naive/RTM/Steamer/ZiPS/Model/Signal):
 
 PENDING MANUAL ACTIONS:
   - Review and publish Week 2 article in Substack (if not yet done)
-  - Career lessons database (Sessions 8-12) — add new lessons manually in Claude.ai
+  - Career lessons database (Sessions 8-12+) — add new lessons manually in Claude.ai
   - Update thread_handoff.md in Claude.ai with full session summary
   - White paper: update Section 10 (live track record) in 2-3 weeks, then publish to whitepapersonline.com
   - Week 3 article: May 5-6 deadline — run_pipeline.py --write → weekly_update.py --update → --report --top 15
+
+--- Session 13 (FantasyPros ownership + hidden gem query) ---
+fetch_fantasypros_ownership.py: new file — scrapes FP stats pages for cross-platform ownership
+  - Source: fantasypros.com/mlb/stats/hitters.php + pitchers.php (both return 200, no auth required)
+  - Parses consensus-own (ESPN+Yahoo+CBS aggregate), espn-own, yahoo-own per player
+  - 300 hitters + 300 pitchers per page (598 unique FP players total)
+  - Name normalization: NFD decompose → strip combining marks → lowercase → drop non-alpha-space
+  - Match rate: 571/819 (69.7%) against our universe (421H + 400P)
+  - Unmatched = FP doesn't rank them in top-300 (low-ownership players like injured Bohm, Hayes)
+  - Adds 4 columns to data/player_ownership_2026.csv: fp_ownership, fp_espn_own, fp_yahoo_own, fp_fetched
+  - 601/3797 rows updated in player_ownership_2026.csv (covers our active hitter+pitcher universe)
+  - --check flag: probe mode, no writes; usage: python fetch_fantasypros_ownership.py [--check]
+  - Includes hidden gem preview (fp_ownership < 35%, wOBA > .330) at end of run
+
+Hidden gem query (fp_ownership primary, ESPN fallback):
+  - Uses fp_ownership when available; falls back to owned_pct (ESPN) when no FP match
+  - Top candidates (April 28-29 2026): TJ Rumfield COL 9% (Buy Low, luck+0.252), Samuel Basallo BAL 20%
+    (xwOBA .393, gap+.042), Ryan Jeffers MIN 18% (wOBA .414), Kerry Carpenter DET 34% (xwOBA > wOBA)
+  - 10 candidates meet filter (own<35%, wOBA>.330, gap>-0.020, luck>-0.085, PA≥75)
+  - 37/37 PASS
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
