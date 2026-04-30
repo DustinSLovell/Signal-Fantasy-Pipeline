@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: April 29, 2026
+# Last updated: April 30, 2026
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1084,6 +1084,63 @@ Hidden gem query (fp_ownership primary, ESPN fallback):
     (xwOBA .393, gap+.042), Ryan Jeffers MIN 18% (wOBA .414), Kerry Carpenter DET 34% (xwOBA > wOBA)
   - 10 candidates meet filter (own<35%, wOBA>.330, gap>-0.020, luck>-0.085, PA≥75)
   - 37/37 PASS
+
+--- Session 14 (playing time module + launch angle display + Sanchez invariant fix) ---
+Playing time module: stat_projections.py — Steamer-based PA/IP blending
+  - _STEAMER_PA, _STEAMER_IP, _IL_STATUS, _HITTER_GP, _PT_LOADED module-level dicts
+  - _load_pt_lookups(): lazy-loads Steamers 2025 batters.csv + pitchers.csv + ownership + statcast GP
+  - _blend_pa(mlbam_id, games_rem, pa_so_far, games_played): GP-tiered Steamer trust
+    games_played < 20: w_s=0.70 | 20-50: w_s=0.60 | 50+: w_s=0.40
+    IL penalties: DAY_TO_DAY -5 games, INJURY_RESERVE -12 games (ESPN returns ACTIVE for all players)
+    Fallback to slot formula when Steamer absent or pace unreliable
+  - _blend_ip(mlbam_id, games_rem, current_ip, current_gs, current_games): SP/RP branching
+    SP: 0.55 Steamer_ros + 0.45 pace_ros; RP: 0.80 Steamer_ros + 0.20 pace_ros; RP cap 70 IP
+    Fallback to steamer_ros when current_ip < 15 or current_games = 0
+  - project_hitter_counting(): new params mlbam_id, pa_so_far, games_played (all Optional, backward-compat)
+  - project_pitcher_counting(): new params mlbam_id, current_ip, current_gs, current_games
+  - project_player(): passes batter_id/pitcher_id to counting functions; loads HITTER_GP for GP lookup
+  - Steamer coverage: 417/423 hitters (98.6%), 396/402 pitchers (98.5%); unmatched = rookies/NPB
+  - G/GS null for all 402 pitchers in pitcher_luck_scores.csv (FanGraphs join failure) — OK because
+    _blend_ip uses steamer_data['GS'] for SP/RP classification, independent of current GS column
+  - ESPN injuryStatus: players_wl endpoint does NOT expose injuryStatus — all return ACTIVE
+    Infrastructure in place; IL penalties = 0 until a different endpoint is used
+  - 380 hitters changed by >20 PA; 254 pitchers changed by >10 IP
+  - Top PA gainers: Ohtani +102, Kurtz +101, Schwarber +73
+  - Top PA losers: bench players with 4-14 GP correctly dropping from 498 to 10-100 PA
+  - Top IP gainers: Webb +61, Gilbert +59, Alcantara +57 (all elite SPs getting full workload credit)
+
+Launch angle display: score_luck.py + build_hitter_launch_angle.py
+  - build_hitter_launch_angle.py: standalone script; builds data/hitter_launch_angle.json
+    Career baseline: weighted mean LA from v4_april_{2022-2025}.csv (MIN_YEAR_BBE=10, MIN_CAREER_BBE=100)
+    Current season: hitters_statcast.csv (MIN_CURRENT_BBE=50)
+    454 records; 336 with career baseline; 148 with full delta; 54 trending_up; 35 trending_down
+  - score_luck.py: LAUNCH_ANGLE_PATH added; _launch_angle_h dict loaded at startup
+    Display columns added to luck_scores.csv: current_la_avg, career_la_avg, la_delta,
+    la_trending_up (delta >+3°), la_trending_down (delta <-3°), la_display (text description)
+  - display-only — zero impact on luck_score or verdict
+  - 37/37 PASS
+
+fetch_ownership.py: injury_status column added
+  - ESPN players_wl endpoint: injuryStatus field silently returns ACTIVE for all players
+  - Column added to player_ownership_2026.csv; infrastructure ready for better endpoint
+  - 37/37 PASS
+
+score_value.py: Sanchez Test fix — pre-existing FAIL (rank 20) resolved
+  - Root cause: xwOBA not regressed toward career baseline; Sanchez's 77-PA xwOBA=0.433
+    (vs career 0.326) inflated R/RBI and pushed him to catcher rank 20
+  - Fix 1: xwOBA career regression — blends current xwOBA toward xwoba_3yr from luck_scores.csv
+    XWOBA_PA_STAB=250; same PA-weighted pattern as barrel_rate
+    xwoba_3yr added to load_luck_scores() and merged into hitter_df before project_hitter_stats()
+  - Fix 2: BARREL_PA_STAB 200→250 (more defensible; barrel rate takes 250+ PA to stabilize)
+  - Post-fix: Sanchez L1=20.4→19.X, rank 20→21 (just below Kirk's CQS floor of 20.0)
+  - All invariants PASS: Yordan 8, Raleigh 2, Baldwin 3, Contreras 6, Sanchez 21
+  - 37/37 PASS
+
+PENDING MANUAL ACTIONS:
+  - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Sessions 8-14) — add manually in Claude.ai
+  - Update thread_handoff.md in Claude.ai with full session summary
+  - White paper Section 10 update in 2-3 weeks
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
