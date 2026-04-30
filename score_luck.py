@@ -110,6 +110,7 @@ CAREER_BABIP_H_PATH       = os.path.join(BASE_DIR, "data", "hitter_career_babip.
 CAREER_DISCIPLINE_H_PATH  = os.path.join(BASE_DIR, "data", "hitter_career_discipline.json")
 CAREER_K_PULL_PATH        = os.path.join(BASE_DIR, "data", "hitter_career_k_pull.json")
 SPRINT_SPEED_PATH         = os.path.join(BASE_DIR, "data", "hitter_sprint_speed.json")
+LAUNCH_ANGLE_PATH         = os.path.join(BASE_DIR, "data", "hitter_launch_angle.json")
 CAREER_PLATOON_PATH       = os.path.join(BASE_DIR, "data", "hitter_career_platoon.json")
 CONTRACT_YEAR_PATH        = os.path.join(BASE_DIR, "data", "contract_year_2026.csv")
 FANTASY_RANKINGS_H_PATH   = os.path.join(BASE_DIR, "data", "fantasy_rankings_hitters_2026.csv")
@@ -948,6 +949,13 @@ def main():
             _sprint_speed_h = {int(k): v for k, v in json.load(_ss_f).items()}
         print(f"  Sprint speed loaded: {len(_sprint_speed_h):,} players")
 
+    # Launch angle baselines (display-only — no model weight)
+    _launch_angle_h: dict = {}
+    if os.path.exists(LAUNCH_ANGLE_PATH):
+        with open(LAUNCH_ANGLE_PATH) as _la_f:
+            _launch_angle_h = {int(k): v for k, v in json.load(_la_f).items()}
+        print(f"  Launch angle loaded: {len(_launch_angle_h):,} players")
+
     # Financial motivation cohort data (display only — no model weight)
     # Columns: batter_id, annual_salary_m, years_remaining, prove_it, cohort_override
     _contract_data: dict = {}
@@ -1561,6 +1569,50 @@ def main():
     df.sort_values("luck_score", ascending=False, inplace=True)
     df.reset_index(drop=True, inplace=True)
     df.drop(columns=["_buy_penalty"], errors="ignore", inplace=True)
+
+    # ── Launch Angle YoY Delta (display-only — no effect on luck_score) ─────────
+    # Signals whether a player is hitting the ball higher or lower than career norm.
+    # Positive = elevated angle (more air contact); Negative = flatter/ground contact.
+    LA_UP_THRESH   = 3.0   # degrees above career avg to flag trending_up
+    LA_DOWN_THRESH = -3.0  # degrees below career avg to flag trending_down
+
+    df["la_delta"]        = float("nan")
+    df["current_la_avg"]  = float("nan")
+    df["career_la_avg"]   = float("nan")
+    df["la_trending_up"]  = False
+    df["la_trending_down"] = False
+    df["la_display"]      = ""
+
+    if _launch_angle_h:
+        n_la_up, n_la_down = 0, 0
+        for idx, row in df.iterrows():
+            pid = int(row["batter"])
+            rec = _launch_angle_h.get(pid)
+            if not rec:
+                continue
+            curr_la  = rec.get("current_la_avg")
+            curr_n   = rec.get("current_la_n", 0)
+            car_la   = rec.get("career_la_avg")
+            la_delta = rec.get("la_delta")
+
+            if curr_la is not None:
+                df.at[idx, "current_la_avg"] = round(curr_la, 1)
+            if car_la is not None:
+                df.at[idx, "career_la_avg"] = round(car_la, 1)
+            if la_delta is not None and curr_n >= 50:
+                df.at[idx, "la_delta"] = round(la_delta, 1)
+                if la_delta > LA_UP_THRESH:
+                    df.at[idx, "la_trending_up"]  = True
+                    df.at[idx, "la_display"] = f"Launch angle trending up +{la_delta:.1f}°"
+                    n_la_up += 1
+                elif la_delta < LA_DOWN_THRESH:
+                    df.at[idx, "la_trending_down"] = True
+                    df.at[idx, "la_display"] = f"Launch angle trending down {la_delta:.1f}°"
+                    n_la_down += 1
+        print(f"  Launch angle: {n_la_up} trending up (>+{LA_UP_THRESH}°), "
+              f"{n_la_down} trending down (<{LA_DOWN_THRESH}°)")
+    else:
+        print("  Launch angle: skipped (hitter_launch_angle.json not found)")
 
     # ── Worry Index / Confidence Meter (display-only — no effect on luck_score) ─
     # Flags players where model SILENCE is itself meaningful context.

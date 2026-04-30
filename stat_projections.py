@@ -19,7 +19,9 @@ Public API:
   compare_trade(giving, getting, dropping) -> dict
 """
 
+import csv
 import json
+import math
 import re
 import unicodedata
 from datetime import date
@@ -45,6 +47,10 @@ SPRINT_JSON      = BASE_DIR / "data" / "hitter_career_sprint.json"
 CAREER_JSON      = BASE_DIR / "data" / "career_stats.json"
 CAREER_MIX_JSON  = BASE_DIR / "data" / "pitcher_career_pitch_mix.json"
 CURRENT_MIX_JSON = BASE_DIR / "data" / "pitcher_current_pitch_mix.json"
+STEAMER_BAT_CSV  = BASE_DIR / "Steamers 2025 batters.csv"
+STEAMER_PIT_CSV  = BASE_DIR / "Steamers 2025 pitchers.csv"
+OWNERSHIP_CSV    = BASE_DIR / "data" / "player_ownership_2026.csv"
+HS_STATCAST_CSV  = BASE_DIR / "hitters_statcast.csv"
 
 FG_BAT_GLOB   = "data/fg_batting_{year}.csv"
 FG_PITCH_GLOB = "data/fg_pitching_{year}.csv"
@@ -104,6 +110,13 @@ LEAGUE_AVG_PITCHER = {
 
 # Module-level lazy cache (populated on first call to _get_cache)
 _CACHE: dict = {}
+
+# Playing-time module lookups (populated on first call to _blend_pa / _blend_ip)
+_STEAMER_PA:  dict = {}   # str(mlbam_id) → full-season PA float
+_STEAMER_IP:  dict = {}   # str(mlbam_id) → {"IP": float, "GS": float}
+_IL_STATUS:   dict = {}   # int(mlbam_id) → "ACTIVE" | "INJURY_RESERVE" | "DAY_TO_DAY"
+_HITTER_GP:   dict = {}   # int(batter_id) → games_played (unique game_pk count)
+_PT_LOADED:   bool = False
 
 # ---------------------------------------------------------------------------
 # Name normalisation (mirrors trade_analyzer.py)
@@ -288,6 +301,156 @@ def load_all_career_data() -> dict:
         "career_pitch_mix":    _load_career_pitch_mix(),
         "current_pitch_mix":   _load_current_pitch_mix(),
     }
+
+
+def _load_pt_lookups() -> None:
+    """Lazy-load Steamer PA/IP, IL status, and hitter games-played lookups."""
+    global _STEAMER_PA, _STEAMER_IP, _IL_STATUS, _HITTER_GP, _PT_LOADED
+    if _PT_LOADED:
+        return
+
+    if STEAMER_BAT_CSV.exists():
+        with open(STEAMER_BAT_CSV, newline="", encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                mid = str(row.get("MLBAMID", "") or "").strip()
+                try:
+                    pa = float(row["PA"])
+                except (KeyError, ValueError, TypeError):
+                    pa = float("nan")
+                if mid and math.isfinite(pa) and pa > 0:
+                    _STEAMER_PA[mid] = pa
+
+    if STEAMER_PIT_CSV.exists():
+        with open(STEAMER_PIT_CSV, newline="", encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                mid = str(row.get("MLBAMID", "") or "").strip()
+                try:
+                    ip = float(row["IP"])
+                except (KeyError, ValueError, TypeError):
+                    ip = float("nan")
+                try:
+                    gs = float(row["GS"])
+                except (KeyError, ValueError, TypeError):
+                    gs = float("nan")
+                if mid and math.isfinite(ip) and ip > 0:
+                    _STEAMER_IP[mid] = {"IP": ip, "GS": gs if math.isfinite(gs) else 0.0}
+
+    if OWNERSHIP_CSV.exists():
+        try:
+            own_df = pd.read_csv(OWNERSHIP_CSV)
+            if "injury_status" in own_df.columns:
+                for _, r in own_df.iterrows():
+                    try:
+                        mid = int(float(r["mlbam_id"]))
+                        status = str(r["injury_status"]) if pd.notna(r["injury_status"]) else "ACTIVE"
+                        _IL_STATUS[mid] = status
+                    except (ValueError, TypeError):
+                        pass
+        except Exception:
+            pass
+
+    if HS_STATCAST_CSV.exists():
+        try:
+            hs = pd.read_csv(HS_STATCAST_CSV, usecols=["batter", "game_pk"])
+            gp = hs.groupby("batter")["game_pk"].nunique()
+            _HITTER_GP = {int(k): int(v) for k, v in gp.items()}
+        except Exception:
+            pass
+
+    _PT_LOADED = True
+
+
+def _blend_pa(
+    mlbam_id: Optional[int],
+    games_rem: int,
+    pa_so_far: int,
+    games_played: int,
+) -> Optional[int]:
+    """Return blended projected PA, or None to fall back to slot formula.
+
+    Weights Steamer full-season PA (scaled to ROS) against current pace,
+    shifting weight toward pace as games_played increases.
+    IL penalty reduces games_rem_adj if player is on the IL.
+    """
+    if not _PT_LOADED:
+        _load_pt_lookups()
+
+    if mlbam_id is None:
+        return None
+
+    status = _IL_STATUS.get(mlbam_id, "ACTIVE")
+    il_penalty = {"DAY_TO_DAY": 5, "INJURY_RESERVE": 12}.get(status, 0)
+    games_rem_adj = max(0, games_rem - il_penalty)
+
+    if games_played < 20:
+        w_s, w_p = 0.70, 0.30
+    elif games_played < 50:
+        w_s, w_p = 0.60, 0.40
+    else:
+        w_s, w_p = 0.40, 0.60
+
+    steamer_full = _STEAMER_PA.get(str(mlbam_id))
+    steamer_ros  = steamer_full * (games_rem / 162) if steamer_full else None
+
+    pace_ros = (
+        (pa_so_far / games_played) * games_rem_adj * 0.90
+        if games_played >= 5 else None
+    )
+
+    if steamer_ros and pace_ros:
+        return int(w_s * steamer_ros + w_p * pace_ros)
+    if steamer_ros:
+        return int(steamer_ros)
+    if pace_ros:
+        return int(pace_ros)
+    return None
+
+
+def _blend_ip(
+    mlbam_id: Optional[int],
+    games_rem: int,
+    current_ip: float,
+    current_gs: int,
+    current_games: int,
+) -> Optional[float]:
+    """Return blended projected IP, or None to fall back to existing formula.
+
+    Uses Steamer GS to classify SP vs RP.
+    Relievers are capped at 70 IP and lean heavily on Steamer.
+    Returns None when no Steamer data is available.
+    """
+    if not _PT_LOADED:
+        _load_pt_lookups()
+
+    if mlbam_id is None:
+        return None
+
+    steamer_data = _STEAMER_IP.get(str(mlbam_id))
+    if not steamer_data:
+        return None
+
+    steamer_full_ip = steamer_data["IP"]
+    steamer_gs      = steamer_data["GS"]
+    steamer_ros_ip  = steamer_full_ip * (games_rem / 162)
+
+    is_starter = steamer_gs >= 10
+
+    if is_starter:
+        ip_per_start = steamer_full_ip / max(steamer_gs, 1)
+        starts_rem   = int(games_rem / 5 * 0.85)
+        pace_ros     = starts_rem * ip_per_start
+        blended      = 0.55 * steamer_ros_ip + 0.45 * pace_ros
+    else:
+        if current_ip >= 15 and current_games > 0:
+            ip_per_app   = current_ip / current_games
+            appearances  = int(games_rem * 0.45 * 0.85)
+            pace_ros     = appearances * ip_per_app
+            blended      = 0.80 * steamer_ros_ip + 0.20 * pace_ros
+        else:
+            blended = steamer_ros_ip
+        blended = min(blended, 70.0)
+
+    return round(blended, 1)
 
 
 def _get_cache() -> dict:
@@ -671,16 +834,23 @@ def project_hitter_counting(blended: dict,
                              signal: str = "Neutral",
                              xwoba_gap: float = None,
                              r_mult: float = 1.0,
-                             rbi_mult: float = 1.0) -> dict:
+                             rbi_mult: float = 1.0,
+                             mlbam_id: Optional[int] = None,
+                             pa_so_far: int = 0,
+                             games_played: int = 0) -> dict:
     """Convert blended rate stats to rest-of-season counting stats."""
-    pa_per_game = {1: 4.4, 2: 4.4, 3: 4.2, 4: 4.2, 5: 4.2}.get(
-        batting_order_pos, 4.1 if batting_order_pos >= 6 else 4.1
-    )
-    if batting_order_pos >= 6:
-        pa_per_game = 3.9
-
     health_factor = 0.85
-    projected_pa = max(0, int(pa_per_game * games_remaining * health_factor))
+    # Playing time: blended Steamer/pace when available; slot formula as fallback
+    blended_pa_val = _blend_pa(mlbam_id, games_remaining, pa_so_far, games_played)
+    if blended_pa_val is not None:
+        projected_pa = max(0, blended_pa_val)
+    else:
+        pa_per_game = {1: 4.4, 2: 4.4, 3: 4.2, 4: 4.2, 5: 4.2}.get(
+            batting_order_pos, 4.1 if batting_order_pos >= 6 else 4.1
+        )
+        if batting_order_pos >= 6:
+            pa_per_game = 3.9
+        projected_pa = max(0, int(pa_per_game * games_remaining * health_factor))
 
     avg     = blended.get("true_avg",     0.248)
     hr_rate = blended.get("true_hr_rate", 0.033)
@@ -741,11 +911,23 @@ def project_hitter_counting(blended: dict,
 def project_pitcher_counting(blended: dict,
                               games_remaining: int,
                               is_starter: bool = True,
-                              signal: str = "Neutral") -> dict:
+                              signal: str = "Neutral",
+                              mlbam_id: Optional[int] = None,
+                              current_ip: float = 0.0,
+                              current_gs: int = 0,
+                              current_games: int = 0) -> dict:
     """Convert blended pitcher rate stats to rest-of-season counting stats."""
     health_factor = 0.85
 
-    if is_starter:
+    # Playing time: blended Steamer/pace when available; role-based formula as fallback
+    blended_ip_val = _blend_ip(mlbam_id, games_remaining, current_ip, current_gs, current_games)
+    if blended_ip_val is not None:
+        projected_ip = blended_ip_val
+        if is_starter:
+            starts_remaining = max(0, int(games_remaining / 5 * health_factor))
+        else:
+            starts_remaining = 0
+    elif is_starter:
         starts_remaining = max(0, int(games_remaining / 5 * health_factor))
         ip_per_start = blended.get("true_ip_per_start", 5.60)
         projected_ip = round(starts_remaining * ip_per_start, 1)
@@ -1078,9 +1260,15 @@ def project_player(name: str,
         if verdict == "Sell high":
             rbi_mult = min(rbi_mult, 1.05)
 
+        gp = _HITTER_GP.get(batter_id) or 0
+        if not _PT_LOADED:
+            _load_pt_lookups()
+            gp = _HITTER_GP.get(batter_id) or 0
+
         proj_counting = project_hitter_counting(
             blended, games_rem, signal=verdict, xwoba_gap=xwoba_gap_val,
             r_mult=r_mult, rbi_mult=rbi_mult,
+            mlbam_id=batter_id, pa_so_far=int(pa), games_played=gp,
         )
         proj_counting["sample_confidence"] = _sample_confidence_label(pa)
         warnings      = _sanity_check_hitter(proj_counting, row)
@@ -1124,7 +1312,13 @@ def project_player(name: str,
 
         blended       = blend_projection(true_talent, baseline, weight)
         is_sp         = _is_starter(row)
-        proj_counting = project_pitcher_counting(blended, games_rem, is_sp, signal=verdict)
+        current_gs_val   = int(_safe_float(row.get("total_starts", row.get("GS", 0)), 0))
+        current_games_val = int(_safe_float(row.get("G", 0), 0))
+        proj_counting = project_pitcher_counting(
+            blended, games_rem, is_sp, signal=verdict,
+            mlbam_id=pitcher_id, current_ip=ip,
+            current_gs=current_gs_val, current_games=current_games_val,
+        )
         proj_counting["sample_confidence"] = _sample_confidence_label(ip, is_pitcher=True)
         warnings      = _sanity_check_pitcher(proj_counting, row)
 

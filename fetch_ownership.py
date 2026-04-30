@@ -62,9 +62,10 @@ def fetch_espn(timeout: int = 30) -> list:
         data = json.loads(r.read())
     return [
         {
-            "fullName": p["fullName"],
-            "espn_id":  p["id"],
-            "owned_pct": float(p.get("ownership", {}).get("percentOwned", 0.0)),
+            "fullName":      p["fullName"],
+            "espn_id":       p["id"],
+            "owned_pct":     float(p.get("ownership", {}).get("percentOwned", 0.0)),
+            "injury_status": p.get("injuryStatus", "ACTIVE"),
         }
         for p in data
     ]
@@ -121,12 +122,13 @@ def main() -> None:
         if mlbam_id is not None:
             matched += 1
         rows.append({
-            "player_name":  p["fullName"],
-            "mlbam_id":     int(mlbam_id) if mlbam_id is not None else "",
-            "owned_pct":    round(p["owned_pct"], 2),
-            "rank":         p["rank"],
-            "source":       "ESPN",
-            "fetched_date": today,
+            "player_name":   p["fullName"],
+            "mlbam_id":      int(mlbam_id) if mlbam_id is not None else "",
+            "owned_pct":     round(p["owned_pct"], 2),
+            "rank":          p["rank"],
+            "source":        "ESPN",
+            "fetched_date":  today,
+            "injury_status": p.get("injury_status", "ACTIVE"),
         })
 
     df_out = pd.DataFrame(rows)

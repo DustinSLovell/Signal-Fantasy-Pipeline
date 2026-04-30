@@ -388,6 +388,7 @@ def load_luck_scores() -> tuple:
             tier    = row.get("tier_sell")
             flag    = row.get("age_flag")
             pattern = row.get("seasonal_pattern")
+            _xw3 = row.get("xwoba_3yr")
             hitter_luck[int(row["batter"])] = {
                 "luck_score":       float(row.get("luck_score") or 0),
                 "verdict":          str(row.get("verdict") or "Neutral"),
@@ -395,6 +396,7 @@ def load_luck_scores() -> tuple:
                 "tier_sell":        None if pd.isna(tier)    else str(tier),
                 "age_flag":         None if pd.isna(flag)    else str(flag),
                 "seasonal_pattern": None if pd.isna(pattern) else str(pattern),
+                "xwoba_3yr":        None if (pd.isna(_xw3) if not isinstance(_xw3, str) else not _xw3) else float(_xw3),
             }
         print(f"  Luck (hitters): {len(hitter_luck):,} records from {LUCK_H_PATH}")
     else:
@@ -803,17 +805,23 @@ HR    = blended_barrel_rate × 0.60 BBE/PA ...
     BBE_PER_PA      = 0.60
     HR_PER_BARREL   = 0.75
     LG_BARREL       = 0.066   # league avg barrel rate
-    BARREL_PA_STAB  = 200     # PA where current weight = 50%; regresses small samples toward mean
+    BARREL_PA_STAB  = 250     # PA where current weight = 50%; regresses small samples toward mean
     _barrel_wt      = out["PA"] / (out["PA"] + BARREL_PA_STAB)
     _blended_br     = _barrel_wt * out["barrel_rate"].fillna(LG_BARREL) + (1 - _barrel_wt) * LG_BARREL
     out["HR_proj"]  = (_blended_br * BBE_PER_PA * HR_PER_BARREL * out["PA_proj"]).clip(lower=0)
 
-    # ── R ────────────────────────────────────────────────────────────────────
-    out["R_proj"] = (out["xwOBA"].fillna(LG_XWOBA) * 0.42 * out["PA_proj"]).clip(lower=0)
+    # ── R & RBI — regress xwOBA toward career baseline for small samples ─────
+    # Same PA-weighted stability pattern as barrel_rate (stab constant = 200).
+    # Prevents hot-start xwOBA from inflating R/RBI projections.
+    XWOBA_PA_STAB = 250
+    _xw_wt = out["PA"] / (out["PA"] + XWOBA_PA_STAB)
+    _career_xw = out["xwoba_3yr"].fillna(LG_XWOBA) if "xwoba_3yr" in out.columns else pd.Series(LG_XWOBA, index=out.index)
+    _xwoba_reg = _xw_wt * out["xwOBA"].fillna(LG_XWOBA) + (1 - _xw_wt) * _career_xw
 
-    # ── RBI ──────────────────────────────────────────────────────────────────
+    out["R_proj"] = (_xwoba_reg * 0.42 * out["PA_proj"]).clip(lower=0)
+
     out["RBI_proj"] = (
-        out["xwOBA"].fillna(LG_XWOBA) * 0.38 * out["PA_proj"]
+        _xwoba_reg * 0.38 * out["PA_proj"]
         + out["HR_proj"] * 0.15
     ).clip(lower=0)
 
@@ -1516,6 +1524,12 @@ def main():
     # ── Pitcher birth years (for age curve) ───────────────────────────────
     print("Fetching pitcher birth years (age curve) ...")
     career_stats = fetch_birth_years(pitcher_ids, career_stats)
+
+    # ── Merge career xwOBA baseline into hitter_df for small-sample regression ─
+    # xwoba_3yr regresses hot-start xwOBA toward career level (same pattern as barrel_rate)
+    hitter_df["xwoba_3yr"] = hitter_df["batter"].map(
+        lambda bid: (hitter_luck.get(int(bid)) or {}).get("xwoba_3yr")
+    )
 
     # ── Project stats ──────────────────────────────────────────────────────
     print("Projecting hitter stats ...")
