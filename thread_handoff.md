@@ -194,11 +194,56 @@ Active signal adjustments (Backtest B v2 — production):
 - Acuña +10.6° with Buy Low — double buy signal
 - Wood: no career baseline (rookie) — cannot compute delta yet
 
-**Worry Index / Confidence Meter:**
-- CONCERN (fp_rank<50, wOBA 40+pts below 3yr xwOBA, no luck signal): "struggle may be real"
-- BREAKOUT (fp_rank>100, wOBA 40+pts above 3yr xwOBA, no regression signal): "breakout may be real"
-- Active flags: Devers (fp16, K rate +12.5pp, HH -10.6pp — real struggle not luck)
-- James Wood: MASHING, barrel 29.9% vs career 14.4%, HH 65.7%, BABIP below expected — REAL
+**Worry / Get Hyped Index (display only — no model weight):**
+
+Core concept: flags where model SILENCE is meaningful. A player posting results far below/above
+their established contact quality baseline WITH NO LUCK SIGNAL detected isn't just unlucky —
+they might be genuinely struggling or genuinely breaking out. The absence of a luck signal is
+itself the signal: it means we can't attribute the performance gap to bad/good luck.
+
+WORRY flag — ALL must be true:
+- fp_rank < 50 (high-expectation player the market still trusts)
+- wOBA running 40+ points BELOW 3-year xwOBA baseline
+- No positive luck signal (luck_score > -0.085 — i.e., no sell signal already firing)
+- Minimum 75 PA
+- Label: "Struggle may be real — not luck driven"
+- Article framing: "Don't buy the dip yet"
+
+GET HYPED flag — ALL must be true:
+- fp_rank > 100 (undervalued/unrecognized player)
+- wOBA running 40+ points ABOVE 3-year xwOBA baseline
+- No sell signal detected (luck_score < 0.085 — i.e., no buy signal already firing)
+- Minimum 75 PA
+- Label: "Breakout may be real — not luck driven"
+- Article framing: "He is MASHING and it looks completely real"
+
+Implementation: score_luck.py — columns worry_flag, breakout_flag, worry_label in luck_scores.csv
+Thresholds: WORRY_LUCK_BAND=0.085, WORRY_WOBA_GAP=0.040
+These thresholds are estimated priors — validate empirically after 50+ resolved flags (mid-2027).
+
+Current active flags (May 1, 2026):
+WORRY (5 flags):
+- Rafael Devers (fp16): wOBA .241 vs 3yr xwOBA .371 (−130 pts gap)
+  K rate 33.3% (+12.5pp above career), HH rate 43.1% (−10.6pp below career)
+  Current xwOBA only .269 — contact quality collapsed, not just results
+  NOT a slow start — underlying metrics confirm real struggle
+- Bo Bichette (fp14): wOBA below xwOBA baseline, no luck signal
+- Willy Adames (fp25): similar pattern
+- Pete Alonso (fp17): wOBA below baseline, no signal
+- Juan Soto (fp5): flagged but only 42 PA at flag time — too early, monitor
+
+GET HYPED (0 active flags as of May 1, 2026):
+- James Wood does NOT qualify — he has an active Buy Low signal (luck_score > +0.085)
+  His performance is real AND luck-confirmed: barrel 29.9% vs career 14.4%,
+  HH rate 65.7%, BABIP actually BELOW expected. Swing angle change confirmed by Baseball Savant.
+  HonorableJudgeIto validated independently on Reddit — community fact-check passed.
+
+Why these two flags are different from a luck signal:
+- Buy/Sell signals say "luck will correct, results will converge to contact quality"
+- Worry says "contact quality AND results are both bad — no correction coming from luck"
+- Get Hyped says "contact quality AND results are both great — no regression coming from luck"
+Both flags point to SKILL change, not luck. Published as "Model Development" in Article #2.
+Reader engagement strong — correct framing resonated immediately.
 
 ### BUY SIGNAL ADDITIVE MODIFIER ARCHITECTURE — Version D (adopted April 26, 2026):
 All hitter buy signal dampeners use flat additive penalties subtracted from luck_score.
