@@ -1251,6 +1251,28 @@ def main():
     except Exception:
         df["player_type"] = "RP"
 
+    # ── SP conversion override ────────────────────────────────────────────────
+    # Pitchers Steamer classified as RP but demonstrably starting in 2026.
+    # All four gates must pass: RP classification, >=5 starts, >=20 IP,
+    # >=4.0 IP/start (filters openers and bulk relievers).
+    df["role_override"] = False
+    _ip_per_start = df["IP"] / df["total_starts"].replace(0, float("nan"))
+    _sp_override_mask = (
+        (df["player_type"] == "RP") &
+        (df["total_starts"] >= 5) &
+        (df["IP"] >= 20) &
+        (_ip_per_start >= 4.0)
+    )
+    df.loc[_sp_override_mask, "player_type"]   = "SP"
+    df.loc[_sp_override_mask, "role_override"] = True
+
+    _n_override = int(_sp_override_mask.sum())
+    print(f"  Role override: {_n_override} pitchers reclassified RP→SP")
+    if _n_override:
+        _names = df.loc[_sp_override_mask, "name"].tolist()
+        for _nm in _names:
+            print(f"    {_nm}")
+
     df.to_csv(OUTPUT_PATH, index=False)
 
     import shutil
