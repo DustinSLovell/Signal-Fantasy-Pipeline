@@ -123,17 +123,41 @@ SEASON_YEAR               = 2026
 # Codes match Baseball Savant home_team / Statcast team codes
 # ---------------------------------------------------------------------------
 PARK_FACTORS = {
-    # Extreme hitter friendly
+    # Hitter friendly
     "COL": 1.18,   # Coors Field
     "CIN": 1.08,   # Great American Ballpark
     "PHI": 1.06,   # Citizens Bank Park
+    "BOS": 1.05,   # Fenway Park
     "TEX": 1.05,   # Globe Life Field
+    "AZ":  1.02,   # Chase Field
+    "BAL": 1.01,   # Camden Yards
+    # Neutral
+    "ATL": 1.00,   # Truist Park
+    "CHC": 1.00,   # Wrigley Field
+    "LAD": 1.00,   # Dodger Stadium
+    "NYY": 1.00,   # Yankee Stadium
+    "STL": 1.00,   # Busch Stadium
+    # Slightly pitcher friendly
+    "MIL": 0.99,   # American Family Field
+    "HOU": 0.99,   # Minute Maid Park
+    "DET": 0.99,   # Comerica Park
+    "CLE": 0.98,   # Progressive Field
+    "MIN": 0.98,   # Target Field
+    "PIT": 0.98,   # PNC Park
+    "CWS": 0.98,   # Guaranteed Rate Field
+    "WSH": 0.98,   # Nationals Park
+    "SEA": 0.97,   # T-Mobile Park
+    "SD":  0.97,   # Petco Park
+    "LAA": 0.97,   # Angel Stadium
+    "KC":  0.97,   # Kauffman Stadium
+    "TOR": 0.97,   # Rogers Centre
     # Pitcher friendly
-    "SF":  0.91,   # Oracle Park
-    "TB":  0.94,   # Tropicana Field
-    "NYM": 0.95,   # Citi Field
     "MIA": 0.95,   # LoanDepot Park
+    "NYM": 0.95,   # Citi Field
     "ATH": 0.96,   # Sacramento / Oakland Coliseum era
+    "OAK": 0.96,   # (same as ATH)
+    "TB":  0.94,   # Tropicana Field
+    "SF":  0.91,   # Oracle Park
 }
 DEFAULT_PARK_FACTOR  = 1.00
 LEAGUE_AVG_BABIP     = 0.300

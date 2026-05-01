@@ -108,6 +108,21 @@ LEAGUE_AVG_PITCHER = {
     "n_seasons":           1,
 }
 
+# Park factor table — mirrors score_luck.py PARK_FACTORS (3-year FanGraphs, all 30 teams).
+# Used to adjust proj_hr/avg/r/rbi for players who changed parks.
+# Keep in sync with score_luck.py when updating park factors.
+PARK_FACTORS_PROJ = {
+    "COL": 1.18, "CIN": 1.08, "PHI": 1.06, "BOS": 1.05, "TEX": 1.05,
+    "AZ":  1.02, "BAL": 1.01,
+    "ATL": 1.00, "CHC": 1.00, "LAD": 1.00, "NYY": 1.00, "STL": 1.00,
+    "MIL": 0.99, "HOU": 0.99, "DET": 0.99,
+    "CLE": 0.98, "MIN": 0.98, "PIT": 0.98, "CWS": 0.98, "WSH": 0.98,
+    "SEA": 0.97, "SD":  0.97, "LAA": 0.97, "KC":  0.97, "TOR": 0.97,
+    "MIA": 0.95, "NYM": 0.95, "ATH": 0.96, "OAK": 0.96,
+    "TB":  0.94, "SF":  0.91,
+}
+_PF_ADJ_THRESHOLD = 0.02   # minimum |pf_delta| before applying adjustment
+
 # Module-level lazy cache (populated on first call to _get_cache)
 _CACHE: dict = {}
 
@@ -1271,6 +1286,31 @@ def project_player(name: str,
             mlbam_id=batter_id, pa_so_far=int(pa), games_played=gp,
         )
         proj_counting["sample_confidence"] = _sample_confidence_label(pa)
+        proj_counting["pf_adj_applied"] = False
+
+        # Park factor adjustment — only for hitters who changed parks this offseason.
+        # Scales proj_hr/avg/r/rbi by the ratio of new park to old park.
+        # Amplifiers: HR 1.5x (most sensitive), AVG 0.5x, R/RBI 0.7x.
+        # Threshold: |pf_delta| >= 0.02 filters trivial moves (e.g. LAD->ATL = 0.00).
+        if str(row.get("park_change", "False")).lower() in ("true", "1"):
+            _label = str(row.get("park_change_label", ""))
+            _m = re.search(r"\((\w+)->", _label)
+            if _m:
+                _prior_team = _m.group(1)
+                _prior_pf   = PARK_FACTORS_PROJ.get(_prior_team, 1.00)
+                _curr_pf    = PARK_FACTORS_PROJ.get(team, 1.00)
+                _pf_delta   = _curr_pf - _prior_pf
+                if abs(_pf_delta) >= _PF_ADJ_THRESHOLD:
+                    proj_counting["projected_hr"]  = max(0, round(
+                        proj_counting["projected_hr"]  * (1 + _pf_delta * 1.5)))
+                    proj_counting["projected_avg"]  = round(min(0.370, max(0.150,
+                        proj_counting["projected_avg"] * (1 + _pf_delta * 0.5))), 3)
+                    proj_counting["projected_r"]   = max(0, round(
+                        proj_counting["projected_r"]   * (1 + _pf_delta * 0.7)))
+                    proj_counting["projected_rbi"] = max(0, round(
+                        proj_counting["projected_rbi"] * (1 + _pf_delta * 0.7)))
+                    proj_counting["pf_adj_applied"] = True
+
         warnings      = _sanity_check_hitter(proj_counting, row)
 
         current_stats = {

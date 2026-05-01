@@ -21,7 +21,7 @@ COLUMNS = [
     "name", "team", "type", "signal", "luck_score",
     "proj_avg", "proj_hr", "proj_r", "proj_rbi", "proj_sb",
     "proj_era", "proj_whip", "proj_k", "proj_w", "proj_sv_h", "proj_ip",
-    "confidence", "games_remaining", "generated_date",
+    "confidence", "games_remaining", "generated_date", "pf_adj_applied",
 ]
 
 
@@ -72,6 +72,7 @@ def main() -> None:
             "confidence":      proj["confidence"],
             "games_remaining": proj["games_remaining"],
             "generated_date":  today,
+            "pf_adj_applied":  ps.get("pf_adj_applied", False),
         })
 
     # Pitchers
@@ -105,6 +106,7 @@ def main() -> None:
             "confidence":      proj["confidence"],
             "games_remaining": proj["games_remaining"],
             "generated_date":  today,
+            "pf_adj_applied":  False,
         })
 
     df = pd.DataFrame(rows, columns=COLUMNS)

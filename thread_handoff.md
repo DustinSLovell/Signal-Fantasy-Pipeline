@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Single source of truth. Overwrite at end of every session.
-# Last updated: April 30, 2026 (Sessions 11-14)
+# Last updated: May 1, 2026 (Sessions 11-15)
 
 # Official project start: April 12-14, 2026
 # First public article: April 22, 2026
@@ -496,6 +496,7 @@ Run after EVERY score_value.py --write. All must PASS before shipping.
 | trade_analyzer.py | Trade verdicts v2 (Layer 4) |
 | fetch_ownership.py | ESPN ownership + injury_status column |
 | fetch_fantasypros_ownership.py | FantasyPros cross-platform ownership |
+| fetch_cbs_rank.py | CBS YTD FPTS scraper — cbs_rank joined into luck CSVs |
 | fetch_prior_teams.py | 2025 team assignments for park change detection |
 | validate_formulas.py | 37/37 PASS formula suite |
 | export_signal_board.py | Excel signal board with ownership data |
@@ -521,7 +522,8 @@ Run after EVERY score_value.py --write. All must PASS before shipping.
 | pitcher_buy_model_testing_rationale.md | 10-test diagnostic results |
 
 ### Key data files:
-- data/projections_2026.csv — 794 players, 19 columns
+- data/projections_2026.csv — 794 players, 20 columns (pf_adj_applied added May 1)
+- data/cbs_rank_2026.csv — 545 players (367H + 178P), YTD FPTS + CBS rank (built May 1)
 - data/player_ownership_2026.csv — 3,797 players + injury_status
 - data/player_values.json — 825 players, rebuilt by score_value.py
 - data/career_quality.json — CQS floors (11 records fixed April 24)
@@ -700,8 +702,7 @@ BUY LOW requires: ownership >10% minimum + projected improvement meaningful
 - **White paper Section 10** — after 2-3 more weeks of live tracker data
 
 ### TIER 2 — This week:
-- **CBS rank integration** — display CBS rank in dashboard for neutral player sorting
-  Two purposes: (1) content engine for breakout/worry identification (2) coefficients already exist
+- **CBS rank integration** — COMPLETE ✅ (May 1, 2026 — see Completed section)
 - **Hidden Gem detector** — formal pipeline feature
   Query: fp_ownership < 35%, wOBA > .330, xwOBA gap > -0.020, luck > -0.085, PA >= 75
   One Hidden Gem per article — hitters and pitchers alternating weeks
@@ -749,8 +750,8 @@ BUY LOW requires: ownership >10% minimum + projected improvement meaningful
 
 ### PROJECTION MODEL GAPS (prioritized):
 1. Playing time — COMPLETE ✅
-2. Park factor adjustment — 43 flagged players not yet adjusted in projections
-3. Platoon splits into projections — infrastructure exists, not wired into proj stats
+2. Park factor adjustment — COMPLETE ✅ (May 1 — 45/46 flagged players, 32-team PF table, pf_adj_applied flag)
+3. Platoon splits into projections — DEFERRED mid-May (150+ PA threshold; April sample too small for reliable per-player LHP%)
 4. IP trajectory refinement — partially addressed by playing time module
 5. SB projection — sprint speed used, no green light rate
 6. AVG projection precision — career BA anchor helps but loses to RTM
@@ -869,6 +870,24 @@ Publishing cadence: Tuesday nights publish / Monday production run (run_pipeline
 - Launch angle YoY delta: COMPLETE ✅ (April 30 — display only, 148 players, build_hitter_launch_angle.py)
 - White paper published: COMPLETE ✅ (signal_fantasy_whitepaper.docx — 11 sections, GitHub timestamped)
 - GitHub DustinSLovell/Signal-Fantasy-Pipeline: current ✅ — pushed April 30, 2026
+- **Park factor adjustment in projections**: COMPLETE ✅ (May 1, 2026)
+  32-team PARK_FACTORS table in stat_projections.py (parallel to score_luck.py — avoids circular import)
+  Amplifiers: HR×1.5, AVG×0.5, R/RBI×0.7 of raw PF delta. Threshold: |delta| >= 0.02.
+  45/46 flagged park-change hitters adjusted. pf_adj_applied flag added to projections_2026.csv.
+  Key moves: COL arrivals (e.g., Alonso) +HR, SF departures -HR. 37/37 PASS, all invariants PASS.
+- **CBS rank integration**: COMPLETE ✅ (May 1, 2026)
+  fetch_cbs_rank.py: scrapes all 9 CBS position pages (C/1B/2B/SS/3B/OF/U + SP/RP) YTD 2026
+  545 players saved to data/cbs_rank_2026.csv. Rank = position in FPTS-sorted list within type.
+  cbs_rank joined as display column: luck_scores.csv (330/423, 78%) + pitcher_luck_scores.csv (170/402, 42%)
+  Key divergences (ESPN-ranked-higher than CBS):
+    Juan Soto: ESPN #7, CBS #186 (−179) — reputation carrying rank, slow YTD production
+    Mookie Betts: ESPN #43, CBS #268 (−225) — injury impact not reflected in ESPN rank
+    Ketel Marte: ESPN #17, CBS #114 (−97) — Worry Index patient confirmed by CBS gap
+  Known validation: Judge CBS #8, Carroll CBS #28, Kurtz CBS #46, Skenes CBS #17 (pitcher)
+  37/37 PASS. Display-only — no model weight, does not change luck_score or verdict.
+- **Platoon splits into projections**: DEFERRED mid-May (150+ PA threshold)
+  April sample too small (28–80 PA/player); Marte at 0% LHP in 55 PA is a sample artifact.
+  Infrastructure in hitter_career_platoon.json (489 batters) exists — wire when PA stable.
 
 ---
 
@@ -1047,6 +1066,15 @@ Open in any browser — fully searchable by category
 - Preliminary vs Validated (Cohort 3 at 96.4% is promising, not a finding; n=9 means one misclassification swings accuracy 11pp)
 - N<10 as a Hard Stop (any cohort/signal combination with n<10 gets explicit warning flag; coin-flip variance dominates below 10 observations)
 
+### Lessons from Session 15 (May 1, 2026):
+- **Stat Category Park Sensitivity Hierarchy** — Park factors amplify stats at different rates. HR is most park-sensitive (×1.5 the raw PF delta), R/RBI moderately sensitive (×0.7), AVG least sensitive (×0.5 — defense partially neutralizes park). Never apply a flat multiplier across all categories; the physical mechanism differs.
+- **Two-Location Problem in Pipelines** — score_luck.py park-adjusted the luck SIGNAL (BABIP/HR-FB baselines) but stat_projections.py was NOT park-adjusting projected counting stats. Same underlying data, two separate adjustment points. Audit pipelines end-to-end whenever adding a new data dimension — correction in one layer does not propagate to another.
+- **Import Circularity as Design Constraint** — The clean solution (import PARK_FACTORS from score_luck.py into stat_projections.py) would create a heavy script-level circular import. The pragmatic solution (parallel dict in stat_projections.py with a sync comment) is the right call. Know when "correct" architecture creates more fragility than a small duplication.
+- **Independence Requirement for Comparison Columns** — Computing CBS rank from our own projected stats (with Buy Low ×1.08 HR multiplier) is circular. The scraped CBS rank is independent — CBS's formula, CBS's data, CBS's audience. Divergence between ESPN rank and CBS rank only means something if both sides computed independently. Never compare two numbers derived from the same source.
+- **ESPN Rank as Reputation Rank, CBS Rank as Production Rank** — Juan Soto ESPN #7 / CBS #186 is not a data error. ESPN's rank reflects market value (preseason reputation + roster decisions by casual players). CBS's rank reflects YTD production. The gap IS the article content — "the market is still pricing Soto on his name; the production data doesn't support that ranking."
+- **Dry-Run Protocol for Scrapers** — Always add a `--check` flag to scrapers that write production files. Run it first to confirm: (1) URLs return 200, (2) data structure matches expectations, (3) sample values are sensible. One extra command that prevents corrupting production CSVs with malformed data.
+- **Threshold Design from Distribution Inspection** — The `abs(pf_delta) >= 0.02` park filter threshold was set by actually checking what it excluded (LAD→ATL = 0.00, ATH→SD = 0.01 — genuinely trivial moves). Setting thresholds without looking at the edge cases produces either over-filtering or noise inclusion.
+
 ### Lessons from Sessions 11-13 (add to database):
 
 **Projection Model Lessons:**
@@ -1078,8 +1106,17 @@ Tagline decision pending: "Luck is noise. We find the signal."
 ## GITHUB STATUS
 
 Repository: DustinSLovell/Signal-Fantasy-Pipeline (private)
-Current commit: April 30, 2026 — Session 14 committed and pushed
-Last push: April 30, 2026
+Current commit: May 1, 2026 — Session 15 committed and pushed
+Last push: May 1, 2026
+
+Files added in Session 15:
+- fetch_cbs_rank.py
+- data/cbs_rank_2026.csv
+- stat_projections.py (PARK_FACTORS_PROJ + park adjustment block in project_player)
+- score_luck.py (PARK_FACTORS expanded to 32 teams)
+- generate_projections.py (pf_adj_applied column added)
+- luck_scores.csv (cbs_rank column added)
+- pitcher_luck_scores.csv (cbs_rank column added)
 
 Files added through Session 14:
 - fetch_fantasypros_ownership.py
@@ -1142,6 +1179,12 @@ The project evolves rapidly across sessions — always verify before acting.
 
    # xwOBA career regression wired (April 30 fix)
    grep -n "xwoba_3yr\|XWOBA_PA_STAB" score_value.py | head -5
+
+   # Park factor adjustment wired (May 1 fix)
+   grep -n "PARK_FACTORS_PROJ\|pf_adj_applied" stat_projections.py | head -5
+
+   # CBS rank joined into luck scores (May 1)
+   python -c "import pandas as pd; df=pd.read_csv('luck_scores.csv'); print('cbs_rank' in df.columns, df['cbs_rank'].notna().sum(), 'matched')"
    ```
 
    Expected results:
@@ -1151,6 +1194,8 @@ The project evolves rapidly across sessions — always verify before acting.
    - Playing time: _blend_pa found in stat_projections.py ✅
    - Launch angle: la_delta found in score_luck.py ✅
    - xwOBA regression: xwoba_3yr and XWOBA_PA_STAB found ✅
+   - Park factors: PARK_FACTORS_PROJ and pf_adj_applied found in stat_projections.py ✅
+   - CBS rank: cbs_rank column present in luck_scores.csv, ~330 matched ✅
    If ANY fail → stop and report before proceeding
 
 5. Check dashboard is running (localhost:8000)
@@ -1220,6 +1265,9 @@ Never create additional handoff/starter/updated variants — one file each, alwa
 - "What is the difference between Backtest A, B, and C?"
 - "What are the two rulers and why are they not interchangeable?"
 - "What is the Two-Track In-Season Signal System and why does it matter for publishing?"
+- "Why does the park factor adjustment live in stat_projections.py as a parallel dict rather than importing from score_luck.py?"
+- "Why is Juan Soto's ESPN rank #7 vs CBS rank #186 gap article content rather than a data error?"
+- "What are the three park factor amplifiers and why do they differ across stat categories?"
 
 ---
 *End of handoff. Update this file at end of every session before closing.*
