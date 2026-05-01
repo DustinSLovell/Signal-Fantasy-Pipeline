@@ -66,11 +66,24 @@ PITCHER_COLS = {"fpts": "fpts", "w": "W", "era": "ERA",
 
 # ── name normalisation ────────────────────────────────────────────────────────
 
+# CBS name → pipeline name (both sides already normalised via _norm before lookup).
+# Add entries whenever CBS uses a different form than our FanGraphs/Statcast data.
+_CBS_ALIASES: dict[str, str] = {
+    "cameron schlittler": "cam schlittler",
+}
+
+
 def _norm(s: str) -> str:
     """Lowercase, strip accents, drop non-alpha-space."""
     s = unicodedata.normalize("NFD", str(s))
     s = "".join(c for c in s if unicodedata.category(c) != "Mn")
     return re.sub(r"[^a-z ]", "", s.lower()).strip()
+
+
+def _norm_cbs(s: str) -> str:
+    """Normalise a CBS name and apply alias mapping to our pipeline form."""
+    n = _norm(s)
+    return _CBS_ALIASES.get(n, n)
 
 
 # ── HTML helpers (same as build_cbs_fpts.py) ─────────────────────────────────
@@ -198,7 +211,7 @@ def _scrape_positions(positions: list[str], col_map: dict, label: str) -> pd.Dat
         # Dedup: keep player if we haven't seen them yet (first position = primary)
         new_rows = []
         for _, row in df.iterrows():
-            key = _norm(row["name"])
+            key = _norm_cbs(row["name"])
             if key not in seen_norm:
                 seen_norm.add(key)
                 seen_names.add(row["name"])
@@ -276,7 +289,7 @@ def main(dry_run: bool = False) -> None:
 
     def _attach(df: pd.DataFrame) -> pd.DataFrame:
         df = df.copy()
-        df["name_norm"] = df["name"].apply(_norm)
+        df["name_norm"] = df["name"].apply(_norm_cbs)
         df["mlbam_id"]  = df["name_norm"].map(id_map).astype("Int64")
         df["fetched_date"] = today
         return df

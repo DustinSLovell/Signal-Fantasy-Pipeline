@@ -732,6 +732,7 @@ BUY LOW requires: ownership >10% minimum + projected improvement meaningful
 - Fantasy points conversion engine: projected stats × CBS point values — not yet built
 
 ### CONTENT PIPELINE:
+- **CBS rank divergence as weekly content engine** — sort by |ESPN rank − CBS rank|, find biggest gaps, cross-reference with signals. Soto ESPN#7/CBS#186 is the template: divergence tells readers WHERE the mispricing is; luck signal tells them WHY. Run every Monday alongside pipeline. Top divergences that also have a buy/sell signal = article gold.
 - "Why April Signals Matter Most" article: publish mid-May (paid tier anchor)
 - "How I Built This in 10 Days with AI" article: after 6-8 weeks live track record
 - Live 2026 Accuracy Tracker: paid tier dashboard, updates weekly (build mid-June 2026)
@@ -1074,6 +1075,8 @@ Open in any browser — fully searchable by category
 - **ESPN Rank as Reputation Rank, CBS Rank as Production Rank** — Juan Soto ESPN #7 / CBS #186 is not a data error. ESPN's rank reflects market value (preseason reputation + roster decisions by casual players). CBS's rank reflects YTD production. The gap IS the article content — "the market is still pricing Soto on his name; the production data doesn't support that ranking."
 - **Dry-Run Protocol for Scrapers** — Always add a `--check` flag to scrapers that write production files. Run it first to confirm: (1) URLs return 200, (2) data structure matches expectations, (3) sample values are sensible. One extra command that prevents corrupting production CSVs with malformed data.
 - **Threshold Design from Distribution Inspection** — The `abs(pf_delta) >= 0.02` park filter threshold was set by actually checking what it excluded (LAD→ATL = 0.00, ATH→SD = 0.01 — genuinely trivial moves). Setting thresholds without looking at the edge cases produces either over-filtering or noise inclusion.
+- **Market Divergence as Content Engine** — Juan Soto ESPN #7 / CBS #186 is more compelling to readers than any model output alone. The gap between two markets pricing the same player differently IS the story. A 179-rank divergence requires no explanation — readers instantly understand that one market is wrong. Model signals tell you WHY; divergence data tells you WHERE THE MONEY IS.
+- **Platform Audience Calibration** — ESPN ownership reflects casual players (name recognition, preseason ADP, lazy rostering). CBS ownership reflects serious players who find value faster. The same player can be 7% owned on ESPN and 60% on CBS. Knowing which platform your audience uses changes which divergences matter for your article — a gap only visible to CBS-level players is the right content for a serious analytics audience.
 
 ### Lessons from Sessions 11-13 (add to database):
 
