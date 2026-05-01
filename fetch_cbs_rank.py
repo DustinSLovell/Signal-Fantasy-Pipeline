@@ -70,6 +70,11 @@ PITCHER_COLS = {"fpts": "fpts", "w": "W", "era": "ERA",
 # Add entries whenever CBS uses a different form than our FanGraphs/Statcast data.
 _CBS_ALIASES: dict[str, str] = {
     "cameron schlittler": "cam schlittler",
+    "michael king":       "mike king",
+    "louie varland":      "louis varland",
+    "mike soroka":        "michael soroka",
+    "jake junis":         "jakob junis",
+    "jt ginn":            "j t ginn",
 }
 
 
