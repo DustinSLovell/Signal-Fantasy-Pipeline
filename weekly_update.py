@@ -294,6 +294,45 @@ def cmd_init():
 
 # ── update ────────────────────────────────────────────────────────────────────
 
+DUPLICATE_MATCH_THRESHOLD = 0.90   # fraction of players that must differ to allow write
+DUPLICATE_LUCK_TOL        = 0.0002  # tolerance for luck_score match (4 decimal places)
+
+
+def _check_duplicate(df: pd.DataFrame,
+                     hitters: pd.DataFrame, pitchers: pd.DataFrame) -> bool:
+    """
+    Return True if current luck scores are identical to the last written week
+    for >= DUPLICATE_MATCH_THRESHOLD of players (i.e. pipeline hasn't refreshed).
+    """
+    wc = _week_cols(df)
+    if not wc:
+        return False
+    last_col = wc[-1]  # e.g. "week7_luck"
+
+    matched = 0
+    comparable = 0
+    for _, row in df.iterrows():
+        pid   = int(row["player_id"])
+        ptype = row["type"]
+        last  = pd.to_numeric(row.get(last_col), errors="coerce")
+        if pd.isna(last):
+            continue
+        if ptype == "Hitter" and pid in hitters.index:
+            curr = round(float(hitters.loc[pid, "luck_score"]), 4)
+        elif ptype == "Pitcher" and pid in pitchers.index:
+            curr = round(float(pitchers.loc[pid, "luck_score"]), 4)
+        else:
+            continue
+        comparable += 1
+        if abs(curr - last) <= DUPLICATE_LUCK_TOL:
+            matched += 1
+
+    if comparable == 0:
+        return False
+    rate = matched / comparable
+    return rate >= DUPLICATE_MATCH_THRESHOLD
+
+
 def cmd_update():
     """Pull current luck CSVs → add weekN columns → recompute deltas & mechanism."""
     if not TRACKER.exists():
@@ -301,6 +340,19 @@ def cmd_update():
         return
 
     df = pd.read_csv(TRACKER)
+
+    hitters  = _load_current_hitters().set_index("batter")
+    pitchers = _load_current_pitchers().set_index("pitcher")
+
+    # Guard: skip if pipeline data hasn't refreshed since last --update
+    if _check_duplicate(df, hitters, pitchers):
+        wc = _week_cols(df)
+        last = wc[-1] if wc else "week0"
+        print(f"[DUPLICATE DETECTED] luck scores unchanged from {last}.")
+        print(f"  Run pipeline first (python run_pipeline.py --write) then re-run --update.")
+        print(f"  Tracker NOT updated. Still at {last}.")
+        return
+
     next_week = _current_week_num(df) + 1
     prefix    = f"week{next_week}"
     print(f"Adding {prefix} columns...")

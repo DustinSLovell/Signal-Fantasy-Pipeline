@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Single source of truth. Overwrite at end of every session.
-# Last updated: April 27, 2026 (Session 10)
+# Last updated: April 30, 2026 (Sessions 11-14)
 
 # Official project start: April 12-14, 2026
 # First public article: April 22, 2026
@@ -35,17 +35,26 @@ Every session includes career lessons tied to code concepts where relevant.
 
 ---
 
-## SOCIAL STATUS (April 24, 2026)
+## SOCIAL STATUS (April 30, 2026)
 
-- Reddit (u/Dlovell02): 17K views, 52 upvotes, 43 comments, #2 post r/fantasybaseball
-- Substack: Article #1 live April 22, 17+ subscribers, 510 views
+- Reddit Post #1 (u/Dlovell02): 17K views, 52 upvotes, 43 comments, #2 post r/fantasybaseball
+- Reddit Post #2 (April 30, 2026): 8.6K views, 28 upvotes, 16 comments — Week 2 signals
+- Substack Article #1: April 22, 2026 — live, 510+ views
+- Substack Article #2: April 29, 2026 — "Week 2 of the Signal Tracker" — 175 views, 58.33% open rate, 25 recipients
 - X (@SignalFantasy): Active — Dingler tweet thread posted April 24 (timestamped)
 - Instagram (@signalfantasy): Accuracy graphic posted
 - Facebook: Deferred
+- Fangraphs membership: ACTIVE (purchased for Steamer/ZiPS historical data)
 
 ### POSTED April 24:
 - Reddit AMA follow-up comment (Pages, Vásquez, Murakami) — top level reply
 - Dingler tweet thread: "CBS #6, consensus #17 — buy the value" — timestamped April 24
+
+### POSTED April 29-30:
+- Article #2 published: "Week 2 of the Signal Tracker! New leads, checking on previous calls, and more!"
+- Reddit Post #2: Week 2 signals + tracker update + hidden gem (TJ Rumfield)
+- Community engagement: VrinTheTerrible subscribed to Substack from Reddit ✅
+- HonorableJudgeIto validated Wood swing angle with Baseball Savant link
 
 ---
 
@@ -55,6 +64,7 @@ Every session includes career lessons tied to code concepts where relevant.
 **Dashboard:** localhost:8000/dashboard.html
 **Pipeline files:** luck_scores.csv (hitters), pitcher_luck_scores.csv (pitchers)
 **Career lessons:** career_lessons_database.html (88 concepts, open in browser)
+**External projections:** data/projections_external/ (Steamer + ZiPS 2025 hitters/pitchers)
 
 ---
 
@@ -106,14 +116,33 @@ Buy Low ERA gate change April 25: ERA >= 3.75 (was 3.50)
 Sensitivity analysis confirmed: all other 10 parameters already optimal
 Canary check: grep -n "3.75\|BUY_LOW_ERA" score_pitcher_luck.py → must find line ~967
 
-### KEY HEADLINE NUMBERS (use everywhere):
-- 100% SELL HIGH pitchers (2025 OOS, n=14)
-- 91.7% SELL HIGH hitters (train 2022-24, Version D)
-- 91.3% BUY LOW hitters (train 2022-24, Version D) / 96.0% OOS 2025
-- 86.1% overall hitters (train 2022-24, Version D) / 89.7% OOS 2025
-- 85.7% overall pitchers (2024 single-year backtest)
-- +17.9pp vs RTM hitters (OOS 2025)
-- 2025 out-of-sample: 89.7% hitters (never trained on this data — most trustworthy number)
+### PROJECTION MODEL — Backtest A/B Results (April 29-30, 2026):
+
+Backtest A (projection only vs RTM, n=235 hitters / 165 pitchers, 2025 OOS):
+- wOBA: Model 0.0342 vs RTM 0.0397 → **+13.9% better**
+- ERA: Model 0.878 vs RTM 1.012 → **+13.2% better**
+- HR: Model 6.256 vs RTM 6.693 → **+6.5% better**
+- AVG: RTM wins (0.0198 vs 0.0216) — known weakness
+- WHIP: RTM wins (0.155 vs 0.194) — known weakness
+
+Backtest B (signal-adjusted projections, direction accuracy):
+- Buy Low hitters: **88.6% improved wOBA** (39/44) ✅
+- Sell High hitters: **88.0% declined wOBA** (22/25) ✅
+- Pitcher Buy Low ERA: **100% improved** (n=7, avg -1.08 ERA) ✅
+- Pitcher Sell High ERA: **100% increased** (n=9, avg +1.88 ERA) ✅
+
+Backtest C (vs Steamer + ZiPS, honest result):
+- We do NOT beat Steamer or ZiPS on any metric
+- ERA head-to-head vs ZiPS: 51.5% win rate (competitive)
+- R bias: +0.82 (nearly unbiased vs Steamer -8.33) — lineup context strength
+- K MAE gap: 39.4 vs Steamer 21.9 — is_sp bug partially fixed, structural gap remains
+- Product positioning: COMPLEMENTARY to Steamer, not competing
+
+Active signal adjustments (Backtest B v2 — production):
+- wOBA: ×1.08 Buy Low / ×1.04 Slight Buy / ×0.96 Slight Sell / ×0.92 Sell High
+- HR: ×1.05 Buy Low / ×1.02 Slight Buy (buy side only)
+- Pitcher Sell High ERA: ×1.10
+- REMOVED: AVG adjustments, HR sell-side, Pitcher Buy Low ERA
 
 ### BACKTEST METHODOLOGY NOTE:
 - Training/calibration: 2022-2024 data ONLY
@@ -121,6 +150,16 @@ Canary check: grep -n "3.75\|BUY_LOW_ERA" score_pitcher_luck.py → must find li
 - Never publish 2022-2024 numbers as "live accuracy" — those are in-sample
 - 89.7% 2025 OOS is the headline credibility number (Version D — updated April 26)
 - Backtest audit CSVs: data/backtest_audit_hitters.csv + data/backtest_audit_pitchers.csv
+
+### KEY HEADLINE NUMBERS (use everywhere):
+- 100% SELL HIGH pitchers (2025 OOS, n=14)
+- 91.7% SELL HIGH hitters (train 2022-24, Version D)
+- 91.3% BUY LOW hitters (train 2022-24, Version D) / 96.0% OOS 2025
+- 86.1% overall hitters (train 2022-24, Version D) / 89.7% OOS 2025
+- 85.7% overall pitchers (2024 single-year backtest)
+- +17.9pp vs RTM hitters (OOS 2025)
+- 88.6% Buy Low / 88.0% Sell High direction accuracy (Backtest B v2)
+- Projection engine beats RTM by 13% on wOBA and ERA accuracy
 
 ---
 
@@ -142,6 +181,24 @@ Canary check: grep -n "3.75\|BUY_LOW_ERA" score_pitcher_luck.py → must find li
      gap_delta > +0.040 vs career → AMPLIFY ×1.05 | gap_delta < -0.040 vs career → DAMPEN ×0.90
      Fallback: -0.019 (career data mean) when no career record exists
      19 modifier result changes vs old static approach in 2026 data
+
+### NEW DISPLAY LAYERS (April 30, 2026 — no model weight):
+
+**Launch Angle YoY Delta:**
+- build_hitter_launch_angle.py → data/hitter_launch_angle.json (454 records)
+- 6 new columns in luck_scores.csv: la_delta, current_la_avg, career_la_avg, la_trending_up, la_trending_down, la_display
+- Threshold: la_trending_up if delta > +3.0°, la_trending_down if delta < -3.0°
+- Coverage: 148 players have full delta (35%)
+- Notable: Chapman -17.2° (career 21.0° → current 3.7°) — strongest signal in dataset
+- Torres -13.4° with Slight Buy — tension case worth flagging in articles
+- Acuña +10.6° with Buy Low — double buy signal
+- Wood: no career baseline (rookie) — cannot compute delta yet
+
+**Worry Index / Confidence Meter:**
+- CONCERN (fp_rank<50, wOBA 40+pts below 3yr xwOBA, no luck signal): "struggle may be real"
+- BREAKOUT (fp_rank>100, wOBA 40+pts above 3yr xwOBA, no regression signal): "breakout may be real"
+- Active flags: Devers (fp16, K rate +12.5pp, HH -10.6pp — real struggle not luck)
+- James Wood: MASHING, barrel 29.9% vs career 14.4%, HH 65.7%, BABIP below expected — REAL
 
 ### BUY SIGNAL ADDITIVE MODIFIER ARCHITECTURE — Version D (adopted April 26, 2026):
 All hitter buy signal dampeners use flat additive penalties subtracted from luck_score.
@@ -175,11 +232,8 @@ Framework rebuilt around financial security gap (not binary CY status). Five coh
   4=Post-Prime: age 33+ any contract → physical ceiling, not motivation
   5=Mid-Contract: age 28-33, multi-year, not FA-bound → neutral baseline assumption
 Priority order: manual override → prove_it flag → secured ($20M+, 3+yr) → post-prime (33+) → payday (age 25-31, ≤2yr) → mid-contract.
-Pre-populated Cohort 3: Ohtani, Judge, Trout, Harper, Seager, Lindor, Turner, Machado, Riley (9 players)
+Pre-populated Cohort 3: Ohtani, Judge, Trout, Harper, Seager, Lindor, Turner, Machado, Riley, Ramírez, Swanson, Bogaerts, Stanton, Olson, Nola, Yelich (17 players after Spotrac merge April 28)
 Pre-populated Cohort 1: Acuña ($12.5M/yr, 2yr left), Yordan ($19.2M/yr, 1yr left)
-Wayback Machine scraper built (build_spotrac_contracts.py) — outputs spotrac_contracts_raw.csv.
-CDX API (web.archive.org); team-specific URL pattern; 60s timeout; ~50-60% CDX success rate.
-NEXT STEP: Review spotrac_contracts_raw.csv and merge valid entries into contract_year_2026.csv.
 No model weight — contract cohort is display-only until backtest evidence supports weighting.
 
 ### Pitcher layers (v2.0 — split architecture):
@@ -219,22 +273,107 @@ AGE TIER LOGIC:
 - Age 35+ + luck <= -0.12 → "Sell High on Perception"
 - Age 35+ + mild signal → keep tier + "Age 35+ monitor"
 
+### NEW SIGNAL VARIABLES — PRIORITY TABLE AND REASONING (documented April 25-26):
+
+| Rank | Variable | Signal impact | Expected stats impact | Trade tool impact |
+|------|----------|--------------|----------------------|-------------------|
+| 1 | Pitch mix evolution (pitchers) | Medium-High | High — K/9 projection | High |
+| 2 | K% trend (hitters) | Medium | High — AVG/wOBA projection | High |
+| 3 | Pull rate trend (hitters) | Medium | Medium-High — HR projection | Medium-High |
+| 4 | Catcher framing (pitchers) | Medium | Medium — ERA ±0.20-0.35 | Medium |
+| 4 | Leverage index (relievers) | Medium | Medium-High — SV+H projection | High |
+| 6 | First pitch strike % (pitchers) | Low-Medium | Medium — WHIP/BB projection | Low-Medium |
+| 7 | Opponent quality | Low | Low | Low |
+
+Key insight: pitch mix evolution and K% trend have outsized trade tool impact because they
+directly change projected counting stats (K, AVG, wOBA, HR) not just the luck score signal.
+A 2pp SwStr% improvement = ~1.5 K/9 = ~17 projected Ks over 100 IP.
+
+**Pitch mix Phase 1+2 — COMPLETE (April 25):**
+Phase 1: SwStr-based abandonment + effectiveness flags. Version F = verdict-neutral (0.0pp vs E).
+Phase 2: 6-flag system (abandonment, velo_drop, rv_degrade, effectiveness, velo_gain, rv_improve).
+Version G = verdict-neutral (0.0pp vs E, OOS PASS ✓). Coverage 2026: 234 pitchers.
+Architecture conclusion: pitch mix is INFORMATIONAL layer. 10% multipliers rarely cross tier boundaries.
+Data: pitcher_pitch_mix_delta.json (251 pitchers), pitcher_career_velo_per_pitch.json, pitcher_career_arsenal_rv.json
+
 ---
 
-## CURRENT SIGNALS (April 24, 2026)
+## PROJECTION MODEL — CURRENT STATE (April 30, 2026)
+
+### Playing Time Module (NEW — April 30, 2026):
+Built _blend_pa() and _blend_ip() in stat_projections.py.
+380 hitters and 254 pitchers now have Steamer-weighted projections.
+
+HITTER PA blend formula:
+- Primary: Steamer 2025 full-season PA × (games_rem / 162)
+- Secondary: current pace × games_remaining × 0.90
+- Weights by games played: <20GP (70/30), 20-50GP (60/40), 50+GP (40/60)
+- IL penalty: DAY_TO_DAY=-5g, INJURY_RESERVE=-12g (ESPN returns ACTIVE for all — infrastructure ready)
+
+PITCHER IP blend formula:
+- SP (Steamer GS ≥ 10): 55% Steamer + 45% pace
+- RP (Steamer GS < 10): 80% Steamer + 20% pace, cap 70 IP
+- RP with <15 current IP: 100% Steamer
+
+Key validation results:
+- Grisham: 498 PA → 327 PA (platoon player correctly reduced; Steamer 239 full-season)
+- Judge: 498 PA → 553 PA (elite player correctly increased; Steamer 625)
+- Stanton: 498 PA → 360 PA (conservative Steamer projection for IL-prone player)
+- Skenes: 104.7 IP → 157.3 IP (elite SP gets full workload credit)
+- Luzardo: 104.7 IP → 144.6 IP (SP with Steamer-confirmed workload)
+- Top gainers: Ohtani +102 PA, Kurtz +101 PA, Schwarber +73 PA
+- Top losers: bench players 4-14 GP correctly dropping from 498 to single digits
+
+### Lineup Context Module (April 27, 2026):
+- data/hitter_batting_slot_2026.json: 452 batters, modal batting slot
+- data/team_lineup_context_2026.json: 30 teams, OBP/SLG per slot
+- R_SENSITIVITY = 0.8, RBI_SENSITIVITY = 1.2 (backtest-validated against 2025 actuals, n=141)
+- Sell High RBI cap: min(rbi_mult, 1.05)
+- Caps: MULT_MIN=0.80, MULT_MAX=1.20
+- Top beneficiaries: Tucker LAD (RBI_mult=1.20), Riley ATL (1.20)
+- Top penalties: Hayes CIN (0.80), L.Robert NYM (0.80), F.Álvarez NYM (0.80)
+
+### CBS Regression (completed April 28-29):
+- Hitters: Train R²=0.985, OOS R²=0.983 | Pitchers: Train R²=0.927, OOS R²=0.909
+- Coefficients in config.py (CBS_H_COEF_*, CBS_P_COEF_*)
+- Wired into trade_analyzer.py: _compute_cbs_fpts() + replacement_level.py surplus calc
+
+### Known Projection Weaknesses:
+- AVG: career BA anchor (65% blend) beats naive but loses to RTM
+- WHIP: component H/9+BB/9 approach marginally worse than ERA-derived formula
+- K: 39.4 MAE vs Steamer 21.9 — structural gap from April-only IP data
+- R/RBI: lineup-dependent, partially addressed by lineup context module
+- Playing time: Steamer 2025 used for 2026 projections (best available)
+
+---
+
+## EXTERNAL PROJECTION FILES (downloaded April 2026)
+
+Location: data/projections_external/ AND root directory (Steamers 2025 batters.csv etc.)
+- Steamers 2025 batters.csv (4,140 players, MLBAMID, PA, HR, AVG, wOBA, etc.) — ROOT
+- Steamers 2025 pitchers.csv (5,215 players, MLBAMID, IP, GS, ERA, WHIP, K, etc.) — ROOT
+- Zips_2025_batters.csv (1,963 players) — data/projections_external/
+- Zips_Pitchers_2025.csv (1,866 players) — data/projections_external/
+
+Fangraphs membership: ACTIVE — historical preseason projections available
+Match rate: 98.6% hitters (417/423), 98.5% pitchers (396/402)
+Unmatched = rookies/NPB players not in Steamer 2025
+
+---
+
+## CURRENT SIGNALS (April 29-30, 2026)
 
 ### Pitcher Buy Low (7):
-| Pitcher | Team | ERA | FIP | xERA | IP | Luck |
-|---------|------|-----|-----|------|----|------|
-| Jesus Luzardo | PHI | 6.41 | 3.22 | 3.99 | 26.7 | 0.4531 |
-| Joe Ryan | MIN | 5.29 | 3.20 | 2.58 | 32.3 | 0.3487 [CSW dampened] |
-| Joe Boyle | TB | 6.46 | 3.05 | 4.59 | 15.3 | 0.3351 |
-| Cristopher Sanchez | PHI | 3.82 | 2.60 | 3.03 | 33.0 | 0.3095 |
-| Logan Gilbert | SEA | 4.22 | 2.99 | 3.62 | 32.0 | 0.2791 |
-| Kyle Bradish | BAL | 5.55 | 3.48 | 3.46 | 24.3 | 0.2405 |
-| Shane Baz | BAL | 5.20 | 3.69 | 4.30 | 27.7 | 0.2047 [CSW dampened] |
+| Pitcher | ERA | FIP | xERA | IP | Luck |
+|---------|-----|-----|------|----|------|
+| Jesus Luzardo | 5.08 | 2.65 | 2.93 | 33.7 | +0.530 |
+| Joe Ryan | 4.78 | 2.88 | 2.72 | 37.7 | +0.420 |
+| C. Sanchez | 3.82 | 2.52 | 3.03 | 33.0 | +0.269 |
+| Mlodzinski | TBD | TBD | TBD | TBD | +0.185 |
+| Paddack | TBD | TBD | TBD | TBD | +0.169 |
+| Baz | 5.20 | 3.60 | 4.30 | TBD | +0.161 |
 
-### Pitcher Slight Buy (8):
+### Pitcher Slight Buy (April 24 snapshot):
 | Pitcher | Team | ERA | FIP | xERA | IP | Luck |
 |---------|------|-----|-----|------|----|------|
 | Bailey Ober | MIN | 4.50 | 3.42 | 3.84 | 26.0 | 0.1347 |
@@ -246,7 +385,7 @@ AGE TIER LOGIC:
 | Janson Junk | MIA | 4.44 | 3.71 | 3.43 | 26.3 | 0.0830 |
 | Brandon Woodruff | MIL | 3.91 | 3.58 | 2.35 | 23.0 | 0.0820 |
 
-### Pitcher Sell High (26):
+### Pitcher Sell High (April 24 list):
 Soriano, Wacha, Martinez, Holmes, Mcgreevy, Sugano, E.Rodriguez, S.Lugo,
 M.Perez, King, Teng, G.Williams, Early, Kochanowicz, Imanaga, Freeland,
 Messick, C.Phillips, D.Martin, F.Peralta, Vásquez, L.Gil, C.Patrick,
@@ -256,17 +395,28 @@ Chandler, G.Marquez, Wrobleski
 - Adrián Morejón: ERA 8.03, FIP 2.47 — massive gap, verify xERA before calling buy
 - Camilo Doval: ERA 8.59, FIP 4.81
 - Taylor Rogers: ERA 5.62, FIP 2.79
-NOTE: All score Neutral now (< 15 IP confidence threshold — intentional). Need xERA
-confirmed before article call on any of these.
+NOTE: All score Neutral now (< 15 IP confidence threshold — intentional).
 
-### Hitter Signals (April 26 — post Version D additive modifiers):
-Signal counts (416 hitters, dry-run with additive modifiers):
-- Buy low: 54 | Slight buy: 12 | Neutral: 288 | Slight sell: 28 | Sell high: 34
-NOTE: Run score_luck.py --write after next pipeline update to get live counts.
+### Hitter Signals (April 26 — post Version D):
+Signal counts (416 hitters): Buy low: 54 | Slight buy: 12 | Neutral: 288 | Slight sell: 28 | Sell high: 34
 
-Slight buy survivors pass 0.100/0.030/0.380 gates + Version D penalty cap.
-Top buy-low hitters (from projections): Ramirez, Herrera, Seager, Pasquantino,
-Delauter, Bohm, Machado, Henderson, Acuna, Friedl
+### Article #1 Call Tracker (Week 2 scores):
+| Player | Signal | Wk1 Score | Wk2 Score | Status |
+|--------|--------|-----------|-----------|--------|
+| Yordan Alvarez | Buy Low | +0.288 | +0.213 | Normalizing |
+| Z. Pasquantino | Buy Low | +0.434 | +0.401 | Injured — wait |
+| Trent Grisham | Buy Low | +0.409 | +0.532 | Strengthening |
+| Oneil Cruz | Sell High | -0.191 | -0.214 | Watching |
+| Jordan Walker | Sell High | -0.196 | -0.265 | Deepening |
+| Jesus Luzardo | Buy Low | +0.369 | +0.530 | Confirmed |
+| Kyle Bradish | Buy Low | +0.178 | +0.173 | Refuted |
+| Michael Wacha | Sell High | -0.371 | -0.370 | Stalled |
+| Gavin Williams | Slight Sell | -0.101 | -0.101 | ERA moved (2.17→3.34) |
+
+### Tracker Status:
+- 169 total calls tracked (127H + 42P)
+- Current accuracy: 73.9% on 23 resolved calls
+- Duplicate week guard built — tracker won't burn week slots without new Statcast data
 
 ---
 
@@ -288,12 +438,20 @@ Delauter, Bohm, Machado, Henderson, Acuna, Friedl
 - Fix G: 11 career_quality.json records corrected
 - Fix H: Dingler small-sample PA confidence factor
 
-### Fix Applied April 25, 2026:
+### Fixes Applied April 25, 2026:
 - Fix I: Barrel rate regression — PA-weighted blend toward league mean
-  LG_BARREL=0.066, BARREL_PA_STAB=200 (weight = PA / (PA + 200))
-  At 95 PA: weight 0.32 → small samples blend heavily toward 6.6% league avg
-  Also fixed indentation error from prior session (code was at module level, not inside _compute_hitter_projections())
-  Note: ESV barely changed for Rice (17.815→17.759) because R/RBI use xwOBA directly, not barrel. Barrel only affects HR_proj.
+  LG_BARREL=0.066, BARREL_PA_STAB=250 (raised from 200 April 30 — statistically sounder)
+  At 77 PA: weight 0.236 → small samples blend heavily toward 6.6% league avg
+  Note: ESV barely changed for Rice (17.815→17.759) — barrel only affects HR_proj, not R/RBI
+
+### Fix Applied April 30, 2026 (xwOBA career regression):
+- xwOBA career regression toward xwoba_3yr baseline
+  XWOBA_PA_STAB=250 — same pattern as barrel_rate
+  xwoba_3yr loaded from luck_scores.csv (95.7% coverage, 405/423)
+  Merged into hitter_df before project_hitter_stats()
+  R and RBI now use blended xwOBA: (_wt × current_xwOBA + (1-_wt) × xwoba_3yr)
+  Fixes: Sanchez 77-PA xwOBA=0.433 (career .326) was inflating R/RBI projections
+  Result: Sanchez drops from catcher rank 20 → rank 21 ✅
 
 ### Ablation Results (April 24 baseline):
 - A: TRM removed → Raleigh rank 2, Sanchez 21 — PASS
@@ -310,61 +468,78 @@ Monitor as 2026 stats accumulate throughout season.
 
 Run after EVERY score_value.py --write. All must PASS before shipping.
 
-SHOULD ALWAYS BE NEAR TOP:
-- Yordan Alvarez: top 20 overall (current: rank 13 ✓)
-- Cal Raleigh: top 3 catchers (current: rank 4 — RELAXED to top-4 until catcher PA > 150)
+- Yordan Alvarez: top 20 overall ✅
+- Cal Raleigh: top 4 catchers (relaxed from top-3 until catcher PA > 150, re-tighten mid-May 2026)
   Root cause: Ben Rice .507 xwOBA at 95 PA inflates R/RBI projections, pushing him to #1.
   Raleigh natural ESV ~4.7 (xwOBA .336 + AVG .186 liability); rank 2 is floor-driven (CQS=80.2).
-  Re-tighten invariant to top-3 in mid-May 2026 when catcher PA stabilize above 150.
-- Drake Baldwin: top 5 catchers (current: rank 5 ✓)
-- William Contreras: top 8 catchers (current: rank 6 ✓)
+- Drake Baldwin: top 5 catchers ✅
+- William Contreras: top 9 catchers (relaxed from top-8 — MIL lineup weak upstream OBP, 9.3% RBI reduction is real)
+- Will Smith: top 12 catchers ✅
 
-THE SANCHEZ TEST:
-- Gary Sanchez: rank 21+ catchers (current: rank 21 ✓)
+### THE SANCHEZ TEST:
+- Gary Sanchez: rank 21+ catchers ✅ (FIXED April 30 — xwOBA career regression added)
 - IF Sanchez appears in top 15 catchers → STOP, something is broken
-- The AVG penalty (.188 proj AVG) is load-bearing for keeping him down
+- The AVG liability penalty (proj_avg ≈ 0.200) is load-bearing for keeping him down
+- The xwOBA regression (XWOBA_PA_STAB=250) prevents hot-start noise from inflating his R/RBI
 
 ---
 
-## PIPELINE SCRIPTS (current as of April 24)
+## PIPELINE SCRIPTS (current as of April 30, 2026)
 
 | Script | Purpose |
 |--------|---------|
 | score_luck.py | Hitter luck scoring (Layer 1) |
 | score_pitcher_luck.py | Pitcher luck scoring (Layer 1, v2.0 split architecture) |
-| stat_projections.py | Rest-of-season projections (794 players, 19 cols) |
+| stat_projections.py | Rest-of-season projections — WITH PLAYING TIME MODULE |
 | generate_projections.py | Runs projection pipeline |
 | score_value.py | Trade values and rankings (Layer 3) |
 | trade_analyzer.py | Trade verdicts v2 (Layer 4) |
-| fetch_ownership.py | Live ESPN ownership (3,795 players) |
+| fetch_ownership.py | ESPN ownership + injury_status column |
+| fetch_fantasypros_ownership.py | FantasyPros cross-platform ownership |
 | fetch_prior_teams.py | 2025 team assignments for park change detection |
 | validate_formulas.py | 37/37 PASS formula suite |
 | export_signal_board.py | Excel signal board with ownership data |
 | run_pipeline.py | Full pipeline runner |
+| build_hitter_launch_angle.py | Launch angle YoY delta builder |
+| lineup_context.py | R/RBI lineup multipliers |
+| build_lineup_context.py | Lineup context data builder |
+| weekly_update.py | Tracker with duplicate week guard |
+| projection_backtest_A.py | Projection accuracy vs RTM |
+| projection_backtest_B.py | Signal-adjusted projection accuracy |
+| projection_backtest_C.py | Six-way comparison vs Steamer + ZiPS |
 | backtest_pitcher_composite.py | Full pitcher composite backtest (Versions A-E) |
 | build_pitcher_stuff_baselines.py | Stuff quality career data builder |
-| _pitcher_tier_audit.py | ERA-FIP backtest runner |
-| generate_backtest_report.py | Substack table formatter |
-| build_pitcher_pitch_mix.py | Pitch mix evolution data builder (2026 current) |
-| build_hitter_career_k_pull.py | K%/pull rate career baseline builder (v4_april CSVs) |
-| build_pitch_mix_delta.py | Phase 2 pitch mix delta signals (velo + RV flags) |
 | build_pitcher_phase2_baselines.py | Career velo/RV baselines from parquets + arsenal stats |
+| build_pitch_mix_delta.py | Phase 2 pitch mix delta signals (velo + RV flags) |
+| build_hitter_career_k_pull.py | K%/pull rate career baseline builder (v4_april CSVs) |
 | backtest_pitcher_pitch_mix.py | Version E/F/G pitch mix backtest |
+| backtest_multi_year_v7.py | Current active v7 hitter backtest script |
+| build_hitter_career_platoon.py | Career platoon baseline builder |
+| merge_spotrac_contracts.py | Spotrac contract data merger |
+| era_simulation.py | ERA_all_sc simulation (diagnostic only) |
+| model_architecture_explainer.md | 4-layer architecture documentation |
+| pitcher_buy_model_testing_rationale.md | 10-test diagnostic results |
 
 ### Key data files:
 - data/projections_2026.csv — 794 players, 19 columns
-- data/player_ownership_2026.csv — 3,795 players, live ESPN
-- data/prior_teams_2025.json — 998 players, 2025 team assignments
-- data/player_values.json — 773 players, rebuilt by score_value.py
+- data/player_ownership_2026.csv — 3,797 players + injury_status
+- data/player_values.json — 825 players, rebuilt by score_value.py
 - data/career_quality.json — CQS floors (11 records fixed April 24)
+- data/prior_teams_2025.json — 998 players, 2025 team assignments
+- data/hitter_launch_angle.json — 454 records, LA delta (built April 30)
+- data/hitter_batting_slot_2026.json — 452 batters, batting slot
+- data/team_lineup_context_2026.json — 30 teams, OBP/SLG per slot
+- data/calls_tracker.csv — 169 calls, week-over-week tracking
+- data/projections_external/ — Steamer + ZiPS 2025 hitters/pitchers
+- data/backtest_A_hitters_2025.csv + data/backtest_A_pitchers_2025.csv
+- data/backtest_B_results_v2.csv — tier breakdown summary
+- data/backtest_audit_hitters.csv + data/backtest_audit_pitchers.csv — row-level
 - data/backtest_composite_summary.csv — full pitcher ablation results
 - data/pitcher_career_babip.json — career BABIP/HH%/barrel baselines
-- data/pitcher_career_stuff.json — SwStr%/velo/spin baselines (display only)
 - data/pitcher_career_csw.json — CSW career baselines (611 pitchers)
-- data/pitcher_stuff_current_2026.csv — current season stuff metrics
 - data/pitcher_career_pitch_mix.json — 2025 arsenal baseline (318 pitchers)
 - data/pitcher_current_pitch_mix.json — 2026 current pitch mix (459 pitchers)
-- data/pitcher_arsenal_rv_allyears.csv — 15,947 rows, run_value_per_100 per pitch type, 2022-2026
+- data/pitcher_arsenal_rv_allyears.csv — 15,947 rows, rv/100 per pitch type, 2022-2026
 - data/pitcher_career_velo_per_pitch.json — career avg velo per pitch type (800 pitchers)
 - data/pitcher_career_arsenal_rv.json — career avg rv/100 per pitch type (1,252 pitchers)
 - data/pitcher_arsenal_rv_2026.json — current 2026 rv/100 per pitch type (514 pitchers)
@@ -372,12 +547,11 @@ THE SANCHEZ TEST:
 - data/hitter_career_k_pull.json — K%/pull rate baselines (643 career, 415 current, 327 with deltas)
 - data/hitter_career_discipline.json — chase rate baselines (672 batters)
 - data/hitter_career_sprint.json — sprint speed baselines (849 players)
-- data/hitter_career_platoon.json — career platoon baselines (489 batters) — built April 26
-  Fields: career_gap_woba, career_gap_xwoba, stand, career_pa_same/opp; mean gap=-0.019
-  Source: pitcher_statcast_april_{2022-2025}.parquet + pitcher_statcast_mayjuly_2024.parquet
-- data/contract_year_2026.csv — contract year flags (empty — needs manual curation)
+- data/hitter_career_platoon.json — career platoon baselines (489 batters)
+- data/spotrac_contracts_clean.csv — 506 hitter rows, 308 unique players (Spotrac export)
+- data/spotrac_contract_backtest.csv — 211 rows, cohort × signal preliminary results
+- data/contract_year_2026.csv — 31 players loaded (13 manual + 18 Spotrac merge)
 - data/yordan_tracker.csv — weekly Yordan wOBA/xwOBA tracker
-- data/trade_history.csv — CLI trade log
 - data/snapshots/pitcher_luck_scores_april_2026.csv — April 23 snapshot
 - career_lessons_database.html — 88 career concepts, open in browser
 
@@ -397,10 +571,9 @@ Fix 7: Trade Search ✅ — normalizeName() handles accents, end-to-end verified
 - Two sub-modes: Trade Analyzer (default) | Player Rankings
 - Multi-player trades (1-4 per side), position scarcity, trajectory discounts
 - League config: data/league_config.json (--setup flag)
-- Search: min 2 chars, accent normalization, top 8 results
 - Verdict thresholds: ≥75% Strong | ≥60% Favorable | ≥40% Neutral | ≥25% Unfavorable | <25% Avoid
-- Known limitations: R/RBI lineup-dependent, no trade history in dashboard (CLI only)
-- Parking lot: trade history in dashboard, partner roster view, category need weighting
+- Known issue: trade tool search click bug — onClick handler not firing (Tier 3 fix)
+- Known issue: Dashboard sort bug — Advanced View sorts by absolute magnitude
 
 ### Park Changes (43 players flagged):
 Ke'Bryan Hayes, Josh Lowe, Pete Alonso, José Caballero, Brandon Nimmo + 38 others
@@ -408,30 +581,58 @@ Badge shows: "Park change (OLD→NEW) — career baseline less reliable"
 
 ---
 
-## ARTICLE #1 — PUBLISHED
+## OWNERSHIP DATA SOURCES
 
+### ESPN (primary):
+- fetch_ownership.py → player_ownership_2026.csv (3,797 players)
+- Columns: player_name, mlbam_id, owned_pct, rank, source, fetched_date, injury_status
+- ESPN players_wl endpoint returns ACTIVE for all players (injuryStatus not surfaced)
+- Infrastructure in place; IL penalties = 0 until a different endpoint is used
+
+### FantasyPros (secondary — April 30, 2026):
+- fetch_fantasypros_ownership.py → fp_ownership, fp_espn_own, fp_yahoo_own columns
+- Aggregates ESPN + Yahoo + CBS into one number
+- 598 unique FP players (top 300 hitters + 300 pitchers)
+- 69.7% match rate (571/819) — unmatched are low-ownership/injured
+- 601/3797 rows updated in player_ownership_2026.csv
+
+### CBS vs ESPN ownership discrepancy:
+- CBS leagues = more competitive/experienced players
+- ESPN underrepresents serious players' roster decisions
+- Jeffers: ESPN 17%, CBS 59% | Herrera: ESPN 26%, CBS 80%
+- Hidden Gem queries should use fp_ownership (CBS blend) not ESPN only
+
+---
+
+## ARTICLES PUBLISHED
+
+### Article #1 — PUBLISHED April 22, 2026
 **Title:** Fantasy Baseball: Using Seven Layers of Statcast to Predict Buying/Selling Signals
 **URL:** https://open.substack.com/pub/thesignalfantasy/p/fantasy-baseball-using-seven-layers
-**Published:** April 22, 2026 — track record clock started
-
-Players featured:
-- BUY LOW HITTERS: Pasquantino, Yordan Álvarez, Trent Grisham
-- SELL HIGH HITTERS: Oneil Cruz, Jordan Walker
-- BUY LOW PITCHERS: Luzardo, Bradish
-- SELL HIGH PITCHERS: Wacha, Gavin Williams
-- BONUS: Garrett Mitchell sell-high (BABIP .538)
+Players: Pasquantino, Yordan Álvarez, Trent Grisham (buy) | Cruz, Walker (sell) | Luzardo, Bradish (pitcher buy) | Wacha, Williams (pitcher sell)
 
 Known edits still needed:
 - Fix "Without I'm proud to say" → "I'm proud to say"
 - Verify Cruz "hardest ever hit ball in Statcast era" claim before promoting
 
+### Article #2 — PUBLISHED April 29, 2026
+**Title:** Week 2 of the Signal Tracker! New leads, checking on previous calls, and more!
+**Stats:** 175 views, 58.33% open rate, 25 recipients, Reddit driving 40% of traffic
+**New calls:** Seager, Herrera, Dingler (buy) | Chapman, Vargas (sell) | Ryan, Sanchez (pitcher buy) | Arrighetti, Ray (pitcher sell)
+**Features:** Week-over-week tracker table, Worry/Get Hyped index (Devers/Wood), Hidden Gem (Rumfield)
+**What's Coming:** luck score spreadsheet release, trade analyzer announcement
+Copyright footer "© 2026 Dustin Lovell / Signal Fantasy" added to both articles ✅
+Substack global footer set ✅
+
+### Week 3 Article — DUE May 5-6, 2026
+- Run pipeline Monday May 5: run_pipeline.py --write → weekly_update.py --update → --report --top 15
+- First week where confirmed/refuted calls should be statistically meaningful
+- April Big Board: consolidated view of all April calls
+- Chapman -17.2° LA delta is article gold — strongest sell confirmation in dataset
+
 ---
 
-## WEEK 2 ARTICLE — PUBLISHED ✅
-
-**Title:** "Before the Regression Hits"
-**Published:** Tuesday April 29, 2026
-**Length target:** 1,200-1,500 words
+## WEEK 2 ARTICLE — DRAFT STRUCTURE (published April 29 — preserved for reference)
 
 ### Structure:
 1. Opening — Week 1 accountability (3-4 sentences)
@@ -447,19 +648,9 @@ Known edits still needed:
    - Small sample caveat (82 PA) — be honest
 5. Sell high (TBD — pull from dashboard, needs 60%+ ownership)
 6. NEW: Slight signals introduction
-   - Slight buy hitter: Bo Bichette (BABIP .282 vs career .341)
-   - Slight sell hitter: Zach Neto (BABIP .327 vs career .297)
-   - Slight buy pitcher: Kevin Gausman (ERA 2.83, FIP 2.21)
-   - Slight sell pitcher: Taj Bradley (ERA 1.30, xERA 3.02, evolution score 4)
-7. Pitcher model v2.0 update (split architecture, evolution detector)
+7. Pitcher model v2.0 update
 8. Honorable Mentions
 9. Closing + Week 3 tease
-
-### Dingler research (April 24):
-- MLB Trade Rumors: full piece, xwOBA 3rd in MLB
-- RotoBaller: "must-add, 96th percentile barrel/HH rate"
-- CBS: currently #6 actual stats, #17 consensus
-- 72% owned ESPN
 
 ---
 
@@ -493,144 +684,98 @@ BUY LOW requires: ownership >10% minimum + projected improvement meaningful
 
 ---
 
-## PARKING LOT — PRIORITIZED (updated April 26, 2026)
+## PARKING LOT — PRIORITIZED (updated April 30, 2026)
 
-### TIER 1 — Do immediately (Week 2 published, Week 3 next):
-- **Weekly tracker mechanism classifier** — HIGHEST PRIORITY. Implement wOBA vs xwOBA decomposition
-  in weekly_update.py. Same luck score movement = two opposite meanings (results declining vs contact
-  improving). Mechanism values: Normalizing | Re-evaluate | Confirmed | Refuted | Watch.
-  This is the content engine for the entire May-August publishing schedule.
-- **Week 3 article** (May 5-6 deadline): run_pipeline.py --write → weekly_update.py --update → --report --top 15
-  First week where tracker may show confirmed/refuted calls (wOBA_THRESH=0.020, XWOBA_THRESH=0.015).
-- **White paper Section 10 update** — After 2-3 more weeks of live tracker data, then publish to
-  whitepapersonline.com. Add copyright notice to all new Substack articles.
-- **April Big Board** — Consolidated view of all April calls, current status, model expectations.
-  Publish as Week 3 content. The track record proof-of-work document.
+### TIER 0 — Done:
+- **Steamer/ZiPS direct comparison** — COMPLETE ✅ (Backtest C). Honest FAIL vs both.
+  Complementary positioning confirmed. We don't compete on raw MAE; we add luck signal layer.
+
+### TIER 1 — Do immediately:
+- **Weekly tracker mechanism classifier** — HIGHEST PRIORITY. wOBA vs xwOBA decomposition.
+  Mechanism values: Normalizing | Re-evaluate | Confirmed | Refuted | Watch.
+  Duplicate week guard now built ✅. Without this, the tracker shows movement but not meaning.
+- **Week 3 article** (May 5-6 deadline): Monday pipeline run → tracker → report
+  Chapman -17.2° LA delta is the lead story
+- **April Big Board** — consolidated view of all April calls
+- **White paper Section 10** — after 2-3 more weeks of live tracker data
 
 ### TIER 2 — This week:
-- **Pitcher Slight Buy sensitivity analysis** — n=6 historically (updated from n=4) too thin to validate.
-  Priority: SB ERA floor ablation (4.00 → 3.75) to grow SB sample before any gate testing.
-  If SB n reaches ≥8 train, retest Gate B (HR/FB > +0.03 above career) as first confirmation gate.
-  Secondary: Gate B + SB ERA floor lowered is the best-validated diagnostic path.
-  Files: backtest_pitcher_sb_gate.py (all 15 OR-gate combinations), backtest_pitcher_lob_swap.py,
-  backtest_pitcher_zscore.py — all diagnostic, NOT production code.
-- **is_article_worthy() gate** — filter signals worth featuring from borderline cases.
-- **xwOBA slot replacement (pitcher buy score β=0.25)** — authoritative backtest confirmed xwOBA is
-  a drag (+3.8pp OOS when removed). Root cause: both xwOBA_gap and LOB_gap means are negative at
-  the population level, so the β=0.25 slot always reduces the raw score. Best replacement unclear;
-  revisit after 2026 full-season data when SB sample is larger. Do not implement now.
+- **CBS rank integration** — display CBS rank in dashboard for neutral player sorting
+  Two purposes: (1) content engine for breakout/worry identification (2) coefficients already exist
+- **Hidden Gem detector** — formal pipeline feature
+  Query: fp_ownership < 35%, wOBA > .330, xwOBA gap > -0.020, luck > -0.085, PA >= 75
+  One Hidden Gem per article — hitters and pitchers alternating weeks
+  Timing issue: CBS corrects faster than ESPN — run Monday, publish Tuesday
+- **Pitcher Slight Buy sensitivity analysis** — n=4 historically too thin
+  Priority: SB ERA floor ablation (4.00 → 3.75) to grow SB sample.
+  Gate B (HR/FB > +0.03 above career): best gate candidate, OOS 80.0% (+7.8pp) but n=3 SB OOS
+- **is_article_worthy() gate** — build after Week 3 publishes
 
 ### RESEARCH AGENDA (post-2026 season):
-- Worry Index sensitivity: validate WORRY_WOBA_GAP=0.040 / WORRY_LUCK_BAND=0.085 after full season
-- Financial motivation backtest: cohort × signal accuracy when Spotrac Phase 2 populated
-- Elite player ascending theory: age 27-31, final year of $200M+ deal — lift vs. baseline?
-- In-season signal validation: 2026 is first Track 2 data collection year; validate for 2027
-- Age-weighted chase rate calibration: H_CHASE_AGE_WEIGHT values are priors, not empirical (mid-2027)
+- Worry Index sensitivity validation (validate WORRY_WOBA_GAP=0.040 and WORRY_LUCK_BAND=0.085 thresholds)
+- Financial motivation backtest (cohort × signal when n>50 per cohort)
+- Gate B SB confirmation retest (after 2026 adds signals; currently n≈2/year after gates)
+- SB ERA floor ablation (lower 4.00→3.75 to grow SB sample)
+- Age-weighted chase rate calibration (empirical mid-2027; current priors are H_CHASE_AGE_WEIGHT_U25=0.40/26_27=0.70)
+- xwOBA slot replacement for pitcher buy score (β=0.25 confirmed as drag in authoritative backtest; +3.8pp OOS when removed — but no clear replacement; revisit after 2026 full season)
 
 ### TRADE TOOL FOUNDATION:
-- CBS reverse engineering: linear regression on end-of-season rankings 2022-2024, R² >= 0.90
-- CBS coefficient ratios as exchange rates: same weights for rankings AND trade analyzer (one source)
-- Replacement level calculator: N = roster spots × league size
-- Fantasy points conversion engine: projected stats × CBS-derived point values
-- League settings intake UI: roster construction, scoring format, categories
-- Positional scarcity cap: 15-spot rule, never let scarcity flip a tier
+- CBS rank reverse engineering: COMPLETE ✅ (R²=0.983 hitters, R²=0.909 pitchers)
+- Replacement level calculator: COMPLETE ✅ (replacement_level.py)
+- Lineup context module: COMPLETE ✅
+- Playing time module: COMPLETE ✅ (Steamer-weighted, IL penalty)
+- Projection backtests A+B: COMPLETE ✅
+- League settings intake UI: not yet built
+- Stress test 5-10 real trades: not yet done
+- Trade tool search click bug: dashboard.html onClick handler needs fix
+- Fantasy points conversion engine: projected stats × CBS point values — not yet built
 
 ### CONTENT PIPELINE:
 - "Why April Signals Matter Most" article: publish mid-May (paid tier anchor)
-- "How I Built This in 10 Days with AI" article: publish after 6-8 weeks live track record
+- "How I Built This in 10 Days with AI" article: after 6-8 weeks live track record
 - Live 2026 Accuracy Tracker: paid tier dashboard, updates weekly (build mid-June 2026)
+- Weekly luck score spreadsheet: release next 1-2 weeks (promised in Article #2)
+- CBS rank in dashboard: enables "Sort by CBS rank → find biggest signal divergences" content
 - Spotrac Phase 2: historical 2022-2024 contract data via Wayback for financial motivation backtest
 
----
+### SCORING FORMAT EXPANSION (Tier 3):
+- OBP leagues
+- Saves + Holds with configurable ratio (1:1, 2:1, 3:2)
+- QS (quality starts)
+- K-BB% for pitchers
+- WHIP as projection metric
+- wRC+ for hitters
+- Ask Reddit for other common formats
 
-### TRADE TOOL KNOWN ISSUES (from stress testing April 25):
-
-**Issue 1 — Smell test failure: Skenes for Ben Rice returns "Favorable"**
-- Skenes (Slight Sell, ERA 0.95, FIP 2.56) given away for Rice (Sell High, C-NYY)
-- Tool returned "Favorable — slight edge in your favor" for getting Rice
-- This should be rejected 10/10 times — Skenes is far more valuable
-- Root cause likely: positional scarcity of C overweighting Rice's value,
-  OR New Pitcher career discount on Skenes suppressing his value too aggressively,
-  OR sell signals being treated as equivalent regardless of underlying quality
-- Fix needed: value gap check — if player being given away is top-20 overall,
-  verdict should never be Favorable for the other side regardless of signals
-
-**Issue 2 — Pitcher net stats direction is misleading**
-- Giving away Skenes shows ERA -1.50 and WHIP -0.76 as positive changes
-- Technically correct (you lose his stats) but misleading in context
-- Tool doesn't account for replacement-level pitcher you'd start instead
-- Real net change should factor in: "what pitcher replaces Skenes in your lineup?"
-- Fix needed: replacement-level baseline for pitchers in net stats calculation
-- This is a fundamental trade tool architecture issue (Layer 4 — parking lot B2)
-
-**Issue 3 — Architectural principle: signals should inform stats, not verdicts**
-- Current behavior: signal tier (Buy Low/Sell High) feeds directly into trade verdict logic
-  ("giving away a buy low for a sell high" influences the verdict independently)
-- Correct behavior: signal feeds into projected stats ONLY (adjusts ERA, K, wOBA projections)
-  Those adjusted projections feed into trade value calculation
-  Trade verdict = Side A total projected value vs Side B total projected value. Full stop.
-- Signal badge should display informationally only — not independently weight the verdict
-- Think of it as two separate tools sharing data:
-  Tool 1 (Signal Model): "Here are luck-adjusted projected stats"
-  Tool 2 (Trade Tool): "Here is total value on each side based on those stats"
-  Tool 2 is informed by Tool 1 in the background but doesn't explicitly reference signals
-- This fixes the Skenes problem: his Slight Sell label shouldn't suppress his trade value
-  His value comes from his projected ERA 1.50 / WHIP 0.76 / K 197 — that's elite regardless of signal
-- Implementation: remove signal-tier weighting from verdict calculation in trade_analyzer.py
-  Keep signal badges as display-only information for the user
-  Verdict threshold logic should reference projected value scores only
-
-### CRITICAL BUG — Fix before trade tool testing:
-**Trade tool search click not registering**
-- Symptom: Typing filters correctly (autocomplete works) but clicking result does nothing
-- Player does not get added to GIVING/GETTING panel after clicking
-- Likely cause: onClick handler not firing, or event listener not attached to result items
-- Fix location: dashboard.html — taSearchPlayers() or result rendering function
-- Test to verify fix: Search "Luzardo" → click result → confirm appears in GIVING panel
-- Discovered: April 24 during first live trade tool test
-
-### TIER 1 — Do before/during trade tool testing tonight:
-1. **Visual dashboard verification** (YOU — not Claude Code)
-   Open localhost:8000, confirm all 7 fixes render correctly
-2. **Trade tool end-to-end test** (YOU — tonight)
-   Try 5-10 real trades, document where verdicts feel wrong
-
-### TIER 2 — High leverage, this week:
-3. **Backtest audit log** — RUNNING IN CLAUDE CODE (April 24)
-   Row-level export: backtest_audit_hitters.csv + backtest_audit_pitchers.csv
-   Commercialization asset + credibility proof
-4. **Slight Buy pitcher sensitivity analysis** — n=4 historically is too thin to validate
-   The luck score window between Neutral and Slight Buy may be too narrow for April data
-   Gates to test: ERA floor (4.00 → 3.75?), luck score window width, IP threshold
-   Goal: generate enough historical signals to validate the tier statistically
-   Method: ablation test each gate individually, measure signal count AND accuracy
-5. **is_article_worthy() gate** — build after Week 2 publishes Wednesday
-6. **Current rank integration** — fp_rank shows preseason, not in-season
-   Affects trade tool verdict quality directly
+### PROJECTION MODEL GAPS (prioritized):
+1. Playing time — COMPLETE ✅
+2. Park factor adjustment — 43 flagged players not yet adjusted in projections
+3. Platoon splits into projections — infrastructure exists, not wired into proj stats
+4. IP trajectory refinement — partially addressed by playing time module
+5. SB projection — sprint speed used, no green light rate
+6. AVG projection precision — career BA anchor helps but loses to RTM
 
 ### TIER 3 — Important, not blocking:
-6. **Nola/Rogers ERA gap fix** — ~1 run miscalibration, specific archetype
-7. **2026 live prediction log** — CSV timestamping every signal call going forward
-   Season-end track record for commercialization. ~30 min build.
-8. **Post-blend AVG floor** — 26 fringe hitters projecting below .195
-9. **Extended scoring categories** — OBP/SLG/TB/QS for non-standard leagues
+- Nola/Rogers ERA gap fix (~1 run miscalibration)
+- 2026 live prediction log (CSV timestamping)
+- Post-blend AVG floor (26 fringe hitters below .195)
+- Extended scoring categories
+- Dashboard sort bug (Advanced View sorts by absolute magnitude)
+- Trade tool search click bug (dashboard.html onClick handler)
+- Current rank integration (fp_rank shows preseason, not in-season)
 
 ### TIER 4 — Week 3-4+:
-10. **Trade analyzer B2 — roster context module**
-    Knows your roster needs, not just raw player values. Big effort, big reward.
-11. **IL badge integration** — banner caveat covers for now
-12. **Hitter evolution detector** — launch angle >5°, pull rate >10%, sprint speed
-13. **CSW buy-low-only ablation** — strong signal, kept in production April 24
-14. **Chase rate sell-side expanded testing**
-15. **Multi-year pitcher backtest refinement**
-16. **Recent game trend line display** — post-launch UI polish
+- Trade analyzer B2 (roster context module)
+- IL badge integration (banner caveat covers for now)
+- Hitter evolution detector (launch angle >5°, pull rate >10°, sprint speed)
+- CSW buy-low-only ablation
+- Multi-year pitcher backtest refinement
+- Recent game trend line display
 
-### NEW SIGNAL LAYERS — Added April 27:
-- **Worry Index / Confidence Meter** — flags where model SILENCE is meaningful.
-  CONCERN (fp_rank<50, wOBA 40+pts below 3yr xwOBA, no luck signal): "struggle may be real"
-  BREAKOUT (fp_rank>100, wOBA 40+pts above 3yr xwOBA, no regression signal): "breakout may be real"
-  Display-only output columns (worry_flag, breakout_flag, worry_label). No model weight.
-  Current example: Pete Crow-Armstrong (luck -0.133, Slight Sell) — concern flag.
+### HIDDEN GEM DETECTOR (formal feature — Tier 2):
+Query: fp_ownership < 35%, wOBA > .330, xwOBA gap > -0.020, luck > -0.085, PA >= 75
+Timing issue: CBS corrects faster than ESPN — run query Monday, publish Tuesday
+One Hidden Gem per article — hitters and pitchers alternating weeks
 
 ### TWO-TRACK IN-SEASON SIGNAL SYSTEM (documented April 27):
 Track 1 — April Signals (PRODUCTION): validated 86.1%/89.7% — the published signals.
@@ -640,316 +785,90 @@ Article framing for Track 2: "data moving in the right direction" not "new signa
 Publishing cadence: Tuesday nights publish / Monday production run (run_pipeline.py → weekly_update.py → --report).
 
 ### TIER 5 — Future:
-17. **Football product** — Year 2-3, nflfastR
-18. **Podcast pitch** — live calls format, after stable publishing rhythm
-19. **Career playbook document** — after stable publishing rhythm
-20. **CBS Coefficient Ratios as Trade Value Exchange Rates** — Use the same CBS regression
-    coefficients (HR, R, RBI, SB, AVG, ERA, WHIP, K, W, SV) as one weighting system flowing
-    through BOTH the ranking engine AND the trade analyzer. One source of truth for category value:
-    if HR is worth 3× SB in CBS rankings, that same ratio should determine whether a trade is fair.
-    Closes the gap where the two tools could use different implicit weights and contradict each other.
-    Implementation: expose CBS coefficients in config.py, import into score_value.py + trade_analyzer.py.
-    Prerequisite: complete CBS Rankings Reverse Engineering experiment to get empirically validated
-    coefficients before wiring in — R² >= 0.90 target.
+- Football product (Year 2-3, nflfastR)
+- Podcast pitch (live calls format)
+- Career playbook document
+- CBS Coefficient Ratios as Trade Value Exchange Rates (same coefficients for rankings AND trade analyzer)
+- Leverage index for relievers (SV+H projection)
+- Catcher framing (ERA ±0.20-0.35)
+- First pitch strike % (WHIP/BB projection)
 
-### NEW VARIABLES — DETAILED REASONING (April 25):
+---
 
-**Why these variables matter for EXPECTED STATS (not just signals):**
+## TRADE TOOL KNOWN ISSUES (from stress testing April 25)
 
-**1. Pitch mix evolution (pitchers) — Priority #1**
-Signal impact: Medium-High
-Expected stats impact: HIGH — this is the key insight
-- A 2pp SwStr% improvement from a new pitch = ~1.5 K/9 projected
-- Over 100 remaining IP = ~17 more projected strikeouts
-- K is a primary trade value driver for pitchers
-- Current model knows CURRENT stuff quality but NOT whether it changed
-- A pitcher adding a sweeper mid-season is fundamentally different
-  from one losing velocity — current model treats them identically
-- Implementation: pitch_mix_delta (current % - career %) already
-  computable from existing files — lowest complexity of all three
-- Data: pitcher_career_pitch_mix.json + pitcher_current_pitch_mix.json
-  both exist — NO new fetch needed
+**Issue 1 — Smell test failure: Skenes for Ben Rice returns "Favorable"**
+- Skenes (Slight Sell, ERA 0.95, FIP 2.56) given away for Rice (Sell High, C-NYY)
+- Tool returned "Favorable — slight edge in your favor" for getting Rice
+- This should be rejected 10/10 times — Skenes is far more valuable
+- Root cause: positional scarcity of C overweighting Rice, OR career discount on Skenes
+- Fix needed: value gap check — if player given away is top-20 overall, verdict should not favor other side
 
-**2. K% trend (hitters) — Priority #2**
-Signal impact: Medium
-Expected stats impact: HIGH
-- K% change directly affects projected AVG and wOBA
-- A hitter dropping K% from 28% to 22% while maintaining xwOBA
-  projects .015-.020 wOBA improvement — meaningful trade value shift
-- Current model uses current K% as a static gate (plate discipline layer)
-  but doesn't capture DIRECTION of change
-- Example: two hitters with identical current K% of 24% — one declining
-  from 30% (improving) vs one rising from 18% (declining) — should
-  project very differently but currently score identically
-- Data: current 2026 K% EXISTS in hitters_statcast.csv
-  Career K% baseline NEEDS: build hitter_career_k_pull.json
-  using existing calc_k_rate() function in codebase
+**Issue 2 — Pitcher net stats direction misleading**
+- Giving away Skenes shows ERA -1.50 and WHIP -0.76 as positive changes
+- Technically correct (you lose his stats) but misleading in context
+- Fix needed: replacement-level baseline for pitchers in net stats calculation
 
-**3. Pull rate trend (hitters) — Priority #3**
-Signal impact: Medium
-Expected stats impact: Medium-High
-- Pull rate increase correlates strongly with HR rate increase
-- A 5pp pull rate jump historically = +3-5 projected HR
-- HR is highest trade value category in roto after AVG
-- Early breakout signal — pull rate changes often precede surface
-  stat improvement by 2-4 weeks (market hasn't priced it in yet)
-- Hard pull rate specifically (pulled balls with high exit velo)
-  separates real power breakouts from fluke pull singles
-- Data: pull_percent EXISTS in hitters_statcast.csv
-  Career pull baseline NEEDS: same build as K% —
-  add pull_rate to hitter_career_k_pull.json
-
-**Why build order matters:**
-Pitch mix first — pitcher side, completely separate infrastructure,
-lowest complexity, can run while hitter baseline JSON is being built.
-K% + pull rate share the same career baseline JSON build step —
-build that once, then implement both signals on top of it.
-Never add multiple variables simultaneously — can't attribute improvement.
-
-**The 2025 OOS guard rail:**
-Every new variable must improve OR not hurt 2025 OOS accuracy:
-- Pitcher Buy Low current baseline: 85.7% OOS
-- Hitter overall current baseline: ~88.1%
-If any variable hurts 2025 OOS → revert immediately, no exceptions.
-
-Build order and process for each new variable:
-1. Add variable individually
-2. Backtest isolated (2022-2024 in-sample)
-3. Validate against 2025 out-of-sample (MUST improve or stay flat)
-4. Ablation test confirms contribution
-5. validate_formulas.py 37/37 PASS
-6. Update handoff doc with new validated numbers
-
-Build order:
-1. Pitch mix evolution (pitcher side) — standalone
-2. K% trend (hitter side) — standalone
-3. Pull rate trend (hitter side) — add on top of K% trend, ablation both
-4. Combined hitter backtest — confirms both work together
-
-Exception: K% trend + pull rate can share one backtest run since both
-are hitter-side, but MUST ablation test each independently to confirm
-individual contribution.
-
-Gate: 2025 OOS accuracy must not decline vs current baseline:
-- Pitcher Buy Low current: 85.7% OOS (post ERA floor fix)
-- Hitter overall current: ~88.1%
-If any new variable hurts 2025 OOS → revert immediately
-
-Diagnostic prompt results: data/new_variables_diagnostic.md ✅ COMPLETE
-
-DIAGNOSTIC FINDINGS — what we have vs need:
-
-**Pitch mix evolution:** LOW complexity
-- career baseline EXISTS (pitcher_career_pitch_mix.json)
-- current 2026 EXISTS (pitcher_current_pitch_mix.json)
-- delta computable from existing files — NO new fetch needed
-- Implementation: add pitch_mix_delta to score_pitcher_luck.py directly
-
-**K% trend (hitters):** LOW-MEDIUM complexity
-- career K% baseline PARTIAL (hitter_career_discipline.json has chase rate but not K%)
-- current 2026 K% EXISTS in hitters_statcast.csv
-- Need: build data/hitter_career_k_pull.json from backtest_cache using
-  existing calc_k_rate() function — already exists in codebase
-
-**Pull rate trend (hitters):** LOW-MEDIUM complexity
-- career pull rate PARTIAL — same as K%, needs new baseline JSON
-- current 2026 pull rate EXISTS in hitters_statcast.csv (pull_percent column)
-- Need: same build as K% — add pull rate to hitter_career_k_pull.json
-
-**CRITICAL DATA GAP — Per-pitch velocity (confirmed April 25):**
-pitcher_career_pitch_mix.json has only career_primary_velo (ONE float, overall).
-pitcher_current_pitch_mix.json has curr_velo: {FF: x, SL: y} (per-pitch).
-Comparing them yields nonsense (Sale's SL 78.2 vs career_primary_velo 94.5 = -16.3 mph).
-Phase 1 SKIPS per-pitch velo delta. Phase 2 requires pybaseball fetch.
-
-**CRITICAL NOISE ISSUE — New pitch detection (confirmed April 25):**
-238/251 overlap pitchers show "new" pitch types (ST sweeper, CH, SL etc.).
-These are Statcast relabeling artifacts, NOT true new pitch additions.
-new_pitch_flag=False until Phase 2 pybaseball fetch resolves label consistency.
-
-**PHASE 1 BUILD — ✅ COMPLETE (April 25, 2026):**
-build_pitch_mix_delta.py: SwStr-based abandonment + effectiveness flags.
-Wired into score_pitcher_luck.py as _apply_pitch_mix() modifier.
-Backtest result: Version F = verdict-neutral (0.0pp delta vs Version E).
-Status: INFORMATIONAL LAYER only — display in dashboard, does not change verdicts.
-
-**PHASE 2 BUILD — ✅ COMPLETE (April 25, 2026):**
-build_pitcher_phase2_baselines.py: career velo from parquets (800 pitchers), career rv/100 from arsenal stats (1,252 pitchers).
-build_pitch_mix_delta.py (Phase 2): 6-flag system — abandonment, velo_drop, rv_degrade, effectiveness, velo_gain, rv_improve.
-Backtest result: Version G = verdict-neutral (0.0pp delta vs Version E, OOS PASS ✓).
-Coverage 2026: 234 pitchers. Coverage by year: 73% velo, 94% RV.
-Architecture conclusion: pitch mix is INFORMATIONAL layer. Verdict changes require threshold-crossing buys, which the ×0.729 stacking can achieve in theory but rarely in practice.
-
-**NEXT CLAUDE CODE PROMPTS (in order):**
-1. ✅ Build data/pitcher_pitch_mix_delta.json + wire signal into score_pitcher_luck.py (Phase 1)
-2. ✅ Phase 2 pybaseball fetch + career velo/RV baselines + Version G backtest
-3. ✅ Build data/hitter_career_k_pull.json + wire K%/pull modifier into score_luck.py
-4. Run hitter K%/pull backtest — verify whether ×0.90/×0.95 multipliers improve OOS accuracy
-5. Build data/hitter_career_pull_add.json — flag pull rate INCREASES (potential power breakouts)
-   (currently only flags drops; increases are also signal-worthy for buy side)
-
-**✅ INVARIANT FLAG — RESOLVED April 25:**
-Cal Raleigh rank 4 diagnosed: Ben Rice .507 xwOBA (95 PA) inflating R/RBI.
-Invariant relaxed to top-4 in code. Re-tighten mid-May 2026. See PERMANENT ANCHORS section.
-
-| Rank | Variable | Signal impact | Expected stats impact | Trade tool impact |
-|------|----------|--------------|----------------------|-------------------|
-| 1 | Pitch mix evolution (pitchers) | Medium-High | High — K/9 projection | High |
-| 2 | K% trend (hitters) | Medium | High — AVG/wOBA projection | High |
-| 3 | Pull rate trend (hitters) | Medium | Medium-High — HR projection | Medium-High |
-| 4 | Catcher framing (pitchers) | Medium | Medium — ERA ±0.20-0.35 | Medium |
-| 4 | Leverage index (relievers) | Medium | Medium-High — SV+H projection | High |
-| 6 | First pitch strike % (pitchers) | Low-Medium | Medium — WHIP/BB projection | Low-Medium |
-| 7 | Opponent quality | Low | Low | Low |
-
-Key insight: pitch mix evolution and K% trend have outsized trade tool impact
-because they directly change projected counting stats (K, AVG, wOBA, HR)
-not just the luck score signal. A 2pp SwStr% improvement = ~1.5 K/9 = ~17 projected Ks over 100 IP.
+**Issue 3 — Architectural principle: signals should inform stats, not verdicts**
+- Current: signal tier (Buy Low/Sell High) feeds directly into verdict logic
+- Correct: signal feeds into projected stats ONLY → stats determine trade value → verdict = value comparison
+- Signal badge should be display-only, not independently weight the verdict
+- Fix location: trade_analyzer.py — remove signal-tier weighting from verdict calculation
 
 ---
 
 ## COMPLETED PARKING LOT ITEMS (reference)
 
-- Dashboard 7-fix audit: COMPLETE ✅ (April 24)
+- Dashboard 7-fix audit: COMPLETE ✅
 - Pitcher ownership ESPN fetch: COMPLETE ✅ (374/380 matched)
-- Reliever FIP fix: COMPLETE ✅ (April 24) — was logic error not FanGraphs block
-  110 relievers now have FIP via fip_sc_all fallback; score Neutral until 15 IP
+- Reliever FIP fix: COMPLETE ✅ (April 24) — 110 relievers via fip_sc_all fallback
 - Hitter HH% denominator fix: COMPLETE (296/414 matched, 118 use default 0.370)
-- Platoon adjustment: COMPLETE (Layer 7 confidence modifier, live in production)
-- Threshold recalibration: COMPLETE (Option 3 in score_luck.py)
-- Yordan tracker: COMPLETE (automated in run_pipeline.py → data/yordan_tracker.csv)
-- LOB% confluence flag: COMPLETE (display column, 6 buy confirms)
-- Multi-year April pattern flag: COMPLETE (4 buy lows confirmed)
-- Slight buy accuracy investigation: COMPLETE (hitter xwOBA gate + pitcher ERA gate)
-- New signal ablation: COMPLETE (chase sell-only KEPT, CSW buy-only KEPT, sprint REVERTED)
-- Follow-up ablation: COMPLETE (all 3 re-tested with root-cause fixes April 24)
-- This Is Actually Bad: COMPLETE (9 Confirmed, 7 Monitor April 24)
-- This Is Real: COMPLETE (27 Confirmed, 34 Monitor April 23)
-- Live ownership data: COMPLETE (3,795 players, ESPN public API)
-- Signal board: COMPLETE (4-sheet Excel, auto-runs in pipeline)
-- Stat projection engine v2: COMPLETE (6 fixes, 37/37 PASS)
-- Pitcher evolution detector: COMPLETE (6-factor, Bradley evolution_score=4)
-- Formula validation suite: COMPLETE (37/37 PASS)
-- Trade analyzer v2: COMPLETE (multi-player, scarcity, trajectory, league config)
-- Dashboard syntax error: DIAGNOSED — no actual error, was transient state
-- Park change detection: COMPLETE (998 players, 43 flagged)
-- Score_value.py fixes A-H: COMPLETE (all 8 fixes applied April 24)
-- Score_value.py Fix I (barrel regression): COMPLETE (April 25 — LG_BARREL=0.066, BARREL_PA_STAB=200)
-- Pitch mix Phase 1 (abandonment + effectiveness): COMPLETE (April 25 — Version F, verdict-neutral)
-- Pitch mix Phase 2 (per-pitch velo + RV): COMPLETE (April 25 — Version G, 94.0%/87.0% OOS PASS)
-- Cal Raleigh invariant relaxed: COMPLETE (April 25 — top-4 until catcher PA > 150, mid-May re-tighten)
-- Pitcher ERA floor Buy Low 3.50→3.75: COMPLETE (April 25 — score_pitcher_luck.py line ~967)
-- Slight Buy hitter threshold recalibration: COMPLETE (April 25 — 0.100 floor, 0.030 gap gate, 0.380 ceiling)
-- K%/pull rate evolution modifier: COMPLETE (April 25 — score_luck.py wired, 37/37 PASS)
-- Additive modifier architecture Version D: COMPLETE (April 26 — train +1.7pp→86.1%, OOS +0.3pp→89.7%, 42 verdict changes)
-  config.py: H_KP_K_PENALTY=0.010, H_KP_PULL_PENALTY=0.008, H_HH_PENALTY=0.012, H_SPEED_PENALTY=0.010, H_CHASE_PENALTY=0.008, H_MAX_COMBINED_PEN=0.040
-  backtest_multi_year_v7.py: _apply_additive_modifiers(), _print_sensitivity_sweep(), _print_abcd_comparison() added
-  score_luck.py: _buy_penalty accumulator, combined application block, cap at 0.040
-- Platoon career baseline fix: COMPLETE (April 26 — career gap replaces static -0.018/-0.012, PA min 15→30, xwOBA splits added)
-  build_hitter_career_platoon.py: new builder from pitcher_statcast parquets
-  data/hitter_career_platoon.json: 489 batters, mean career gap=-0.019
-  score_luck.py: _build_platoon_splits() loads xwOBA; _platoon_modifier() uses gap_delta vs career
-  19 modifier result changes in 2026 data vs old static approach
-- Contract year cohort framework: COMPLETE (April 26 — display-only, 5-cohort classification)
-  score_luck.py: _assign_cohort() function; contract_cohort column in CSV output
-  data/contract_year_2026.csv: infrastructure ready, needs manual data curation
-  All programmatic data sources exhausted and blocked (Spotrac 403, BRef 403, MLB API 404, Lahman salary-only)
-- Financial motivation cohort redesign + Spotrac merge: COMPLETE (April 26-28)
-  5 cohorts: 1=Payday, 2=Prove-It, 3=Secured($20M+,3+yr), 4=Post-Prime(33+), 5=Mid-Contract
-  31 players loaded (13 manual + 18 Spotrac merge); new Cohort 3: Ramírez, Swanson, Bogaerts, Stanton, Olson, Nola, Yelich
-  Distribution: 1-payday=160 | 3-secured=17 | 4-post-prime=58 | 5-mid-contract=163 | unknown=18
-  merge_spotrac_contracts.py: new file; normalizes AAV, filters expired/pre-arb, MLBAM ID lookup from luck CSVs
-- Pitcher additive modifier conversion (Version H): COMPLETE — VERDICT-NEUTRAL, NOT ADOPTED (April 27)
-  All 3 bearish flag penalties calibrate to 0.0; buy sample n=21 too small; keep multiplicative ×0.90/×1.10
-  backtest_pitcher_pitch_mix.py updated with sweep/comparison infrastructure
-- Age-weighted chase rate modifier: COMPLETE (April 27 — score_luck.py + config.py)
-  H_CHASE_AGE_WEIGHT_U25=0.40, H_CHASE_AGE_WEIGHT_26_27=0.70; 8 young players affected; 37/37 PASS
-  Zero verdict impact at current scores; correctionally sound for future borderline cases
-- Calls tracker built: COMPLETE (April 26 — data/calls_tracker.csv + weekly_update.py)
-  169 players (127H, 42P); Week 1 baseline April 22; --update / --report pipeline ready
-- Two-track in-season signal framework: COMPLETE (April 27 — documented in CLAUDE.md)
-  Track 1 = April signals (validated, published); Track 2 = tracker (hypothesis only)
-- Publishing cadence locked: COMPLETE (April 27 — Tuesday publish / Monday production run)
-- Worry Index / Confidence Meter: BUILT (April 27 — score_luck.py display layer, 37/37 PASS)
-  5 concern flags: Pete Alonso (fp17), Bo Bichette (fp14), Juan Soto (fp5), Rafael Devers (fp16), Willy Adames (fp25)
-  0 breakout flags. Columns: worry_flag, breakout_flag, worry_label in luck_scores.csv
-  Pete Crow-Armstrong excluded: luck=-0.133 (Slight Sell signal IS present), fp_rank=NaN in rankings file
-- Cohort framework age-ordering bug fixed (April 27): _assign_cohort called before df["age"] was set → all "unknown"
-  Moved apply() to after df["age"] = ... line; post-fix distribution: 1-payday=161, 3-secured=11, 4-post-prime=62, 5-mid-contract=164
-- run_pipeline.py subprocess encoding fix (April 28): UnicodeDecodeError crash on Windows tqdm output
-  Added encoding="utf-8", errors="replace" to Popen call; all 6 pipeline steps now complete cleanly; permanent fix
-- Week 2 article PUBLISHED (April 29): "Before the Regression Hits" — Substack live ✅
-  Lead: Corey Seager (wOBA .332/xwOBA .378/score +0.344, Buy Low)
-  Feature: Dingler (xwOBA .459/gap+.105), Ramírez (fp7/score+0.483), Judge (fp1/score+0.282), Acuña (score+0.394)
-  New Worry Index section: Devers (fp16, wOBA .241/xwOBA .265/3yr xwOBA .371 — real struggle, not luck)
-  Yordan tracker: wOBA .510/xwOBA .595 consistent Week 1→2; Buy Low holding
-  Pitcher buys: Luzardo (6.41 ERA/3.14 FIP), Joe Ryan (5.29/3.12), C.Sánchez (3.82/2.51)
-  Tracker: all 169 calls show "too early" at 1 week — expected per significance thresholds
-  Copyright footer "© 2026 Dustin Lovell / Signal Fantasy" added to Week 2 article ✅
-  Copyright footer added to Week 1 article retroactively ✅
-  Substack global footer set ✅
-- White paper published (April 2026): signal_fantasy_whitepaper.docx — 11 sections, 3 visuals embedded ✅
-  Pushed to GitHub (DustinSLovell/Signal-Fantasy-Pipeline) for IP timestamp ✅
-  Pending publish to whitepapersonline.com after Section 10 live track record update (2-3 more weeks)
-- ERA simulation COMPLETE (April 29): era_simulation.py — 389 pitchers, 7 verdict changes (1.8%) ✅
-  Decision: KEEP filtered ERA (qualifying starts, MIN_START_IP=2.0)
-  Key findings:
-    Skenes: Sell High → Slight Sell under ERA_all_sc (ERA-FIP gap collapses -1.58→-0.05)
-    Crochet, Suarez: Neutral → Buy Low — FALSE SIGNALS from excluded disaster starts
-    López: Neutral → Slight Buy (borderline, FIP 4.45 near gate)
-  Conclusion: ERA_all_sc creates phantom buy signals from blowup outings — qualifying filter is correct
-  Saved: era_simulation.py (diagnostic only, not production)
-- Financial motivation backtest PRELIMINARY (April 29): data/spotrac_contract_backtest.csv ✅
-  Source: MLB_Contracts_3.xlsx (1,000 rows, Spotrac export, user-provided)
-  data/spotrac_contracts_clean.csv: 506 hitter rows, 308 unique players (hitter positions only)
-  Match rate: 112/211 (53%) — 99 unmatched are pre-arb/arb players (no FA deal in Spotrac)
-  Sanity checks ALL PASS: Betts 2022=False, Judge 2022=True, Seager 2022=False
-  Cohort 3 (Secured, $20M+ AAV, 3+ yr): 96.4% overall accuracy n=28 — preliminary positive signal
-  ALL cohort/signal combinations n<10 except Cohort 5 — no publishable conclusions
-  Need: 50+ players per cohort for statistical reliability
-  Next step: expand match rate by adding arb-year salary data
-- Career lessons database updated (April 2026): 8 new lessons added (Sessions 7-8) ✅
-- GitHub DustinSLovell/Signal-Fantasy-Pipeline: current — commit e418a0b ✅
-- Claude Code credits exhausted — reset before next session
-
---- April 27, 2026 (Session 10) ---
-- McGreevy mechanism fix: calls_tracker mechanism column corrected ✅
-- Week 3 tracker update: weekly_update.py --update run, deltas refreshed ✅
-- Week 3 article draft complete: ready for Tuesday publish ✅
-- model_architecture_explainer.md: new file, project root, full 4-layer architecture doc ✅
-- 10 pitcher buy score diagnostic tests — ALL CORRECTLY REJECTED (no production changes):
-  1. ERA/FIP ratio sweep: VERDICT-NEUTRAL (no threshold improves OOS)
-  2. Coefficient sensitivity sweep: VERDICT-NEUTRAL (best combo +0.1pp train, 0% OOS)
-  3. Component replacement — LOB% as γ=0.15: VERDICT-NEUTRAL (better corr, same accuracy)
-  4. Component replacement — SwStr% as γ=0.15: DISQUALIFIED (wrong sign, r=−0.071)
-  5. Component replacement — HR/FB as γ=0.15: VERDICT-NEUTRAL (r=+0.314, no accuracy gain)
-  6. Z-score normalization diagnostic: looked promising (+12pp BL OOS in diagnostic)
-  7. T_SB threshold sweep: T_SB=+0.20 found as sweet spot in diagnostic space
-  8. Authoritative z-score backtest: MARGINAL, Guard FAIL (population stats shifted when
-     computed from all qualifying pitchers; diagnostic used buy-signal-enriched subset)
-  9. Raw LOB swap (xwOBA → LOB, β=0.25, no normalization): NO IMPROVEMENT, Guard FAIL
-     BL OOS dropped 75.0% → 72.7%; xwOBA_gap mean −0.006 and LOB_gap mean −0.018 both
-     negative across population — neither slot moves scores in buy direction
-  10. SB confirmation gate diagnostic (15 OR-combinations of 4 gates A/B/C/D):
-     No combination passes all guards (SBn<8 guard fails structurally — only 6 train SB signals)
-     Gate A (LOB stranding) fires on 0/6 training SB pitchers — wrong direction entirely
-     Gate B (HR/FB > +0.03 above career): best gate, OOS 80.0% (+7.8pp), but n=3 SB OOS
-     Gate B_BLgated: 85.7% OOS, PASS — but BL drops 12→4 signals (too aggressive)
-     Root cause: SB tier structurally undertrained (n≈2/year after all ERA/qualification gates)
-     Architecture is correct; sample is too thin to validate any gate
-- Root cause confirmed: ERA_minus_FIP contributes 99-107% of raw buy score in all formulations.
-  Secondary components (β=0.25, γ=0.15) are noise at population means. Tier gap (0.065 window)
-  exceeds what any raw secondary component can contribute.
-- xwOBA slot (β=0.25) confirmed as drag in authoritative backtest: removing it +3.8pp OOS.
-  This is the weakest component — if future architecture revisits, target this slot first.
-- New parking lot items:
-  - Gate B (HR/FB > +0.03 above career) is strongest individual SB confirmation signal.
-    Retest when SB sample grows. Files: backtest_pitcher_sb_gate.py, backtest_pitcher_lob_swap.py,
-    backtest_pitcher_zscore.py (all diagnostic, not production code).
-  - SB ERA floor ablation (4.00 → 3.75) to grow SB sample. Currently n≈2/year after gates.
-    If lowering floor raises SB n to ≥8 train, rerun gate diagnostic on that sample.
-  - Revisit full pitcher buy score architecture after 2026 full-season data (autumn 2026).
-- 37/37 PASS confirmed throughout — no production code touched this session ✅
+- Platoon adjustment: COMPLETE ✅ (Layer 7 confidence modifier, live in production)
+- Slight buy accuracy investigation: COMPLETE ✅ (hitter xwOBA gate + pitcher ERA gate)
+- New signal ablation (chase/CSW/sprint): COMPLETE ✅
+- Live ownership data: COMPLETE ✅ (ESPN + FantasyPros)
+- Stat projection engine v2: COMPLETE ✅
+- Pitcher evolution detector: COMPLETE ✅ (6-factor, Bradley evolution_score=4)
+- Formula validation suite: COMPLETE ✅ (37/37 PASS)
+- Trade analyzer v2: COMPLETE ✅
+- Park change detection: COMPLETE ✅ (998 players, 43 flagged)
+- Score_value.py fixes A-I: COMPLETE ✅ (all fixes applied April 24-30)
+- Pitch mix Phase 1 (abandonment + effectiveness): COMPLETE ✅ (April 25 — verdict-neutral)
+- Pitch mix Phase 2 (per-pitch velo + RV): COMPLETE ✅ (April 25 — 94.0%/87.0% OOS PASS)
+- Cal Raleigh invariant relaxed: COMPLETE ✅ (top-4 until catcher PA > 150, re-tighten mid-May)
+- Pitcher ERA floor Buy Low 3.50→3.75: COMPLETE ✅ (April 25 — score_pitcher_luck.py line ~967)
+- Slight Buy hitter threshold recalibration: COMPLETE ✅ (0.100 floor, 0.030 gap gate, 0.380 ceiling)
+- K%/pull rate evolution modifier: COMPLETE ✅ (April 25 — wired in score_luck.py, 37/37 PASS)
+- Additive modifier architecture Version D: COMPLETE ✅ (April 26 — train +1.7pp, OOS +0.3pp, 42 verdict changes)
+- Platoon career baseline fix: COMPLETE ✅ (April 26 — 489 batters, mean gap=-0.019)
+- Contract year cohort framework: COMPLETE ✅ (April 26 — display-only, 5-cohort classification)
+- Financial motivation cohort redesign + Spotrac merge: COMPLETE ✅ (April 26-28, 31 players loaded)
+- Calls tracker: COMPLETE ✅ (April 26 — 169 players, duplicate guard added April 30)
+- Worry Index / Confidence Meter: COMPLETE ✅ (April 27 — score_luck.py display layer)
+- Age-weighted chase rate modifier: COMPLETE ✅ (April 27 — config.py, 37/37 PASS)
+- Cohort framework age-ordering bug fix: COMPLETE ✅ (April 27 — moved apply() after df["age"] set)
+- run_pipeline.py subprocess encoding fix: COMPLETE ✅ (April 28 — UnicodeDecodeError on Windows fixed)
+- Week 2 article: PUBLISHED ✅ April 29, 2026
+- CBS FPTS scraper + regression: COMPLETE ✅ (April 28-29 — R²=0.983 hitters, 0.909 pitchers)
+- Replacement level calculator: COMPLETE ✅ (April 29 — replacement_level.py)
+- Projection diagnostic + two stat_projections.py fixes: COMPLETE ✅ (April 28-29)
+  Fix 1 (BABIP-only sell HR multiplier suppressed when xwoba_gap > -0.020)
+  Fix 2 (thin career baseline: career_pa < 1000 → career weight × 0.85)
+- ERA simulation: COMPLETE ✅ (April 29 — 389 pitchers, keep filtered ERA, era_simulation.py diagnostic)
+- Financial motivation backtest preliminary: COMPLETE ✅ (April 29 — 112/211 matched, n<10 per cohort, no conclusions)
+- Projection accuracy backtest (Backtest A): COMPLETE ✅ (April 29 — 235H/165P, beats RTM 4/5 hitter, 2/3 pitcher)
+- Projection backtest B v2: COMPLETE ✅ (April 30 — 88.6%/88% direction accuracy)
+- Backtest C six-way comparison: COMPLETE ✅ (April 30 — honest FAIL vs Steamer/ZiPS, ERA bias win)
+- is_sp tautology bug fix: COMPLETE ✅ (April 30 — projection_backtest_A.py, steamer_gs >= 10)
+- FantasyPros ownership fetch: COMPLETE ✅ (April 30 — fetch_fantasypros_ownership.py)
+- Duplicate week guard (weekly_update.py): COMPLETE ✅
+- ESPN injury_status field: COMPLETE ✅ (infrastructure ready, all return ACTIVE currently)
+- Sanchez Test fix: COMPLETE ✅ (April 30 — xwOBA career regression + BARREL_PA_STAB=250)
+- Pitcher buy model testing (10 tests): COMPLETE ✅ (April 27-30 — all correctly rejected)
+- Playing time module: COMPLETE ✅ (April 30 — Steamer-weighted, 380H/254P updated)
+- Launch angle YoY delta: COMPLETE ✅ (April 30 — display only, 148 players, build_hitter_launch_angle.py)
+- White paper published: COMPLETE ✅ (signal_fantasy_whitepaper.docx — 11 sections, GitHub timestamped)
+- GitHub DustinSLovell/Signal-Fantasy-Pipeline: current ✅ — pushed April 30, 2026
 
 ---
 
@@ -958,13 +877,20 @@ not just the luck score signal. A 2pp SwStr% improvement = ~1.5 K/9 = ~17 projec
 - Both Max Muncys correctly disambiguated:
   Dodgers Muncy: ID 571970 (age 36) — slight sell
   A's Muncy: ID 691777 (age 24) — stronger sell
-- Seager: wOBA .332/xwOBA .378/score +0.344 — Buy Low, Week 2 article lead ✓
-- Dingler: wOBA .354/xwOBA .459/gap +.105/score +0.317 — Buy Low, Week 2 feature ✓
 - Murakami: CWS (not ARI) — confirmed in pipeline
 - Vásquez: spelled with accent (Randy Vásquez) in CSV
-- Yordan Week 1→2: wOBA .510/xwOBA .595/score +0.227; Buy Low signal holding steady
-- Worry Index active flags (April 28): Devers (fp16, wOBA .241/3yr xwOBA .371), Bichette (fp14), Adames (fp25), Alonso (fp17), Soto (fp5/42PA too early)
-- Week 2 top pitcher buys: Luzardo (ERA 6.41/FIP 3.14), Joe Ryan (ERA 5.29/FIP 3.12), C.Sánchez (ERA 3.82/FIP 2.51)
+- Seager: wOBA .332/xwOBA .378/score +0.344 — Buy Low, Article #2 lead ✓
+- Dingler: wOBA .354/xwOBA .459/gap +.105/score +0.317 — Buy Low, Week 2 feature ✓
+- Yordan Week 1→2: wOBA .510/xwOBA .595/score +0.213; normalizing as expected; Buy Low holding
+- Matt Chapman: LA delta -17.2° — most extreme in dataset, confirms sell signal
+- Gleyber Torres: LA delta -13.4° with Slight Buy — tension case, worth flagging in articles
+- Acuña: LA delta +10.6° with Buy Low — double buy signal
+- TJ Rumfield COL: Buy Low +0.252, 35% CBS, Hard hit 39.5%, BABIP .289 at Coors — Article #2 Hidden Gem
+- Iván Herrera STL: Buy Low +0.365, 26.7% owned
+- Dillon Dingler DET: Buy Low +0.260 (softened from +0.317 — results improving)
+- Rafael Devers: Worry flag — K rate 33.3% (+12.5pp), HH 43.1% (-10.6pp), xwOBA .269 (career .371) — real struggle
+- James Wood: barrel 29.9% vs career 14.4%, HH 65.7%, BABIP below expected — REAL performance, no luck signal
+- Worry Index active flags: Devers (fp16), Bichette (fp14), Adames (fp25), Alonso (fp17), Soto (fp5/42PA too early)
 
 ---
 
@@ -983,7 +909,7 @@ Step 3 — K/9 translation (FIXED April 24):
 WRONG (old): K/9 = SwStr% × 22.5 → produced K% not K/9
 CORRECT: K/9 = SwStr% × 77.3
 Derived: league avg 0.11 × X = 8.5 → X = 77.3
-SWSTR_TO_K9 = 77.3 at line 52 in stat_projections.py ✅
+SWSTR_TO_K9 = 77.3 at line ~52 in stat_projections.py ✅
 
 Step 4 — Blend with career (at 27 IP, medium confidence):
 Current weight 0.30, Career weight 0.70
@@ -1002,13 +928,13 @@ Expected: SWSTR_TO_K9 = 77.3 at line ~52 ✅
 
 ---
 
-## BACKTEST STATUS & METHODOLOGY (April 24, 2026)
+## BACKTEST STATUS & METHODOLOGY (April 30, 2026)
 
 CRITICAL — Training/Test Split:
 - Training/calibration: 2022-2024 data ONLY
 - Out-of-sample validation: 2025 ONLY
 - NEVER mix 2022-2024 into published accuracy claims — that's in-sample
-- The 89.4% headline number uses 2025 out-of-sample data only
+- The 89.7% headline number uses 2025 out-of-sample data only
 
 Validated headline numbers — Version D (from backtest_multi_year_v7.py — source of truth):
 - Hitter (Version D, backtest v7): 86.1% train (n=187) / 89.7% OOS 2025 (n=87) | +17.9pp vs RTM
@@ -1018,30 +944,12 @@ Validated headline numbers — Version D (from backtest_multi_year_v7.py — sou
 - 2025 OOS: 89.7% hitters (never trained on this data — most trustworthy number for publishing)
 - vs RTM: hitters +17.9pp OOS
 
-Prior discrepancy RESOLVED (April 25-26):
-- "~89.0% train / ~93.5% OOS" was production thresholds applied to backtest scores → 23 cases → invalid
-- "42→9 slight buy signal reduction" from April 25 threshold recalibration: correct, gates working
-- Pitcher Buy Low 68.2% from run_backtest_production.py was methodology error (train/test mixing)
-  Authoritative numbers from backtest_multi_year_v7.py (hitters) and backtest_pitcher_composite.py (pitchers)
-
-DO NOT mix 2022-2024 in-sample numbers into published accuracy claims.
-Publish 2025 OOS numbers whenever possible — that's the honest track record.
-
-Backtest scripts:
-- backtest_audit_hitters_v2.csv — 729 rows, 383 in_eval=True (non-FLAT, non-Neutral) — AUTHORITATIVE hitter source
+Backtest files (authoritative):
+- backtest_multi_year_v7.py — current active hitter v7 script
+- backtest_audit_hitters_v2.csv — 729 rows, 383 in_eval=True — AUTHORITATIVE hitter source
 - backtest_composite_pitcher.csv — pitcher Version E results — AUTHORITATIVE pitcher source
-- run_backtest_production.py — methodology under investigation, do not publish
-- backtest_multi_year_v7.py — current active v7 script
 
-Backtest scripts (in backtest/ folder after reorganization):
-- run_backtest_production.py — new, methodology under investigation
-- run_backtest_fresh.py — v7 logic backtest
-- build_backtest_audit.py — row-level audit log builder
-- backtest_multi_year_v7.py — current active v7 script
-- extract_backtest_examples.py — example extractor
-- backtest_pitcher_pitch_mix.py — Version E/F/G pitch mix comparison (root: project dir)
-
-### PITCH MIX BACKTEST RESULTS (updated April 26-27, 2026):
+### PITCH MIX BACKTEST RESULTS:
 | Version | Train 22-24 | OOS 2025 | vs RTM (train) | Architecture |
 |---------|-------------|----------|----------------|-------------|
 | E (baseline) | 94.0% (n=134) | 87.0% (n=46) | +24.0pp | no pitch mix |
@@ -1049,10 +957,10 @@ Backtest scripts (in backtest/ folder after reorganization):
 | G (Phase 2 — velo+RV) | 94.0% (n=133) | 87.0% (n=46) | +24.0pp | 6-flag multiplicative |
 | H (additive — April 27) | 94.0% (n=134) | 87.0% (n=46) | +24.0pp | additive penalties, all → 0.0 |
 
-Version H result: VERDICT-NEUTRAL. All 3 bearish flag penalties calibrate to 0.0. Buy sample too small (n=21 train) for additive advantage. DECISION: Keep multiplicative ×0.90/×1.10 for pitchers.
-OOS guard rail: PASS ✓ (H >= E - 0.005)
-Architecture conclusion: pitch mix modifier is an INFORMATIONAL layer, not a verdict-mover
-Additive approach works for hitters (n=211 train, 5 flags) but not pitchers (n=21 train buys)
+Version H result: VERDICT-NEUTRAL. All 3 bearish flag penalties calibrate to 0.0. Buy sample too small (n=21 train) for additive advantage. DECISION: Keep multiplicative ×0.90/×1.10 for pitchers. Additive works for hitters (n=211 train, 5 flags) but not pitchers.
+
+DO NOT mix 2022-2024 in-sample numbers into published accuracy claims.
+Publish 2025 OOS numbers whenever possible — that's the honest track record.
 
 ---
 
@@ -1066,13 +974,37 @@ Additive approach works for hitters (n=211 train, 5 flags) but not pitchers (n=2
 
 ---
 
+## PITCHER BUY MODEL — TESTING RATIONALE (April 27, 2026)
+
+10 architectural tests run, all correctly rejected. Key findings:
+- Buy score is functionally single-variable (ERA-FIP contributes 99.3%)
+- Z-score normalization failed authoritative backtest (population shift)
+- Slight Buy tier structurally undertrained (n=2/year after gates)
+- Gate B (HR/FB above career >0.03) is strongest SB confirmation signal — retest after 2026 season
+- xwOBA is a slight drag (removing it +3.8% OOS) but replacing it makes things worse
+- Full documentation: pitcher_buy_model_testing_rationale.md
+
+Session 10 detailed test results:
+1. ERA/FIP ratio sweep: VERDICT-NEUTRAL (no threshold improves OOS)
+2. Coefficient sensitivity sweep: VERDICT-NEUTRAL (best combo +0.1pp train, 0% OOS)
+3. Component replacement — LOB% as γ=0.15: VERDICT-NEUTRAL (better corr, same accuracy)
+4. Component replacement — SwStr% as γ=0.15: DISQUALIFIED (wrong sign, r=−0.071)
+5. Component replacement — HR/FB as γ=0.15: VERDICT-NEUTRAL (r=+0.314, no accuracy gain)
+6. Z-score normalization diagnostic: looked promising (+12pp BL OOS in diagnostic)
+7. T_SB threshold sweep: T_SB=+0.20 found as sweet spot in diagnostic space
+8. Authoritative z-score backtest: MARGINAL, Guard FAIL (population stats shifted from enriched subset)
+9. Raw LOB swap (xwOBA → LOB, β=0.25, no normalization): BL OOS 75.0% → 72.7%, Guard FAIL
+10. SB confirmation gate diagnostic (15 OR-combinations of 4 gates A/B/C/D): all fail guards structurally
+
+---
+
 ## CAREER LESSONS DATABASE
 
 File: career_lessons_database.html
 Concepts: 88 (through April 24, 2026)
 Open in any browser — fully searchable by category
 
-### New lessons from April 24 session (add to database):
+### Lessons from April 24 session:
 - Metric Complementarity (FIP vs xERA — what each measures/misses)
 - Construct Validity (TRM measured longevity not confidence)
 - Ablation Testing a Value Model (ranking coherence vs accuracy delta)
@@ -1082,44 +1014,54 @@ Open in any browser — fully searchable by category
 - Misdiagnosed Root Cause (FanGraphs "block" was actually a sampling filter)
 - Load-Bearing Components (remove it, known-correct output breaks — that's the definition)
 - Documentation Drift (multiple "handoff" docs diverge fast — one source of truth only)
+- Measurement Validity (new backtest returned worse numbers — model was fine, evaluation script was wrong)
 
-- Measurement Validity (new backtest returned worse numbers — model was fine, evaluation script was wrong. Contact-only xERA vs all-PA xERA for K-heavy pitchers. Always check the ruler before concluding the thing you're measuring changed.)
+### Lessons from April 25 session:
+- Sensitivity Analysis (systematic parameter testing — vary one thing at a time, measure signal count AND accuracy, use 2025 OOS as guard rail)
+- Build Order Discipline (add variables individually, backtest each, ablation confirm — never add multiple variables at once)
+- Signal vs Stats Impact (a new variable can have modest signal impact but large trade tool impact if it changes projected counting stats)
+- Trade Tool Architecture (signals inform projected stats, not verdicts directly)
+- Recovery Path Thinking (always know your path back before you need it)
+- PA-Weighted Mean Reversion (barrel rate, small samples: PA / (PA + STAB) as blend weight)
+- Data Architecture Audit Before Building (confirmed career_primary_velo is ONE float, not per-pitch — always trace exact field structure)
+- Labeling Noise as Signal Filter (Statcast relabeled pitch types 2022-2025 — 238/251 pitchers "added" new pitches but 95% are artifacts)
+- Verdict-Neutral Layers (a modifier can be correctly built yet not move verdicts if tier gaps exceed multiplier magnitude)
+- Stacking vs Threshold (three ×0.90 bearish flags = ×0.729 compound, but tier gap is binding constraint)
 
-### New lessons from April 26-27 session (add to database):
-- Additive vs Multiplicative Penalties (multiplicative ×0.95 is verdict-neutral at standard tier gaps; additive flat penalties cross tier boundaries and produce real reclassifications. The constraint is the tier gap, not the multiplier magnitude.)
-- Sensitivity Sweep Design (sweep each parameter independently over a grid, hold all others constant, maximize training accuracy, validate against OOS. Best values may be non-obvious — 0.012 for HH flag outperformed 0.010 and 0.014.)
-- Career Baseline vs Static Average (comparing a player to their own historical norm is more powerful than comparing to a league average. Jazz Chisholm's -0.006 platoon gap is dramatic because his career is -0.093; the static -0.019 misses this entirely.)
-- Data Source Exhaustion Documentation (when all programmatic routes are blocked, document the exact URL structure, failure mode, and column spec needed so the next engineer can build a targeted scraper. Don't just say "blocked" — say what you tried and what the data looks like.)
-- Infrastructure-Ready Feature (build the plumbing even when data isn't available — contract_year_2026.csv header, _assign_cohort(), contract_cohort column. When data arrives, wiring takes minutes. Without the infrastructure, it takes hours.)
-- Worry Index / Model Silence as Signal (absence of a luck signal is itself informative when combined with preseason expectation context. A struggling darling with no detected luck = worry. An outperforming surprise with no detected luck = potential breakout. The model's silence speaks.)
-- Temporal Validity (April signals require validation separate from in-season rolling signals. Same metric, different context, different accuracy expectations. Never mix track records across different validation windows — they're measuring different things.)
-- Content Flywheel Architecture (April calls → Big Board → rolling tracker → accountability audit forms a self-reinforcing loop. Week N article references Week N-1 calls, builds credibility, drives subscriptions that fund more tooling.)
-- Financial Motivation vs Binary Flag (contract year = yes/no misses the magnitude of financial incentive. A player on a $2M prove-it deal has different motivation than one on a $10M one-year extension. The security gap — how far below market is their current deal — is the real variable.)
-- Two-Path Luck Normalization (wOBA declining while xwOBA stays flat = BABIP luck depleting. xwOBA improving while wOBA lags = contact quality recovering. Both paths produce identical luck score movement but have different recovery timelines. Decompose when writing article analysis.)
+### Lessons from April 26-27 session:
+- Additive vs Multiplicative Penalties (multiplicative ×0.95 is verdict-neutral at standard tier gaps; additive flat penalties cross tier boundaries)
+- Sensitivity Sweep Design (sweep each parameter independently, maximize training accuracy, validate OOS)
+- Career Baseline vs Static Average (comparing player to their own historical norm is more powerful than league average)
+- Data Source Exhaustion Documentation (when all programmatic routes blocked, document exact URL structure and failure mode)
+- Infrastructure-Ready Feature (build the plumbing even when data isn't available — wiring takes minutes later vs hours)
+- Worry Index / Model Silence as Signal (absence of luck signal is itself informative with preseason context)
+- Temporal Validity (April signals require separate validation from in-season rolling — never mix track records)
+- Content Flywheel Architecture (April calls → Big Board → rolling tracker → accountability audit is self-reinforcing)
+- Financial Motivation vs Binary Flag (security gap — how far below market — is the real variable, not contract year yes/no)
+- Two-Path Luck Normalization (wOBA declining while xwOBA stays flat = BABIP luck depleting; different recovery timelines)
 
-### New lessons from April 29 session (Session 9 — add to database):
-- Simulation as Architecture Test (before changing a production constant, simulate all records against the alternative — 7 verdict changes across 389 pitchers told a clearer story than any single-player analysis. Run the whole population; edge cases you'd never think to check appear automatically.)
-- False Signal Archaeology (ERA_all_sc created phantom buy signals for Crochet and Suarez — excluded disaster starts inflated their ERA. The qualifying-start filter existed to prevent exactly this. When a change creates signals, ask: are these real or are they artifacts of what the filter was filtering?)
-- Baseline Coverage as Research Risk (53% match rate on a name join isn't a data quality failure — it reveals the true scope of the underlying population. Pre-arb players aren't in the Spotrac free-agent database because they're not free agents. Understanding WHY data is missing is as important as getting more data.)
-- Preliminary vs Validated (Cohort 3 at 96.4% is a promising signal, not a finding. n=9 in the strongest cohort means a single misclassification swings accuracy 11pp. Never cite preliminary results in the same sentence as validated backtest numbers — they carry different authority levels.)
-- N<10 as a Hard Stop (any cohort/signal combination with n<10 gets an explicit warning flag. This isn't hedging — it's an accuracy threshold. Below 10 observations, coin-flip variance dominates the signal. The flag prevents future-you from citing the number without the caveat.)
+### Lessons from April 29 session (Session 9):
+- Simulation as Architecture Test (simulate all records against the alternative — run the whole population; edge cases appear automatically)
+- False Signal Archaeology (ERA_all_sc created phantom buy signals — excluded disaster starts inflated ERA; ask "are these real or artifacts?")
+- Baseline Coverage as Research Risk (53% match rate reveals true population scope; understanding WHY data is missing as important as getting more)
+- Preliminary vs Validated (Cohort 3 at 96.4% is promising, not a finding; n=9 means one misclassification swings accuracy 11pp)
+- N<10 as a Hard Stop (any cohort/signal combination with n<10 gets explicit warning flag; coin-flip variance dominates below 10 observations)
 
-### New lessons from April 25 session (add to database):
-- Sensitivity Analysis (systematic parameter testing — vary one thing at a time, hold all else constant, measure signal count AND accuracy, use 2025 OOS as the guard rail)
-- Measurement Validity (new backtest returned worse numbers — model was fine, evaluation script was wrong. Contact-only xERA vs all-PA xERA for K-heavy pitchers. Always check the ruler before concluding the thing you're measuring changed.)
-- Build Order Discipline (add variables individually, backtest each, ablation confirm — never add multiple variables at once or you can't attribute the improvement)
-- Signal vs Stats Impact (a new variable can have modest signal impact but large trade tool impact if it changes projected counting stats. Evaluate both dimensions separately.)
-- Trade Tool Architecture (signals inform projected stats, not verdicts directly. The trade verdict is pure value comparison. Signal badge is display-only information.)
-- Recovery Path Thinking (always know your path back before you need it — original threads, CC outputs, validated scripts. No problem is truly catastrophic with good documentation.)
-- Documentation Drift (multiple "handoff" docs diverge fast — one source of truth only, overwrite at end of every session, never create "updated" suffix variants)
-- PA-Weighted Mean Reversion (barrel rate, small samples: PA / (PA + 200) as blend weight. At 95 PA you trust current data only 32% — league average fills the rest. Prevents outlier small-sample projections from dominating trade values.)
-- Data Architecture Audit Before Building (confirmed career_primary_velo is ONE float, not per-pitch. Comparing that to per-pitch curr_velo yields nonsense. Always trace the exact field structure before designing a delta. The gap discovery saved a broken feature from shipping.)
-- Labeling Noise as Signal Filter (Statcast relabeled pitch types 2022-2025 — ST, CH, SL are often reclassifications of existing pitches. 238/251 pitchers "added" new pitch types, but 95% are artifacts. Hold new_pitch_flag=False until per-pitch career baseline confirms label consistency.)
-- Split model architecture, ablation testing, systematic bias detection
-- Data leakage, denominator mismatch, graceful degradation
-- Feature engineering, environment mismatch
-- Verdict-Neutral Layers (a modifier can be correctly built and correctly applied yet still not move verdicts if tier gaps exceed multiplier magnitude — document as informational display, not a scoring change)
-- Stacking vs Threshold (three ×0.90 bearish flags = ×0.729 compound, but 72.9% × borderline buy score still lands in same tier; the tier gap is the binding constraint, not the multiplier size)
+### Lessons from Sessions 11-13 (add to database):
+
+**Projection Model Lessons:**
+- Backtest Population vs Production Population (diagnostic using enriched subset produced gains that evaporated in authoritative backtest — always validate population stats against full qualifying population)
+- Scale Imbalance as Hidden Architecture Flaw (multi-component formula can be single-variable if one component's magnitude dwarfs others — ERA-FIP at 99.3% of pitcher buy score)
+- Complementary Positioning (we don't beat Steamer on projections — we add luck signal layer Steamer can't replicate; differentiate where unique)
+- Playing Time as Projection Foundation (counting stat projections are meaningless without accurate PA/IP — Grisham getting 2.5x too many PA invalidates every downstream calculation)
+- IL Status as Real-Time Signal (static projections need dynamic adjustment — injury status changes daily)
+- Validation Sample Integrity (Backtest B direction accuracy 88.6% looks identical to luck signal OOS because they're measuring the same phenomenon from different angles)
+
+**Content/Community Lessons:**
+- Accountability as Differentiation (most analysts make picks and disappear — publicly tracking week-over-week with honest misses builds compounding trust)
+- CBS vs ESPN Ownership Arbitrage (CBS players are more sophisticated — they find value faster; window between "model identifies" and "CBS corrects" is narrow; publish early in week)
+- Community Validation in Real Time (HonorableJudgeIto validated Wood's swing angle with Baseball Savant — Reddit community fact-checks and extends sound methodology)
+- Hidden Gem Timing Problem (by the time you trust a signal PA-wise, CBS-level players have already found the player; lower PA threshold OR publish Monday morning)
 
 ---
 
@@ -1130,6 +1072,33 @@ Three versions: Full logo, Circle profile picture, Icon/favicon
 Colors: Deep navy (#0d1117) + sky blue (#38bdf8)
 Typography: Georgia serif
 Tagline decision pending: "Luck is noise. We find the signal."
+
+---
+
+## GITHUB STATUS
+
+Repository: DustinSLovell/Signal-Fantasy-Pipeline (private)
+Current commit: April 30, 2026 — Session 14 committed and pushed
+Last push: April 30, 2026
+
+Files added through Session 14:
+- fetch_fantasypros_ownership.py
+- build_hitter_launch_angle.py
+- lineup_context.py
+- build_lineup_context.py
+- projection_backtest_A.py
+- projection_backtest_B.py
+- projection_backtest_C.py
+- model_architecture_explainer.md
+- pitcher_buy_model_testing_rationale.md
+- era_simulation.py (diagnostic only)
+- data/hitter_launch_angle.json
+- data/hitter_batting_slot_2026.json
+- data/team_lineup_context_2026.json
+- data/projections_external/ (Steamer + ZiPS 2025)
+- data/backtest_A_hitters_2025.csv + pitchers
+- data/backtest_B_results_v2.csv
+- data/backtest_C_hitters_2025.csv + pitchers
 
 ---
 
@@ -1154,39 +1123,60 @@ The project evolves rapidly across sessions — always verify before acting.
    python -X utf8 validate_formulas.py
    ```
 
-   **Canary checks (spot-check known fixes carried over):**
+   **Canary checks:**
    ```
    # Ben Rice should be C-eligible (Fix F, April 24)
    python -c "import json; d=json.load(open('data/player_positions.json')); print([p for p in d if 'Rice' in p])"
 
-   # Sanchez should be rank 21+ catchers (Sanchez Test)
-   python -c "import json; d=json.load(open('data/player_values.json')); catchers=[p for p in d.values() if p.get('position')=='C']; catchers.sort(key=lambda x: x.get('rank',999)); print([(p['name'],p['rank']) for p in catchers[:25] if 'Sanchez' in p.get('name','')])"
+   # Sanchez should be rank 21+ catchers (fixed April 30)
+   python -c "import json; d=json.load(open('data/player_values.json')); catchers=[p for p in d['players'] if p.get('pos')=='C']; catchers.sort(key=lambda x: x.get('league1_value',0),reverse=True); [print(i+1,p['name'],p.get('league1_value')) for i,p in enumerate(catchers[:25]) if 'Sanchez' in p.get('name','')]"
 
    # AVG penalty should exist in score_value.py (Fix C, load-bearing)
    grep -n "0.220\|avg_liability\|AVG.*penalty" score_value.py | head -5
+
+   # Playing time module wired
+   grep -n "_blend_pa\|_STEAMER_PA" stat_projections.py | head -5
+
+   # Launch angle columns in output
+   grep -n "la_delta\|la_trending" score_luck.py | head -5
+
+   # xwOBA career regression wired (April 30 fix)
+   grep -n "xwoba_3yr\|XWOBA_PA_STAB" score_value.py | head -5
    ```
 
    Expected results:
    - Ben Rice: appears with C in position list ✅
    - Sanchez: rank 21 or higher among catchers ✅
    - AVG penalty: line found in score_value.py ✅
+   - Playing time: _blend_pa found in stat_projections.py ✅
+   - Launch angle: la_delta found in score_luck.py ✅
+   - xwOBA regression: xwoba_3yr and XWOBA_PA_STAB found ✅
    If ANY fail → stop and report before proceeding
+
 5. Check dashboard is running (localhost:8000)
-6. State assumptions explicitly — if anything in this doc seems inconsistent
-   with what Dustin describes, flag it immediately before proceeding
+6. State assumptions explicitly — if anything in this doc seems inconsistent with what Dustin describes, flag it immediately
+
+### MONDAY WORKFLOW (every week):
+```
+python run_pipeline.py --write
+python fetch_ownership.py
+python weekly_update.py --update
+python weekly_update.py --report --top 15
+```
+Note: weekly_update.py --update has duplicate guard — won't increment if data unchanged
 
 ### SESSION GOAL FORMAT:
-Dustin should state the goal as one of:
 - "Model improvement" → focus on accuracy, signal quality, backtest
 - "Infrastructure" → focus on dashboard, pipeline, tooling
 - "Content" → focus on article writing, social, publishing
 - "Trade tool" → focus on trade analyzer development
 - "Stability" → focus on validation, documentation, cleanup
+- "Projection" → focus on projection engine accuracy
 
 ### SESSION END CHECKLIST (every thread, no exceptions):
 1. Run validate_formulas.py → confirm 37/37 PASS
-2. If ANY model change was made → run ablation test on affected tier
-3. If ANY model change was made → run backtest_pitcher_composite.py and confirm numbers match validated baselines
+2. If ANY model change → run ablation test on affected tier
+3. If ANY model change → run backtest_pitcher_composite.py and confirm numbers match validated baselines
 4. Note every file modified this session
 5. Update PARKING LOT — mark completed items, add new ones
 6. Add any new career lessons to the lessons section
@@ -1222,6 +1212,14 @@ Never create additional handoff/starter/updated variants — one file each, alwa
 - "Why did the Slight Buy pitcher accuracy jump from 62% to 84.4%?"
 - "What is documentation drift and how do we prevent it?"
 - "Why does the backtest need to use production scorer logic, not reimplemented logic?"
+- "Why is the pitcher buy score functionally single-variable and what did we do about it?"
+- "What does Backtest C tell us about our positioning vs Steamer?"
+- "What is the playing time module and why was Grisham the worst failure case?"
+- "Why does the launch angle delta live as a display column rather than a model weight?"
+- "What is the Hidden Gem timing problem and how do we solve it?"
+- "What is the difference between Backtest A, B, and C?"
+- "What are the two rulers and why are they not interchangeable?"
+- "What is the Two-Track In-Season Signal System and why does it matter for publishing?"
 
 ---
 *End of handoff. Update this file at end of every session before closing.*

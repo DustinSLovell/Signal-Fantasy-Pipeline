@@ -40,24 +40,24 @@
       "SI"
     ],
     "curr_usage": {
-      "FC": 0.7826,
-      "SL": 0.1232,
-      "SI": 0.0942
+      "FC": 0.7852,
+      "SL": 0.1208,
+      "SI": 0.094
     },
     "curr_swstr": {
-      "FC": 0.1111,
-      "SL": 0.1765,
-      "SI": 0.1538
+      "FC": 0.1197,
+      "SL": 0.1667,
+      "SI": 0.1429
     },
     "curr_velo": {
-      "FC": 92.7,
+      "FC": 92.6,
       "SL": 85.0,
       "SI": 94.1
     },
-    "curr_swstr_overall": 0.1232,
-    "curr_primary_velo": 92.7,
+    "curr_swstr_overall": 0.1275,
+    "curr_primary_velo": 92.6,
     "curr_fb_velo": 94.1,
-    "total_pitches_2026": 138
+    "total_pitches_2026": 149
   },
   "453286": {
     "curr_pitch_types": [
@@ -199,27 +199,27 @@
       "SI"
     ],
     "curr_usage": {
-      "FS": 0.5812,
-      "FF": 0.2827,
-      "SL": 0.1152,
-      "SI": 0.0209
+      "FS": 0.5755,
+      "FF": 0.2783,
+      "SL": 0.1179,
+      "SI": 0.0283
     },
     "curr_swstr": {
-      "FS": 0.2973,
-      "FF": 0.037,
-      "SL": 0.0909,
-      "SI": 0.0
+      "FS": 0.2705,
+      "FF": 0.0508,
+      "SL": 0.12,
+      "SI": 0.1667
     },
     "curr_velo": {
-      "FS": 80.2,
-      "FF": 93.2,
+      "FS": 80.1,
+      "FF": 93.3,
       "SL": 82.0,
-      "SI": 92.4
+      "SI": 92.5
     },
-    "curr_swstr_overall": 0.1937,
-    "curr_primary_velo": 80.2,
-    "curr_fb_velo": 93.1,
-    "total_pitches_2026": 191
+    "curr_swstr_overall": 0.1887,
+    "curr_primary_velo": 80.1,
+    "curr_fb_velo": 93.2,
+    "total_pitches_2026": 212
   },
   "518876": {
     "curr_pitch_types": [
@@ -232,36 +232,36 @@
       "PO"
     ],
     "curr_usage": {
-      "CH": 0.2842,
-      "FF": 0.2421,
-      "FC": 0.1842,
-      "CU": 0.1368,
-      "SI": 0.1053,
-      "SL": 0.0368,
-      "PO": 0.0105
+      "CH": 0.2887,
+      "FF": 0.2612,
+      "FC": 0.1615,
+      "CU": 0.1306,
+      "SI": 0.0997,
+      "SL": 0.0515,
+      "PO": 0.0069
     },
     "curr_swstr": {
-      "CH": 0.2222,
-      "FF": 0.087,
-      "FC": 0.0571,
-      "CU": 0.0769,
-      "SI": 0.05,
-      "SL": 0.0,
+      "CH": 0.2024,
+      "FF": 0.0921,
+      "FC": 0.0426,
+      "CU": 0.1053,
+      "SI": 0.0345,
+      "SL": 0.1333,
       "PO": 0.0
     },
     "curr_velo": {
-      "CH": 88.1,
-      "FF": 91.6,
-      "FC": 90.5,
-      "CU": 81.8,
-      "SI": 92.1,
-      "SL": 86.2,
+      "CH": 88.2,
+      "FF": 91.9,
+      "FC": 90.6,
+      "CU": 81.9,
+      "SI": 92.5,
+      "SL": 86.1,
       "PO": 90.3
     },
-    "curr_swstr_overall": 0.1105,
-    "curr_primary_velo": 88.1,
-    "curr_fb_velo": 91.8,
-    "total_pitches_2026": 190
+    "curr_swstr_overall": 0.1134,
+    "curr_primary_velo": 88.2,
+    "curr_fb_velo": 92.1,
+    "total_pitches_2026": 291
   },
   "518886": {
     "curr_pitch_types": [
@@ -295,21 +295,21 @@
       "KC"
     ],
     "curr_usage": {
-      "FF": 0.6893,
-      "KC": 0.3107
+      "FF": 0.6776,
+      "KC": 0.3224
     },
     "curr_swstr": {
-      "FF": 0.0984,
-      "KC": 0.0909
+      "FF": 0.0968,
+      "KC": 0.0847
     },
     "curr_velo": {
       "FF": 92.7,
       "KC": 84.5
     },
-    "curr_swstr_overall": 0.096,
+    "curr_swstr_overall": 0.0929,
     "curr_primary_velo": 92.7,
     "curr_fb_velo": 92.7,
-    "total_pitches_2026": 177
+    "total_pitches_2026": 183
   },
   "519242": {
     "curr_pitch_types": [
@@ -449,33 +449,33 @@
       "SL"
     ],
     "curr_usage": {
-      "FS": 0.3802,
-      "FC": 0.2186,
-      "CU": 0.1825,
-      "FF": 0.1255,
-      "SI": 0.0817,
-      "SL": 0.0114
+      "FS": 0.3838,
+      "FC": 0.2293,
+      "CU": 0.1799,
+      "FF": 0.121,
+      "SI": 0.0764,
+      "SL": 0.0096
     },
     "curr_swstr": {
-      "FS": 0.145,
-      "FC": 0.1652,
-      "CU": 0.1875,
-      "FF": 0.0909,
-      "SI": 0.0465,
+      "FS": 0.166,
+      "FC": 0.1736,
+      "CU": 0.1681,
+      "FF": 0.0921,
+      "SI": 0.0417,
       "SL": 0.0
     },
     "curr_velo": {
       "FS": 88.5,
       "FC": 90.6,
       "CU": 76.6,
-      "FF": 94.6,
-      "SI": 93.8,
+      "FF": 94.5,
+      "SI": 93.7,
       "SL": 86.3
     },
-    "curr_swstr_overall": 0.1407,
+    "curr_swstr_overall": 0.1481,
     "curr_primary_velo": 88.5,
-    "curr_fb_velo": 94.3,
-    "total_pitches_2026": 526
+    "curr_fb_velo": 94.2,
+    "total_pitches_2026": 628
   },
   "543243": {
     "curr_pitch_types": [
@@ -901,27 +901,27 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.4218,
-      "ST": 0.2796,
-      "CH": 0.1801,
-      "FF": 0.1185
+      "SI": 0.4206,
+      "ST": 0.2757,
+      "CH": 0.1822,
+      "FF": 0.1215
     },
     "curr_swstr": {
-      "SI": 0.0225,
+      "SI": 0.0222,
       "ST": 0.0847,
       "CH": 0.0,
-      "FF": 0.04
+      "FF": 0.0769
     },
     "curr_velo": {
       "SI": 86.9,
       "ST": 78.2,
-      "CH": 80.8,
-      "FF": 87.3
+      "CH": 80.7,
+      "FF": 87.2
     },
-    "curr_swstr_overall": 0.0379,
+    "curr_swstr_overall": 0.0421,
     "curr_primary_velo": 86.9,
     "curr_fb_velo": 87.0,
-    "total_pitches_2026": 211
+    "total_pitches_2026": 214
   },
   "572143": {
     "curr_pitch_types": [
@@ -978,28 +978,28 @@
   "573009": {
     "curr_pitch_types": [
       "SI",
-      "CH",
-      "CU"
+      "CU",
+      "CH"
     ],
     "curr_usage": {
-      "SI": 0.4904,
-      "CH": 0.2675,
-      "CU": 0.242
+      "SI": 0.4731,
+      "CU": 0.2695,
+      "CH": 0.2575
     },
     "curr_swstr": {
-      "SI": 0.026,
-      "CH": 0.2143,
-      "CU": 0.1316
+      "SI": 0.0253,
+      "CU": 0.1333,
+      "CH": 0.2093
     },
     "curr_velo": {
-      "SI": 88.5,
-      "CH": 80.8,
-      "CU": 80.2
+      "SI": 88.6,
+      "CU": 80.4,
+      "CH": 80.8
     },
-    "curr_swstr_overall": 0.1019,
-    "curr_primary_velo": 88.5,
-    "curr_fb_velo": 88.5,
-    "total_pitches_2026": 157
+    "curr_swstr_overall": 0.1018,
+    "curr_primary_velo": 88.6,
+    "curr_fb_velo": 88.6,
+    "total_pitches_2026": 167
   },
   "573124": {
     "curr_pitch_types": [
@@ -1008,24 +1008,24 @@
       "FC"
     ],
     "curr_usage": {
-      "SI": 0.4176,
-      "ST": 0.3736,
-      "FC": 0.2088
+      "SI": 0.4051,
+      "ST": 0.3897,
+      "FC": 0.2051
     },
     "curr_swstr": {
-      "SI": 0.0132,
-      "ST": 0.1176,
-      "FC": 0.1316
+      "SI": 0.0127,
+      "ST": 0.1053,
+      "FC": 0.125
     },
     "curr_velo": {
-      "SI": 90.7,
-      "ST": 77.6,
-      "FC": 87.8
+      "SI": 90.8,
+      "ST": 77.7,
+      "FC": 87.7
     },
-    "curr_swstr_overall": 0.0769,
-    "curr_primary_velo": 90.7,
-    "curr_fb_velo": 90.7,
-    "total_pitches_2026": 182
+    "curr_swstr_overall": 0.0718,
+    "curr_primary_velo": 90.8,
+    "curr_fb_velo": 90.8,
+    "total_pitches_2026": 195
   },
   "573204": {
     "curr_pitch_types": [
@@ -1067,33 +1067,33 @@
       "SI"
     ],
     "curr_usage": {
-      "FF": 0.3289,
-      "FS": 0.2237,
-      "SL": 0.1842,
-      "FC": 0.1673,
-      "CU": 0.0902,
-      "SI": 0.0056
+      "FF": 0.3298,
+      "FS": 0.2205,
+      "SL": 0.1922,
+      "FC": 0.1658,
+      "CU": 0.0864,
+      "SI": 0.0053
     },
     "curr_swstr": {
-      "FF": 0.0686,
-      "FS": 0.1176,
-      "SL": 0.1633,
-      "FC": 0.1236,
-      "CU": 0.1042,
+      "FF": 0.0642,
+      "FS": 0.112,
+      "SL": 0.1468,
+      "FC": 0.117,
+      "CU": 0.102,
       "SI": 0.0
     },
     "curr_velo": {
-      "FF": 95.6,
-      "FS": 86.8,
-      "SL": 86.0,
+      "FF": 95.5,
+      "FS": 86.7,
+      "SL": 86.1,
       "FC": 90.1,
-      "CU": 78.7,
+      "CU": 78.6,
       "SI": 96.2
     },
-    "curr_swstr_overall": 0.109,
-    "curr_primary_velo": 95.6,
-    "curr_fb_velo": 95.6,
-    "total_pitches_2026": 532
+    "curr_swstr_overall": 0.1023,
+    "curr_primary_velo": 95.5,
+    "curr_fb_velo": 95.5,
+    "total_pitches_2026": 567
   },
   "592094": {
     "curr_pitch_types": [
@@ -1103,27 +1103,27 @@
       "ST"
     ],
     "curr_usage": {
-      "SL": 0.4786,
-      "CH": 0.265,
-      "FF": 0.2137,
-      "ST": 0.0427
+      "SL": 0.4648,
+      "CH": 0.2887,
+      "FF": 0.2042,
+      "ST": 0.0423
     },
     "curr_swstr": {
-      "SL": 0.25,
-      "CH": 0.1613,
+      "SL": 0.2273,
+      "CH": 0.1463,
       "FF": 0.0,
-      "ST": 0.2
+      "ST": 0.1667
     },
     "curr_velo": {
       "SL": 84.2,
-      "CH": 88.0,
-      "FF": 93.5,
-      "ST": 77.3
+      "CH": 87.9,
+      "FF": 93.4,
+      "ST": 77.1
     },
-    "curr_swstr_overall": 0.1709,
+    "curr_swstr_overall": 0.1549,
     "curr_primary_velo": 84.2,
-    "curr_fb_velo": 93.5,
-    "total_pitches_2026": 117
+    "curr_fb_velo": 93.4,
+    "total_pitches_2026": 142
   },
   "592332": {
     "curr_pitch_types": [
@@ -1190,68 +1190,68 @@
       "ST"
     ],
     "curr_usage": {
-      "FF": 0.5143,
-      "SL": 0.2607,
-      "FS": 0.1286,
-      "SI": 0.0893,
-      "ST": 0.0071
+      "FF": 0.5099,
+      "SL": 0.2649,
+      "FS": 0.1225,
+      "SI": 0.0927,
+      "ST": 0.0099
     },
     "curr_swstr": {
-      "FF": 0.1319,
-      "SL": 0.2055,
-      "FS": 0.1389,
-      "SI": 0.16,
+      "FF": 0.1234,
+      "SL": 0.2,
+      "FS": 0.1351,
+      "SI": 0.1786,
       "ST": 0.0
     },
     "curr_velo": {
       "FF": 98.3,
-      "SL": 89.4,
-      "FS": 89.5,
-      "SI": 97.4,
-      "ST": 83.3
+      "SL": 89.3,
+      "FS": 89.6,
+      "SI": 97.3,
+      "ST": 84.0
     },
-    "curr_swstr_overall": 0.1536,
+    "curr_swstr_overall": 0.149,
     "curr_primary_velo": 98.3,
-    "curr_fb_velo": 98.2,
-    "total_pitches_2026": 280
+    "curr_fb_velo": 98.1,
+    "total_pitches_2026": 302
   },
   "592791": {
     "curr_pitch_types": [
       "FF",
       "FC",
-      "CH",
       "ST",
+      "CH",
       "CU",
       "SI"
     ],
     "curr_usage": {
-      "FF": 0.2901,
-      "FC": 0.2462,
-      "CH": 0.1495,
-      "ST": 0.1275,
-      "CU": 0.1253,
-      "SI": 0.0615
+      "FF": 0.2582,
+      "FC": 0.2364,
+      "ST": 0.1564,
+      "CH": 0.14,
+      "CU": 0.1164,
+      "SI": 0.0927
     },
     "curr_swstr": {
-      "FF": 0.053,
-      "FC": 0.1429,
-      "CH": 0.1324,
-      "ST": 0.1897,
-      "CU": 0.1053,
-      "SI": 0.0714
+      "FF": 0.0563,
+      "FC": 0.1231,
+      "ST": 0.1744,
+      "CH": 0.1429,
+      "CU": 0.0938,
+      "SI": 0.0392
     },
     "curr_velo": {
       "FF": 91.5,
       "FC": 85.8,
+      "ST": 79.8,
       "CH": 84.3,
-      "ST": 79.9,
       "CU": 78.6,
-      "SI": 91.6
+      "SI": 91.7
     },
-    "curr_swstr_overall": 0.1121,
+    "curr_swstr_overall": 0.1055,
     "curr_primary_velo": 91.5,
-    "curr_fb_velo": 91.5,
-    "total_pitches_2026": 455
+    "curr_fb_velo": 91.6,
+    "total_pitches_2026": 550
   },
   "592836": {
     "curr_pitch_types": [
@@ -1300,30 +1300,30 @@
       "SI"
     ],
     "curr_usage": {
-      "FF": 0.3677,
-      "CH": 0.3355,
-      "FC": 0.1398,
-      "CU": 0.1054,
-      "SI": 0.0516
+      "FF": 0.3732,
+      "CH": 0.317,
+      "FC": 0.1504,
+      "CU": 0.1051,
+      "SI": 0.0543
     },
     "curr_swstr": {
-      "FF": 0.0877,
-      "CH": 0.0769,
-      "FC": 0.0308,
-      "CU": 0.0204,
+      "FF": 0.0825,
+      "CH": 0.0686,
+      "FC": 0.0361,
+      "CU": 0.0172,
       "SI": 0.0
     },
     "curr_velo": {
-      "FF": 91.8,
-      "CH": 85.7,
-      "FC": 88.6,
+      "FF": 91.7,
+      "CH": 85.5,
+      "FC": 88.4,
       "CU": 78.9,
-      "SI": 91.6
+      "SI": 91.2
     },
-    "curr_swstr_overall": 0.0645,
-    "curr_primary_velo": 91.8,
-    "curr_fb_velo": 91.8,
-    "total_pitches_2026": 465
+    "curr_swstr_overall": 0.0598,
+    "curr_primary_velo": 91.7,
+    "curr_fb_velo": 91.6,
+    "total_pitches_2026": 552
   },
   "593974": {
     "curr_pitch_types": [
@@ -1368,15 +1368,15 @@
     ],
     "curr_usage": {
       "ST": 0.4195,
-      "SI": 0.3463,
+      "SI": 0.3415,
       "CH": 0.161,
-      "FF": 0.0732
+      "FF": 0.078
     },
     "curr_swstr": {
       "ST": 0.1163,
-      "SI": 0.0282,
+      "SI": 0.0286,
       "CH": 0.0909,
-      "FF": 0.0667
+      "FF": 0.0625
     },
     "curr_velo": {
       "ST": 80.4,
@@ -1640,6 +1640,32 @@
     "curr_primary_velo": 91.8,
     "curr_fb_velo": 91.6,
     "total_pitches_2026": 439
+  },
+  "605218": {
+    "curr_pitch_types": [
+      "FF",
+      "CU",
+      "CH"
+    ],
+    "curr_usage": {
+      "FF": 0.5354,
+      "CU": 0.303,
+      "CH": 0.1616
+    },
+    "curr_swstr": {
+      "FF": 0.1887,
+      "CU": 0.1333,
+      "CH": 0.25
+    },
+    "curr_velo": {
+      "FF": 92.5,
+      "CU": 79.8,
+      "CH": 88.7
+    },
+    "curr_swstr_overall": 0.1818,
+    "curr_primary_velo": 92.5,
+    "curr_fb_velo": 92.5,
+    "total_pitches_2026": 99
   },
   "605280": {
     "curr_pitch_types": [
@@ -1994,30 +2020,30 @@
       "CU"
     ],
     "curr_usage": {
-      "FF": 0.3156,
-      "SI": 0.2316,
-      "KC": 0.209,
-      "SL": 0.168,
-      "CU": 0.0758
+      "FF": 0.2931,
+      "SI": 0.2517,
+      "KC": 0.2138,
+      "SL": 0.1552,
+      "CU": 0.0862
     },
     "curr_swstr": {
-      "FF": 0.0584,
-      "SI": 0.0708,
-      "KC": 0.2059,
-      "SL": 0.1951,
-      "CU": 0.1622
+      "FF": 0.0529,
+      "SI": 0.0753,
+      "KC": 0.1774,
+      "SL": 0.2111,
+      "CU": 0.24
     },
     "curr_velo": {
       "FF": 95.3,
-      "SI": 95.8,
-      "KC": 80.5,
-      "SL": 89.4,
-      "CU": 84.0
+      "SI": 95.7,
+      "KC": 80.2,
+      "SL": 89.3,
+      "CU": 83.9
     },
-    "curr_swstr_overall": 0.123,
+    "curr_swstr_overall": 0.1259,
     "curr_primary_velo": 95.3,
     "curr_fb_velo": 95.5,
-    "total_pitches_2026": 488
+    "total_pitches_2026": 580
   },
   "607200": {
     "curr_pitch_types": [
@@ -2028,30 +2054,30 @@
       "FF"
     ],
     "curr_usage": {
-      "ST": 0.3717,
-      "FC": 0.247,
-      "SI": 0.2374,
-      "CH": 0.1391,
-      "FF": 0.0048
+      "ST": 0.3827,
+      "FC": 0.25,
+      "SI": 0.2385,
+      "CH": 0.1192,
+      "FF": 0.0096
     },
     "curr_swstr": {
-      "ST": 0.1226,
-      "FC": 0.068,
-      "SI": 0.0101,
-      "CH": 0.1034,
+      "ST": 0.1256,
+      "FC": 0.0615,
+      "SI": 0.0161,
+      "CH": 0.0968,
       "FF": 0.0
     },
     "curr_velo": {
-      "ST": 81.6,
-      "FC": 89.8,
-      "SI": 93.8,
-      "CH": 88.6,
-      "FF": 93.1
+      "ST": 81.5,
+      "FC": 89.7,
+      "SI": 93.7,
+      "CH": 88.7,
+      "FF": 92.9
     },
-    "curr_swstr_overall": 0.0791,
-    "curr_primary_velo": 81.6,
-    "curr_fb_velo": 93.8,
-    "total_pitches_2026": 417
+    "curr_swstr_overall": 0.0788,
+    "curr_primary_velo": 81.5,
+    "curr_fb_velo": 93.7,
+    "total_pitches_2026": 520
   },
   "607259": {
     "curr_pitch_types": [
@@ -2099,27 +2125,27 @@
       "CH"
     ],
     "curr_usage": {
-      "SL": 0.4483,
-      "FF": 0.3153,
-      "SI": 0.2266,
-      "CH": 0.0099
+      "SL": 0.4578,
+      "FF": 0.3156,
+      "SI": 0.2133,
+      "CH": 0.0133
     },
     "curr_swstr": {
-      "SL": 0.1758,
-      "FF": 0.0625,
-      "SI": 0.0435,
+      "SL": 0.1748,
+      "FF": 0.0704,
+      "SI": 0.0417,
       "CH": 0.0
     },
     "curr_velo": {
-      "SL": 83.2,
-      "FF": 93.7,
+      "SL": 83.3,
+      "FF": 93.8,
       "SI": 92.7,
-      "CH": 84.7
+      "CH": 85.8
     },
-    "curr_swstr_overall": 0.1084,
-    "curr_primary_velo": 83.2,
-    "curr_fb_velo": 93.3,
-    "total_pitches_2026": 203
+    "curr_swstr_overall": 0.1111,
+    "curr_primary_velo": 83.3,
+    "curr_fb_velo": 93.4,
+    "total_pitches_2026": 225
   },
   "607481": {
     "curr_pitch_types": [
@@ -2295,17 +2321,17 @@
       "SI"
     ],
     "curr_usage": {
-      "FF": 0.4516,
-      "SL": 0.2452,
-      "ST": 0.1935,
-      "CU": 0.0774,
-      "FS": 0.0258,
-      "SI": 0.0065
+      "FF": 0.4561,
+      "SL": 0.2398,
+      "ST": 0.2047,
+      "CU": 0.0702,
+      "FS": 0.0234,
+      "SI": 0.0058
     },
     "curr_swstr": {
-      "FF": 0.0286,
-      "SL": 0.1053,
-      "ST": 0.1667,
+      "FF": 0.0256,
+      "SL": 0.0976,
+      "ST": 0.2,
       "CU": 0.0833,
       "FS": 0.25,
       "SI": 0.0
@@ -2318,10 +2344,10 @@
       "FS": 88.5,
       "SI": 94.5
     },
-    "curr_swstr_overall": 0.0839,
+    "curr_swstr_overall": 0.0877,
     "curr_primary_velo": 94.1,
     "curr_fb_velo": 94.1,
-    "total_pitches_2026": 155
+    "total_pitches_2026": 171
   },
   "608372": {
     "curr_pitch_types": [
@@ -2330,40 +2356,40 @@
       "SL",
       "FC",
       "SI",
-      "CU",
-      "ST"
+      "ST",
+      "CU"
     ],
     "curr_usage": {
-      "FF": 0.2766,
-      "FS": 0.2293,
-      "SL": 0.1442,
-      "FC": 0.1324,
-      "SI": 0.1182,
-      "CU": 0.0496,
-      "ST": 0.0496
+      "FF": 0.2549,
+      "FS": 0.2296,
+      "SL": 0.1401,
+      "FC": 0.1362,
+      "SI": 0.1265,
+      "ST": 0.07,
+      "CU": 0.0428
     },
     "curr_swstr": {
-      "FF": 0.0769,
-      "FS": 0.1546,
-      "SL": 0.0984,
-      "FC": 0.1607,
+      "FF": 0.0763,
+      "FS": 0.1525,
+      "SL": 0.0833,
+      "FC": 0.1286,
       "SI": 0.0,
-      "CU": 0.0476,
-      "ST": 0.0
+      "ST": 0.0278,
+      "CU": 0.0455
     },
     "curr_velo": {
       "FF": 92.3,
       "FS": 87.2,
       "SL": 84.8,
-      "FC": 88.9,
+      "FC": 88.8,
       "SI": 92.1,
-      "CU": 79.7,
-      "ST": 83.6
+      "ST": 83.7,
+      "CU": 79.7
     },
-    "curr_swstr_overall": 0.0946,
+    "curr_swstr_overall": 0.0875,
     "curr_primary_velo": 92.3,
     "curr_fb_velo": 92.2,
-    "total_pitches_2026": 423
+    "total_pitches_2026": 514
   },
   "608379": {
     "curr_pitch_types": [
@@ -2375,33 +2401,33 @@
       "SL"
     ],
     "curr_usage": {
-      "FF": 0.2829,
-      "CH": 0.2412,
-      "FC": 0.1601,
-      "SI": 0.1469,
-      "CU": 0.0943,
-      "SL": 0.0746
+      "FF": 0.2727,
+      "CH": 0.2442,
+      "FC": 0.1604,
+      "SI": 0.148,
+      "CU": 0.0891,
+      "SL": 0.0856
     },
     "curr_swstr": {
-      "FF": 0.0853,
-      "CH": 0.1364,
-      "FC": 0.0959,
-      "SI": 0.0896,
-      "CU": 0.1163,
-      "SL": 0.1765
+      "FF": 0.085,
+      "CH": 0.1387,
+      "FC": 0.1,
+      "SI": 0.0964,
+      "CU": 0.12,
+      "SL": 0.1458
     },
     "curr_velo": {
-      "FF": 93.0,
-      "CH": 80.1,
-      "FC": 88.9,
-      "SI": 93.2,
-      "CU": 75.7,
-      "SL": 85.2
+      "FF": 92.8,
+      "CH": 80.2,
+      "FC": 88.7,
+      "SI": 92.9,
+      "CU": 75.8,
+      "SL": 85.1
     },
-    "curr_swstr_overall": 0.1096,
-    "curr_primary_velo": 93.0,
-    "curr_fb_velo": 93.1,
-    "total_pitches_2026": 456
+    "curr_swstr_overall": 0.1105,
+    "curr_primary_velo": 92.8,
+    "curr_fb_velo": 92.8,
+    "total_pitches_2026": 561
   },
   "608566": {
     "curr_pitch_types": [
@@ -2790,28 +2816,28 @@
       "FC"
     ],
     "curr_usage": {
-      "FF": 0.3659,
+      "FF": 0.3805,
       "SL": 0.2878,
       "CH": 0.1512,
-      "SI": 0.1366,
+      "SI": 0.122,
       "FC": 0.0585
     },
     "curr_swstr": {
-      "FF": 0.08,
+      "FF": 0.0769,
       "SL": 0.1356,
       "CH": 0.0645,
       "SI": 0.0,
       "FC": 0.1667
     },
     "curr_velo": {
-      "FF": 90.9,
+      "FF": 91.0,
       "SL": 80.7,
       "CH": 82.0,
-      "SI": 91.3,
+      "SI": 91.2,
       "FC": 87.1
     },
     "curr_swstr_overall": 0.0878,
-    "curr_primary_velo": 90.9,
+    "curr_primary_velo": 91.0,
     "curr_fb_velo": 91.0,
     "total_pitches_2026": 205
   },
@@ -2892,30 +2918,30 @@
       "CU"
     ],
     "curr_usage": {
-      "FF": 0.3574,
-      "ST": 0.2979,
-      "SI": 0.1872,
-      "FS": 0.1149,
-      "CU": 0.0426
+      "FF": 0.3586,
+      "ST": 0.2908,
+      "SI": 0.1873,
+      "FS": 0.1235,
+      "CU": 0.0398
     },
     "curr_swstr": {
-      "FF": 0.1071,
-      "ST": 0.0857,
-      "SI": 0.0455,
-      "FS": 0.2593,
+      "FF": 0.1,
+      "ST": 0.0822,
+      "SI": 0.0426,
+      "FS": 0.2581,
       "CU": 0.2
     },
     "curr_velo": {
       "FF": 97.1,
       "ST": 84.9,
-      "SI": 97.8,
+      "SI": 97.7,
       "FS": 85.8,
       "CU": 83.4
     },
-    "curr_swstr_overall": 0.1106,
+    "curr_swstr_overall": 0.1076,
     "curr_primary_velo": 97.1,
     "curr_fb_velo": 97.3,
-    "total_pitches_2026": 235
+    "total_pitches_2026": 251
   },
   "622608": {
     "curr_pitch_types": [
@@ -2958,40 +2984,40 @@
   "622663": {
     "curr_pitch_types": [
       "ST",
-      "FC",
       "SI",
+      "FC",
       "FF",
       "CH",
       "SL"
     ],
     "curr_usage": {
-      "ST": 0.2433,
-      "FC": 0.2327,
-      "SI": 0.2256,
-      "FF": 0.1865,
-      "CH": 0.0622,
-      "SL": 0.0497
+      "ST": 0.2462,
+      "SI": 0.2207,
+      "FC": 0.2162,
+      "FF": 0.2012,
+      "CH": 0.0676,
+      "SL": 0.048
     },
     "curr_swstr": {
-      "ST": 0.0876,
-      "FC": 0.0687,
-      "SI": 0.0709,
-      "FF": 0.0952,
-      "CH": 0.1143,
-      "SL": 0.2143
+      "ST": 0.0854,
+      "SI": 0.068,
+      "FC": 0.0694,
+      "FF": 0.1194,
+      "CH": 0.1111,
+      "SL": 0.1875
     },
     "curr_velo": {
       "ST": 84.5,
-      "FC": 94.3,
       "SI": 96.4,
+      "FC": 94.3,
       "FF": 96.8,
-      "CH": 87.7,
-      "SL": 86.7
+      "CH": 86.7,
+      "SL": 86.6
     },
-    "curr_swstr_overall": 0.0888,
+    "curr_swstr_overall": 0.0916,
     "curr_primary_velo": 84.5,
     "curr_fb_velo": 96.6,
-    "total_pitches_2026": 563
+    "total_pitches_2026": 666
   },
   "623149": {
     "curr_pitch_types": [
@@ -2999,21 +3025,21 @@
       "ST"
     ],
     "curr_usage": {
-      "FF": 0.5772,
-      "ST": 0.4228
+      "FF": 0.5802,
+      "ST": 0.4198
     },
     "curr_swstr": {
-      "FF": 0.1047,
-      "ST": 0.127
+      "FF": 0.1064,
+      "ST": 0.1324
     },
     "curr_velo": {
       "FF": 91.4,
       "ST": 82.9
     },
-    "curr_swstr_overall": 0.1141,
+    "curr_swstr_overall": 0.1173,
     "curr_primary_velo": 91.4,
     "curr_fb_velo": 91.4,
-    "total_pitches_2026": 149
+    "total_pitches_2026": 162
   },
   "623211": {
     "curr_pitch_types": [
@@ -3118,30 +3144,30 @@
       "CH"
     ],
     "curr_usage": {
-      "SL": 0.2932,
-      "ST": 0.2932,
-      "SI": 0.2356,
-      "FF": 0.1047,
-      "CH": 0.0733
+      "SL": 0.3041,
+      "ST": 0.2903,
+      "SI": 0.235,
+      "FF": 0.1014,
+      "CH": 0.0691
     },
     "curr_swstr": {
-      "SL": 0.1786,
-      "ST": 0.1429,
+      "SL": 0.2121,
+      "ST": 0.1746,
       "SI": 0.0,
-      "FF": 0.1,
-      "CH": 0.0714
+      "FF": 0.1364,
+      "CH": 0.1333
     },
     "curr_velo": {
-      "SL": 86.0,
-      "ST": 78.1,
-      "SI": 91.2,
-      "FF": 92.5,
-      "CH": 85.5
+      "SL": 85.9,
+      "ST": 78.0,
+      "SI": 91.1,
+      "FF": 92.4,
+      "CH": 85.4
     },
-    "curr_swstr_overall": 0.1099,
-    "curr_primary_velo": 86.0,
-    "curr_fb_velo": 91.6,
-    "total_pitches_2026": 191
+    "curr_swstr_overall": 0.1382,
+    "curr_primary_velo": 85.9,
+    "curr_fb_velo": 91.5,
+    "total_pitches_2026": 217
   },
   "624133": {
     "curr_pitch_types": [
@@ -3189,27 +3215,27 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.5282,
-      "SL": 0.3128,
-      "CU": 0.1077,
-      "CH": 0.0513
+      "FF": 0.5258,
+      "SL": 0.3145,
+      "CU": 0.1106,
+      "CH": 0.0491
     },
     "curr_swstr": {
-      "FF": 0.0534,
-      "SL": 0.1311,
-      "CU": 0.119,
+      "FF": 0.0514,
+      "SL": 0.1328,
+      "CU": 0.1111,
       "CH": 0.05
     },
     "curr_velo": {
-      "FF": 93.9,
-      "SL": 83.1,
-      "CU": 74.0,
+      "FF": 93.8,
+      "SL": 83.2,
+      "CU": 73.9,
       "CH": 84.1
     },
-    "curr_swstr_overall": 0.0846,
-    "curr_primary_velo": 93.9,
-    "curr_fb_velo": 93.9,
-    "total_pitches_2026": 390
+    "curr_swstr_overall": 0.0835,
+    "curr_primary_velo": 93.8,
+    "curr_fb_velo": 93.8,
+    "total_pitches_2026": 407
   },
   "628452": {
     "curr_pitch_types": [
@@ -3248,24 +3274,24 @@
       "SL"
     ],
     "curr_usage": {
-      "FF": 0.5619,
-      "FS": 0.2952,
-      "SL": 0.1429
+      "FF": 0.5565,
+      "FS": 0.3138,
+      "SL": 0.1297
     },
     "curr_swstr": {
-      "FF": 0.0508,
-      "FS": 0.0806,
-      "SL": 0.3
+      "FF": 0.0526,
+      "FS": 0.1067,
+      "SL": 0.2903
     },
     "curr_velo": {
-      "FF": 96.2,
+      "FF": 96.3,
       "FS": 87.9,
       "SL": 86.1
     },
-    "curr_swstr_overall": 0.0952,
-    "curr_primary_velo": 96.2,
-    "curr_fb_velo": 96.2,
-    "total_pitches_2026": 210
+    "curr_swstr_overall": 0.1004,
+    "curr_primary_velo": 96.3,
+    "curr_fb_velo": 96.3,
+    "total_pitches_2026": 239
   },
   "640451": {
     "curr_pitch_types": [
@@ -3306,30 +3332,30 @@
       "FC"
     ],
     "curr_usage": {
-      "FF": 0.4323,
-      "ST": 0.3545,
-      "SI": 0.1268,
-      "CH": 0.072,
-      "FC": 0.0144
+      "FF": 0.419,
+      "ST": 0.35,
+      "SI": 0.1286,
+      "CH": 0.0667,
+      "FC": 0.0357
     },
     "curr_swstr": {
-      "FF": 0.0867,
-      "ST": 0.1382,
+      "FF": 0.0852,
+      "ST": 0.1293,
       "SI": 0.0,
-      "CH": 0.12,
-      "FC": 0.0
+      "CH": 0.1071,
+      "FC": 0.2667
     },
     "curr_velo": {
       "FF": 89.7,
-      "ST": 74.5,
+      "ST": 74.4,
       "SI": 88.8,
-      "CH": 82.3,
-      "FC": 84.0
+      "CH": 82.5,
+      "FC": 84.3
     },
-    "curr_swstr_overall": 0.0951,
+    "curr_swstr_overall": 0.0976,
     "curr_primary_velo": 89.7,
     "curr_fb_velo": 89.5,
-    "total_pitches_2026": 347
+    "total_pitches_2026": 420
   },
   "641302": {
     "curr_pitch_types": [
@@ -3592,34 +3618,34 @@
       "FF",
       "CH",
       "FC",
-      "CU",
-      "SL"
+      "SL",
+      "CU"
     ],
     "curr_usage": {
-      "FF": 0.4656,
-      "CH": 0.1908,
-      "FC": 0.1654,
-      "CU": 0.0916,
-      "SL": 0.0865
+      "FF": 0.4599,
+      "CH": 0.18,
+      "FC": 0.167,
+      "SL": 0.0998,
+      "CU": 0.0933
     },
     "curr_swstr": {
-      "FF": 0.071,
-      "CH": 0.0667,
-      "FC": 0.1231,
-      "CU": 0.0,
-      "SL": 0.0294
+      "FF": 0.066,
+      "CH": 0.0602,
+      "FC": 0.1299,
+      "SL": 0.0217,
+      "CU": 0.0233
     },
     "curr_velo": {
-      "FF": 90.3,
-      "CH": 83.1,
+      "FF": 90.4,
+      "CH": 83.2,
       "FC": 86.4,
-      "CU": 74.8,
-      "SL": 82.7
+      "SL": 82.7,
+      "CU": 74.9
     },
-    "curr_swstr_overall": 0.0687,
-    "curr_primary_velo": 90.3,
-    "curr_fb_velo": 90.3,
-    "total_pitches_2026": 393
+    "curr_swstr_overall": 0.0672,
+    "curr_primary_velo": 90.4,
+    "curr_fb_velo": 90.4,
+    "total_pitches_2026": 461
   },
   "641793": {
     "curr_pitch_types": [
@@ -3781,33 +3807,33 @@
   },
   "642100": {
     "curr_pitch_types": [
-      "SI",
       "SL",
+      "SI",
       "FF",
       "CH"
     ],
     "curr_usage": {
-      "SI": 0.3591,
-      "SL": 0.3425,
-      "FF": 0.2928,
-      "CH": 0.0055
+      "SL": 0.3555,
+      "SI": 0.3223,
+      "FF": 0.3175,
+      "CH": 0.0047
     },
     "curr_swstr": {
-      "SI": 0.0769,
-      "SL": 0.1129,
-      "FF": 0.1698,
+      "SL": 0.1067,
+      "SI": 0.0735,
+      "FF": 0.1791,
       "CH": 0.0
     },
     "curr_velo": {
+      "SL": 83.6,
       "SI": 94.2,
-      "SL": 83.8,
       "FF": 94.6,
       "CH": 89.5
     },
-    "curr_swstr_overall": 0.116,
-    "curr_primary_velo": 94.2,
+    "curr_swstr_overall": 0.1185,
+    "curr_primary_velo": 83.6,
     "curr_fb_velo": 94.4,
-    "total_pitches_2026": 181
+    "total_pitches_2026": 211
   },
   "642121": {
     "curr_pitch_types": [
@@ -3939,33 +3965,33 @@
       "FC"
     ],
     "curr_usage": {
-      "CH": 0.3,
-      "SI": 0.3,
-      "CU": 0.2,
-      "FF": 0.15,
-      "FT": 0.035,
-      "FC": 0.015
+      "CH": 0.2952,
+      "SI": 0.2952,
+      "CU": 0.207,
+      "FF": 0.1586,
+      "FT": 0.0308,
+      "FC": 0.0132
     },
     "curr_swstr": {
-      "CH": 0.1667,
-      "SI": 0.1,
-      "CU": 0.15,
-      "FF": 0.0333,
+      "CH": 0.1642,
+      "SI": 0.1194,
+      "CU": 0.1277,
+      "FF": 0.0556,
       "FT": 0.0,
       "FC": 0.0
     },
     "curr_velo": {
-      "CH": 90.1,
-      "SI": 97.4,
-      "CU": 89.0,
-      "FF": 97.4,
+      "CH": 90.0,
+      "SI": 97.3,
+      "CU": 88.6,
+      "FF": 97.3,
       "FT": 97.1,
       "FC": 91.9
     },
-    "curr_swstr_overall": 0.115,
-    "curr_primary_velo": 90.1,
-    "curr_fb_velo": 97.4,
-    "total_pitches_2026": 200
+    "curr_swstr_overall": 0.1189,
+    "curr_primary_velo": 90.0,
+    "curr_fb_velo": 97.3,
+    "total_pitches_2026": 227
   },
   "642547": {
     "curr_pitch_types": [
@@ -4010,30 +4036,30 @@
       "FC"
     ],
     "curr_usage": {
-      "SL": 0.3896,
-      "FF": 0.3117,
-      "CH": 0.1861,
-      "SI": 0.0736,
-      "FC": 0.039
+      "SL": 0.4,
+      "FF": 0.3125,
+      "CH": 0.1792,
+      "SI": 0.0708,
+      "FC": 0.0375
     },
     "curr_swstr": {
-      "SL": 0.1111,
-      "FF": 0.0139,
+      "SL": 0.125,
+      "FF": 0.0133,
       "CH": 0.1395,
       "SI": 0.1765,
       "FC": 0.2222
     },
     "curr_velo": {
-      "SL": 85.4,
-      "FF": 93.8,
+      "SL": 85.3,
+      "FF": 93.7,
       "CH": 87.6,
       "SI": 93.5,
       "FC": 90.5
     },
-    "curr_swstr_overall": 0.0952,
-    "curr_primary_velo": 85.4,
+    "curr_swstr_overall": 0.1,
+    "curr_primary_velo": 85.3,
     "curr_fb_velo": 93.7,
-    "total_pitches_2026": 231
+    "total_pitches_2026": 240
   },
   "642759": {
     "curr_pitch_types": [
@@ -4067,31 +4093,31 @@
       "FC"
     ],
     "curr_usage": {
-      "ST": 0.2936,
+      "ST": 0.3119,
       "FF": 0.211,
       "CH": 0.2018,
       "SI": 0.1835,
-      "CU": 0.0963,
+      "CU": 0.078,
       "FC": 0.0138
     },
     "curr_swstr": {
-      "ST": 0.1406,
+      "ST": 0.1471,
       "FF": 0.087,
       "CH": 0.1591,
       "SI": 0.075,
-      "CU": 0.2381,
+      "CU": 0.2353,
       "FC": 0.3333
     },
     "curr_velo": {
-      "ST": 88.5,
+      "ST": 88.6,
       "FF": 96.6,
       "CH": 92.0,
       "SI": 96.2,
-      "CU": 86.8,
+      "CU": 86.2,
       "FC": 93.2
     },
     "curr_swstr_overall": 0.133,
-    "curr_primary_velo": 88.5,
+    "curr_primary_velo": 88.6,
     "curr_fb_velo": 96.4,
     "total_pitches_2026": 218
   },
@@ -4105,33 +4131,33 @@
       "SL"
     ],
     "curr_usage": {
-      "FS": 0.308,
-      "SI": 0.2411,
-      "FF": 0.1875,
-      "CU": 0.1696,
-      "FC": 0.0625,
-      "SL": 0.0312
+      "FS": 0.3064,
+      "SI": 0.2511,
+      "FF": 0.183,
+      "CU": 0.166,
+      "FC": 0.0638,
+      "SL": 0.0298
     },
     "curr_swstr": {
-      "FS": 0.3043,
-      "SI": 0.0185,
-      "FF": 0.0238,
-      "CU": 0.1316,
-      "FC": 0.1429,
+      "FS": 0.3056,
+      "SI": 0.0339,
+      "FF": 0.0233,
+      "CU": 0.1282,
+      "FC": 0.1333,
       "SL": 0.1429
     },
     "curr_velo": {
       "FS": 84.1,
-      "SI": 92.3,
+      "SI": 92.2,
       "FF": 92.3,
       "CU": 74.1,
       "FC": 90.0,
       "SL": 83.1
     },
-    "curr_swstr_overall": 0.1384,
+    "curr_swstr_overall": 0.1404,
     "curr_primary_velo": 84.1,
-    "curr_fb_velo": 92.3,
-    "total_pitches_2026": 224
+    "curr_fb_velo": 92.2,
+    "total_pitches_2026": 235
   },
   "643511": {
     "curr_pitch_types": [
@@ -4157,41 +4183,41 @@
   },
   "645261": {
     "curr_pitch_types": [
+      "CH",
       "FF",
       "SI",
-      "CH",
       "SL",
       "FC",
       "ST"
     ],
     "curr_usage": {
-      "FF": 0.2332,
-      "SI": 0.2297,
-      "CH": 0.2297,
-      "SL": 0.1608,
-      "FC": 0.0883,
-      "ST": 0.0583
+      "CH": 0.2343,
+      "FF": 0.2239,
+      "SI": 0.2224,
+      "SL": 0.1537,
+      "FC": 0.0955,
+      "ST": 0.0701
     },
     "curr_swstr": {
-      "FF": 0.0833,
-      "SI": 0.0538,
-      "CH": 0.2077,
-      "SL": 0.1319,
-      "FC": 0.08,
-      "ST": 0.1515
+      "CH": 0.1847,
+      "FF": 0.0867,
+      "SI": 0.047,
+      "SL": 0.1456,
+      "FC": 0.0625,
+      "ST": 0.1489
     },
     "curr_velo": {
-      "FF": 97.2,
-      "SI": 97.2,
-      "CH": 90.7,
-      "SL": 84.9,
-      "FC": 90.2,
-      "ST": 84.1
+      "CH": 90.9,
+      "FF": 97.3,
+      "SI": 97.3,
+      "SL": 84.8,
+      "FC": 90.1,
+      "ST": 84.3
     },
-    "curr_swstr_overall": 0.1166,
-    "curr_primary_velo": 97.2,
-    "curr_fb_velo": 97.2,
-    "total_pitches_2026": 566
+    "curr_swstr_overall": 0.1119,
+    "curr_primary_velo": 90.9,
+    "curr_fb_velo": 97.3,
+    "total_pitches_2026": 670
   },
   "646241": {
     "curr_pitch_types": [
@@ -4475,27 +4501,27 @@
       "FC"
     ],
     "curr_usage": {
-      "ST": 0.3554,
-      "SI": 0.3388,
-      "CU": 0.157,
-      "FC": 0.1488
+      "ST": 0.3603,
+      "SI": 0.3235,
+      "CU": 0.1765,
+      "FC": 0.1397
     },
     "curr_swstr": {
-      "ST": 0.1395,
-      "SI": 0.122,
+      "ST": 0.1429,
+      "SI": 0.1136,
       "CU": 0.0,
-      "FC": 0.2222
+      "FC": 0.2105
     },
     "curr_velo": {
       "ST": 84.6,
-      "SI": 95.0,
-      "CU": 81.2,
+      "SI": 94.9,
+      "CU": 81.0,
       "FC": 94.7
     },
-    "curr_swstr_overall": 0.124,
+    "curr_swstr_overall": 0.1176,
     "curr_primary_velo": 84.6,
-    "curr_fb_velo": 95.0,
-    "total_pitches_2026": 121
+    "curr_fb_velo": 94.9,
+    "total_pitches_2026": 136
   },
   "656271": {
     "curr_pitch_types": [
@@ -4640,24 +4666,24 @@
       "SI"
     ],
     "curr_usage": {
-      "SL": 0.5389,
-      "FF": 0.4167,
-      "SI": 0.0444
+      "SL": 0.5249,
+      "FF": 0.4344,
+      "SI": 0.0407
     },
     "curr_swstr": {
-      "SL": 0.2062,
-      "FF": 0.0533,
-      "SI": 0.125
+      "SL": 0.2069,
+      "FF": 0.0625,
+      "SI": 0.1111
     },
     "curr_velo": {
       "SL": 84.8,
       "FF": 94.4,
-      "SI": 92.9
+      "SI": 93.0
     },
-    "curr_swstr_overall": 0.1389,
+    "curr_swstr_overall": 0.1403,
     "curr_primary_velo": 84.8,
     "curr_fb_velo": 94.3,
-    "total_pitches_2026": 180
+    "total_pitches_2026": 221
   },
   "656492": {
     "curr_pitch_types": [
@@ -4681,7 +4707,7 @@
     "curr_swstr": {
       "FC": 0.0982,
       "FF": 0.0233,
-      "ST": 0.1486,
+      "ST": 0.1351,
       "CH": 0.0923,
       "SI": 0.1129,
       "FS": 0.1875,
@@ -4696,7 +4722,7 @@
       "FS": 81.0,
       "CU": 78.1
     },
-    "curr_swstr_overall": 0.1054,
+    "curr_swstr_overall": 0.1035,
     "curr_primary_velo": 88.0,
     "curr_fb_velo": 91.2,
     "total_pitches_2026": 541
@@ -4709,16 +4735,16 @@
       "SI"
     ],
     "curr_usage": {
-      "FF": 0.3386,
+      "FF": 0.3347,
       "FS": 0.3068,
       "SL": 0.2789,
-      "SI": 0.0757
+      "SI": 0.0797
     },
     "curr_swstr": {
-      "FF": 0.1294,
+      "FF": 0.1429,
       "FS": 0.2078,
       "SL": 0.2714,
-      "SI": 0.1579
+      "SI": 0.1
     },
     "curr_velo": {
       "FF": 96.5,
@@ -4814,40 +4840,40 @@
   "656638": {
     "curr_pitch_types": [
       "SL",
-      "CH",
       "SI",
+      "CH",
       "FF",
-      "KC",
-      "FC"
+      "FC",
+      "KC"
     ],
     "curr_usage": {
-      "SL": 0.284,
-      "CH": 0.2218,
-      "SI": 0.2062,
-      "FF": 0.1595,
-      "KC": 0.0661,
-      "FC": 0.0623
+      "SL": 0.2794,
+      "SI": 0.2206,
+      "CH": 0.2132,
+      "FF": 0.1544,
+      "FC": 0.0699,
+      "KC": 0.0625
     },
     "curr_swstr": {
-      "SL": 0.2192,
-      "CH": 0.1754,
-      "SI": 0.0943,
-      "FF": 0.122,
-      "KC": 0.0,
-      "FC": 0.125
+      "SL": 0.2105,
+      "SI": 0.1167,
+      "CH": 0.1724,
+      "FF": 0.119,
+      "FC": 0.1053,
+      "KC": 0.0
     },
     "curr_velo": {
-      "SL": 87.4,
+      "SL": 87.5,
+      "SI": 95.1,
       "CH": 90.1,
-      "SI": 95.2,
-      "FF": 95.5,
-      "KC": 86.0,
-      "FC": 90.9
+      "FF": 95.6,
+      "FC": 90.9,
+      "KC": 86.0
     },
-    "curr_swstr_overall": 0.1479,
-    "curr_primary_velo": 87.4,
+    "curr_swstr_overall": 0.1471,
+    "curr_primary_velo": 87.5,
     "curr_fb_velo": 95.3,
-    "total_pitches_2026": 257
+    "total_pitches_2026": 272
   },
   "656641": {
     "curr_pitch_types": [
@@ -4857,27 +4883,27 @@
       "CU"
     ],
     "curr_usage": {
-      "FF": 0.4934,
-      "SL": 0.2863,
-      "CH": 0.1278,
-      "CU": 0.0925
+      "FF": 0.5197,
+      "SL": 0.2677,
+      "CH": 0.1299,
+      "CU": 0.0827
     },
     "curr_swstr": {
-      "FF": 0.0625,
-      "SL": 0.2,
-      "CH": 0.1379,
+      "FF": 0.0606,
+      "SL": 0.1912,
+      "CH": 0.1212,
       "CU": 0.0476
     },
     "curr_velo": {
-      "FF": 93.4,
+      "FF": 93.7,
       "SL": 85.2,
-      "CH": 83.9,
+      "CH": 84.1,
       "CU": 79.2
     },
-    "curr_swstr_overall": 0.1101,
-    "curr_primary_velo": 93.4,
-    "curr_fb_velo": 93.4,
-    "total_pitches_2026": 227
+    "curr_swstr_overall": 0.1024,
+    "curr_primary_velo": 93.7,
+    "curr_fb_velo": 93.7,
+    "total_pitches_2026": 254
   },
   "656686": {
     "curr_pitch_types": [
@@ -4889,33 +4915,33 @@
       "SL"
     ],
     "curr_usage": {
-      "FF": 0.4727,
-      "CU": 0.2364,
-      "ST": 0.1273,
-      "CH": 0.0909,
-      "SI": 0.0545,
-      "SL": 0.0182
+      "FF": 0.473,
+      "CU": 0.2432,
+      "ST": 0.1216,
+      "CH": 0.0946,
+      "SI": 0.0405,
+      "SL": 0.027
     },
     "curr_swstr": {
-      "FF": 0.1154,
-      "CU": 0.2308,
-      "ST": 0.2857,
-      "CH": 0.2,
+      "FF": 0.1429,
+      "CU": 0.2222,
+      "ST": 0.3333,
+      "CH": 0.1429,
       "SI": 0.0,
       "SL": 0.0
     },
     "curr_velo": {
-      "FF": 94.7,
-      "CU": 85.6,
-      "ST": 87.7,
-      "CH": 88.9,
+      "FF": 95.0,
+      "CU": 86.0,
+      "ST": 87.8,
+      "CH": 90.0,
       "SI": 95.9,
-      "SL": 89.6
+      "SL": 88.9
     },
-    "curr_swstr_overall": 0.1636,
-    "curr_primary_velo": 94.7,
-    "curr_fb_velo": 94.8,
-    "total_pitches_2026": 55
+    "curr_swstr_overall": 0.1757,
+    "curr_primary_velo": 95.0,
+    "curr_fb_velo": 95.1,
+    "total_pitches_2026": 74
   },
   "656730": {
     "curr_pitch_types": [
@@ -5008,34 +5034,34 @@
       "SI",
       "FF",
       "SL",
-      "CH",
-      "CU"
+      "CU",
+      "CH"
     ],
     "curr_usage": {
-      "SI": 0.3537,
-      "FF": 0.2073,
-      "SL": 0.178,
-      "CH": 0.1366,
-      "CU": 0.1244
+      "SI": 0.3388,
+      "FF": 0.2122,
+      "SL": 0.1857,
+      "CU": 0.1347,
+      "CH": 0.1286
     },
     "curr_swstr": {
-      "SI": 0.0345,
-      "FF": 0.1059,
-      "SL": 0.1918,
-      "CH": 0.0893,
-      "CU": 0.1373
+      "SI": 0.0361,
+      "FF": 0.0865,
+      "SL": 0.2198,
+      "CU": 0.1364,
+      "CH": 0.1111
     },
     "curr_velo": {
-      "SI": 91.3,
-      "FF": 91.8,
-      "SL": 85.6,
-      "CH": 85.4,
-      "CU": 80.6
+      "SI": 91.4,
+      "FF": 91.9,
+      "SL": 85.7,
+      "CU": 80.7,
+      "CH": 85.4
     },
-    "curr_swstr_overall": 0.0976,
-    "curr_primary_velo": 91.3,
-    "curr_fb_velo": 91.5,
-    "total_pitches_2026": 410
+    "curr_swstr_overall": 0.1041,
+    "curr_primary_velo": 91.4,
+    "curr_fb_velo": 91.6,
+    "total_pitches_2026": 490
   },
   "656876": {
     "curr_pitch_types": [
@@ -5047,33 +5073,33 @@
       "ST"
     ],
     "curr_usage": {
-      "FC": 0.3525,
-      "FF": 0.27,
-      "SI": 0.205,
-      "CH": 0.1,
-      "CU": 0.0425,
-      "ST": 0.03
+      "FC": 0.3544,
+      "FF": 0.279,
+      "SI": 0.1874,
+      "CH": 0.1039,
+      "CU": 0.0509,
+      "ST": 0.0244
     },
     "curr_swstr": {
-      "FC": 0.1135,
-      "FF": 0.0833,
-      "SI": 0.0244,
-      "CH": 0.275,
-      "CU": 0.0588,
+      "FC": 0.1207,
+      "FF": 0.1095,
+      "SI": 0.0217,
+      "CH": 0.2157,
+      "CU": 0.08,
       "ST": 0.0
     },
     "curr_velo": {
-      "FC": 90.4,
-      "FF": 96.0,
-      "SI": 95.6,
-      "CH": 89.7,
-      "CU": 80.7,
+      "FC": 90.3,
+      "FF": 95.9,
+      "SI": 95.5,
+      "CH": 89.5,
+      "CU": 80.9,
       "ST": 85.0
     },
-    "curr_swstr_overall": 0.0975,
-    "curr_primary_velo": 90.4,
-    "curr_fb_velo": 95.8,
-    "total_pitches_2026": 400
+    "curr_swstr_overall": 0.1039,
+    "curr_primary_velo": 90.3,
+    "curr_fb_velo": 95.7,
+    "total_pitches_2026": 491
   },
   "656945": {
     "curr_pitch_types": [
@@ -5106,14 +5132,14 @@
       "CU"
     ],
     "curr_usage": {
-      "SI": 0.65,
-      "SL": 0.2214,
-      "FF": 0.0929,
-      "CH": 0.0214,
-      "CU": 0.0143
+      "SI": 0.6733,
+      "SL": 0.2067,
+      "FF": 0.0867,
+      "CH": 0.02,
+      "CU": 0.0133
     },
     "curr_swstr": {
-      "SI": 0.0769,
+      "SI": 0.0693,
       "SL": 0.1613,
       "FF": 0.0769,
       "CH": 0.0,
@@ -5126,10 +5152,10 @@
       "CH": 89.4,
       "CU": 78.5
     },
-    "curr_swstr_overall": 0.0929,
+    "curr_swstr_overall": 0.0867,
     "curr_primary_velo": 89.1,
-    "curr_fb_velo": 89.4,
-    "total_pitches_2026": 140
+    "curr_fb_velo": 89.3,
+    "total_pitches_2026": 150
   },
   "657097": {
     "curr_pitch_types": [
@@ -5231,33 +5257,33 @@
       "SL"
     ],
     "curr_usage": {
-      "SI": 0.3714,
-      "CU": 0.2571,
-      "FF": 0.1829,
-      "CH": 0.0971,
-      "FC": 0.0857,
-      "SL": 0.0057
+      "SI": 0.4133,
+      "CU": 0.2551,
+      "FF": 0.1582,
+      "CH": 0.0918,
+      "FC": 0.0765,
+      "SL": 0.0051
     },
     "curr_swstr": {
-      "SI": 0.1385,
-      "CU": 0.1333,
-      "FF": 0.0938,
-      "CH": 0.1176,
+      "SI": 0.1235,
+      "CU": 0.14,
+      "FF": 0.0968,
+      "CH": 0.1111,
       "FC": 0.1333,
       "SL": 0.0
     },
     "curr_velo": {
-      "SI": 89.8,
-      "CU": 78.4,
+      "SI": 89.7,
+      "CU": 78.2,
       "FF": 90.5,
-      "CH": 80.4,
+      "CH": 80.3,
       "FC": 87.1,
       "SL": 81.3
     },
-    "curr_swstr_overall": 0.1257,
-    "curr_primary_velo": 89.8,
-    "curr_fb_velo": 90.0,
-    "total_pitches_2026": 175
+    "curr_swstr_overall": 0.1224,
+    "curr_primary_velo": 89.7,
+    "curr_fb_velo": 89.9,
+    "total_pitches_2026": 196
   },
   "657612": {
     "curr_pitch_types": [
@@ -5266,12 +5292,12 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.8116,
-      "SL": 0.1087,
-      "FF": 0.0797
+      "SI": 0.8085,
+      "SL": 0.1064,
+      "FF": 0.0851
     },
     "curr_swstr": {
-      "SI": 0.0536,
+      "SI": 0.0526,
       "SL": 0.1333,
       "FF": 0.0
     },
@@ -5280,10 +5306,10 @@
       "SL": 76.9,
       "FF": 89.5
     },
-    "curr_swstr_overall": 0.058,
+    "curr_swstr_overall": 0.0567,
     "curr_primary_velo": 88.6,
     "curr_fb_velo": 88.7,
-    "total_pitches_2026": 138
+    "total_pitches_2026": 141
   },
   "657746": {
     "curr_pitch_types": [
@@ -5433,27 +5459,27 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.6303,
-      "ST": 0.3555,
-      "FS": 0.0095,
-      "FF": 0.0047
+      "SI": 0.6199,
+      "ST": 0.362,
+      "FS": 0.0136,
+      "FF": 0.0045
     },
     "curr_swstr": {
-      "SI": 0.0376,
-      "ST": 0.12,
+      "SI": 0.0365,
+      "ST": 0.125,
       "FS": 0.0,
       "FF": 0.0
     },
     "curr_velo": {
       "SI": 94.4,
       "ST": 82.2,
-      "FS": 90.1,
+      "FS": 90.6,
       "FF": 94.7
     },
-    "curr_swstr_overall": 0.0664,
+    "curr_swstr_overall": 0.0679,
     "curr_primary_velo": 94.4,
     "curr_fb_velo": 94.4,
-    "total_pitches_2026": 211
+    "total_pitches_2026": 221
   },
   "660853": {
     "curr_pitch_types": [
@@ -5553,27 +5579,27 @@
       "CH"
     ],
     "curr_usage": {
-      "SL": 0.5619,
-      "FF": 0.3095,
-      "SI": 0.119,
-      "CH": 0.0095
+      "SL": 0.5689,
+      "FF": 0.2978,
+      "SI": 0.1156,
+      "CH": 0.0178
     },
     "curr_swstr": {
-      "SL": 0.2627,
-      "FF": 0.0769,
-      "SI": 0.08,
+      "SL": 0.2812,
+      "FF": 0.0746,
+      "SI": 0.0769,
       "CH": 0.0
     },
     "curr_velo": {
-      "SL": 86.9,
-      "FF": 98.4,
-      "SI": 98.4,
-      "CH": 90.6
+      "SL": 86.8,
+      "FF": 98.3,
+      "SI": 98.3,
+      "CH": 90.5
     },
-    "curr_swstr_overall": 0.181,
-    "curr_primary_velo": 86.9,
-    "curr_fb_velo": 98.4,
-    "total_pitches_2026": 210
+    "curr_swstr_overall": 0.1911,
+    "curr_primary_velo": 86.8,
+    "curr_fb_velo": 98.3,
+    "total_pitches_2026": 225
   },
   "663158": {
     "curr_pitch_types": [
@@ -5614,30 +5640,30 @@
       "SI"
     ],
     "curr_usage": {
-      "KN": 0.3129,
-      "FF": 0.2147,
-      "ST": 0.1963,
-      "FC": 0.184,
-      "SI": 0.092
+      "KN": 0.3333,
+      "FF": 0.1829,
+      "ST": 0.1829,
+      "FC": 0.1789,
+      "SI": 0.122
     },
     "curr_swstr": {
-      "KN": 0.0392,
-      "FF": 0.0857,
-      "ST": 0.0625,
-      "FC": 0.1333,
+      "KN": 0.0732,
+      "FF": 0.0889,
+      "ST": 0.0444,
+      "FC": 0.1136,
       "SI": 0.0
     },
     "curr_velo": {
-      "KN": 80.7,
-      "FF": 91.8,
-      "ST": 81.4,
-      "FC": 88.1,
-      "SI": 91.6
+      "KN": 80.6,
+      "FF": 91.7,
+      "ST": 81.2,
+      "FC": 88.0,
+      "SI": 91.2
     },
-    "curr_swstr_overall": 0.0675,
-    "curr_primary_velo": 80.7,
-    "curr_fb_velo": 91.7,
-    "total_pitches_2026": 163
+    "curr_swstr_overall": 0.0691,
+    "curr_primary_velo": 80.6,
+    "curr_fb_velo": 91.5,
+    "total_pitches_2026": 246
   },
   "663372": {
     "curr_pitch_types": [
@@ -5825,27 +5851,27 @@
       "FC"
     ],
     "curr_usage": {
-      "FF": 0.5216,
-      "ST": 0.2667,
-      "SI": 0.1647,
-      "FC": 0.0471
+      "FF": 0.5455,
+      "ST": 0.2582,
+      "SI": 0.1527,
+      "FC": 0.0436
     },
     "curr_swstr": {
-      "FF": 0.1128,
-      "ST": 0.0882,
+      "FF": 0.1067,
+      "ST": 0.0986,
       "SI": 0.0714,
       "FC": 0.0
     },
     "curr_velo": {
-      "FF": 91.6,
+      "FF": 91.5,
       "ST": 81.0,
       "SI": 89.9,
       "FC": 84.1
     },
-    "curr_swstr_overall": 0.0941,
-    "curr_primary_velo": 91.6,
-    "curr_fb_velo": 91.2,
-    "total_pitches_2026": 255
+    "curr_swstr_overall": 0.0945,
+    "curr_primary_velo": 91.5,
+    "curr_fb_velo": 91.1,
+    "total_pitches_2026": 275
   },
   "663554": {
     "curr_pitch_types": [
@@ -5920,30 +5946,30 @@
       "CU"
     ],
     "curr_usage": {
-      "FF": 0.3724,
-      "CH": 0.364,
-      "FC": 0.205,
-      "ST": 0.0502,
-      "CU": 0.0084
+      "FF": 0.3957,
+      "CH": 0.3669,
+      "FC": 0.1799,
+      "ST": 0.0504,
+      "CU": 0.0072
     },
     "curr_swstr": {
-      "FF": 0.0787,
-      "CH": 0.1954,
-      "FC": 0.1429,
-      "ST": 0.0833,
+      "FF": 0.0818,
+      "CH": 0.1765,
+      "FC": 0.16,
+      "ST": 0.0714,
       "CU": 0.0
     },
     "curr_velo": {
-      "FF": 91.7,
-      "CH": 83.1,
-      "FC": 84.3,
+      "FF": 91.9,
+      "CH": 83.0,
+      "FC": 84.4,
       "ST": 78.6,
       "CU": 79.0
     },
-    "curr_swstr_overall": 0.1339,
-    "curr_primary_velo": 91.7,
-    "curr_fb_velo": 91.7,
-    "total_pitches_2026": 239
+    "curr_swstr_overall": 0.1295,
+    "curr_primary_velo": 91.9,
+    "curr_fb_velo": 91.9,
+    "total_pitches_2026": 278
   },
   "663559": {
     "curr_pitch_types": [
@@ -6557,35 +6583,35 @@
     "curr_pitch_types": [
       "SL",
       "CH",
-      "FC",
       "SI",
+      "FC",
       "FF"
     ],
     "curr_usage": {
-      "SL": 0.3056,
-      "CH": 0.2222,
-      "FC": 0.1889,
-      "SI": 0.1722,
-      "FF": 0.1111
+      "SL": 0.3,
+      "CH": 0.2333,
+      "SI": 0.1857,
+      "FC": 0.181,
+      "FF": 0.1
     },
     "curr_swstr": {
-      "SL": 0.1455,
-      "CH": 0.075,
-      "FC": 0.0588,
+      "SL": 0.1587,
+      "CH": 0.0816,
       "SI": 0.0,
+      "FC": 0.0789,
       "FF": 0.0
     },
     "curr_velo": {
       "SL": 87.8,
       "CH": 89.6,
-      "FC": 93.4,
       "SI": 95.1,
+      "FC": 93.5,
       "FF": 94.8
     },
-    "curr_swstr_overall": 0.0722,
+    "curr_swstr_overall": 0.081,
     "curr_primary_velo": 87.8,
     "curr_fb_velo": 95.0,
-    "total_pitches_2026": 180
+    "total_pitches_2026": 210
   },
   "664208": {
     "curr_pitch_types": [
@@ -7030,30 +7056,30 @@
       "UN"
     ],
     "curr_usage": {
-      "ST": 0.3269,
-      "FF": 0.3038,
-      "SI": 0.2,
-      "SL": 0.1654,
-      "UN": 0.0038
+      "ST": 0.3514,
+      "FF": 0.277,
+      "SI": 0.2095,
+      "SL": 0.1588,
+      "UN": 0.0034
     },
     "curr_swstr": {
-      "ST": 0.2235,
-      "FF": 0.0886,
-      "SI": 0.0385,
-      "SL": 0.093,
+      "ST": 0.2212,
+      "FF": 0.0854,
+      "SI": 0.0484,
+      "SL": 0.1064,
       "UN": 0.0
     },
     "curr_velo": {
       "ST": 84.8,
       "FF": 96.9,
-      "SI": 96.2,
-      "SL": 87.8,
+      "SI": 96.1,
+      "SL": 87.7,
       "UN": 54.8
     },
-    "curr_swstr_overall": 0.1231,
+    "curr_swstr_overall": 0.1284,
     "curr_primary_velo": 84.8,
     "curr_fb_velo": 96.6,
-    "total_pitches_2026": 260
+    "total_pitches_2026": 296
   },
   "666200": {
     "curr_pitch_types": [
@@ -7087,37 +7113,37 @@
   },
   "666277": {
     "curr_pitch_types": [
-      "FF",
       "SL",
+      "FF",
       "CH",
       "SI",
       "ST"
     ],
     "curr_usage": {
-      "FF": 0.2667,
-      "SL": 0.2564,
-      "CH": 0.241,
-      "SI": 0.1282,
-      "ST": 0.1077
+      "SL": 0.2634,
+      "FF": 0.2455,
+      "CH": 0.2411,
+      "SI": 0.1473,
+      "ST": 0.1027
     },
     "curr_swstr": {
-      "FF": 0.0385,
-      "SL": 0.22,
-      "CH": 0.1702,
-      "SI": 0.04,
-      "ST": 0.0476
+      "SL": 0.2203,
+      "FF": 0.0545,
+      "CH": 0.2037,
+      "SI": 0.0606,
+      "ST": 0.0435
     },
     "curr_velo": {
-      "FF": 96.6,
       "SL": 87.3,
-      "CH": 89.8,
-      "SI": 95.8,
+      "FF": 96.7,
+      "CH": 89.9,
+      "SI": 96.1,
       "ST": 85.7
     },
-    "curr_swstr_overall": 0.1179,
-    "curr_primary_velo": 96.6,
-    "curr_fb_velo": 96.3,
-    "total_pitches_2026": 195
+    "curr_swstr_overall": 0.1339,
+    "curr_primary_velo": 87.3,
+    "curr_fb_velo": 96.5,
+    "total_pitches_2026": 224
   },
   "666374": {
     "curr_pitch_types": [
@@ -7127,27 +7153,27 @@
       "FF"
     ],
     "curr_usage": {
-      "SL": 0.5616,
-      "SI": 0.2055,
-      "CH": 0.1507,
-      "FF": 0.0822
+      "SL": 0.5541,
+      "SI": 0.2027,
+      "CH": 0.1554,
+      "FF": 0.0878
     },
     "curr_swstr": {
       "SL": 0.1463,
       "SI": 0.0667,
-      "CH": 0.0909,
+      "CH": 0.087,
       "FF": 0.0
     },
     "curr_velo": {
       "SL": 86.5,
       "SI": 97.2,
-      "CH": 90.8,
-      "FF": 96.6
+      "CH": 90.7,
+      "FF": 96.5
     },
-    "curr_swstr_overall": 0.1096,
+    "curr_swstr_overall": 0.1081,
     "curr_primary_velo": 86.5,
     "curr_fb_velo": 97.0,
-    "total_pitches_2026": 146
+    "total_pitches_2026": 148
   },
   "666661": {
     "curr_pitch_types": [
@@ -7158,16 +7184,16 @@
       "CU"
     ],
     "curr_usage": {
-      "FF": 0.5321,
-      "CH": 0.2064,
-      "SL": 0.156,
-      "SI": 0.1009,
-      "CU": 0.0046
+      "FF": 0.5302,
+      "CH": 0.2198,
+      "SL": 0.1509,
+      "SI": 0.0948,
+      "CU": 0.0043
     },
     "curr_swstr": {
-      "FF": 0.1552,
-      "CH": 0.1556,
-      "SL": 0.1471,
+      "FF": 0.1545,
+      "CH": 0.1961,
+      "SL": 0.1429,
       "SI": 0.1364,
       "CU": 0.0
     },
@@ -7178,10 +7204,10 @@
       "SI": 98.7,
       "CU": 81.6
     },
-    "curr_swstr_overall": 0.1514,
+    "curr_swstr_overall": 0.1595,
     "curr_primary_velo": 98.8,
     "curr_fb_velo": 98.8,
-    "total_pitches_2026": 218
+    "total_pitches_2026": 232
   },
   "666808": {
     "curr_pitch_types": [
@@ -7246,24 +7272,24 @@
       "SI"
     ],
     "curr_usage": {
-      "CU": 0.4011,
-      "SL": 0.3102,
-      "SI": 0.2888
+      "CU": 0.3866,
+      "SL": 0.3196,
+      "SI": 0.2938
     },
     "curr_swstr": {
       "CU": 0.1333,
-      "SL": 0.1207,
+      "SL": 0.1129,
       "SI": 0.0
     },
     "curr_velo": {
       "CU": 84.6,
-      "SL": 88.6,
-      "SI": 94.7
+      "SL": 88.5,
+      "SI": 94.6
     },
-    "curr_swstr_overall": 0.0909,
+    "curr_swstr_overall": 0.0876,
     "curr_primary_velo": 84.6,
-    "curr_fb_velo": 94.7,
-    "total_pitches_2026": 187
+    "curr_fb_velo": 94.6,
+    "total_pitches_2026": 194
   },
   "667463": {
     "curr_pitch_types": [
@@ -7275,33 +7301,33 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.2893,
-      "SL": 0.2264,
-      "CH": 0.2201,
-      "ST": 0.1384,
-      "CU": 0.0755,
-      "FF": 0.0503
+      "SI": 0.2874,
+      "SL": 0.2471,
+      "CH": 0.2184,
+      "ST": 0.1264,
+      "CU": 0.0747,
+      "FF": 0.046
     },
     "curr_swstr": {
-      "SI": 0.1522,
-      "SL": 0.0833,
-      "CH": 0.1714,
+      "SI": 0.14,
+      "SL": 0.0698,
+      "CH": 0.1842,
       "ST": 0.0455,
       "CU": 0.0,
       "FF": 0.0
     },
     "curr_velo": {
-      "SI": 91.0,
-      "SL": 82.2,
+      "SI": 91.1,
+      "SL": 82.3,
       "CH": 83.1,
-      "ST": 81.5,
-      "CU": 79.1,
+      "ST": 81.4,
+      "CU": 79.2,
       "FF": 90.7
     },
-    "curr_swstr_overall": 0.1069,
-    "curr_primary_velo": 91.0,
+    "curr_swstr_overall": 0.1034,
+    "curr_primary_velo": 91.1,
     "curr_fb_velo": 91.0,
-    "total_pitches_2026": 159
+    "total_pitches_2026": 174
   },
   "667755": {
     "curr_pitch_types": [
@@ -7471,37 +7497,37 @@
   },
   "668909": {
     "curr_pitch_types": [
-      "ST",
       "FF",
+      "ST",
       "CU",
-      "FC",
-      "SI"
+      "SI",
+      "FC"
     ],
     "curr_usage": {
-      "ST": 0.2814,
-      "FF": 0.2779,
-      "CU": 0.1929,
-      "FC": 0.1239,
-      "SI": 0.1239
+      "FF": 0.2909,
+      "ST": 0.2727,
+      "CU": 0.1939,
+      "SI": 0.1288,
+      "FC": 0.1136
     },
     "curr_swstr": {
-      "ST": 0.2013,
-      "FF": 0.1274,
-      "CU": 0.1193,
-      "FC": 0.1,
-      "SI": 0.0286
+      "FF": 0.1302,
+      "ST": 0.2056,
+      "CU": 0.1172,
+      "SI": 0.0353,
+      "FC": 0.0933
     },
     "curr_velo": {
-      "ST": 86.7,
-      "FF": 96.7,
-      "CU": 83.0,
-      "FC": 92.1,
-      "SI": 95.8
+      "FF": 96.5,
+      "ST": 86.6,
+      "CU": 82.8,
+      "SI": 95.8,
+      "FC": 92.0
     },
-    "curr_swstr_overall": 0.131,
-    "curr_primary_velo": 86.7,
-    "curr_fb_velo": 96.4,
-    "total_pitches_2026": 565
+    "curr_swstr_overall": 0.1318,
+    "curr_primary_velo": 96.5,
+    "curr_fb_velo": 96.3,
+    "total_pitches_2026": 660
   },
   "668933": {
     "curr_pitch_types": [
@@ -7533,27 +7559,27 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.417,
-      "ST": 0.3767,
-      "CH": 0.1704,
-      "FF": 0.0359
+      "SI": 0.425,
+      "ST": 0.3583,
+      "CH": 0.1833,
+      "FF": 0.0333
     },
     "curr_swstr": {
-      "SI": 0.0323,
-      "ST": 0.0357,
-      "CH": 0.0526,
+      "SI": 0.0392,
+      "ST": 0.0465,
+      "CH": 0.0682,
       "FF": 0.125
     },
     "curr_velo": {
       "SI": 93.8,
-      "ST": 82.6,
-      "CH": 86.8,
+      "ST": 82.7,
+      "CH": 86.9,
       "FF": 94.3
     },
-    "curr_swstr_overall": 0.0404,
+    "curr_swstr_overall": 0.05,
     "curr_primary_velo": 93.8,
     "curr_fb_velo": 93.8,
-    "total_pitches_2026": 223
+    "total_pitches_2026": 240
   },
   "668964": {
     "curr_pitch_types": [
@@ -7593,16 +7619,16 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.4251,
-      "ST": 0.2512,
-      "SI": 0.2222,
-      "CH": 0.1014
+      "FF": 0.4222,
+      "ST": 0.24,
+      "SI": 0.2133,
+      "CH": 0.1244
     },
     "curr_swstr": {
-      "FF": 0.0568,
-      "ST": 0.1538,
-      "SI": 0.0435,
-      "CH": 0.0476
+      "FF": 0.0526,
+      "ST": 0.1481,
+      "SI": 0.0417,
+      "CH": 0.0714
     },
     "curr_velo": {
       "FF": 93.5,
@@ -7610,10 +7636,10 @@
       "SI": 93.0,
       "CH": 87.7
     },
-    "curr_swstr_overall": 0.0773,
+    "curr_swstr_overall": 0.0756,
     "curr_primary_velo": 93.5,
     "curr_fb_velo": 93.3,
-    "total_pitches_2026": 207
+    "total_pitches_2026": 225
   },
   "669020": {
     "curr_pitch_types": [
@@ -7699,69 +7725,69 @@
       "CH"
     ],
     "curr_usage": {
-      "SI": 0.4213,
+      "SI": 0.4259,
       "SL": 0.3704,
-      "FF": 0.1065,
+      "FF": 0.1019,
       "CH": 0.1019
     },
     "curr_swstr": {
-      "SI": 0.0659,
+      "SI": 0.0652,
       "SL": 0.2125,
-      "FF": 0.0435,
+      "FF": 0.0455,
       "CH": 0.1364
     },
     "curr_velo": {
       "SI": 96.9,
       "SL": 86.0,
-      "FF": 97.2,
+      "FF": 97.1,
       "CH": 87.9
     },
     "curr_swstr_overall": 0.125,
     "curr_primary_velo": 96.9,
-    "curr_fb_velo": 97.0,
+    "curr_fb_velo": 96.9,
     "total_pitches_2026": 216
   },
   "669084": {
     "curr_pitch_types": [
       "SI",
       "CH",
-      "ST",
       "CU",
+      "ST",
       "FF",
-      "FC",
-      "SL"
+      "SL",
+      "FC"
     ],
     "curr_usage": {
-      "SI": 0.3784,
-      "CH": 0.2252,
-      "ST": 0.1532,
-      "CU": 0.1486,
-      "FF": 0.0766,
-      "FC": 0.0135,
-      "SL": 0.0045
+      "SI": 0.3864,
+      "CH": 0.2311,
+      "CU": 0.1402,
+      "ST": 0.1402,
+      "FF": 0.0758,
+      "SL": 0.0152,
+      "FC": 0.0114
     },
     "curr_swstr": {
-      "SI": 0.0238,
-      "CH": 0.14,
-      "ST": 0.2941,
-      "CU": 0.0,
-      "FF": 0.1765,
-      "FC": 0.0,
-      "SL": 1.0
+      "SI": 0.0196,
+      "CH": 0.1475,
+      "CU": 0.027,
+      "ST": 0.2973,
+      "FF": 0.15,
+      "SL": 0.5,
+      "FC": 0.0
     },
     "curr_velo": {
-      "SI": 94.0,
-      "CH": 85.0,
-      "ST": 83.7,
+      "SI": 94.2,
+      "CH": 85.2,
       "CU": 80.0,
-      "FF": 93.5,
-      "FC": 90.7,
-      "SL": 86.1
+      "ST": 83.8,
+      "FF": 93.6,
+      "SL": 86.0,
+      "FC": 90.7
     },
-    "curr_swstr_overall": 0.1036,
-    "curr_primary_velo": 94.0,
-    "curr_fb_velo": 93.9,
-    "total_pitches_2026": 222
+    "curr_swstr_overall": 0.1061,
+    "curr_primary_velo": 94.2,
+    "curr_fb_velo": 94.1,
+    "total_pitches_2026": 264
   },
   "669093": {
     "curr_pitch_types": [
@@ -7834,13 +7860,13 @@
       "SL"
     ],
     "curr_usage": {
-      "FF": 0.7241,
-      "CH": 0.2586,
-      "SL": 0.0172
+      "FF": 0.7302,
+      "CH": 0.254,
+      "SL": 0.0159
     },
     "curr_swstr": {
-      "FF": 0.2143,
-      "CH": 0.1333,
+      "FF": 0.2174,
+      "CH": 0.125,
       "SL": 0.0
     },
     "curr_velo": {
@@ -7848,10 +7874,10 @@
       "CH": 88.5,
       "SL": 86.0
     },
-    "curr_swstr_overall": 0.1897,
+    "curr_swstr_overall": 0.1905,
     "curr_primary_velo": 96.1,
     "curr_fb_velo": 96.1,
-    "total_pitches_2026": 58
+    "total_pitches_2026": 63
   },
   "669194": {
     "curr_pitch_types": [
@@ -7862,21 +7888,21 @@
     ],
     "curr_usage": {
       "FF": 0.6228,
-      "SL": 0.1703,
+      "SL": 0.1789,
       "CU": 0.1121,
-      "FC": 0.0948
+      "FC": 0.0862
     },
     "curr_swstr": {
       "FF": 0.1073,
-      "SL": 0.1519,
+      "SL": 0.1566,
       "CU": 0.0769,
-      "FC": 0.0455
+      "FC": 0.025
     },
     "curr_velo": {
       "FF": 96.1,
       "SL": 87.9,
       "CU": 79.9,
-      "FC": 90.3
+      "FC": 90.5
     },
     "curr_swstr_overall": 0.1056,
     "curr_primary_velo": 96.1,
@@ -7951,27 +7977,27 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.6146,
-      "FC": 0.3229,
-      "CH": 0.0521,
-      "FF": 0.0104
+      "SI": 0.5748,
+      "FC": 0.3465,
+      "CH": 0.063,
+      "FF": 0.0157
     },
     "curr_swstr": {
-      "SI": 0.0678,
-      "FC": 0.1613,
-      "CH": 0.2,
+      "SI": 0.0685,
+      "FC": 0.1818,
+      "CH": 0.125,
       "FF": 0.0
     },
     "curr_velo": {
-      "SI": 94.3,
-      "FC": 90.9,
-      "CH": 90.6,
-      "FF": 95.6
+      "SI": 94.5,
+      "FC": 91.0,
+      "CH": 91.3,
+      "FF": 95.5
     },
-    "curr_swstr_overall": 0.1042,
-    "curr_primary_velo": 94.3,
-    "curr_fb_velo": 94.3,
-    "total_pitches_2026": 96
+    "curr_swstr_overall": 0.1102,
+    "curr_primary_velo": 94.5,
+    "curr_fb_velo": 94.5,
+    "total_pitches_2026": 127
   },
   "669276": {
     "curr_pitch_types": [
@@ -7980,24 +8006,24 @@
       "CH"
     ],
     "curr_usage": {
-      "SL": 0.5683,
-      "FF": 0.2787,
-      "CH": 0.153
+      "SL": 0.5735,
+      "FF": 0.2701,
+      "CH": 0.1564
     },
     "curr_swstr": {
-      "SL": 0.2404,
-      "FF": 0.0392,
-      "CH": 0.3214
+      "SL": 0.2645,
+      "FF": 0.0526,
+      "CH": 0.303
     },
     "curr_velo": {
       "SL": 83.5,
       "FF": 93.1,
-      "CH": 84.9
+      "CH": 85.0
     },
-    "curr_swstr_overall": 0.1967,
+    "curr_swstr_overall": 0.2133,
     "curr_primary_velo": 83.5,
     "curr_fb_velo": 93.1,
-    "total_pitches_2026": 183
+    "total_pitches_2026": 211
   },
   "669302": {
     "curr_pitch_types": [
@@ -8182,30 +8208,30 @@
       "CU"
     ],
     "curr_usage": {
-      "FF": 0.4019,
-      "CH": 0.2617,
-      "SI": 0.1794,
-      "SL": 0.1252,
-      "CU": 0.0318
+      "FF": 0.3914,
+      "CH": 0.2572,
+      "SI": 0.1853,
+      "SL": 0.1374,
+      "CU": 0.0288
     },
     "curr_swstr": {
-      "FF": 0.0744,
-      "CH": 0.3071,
-      "SI": 0.0417,
-      "SL": 0.1343,
-      "CU": 0.0588
+      "FF": 0.0857,
+      "CH": 0.2857,
+      "SI": 0.0431,
+      "SL": 0.1395,
+      "CU": 0.1111
     },
     "curr_velo": {
       "FF": 96.6,
-      "CH": 86.7,
+      "CH": 86.6,
       "SI": 96.4,
-      "SL": 89.5,
-      "CU": 79.8
+      "SL": 89.3,
+      "CU": 79.9
     },
-    "curr_swstr_overall": 0.1364,
+    "curr_swstr_overall": 0.1374,
     "curr_primary_velo": 96.6,
     "curr_fb_velo": 96.5,
-    "total_pitches_2026": 535
+    "total_pitches_2026": 626
   },
   "669387": {
     "curr_pitch_types": [
@@ -8364,30 +8390,30 @@
       "FS"
     ],
     "curr_usage": {
-      "FF": 0.2969,
-      "SL": 0.2679,
-      "SI": 0.2054,
-      "KC": 0.183,
-      "FS": 0.0469
+      "FF": 0.3024,
+      "SL": 0.2616,
+      "SI": 0.2041,
+      "KC": 0.1837,
+      "FS": 0.0482
     },
     "curr_swstr": {
-      "FF": 0.0602,
-      "SL": 0.1667,
-      "SI": 0.0652,
-      "KC": 0.1098,
-      "FS": 0.0476
+      "FF": 0.0552,
+      "SL": 0.1915,
+      "SI": 0.0727,
+      "KC": 0.101,
+      "FS": 0.0769
     },
     "curr_velo": {
-      "FF": 94.6,
-      "SL": 87.0,
+      "FF": 94.7,
+      "SL": 86.9,
       "SI": 94.7,
-      "KC": 77.1,
-      "FS": 87.3
+      "KC": 77.0,
+      "FS": 87.1
     },
-    "curr_swstr_overall": 0.0982,
-    "curr_primary_velo": 94.6,
-    "curr_fb_velo": 94.6,
-    "total_pitches_2026": 448
+    "curr_swstr_overall": 0.1039,
+    "curr_primary_velo": 94.7,
+    "curr_fb_velo": 94.7,
+    "total_pitches_2026": 539
   },
   "669622": {
     "curr_pitch_types": [
@@ -8471,71 +8497,75 @@
       "CU"
     ],
     "curr_usage": {
-      "SI": 0.3547,
-      "FF": 0.2611,
-      "ST": 0.1872,
-      "CH": 0.0985,
-      "SL": 0.064,
-      "CU": 0.0345
+      "SI": 0.3519,
+      "FF": 0.2639,
+      "ST": 0.1944,
+      "CH": 0.0972,
+      "SL": 0.0602,
+      "CU": 0.0324
     },
     "curr_swstr": {
-      "SI": 0.0417,
-      "FF": 0.1321,
-      "ST": 0.2632,
-      "CH": 0.1,
+      "SI": 0.0395,
+      "FF": 0.1228,
+      "ST": 0.2381,
+      "CH": 0.0952,
       "SL": 0.0,
       "CU": 0.0
     },
     "curr_velo": {
       "SI": 93.8,
-      "FF": 93.6,
-      "ST": 81.0,
+      "FF": 93.7,
+      "ST": 81.2,
       "CH": 85.1,
       "SL": 85.3,
       "CU": 81.4
     },
-    "curr_swstr_overall": 0.1084,
+    "curr_swstr_overall": 0.1019,
     "curr_primary_velo": 93.8,
-    "curr_fb_velo": 93.7,
-    "total_pitches_2026": 203
+    "curr_fb_velo": 93.8,
+    "total_pitches_2026": 216
   },
   "669923": {
     "curr_pitch_types": [
       "FF",
-      "SL",
       "SI",
+      "SL",
       "KC",
+      "ST",
       "CH",
       "FC"
     ],
     "curr_usage": {
-      "FF": 0.3853,
-      "SL": 0.2202,
-      "SI": 0.1835,
-      "KC": 0.1046,
-      "CH": 0.0771,
-      "FC": 0.0294
+      "FF": 0.3458,
+      "SI": 0.1869,
+      "SL": 0.134,
+      "KC": 0.1106,
+      "ST": 0.0966,
+      "CH": 0.0903,
+      "FC": 0.0358
     },
     "curr_swstr": {
-      "FF": 0.1143,
-      "SL": 0.1583,
-      "SI": 0.03,
-      "KC": 0.0526,
-      "CH": 0.0714,
-      "FC": 0.125
+      "FF": 0.1126,
+      "SI": 0.025,
+      "SL": 0.1744,
+      "KC": 0.0563,
+      "ST": 0.1452,
+      "CH": 0.1207,
+      "FC": 0.087
     },
     "curr_velo": {
       "FF": 96.6,
-      "SL": 86.5,
-      "SI": 96.8,
-      "KC": 83.6,
-      "CH": 88.5,
-      "FC": 92.2
+      "SI": 96.7,
+      "SL": 86.6,
+      "KC": 83.7,
+      "ST": 86.2,
+      "CH": 88.7,
+      "FC": 92.5
     },
-    "curr_swstr_overall": 0.0991,
+    "curr_swstr_overall": 0.1012,
     "curr_primary_velo": 96.6,
-    "curr_fb_velo": 96.7,
-    "total_pitches_2026": 545
+    "curr_fb_velo": 96.6,
+    "total_pitches_2026": 642
   },
   "669947": {
     "curr_pitch_types": [
@@ -8827,27 +8857,27 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.4924,
-      "SL": 0.2519,
-      "CH": 0.1603,
-      "FF": 0.0954
+      "SI": 0.482,
+      "SL": 0.2554,
+      "CH": 0.1511,
+      "FF": 0.1115
     },
     "curr_swstr": {
-      "SI": 0.093,
-      "SL": 0.1212,
+      "SI": 0.0896,
+      "SL": 0.1268,
       "CH": 0.3333,
-      "FF": 0.36
+      "FF": 0.3226
     },
     "curr_velo": {
       "SI": 99.4,
-      "SL": 88.5,
+      "SL": 88.6,
       "CH": 92.2,
-      "FF": 99.4
+      "FF": 99.2
     },
-    "curr_swstr_overall": 0.1641,
+    "curr_swstr_overall": 0.1619,
     "curr_primary_velo": 99.4,
     "curr_fb_velo": 99.4,
-    "total_pitches_2026": 262
+    "total_pitches_2026": 278
   },
   "670990": {
     "curr_pitch_types": [
@@ -8858,30 +8888,30 @@
       "FA"
     ],
     "curr_usage": {
-      "ST": 0.3764,
-      "FF": 0.2878,
-      "SI": 0.214,
-      "CU": 0.1181,
-      "FA": 0.0037
+      "ST": 0.3833,
+      "FF": 0.2787,
+      "SI": 0.2091,
+      "CU": 0.1254,
+      "FA": 0.0035
     },
     "curr_swstr": {
-      "ST": 0.1667,
-      "FF": 0.0769,
-      "SI": 0.1379,
-      "CU": 0.0625,
+      "ST": 0.1636,
+      "FF": 0.0875,
+      "SI": 0.1333,
+      "CU": 0.0556,
       "FA": 0.0
     },
     "curr_velo": {
       "ST": 84.0,
       "FF": 96.2,
       "SI": 95.8,
-      "CU": 84.3,
+      "CU": 84.4,
       "FA": 70.1
     },
-    "curr_swstr_overall": 0.1218,
+    "curr_swstr_overall": 0.122,
     "curr_primary_velo": 84.0,
     "curr_fb_velo": 95.8,
-    "total_pitches_2026": 271
+    "total_pitches_2026": 287
   },
   "671096": {
     "curr_pitch_types": [
@@ -8980,32 +9010,32 @@
   "671737": {
     "curr_pitch_types": [
       "FF",
-      "FC",
       "FS",
+      "FC",
       "CU"
     ],
     "curr_usage": {
-      "FF": 0.4697,
-      "FC": 0.2138,
-      "FS": 0.2121,
-      "CU": 0.1044
+      "FF": 0.4562,
+      "FS": 0.2302,
+      "FC": 0.2076,
+      "CU": 0.1059
     },
     "curr_swstr": {
-      "FF": 0.0358,
-      "FC": 0.1496,
-      "FS": 0.1746,
-      "CU": 0.1452
+      "FF": 0.0402,
+      "FS": 0.184,
+      "FC": 0.1497,
+      "CU": 0.16
     },
     "curr_velo": {
-      "FF": 96.3,
-      "FC": 88.7,
-      "FS": 90.4,
-      "CU": 81.1
+      "FF": 96.4,
+      "FS": 90.6,
+      "FC": 88.9,
+      "CU": 81.2
     },
-    "curr_swstr_overall": 0.101,
-    "curr_primary_velo": 96.3,
-    "curr_fb_velo": 96.3,
-    "total_pitches_2026": 594
+    "curr_swstr_overall": 0.1088,
+    "curr_primary_velo": 96.4,
+    "curr_fb_velo": 96.4,
+    "total_pitches_2026": 708
   },
   "671922": {
     "curr_pitch_types": [
@@ -9014,13 +9044,13 @@
       "ST"
     ],
     "curr_usage": {
-      "FF": 0.624,
-      "FS": 0.2442,
-      "ST": 0.1318
+      "FF": 0.6222,
+      "FS": 0.2519,
+      "ST": 0.1259
     },
     "curr_swstr": {
-      "FF": 0.118,
-      "FS": 0.1746,
+      "FF": 0.1369,
+      "FS": 0.1765,
       "ST": 0.1176
     },
     "curr_velo": {
@@ -9028,10 +9058,10 @@
       "FS": 86.3,
       "ST": 85.2
     },
-    "curr_swstr_overall": 0.1318,
+    "curr_swstr_overall": 0.1444,
     "curr_primary_velo": 96.5,
     "curr_fb_velo": 96.5,
-    "total_pitches_2026": 258
+    "total_pitches_2026": 270
   },
   "672282": {
     "curr_pitch_types": [
@@ -9070,32 +9100,32 @@
   "672335": {
     "curr_pitch_types": [
       "CU",
+      "FF",
       "SI",
-      "SV",
-      "FF"
+      "SV"
     ],
     "curr_usage": {
-      "CU": 0.3651,
-      "SI": 0.2262,
-      "SV": 0.2103,
-      "FF": 0.1984
+      "CU": 0.3507,
+      "FF": 0.2201,
+      "SI": 0.2201,
+      "SV": 0.209
     },
     "curr_swstr": {
-      "CU": 0.1304,
-      "SI": 0.0702,
-      "SV": 0.0566,
-      "FF": 0.02
+      "CU": 0.1277,
+      "FF": 0.0169,
+      "SI": 0.0678,
+      "SV": 0.0536
     },
     "curr_velo": {
-      "CU": 85.6,
+      "CU": 85.5,
+      "FF": 96.2,
       "SI": 95.5,
-      "SV": 85.1,
-      "FF": 96.1
+      "SV": 85.0
     },
-    "curr_swstr_overall": 0.0794,
-    "curr_primary_velo": 85.6,
+    "curr_swstr_overall": 0.0746,
+    "curr_primary_velo": 85.5,
     "curr_fb_velo": 95.8,
-    "total_pitches_2026": 252
+    "total_pitches_2026": 268
   },
   "672456": {
     "curr_pitch_types": [
@@ -9164,36 +9194,36 @@
   "672782": {
     "curr_pitch_types": [
       "FF",
-      "SI",
       "FC",
+      "SI",
       "ST",
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.3643,
-      "SI": 0.2342,
-      "FC": 0.1933,
-      "ST": 0.1859,
-      "CH": 0.0223
+      "FF": 0.3725,
+      "FC": 0.2248,
+      "SI": 0.2114,
+      "ST": 0.1711,
+      "CH": 0.0201
     },
     "curr_swstr": {
-      "FF": 0.1122,
+      "FF": 0.1171,
+      "FC": 0.0597,
       "SI": 0.0794,
-      "FC": 0.0577,
-      "ST": 0.12,
+      "ST": 0.1176,
       "CH": 0.0
     },
     "curr_velo": {
       "FF": 94.9,
-      "SI": 93.9,
       "FC": 90.2,
+      "SI": 93.9,
       "ST": 83.3,
       "CH": 91.5
     },
-    "curr_swstr_overall": 0.0929,
+    "curr_swstr_overall": 0.094,
     "curr_primary_velo": 94.9,
     "curr_fb_velo": 94.5,
-    "total_pitches_2026": 269
+    "total_pitches_2026": 298
   },
   "673540": {
     "curr_pitch_types": [
@@ -9277,33 +9307,33 @@
       "FC"
     ],
     "curr_usage": {
-      "SL": 0.3981,
-      "FF": 0.3058,
-      "SI": 0.2087,
-      "CH": 0.0631,
-      "ST": 0.0194,
-      "FC": 0.0049
+      "SL": 0.3784,
+      "FF": 0.3243,
+      "SI": 0.2046,
+      "CH": 0.0695,
+      "ST": 0.0193,
+      "FC": 0.0039
     },
     "curr_swstr": {
-      "SL": 0.1463,
-      "FF": 0.0476,
-      "SI": 0.0465,
-      "CH": 0.0769,
+      "SL": 0.1224,
+      "FF": 0.0833,
+      "SI": 0.0377,
+      "CH": 0.0556,
       "ST": 0.0,
       "FC": 0.0
     },
     "curr_velo": {
-      "SL": 86.2,
-      "FF": 94.2,
+      "SL": 86.5,
+      "FF": 94.4,
       "SI": 94.8,
-      "CH": 89.2,
-      "ST": 83.2,
+      "CH": 89.4,
+      "ST": 83.1,
       "FC": 88.6
     },
-    "curr_swstr_overall": 0.0874,
-    "curr_primary_velo": 86.2,
-    "curr_fb_velo": 94.4,
-    "total_pitches_2026": 206
+    "curr_swstr_overall": 0.0849,
+    "curr_primary_velo": 86.5,
+    "curr_fb_velo": 94.6,
+    "total_pitches_2026": 259
   },
   "674444": {
     "curr_pitch_types": [
@@ -9408,15 +9438,15 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.4853,
-      "ST": 0.3897,
-      "SI": 0.0662,
-      "SL": 0.0441,
-      "CH": 0.0147
+      "FF": 0.4774,
+      "ST": 0.4007,
+      "SI": 0.0627,
+      "SL": 0.0418,
+      "CH": 0.0174
     },
     "curr_swstr": {
-      "FF": 0.0985,
-      "ST": 0.1887,
+      "FF": 0.1022,
+      "ST": 0.2,
       "SI": 0.0556,
       "SL": 0.0833,
       "CH": 0.0
@@ -9426,12 +9456,12 @@
       "ST": 84.4,
       "SI": 96.7,
       "SL": 88.3,
-      "CH": 93.1
+      "CH": 92.8
     },
-    "curr_swstr_overall": 0.1287,
+    "curr_swstr_overall": 0.1359,
     "curr_primary_velo": 97.7,
     "curr_fb_velo": 97.6,
-    "total_pitches_2026": 272
+    "total_pitches_2026": 287
   },
   "675989": {
     "curr_pitch_types": [
@@ -9760,17 +9790,17 @@
       "FC"
     ],
     "curr_usage": {
-      "FF": 0.3632,
-      "ST": 0.2935,
-      "SI": 0.1343,
-      "CH": 0.1244,
-      "CU": 0.0299,
-      "SL": 0.0299,
-      "FC": 0.0249
+      "FF": 0.3614,
+      "ST": 0.297,
+      "SI": 0.1337,
+      "CH": 0.1238,
+      "CU": 0.0297,
+      "SL": 0.0297,
+      "FC": 0.0248
     },
     "curr_swstr": {
       "FF": 0.0822,
-      "ST": 0.0508,
+      "ST": 0.05,
       "SI": 0.037,
       "CH": 0.2,
       "CU": 0.0,
@@ -9779,17 +9809,17 @@
     },
     "curr_velo": {
       "FF": 91.2,
-      "ST": 81.4,
+      "ST": 81.5,
       "SI": 91.1,
       "CH": 83.2,
       "CU": 74.6,
       "SL": 85.3,
       "FC": 85.6
     },
-    "curr_swstr_overall": 0.0796,
+    "curr_swstr_overall": 0.0792,
     "curr_primary_velo": 91.2,
     "curr_fb_velo": 91.2,
-    "total_pitches_2026": 201
+    "total_pitches_2026": 202
   },
   "676477": {
     "curr_pitch_types": [
@@ -9798,24 +9828,24 @@
       "CH"
     ],
     "curr_usage": {
-      "SI": 0.4888,
-      "SL": 0.309,
-      "CH": 0.2022
+      "SI": 0.5078,
+      "SL": 0.3005,
+      "CH": 0.1917
     },
     "curr_swstr": {
-      "SI": 0.069,
-      "SL": 0.1273,
-      "CH": 0.1667
+      "SI": 0.0714,
+      "SL": 0.1207,
+      "CH": 0.1622
     },
     "curr_velo": {
-      "SI": 94.2,
-      "SL": 85.2,
-      "CH": 83.8
+      "SI": 94.3,
+      "SL": 85.3,
+      "CH": 83.9
     },
-    "curr_swstr_overall": 0.1067,
-    "curr_primary_velo": 94.2,
-    "curr_fb_velo": 94.2,
-    "total_pitches_2026": 178
+    "curr_swstr_overall": 0.1036,
+    "curr_primary_velo": 94.3,
+    "curr_fb_velo": 94.3,
+    "total_pitches_2026": 193
   },
   "676508": {
     "curr_pitch_types": [
@@ -9861,33 +9891,33 @@
       "SL"
     ],
     "curr_usage": {
-      "FC": 0.4054,
-      "ST": 0.2162,
-      "CU": 0.1514,
-      "SI": 0.1135,
-      "FF": 0.0973,
-      "SL": 0.0162
+      "FC": 0.4129,
+      "ST": 0.2239,
+      "CU": 0.1443,
+      "SI": 0.1144,
+      "FF": 0.0896,
+      "SL": 0.0149
     },
     "curr_swstr": {
-      "FC": 0.12,
-      "ST": 0.175,
-      "CU": 0.1071,
-      "SI": 0.0476,
+      "FC": 0.1084,
+      "ST": 0.1556,
+      "CU": 0.1034,
+      "SI": 0.0435,
       "FF": 0.0556,
       "SL": 0.0
     },
     "curr_velo": {
-      "FC": 92.6,
-      "ST": 87.5,
+      "FC": 92.7,
+      "ST": 87.7,
       "CU": 86.1,
       "SI": 96.3,
       "FF": 96.5,
       "SL": 88.9
     },
-    "curr_swstr_overall": 0.1135,
-    "curr_primary_velo": 92.6,
+    "curr_swstr_overall": 0.1045,
+    "curr_primary_velo": 92.7,
     "curr_fb_velo": 96.4,
-    "total_pitches_2026": 185
+    "total_pitches_2026": 201
   },
   "676571": {
     "curr_pitch_types": [
@@ -9897,27 +9927,27 @@
       "SI"
     ],
     "curr_usage": {
-      "ST": 0.3409,
-      "FF": 0.2955,
-      "CH": 0.1894,
-      "SI": 0.1742
+      "ST": 0.3431,
+      "FF": 0.2883,
+      "CH": 0.1898,
+      "SI": 0.1788
     },
     "curr_swstr": {
-      "ST": 0.1333,
-      "FF": 0.0513,
-      "CH": 0.02,
+      "ST": 0.1277,
+      "FF": 0.0506,
+      "CH": 0.0385,
       "SI": 0.0
     },
     "curr_velo": {
       "ST": 79.1,
       "FF": 90.1,
-      "CH": 80.6,
+      "CH": 80.5,
       "SI": 88.9
     },
-    "curr_swstr_overall": 0.0644,
+    "curr_swstr_overall": 0.0657,
     "curr_primary_velo": 79.1,
-    "curr_fb_velo": 89.7,
-    "total_pitches_2026": 264
+    "curr_fb_velo": 89.6,
+    "total_pitches_2026": 274
   },
   "676596": {
     "curr_pitch_types": [
@@ -9957,27 +9987,27 @@
       "CH"
     ],
     "curr_usage": {
-      "SI": 0.5853,
-      "ST": 0.2581,
-      "SL": 0.1521,
-      "CH": 0.0046
+      "SI": 0.5789,
+      "ST": 0.2588,
+      "SL": 0.1579,
+      "CH": 0.0044
     },
     "curr_swstr": {
-      "SI": 0.126,
-      "ST": 0.125,
-      "SL": 0.1212,
+      "SI": 0.1212,
+      "ST": 0.1356,
+      "SL": 0.1111,
       "CH": 0.0
     },
     "curr_velo": {
       "SI": 98.2,
       "ST": 83.6,
-      "SL": 91.5,
+      "SL": 91.4,
       "CH": 90.4
     },
-    "curr_swstr_overall": 0.1244,
+    "curr_swstr_overall": 0.1228,
     "curr_primary_velo": 98.2,
     "curr_fb_velo": 98.2,
-    "total_pitches_2026": 217
+    "total_pitches_2026": 228
   },
   "676684": {
     "curr_pitch_types": [
@@ -10177,37 +10207,33 @@
       "KC",
       "SI",
       "ST",
-      "CH",
-      "FC"
+      "CH"
     ],
     "curr_usage": {
-      "FF": 0.3431,
-      "KC": 0.2343,
-      "SI": 0.1883,
-      "ST": 0.1444,
-      "CH": 0.0858,
-      "FC": 0.0042
+      "FF": 0.3496,
+      "KC": 0.2417,
+      "SI": 0.1843,
+      "ST": 0.1391,
+      "CH": 0.0852
     },
     "curr_swstr": {
-      "FF": 0.0793,
-      "KC": 0.1429,
-      "SI": 0.0556,
-      "ST": 0.1014,
-      "CH": 0.122,
-      "FC": 0.0
+      "FF": 0.0846,
+      "KC": 0.1799,
+      "SI": 0.066,
+      "ST": 0.1,
+      "CH": 0.1429
     },
     "curr_velo": {
       "FF": 96.3,
-      "KC": 84.5,
+      "KC": 84.7,
       "SI": 95.7,
       "ST": 85.0,
-      "CH": 89.3,
-      "FC": 94.2
+      "CH": 89.3
     },
-    "curr_swstr_overall": 0.0962,
+    "curr_swstr_overall": 0.1113,
     "curr_primary_velo": 96.3,
     "curr_fb_velo": 96.1,
-    "total_pitches_2026": 478
+    "total_pitches_2026": 575
   },
   "676962": {
     "curr_pitch_types": [
@@ -10217,15 +10243,15 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.3695,
-      "KC": 0.3548,
-      "SI": 0.2346,
-      "CH": 0.0411
+      "FF": 0.358,
+      "KC": 0.358,
+      "SI": 0.2443,
+      "CH": 0.0398
     },
     "curr_swstr": {
       "FF": 0.0714,
-      "KC": 0.1736,
-      "SI": 0.0375,
+      "KC": 0.1825,
+      "SI": 0.0349,
       "CH": 0.0714
     },
     "curr_velo": {
@@ -10234,10 +10260,10 @@
       "SI": 96.6,
       "CH": 90.5
     },
-    "curr_swstr_overall": 0.0997,
+    "curr_swstr_overall": 0.1023,
     "curr_primary_velo": 96.5,
     "curr_fb_velo": 96.5,
-    "total_pitches_2026": 341
+    "total_pitches_2026": 352
   },
   "676974": {
     "curr_pitch_types": [
@@ -10316,30 +10342,34 @@
       "FF",
       "ST",
       "SL",
-      "CH"
+      "CH",
+      "SI"
     ],
     "curr_usage": {
-      "FF": 0.4874,
-      "ST": 0.2814,
-      "SL": 0.1608,
-      "CH": 0.0704
+      "FF": 0.4834,
+      "ST": 0.3318,
+      "SL": 0.109,
+      "CH": 0.0711,
+      "SI": 0.0047
     },
     "curr_swstr": {
-      "FF": 0.1134,
-      "ST": 0.1786,
-      "SL": 0.0938,
-      "CH": 0.1429
+      "FF": 0.1275,
+      "ST": 0.1571,
+      "SL": 0.087,
+      "CH": 0.2,
+      "SI": 0.0
     },
     "curr_velo": {
       "FF": 94.5,
-      "ST": 83.4,
-      "SL": 83.9,
-      "CH": 89.5
+      "ST": 83.7,
+      "SL": 83.2,
+      "CH": 89.5,
+      "SI": 91.5
     },
-    "curr_swstr_overall": 0.1307,
+    "curr_swstr_overall": 0.1374,
     "curr_primary_velo": 94.5,
     "curr_fb_velo": 94.5,
-    "total_pitches_2026": 199
+    "total_pitches_2026": 211
   },
   "677161": {
     "curr_pitch_types": [
@@ -10516,16 +10546,16 @@
       "FC"
     ],
     "curr_usage": {
-      "SI": 0.3981,
+      "SI": 0.3958,
       "SL": 0.375,
-      "CH": 0.0926,
+      "CH": 0.0949,
       "FF": 0.088,
       "FC": 0.0463
     },
     "curr_swstr": {
-      "SI": 0.064,
+      "SI": 0.0643,
       "SL": 0.1543,
-      "CH": 0.175,
+      "CH": 0.1707,
       "FF": 0.0789,
       "FC": 0.1
     },
@@ -10691,63 +10721,63 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.4195,
-      "FC": 0.2562,
-      "CH": 0.1247,
-      "ST": 0.0998,
-      "CU": 0.0726,
-      "FF": 0.0272
+      "SI": 0.4385,
+      "FC": 0.2302,
+      "CH": 0.127,
+      "ST": 0.0972,
+      "CU": 0.0734,
+      "FF": 0.0337
     },
     "curr_swstr": {
-      "SI": 0.0595,
-      "FC": 0.2655,
-      "CH": 0.2,
-      "ST": 0.1136,
-      "CU": 0.0938,
+      "SI": 0.0498,
+      "FC": 0.2586,
+      "CH": 0.1719,
+      "ST": 0.102,
+      "CU": 0.1081,
       "FF": 0.0
     },
     "curr_velo": {
-      "SI": 94.4,
+      "SI": 94.5,
       "FC": 87.1,
-      "CH": 87.9,
-      "ST": 85.3,
-      "CU": 83.5,
-      "FF": 93.7
+      "CH": 88.1,
+      "ST": 85.4,
+      "CU": 83.6,
+      "FF": 94.0
     },
-    "curr_swstr_overall": 0.1361,
-    "curr_primary_velo": 94.4,
-    "curr_fb_velo": 94.4,
-    "total_pitches_2026": 441
+    "curr_swstr_overall": 0.121,
+    "curr_primary_velo": 94.5,
+    "curr_fb_velo": 94.5,
+    "total_pitches_2026": 504
   },
   "678606": {
     "curr_pitch_types": [
       "SI",
-      "SL",
       "CH",
+      "SL",
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.6256,
-      "SL": 0.1894,
-      "CH": 0.1806,
-      "FF": 0.0044
+      "SI": 0.6176,
+      "CH": 0.1933,
+      "SL": 0.1849,
+      "FF": 0.0042
     },
     "curr_swstr": {
-      "SI": 0.0845,
-      "SL": 0.1628,
-      "CH": 0.1951,
+      "SI": 0.0884,
+      "CH": 0.1957,
+      "SL": 0.1591,
       "FF": 1.0
     },
     "curr_velo": {
       "SI": 96.9,
+      "CH": 87.1,
       "SL": 87.8,
-      "CH": 87.2,
       "FF": 95.7
     },
-    "curr_swstr_overall": 0.1233,
+    "curr_swstr_overall": 0.1261,
     "curr_primary_velo": 96.9,
     "curr_fb_velo": 96.9,
-    "total_pitches_2026": 227
+    "total_pitches_2026": 238
   },
   "678906": {
     "curr_pitch_types": [
@@ -10791,15 +10821,15 @@
       "CU"
     ],
     "curr_usage": {
-      "FS": 0.6284,
-      "FF": 0.2404,
-      "SL": 0.1093,
-      "CU": 0.0219
+      "FS": 0.6161,
+      "FF": 0.2417,
+      "SL": 0.1232,
+      "CU": 0.019
     },
     "curr_swstr": {
-      "FS": 0.1391,
-      "FF": 0.0455,
-      "SL": 0.0,
+      "FS": 0.1231,
+      "FF": 0.0588,
+      "SL": 0.0385,
       "CU": 0.25
     },
     "curr_velo": {
@@ -10808,10 +10838,10 @@
       "SL": 86.5,
       "CU": 82.1
     },
-    "curr_swstr_overall": 0.1038,
+    "curr_swstr_overall": 0.0995,
     "curr_primary_velo": 82.8,
     "curr_fb_velo": 91.7,
-    "total_pitches_2026": 183
+    "total_pitches_2026": 211
   },
   "679775": {
     "curr_pitch_types": [
@@ -10848,30 +10878,30 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.3111,
-      "SI": 0.2667,
-      "CU": 0.163,
-      "SL": 0.1407,
-      "CH": 0.1185
+      "FF": 0.3226,
+      "SI": 0.2581,
+      "CU": 0.1548,
+      "SL": 0.1484,
+      "CH": 0.1161
     },
     "curr_swstr": {
-      "FF": 0.0952,
-      "SI": 0.0556,
+      "FF": 0.12,
+      "SI": 0.05,
       "CU": 0.0,
-      "SL": 0.1053,
-      "CH": 0.1875
+      "SL": 0.1304,
+      "CH": 0.1667
     },
     "curr_velo": {
-      "FF": 95.9,
-      "SI": 95.6,
+      "FF": 96.0,
+      "SI": 95.7,
       "CU": 82.2,
-      "SL": 87.2,
-      "CH": 88.5
+      "SL": 87.3,
+      "CH": 88.8
     },
-    "curr_swstr_overall": 0.0815,
-    "curr_primary_velo": 95.9,
-    "curr_fb_velo": 95.8,
-    "total_pitches_2026": 135
+    "curr_swstr_overall": 0.0903,
+    "curr_primary_velo": 96.0,
+    "curr_fb_velo": 95.9,
+    "total_pitches_2026": 155
   },
   "680573": {
     "curr_pitch_types": [
@@ -10937,26 +10967,26 @@
     "curr_pitch_types": [
       "SL",
       "FS",
-      "SI",
-      "FF"
+      "FF",
+      "SI"
     ],
     "curr_usage": {
       "SL": 0.5495,
       "FS": 0.2252,
-      "SI": 0.1171,
-      "FF": 0.1081
+      "FF": 0.1171,
+      "SI": 0.1081
     },
     "curr_swstr": {
       "SL": 0.1639,
       "FS": 0.2,
-      "SI": 0.0769,
-      "FF": 0.0
+      "FF": 0.0,
+      "SI": 0.0833
     },
     "curr_velo": {
       "SL": 76.9,
       "FS": 84.1,
-      "SI": 91.5,
-      "FF": 91.3
+      "FF": 91.3,
+      "SI": 91.5
     },
     "curr_swstr_overall": 0.1441,
     "curr_primary_velo": 76.9,
@@ -10997,39 +11027,39 @@
     "curr_pitch_types": [
       "FF",
       "KC",
-      "SL",
       "SI",
+      "SL",
       "CH",
       "FC"
     ],
     "curr_usage": {
-      "FF": 0.3991,
-      "KC": 0.2202,
-      "SL": 0.172,
-      "SI": 0.133,
-      "CH": 0.0505,
-      "FC": 0.0252
+      "FF": 0.3724,
+      "KC": 0.2328,
+      "SI": 0.1601,
+      "SL": 0.1564,
+      "CH": 0.0447,
+      "FC": 0.0335
     },
     "curr_swstr": {
-      "FF": 0.1034,
-      "KC": 0.0417,
-      "SL": 0.12,
-      "SI": 0.0172,
+      "FF": 0.095,
+      "KC": 0.072,
+      "SI": 0.0349,
+      "SL": 0.1071,
       "CH": 0.0,
-      "FC": 0.0909
+      "FC": 0.1111
     },
     "curr_velo": {
-      "FF": 94.0,
-      "KC": 79.4,
-      "SL": 87.0,
-      "SI": 94.4,
+      "FF": 93.9,
+      "KC": 79.3,
+      "SI": 94.2,
+      "SL": 86.8,
       "CH": 85.9,
       "FC": 89.4
     },
-    "curr_swstr_overall": 0.0757,
-    "curr_primary_velo": 94.0,
-    "curr_fb_velo": 94.1,
-    "total_pitches_2026": 436
+    "curr_swstr_overall": 0.0782,
+    "curr_primary_velo": 93.9,
+    "curr_fb_velo": 94.0,
+    "total_pitches_2026": 537
   },
   "680736": {
     "curr_pitch_types": [
@@ -11115,27 +11145,27 @@
       "FC"
     ],
     "curr_usage": {
-      "SL": 0.4788,
-      "CU": 0.2669,
-      "FF": 0.1695,
-      "FC": 0.0847
+      "SL": 0.4862,
+      "CU": 0.2609,
+      "FF": 0.17,
+      "FC": 0.083
     },
     "curr_swstr": {
-      "SL": 0.1593,
-      "CU": 0.0317,
-      "FF": 0.1,
-      "FC": 0.15
+      "SL": 0.1463,
+      "CU": 0.0303,
+      "FF": 0.1163,
+      "FC": 0.1429
     },
     "curr_velo": {
-      "SL": 88.7,
+      "SL": 88.8,
       "CU": 81.4,
-      "FF": 94.6,
+      "FF": 94.7,
       "FC": 92.4
     },
-    "curr_swstr_overall": 0.1144,
-    "curr_primary_velo": 88.7,
-    "curr_fb_velo": 94.6,
-    "total_pitches_2026": 236
+    "curr_swstr_overall": 0.1107,
+    "curr_primary_velo": 88.8,
+    "curr_fb_velo": 94.7,
+    "total_pitches_2026": 253
   },
   "680767": {
     "curr_pitch_types": [
@@ -11181,14 +11211,14 @@
     ],
     "curr_usage": {
       "FF": 0.3839,
-      "ST": 0.3356,
+      "ST": 0.3379,
       "CH": 0.154,
       "SI": 0.1011,
-      "CU": 0.0253
+      "CU": 0.023
     },
     "curr_swstr": {
       "FF": 0.0479,
-      "ST": 0.1575,
+      "ST": 0.1565,
       "CH": 0.1642,
       "SI": 0.0682,
       "CU": 0.0
@@ -11198,7 +11228,7 @@
       "ST": 83.9,
       "CH": 89.1,
       "SI": 93.5,
-      "CU": 80.7
+      "CU": 80.6
     },
     "curr_swstr_overall": 0.1034,
     "curr_primary_velo": 95.2,
@@ -11281,21 +11311,21 @@
     ],
     "curr_usage": {
       "FF": 0.3124,
-      "FC": 0.2625,
+      "FC": 0.2662,
       "SI": 0.1146,
       "CH": 0.1035,
-      "CU": 0.0887,
-      "SL": 0.0702,
-      "ST": 0.0481
+      "CU": 0.0924,
+      "SL": 0.061,
+      "ST": 0.0499
     },
     "curr_swstr": {
       "FF": 0.0947,
-      "FC": 0.1268,
+      "FC": 0.125,
       "SI": 0.0484,
       "CH": 0.1786,
-      "CU": 0.1667,
-      "SL": 0.1842,
-      "ST": 0.1923
+      "CU": 0.16,
+      "SL": 0.2121,
+      "ST": 0.1852
     },
     "curr_velo": {
       "FF": 94.8,
@@ -11319,27 +11349,27 @@
       "SI"
     ],
     "curr_usage": {
-      "FS": 0.398,
-      "FF": 0.3433,
-      "ST": 0.1642,
-      "SI": 0.0945
+      "FS": 0.3972,
+      "FF": 0.3551,
+      "ST": 0.1542,
+      "SI": 0.0935
     },
     "curr_swstr": {
-      "FS": 0.225,
-      "FF": 0.1159,
+      "FS": 0.2235,
+      "FF": 0.1184,
       "ST": 0.1212,
-      "SI": 0.1053
+      "SI": 0.1
     },
     "curr_velo": {
       "FS": 87.8,
-      "FF": 96.2,
+      "FF": 96.1,
       "ST": 87.1,
-      "SI": 95.7
+      "SI": 95.6
     },
-    "curr_swstr_overall": 0.1592,
+    "curr_swstr_overall": 0.1589,
     "curr_primary_velo": 87.8,
-    "curr_fb_velo": 96.1,
-    "total_pitches_2026": 201
+    "curr_fb_velo": 96.0,
+    "total_pitches_2026": 214
   },
   "681252": {
     "curr_pitch_types": [
@@ -11352,22 +11382,22 @@
     "curr_usage": {
       "FF": 0.3629,
       "FS": 0.2258,
-      "SL": 0.2177,
-      "ST": 0.1129,
+      "SL": 0.2097,
+      "ST": 0.121,
       "CU": 0.0806
     },
     "curr_swstr": {
       "FF": 0.0,
       "FS": 0.1786,
-      "SL": 0.1481,
-      "ST": 0.0714,
+      "SL": 0.1538,
+      "ST": 0.0667,
       "CU": 0.2
     },
     "curr_velo": {
       "FF": 90.4,
       "FS": 81.4,
-      "SL": 82.5,
-      "ST": 77.9,
+      "SL": 82.6,
+      "ST": 78.1,
       "CU": 77.2
     },
     "curr_swstr_overall": 0.0968,
@@ -11614,17 +11644,17 @@
       "FF"
     ],
     "curr_usage": {
-      "CH": 0.3107,
-      "SI": 0.2476,
-      "FC": 0.199,
-      "ST": 0.1893,
-      "FF": 0.0534
+      "CH": 0.3062,
+      "SI": 0.2488,
+      "FC": 0.1962,
+      "ST": 0.1962,
+      "FF": 0.0526
     },
     "curr_swstr": {
       "CH": 0.1406,
-      "SI": 0.0392,
+      "SI": 0.0385,
       "FC": 0.122,
-      "ST": 0.1282,
+      "ST": 0.1463,
       "FF": 0.0909
     },
     "curr_velo": {
@@ -11634,10 +11664,10 @@
       "ST": 78.5,
       "FF": 91.0
     },
-    "curr_swstr_overall": 0.1068,
+    "curr_swstr_overall": 0.11,
     "curr_primary_velo": 85.4,
     "curr_fb_velo": 90.8,
-    "total_pitches_2026": 206
+    "total_pitches_2026": 209
   },
   "681870": {
     "curr_pitch_types": [
@@ -11646,12 +11676,12 @@
       "SL"
     ],
     "curr_usage": {
-      "FF": 0.6724,
-      "CU": 0.2026,
-      "SL": 0.125
+      "FF": 0.6793,
+      "CU": 0.1983,
+      "SL": 0.1224
     },
     "curr_swstr": {
-      "FF": 0.141,
+      "FF": 0.1429,
       "CU": 0.1915,
       "SL": 0.2069
     },
@@ -11660,10 +11690,10 @@
       "CU": 81.7,
       "SL": 86.0
     },
-    "curr_swstr_overall": 0.1595,
+    "curr_swstr_overall": 0.1603,
     "curr_primary_velo": 94.3,
     "curr_fb_velo": 94.3,
-    "total_pitches_2026": 232
+    "total_pitches_2026": 237
   },
   "681892": {
     "curr_pitch_types": [
@@ -11709,33 +11739,33 @@
       "SV"
     ],
     "curr_usage": {
-      "CU": 0.3161,
-      "SI": 0.2874,
-      "ST": 0.1954,
-      "CH": 0.1092,
-      "FF": 0.0862,
-      "SV": 0.0057
+      "CU": 0.3184,
+      "SI": 0.2935,
+      "ST": 0.1841,
+      "CH": 0.0995,
+      "FF": 0.0995,
+      "SV": 0.005
     },
     "curr_swstr": {
-      "CU": 0.0727,
-      "SI": 0.04,
-      "ST": 0.1176,
-      "CH": 0.1579,
-      "FF": 0.2667,
+      "CU": 0.0625,
+      "SI": 0.0508,
+      "ST": 0.1351,
+      "CH": 0.15,
+      "FF": 0.2,
       "SV": 1.0
     },
     "curr_velo": {
       "CU": 77.0,
-      "SI": 90.2,
+      "SI": 90.1,
       "ST": 79.7,
       "CH": 83.4,
-      "FF": 90.9,
+      "FF": 90.8,
       "SV": 81.9
     },
-    "curr_swstr_overall": 0.1034,
+    "curr_swstr_overall": 0.0995,
     "curr_primary_velo": 77.0,
-    "curr_fb_velo": 90.4,
-    "total_pitches_2026": 174
+    "curr_fb_velo": 90.3,
+    "total_pitches_2026": 201
   },
   "681911": {
     "curr_pitch_types": [
@@ -11744,24 +11774,24 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.5814,
-      "SL": 0.3547,
-      "CH": 0.064
+      "FF": 0.5819,
+      "SL": 0.3446,
+      "CH": 0.0734
     },
     "curr_swstr": {
-      "FF": 0.12,
+      "FF": 0.1165,
       "SL": 0.2295,
-      "CH": 0.1818
+      "CH": 0.2308
     },
     "curr_velo": {
       "FF": 91.0,
       "SL": 83.6,
-      "CH": 82.3
+      "CH": 81.9
     },
-    "curr_swstr_overall": 0.1628,
+    "curr_swstr_overall": 0.1638,
     "curr_primary_velo": 91.0,
     "curr_fb_velo": 91.0,
-    "total_pitches_2026": 172
+    "total_pitches_2026": 177
   },
   "681982": {
     "curr_pitch_types": [
@@ -11771,27 +11801,27 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.3641,
-      "ST": 0.3487,
-      "SI": 0.2513,
-      "CH": 0.0359
+      "FF": 0.3727,
+      "ST": 0.3455,
+      "SI": 0.2455,
+      "CH": 0.0364
     },
     "curr_swstr": {
-      "FF": 0.1127,
-      "ST": 0.1912,
-      "SI": 0.0408,
-      "CH": 0.1429
+      "FF": 0.1098,
+      "ST": 0.1711,
+      "SI": 0.037,
+      "CH": 0.125
     },
     "curr_velo": {
-      "FF": 92.9,
-      "ST": 79.7,
-      "SI": 92.1,
-      "CH": 85.3
+      "FF": 93.0,
+      "ST": 79.8,
+      "SI": 92.2,
+      "CH": 85.4
     },
-    "curr_swstr_overall": 0.1231,
-    "curr_primary_velo": 92.9,
-    "curr_fb_velo": 92.6,
-    "total_pitches_2026": 195
+    "curr_swstr_overall": 0.1136,
+    "curr_primary_velo": 93.0,
+    "curr_fb_velo": 92.7,
+    "total_pitches_2026": 220
   },
   "682052": {
     "curr_pitch_types": [
@@ -11863,37 +11893,37 @@
       "CH",
       "FF",
       "SI",
-      "CU",
-      "ST"
+      "ST",
+      "CU"
     ],
     "curr_usage": {
-      "FC": 0.2609,
-      "CH": 0.2413,
-      "FF": 0.213,
-      "SI": 0.1087,
-      "CU": 0.0957,
-      "ST": 0.0804
+      "FC": 0.2645,
+      "CH": 0.2355,
+      "FF": 0.2046,
+      "SI": 0.1062,
+      "ST": 0.0985,
+      "CU": 0.0907
     },
     "curr_swstr": {
-      "FC": 0.0833,
-      "CH": 0.1982,
-      "FF": 0.0306,
-      "SI": 0.04,
-      "CU": 0.0227,
-      "ST": 0.1081
+      "FC": 0.073,
+      "CH": 0.1885,
+      "FF": 0.0377,
+      "SI": 0.0545,
+      "ST": 0.1961,
+      "CU": 0.0213
     },
     "curr_velo": {
-      "FC": 88.3,
-      "CH": 85.1,
+      "FC": 88.4,
+      "CH": 85.0,
       "FF": 92.5,
       "SI": 92.8,
-      "CU": 74.6,
-      "ST": 80.5
+      "ST": 80.2,
+      "CU": 74.6
     },
-    "curr_swstr_overall": 0.0913,
-    "curr_primary_velo": 88.3,
+    "curr_swstr_overall": 0.0985,
+    "curr_primary_velo": 88.4,
     "curr_fb_velo": 92.6,
-    "total_pitches_2026": 460
+    "total_pitches_2026": 518
   },
   "682254": {
     "curr_pitch_types": [
@@ -12214,24 +12244,24 @@
       "CH"
     ],
     "curr_usage": {
-      "FF": 0.5035,
-      "SL": 0.3916,
-      "CH": 0.1049
+      "FF": 0.4754,
+      "SL": 0.4044,
+      "CH": 0.1202
     },
     "curr_swstr": {
-      "FF": 0.0139,
-      "SL": 0.1607,
-      "CH": 0.0667
+      "FF": 0.023,
+      "SL": 0.1351,
+      "CH": 0.1364
     },
     "curr_velo": {
-      "FF": 95.2,
-      "SL": 85.1,
-      "CH": 88.6
+      "FF": 95.1,
+      "SL": 85.0,
+      "CH": 88.2
     },
-    "curr_swstr_overall": 0.0769,
-    "curr_primary_velo": 95.2,
-    "curr_fb_velo": 95.2,
-    "total_pitches_2026": 143
+    "curr_swstr_overall": 0.082,
+    "curr_primary_velo": 95.1,
+    "curr_fb_velo": 95.1,
+    "total_pitches_2026": 183
   },
   "683769": {
     "curr_pitch_types": [
@@ -12587,15 +12617,15 @@
       "SL"
     ],
     "curr_usage": {
-      "SI": 0.3727,
+      "SI": 0.38,
       "CH": 0.2509,
-      "FF": 0.2127,
+      "FF": 0.2055,
       "SL": 0.1636
     },
     "curr_swstr": {
-      "SI": 0.0634,
+      "SI": 0.0622,
       "CH": 0.1667,
-      "FF": 0.0684,
+      "FF": 0.0708,
       "SL": 0.1111
     },
     "curr_velo": {
@@ -12705,41 +12735,41 @@
   },
   "687075": {
     "curr_pitch_types": [
-      "SI",
       "FC",
+      "SI",
       "CU",
       "ST",
       "FF",
       "CH"
     ],
     "curr_usage": {
-      "SI": 0.2957,
-      "FC": 0.2554,
-      "CU": 0.1398,
-      "ST": 0.1344,
-      "FF": 0.0968,
-      "CH": 0.078
+      "FC": 0.2775,
+      "SI": 0.2643,
+      "CU": 0.1498,
+      "ST": 0.1211,
+      "FF": 0.1167,
+      "CH": 0.0705
     },
     "curr_swstr": {
-      "SI": 0.0364,
-      "FC": 0.0842,
-      "CU": 0.1346,
-      "ST": 0.18,
-      "FF": 0.0833,
-      "CH": 0.1034
+      "FC": 0.0714,
+      "SI": 0.0333,
+      "CU": 0.1324,
+      "ST": 0.1636,
+      "FF": 0.1132,
+      "CH": 0.0938
     },
     "curr_velo": {
+      "FC": 93.4,
       "SI": 96.6,
-      "FC": 93.5,
-      "CU": 82.9,
+      "CU": 83.0,
       "ST": 86.6,
       "FF": 97.0,
-      "CH": 92.0
+      "CH": 91.9
     },
-    "curr_swstr_overall": 0.0914,
-    "curr_primary_velo": 96.6,
+    "curr_swstr_overall": 0.0881,
+    "curr_primary_velo": 93.4,
     "curr_fb_velo": 96.7,
-    "total_pitches_2026": 372
+    "total_pitches_2026": 454
   },
   "687330": {
     "curr_pitch_types": [
@@ -12783,15 +12813,15 @@
       "FS"
     ],
     "curr_usage": {
-      "FF": 0.4953,
-      "SL": 0.3084,
-      "SI": 0.1449,
-      "FS": 0.0514
+      "FF": 0.4788,
+      "SL": 0.3136,
+      "SI": 0.161,
+      "FS": 0.0466
     },
     "curr_swstr": {
-      "FF": 0.0849,
-      "SL": 0.2576,
-      "SI": 0.0968,
+      "FF": 0.0885,
+      "SL": 0.2297,
+      "SI": 0.1053,
       "FS": 0.2727
     },
     "curr_velo": {
@@ -12800,10 +12830,10 @@
       "SI": 93.1,
       "FS": 84.8
     },
-    "curr_swstr_overall": 0.1495,
+    "curr_swstr_overall": 0.1441,
     "curr_primary_velo": 94.0,
     "curr_fb_velo": 93.8,
-    "total_pitches_2026": 214
+    "total_pitches_2026": 236
   },
   "687570": {
     "curr_pitch_types": [
@@ -12847,27 +12877,27 @@
       "SL"
     ],
     "curr_usage": {
-      "FC": 0.4702,
-      "FF": 0.2848,
-      "CH": 0.2318,
-      "SL": 0.0132
+      "FC": 0.4727,
+      "FF": 0.2909,
+      "CH": 0.2242,
+      "SL": 0.0121
     },
     "curr_swstr": {
-      "FC": 0.0986,
-      "FF": 0.093,
-      "CH": 0.0857,
+      "FC": 0.0897,
+      "FF": 0.0833,
+      "CH": 0.1081,
       "SL": 0.0
     },
     "curr_velo": {
       "FC": 89.0,
-      "FF": 94.0,
+      "FF": 93.9,
       "CH": 86.3,
       "SL": 84.3
     },
-    "curr_swstr_overall": 0.0927,
+    "curr_swstr_overall": 0.0909,
     "curr_primary_velo": 89.0,
-    "curr_fb_velo": 94.0,
-    "total_pitches_2026": 151
+    "curr_fb_velo": 93.9,
+    "total_pitches_2026": 165
   },
   "687765": {
     "curr_pitch_types": [
@@ -13739,27 +13769,27 @@
       "CU"
     ],
     "curr_usage": {
-      "SI": 0.3108,
-      "FF": 0.2703,
-      "SL": 0.2342,
-      "CU": 0.1847
+      "SI": 0.3266,
+      "FF": 0.246,
+      "SL": 0.2339,
+      "CU": 0.1935
     },
     "curr_swstr": {
-      "SI": 0.1159,
-      "FF": 0.0833,
-      "SL": 0.0769,
-      "CU": 0.0488
+      "SI": 0.1235,
+      "FF": 0.1148,
+      "SL": 0.069,
+      "CU": 0.0417
     },
     "curr_velo": {
-      "SI": 96.2,
+      "SI": 96.3,
       "FF": 96.1,
-      "SL": 87.8,
-      "CU": 80.3
+      "SL": 87.7,
+      "CU": 80.5
     },
-    "curr_swstr_overall": 0.0856,
-    "curr_primary_velo": 96.2,
+    "curr_swstr_overall": 0.0927,
+    "curr_primary_velo": 96.3,
     "curr_fb_velo": 96.2,
-    "total_pitches_2026": 222
+    "total_pitches_2026": 248
   },
   "693821": {
     "curr_pitch_types": [
@@ -13935,27 +13965,27 @@
       "SL"
     ],
     "curr_usage": {
-      "FF": 0.484,
-      "ST": 0.2234,
-      "CU": 0.2074,
-      "SL": 0.0851
+      "FF": 0.4673,
+      "ST": 0.2336,
+      "CU": 0.215,
+      "SL": 0.0841
     },
     "curr_swstr": {
-      "FF": 0.0659,
-      "ST": 0.0714,
-      "CU": 0.0513,
-      "SL": 0.0625
+      "FF": 0.07,
+      "ST": 0.14,
+      "CU": 0.0435,
+      "SL": 0.0556
     },
     "curr_velo": {
-      "FF": 97.5,
-      "ST": 88.5,
+      "FF": 97.6,
+      "ST": 88.6,
       "CU": 84.6,
       "SL": 90.6
     },
-    "curr_swstr_overall": 0.0638,
-    "curr_primary_velo": 97.5,
-    "curr_fb_velo": 97.5,
-    "total_pitches_2026": 188
+    "curr_swstr_overall": 0.0794,
+    "curr_primary_velo": 97.6,
+    "curr_fb_velo": 97.6,
+    "total_pitches_2026": 214
   },
   "694363": {
     "curr_pitch_types": [
@@ -14068,18 +14098,18 @@
       "FF"
     ],
     "curr_usage": {
-      "SI": 0.3899,
+      "SI": 0.3916,
       "CU": 0.292,
       "CH": 0.1731,
       "FC": 0.1241,
-      "FF": 0.021
+      "FF": 0.0192
     },
     "curr_swstr": {
-      "SI": 0.0359,
+      "SI": 0.0357,
       "CU": 0.1437,
       "CH": 0.1414,
       "FC": 0.1127,
-      "FF": 0.0833
+      "FF": 0.0909
     },
     "curr_velo": {
       "SI": 93.3,
@@ -14272,30 +14302,30 @@
       "SI"
     ],
     "curr_usage": {
-      "SL": 0.5357,
-      "FF": 0.3827,
-      "FC": 0.0357,
-      "CH": 0.0306,
-      "SI": 0.0153
+      "SL": 0.5256,
+      "FF": 0.4,
+      "FC": 0.0326,
+      "CH": 0.0279,
+      "SI": 0.014
     },
     "curr_swstr": {
-      "SL": 0.3143,
-      "FF": 0.2267,
+      "SL": 0.3097,
+      "FF": 0.2093,
       "FC": 0.1429,
       "CH": 0.1667,
       "SI": 0.0
     },
     "curr_velo": {
-      "SL": 87.8,
-      "FF": 101.5,
+      "SL": 87.7,
+      "FF": 101.3,
       "FC": 88.3,
       "CH": 95.8,
       "SI": 99.8
     },
-    "curr_swstr_overall": 0.2653,
-    "curr_primary_velo": 87.8,
-    "curr_fb_velo": 101.4,
-    "total_pitches_2026": 196
+    "curr_swstr_overall": 0.2558,
+    "curr_primary_velo": 87.7,
+    "curr_fb_velo": 101.2,
+    "total_pitches_2026": 215
   },
   "695418": {
     "curr_pitch_types": [
@@ -14357,6 +14387,40 @@
     "curr_fb_velo": 98.2,
     "total_pitches_2026": 538
   },
+  "695684": {
+    "curr_pitch_types": [
+      "SI",
+      "FF",
+      "SL",
+      "CU",
+      "CH"
+    ],
+    "curr_usage": {
+      "SI": 0.3375,
+      "FF": 0.2875,
+      "SL": 0.175,
+      "CU": 0.1125,
+      "CH": 0.0875
+    },
+    "curr_swstr": {
+      "SI": 0.037,
+      "FF": 0.0435,
+      "SL": 0.2857,
+      "CU": 0.1111,
+      "CH": 0.0
+    },
+    "curr_velo": {
+      "SI": 95.3,
+      "FF": 95.5,
+      "SL": 80.4,
+      "CU": 77.8,
+      "CH": 87.7
+    },
+    "curr_swstr_overall": 0.0875,
+    "curr_primary_velo": 95.3,
+    "curr_fb_velo": 95.4,
+    "total_pitches_2026": 80
+  },
   "696062": {
     "curr_pitch_types": [
       "FF",
@@ -14389,41 +14453,41 @@
   },
   "696131": {
     "curr_pitch_types": [
-      "SI",
       "ST",
+      "SI",
+      "FF",
       "FC",
       "CH",
-      "FF",
       "SL"
     ],
     "curr_usage": {
-      "SI": 0.3125,
-      "ST": 0.3,
-      "FC": 0.1125,
-      "CH": 0.1,
-      "FF": 0.0875,
-      "SL": 0.0875
+      "ST": 0.34,
+      "SI": 0.28,
+      "FF": 0.11,
+      "FC": 0.1,
+      "CH": 0.09,
+      "SL": 0.08
     },
     "curr_swstr": {
-      "SI": 0.08,
-      "ST": 0.0417,
-      "FC": 0.1111,
-      "CH": 0.25,
+      "ST": 0.0588,
+      "SI": 0.0714,
       "FF": 0.0,
+      "FC": 0.1,
+      "CH": 0.2222,
       "SL": 0.0
     },
     "curr_velo": {
-      "SI": 93.9,
       "ST": 81.7,
+      "SI": 93.8,
+      "FF": 94.1,
       "FC": 89.7,
       "CH": 88.0,
-      "FF": 93.9,
-      "SL": 83.4
+      "SL": 83.5
     },
-    "curr_swstr_overall": 0.075,
-    "curr_primary_velo": 93.9,
+    "curr_swstr_overall": 0.07,
+    "curr_primary_velo": 81.7,
     "curr_fb_velo": 93.9,
-    "total_pitches_2026": 80
+    "total_pitches_2026": 100
   },
   "696147": {
     "curr_pitch_types": [
@@ -14432,24 +14496,24 @@
       "CH"
     ],
     "curr_usage": {
-      "SL": 0.5574,
-      "SI": 0.3106,
-      "CH": 0.1319
+      "SL": 0.5542,
+      "SI": 0.3213,
+      "CH": 0.1245
     },
     "curr_swstr": {
-      "SL": 0.1985,
-      "SI": 0.0685,
+      "SL": 0.1884,
+      "SI": 0.0625,
       "CH": 0.0968
     },
     "curr_velo": {
-      "SL": 88.8,
-      "SI": 98.4,
+      "SL": 88.9,
+      "SI": 98.5,
       "CH": 91.8
     },
-    "curr_swstr_overall": 0.1447,
-    "curr_primary_velo": 88.8,
-    "curr_fb_velo": 98.4,
-    "total_pitches_2026": 235
+    "curr_swstr_overall": 0.1365,
+    "curr_primary_velo": 88.9,
+    "curr_fb_velo": 98.5,
+    "total_pitches_2026": 249
   },
   "696149": {
     "curr_pitch_types": [
@@ -14458,36 +14522,40 @@
       "SL",
       "ST",
       "CU",
+      "SI",
       "PO"
     ],
     "curr_usage": {
-      "FF": 0.5626,
-      "CH": 0.1868,
-      "SL": 0.1253,
-      "ST": 0.1111,
-      "CU": 0.0118,
-      "PO": 0.0024
+      "FF": 0.5531,
+      "CH": 0.187,
+      "SL": 0.128,
+      "ST": 0.1063,
+      "CU": 0.0197,
+      "SI": 0.0039,
+      "PO": 0.002
     },
     "curr_swstr": {
-      "FF": 0.0882,
-      "CH": 0.1392,
-      "SL": 0.0943,
-      "ST": 0.1064,
+      "FF": 0.089,
+      "CH": 0.1474,
+      "SL": 0.1231,
+      "ST": 0.1111,
       "CU": 0.0,
+      "SI": 0.0,
       "PO": 0.0
     },
     "curr_velo": {
-      "FF": 98.7,
-      "CH": 92.3,
-      "SL": 90.0,
-      "ST": 87.8,
-      "CU": 87.4,
+      "FF": 98.6,
+      "CH": 92.2,
+      "SL": 89.7,
+      "ST": 87.7,
+      "CU": 86.3,
+      "SI": 96.3,
       "PO": 94.9
     },
-    "curr_swstr_overall": 0.0993,
-    "curr_primary_velo": 98.7,
-    "curr_fb_velo": 98.7,
-    "total_pitches_2026": 423
+    "curr_swstr_overall": 0.1043,
+    "curr_primary_velo": 98.6,
+    "curr_fb_velo": 98.6,
+    "total_pitches_2026": 508
   },
   "696270": {
     "curr_pitch_types": [
@@ -14527,27 +14595,27 @@
       "FC"
     ],
     "curr_usage": {
-      "CH": 0.385,
-      "SI": 0.2911,
-      "FF": 0.2066,
-      "FC": 0.1174
+      "CH": 0.4043,
+      "SI": 0.2681,
+      "FF": 0.2043,
+      "FC": 0.1234
     },
     "curr_swstr": {
-      "CH": 0.2073,
-      "SI": 0.0645,
-      "FF": 0.0909,
-      "FC": 0.24
+      "CH": 0.2105,
+      "SI": 0.0635,
+      "FF": 0.0833,
+      "FC": 0.2069
     },
     "curr_velo": {
-      "CH": 89.4,
+      "CH": 89.3,
       "SI": 96.8,
       "FF": 98.5,
-      "FC": 88.4
+      "FC": 87.9
     },
-    "curr_swstr_overall": 0.1455,
-    "curr_primary_velo": 89.4,
+    "curr_swstr_overall": 0.1447,
+    "curr_primary_velo": 89.3,
     "curr_fb_velo": 97.5,
-    "total_pitches_2026": 213
+    "total_pitches_2026": 235
   },
   "699151": {
     "curr_pitch_types": [
@@ -14800,25 +14868,25 @@
       "FC"
     ],
     "curr_usage": {
-      "SI": 0.4711,
+      "SI": 0.4793,
       "ST": 0.2314,
       "FF": 0.1488,
       "CH": 0.0744,
-      "FC": 0.0744
+      "FC": 0.0661
     },
     "curr_swstr": {
-      "SI": 0.0175,
+      "SI": 0.0172,
       "ST": 0.0714,
       "FF": 0.0556,
       "CH": 0.0,
-      "FC": 0.2222
+      "FC": 0.25
     },
     "curr_velo": {
       "SI": 92.9,
       "ST": 81.8,
       "FF": 93.9,
       "CH": 85.5,
-      "FC": 88.3
+      "FC": 88.1
     },
     "curr_swstr_overall": 0.0496,
     "curr_primary_velo": 92.9,
@@ -14959,41 +15027,41 @@
   },
   "702275": {
     "curr_pitch_types": [
-      "CU",
       "FF",
+      "CU",
       "CH",
+      "SI",
       "SL",
-      "FC",
-      "SI"
+      "FC"
     ],
     "curr_usage": {
-      "CU": 0.2809,
-      "FF": 0.2697,
-      "CH": 0.2135,
-      "SL": 0.1124,
-      "FC": 0.0787,
-      "SI": 0.0449
+      "FF": 0.2957,
+      "CU": 0.2634,
+      "CH": 0.1613,
+      "SI": 0.1237,
+      "SL": 0.1022,
+      "FC": 0.0538
     },
     "curr_swstr": {
-      "CU": 0.12,
-      "FF": 0.0417,
-      "CH": 0.1053,
-      "SL": 0.2,
-      "FC": 0.0,
-      "SI": 0.0
+      "FF": 0.0545,
+      "CU": 0.102,
+      "CH": 0.1333,
+      "SI": 0.0,
+      "SL": 0.1053,
+      "FC": 0.0
     },
     "curr_velo": {
-      "CU": 82.4,
       "FF": 94.4,
+      "CU": 82.6,
       "CH": 87.9,
-      "SL": 84.8,
-      "FC": 91.7,
-      "SI": 93.8
+      "SI": 93.8,
+      "SL": 85.2,
+      "FC": 91.3
     },
-    "curr_swstr_overall": 0.0899,
-    "curr_primary_velo": 82.4,
-    "curr_fb_velo": 94.3,
-    "total_pitches_2026": 89
+    "curr_swstr_overall": 0.0753,
+    "curr_primary_velo": 94.4,
+    "curr_fb_velo": 94.2,
+    "total_pitches_2026": 186
   },
   "702303": {
     "curr_pitch_types": [
@@ -15262,31 +15330,31 @@
     ],
     "curr_usage": {
       "FS": 0.303,
-      "FF": 0.2434,
+      "FF": 0.2504,
       "FC": 0.1786,
       "CU": 0.1243,
-      "SI": 0.0893,
+      "SI": 0.0823,
       "SL": 0.0613
     },
     "curr_swstr": {
       "FS": 0.1734,
-      "FF": 0.0791,
+      "FF": 0.0769,
       "FC": 0.1176,
       "CU": 0.1127,
-      "SI": 0.0588,
+      "SI": 0.0638,
       "SL": 0.2571
     },
     "curr_velo": {
       "FS": 91.1,
-      "FF": 95.5,
+      "FF": 95.4,
       "FC": 91.0,
       "CU": 76.6,
-      "SI": 95.0,
+      "SI": 95.1,
       "SL": 86.8
     },
     "curr_swstr_overall": 0.1278,
     "curr_primary_velo": 91.1,
-    "curr_fb_velo": 95.4,
+    "curr_fb_velo": 95.3,
     "total_pitches_2026": 571
   },
   "813349": {
@@ -15331,31 +15399,35 @@
     "curr_pitch_types": [
       "FF",
       "CH",
+      "FC",
       "SL",
       "ST"
     ],
     "curr_usage": {
-      "FF": 0.5238,
-      "CH": 0.3214,
-      "SL": 0.131,
-      "ST": 0.0238
+      "FF": 0.4452,
+      "CH": 0.3014,
+      "FC": 0.137,
+      "SL": 0.1027,
+      "ST": 0.0137
     },
     "curr_swstr": {
-      "FF": 0.0227,
-      "CH": 0.1481,
-      "SL": 0.0909,
+      "FF": 0.0462,
+      "CH": 0.2273,
+      "FC": 0.2,
+      "SL": 0.0667,
       "ST": 0.0
     },
     "curr_velo": {
-      "FF": 92.0,
-      "CH": 79.4,
-      "SL": 80.8,
+      "FF": 91.3,
+      "CH": 78.8,
+      "FC": 87.2,
+      "SL": 80.5,
       "ST": 87.4
     },
-    "curr_swstr_overall": 0.0714,
-    "curr_primary_velo": 92.0,
-    "curr_fb_velo": 92.0,
-    "total_pitches_2026": 84
+    "curr_swstr_overall": 0.1233,
+    "curr_primary_velo": 91.3,
+    "curr_fb_velo": 91.3,
+    "total_pitches_2026": 146
   },
   "837227": {
     "curr_pitch_types": [
