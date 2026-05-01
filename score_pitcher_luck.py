@@ -92,6 +92,7 @@ PITCH_MIX_DELTA_PATH = os.path.join(BASE_DIR, "data", "pitcher_pitch_mix_delta.j
 CAREER_BABIP_P_PATH = os.path.join(BASE_DIR, "data", "pitcher_career_babip.json")
 CAREER_CSW_P_PATH   = os.path.join(BASE_DIR, "data", "pitcher_career_csw.json")
 STARTS_PATH        = os.path.join(BASE_DIR, "pitcher_per_start_stats.csv")
+STEAMER_PIT_CSV    = os.path.join(BASE_DIR, "Steamers 2025 pitchers.csv")
 PRIOR_TEAMS_PATH          = os.path.join(BASE_DIR, "data", "prior_teams_2025.json")
 PITCHER_CONTRACT_YEAR_PATH = os.path.join(BASE_DIR, "data", "pitcher_contract_year_2026.csv")
 SEASON_YEAR        = 2026
@@ -1231,6 +1232,24 @@ def main():
     )
     if _p_cy_ids:
         print(f"  Contract year flag: {int(df['contract_year'].sum())} pitchers flagged (display only)")
+
+    # ── Standardised alias columns (for user queries) ───────────────────────
+    # Keep original cols intact; add lowercase/snake_case aliases so that
+    # queries using player_name / team / ip / player_type work without a join.
+    df["player_name"] = df["name"]
+    df["team"]        = df["Team"]
+    df["ip"]          = df["IP"]
+
+    # player_type: SP if Steamer projects GS >= 10, else RP
+    try:
+        _st = pd.read_csv(STEAMER_PIT_CSV, encoding="utf-8-sig",
+                          usecols=["MLBAMID", "GS"])
+        _st["MLBAMID"] = pd.to_numeric(_st["MLBAMID"], errors="coerce")
+        _st["steamer_type"] = _st["GS"].apply(lambda x: "SP" if x >= 10 else "RP")
+        _st_map = dict(zip(_st["MLBAMID"], _st["steamer_type"]))
+        df["player_type"] = df["pitcher"].map(_st_map).fillna("RP")
+    except Exception:
+        df["player_type"] = "RP"
 
     df.to_csv(OUTPUT_PATH, index=False)
 
