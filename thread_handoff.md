@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 1, 2026 (Sessions 1–15)
+# Last updated: May 1, 2026 (Sessions 1–16)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -606,8 +606,12 @@ Coverage: 417/423 hitters (98.6%); unmatched = rookies/NPB players
 **Pitcher IP blend formula:**
 ```python
 _blend_ip(mlbam_id, games_rem, current_ip, current_gs, current_games):
-  if steamer_gs >= 10:  # Starting pitcher
+  if steamer_gs >= 10:  # Starting pitcher (Steamer classification)
     sp: 0.55 × steamer_ros + 0.45 × pace_ros
+  elif current_gs >= 5 and current_ip >= 20 and current_ip/current_gs >= 4.0:
+    # SP role override: Steamer thought RP but demonstrably starting in 2026
+    # Flipped weights (Steamer forecast meaningless for this pitcher)
+    blended = 0.45 × steamer_ros + 0.55 × pace_ros, capped at 110 IP
   else:  # Reliever
     rp: 0.80 × steamer_ros + 0.20 × pace_ros
     cap: 70 IP max
@@ -615,6 +619,7 @@ _blend_ip(mlbam_id, games_rem, current_ip, current_gs, current_games):
     fallback to 100% steamer_ros
 ```
 Coverage: 396/402 pitchers (98.5%)
+Note: project_pitcher_counting() also applies 110 IP cap for role_overridden=True in its fallback branch (catches pitchers absent from Steamer CSV entirely, e.g. Chase Burns).
 
 **Key PA/IP changes after playing time module:**
 - Ohtani: +102 PA (Steamer full commitment)
@@ -1053,7 +1058,32 @@ python weekly_update.py --report --top 15
 
 **score_pitcher_luck.py** — Layer 1 pitcher scoring, v2.0 split architecture. Outputs: pitcher_luck_scores.csv (402 pitchers). Buy gates: FIP<=4.50, SwStr>=8%, CareerIP>=100, IP>=20 (waivable at raw_buy>=1.50), ERA>=3.50 base, ERA>=3.75 Buy Low, ERA>=4.00 Slight Buy.
 
+**Session 16 additions to pitcher_luck_scores.csv output:**
+- Alias columns: `player_name` (=name), `team` (=Team), `ip` (=IP) — enables downstream scripts to use consistent column names
+- `player_type`: "SP" or "RP" from Steamer GS (GS>=10 → SP, else RP)
+- `role_override`: True/False — 33 pitchers reclassified RP→SP via SP conversion gates:
+  total_starts>=5 AND IP>=20 AND IP/total_starts>=4.0
+
+**SP role override gate (applies to all three systems consistently):**
+Same gate logic used in score_pitcher_luck.py (role_override column), _blend_ip() SP fallback, and project_pitcher_counting() cap.
+33 pitchers reclassified as of May 1, 2026 run. Display-only; verdict logic not affected by role_override.
+
 **stat_projections.py** — Layer 2 projections. Key constants: SWSTR_TO_K9=77.3 (line ~52), PARK_FACTORS_PROJ dict, CAREER_BA_WEIGHT=0.65, LG_H9=8.8, LG_BB9=3.1. Playing time: _blend_pa() for hitters (Steamer-weighted by games played tier), _blend_ip() for pitchers (55% Steamer SP, 80% Steamer RP, cap 70 IP). Known issue: G/GS null for all pitchers — OK, _blend_ip uses Steamer GS for SP/RP classification.
+
+**Session 16: _blend_ip() SP fallback (role-override path):**
+When Steamer classifies pitcher as RP (GS<10) BUT they are demonstrably starting in 2026 (current_gs>=5, current_ip>=20, ip/start>=4.0):
+- is_starter overridden to True, _role_overridden=True
+- Blend: 0.45 × steamer_ros + 0.55 × pace_ros (flipped from normal 0.55/0.45 — Steamer IP forecast is wrong for this pitcher)
+- Cap: 110 IP ROS max (unproven SP converts)
+- Example: Schlittler 7.5 IP → 74.8 IP after fix
+
+**Session 16: project_pitcher_counting() 110 IP cap (second cap location):**
+Chase Burns (MLBAM 695505) is absent from Steamer CSV entirely → _blend_ip() returns None → falls to fallback in project_pitcher_counting(). Added `role_overridden` parameter + `if role_overridden: projected_ip = min(projected_ip, 110.0)` to the `elif is_starter:` fallback branch.
+Burns: 123.3 → 110.0 IP after fix.
+
+**Call site (line ~1375): current_gs = total_starts (because FanGraphs GS always NaN)**
+`current_gs_val = int(_safe_float(row.get("total_starts", row.get("GS", 0)), 0))`
+`_role_overridden = bool(row.get("role_override", False))`
 
 **generate_projections.py** — Layer 2 runner. Outputs: data/projections_2026.csv (794 players, 20 cols, pf_adj_applied flag).
 
@@ -1067,7 +1097,18 @@ python weekly_update.py --report --top 15
 
 **fetch_fantasypros_ownership.py** — FP cross-platform ownership. 598 unique FP players, 69.7% match rate. Adds fp_ownership/fp_espn_own/fp_yahoo_own to player_ownership_2026.csv. --check flag for probe mode.
 
-**fetch_cbs_rank.py** — CBS YTD FPTS scraper. 9 position pages (C/1B/2B/SS/3B/OF/U/SP/RP). Outputs: data/cbs_rank_2026.csv (545 players). _CBS_ALIASES = {"cameron schlittler": "cam schlittler"}. _norm_cbs() applies alias after normalization. 42% pitcher match rate: structural (CBS publishes top-100/position = max 178 pitchers vs our 402). --check flag.
+**fetch_cbs_rank.py** — CBS YTD FPTS scraper. 9 position pages (C/1B/2B/SS/3B/OF/U/SP/RP). Outputs: data/cbs_rank_2026.csv (545 players). _norm_cbs() applies alias after normalization. Pitcher match rate improved 171→176 (Session 16) after adding 5 aliases. 42% overall pitcher match rate: structural (CBS publishes top-100/position = max 178 pitchers vs our 402). --check flag.
+
+```python
+_CBS_ALIASES = {
+    "cameron schlittler": "cam schlittler",  # CBS uses Cameron; pipeline uses Cam
+    "michael king":       "mike king",        # Mike King (SD) was CBS#27 Sell High — was silently missing
+    "louie varland":      "louis varland",
+    "mike soroka":        "michael soroka",
+    "jake junis":         "jakob junis",
+    "jt ginn":            "j t ginn",         # "J.T." → "jt" but pipeline has "J. t." → "j t"
+}
+```
 
 **validate_formulas.py** — 37/37 PASS required before shipping any change. Never modify tests to make them pass — fix the underlying code.
 
@@ -1118,15 +1159,57 @@ python weekly_update.py --report --top 15
 
 ### TIER 1 — Do immediately
 
-**Week 3 article (May 5-6 deadline):** Monday run → update → report. Lead: Chapman -17.2° LA delta. Second: CBS divergences (Soto, Betts). Third: Ohtani quiet worry. Feature: April Big Board (17/23 = 73.9%). Must also release luck score spreadsheet (promised Article #2).
+**Week 3 article (May 5-6 deadline):** Monday run → update → report. Lead: Matt Chapman LA delta -17.2°. Manual Get Hyped: Cam Schlittler (ERA 1.96/FIP 1.41/xERA 1.57/CBS #3 — three metrics agree). CBS divergences: Soto ESPN#7/CBS#186, Betts ESPN#43/CBS#268. Ohtani quiet worry flag. April Big Board: 17/23 = 73.9%. Release luck score spreadsheet (promised Article #2).
 
-**Weekly tracker mechanism classifier (HIGHEST PRIORITY build):** Mechanism column exists (confirmed/refuted/contact_improving/etc.). Gap: article narrative framing per mechanism. Needed for Week 3+ articles to tell the story behind tracker movement.
+**Trade tool architecture fix — HIGHEST PRIORITY next session:** Current flow is broken: signal tier feeds verdict logic directly. Correct flow: signal feeds projected stats only → stats determine value → verdict = comparison. Fix in trade_analyzer.py. The Skenes/Rice problem (giving Skenes for Rice = "Favorable") exists because C positional scarcity overweights Rice surplus — the fix is proper architecture, not a threshold patch. See Section 11 Bug 3.
+
+**Weekly tracker mechanism classifier:** Mechanism column exists (confirmed/refuted/contact_improving/etc.). Gap: article narrative framing per mechanism. Needed for Week 3+ articles to tell the story behind tracker movement.
 
 **April Big Board:** Consolidated view of all April calls with current status. Player | call date | signal | current wOBA vs xwOBA | mechanism | resolved status. Track record proof-of-work document.
 
 **White paper Section 10:** Live track record table — needs 2-3 more weeks data. Then publish to whitepapersonline.com.
 
+**Mid-season signal architecture (full spec — build before May 15):**
+Three time-period modes:
+
+APRIL (prediction mode — current):
+- Standard buy/sell signals; full 89.7% accuracy claim; 5-month correction window
+
+MID-SEASON May 15 - July 31 (momentum vs merit):
+- Buy/sell still valid but with urgency framing
+- Urgency indicator: weeks remaining in season
+- Rank trajectory layer: rising/falling vs signal
+- "Don't chase" (rising rank + sell signal), "Buy the dip" (falling rank + buy signal)
+- No standalone accuracy claim; runway indicator on every signal
+- Article framing: separate labeled section "Mid-Season Signals" (NEVER mix with April accuracy)
+
+LATE SEASON August+ (stretch run mode):
+- Buy/sell for playoff implications only; short window explicitly stated
+- "Act now or hold through season" binary framing
+- Collection year for 2027 backtest
+
+Components to build:
+- signal_age column in calls_tracker.csv (weeks since call_date)
+- runway_weeks computed from current date
+- rank_trajectory (rising/falling/stable) from weekly delta
+- urgency_flag: signal + runway < 8 weeks
+- Framing templates by time period
+
+Backtest: Do mid-May signals predict June-July regression? Same methodology as April backtest. Cannot publish accuracy until 2026 completes. 2025 collection year data available.
+
+Key publishing rule: Never mix April accuracy (89.7%) with mid-season signals. Two separate labeled sections. Urgency as content hook: "Window closing on these calls."
+
 ### TIER 2 — This week
+
+**Wire league_settings.py into trade_analyzer.py:** Replacement levels become league-aware. Rice/Skenes verdict should differ between CBS 13-team (C:2 → shallower C pool → higher replacement FPTS) and Fantrax 15-team (C:1 → deeper pool → lower replacement FPTS). Prerequisite: trade tool architecture fix (Tier 1) must land first so replacement levels flow correctly.
+
+**Wire OBP vs AVG into hitter values (league-aware scoring):** League 2 (Fantrax) uses OBP — Seager, Judge, Schwarber worth more. AVG-only guys lose value. Requires stat_weights from league JSON to flow into score_value.py hitter ESV calculation. stat_weights in league JSON already present (AVG:0.0/OBP:1.0 for league_2). Implementation: load league settings in score_value.py, apply weight to AVG and OBP terms.
+
+**Wire SV/H ratio into reliever values:** League 1: saves×3 + holds×2. League 2: saves×1 + holds×1. Changes RP surplus value calculations. Use saves_holds_ratio from league JSON. Implementation: SV_WEIGHT × saves + H_WEIGHT × holds in CBS FPTS formula for pitchers.
+
+**Pressure test league settings with 5-10 real trades from both leagues:** Run concrete trades (e.g., Seager for Grisham, Skenes for Rice) through trade_analyzer.py with both league JSONs before building any user-facing UI. Edge cases that no theoretical design catches appear immediately in real data.
+
+**Signal age indicator (build after Week 3):** Flag signals firing 8+ weeks without resolution. Display label: "Reassess — signal age X weeks." No verdict change — display layer only. signal_age = current_date - call_date in calls_tracker.csv.
 
 **Hidden Gem detector (formal):** Query: fp_ownership<35%, wOBA>.330, xwOBA_gap>-0.020, luck>-0.085, PA>=75. Current: Rumfield (COL,10%), Herrera (STL,29%), Aranda (TB,27%), Bogaerts (SD,31%). Run Monday morning, publish Tuesday.
 
@@ -1137,7 +1220,7 @@ python weekly_update.py --report --top 15
 **Platoon splits into projections:** DEFERRED mid-May (150+ PA). Infrastructure: hitter_career_platoon.json (489 batters).
 
 ### TIER 3 — Not blocking
-- Dashboard sort bug (absolute magnitude)
+- Dashboard sort bug (Advanced View — absolute magnitude)
 - Trade tool search click bug
 - ESPN injury status real endpoint
 - Nola/Rogers ERA gap fix (~1 run miscalibration)
@@ -1168,8 +1251,14 @@ python weekly_update.py --report --top 15
 | Lineup context module | COMPLETE |
 | Playing time module | COMPLETE |
 | Backtest A+B+C | COMPLETE |
-| League settings UI | NOT BUILT |
-| 5-10 real trade stress tests | NOT DONE |
+| League settings JSON schema (league_1/2.json) | COMPLETE (Session 16) |
+| league_settings.py loader + get_replacement_level() | COMPLETE (Session 16) |
+| Dashboard toggle labels + taLeague wiring | COMPLETE (Session 16) |
+| Wire league_settings.py into trade_analyzer.py | TIER 2 |
+| Wire OBP/AVG stat_weights into score_value.py | TIER 2 |
+| Wire SV/H ratio into reliever FPTS | TIER 2 |
+| Trade tool architecture fix (signals → stats → value) | TIER 1 — NEXT SESSION |
+| 5-10 real trade stress tests | TIER 2 |
 | Search click bug | TIER 3 |
 
 ---
@@ -1178,13 +1267,15 @@ python weekly_update.py --report --top 15
 
 Architecture: trade_analyzer.py. CBS FPTS via _compute_cbs_fpts(). Replacement level via replacement_level.py. 12-team replacement levels: C=289.8 | 1B=275.7 | 2B=277.7 | 3B=267.0 | SS=293.9 | OF=296.3 | SP=221.5 | RP=157.0.
 
-**Bug 1 — Skenes/Rice smell test FAIL:** Giving Skenes (ERA 0.95) for Rice (Sell High, wOBA .492) returns "Favorable for Rice side." Root cause: C positional scarcity overweights Rice surplus (+44) vs Skenes surplus (+33). Fix needed: top-20 player giveaway cannot return favorable verdict.
+**Bug 1 — Skenes/Rice smell test FAIL:** Giving Skenes (ERA 0.95) for Rice (Sell High, wOBA .492) returns "Favorable for Rice side." Root cause: C positional scarcity overweights Rice surplus (+44) vs Skenes surplus (+33). Fix needed: top-20 player giveaway cannot return favorable verdict. This is a symptom of Bug 3.
 
 **Bug 2 — Pitcher net stats misleading:** Giving Skenes shows ERA -1.50 as "positive change." Fix: replacement-level baseline for net stats.
 
-**Bug 3 — Signals weight verdict directly:** Current: signal tier feeds verdict logic. Correct: signal feeds projected stats only → stats determine value → verdict = comparison. Fix location: trade_analyzer.py verdict calculation.
+**Bug 3 — Signals weight verdict directly (HIGHEST PRIORITY):** Current: signal tier feeds verdict logic. Correct: signal feeds projected stats only → projected stats determine value → verdict = comparison of two sides' projected value. Fix location: trade_analyzer.py verdict calculation. Once signals correctly modulate projected stats only, the downstream verdict naturally reflects both luck-adjusted upside AND positional value without circularity.
 
 **Bug 4 — Search click:** Dashboard onClick intermittent. Tier 3.
+
+**League settings not wired (Session 16):** league_settings.py and JSON files exist. Replacement levels are still fixed at 12-team standard (replacement_level.py). Next: load league from data/leagues/ based on active S.league in dashboard, pass to trade_analyzer. C:2 CBS vs C:1 Fantrax means Rice surplus differs between leagues.
 
 ---
 
@@ -1204,6 +1295,14 @@ File: dashboard.html. Run: `python -m http.server 8000` → localhost:8000/dashb
 **CBS YTD column (May 1, 2026):**
 Added { key:'cbs_rank', label:'CBS YTD', fmt:'int' } to HITTER_COLS and PITCHER_COLS.
 Placement: after owned_pct. F.int formatter: NaN → "—". sortKey() pushes null to bottom.
+
+**League Settings Phase 1 (Session 16):**
+- `tvLeagueNames`: { league1: 'CBS 13-Team', league2: 'Fantrax 15-Team' } — toggle button labels updated
+- `taLeague` default object extended with `roster_slots`, `saves_holds_ratio`, `team_count` (seeded from league1/CBS 13-team defaults)
+- `_LEAGUE_DEFAULTS` constant (above `setLeague()`): mirrors data/leagues/*.json in JS for instant client-side access
+- `setLeague(lg)` now calls `Object.assign({}, S.taLeague, defaults)` on toggle — switching CBS→Fantrax automatically updates: AVG→OBP, SV×3+H×2→SV×1+H×1, C:2→C:1, 13→15 teams
+- `loadLeagueSettings()` seeds from league1 defaults on first visit (no localStorage record)
+- Data files: data/leagues/league_1.json, data/leagues/league_2.json, data/leagues/template.json, league_settings.py
 
 **Current signal counts (May 1):**
 Hitters: 61 BL | 17 SB | 278 N | 30 SS | 37 SH
@@ -1269,6 +1368,16 @@ Pitchers: 8 BL | 7 SB | 354 N | 8 SS | 25 SH
 
 **Sensitivity Sweep Design:** Vary one parameter. Measure BOTH signal count AND accuracy. Use 2025 OOS as guard rail. The optimal constant is not always the highest-accuracy one — consider signal count implications (too restrictive gate = 4 signals/year = statistically meaningless).
 
+**Task Closure Discipline / Reducing WIP:** Every open Claude Code prompt is an open loop with mental overhead and merge risk. Finish the thing before starting the next thing. Senior engineers are relentless about this. A half-built feature is worse than a not-started one — it creates debt, confusion, and testing surface without shipping value.
+
+**Time-Aware Signal Architecture:** A signal's value is a function of both its accuracy AND the correction window remaining. April signals are most valuable not just because they're accurate but because the window is longest. Building urgency into signal framing is product differentiation, not just presentation. "Buy Low — 22 weeks remaining to correct" is more actionable than "Buy Low." The correction window is part of the product.
+
+**Momentum vs Merit Distinction:** Rank trajectory tells you what the market thinks. Contact quality tells you what the player is. When they diverge AND a luck signal fires, that's the three-layer narrative: merit says X, momentum says Y, luck explains the gap. "Don't chase" (rising rank + sell signal) and "Buy the dip" (falling rank + buy signal) are the mid-season content engine. This is not complexity for its own sake — it's a richer product for more of the season.
+
+**Schema-First Architecture:** Define the data structure correctly once before building any UI. League settings JSON schema means the UI gets built once correctly instead of rebuilt three times as edge cases appear. The cost of getting the schema right upfront is two hours. The cost of retrofitting schema after UI is built is two days plus regression risk.
+
+**Pressure Testing Before Productizing:** Run real trades through the tool with real league settings before building the user-facing UI. Edge cases that no theoretical design catches appear immediately in real data. Five concrete trades reveal more about architecture flaws than five hours of design review.
+
 ---
 
 ## SECTION 14: SESSION START/END CHECKLISTS
@@ -1283,12 +1392,15 @@ grep -n "3.75" score_pitcher_luck.py
 grep -n "0.150" score_luck.py
 grep -n "H_KP_K_PENALTY" score_luck.py
 grep -n "_blend_pa" stat_projections.py
+grep -n "_role_overridden" stat_projections.py
 grep -n "XWOBA_PA_STAB" score_value.py
 grep -n "PARK_FACTORS_PROJ" stat_projections.py
 python -c "import pandas as pd; df=pd.read_csv('luck_scores.csv'); print('cbs_rank' in df.columns, df['cbs_rank'].notna().sum())"
+python -c "import pandas as pd; df=pd.read_csv('pitcher_luck_scores.csv'); print('player_type' in df.columns, df['role_override'].sum(), 'overrides')"
+python -c "from league_settings import load_league; lg=load_league('league_1'); print(lg['league_name'], lg['team_count'], 'teams')"
 python -X utf8 validate_formulas.py
 ```
-Expected: all greps find matches, cbs_rank ~330, 37/37 PASS.
+Expected: all greps find matches, cbs_rank ~330, player_type present + ~33 overrides, league_1 = "CBS 13-Team 13 teams", 37/37 PASS.
 4. Check Sanchez invariant (rank 21+ catchers). If any check fails: STOP and report.
 
 ### SESSION END CHECKLIST (no exceptions)
@@ -1328,6 +1440,10 @@ Expected: all greps find matches, cbs_rank ~330, 37/37 PASS.
 - Why does Cohort 3 at 96.4% get a N<10 warning?
 - What are the three park factor amplifiers and why do they differ?
 - What is the is_sp tautology bug and how was it fixed?
+- Why are _blend_ip SP fallback weights 0.45/0.55 instead of the normal 0.55/0.45?
+- Why does the trade tool architecture need fixing — what is the current flow vs correct flow?
+- Why does deeper league size produce LOWER replacement FPTS? (Prove with 15-team SP vs 13-team SP)
+- What is the momentum vs merit distinction and what is the three-layer mid-season narrative?
 
 ---
 
@@ -1419,7 +1535,7 @@ Canary: grep -n "77.3" stat_projections.py
 
 **GitHub:**
 Repo: DustinSLovell/Signal-Fantasy-Pipeline (private)
-Last push: May 1, 2026 (commit 1cbf493 — Worry/Get Hyped Index documentation)
+Last push: May 1, 2026 (commit 4cfde51 — Session 16: League settings Phase 1 + SP role override + CBS aliases + _blend_ip SP fallback)
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -1447,6 +1563,47 @@ Keep filtered ERA (qualifying starts only, MIN_START_IP=2.0). ERA_all_sc creates
 
 ---
 
-*End of thread_handoff.md — Sections 1-17 complete.*
+---
+
+## SECTION 18: SESSION 16 CHANGELOG
+
+**Session 16 — May 1, 2026**
+
+1. CBS rank aliases: 5 entries added to _CBS_ALIASES in fetch_cbs_rank.py — Mike King (most important — CBS#27 Sell High was silently missing), Varland, Soroka, Junis, Ginn. Pitcher match rate 171→176.
+
+2. SP role override system: Added player_name/team/ip alias columns + player_type (from Steamer GS) + role_override (True/False) to pitcher_luck_scores.csv output in score_pitcher_luck.py. 33 pitchers reclassified RP→SP via gates (total_starts>=5, IP>=20, IP/total_starts>=4.0). Display-only; verdict logic unchanged. Committed bcf0aff + 4869109.
+
+3. _blend_ip() SP fallback fix in stat_projections.py: Steamer-RP pitchers demonstrably starting in 2026 get 0.45 Steamer + 0.55 pace blend (flipped — Steamer IP forecast is wrong for them). Schlittler: 7.5 → 74.8 IP. Committed 17cd159.
+
+4. 110 IP cap: Applied in _blend_ip() for role-override path AND in project_pitcher_counting() fallback branch (for pitchers absent from Steamer like Chase Burns). Burns: 123.3 → 110.0 IP. Committed 17cd159.
+
+5. get_replacement_level() formula corrected in league_settings.py: Was (0.90 + 0.10 × pool_ratio) — inverted. Fixed to (1.10 − 0.10 × pool_ratio). Deeper leagues now correctly produce lower replacement FPTS. 13-team SP: ~208 FPTS, 15-team SP: ~197 FPTS. Committed 4cfde51.
+
+6. League settings Phase 1 complete:
+   - data/leagues/league_1.json: CBS 13-Team (AVG, SV×3+H×2, C:2, P:9, 7 reserves)
+   - data/leagues/league_2.json: Fantrax 15-Team (OBP, SV×1+H×1, C:1, P:10, 5 reserves)
+   - data/leagues/template.json: blank schema for paid users
+   - league_settings.py: load_league(), get_replacement_level(), get_stat_weight(), _validate()
+   - dashboard.html: tvLeagueNames updated (CBS 13-Team / Fantrax 15-Team), taLeague extended with roster_slots/saves_holds_ratio/team_count, setLeague() merges _LEAGUE_DEFAULTS on toggle, loadLeagueSettings() seeds from league1 on first visit
+   - Committed 4cfde51.
+
+7. 37/37 PASS throughout session. No invariant failures. 5 commits pushed to GitHub.
+
+**Files modified this session:**
+- fetch_cbs_rank.py (aliases)
+- score_pitcher_luck.py (alias columns, player_type, role_override block)
+- stat_projections.py (_blend_ip SP fallback, project_pitcher_counting 110 IP cap, role_overridden parameter + call site)
+- pitcher_luck_scores.csv (regenerated with new columns)
+- league_settings.py (new file)
+- data/leagues/league_1.json (new file)
+- data/leagues/league_2.json (new file)
+- data/leagues/template.json (new file)
+- dashboard.html (tvLeagueNames, taLeague defaults, setLeague, loadLeagueSettings, _LEAGUE_DEFAULTS)
+- thread_handoff.md (this file)
+- CLAUDE.md (Session 16 changelog — if updated)
+
+---
+
+*End of thread_handoff.md — Sections 1-18 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
