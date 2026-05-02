@@ -189,8 +189,16 @@ def _derive_pos(row: pd.Series) -> str:
     if user_pos:
         return user_pos
     if ptype == "pitcher":
-        # GS column is typically NaN; use IP-per-appearance from total_starts
-        ip = row.get("IP", 0)
+        # Use player_type from pitcher_luck_scores.csv (most reliable — Steamer GS-based)
+        player_type = row.get("player_type")
+        if player_type in ("SP", "RP"):
+            return player_type
+        # role_override: Steamer said RP but pitcher is demonstrably starting in 2026
+        role_override = row.get("role_override")
+        if role_override is True or str(role_override).lower() == "true":
+            return "SP"
+        # Fallback: IP-per-appearance heuristic
+        ip   = row.get("IP", 0)
         apps = row.get("total_starts")
         gs   = row.get("GS")
         try:
@@ -261,17 +269,17 @@ def _load_players() -> pd.DataFrame:
     # Merge fantasy positions from player_values.json (id-based for accuracy)
     pos_map = load_position_map()  # {mlbam_id: fantasy_pos}
     def _get_fpos(row):
-        pid = row.get("batter") if row.get("_type") == "hitter" else row.get("pitcher")
+        # For pitchers: player_type column (from Steamer GS) is most reliable.
+        # player_values.json can lag when score_value.py run predates role corrections.
+        if row.get("_type") == "pitcher":
+            return "SP" if _derive_pos(row) == "SP" else "RP"
+        # For hitters: use player_values.json id lookup (most accurate multi-pos handling)
+        pid = row.get("batter")
         try:
             fpos = pos_map.get(int(pid)) if pd.notna(pid) else None
         except (TypeError, ValueError):
             fpos = None
-        if fpos:
-            return fpos
-        # Fallback: pitchers use _derive_pos; hitters unknown
-        if row.get("_type") == "pitcher":
-            return "SP" if _derive_pos(row) == "SP" else "RP"
-        return None
+        return fpos
 
     combined["_fpos"] = combined.apply(_get_fpos, axis=1)
     combined["_norm"] = combined["name"].apply(_norm)
@@ -610,6 +618,50 @@ def _is_small_sample(row: pd.Series) -> bool:
 
 
 # ---------------------------------------------------------------------------
+# Signal-adjusted projections (Backtest B v2 multipliers — Step 2)
+# ---------------------------------------------------------------------------
+
+# Validated multipliers from Backtest B v2 (projection_backtest_B.py).
+# Applied to projected STAT columns ONLY.  Signal badges are display-only
+# after this point and do NOT touch verdict logic.
+# HR sell-side and AVG multipliers removed — hurt MAE in backtest.
+_H_SIGNAL_MULTS: dict[str, dict[str, float]] = {
+    "buy low":    {"proj_r": 1.08, "proj_rbi": 1.08, "proj_hr": 1.05},
+    "slight buy": {"proj_r": 1.04, "proj_rbi": 1.04, "proj_hr": 1.02},
+    "slight sell": {"proj_r": 0.96, "proj_rbi": 0.96},
+    "sell high":  {"proj_r": 0.92, "proj_rbi": 0.92},
+}
+_P_SIGNAL_MULTS: dict[str, dict[str, float]] = {
+    "buy low":  {"proj_whip": 0.95, "proj_k": 1.05},
+    "sell high": {"proj_era": 1.10, "proj_whip": 1.05, "proj_k": 0.95},
+}
+
+
+def _apply_signal_multipliers(row: pd.Series) -> pd.Series:
+    """Return a copy of row with projected stats adjusted per signal verdict."""
+    row = row.copy()
+    ptype   = row.get("_type", "hitter")
+    verdict = str(row.get("verdict", "Neutral")).lower()
+
+    table = _H_SIGNAL_MULTS if ptype == "hitter" else _P_SIGNAL_MULTS
+    mults = None
+    for tier, m in table.items():
+        if tier in verdict:
+            mults = m
+            break
+
+    if mults:
+        for col, mult in mults.items():
+            v = row.get(col)
+            try:
+                if v is not None and pd.notna(v):
+                    row[col] = float(v) * mult
+            except (TypeError, ValueError):
+                pass
+    return row
+
+
+# ---------------------------------------------------------------------------
 # Trade verdict
 # ---------------------------------------------------------------------------
 
@@ -627,6 +679,25 @@ def _trade_verdict_v2(raw_delta: float, total_delta: float) -> str:
     if total_delta <= -0.03:
         return "SLIGHTLY UNFAVORABLE — modest luck edge on the outgoing side"
     return "NEUTRAL — similar luck profiles on both sides"
+
+
+def _trade_verdict_v3(surplus_delta: Optional[float]) -> str:
+    """Verdict based on signal-adjusted surplus delta (primary verdict driver)."""
+    if surplus_delta is None:
+        return "NEUTRAL — insufficient projection data for value comparison"
+    if surplus_delta >= 50:
+        return "STRONG TRADE — clear projected value advantage incoming"
+    if surplus_delta >= 20:
+        return "FAVORABLE — meaningful projected value advantage"
+    if surplus_delta >= 5:
+        return "SLIGHTLY FAVORABLE — modest projected value edge"
+    if surplus_delta <= -50:
+        return "AVOID — significant projected value disadvantage"
+    if surplus_delta <= -20:
+        return "UNFAVORABLE — meaningful projected value disadvantage"
+    if surplus_delta <= -5:
+        return "SLIGHTLY UNFAVORABLE — modest projected value gap"
+    return "NEUTRAL — comparable projected value on both sides"
 
 
 def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
@@ -654,39 +725,47 @@ def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
         if len(get_rows) > 1:
             print()
 
-    # --- Score computation ---
+    # --- Luck scores (informational context only — not verdict inputs) ---
     give_score = _aggregate_score(give_rows)
     get_score  = _aggregate_score(get_rows)
-    raw_delta  = get_score - give_score
+    raw_luck_delta = get_score - give_score
 
-    # TODO: Re-enable when league settings import is live (Phase B2)
-    # scarcity_adj, scarcity_notes = _scarcity_adj(give_rows, get_rows, config)
-    scarcity_adj, scarcity_notes = 0.0, []
-    trajectory_adj, trajectory_notes = _trajectory_adj(give_rows, get_rows)
-    total_delta = raw_delta + scarcity_adj + trajectory_adj
+    # --- Step 2: Apply signal multipliers to projected stats ---
+    give_adj = [_apply_signal_multipliers(r) for r in give_rows]
+    get_adj  = [_apply_signal_multipliers(r) for r in get_rows]
 
-    verdict = _trade_verdict_v2(raw_delta, total_delta)
+    # --- Step 3: CBS FPTS on signal-adjusted projections ---
+    give_fpts_vals = [_compute_cbs_fpts(r) for r in give_adj]
+    get_fpts_vals  = [_compute_cbs_fpts(r) for r in get_adj]
+    give_fpts_non_none = [v for v in give_fpts_vals if v is not None]
+    get_fpts_non_none  = [v for v in get_fpts_vals  if v is not None]
+    give_fpts_total = sum(give_fpts_non_none) if give_fpts_non_none else None
+    get_fpts_total  = sum(get_fpts_non_none)  if get_fpts_non_none  else None
 
-    # --- CBS FPTS and surplus totals ---
-    give_fpts_vals = [_compute_cbs_fpts(r) for r in give_rows]
-    get_fpts_vals  = [_compute_cbs_fpts(r) for r in get_rows]
-    give_fpts_total = sum(v for v in give_fpts_vals if v is not None) or None
-    get_fpts_total  = sum(v for v in get_fpts_vals  if v is not None) or None
-    fpts_delta = (get_fpts_total - give_fpts_total) if (give_fpts_total and get_fpts_total) else None
-
+    # --- Step 4: Surplus vs replacement level ---
     give_surplus_vals = [
-        get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in give_rows
+        get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in give_adj
     ]
-    get_surplus_vals  = [
-        get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in get_rows
+    get_surplus_vals = [
+        get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in get_adj
     ]
-    give_surplus_total = sum(v for v in give_surplus_vals if v is not None) or None
-    get_surplus_total  = sum(v for v in get_surplus_vals  if v is not None) or None
-    surplus_delta = (
-        (get_surplus_total - give_surplus_total)
-        if (give_surplus_total is not None and get_surplus_total is not None)
-        else None
-    )
+    give_surplus_non_none = [v for v in give_surplus_vals if v is not None]
+    get_surplus_non_none  = [v for v in get_surplus_vals  if v is not None]
+    give_surplus_total = sum(give_surplus_non_none) if give_surplus_non_none else None
+    get_surplus_total  = sum(get_surplus_non_none)  if get_surplus_non_none  else None
+
+    # --- Step 5: Verdict = surplus delta ---
+    if give_surplus_total is not None and get_surplus_total is not None:
+        surplus_delta: Optional[float] = get_surplus_total - give_surplus_total
+    elif give_fpts_total is not None and get_fpts_total is not None:
+        surplus_delta = get_fpts_total - give_fpts_total  # FPTS fallback (no pos data)
+    else:
+        surplus_delta = None
+
+    verdict = _trade_verdict_v3(surplus_delta)
+
+    # --- Trajectory notes (informational — small-sample flags) ---
+    trajectory_adj, trajectory_notes = _trajectory_adj(give_rows, get_rows)
 
     # --- Verdict display ---
     print()
@@ -694,31 +773,26 @@ def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
     print("  TRADE VERDICT")
     print(THIN)
 
-    give_str = _stat(give_score, dec=3, signed=True)
-    get_str  = _stat(get_score,  dec=3, signed=True)
-    raw_str  = _stat(raw_delta,  dec=3, signed=True)
-    print(f"  Give side score : {give_str}   |   Get side score: {get_str}")
-    print(f"  Luck delta      : {raw_str}  (positive = better luck incoming)")
+    give_luck_str = _stat(give_score, dec=3, signed=True)
+    get_luck_str  = _stat(get_score,  dec=3, signed=True)
+    luck_delta_str = _stat(raw_luck_delta, dec=3, signed=True)
+    print(f"  Luck scores     : give {give_luck_str}  |  get {get_luck_str}  |  delta {luck_delta_str}")
 
-    if surplus_delta is not None:
-        sg_str  = f"{give_surplus_total:+.0f}" if give_surplus_total is not None else "N/A"
-        sge_str = f"{get_surplus_total:+.0f}"  if get_surplus_total  is not None else "N/A"
+    if give_surplus_total is not None and get_surplus_total is not None:
+        sg_str  = f"{give_surplus_total:+.0f}"
+        sge_str = f"{get_surplus_total:+.0f}"
         note = "value edge incoming" if surplus_delta >= 0 else "value edge outgoing"
-        print(f"  Surplus (give/get): {sg_str} / {sge_str}  |  delta {surplus_delta:+.0f} ({note})")
-    elif fpts_delta is not None:
-        fpts_give_str = f"{give_fpts_total:.0f}" if give_fpts_total else "N/A"
-        fpts_get_str  = f"{get_fpts_total:.0f}"  if get_fpts_total  else "N/A"
-        note = "more proj FPTS incoming" if fpts_delta >= 0 else "fewer proj FPTS incoming"
-        print(f"  FPTS (give/get) : {fpts_give_str} / {fpts_get_str}  |  delta {fpts_delta:+.0f} ({note})")
+        print(f"  Adj surplus     : give {sg_str}  |  get {sge_str}  |  delta {surplus_delta:+.0f} ({note})")
+    elif give_fpts_total is not None or get_fpts_total is not None:
+        gf = f"{give_fpts_total:.0f}" if give_fpts_total is not None else "N/A"
+        gf2 = f"{get_fpts_total:.0f}" if get_fpts_total  is not None else "N/A"
+        print(f"  Adj FPTS        : give {gf}  |  get {gf2}")
 
-    all_notes = scarcity_notes + trajectory_notes
-    if all_notes:
+    if trajectory_notes:
         print()
-        print("  Adjustments:")
-        for note in all_notes:
+        print("  Notes:")
+        for note in trajectory_notes:
             print(note)
-        total_str = _stat(total_delta, dec=3, signed=True)
-        print(f"  Adjusted delta  : {total_str}")
 
     print()
     print(f"  ➤  {verdict}")
