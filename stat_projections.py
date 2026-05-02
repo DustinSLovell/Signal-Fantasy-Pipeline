@@ -450,11 +450,30 @@ def _blend_ip(
 
     is_starter = steamer_gs >= 10
 
+    # SP conversion fallback: actual 2026 starts override Steamer RP classification.
+    # Mirrors role_override gates in score_pitcher_luck.py (total_starts>=5, IP>=20,
+    # IP/start>=4.0). current_gs receives total_starts at the call site.
+    _role_overridden = False
+    if not is_starter and current_gs >= 5 and current_ip >= 20:
+        if current_ip / current_gs >= 4.0:
+            is_starter = True
+            _role_overridden = True
+
     if is_starter:
-        ip_per_start = steamer_full_ip / max(steamer_gs, 1)
-        starts_rem   = int(games_rem / 5 * 0.85)
-        pace_ros     = starts_rem * ip_per_start
-        blended      = 0.55 * steamer_ros_ip + 0.45 * pace_ros
+        if _role_overridden:
+            # Steamer's ip/start is unreliable (projected as RP); use actual 2026
+            # ip/start as pace. Blend flipped: 0.45 Steamer + 0.55 actual pace
+            # because Steamer's IP forecast is wrong for this pitcher's real role.
+            ip_per_start = current_ip / current_gs
+            starts_rem   = int(games_rem / 5 * 0.85)
+            pace_ros     = starts_rem * ip_per_start
+            blended      = 0.45 * steamer_ros_ip + 0.55 * pace_ros
+            blended      = min(blended, 110.0)  # cap: unproven SP converts
+        else:
+            ip_per_start = steamer_full_ip / max(steamer_gs, 1)
+            starts_rem   = int(games_rem / 5 * 0.85)
+            pace_ros     = starts_rem * ip_per_start
+            blended      = 0.55 * steamer_ros_ip + 0.45 * pace_ros
     else:
         if current_ip >= 15 and current_games > 0:
             ip_per_app   = current_ip / current_games
@@ -930,7 +949,8 @@ def project_pitcher_counting(blended: dict,
                               mlbam_id: Optional[int] = None,
                               current_ip: float = 0.0,
                               current_gs: int = 0,
-                              current_games: int = 0) -> dict:
+                              current_games: int = 0,
+                              role_overridden: bool = False) -> dict:
     """Convert blended pitcher rate stats to rest-of-season counting stats."""
     health_factor = 0.85
 
@@ -946,6 +966,8 @@ def project_pitcher_counting(blended: dict,
         starts_remaining = max(0, int(games_remaining / 5 * health_factor))
         ip_per_start = blended.get("true_ip_per_start", 5.60)
         projected_ip = round(starts_remaining * ip_per_start, 1)
+        if role_overridden:
+            projected_ip = min(projected_ip, 110.0)
     else:
         # Reliever: ~1.0 IP per appearance, ~4 app per 5 games
         appearances = max(0, int(games_remaining * 0.80 * health_factor))
@@ -1352,12 +1374,14 @@ def project_player(name: str,
 
         blended       = blend_projection(true_talent, baseline, weight)
         is_sp         = _is_starter(row)
-        current_gs_val   = int(_safe_float(row.get("total_starts", row.get("GS", 0)), 0))
+        current_gs_val    = int(_safe_float(row.get("total_starts", row.get("GS", 0)), 0))
         current_games_val = int(_safe_float(row.get("G", 0), 0))
+        _role_overridden  = bool(row.get("role_override", False))
         proj_counting = project_pitcher_counting(
             blended, games_rem, is_sp, signal=verdict,
             mlbam_id=pitcher_id, current_ip=ip,
             current_gs=current_gs_val, current_games=current_games_val,
+            role_overridden=_role_overridden,
         )
         proj_counting["sample_confidence"] = _sample_confidence_label(ip, is_pitcher=True)
         warnings      = _sanity_check_pitcher(proj_counting, row)

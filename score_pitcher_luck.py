@@ -1267,7 +1267,7 @@ def main():
     df.loc[_sp_override_mask, "role_override"] = True
 
     _n_override = int(_sp_override_mask.sum())
-    print(f"  Role override: {_n_override} pitchers reclassified RP→SP")
+    print(f"  Role override: {_n_override} pitchers reclassified RP->SP")
     if _n_override:
         _names = df.loc[_sp_override_mask, "name"].tolist()
         for _nm in _names:
