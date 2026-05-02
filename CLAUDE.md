@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: April 30, 2026
+# Last updated: May 1, 2026 (Sessions 1-16)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1138,9 +1138,57 @@ score_value.py: Sanchez Test fix — pre-existing FAIL (rank 20) resolved
 
 PENDING MANUAL ACTIONS:
   - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
-  - Career lessons database (Sessions 8-14) — add manually in Claude.ai
-  - Update thread_handoff.md in Claude.ai with full session summary
+  - Career lessons database (Sessions 8-14+) — add manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
+
+--- May 1, 2026 (Session 16) ---
+CBS rank aliases: 5 entries added to fetch_cbs_rank.py _CBS_ALIASES
+  - "michael king" → "mike king" (Mike King SD was CBS#27 Sell High — silently missing)
+  - "louie varland" → "louis varland", "mike soroka" → "michael soroka"
+  - "jake junis" → "jakob junis", "jt ginn" → "j t ginn"
+  - Pitcher match rate 171→176
+  - fetch_cbs_rank.py committed bcf0aff
+
+SP role override system: score_pitcher_luck.py output extended
+  - player_name/team/ip alias columns added (downstream script compatibility)
+  - player_type: "SP"/"RP" from Steamer GS>=10
+  - role_override: True/False — 33 pitchers reclassified RP→SP via gates:
+    total_starts>=5 AND IP>=20 AND IP/total_starts>=4.0
+  - Display-only; verdict logic unchanged
+  - Committed 4869109
+
+_blend_ip() SP fallback fix: stat_projections.py
+  - Pitchers Steamer classifies as RP but demonstrably starting get SP blend
+  - Weights flipped: 0.45 Steamer + 0.55 pace (Steamer IP forecast wrong for them)
+  - Cap: 110 IP ROS max for role-override SPs
+  - Schlittler: 7.5 → 74.8 IP after fix
+  - 110 IP cap also applied in project_pitcher_counting() fallback branch
+    (catches pitchers absent from Steamer CSV — e.g. Chase Burns 123.3→110.0)
+  - role_overridden parameter threaded through call site (~line 1375)
+  - Committed 17cd159
+
+Replacement level formula corrected: league_settings.py
+  - Was: base_fpts * (0.90 + 0.10 * pool_ratio) — INVERTED
+  - Fixed: base_fpts * (1.10 - 0.10 * pool_ratio)
+  - Deeper leagues now correctly produce lower replacement FPTS
+  - 13-team SP ≈ 208 FPTS | 15-team SP ≈ 197 FPTS
+
+League settings Phase 1: committed 4cfde51
+  - data/leagues/league_1.json: CBS 13-Team (AVG, SV×3+H×2, C:2, P:9, 7 reserves)
+  - data/leagues/league_2.json: Fantrax 15-Team (OBP, SV×1+H×1, C:1, P:10, 5 reserves)
+  - data/leagues/template.json: blank schema template
+  - league_settings.py: load_league(), get_replacement_level(), get_stat_weight(), _validate()
+  - dashboard.html: tvLeagueNames → "CBS 13-Team" / "Fantrax 15-Team"
+  - dashboard.html: taLeague default extended with roster_slots, saves_holds_ratio, team_count
+  - dashboard.html: _LEAGUE_DEFAULTS constant; setLeague() merges defaults on toggle
+  - dashboard.html: loadLeagueSettings() seeds from league1 on first visit
+  - 37/37 PASS throughout session
+
+PENDING MANUAL ACTIONS:
+  - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Sessions 15-16) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Next session: trade tool architecture fix (signals → projected stats → verdict) — HIGHEST PRIORITY
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
