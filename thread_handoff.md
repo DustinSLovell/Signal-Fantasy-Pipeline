@@ -1247,6 +1247,33 @@ Key publishing rule: Never mix April accuracy (89.7%) with mid-season signals. T
 - Post-blend AVG floor (26 hitters below .195)
 - fp_rank refresh (shows preseason, not in-season)
 
+**Threads Split Project (core vs. reference architecture):**
+Trigger: handoff doc crosses ~2,500 lines OR a major new system
+(trade tool live, mid-season architecture, paid tier) adds 300+
+lines of reference content. Whichever comes first.
+
+Workstream:
+1. Audit current doc — tag every section as CORE (session-start
+   required) or REFERENCE (on-demand lookup only)
+2. Create thread_handoff_core.md — verification protocol, session
+   goal, Tier 1 parking lot, current track record, last commit,
+   active signals, known bugs. Hard ceiling: 800 lines.
+3. Create thread_handoff_reference.md — full model specs, accuracy
+   tables, backtest methodology, article archive, career lessons,
+   data notes, player disambiguation. Grows without limit.
+4. Update verification protocol — comprehension check runs against
+   core only. Reference sections cited by name when needed
+   ("check Reference Section 6 for pitcher model thresholds").
+5. Update session start/end checklists in Section 14 — core file
+   gets overwritten each session as today; reference file gets
+   appended/updated only when relevant sections change.
+6. Update CLAUDE.md to reflect new two-file structure.
+7. Smoke test: run one full session with split structure, confirm
+   CC reads core completely and can locate reference content
+   on demand without missing critical session-start context.
+
+Priority: TIER 3 now. Promote to TIER 1 when trigger condition met.
+
 ### RESEARCH AGENDA (post-2026 season)
 - Worry Index threshold validation (50+ resolved flags — mid-2027)
 - Financial motivation backtest (50+ per cohort/signal — expand contract match rate)
