@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 1, 2026 (Sessions 1-16)
+# Last updated: May 2, 2026 (Sessions 1-17)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1186,9 +1186,38 @@ League settings Phase 1: committed 4cfde51
 
 PENDING MANUAL ACTIONS:
   - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
-  - Career lessons database (Sessions 15-16) — add new lessons manually in Claude.ai
+  - Career lessons database (Sessions 15-17) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
-  - Next session: trade tool architecture fix (signals → projected stats → verdict) — HIGHEST PRIORITY
+
+--- May 2, 2026 (Session 17) ---
+
+1. Trade tool architecture fix (Bug 3) — trade_analyzer.py, commit fda45c4
+   Correct 5-step flow: Steamer projections → signal multipliers → CBS FPTS → surplus → verdict.
+   Signals now adjust projected stats only; surplus delta drives verdict (_trade_verdict_v3).
+   Backtest B v2 multipliers: BL→R×1.08/HR×1.05/RBI×1.08; SH→R×0.92/RBI×0.92;
+   P SH→ERA×1.10/WHIP×1.05/K×0.95; P BL→WHIP×0.95/K×1.05.
+
+2. Skenes SP classification fix — _derive_pos() uses player_type/role_override from
+   pitcher_luck_scores.csv. _get_fpos() routes pitchers through _derive_pos() instead of
+   stale player_values.json. Skenes: SP+95 surplus vs SP replacement (not RP).
+
+3. New verdict thresholds (surplus delta): ≥50 STRONG | ≥20 FAVORABLE | ≥5 SLIGHT
+   | ≤-50 AVOID | ≤-20 UNFAVORABLE | ≤-5 SLIGHTLY UNFAVORABLE | else NEUTRAL.
+
+4. All 3 smell tests PASS:
+   Case 1 (Skenes→Rice): delta -142 → AVOID ✓
+   Case 2 (Skubal→Rice): delta -131 → AVOID ✓
+   Case 3 (Acuña BL→Rice SH): delta -251 → AVOID ✓
+
+5. Housekeeping: 2 new Tier 2 parking lot items added to thread_handoff.md
+   (Steamer Dependency Audit + Own Projection System), commit f0639ad.
+
+6. 37/37 PASS. No invariant failures.
+
+PENDING MANUAL ACTIONS:
+  - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Session 17) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
 
 ---
 *This file is the persistent memory for Claude Code sessions.*

@@ -1181,7 +1181,7 @@ _CBS_ALIASES = {
 
 **Week 3 article (May 5-6 deadline):** Monday run → update → report. Lead: Matt Chapman LA delta -17.2°. Manual Get Hyped: Cam Schlittler (ERA 1.96/FIP 1.41/xERA 1.57/CBS #3 — three metrics agree). CBS divergences: Soto ESPN#7/CBS#186, Betts ESPN#43/CBS#268. Ohtani quiet worry flag. April Big Board: 17/23 = 73.9%. Release luck score spreadsheet (promised Article #2).
 
-**Trade tool architecture fix — HIGHEST PRIORITY next session:** Current flow is broken: signal tier feeds verdict logic directly. Correct flow: signal feeds projected stats only → stats determine value → verdict = comparison. Fix in trade_analyzer.py. The Skenes/Rice problem (giving Skenes for Rice = "Favorable") exists because C positional scarcity overweights Rice surplus — the fix is proper architecture, not a threshold patch. See Section 11 Bug 3.
+**Trade tool architecture fix — COMPLETE (Session 17, commit fda45c4):** Correct 5-step flow implemented. Signals adjust projected stats only. Verdict = adjusted surplus delta. Skenes correctly SP+95 surplus, Rice correctly -47 surplus. All 3 smell tests PASS. See Section 11.
 
 **Weekly tracker mechanism classifier:** Mechanism column exists (confirmed/refuted/contact_improving/etc.). Gap: article narrative framing per mechanism. Needed for Week 3+ articles to tell the story behind tracker movement.
 
@@ -1339,7 +1339,7 @@ Priority: TIER 3 now. Promote to TIER 1 when trigger condition met.
 | Wire league_settings.py into trade_analyzer.py | TIER 2 |
 | Wire OBP/AVG stat_weights into score_value.py | TIER 2 |
 | Wire SV/H ratio into reliever FPTS | TIER 2 |
-| Trade tool architecture fix (signals → stats → value) | TIER 1 — NEXT SESSION |
+| Trade tool architecture fix (signals → stats → value) | COMPLETE (Session 17) |
 | 5-10 real trade stress tests | TIER 2 |
 | Search click bug | TIER 3 |
 
@@ -1347,17 +1347,44 @@ Priority: TIER 3 now. Promote to TIER 1 when trigger condition met.
 
 ## SECTION 11: TRADE TOOL (known issues)
 
-Architecture: trade_analyzer.py. CBS FPTS via _compute_cbs_fpts(). Replacement level via replacement_level.py. 12-team replacement levels: C=289.8 | 1B=275.7 | 2B=277.7 | 3B=267.0 | SS=293.9 | OF=296.3 | SP=221.5 | RP=157.0.
+Architecture: trade_analyzer.py. CBS FPTS via _compute_cbs_fpts(). Replacement level via replacement_level.py.
 
-**Bug 1 — Skenes/Rice smell test FAIL:** Giving Skenes (ERA 0.95) for Rice (Sell High, wOBA .492) returns "Favorable for Rice side." Root cause: C positional scarcity overweights Rice surplus (+44) vs Skenes surplus (+33). Fix needed: top-20 player giveaway cannot return favorable verdict. This is a symptom of Bug 3.
+**Current replacement levels (ROS scale — from projections_2026.csv):**
+C=219.4 | 1B=226.9 | 2B=212.4 | 3B=189.8 | SS=252.2 | OF=247.1 | SP=201.0 | RP=193.2
+(Note: these differ from CLAUDE.md values which were from an earlier pipeline run)
 
-**Bug 2 — Pitcher net stats misleading:** Giving Skenes shows ERA -1.50 as "positive change." Fix: replacement-level baseline for net stats.
+**Bug 3 — FIXED (Session 17, commit fda45c4):** Signals now feed projected stats only. Correct 5-step flow implemented:
+1. Steamer ROS projections (from projections_2026.csv)
+2. _apply_signal_multipliers() — Backtest B v2 multipliers on proj stats
+3. CBS FPTS regression on adjusted projections
+4. Surplus vs replacement level at player's position
+5. Verdict = get_surplus_total − give_surplus_total → _trade_verdict_v3()
 
-**Bug 3 — Signals weight verdict directly (HIGHEST PRIORITY):** Current: signal tier feeds verdict logic. Correct: signal feeds projected stats only → projected stats determine value → verdict = comparison of two sides' projected value. Fix location: trade_analyzer.py verdict calculation. Once signals correctly modulate projected stats only, the downstream verdict naturally reflects both luck-adjusted upside AND positional value without circularity.
+**Smell test evidence (May 2, 2026):**
+
+Case 1 — Giving Skenes SP / Getting Rice C (Sell High):
+- Skenes: player_type=SP correctly resolved, adj surplus +95 (unadj +95, neutral signal)
+- Rice: Sell High → R×0.92, RBI×0.92 → adj surplus -47 (unadj -34)
+- Delta: -142 → AVOID ✓
+
+Case 2 — Giving Skubal SP / Getting Rice C:
+- Skubal: neutral signal, adj surplus +84
+- Rice: adj surplus -47
+- Delta: -131 → AVOID ✓
+
+Case 3 — Giving Acuña Buy Low / Getting Rice Sell High:
+- Acuña: Buy Low → R×1.08, HR×1.05, RBI×1.08 → adj surplus +204 (unadj +174)
+- Rice: adj surplus -47
+- Delta: -251 → AVOID ✓
+- Architecture confirmed: verdict driven by adjusted surplus delta, not signal badges
+
+**Bug 1 — RESOLVED by Bug 3 fix.** C positional scarcity no longer overweights Rice; Rice actual surplus is -34 (unadj) to -47 (sell-high-adjusted) — correctly below SP/elite OF surplus.
+
+**Bug 2 — Pitcher net stats display:** Still shows raw proj stats in player card, not replacement-level-relative. Lower priority — display issue only, verdict is correct.
 
 **Bug 4 — Search click:** Dashboard onClick intermittent. Tier 3.
 
-**League settings not wired (Session 16):** league_settings.py and JSON files exist. Replacement levels are still fixed at 12-team standard (replacement_level.py). Next: load league from data/leagues/ based on active S.league in dashboard, pass to trade_analyzer. C:2 CBS vs C:1 Fantrax means Rice surplus differs between leagues.
+**League settings not wired:** league_settings.py and JSON files exist. Replacement levels still fixed at 12-team standard (replacement_level.py). Next Tier 2: load league from data/leagues/ based on active S.league in dashboard. C:2 CBS vs C:1 Fantrax changes Rice surplus between leagues.
 
 ---
 
@@ -1620,7 +1647,7 @@ Canary: grep -n "77.3" stat_projections.py
 
 **GitHub:**
 Repo: DustinSLovell/Signal-Fantasy-Pipeline (private)
-Last push: May 1, 2026 (commit 4cfde51 — Session 16: League settings Phase 1 + SP role override + CBS aliases + _blend_ip SP fallback)
+Last push: May 2, 2026 (commit fda45c4 — Session 17: Trade tool architecture fix + Bug 3 resolved)
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -1686,6 +1713,66 @@ Keep filtered ERA (qualifying starts only, MIN_START_IP=2.0). ERA_all_sc creates
 - dashboard.html (tvLeagueNames, taLeague defaults, setLeague, loadLeagueSettings, _LEAGUE_DEFAULTS)
 - thread_handoff.md (this file)
 - CLAUDE.md (Session 16 changelog — if updated)
+
+---
+
+## SECTION 18 (continued): SESSION 17 CHANGELOG
+
+**Session 17 — May 2, 2026**
+
+1. **Update 3 housekeeping:** Added two new Tier 2 parking lot items to thread_handoff.md:
+   - Steamer Dependency Audit (pre-paid-tier, promote at 200 subscribers)
+   - Own Projection System (Phase 2 Steamer replacement, promote at 150 subscribers)
+   Commit f0639ad.
+
+2. **Trade tool architecture fix (Bug 3) — commit fda45c4:**
+
+   **trade_analyzer.py changes:**
+   - `_derive_pos()`: now uses `player_type` column from pitcher_luck_scores.csv first (Steamer GS-based, most reliable). Falls back to `role_override`, then to IP/starts heuristic. Skenes correctly classified SP.
+   - `_get_fpos()`: pitchers now routed through `_derive_pos()` instead of player_values.json pos_map. Reason: player_values.json can lag when score_value.py run predates role corrections (Skenes was RP in pos_map).
+   - `_apply_signal_multipliers()`: new function. Backtest B v2 multipliers applied to proj stat columns.
+     Hitters: BL→R×1.08/HR×1.05/RBI×1.08; SB→R×1.04/HR×1.02/RBI×1.04; SS→R×0.96/RBI×0.96; SH→R×0.92/RBI×0.92.
+     Pitchers: BL→WHIP×0.95/K×1.05; SH→ERA×1.10/WHIP×1.05/K×0.95.
+     AVG + HR sell-side excluded (hurt MAE in Backtest B v2).
+   - `_trade_verdict_v3()`: new function. Surplus delta thresholds: ≥50 STRONG, ≥20 FAVORABLE, ≥5 SLIGHTLY FAVORABLE, ≤-50 AVOID, ≤-20 UNFAVORABLE, ≤-5 SLIGHTLY UNFAVORABLE, else NEUTRAL.
+   - `_analyze_and_display()`: rewritten verdict section.
+     Step 2: apply signal multipliers to give/get rows
+     Step 3: CBS FPTS on adjusted projections
+     Step 4: surplus vs replacement level
+     Step 5: verdict = get_surplus_total - give_surplus_total → _trade_verdict_v3()
+     Luck scores shown as informational context only (no longer drive verdict)
+     Removed "giving up buy-low for sell-highs" framing — replaced by surplus comparison
+
+   **Signal multiplier constants:**
+   ```python
+   _H_SIGNAL_MULTS = {
+       "buy low":    {"proj_r": 1.08, "proj_rbi": 1.08, "proj_hr": 1.05},
+       "slight buy": {"proj_r": 1.04, "proj_rbi": 1.04, "proj_hr": 1.02},
+       "slight sell": {"proj_r": 0.96, "proj_rbi": 0.96},
+       "sell high":  {"proj_r": 0.92, "proj_rbi": 0.92},
+   }
+   _P_SIGNAL_MULTS = {
+       "buy low":  {"proj_whip": 0.95, "proj_k": 1.05},
+       "sell high": {"proj_era": 1.10, "proj_whip": 1.05, "proj_k": 0.95},
+   }
+   ```
+
+3. **Smell test results (all 3 PASS):**
+   - Case 1 (Skenes SP→Rice SH): give+95/get-47/delta-142 → AVOID ✓
+   - Case 2 (Skubal SP→Rice SH): give+84/get-47/delta-131 → AVOID ✓
+   - Case 3 (Acuña BL→Rice SH): give+204/get-47/delta-251 → AVOID ✓
+   Skenes shows as SP (player_type=SP), surplus vs SP replacement (+201 FPTS).
+
+4. 37/37 PASS throughout session. 3 commits pushed: f0639ad, fda45c4 + this doc.
+
+**Files modified this session:**
+- thread_handoff.md (Tier 2 items + Section 11 update + Session 17 changelog)
+- trade_analyzer.py (architecture fix)
+
+**Remaining Tier 1 (next session):**
+- Weekly tracker mechanism classifier
+- April Big Board
+- White paper Section 10
 
 ---
 
