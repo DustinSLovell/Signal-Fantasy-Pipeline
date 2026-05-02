@@ -1,0 +1,22 @@
+{
+    "league_id": "league_1",
+    "league_name": "CBS 13-Team",
+    "platform": "CBS",
+    "team_count": 13,
+    "format": "roto",
+    "categories": {
+        "hitting": ["R", "AVG", "RBI", "HR", "SB"],
+        "pitching": ["WHIP", "W", "SV_H", "ERA", "K"]
+    },
+    "saves_holds_ratio": {"saves": 3, "holds": 2},
+    "roster_slots": {
+        "C": 2, "1B": 1, "2B": 1, "3B": 1, "SS": 1,
+        "MI": 1, "CI": 1, "OF": 5, "UT": 1,
+        "SP": 0, "RP": 0, "P": 9
+    },
+    "max_reserves": 7,
+    "stat_weights": {
+        "AVG": 1.0,
+        "OBP": 0.0
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "league_id": "league_2",
+    "league_name": "Fantrax 15-Team",
+    "platform": "Fantrax",
+    "team_count": 15,
+    "format": "roto",
+    "categories": {
+        "hitting": ["R", "OBP", "RBI", "HR", "SB"],
+        "pitching": ["WHIP", "W", "SV_H", "ERA", "K"]
+    },
+    "saves_holds_ratio": {"saves": 1, "holds": 1},
+    "roster_slots": {
+        "C": 1, "1B": 1, "2B": 1, "3B": 1, "SS": 1,
+        "MI": 1, "CI": 1, "OF": 5, "UT": 2,
+        "SP": 0, "RP": 0, "P": 10
+    },
+    "max_reserves": 5,
+    "stat_weights": {
+        "AVG": 0.0,
+        "OBP": 1.0
+    }
+}

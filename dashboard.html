@@ -1223,7 +1223,7 @@ const S = {
   tvSort:   { all:      { col: '__value', dir: 'desc' },
               hitters:  { col: '__value', dir: 'desc' },
               pitchers: { col: '__value', dir: 'desc' } },
-  tvLeagueNames: { league1: 'League 1', league2: 'League 2' },
+  tvLeagueNames: { league1: 'CBS 13-Team', league2: 'Fantrax 15-Team' },
   tvMode: 'analyzer',   // 'analyzer' | 'rankings'
   // Trade analyzer
   ta: { giving: [], getting: [], dropping: [], results: null },
@@ -1233,9 +1233,12 @@ const S = {
   hLuckById:{},   // batter id string -> luck row
   pLuckById:{},   // pitcher id string -> luck row
   taLeague: {
-    size: '12', format: 'redraft', scoring: '5x5',
+    size: '13', format: 'redraft', scoring: '5x5',
     hCats: ['avg','r','hr','rbi','sb'],
     pCats: ['era','whip','w','k','svh'],
+    roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
+    saves_holds_ratio: { saves:3, holds:2 },
+    team_count: 13,
   },
 };
 
@@ -1792,8 +1795,35 @@ function renderTVTable() {
 }
 
 // ─── Trade value event handlers ───────────────────────────────────────────────
+// League-specific taLeague defaults (mirrors data/leagues/*.json)
+const _LEAGUE_DEFAULTS = {
+  league1: {
+    size: '13', scoring: '5x5',
+    hCats: ['avg','r','hr','rbi','sb'],
+    pCats: ['era','whip','w','k','svh'],
+    roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
+    saves_holds_ratio: { saves:3, holds:2 },
+    team_count: 13,
+  },
+  league2: {
+    size: '15', scoring: '5x5',
+    hCats: ['obp','r','hr','rbi','sb'],
+    pCats: ['era','whip','w','k','svh'],
+    roster_slots: { C:1, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:2, SP:0, RP:0, P:10 },
+    saves_holds_ratio: { saves:1, holds:1 },
+    team_count: 15,
+  },
+};
+
 function setLeague(lg) {
   S.league = lg;
+  // Merge league-specific defaults into taLeague (preserves user overrides for other fields)
+  const defaults = _LEAGUE_DEFAULTS[lg];
+  if (defaults) {
+    S.taLeague = Object.assign({}, S.taLeague, defaults);
+    syncLeagueUI();
+    renderLeagueSummary();
+  }
   renderTV();
 }
 
@@ -2956,11 +2986,11 @@ function loadLeagueSettings() {
     const raw = localStorage.getItem('signalFantasy_leagueSettings');
     if (raw) {
       const saved = JSON.parse(raw);
-      S.taLeague = Object.assign({
-        size:'12', format:'redraft', scoring:'5x5',
-        hCats:['avg','r','hr','rbi','sb'],
-        pCats:['era','whip','w','k','svh'],
-      }, saved);
+      S.taLeague = Object.assign({}, S.taLeague, saved);
+    } else {
+      // First visit: seed from league1 defaults
+      const defaults = _LEAGUE_DEFAULTS[S.league] || _LEAGUE_DEFAULTS.league1;
+      S.taLeague = Object.assign({}, S.taLeague, defaults);
     }
   } catch(e) {}
   syncLeagueUI();
