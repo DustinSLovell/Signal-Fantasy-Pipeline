@@ -1239,6 +1239,41 @@ Key publishing rule: Never mix April accuracy (89.7%) with mid-season signals. T
 
 **Platoon splits into projections:** DEFERRED mid-May (150+ PA). Infrastructure: hitter_career_platoon.json (489 batters).
 
+**Steamer Dependency Audit (pre-paid-tier requirement):**
+Before activating paid tier, determine licensing path for Steamer ROS projections. Options in priority order:
+1. Contact Jared Cross / FanGraphs for commercial license terms — do this at 200 free subscribers, not at launch
+2. Evaluate licensable alternatives (PECOTA, etc.)
+3. Accelerate own projection system to replace Steamer entirely (see item below)
+Current status: Steamer 2025 CSV used as 2026 ROS proxy — acceptable for development and free tier. Not acceptable for paid product without resolution.
+Priority: TIER 2. Promote to TIER 1 at 200 free subscribers or when licensing becomes a blocker.
+
+**Own Projection System (Steamer replacement — Phase 2):**
+Goal: replace Steamer ROS dependency with Signal Fantasy native projections. Two-phase approach:
+Phase 1 (now): Steamer as trusted proxy while trade tool architecture is built and validated. Do not let this dependency slow down the architecture fix.
+Phase 2 (mid-season or offseason): swap Steamer out underneath the same trade tool architecture. The tool doesn't change — just the data feeding into Step 1.
+
+Infrastructure already built:
+- pace-blend PA/IP engine (_blend_pa, _blend_ip) ✅
+- career baselines (BABIP, xwOBA, K%, chase, sprint) ✅
+- signal adjustment multipliers (Backtest B v2) ✅
+- lineup context module ✅
+- park factor adjustments ✅
+- age decay curves ✅
+
+Remaining gaps vs Steamer:
+- HR projection (currently Steamer-dependent)
+- W/L projection for pitchers (team context needed)
+- Full counting stat engine independent of Steamer PA/IP
+
+Build order:
+1. Confirm trade tool architecture works correctly with Steamer as input (Phase 1 complete)
+2. Build native counting stat projections using pace-blend as foundation
+3. Backtest native projections vs Steamer on 2025 OOS data
+4. If MAE gap < 15%, swap Steamer out underneath trade tool
+5. Publish "We built our own projection system" as content
+
+Priority: TIER 2 now. Promote to TIER 1 at 150 free subscribers or when Steamer licensing becomes a blocker.
+
 ### TIER 3 — Not blocking
 - Dashboard sort bug (Advanced View — absolute magnitude)
 - Trade tool search click bug
