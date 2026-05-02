@@ -5,6 +5,26 @@
 
 ---
 
+## SESSION START — MANDATORY VERIFICATION PROTOCOL
+
+Before responding to ANY session goal, Claude must:
+
+1. READ SECTIONS 1–18 IN FULL using multiple Read calls.
+   KNOWN TRUNCATION RISK: The doc exceeds 16,000 chars. Sections 5–10
+   are often cut off in a single Read call. Always run a second Read
+   call starting at line ~900 before declaring the doc read.
+
+2. PROVE comprehension by stating unprompted:
+   - The exact Tier 1 item marked HIGHEST PRIORITY
+   - The hard deadline item and its date
+   - The current track record fraction
+   - The last GitHub commit hash and what it did
+
+3. Do NOT proceed until Dustin confirms the comprehension check
+   looks correct.
+
+---
+
 ## SECTION 1: PROJECT IDENTITY
 
 ### Who Dustin Is
@@ -1413,8 +1433,11 @@ Expected: all greps find matches, cbs_rank ~330, player_type present + ~33 overr
 7. Update accuracy numbers if model changed
 8. Update current signals if pipeline re-run
 9. Regenerate this document completely (overwrite)
-10. git add . && git commit -m "Session N — [description]" && git push
-11. Tell Dustin: "Download updated thread_handoff.md to C:\Users\dusti\fantasy-baseball\thread_handoff.md"
+10. Add a dated changelog block to CLAUDE.md (do NOT overwrite — append the
+    `--- [Date] (Session N) ---` block only and update the "Last updated" line).
+    This keeps both files in sync without destroying CLAUDE.md's Claude Code formatting.
+11. git add . && git commit -m "Session N — [description]" && git push
+12. Tell Dustin: "Download updated thread_handoff.md to C:\Users\dusti\fantasy-baseball\thread_handoff.md"
 
 ### PERMANENT INVARIANTS (after every score_value.py --write)
 - Yordan Álvarez: top 20 overall
