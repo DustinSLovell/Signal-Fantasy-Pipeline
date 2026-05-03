@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
 """
 fetch_fantasypros_ownership.py
-Fetches cross-platform ownership % from FantasyPros MLB stats pages.
+Fetches cross-platform ownership % and ROS consensus rankings from FantasyPros.
 
-Source: fantasypros.com/mlb/stats/hitters.php + pitchers.php
-  - consensus-own : weighted average across ESPN + Yahoo + CBS (the "Rost%" column)
-  - espn-own      : ESPN only
-  - yahoo-own     : Yahoo only
-  (No separate CBS column — CBS is folded into the consensus average)
+Ownership source: fantasypros.com/mlb/stats/hitters.php + pitchers.php
+  - fp_ownership  : consensus % (ESPN+Yahoo+CBS blend — the "Rost%" column)
+  - fp_espn_own   : ESPN only
+  - fp_yahoo_own  : Yahoo only
+  - fp_vbr_rank   : YTD Value-Based Rank (first col of stats page — backward-looking)
 
-Output: data/player_ownership_2026.csv gains two new columns:
-  fp_ownership   — FantasyPros consensus % (ESPN+Yahoo+CBS blend)
-  fp_espn_own    — ESPN as reported by FP (cross-check vs our ESPN fetch)
-  fp_yahoo_own   — Yahoo ownership %
+ROS rank source: fantasypros.com/mlb/projections/ros-{hitters,sp,rp}.php
+  - fp_ros_rank   : row position = FP consensus ROS rank (1 = best projected)
+                    Hitters ranked among hitters; SP among SPs; RP among RPs.
 
-Match strategy: name normalization (lowercase, strip accents, drop punctuation),
-same pattern used elsewhere in the pipeline.
+Output: player_ownership_2026.csv gains columns:
+  fp_ownership, fp_espn_own, fp_yahoo_own, fp_vbr_rank, fp_ros_rank, fp_fetched
 
 Usage:
   python fetch_fantasypros_ownership.py          # update ownership CSV
@@ -36,8 +35,14 @@ OUT_PATH = BASE_DIR / "data" / "player_ownership_2026.csv"
 LUCK_H   = BASE_DIR / "luck_scores.csv"
 LUCK_P   = BASE_DIR / "pitcher_luck_scores.csv"
 
+# Stats pages (ownership + VBR)
 HITTER_URL  = "https://www.fantasypros.com/mlb/stats/hitters.php"
 PITCHER_URL = "https://www.fantasypros.com/mlb/stats/pitchers.php"
+
+# ROS projections pages (row order = consensus ROS rank)
+ROS_HITTER_URL = "https://www.fantasypros.com/mlb/projections/ros-hitters.php"
+ROS_SP_URL     = "https://www.fantasypros.com/mlb/projections/ros-sp.php"
+ROS_RP_URL     = "https://www.fantasypros.com/mlb/projections/ros-rp.php"
 
 HEADERS = {
     "User-Agent": (
@@ -62,7 +67,7 @@ def _norm(s: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# FantasyPros page parser
+# HTTP fetch
 # ---------------------------------------------------------------------------
 
 def _fetch_html(url: str, timeout: int = 20) -> str:
@@ -71,18 +76,21 @@ def _fetch_html(url: str, timeout: int = 20) -> str:
         return r.read().decode("utf-8", errors="replace")
 
 
+# ---------------------------------------------------------------------------
+# Stats page parser (ownership + VBR)
+# ---------------------------------------------------------------------------
+
 def parse_fp_page(html: str) -> list[dict]:
     """
-    Extract per-player ownership from a FantasyPros stats page.
-    Each <tr> contains:
-      fp-player-name="..." attribute
-      team in <small>(<a ...>TEAM</a> - POS)</small>
-      <td class="own consensus-own">NN%</td>
-      <td class="own yahoo-own">NN%</td>
-      <td class="own espn-own">NN%</td>
+    Extract per-player ownership and VBR from a FantasyPros stats page.
+    Each <tr class="mpb-player-XXXX"> contains:
+      - VBR numeric rank in first <td>
+      - fp-player-name="..." attribute
+      - <td class="own consensus-own">NN%</td>
+      - <td class="own yahoo-own">NN%</td>
+      - <td class="own espn-own">NN%</td>
     """
     rows = []
-    # Split on player rows (each has class mpb-player-XXXX)
     player_blocks = re.split(r'(?=<tr class="mpb-player-\d+)', html)
     for block in player_blocks:
         name_m = re.search(r'fp-player-name="([^"]+)"', block)
@@ -94,7 +102,6 @@ def parse_fp_page(html: str) -> list[dict]:
         team = team_m.group(1).strip() if team_m else ""
         pos  = team_m.group(2).strip() if team_m else ""
 
-        # Extract ownership values
         def _own(cls):
             m = re.search(rf'class="own {cls}">(\d+)%', block)
             return float(m.group(1)) if m else float("nan")
@@ -106,15 +113,66 @@ def parse_fp_page(html: str) -> list[dict]:
         if not name or (consensus != consensus):  # skip if no consensus value
             continue
 
+        # VBR: first <td> containing only digits before the player name cell
+        # The VBR column is the first column in the stats table
+        vbr = None
+        vbr_m = re.search(r'<td[^>]*>\s*(\d{1,4})\s*</td>', block)
+        if vbr_m:
+            candidate = int(vbr_m.group(1))
+            # Sanity: VBR should be a reasonable rank (1–500)
+            if 1 <= candidate <= 500:
+                vbr = candidate
+
         rows.append({
-            "name":      name,
-            "name_norm": _norm(name),
-            "team":      team,
-            "pos":       pos,
-            "fp_ownership":  consensus,
-            "fp_espn_own":   espn_own,
-            "fp_yahoo_own":  yahoo_own,
+            "name":         name,
+            "name_norm":    _norm(name),
+            "team":         team,
+            "pos":          pos,
+            "fp_ownership": consensus,
+            "fp_espn_own":  espn_own,
+            "fp_yahoo_own": yahoo_own,
+            "fp_vbr_rank":  vbr,
         })
+    return rows
+
+
+# ---------------------------------------------------------------------------
+# ROS projections page parser (rank by row order)
+# ---------------------------------------------------------------------------
+
+def parse_fp_ros_page(html: str) -> list[dict]:
+    """
+    Extract player names from a FP ROS projections page.
+    Row order (1-indexed) = fp_ros_rank.
+
+    FP projections pages use the same mpb-player-XXXX / fp-player-name
+    pattern as the stats pages.
+    """
+    rows = []
+
+    # Primary pattern: same mpb-player row structure as stats pages
+    player_blocks = re.split(r'(?=<tr class="mpb-player-\d+)', html)
+    for block in player_blocks:
+        name_m = re.search(r'fp-player-name="([^"]+)"', block)
+        if not name_m:
+            continue
+        name = name_m.group(1).strip()
+        if name:
+            rows.append({"name": name, "name_norm": _norm(name)})
+
+    # Fallback: look for player name links if mpb-player pattern absent
+    if not rows:
+        for m in re.finditer(
+            r'<a[^>]+class="[^"]*player-name[^"]*"[^>]*>([^<]+)</a>', html
+        ):
+            name = m.group(1).strip()
+            if name and len(name) > 3:
+                rows.append({"name": name, "name_norm": _norm(name)})
+
+    # Assign rank based on row position (1 = best)
+    for i, r in enumerate(rows):
+        r["fp_ros_rank"] = i + 1
+
     return rows
 
 
@@ -146,68 +204,111 @@ def main():
     args = parser.parse_args()
 
     print("=" * 60)
-    print("FantasyPros Ownership Fetch")
+    print("FantasyPros Ownership + ROS Rank Fetch")
     print("=" * 60)
 
-    # --- Fetch both pages ---
+    # ── Fetch stats pages (ownership + VBR) ──────────────────────────────────
     fp_players: list[dict] = []
     for label, url in [("hitters", HITTER_URL), ("pitchers", PITCHER_URL)]:
-        print(f"\n  Fetching {label} page...")
+        print(f"\n  Fetching {label} stats page...")
         try:
             html = _fetch_html(url)
             rows = parse_fp_page(html)
-            print(f"  Parsed {len(rows)} {label} with ownership data")
+            n_vbr = sum(1 for r in rows if r["fp_vbr_rank"] is not None)
+            print(f"  Parsed {len(rows)} {label} — "
+                  f"{n_vbr} with VBR rank")
             if rows:
-                print(f"  Sample: {rows[0]['name']} {rows[0]['team']} "
-                      f"consensus={rows[0]['fp_ownership']:.0f}%  "
-                      f"ESPN={rows[0]['fp_espn_own']:.0f}%  "
-                      f"Yahoo={rows[0]['fp_yahoo_own']:.0f}%")
+                sample = rows[0]
+                print(f"  Sample: {sample['name']} {sample['team']} "
+                      f"consensus={sample['fp_ownership']:.0f}%  "
+                      f"VBR={sample['fp_vbr_rank']}")
             fp_players.extend(rows)
         except Exception as e:
             print(f"  ERROR fetching {label}: {e}")
             sys.exit(1)
 
-    # Build lookup: norm_name → row (keep highest fp_ownership if duplicate names)
+    # Build ownership+VBR lookup: norm_name → row
     fp_lookup: dict[str, dict] = {}
     for row in fp_players:
         nk = row["name_norm"]
         if nk not in fp_lookup or row["fp_ownership"] > fp_lookup[nk]["fp_ownership"]:
             fp_lookup[nk] = row
 
-    print(f"\n  Total unique FP players: {len(fp_lookup)}")
+    print(f"\n  Total unique FP players (stats): {len(fp_lookup)}")
 
-    # --- Match against our universe ---
+    # ── Fetch ROS projections pages (fp_ros_rank) ─────────────────────────────
+    ros_lookup: dict[str, int] = {}  # norm_name → fp_ros_rank
+    ros_pages = [
+        ("hitters ROS", ROS_HITTER_URL),
+        ("SP ROS",      ROS_SP_URL),
+        ("RP ROS",      ROS_RP_URL),
+    ]
+    total_ros = 0
+    for label, url in ros_pages:
+        print(f"\n  Fetching {label} projections page...")
+        try:
+            html = _fetch_html(url)
+            rows = parse_fp_ros_page(html)
+            print(f"  Parsed {len(rows)} players (rank 1={rows[0]['name'] if rows else '?'})")
+            for row in rows:
+                nk = row["name_norm"]
+                if nk not in ros_lookup:   # first-seen wins (hitters before pitchers)
+                    ros_lookup[nk] = row["fp_ros_rank"]
+            total_ros += len(rows)
+        except Exception as e:
+            print(f"  WARNING: could not fetch {label}: {e}")
+
+    print(f"\n  Total unique ROS-ranked players: {len(ros_lookup)}")
+
+    # ── Match against our universe ────────────────────────────────────────────
     our_h = _load_our_names(LUCK_H)
     our_p = _load_our_names(LUCK_P)
     our_all = {**our_h, **our_p}
 
-    matched   = [(nk, fp_lookup[nk]) for nk in our_all if nk in fp_lookup]
-    unmatched = [name for nk, name in our_all.items() if nk not in fp_lookup]
+    own_matched  = [(nk, fp_lookup[nk]) for nk in our_all if nk in fp_lookup]
+    ros_matched  = [(nk, ros_lookup[nk]) for nk in our_all if nk in ros_lookup]
+    unmatched_own = [name for nk, name in our_h.items() if nk not in fp_lookup]
 
     print(f"\n  Our universe : {len(our_h)} hitters + {len(our_p)} pitchers "
           f"= {len(our_all)} total")
-    print(f"  FP matched   : {len(matched)} / {len(our_all)} "
-          f"({100*len(matched)/max(1,len(our_all)):.1f}%)")
-    print(f"  Unmatched    : {len(unmatched)}")
-    if unmatched:
-        print(f"  Sample unmatched: {unmatched[:10]}")
+    print(f"  FP ownership matched : {len(own_matched):3d} / {len(our_all)} "
+          f"({100*len(own_matched)/max(1,len(our_all)):.1f}%)")
+    print(f"  FP ROS rank matched  : {len(ros_matched):3d} / {len(our_all)} "
+          f"({100*len(ros_matched)/max(1,len(our_all)):.1f}%)")
 
-    # Ownership range among matched players
-    matched_pcts = [fp_lookup[nk]["fp_ownership"] for nk, _ in matched]
+    # Compare ROS rank coverage to old 40-row CSV
+    old_csv = BASE_DIR / "data" / "fantasy_rankings_hitters_2026.csv"
+    old_count = 0
+    if old_csv.exists():
+        with open(old_csv, newline="", encoding="utf-8") as f:
+            old_count = sum(1 for _ in csv.DictReader(f))
+    ros_h_matched = sum(1 for nk in our_h if nk in ros_lookup)
+    print(f"\n  fp_rank coverage:")
+    print(f"    Old manual CSV   : {old_count} hitters")
+    print(f"    New ROS scrape   : {ros_h_matched} hitters (vs {len(our_h)} in our universe)")
+
+    # Ownership distribution
+    matched_pcts = [fp_lookup[nk]["fp_ownership"] for nk, _ in own_matched]
     if matched_pcts:
         under35 = sum(1 for p in matched_pcts if p < 35)
-        print(f"\n  Matched ownership distribution:")
-        print(f"    <35%  : {under35} players  ({100*under35/len(matched_pcts):.1f}%)")
-        print(f"    35-75%: {sum(1 for p in matched_pcts if 35<=p<75)} players")
-        print(f"    >=75% : {sum(1 for p in matched_pcts if p>=75)} players")
-        print(f"    min={min(matched_pcts):.0f}%  max={max(matched_pcts):.0f}%  "
-              f"median={sorted(matched_pcts)[len(matched_pcts)//2]:.0f}%")
+        print(f"\n  Ownership distribution (matched):")
+        print(f"    <35%  : {under35}  |  35-75%: "
+              f"{sum(1 for p in matched_pcts if 35<=p<75)}  |  >=75%: "
+              f"{sum(1 for p in matched_pcts if p>=75)}")
+
+    # Top 20 hitters by fp_ros_rank — sanity check
+    print("\n  Top 20 hitters by fp_ros_rank:")
+    h_ranked = [(ros_lookup[nk], our_h[nk]) for nk in our_h if nk in ros_lookup]
+    h_ranked.sort()
+    print(f"  {'Rk':>3}  Name")
+    for rank, name in h_ranked[:20]:
+        print(f"  {rank:>3}  {name}")
 
     if args.check:
         print("\n  [--check mode] No files written.")
         return
 
-    # --- Update player_ownership_2026.csv ---
+    # ── Update player_ownership_2026.csv ──────────────────────────────────────
     if not OUT_PATH.exists():
         print(f"\n  ERROR: {OUT_PATH} not found — run fetch_ownership.py first")
         sys.exit(1)
@@ -215,42 +316,52 @@ def main():
     with open(OUT_PATH, newline="", encoding="utf-8") as f:
         existing = list(csv.DictReader(f))
 
-    # Add FP columns to existing rows
-    fp_col_defaults = {
-        "fp_ownership": "",
-        "fp_espn_own":  "",
-        "fp_yahoo_own": "",
-        "fp_fetched":   str(date.today()),
-    }
+    new_cols = ["fp_ownership", "fp_espn_own", "fp_yahoo_own",
+                "fp_vbr_rank", "fp_ros_rank", "fp_fetched"]
 
-    updated = 0
+    updated_own = 0
+    updated_ros = 0
+    today = str(date.today())
+
     for row in existing:
         nk = _norm(row.get("player_name", ""))
+
+        # Ownership + VBR
         fp = fp_lookup.get(nk)
         if fp:
             row["fp_ownership"] = f"{fp['fp_ownership']:.1f}"
-            row["fp_espn_own"]  = f"{fp['fp_espn_own']:.1f}"  if fp["fp_espn_own"] == fp["fp_espn_own"] else ""
-            row["fp_yahoo_own"] = f"{fp['fp_yahoo_own']:.1f}" if fp["fp_yahoo_own"] == fp["fp_yahoo_own"] else ""
-            row["fp_fetched"]   = str(date.today())
-            updated += 1
+            row["fp_espn_own"]  = (f"{fp['fp_espn_own']:.1f}"
+                                   if fp["fp_espn_own"] == fp["fp_espn_own"] else "")
+            row["fp_yahoo_own"] = (f"{fp['fp_yahoo_own']:.1f}"
+                                   if fp["fp_yahoo_own"] == fp["fp_yahoo_own"] else "")
+            row["fp_vbr_rank"]  = str(fp["fp_vbr_rank"]) if fp["fp_vbr_rank"] else ""
+            row["fp_fetched"]   = today
+            updated_own += 1
         else:
-            for k, v in fp_col_defaults.items():
-                row.setdefault(k, v)
+            for k in new_cols:
+                row.setdefault(k, "")
 
-    # Determine fieldnames (preserve original + add FP columns if new)
+        # ROS rank
+        ros_rank = ros_lookup.get(nk)
+        if ros_rank is not None:
+            row["fp_ros_rank"] = str(ros_rank)
+            updated_ros += 1
+        else:
+            row.setdefault("fp_ros_rank", "")
+
     base_fields = list(existing[0].keys()) if existing else []
-    fp_fields = ["fp_ownership", "fp_espn_own", "fp_yahoo_own", "fp_fetched"]
-    all_fields = base_fields + [f for f in fp_fields if f not in base_fields]
+    all_fields  = base_fields + [c for c in new_cols if c not in base_fields]
 
     with open(OUT_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=all_fields, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(existing)
 
-    print(f"\n  Updated {updated}/{len(existing)} rows with FP ownership data")
+    print(f"\n  Updated {updated_own}/{len(existing)} rows with FP ownership/VBR")
+    print(f"  Updated {updated_ros}/{len(existing)} rows with FP ROS rank")
     print(f"  Saved  : {OUT_PATH}")
 
-    # --- Quick hidden gem preview ---
+    # ── Hidden gem preview ────────────────────────────────────────────────────
     print("\n" + "=" * 60)
     print("HIDDEN GEM PREVIEW (fp_ownership < 35%, wOBA > .330)")
     print("=" * 60)

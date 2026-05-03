@@ -1537,12 +1537,30 @@ def main():
     _n_bad_mon  = (df["this_is_actually_bad"] == "Monitor").sum()
     print(f"  This Is Actually Bad: {_n_bad_conf} confirmed, {_n_bad_mon} monitor")
 
-    # ── fp_rank (kept as display column; used as fallback for ownership tier) ──
+    # ── fp_rank: live FP ROS rank preferred; stale manual CSV as fallback ──────
+    # Primary: fp_ros_rank from player_ownership_2026.csv (scraped by
+    #          fetch_fantasypros_ownership.py — hitter rank among all hitters)
+    # Fallback: data/fantasy_rankings_hitters_2026.csv (40-row manual export)
     _fp_rank_lk: dict = {}
-    if os.path.exists(FANTASY_RANKINGS_H_PATH):
+    _fp_rank_source = "none"
+    if os.path.exists(OWNERSHIP_PATH):
+        _own_rank_df = pd.read_csv(OWNERSHIP_PATH)
+        if "fp_ros_rank" in _own_rank_df.columns:
+            for _, _rr in _own_rank_df.iterrows():
+                _rv = _rr.get("fp_ros_rank")
+                if pd.notna(_rv) and str(_rv).strip():
+                    try:
+                        _fp_rank_lk[_norm_name(str(_rr["player_name"]))] = int(float(_rv))
+                    except (ValueError, TypeError):
+                        pass
+            if _fp_rank_lk:
+                _fp_rank_source = f"fp_ros_rank ({len(_fp_rank_lk)} players)"
+    if not _fp_rank_lk and os.path.exists(FANTASY_RANKINGS_H_PATH):
         _rankings_df = pd.read_csv(FANTASY_RANKINGS_H_PATH)
         for _, _rr in _rankings_df.iterrows():
             _fp_rank_lk[_norm_name(str(_rr["Player Name"]))] = int(_rr["Rank"])
+        _fp_rank_source = f"manual CSV ({len(_fp_rank_lk)} players)"
+    print(f"  fp_rank source: {_fp_rank_source}")
     df["fp_rank"] = df["name"].apply(
         lambda n: _fp_rank_lk.get(_norm_name(str(n)), None)
     )
