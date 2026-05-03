@@ -1179,40 +1179,44 @@ _CBS_ALIASES = {
 
 ### TIER 1 — Do immediately
 
-**Young Breakout Player Projection Fix (Tier 1 — actively producing wrong trade verdicts):**
-Current problem: career weight of 0.60 anchors HR-rate projections to pre-breakout baselines
-for young players with thin career PA. Produces systematically wrong surplus in the trade tool.
+**Young Breakout Player Projection Fix (Tier 1 — gate tuning continues Session 20):**
+Root cause IDENTIFIED (Session 19): career weight was NOT the lever. career_weight_sweep.py proved
+that career HR weight 0.60→0.00 changes FPTS by only +1.7 points (HR coefficient 0.43 is 5×
+weaker than R/RBI coefficients 2.81/2.08). Real root cause: Steamer 2025 projected Rice as backup
+catcher (G=48.4, PA~190) when he's now an everyday starter. Steamer PA dominates the blend at
+70/30 Steamer/pace weights → ROS PA of only 285. R and RBI suffer catastrophically (6.5× more
+valuable than HR per unit in CBS FPTS). Career weight tuning was the wrong lever.
 
-Example: Ben Rice (122 PA, wOBA .492, barrel 20.8%, CBS projects 28 HR):
-- Model projects 11 HR ROS (blended HR rate 0.041 = 0.60 × career 0.029 + 0.40 × current 0.052)
-- True surplus should be strongly positive (+60 to +100 vs C replacement)
-- Tool shows -47 — a ~100-150 point error on a top-35 player
-- Any trade involving Rice gives wrong verdict in both directions
+**Fix partially implemented (Session 19):**
+stale-Steamer override in _blend_pa(). When pace_ros > steamer_ros × 1.5 AND G ∈ [40,80) AND
+pa_so_far >= 80 → flip weights to 30/70 Steamer/pace. Reduces Steamer anchor for role-changed
+players. Fires for ~30 players (9 clearly legitimate from audit; gate tuning to ~9 continues).
 
-Fix needed:
-1. Reduce career weight for players under 300 career PA. Proposed: 0.30-0.40 (vs 0.60 for vets).
-   Implementation: in hitter_true_talent(), add thin_pa_weight = 0.30 if career_pa < 300 else
-   0.40 if career_pa < 600 else standard weight.
-2. Sensitivity sweep: test career weights 0.30/0.40/0.50 for thin-baseline players on 2025 OOS data.
-   Same methodology as thin baseline fix in Session 11 (career_pa < 1000 → ×0.85 career weight).
-   This extends that fix to also cover very young breakout players.
-3. Short-baseline confidence flag in trade tool and dashboard for players under 300 career PA:
-   "Short baseline — under 300 career PA. Signal confidence reduced. Verify barrel rate /
-   exit velocity trend before acting on this call."
-   Display only — does not change verdict, adds transparency.
+**Rice before/after Session 19:**
+- Old: PA=285, HR=11, R=36, RBI=32, surplus=-47
+- New: PA=384, HR=15, R=48, RBI=42, surplus=-15 (+32 points)
+Target still +60 to +100 — requires ~480 PA or additional gate relaxation.
+
+**Remaining gate tuning (Session 20 Tier 1):**
+Step 3 (next): add fp_ownership >= 10% OR cbs_rank <= 300 as fourth gate — reduces 30 overrides
+to ~9 truly legitimate cases (all high-ownership confirmed role changes).
+Step 4: All-Star break PA crossover simulation — at what accumulated PA does the model trust
+current pace enough to reach +60 surplus? Run project_player at PA = 200/300/400/500.
+
+Short-baseline confidence flag (display-only, already built Session 19):
+"Short baseline — under 300 career PA. Verify barrel rate and exit velocity trend before acting."
+In trade_analyzer.py and dashboard.html. No verdict change.
 
 Jordan Walker is the same archetype: thin baseline, genuine breakout possible, current Sell High
-signal may be correct OR anchored to pre-breakout baseline. Short-baseline flag applies there too.
+may be correct OR anchored to pre-breakout baseline. Short-baseline flag applies there too.
 
-**Trade Tool Edge Case Analysis (Tier 1 — schedule first thing next session):**
-Three specific verifications needed:
-1. C replacement level (Drake Baldwin, 219.4 FPTS) calibration: is this correct for 2026?
-   Baldwin projects well but runs --replacement-table and verify it's using current projection data.
-2. Career weight sensitivity sweep: what weight produces correct surplus for Rice, Walker, and
-   other young breakout candidates? Target: Rice surplus moves from -47 to +60 to +100 range.
-3. PA threshold crossover: at what career PA count does the model start correctly valuing Rice?
-   Run project_player simulations at career_pa = 300, 400, 500, 600 to find where -47 flips
-   to positive. This identifies the model's "blind spot window" for breakout players.
+**Trade Tool Edge Case Analysis (Tier 1 — partially complete):**
+1. ✅ C replacement level calibrated: current run shows C=239.2 FPTS (Drake Baldwin #3 catcher)
+2. ✅ Career weight sensitivity sweep DONE: career weight irrelevant (HR coef too small)
+   Real answer: PA projection from stale Steamer was the broken variable
+3. ⏳ PA threshold crossover: at what accumulated PA does Rice flip to positive surplus?
+   Run project_player at current_PA = 200/300/400/500. Identifies "blind spot window."
+   Schedule as Step 4 for Session 20.
 
 **--explain Flag (paid tier feature — fully built, commit 4277a8f):**
 Built Session 18. Prints full CBS coefficient walkthrough for any trade on demand.
@@ -1282,6 +1286,34 @@ Key publishing rule: Never mix April accuracy (89.7%) with mid-season signals. T
 
 **Platoon splits into projections:** DEFERRED mid-May (150+ PA). Infrastructure: hitter_career_platoon.json (489 batters).
 
+**Ownership Acceleration Tracking (Tier 2 — start capturing now):**
+Add week-over-week ownership delta columns to player_ownership_2026.csv. Players showing
+rapid ownership increase (e.g., 10%→20%→60% over three weeks) = market breakout signal.
+Two uses:
+1. Additional gate input for steamer_pt_override: if ownership jumping fast, player has
+   confirmed playing time and is no longer a "backup" regardless of Steamer G.
+2. Standalone content signal for articles: "fastest rising ownership players this week"
+   surface before the market fully prices them in.
+Implementation: fetch_ownership.py saves weekly snapshot CSVs (like signal_board XLSX).
+delta_own_1w and delta_own_4w columns computed from snapshots. Add to dashboard and
+hidden gem query as secondary sort key.
+**Start capturing weekly snapshots NOW so delta data exists by mid-May.**
+Currently have no historical ownership snapshots — every week of delay = one fewer data point.
+
+**Ohtani Two-Player League Configuration (Tier 2 — required before trade tool goes public):**
+Ohtani displays as RP in position tables with +216 surplus (hitter CBS stats run through
+pitcher formula = nonsense). In standard leagues, Ohtani is a hitter only and the RP
+surplus should be suppressed. In two-way player leagues, he splits into hitter + pitcher
+with separate surplus calculations.
+Do NOT hardcode a suppression rule — this requires league_settings.json configuration.
+Implementation:
+- Add two_way_players list to league_settings.json (default: empty = standard league)
+- In trade_analyzer.py: if player in two_way_players → show both rows; else hitter only
+- Add Ohtani (660271) to two_way_players for two-way leagues
+Currently: trade tool resolves Ohtani correctly as a hitter when queried directly by name.
+Only surfaces as noise in position-table diagnostics, not user-facing trade output.
+Non-blocking for beta; blocking for general public launch.
+
 **Steamer Dependency Audit (pre-paid-tier requirement):**
 Before activating paid tier, determine licensing path for Steamer ROS projections. Options in priority order:
 1. Contact Jared Cross / FanGraphs for commercial license terms — do this at 200 free subscribers, not at launch
@@ -1324,6 +1356,11 @@ Priority: TIER 2 now. Promote to TIER 1 at 150 free subscribers or when Steamer 
 - Nola/Rogers ERA gap fix (~1 run miscalibration)
 - Post-blend AVG floor (26 hitters below .195)
 - fp_rank refresh (shows preseason, not in-season)
+- **SS and OF replacement level review:** Current run shows SS repl=251.2 (Masyn Winn) and
+  OF repl=246.2 (Jake McCarthy). Both appear elevated — check whether these are depressing
+  surplus values for those positions relative to CBS fantasy context. Non-blocking: SS and
+  OF top-15 lists look correct, but replacement player selection may shift with more data.
+  Revisit after 200+ PA per replacement-level player.
 
 **Threads Split Project (core vs. reference architecture):**
 Trigger: handoff doc crosses ~2,500 lines OR a major new system
@@ -1707,7 +1744,7 @@ Canary: grep -n "77.3" stat_projections.py
 
 **GitHub:**
 Repo: DustinSLovell/Signal-Fantasy-Pipeline (private)
-Last push: May 2, 2026 (commit 4277a8f — Session 18: surplus display + --explain flag + _blend_pa fix)
+Last push: May 3, 2026 (commits ba07bd7 + 37a2e1e — Session 19: stale-Steamer PA fix + gate tightening + Muncy disambiguation)
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -1899,6 +1936,92 @@ Keep filtered ERA (qualifying starts only, MIN_START_IP=2.0). ERA_all_sc creates
 
 ---
 
-*End of thread_handoff.md — Sections 1-18 complete.*
+## SECTION 19: SESSION 19 CHANGELOG
+
+**Session 19 — May 3, 2026**
+
+### Root cause identified: stale Steamer PA projection
+
+career_weight_sweep.py (new diagnostic, not production) proved career weight was NOT the lever for Rice's -47 surplus.
+
+Key finding: HR coefficient in CBS FPTS (×0.43) is 5× weaker than R (×2.81) and RBI (×2.08). Sweeping career_weight 0.60→0.00 changes projected HRs by ~4 (+1.7 FPTS). That's noise. R and RBI dominate — and both are PA-driven. Crossover analysis: reaching +60 surplus via HR alone requires 233.8 HRs (impossible). Career weight is not the variable to tune.
+
+Real broken variable: Steamer 2025 projected Rice as a backup catcher (G=48.4, PA~190). He's now an everyday starter. With gp_eff-tiered 60/40 Steamer/pace blend → steamer_ros=153, pace_ros=483 → PA=285. All counting stats suppressed. R and RBI (6.5× more FPTS value than HR) are the real victims.
+
+### Fix implemented: stale-Steamer override in `_blend_pa()`
+
+Four-gate system (Session 19 implemented three; fourth gate — ownership — is Session 20 Tier 1):
+1. `steamer_games ∈ [40, 80)` — Steamer projected as backup/part-time, not everyday
+2. `pa_so_far >= 80` — confirmed sustained usage (not injured/optioned player with 17 PA)
+3. `pace_ros > steamer_ros × 1.5` — current pace significantly exceeds Steamer ROS projection
+4. _(Session 20)_ `fp_ownership >= 10% OR cbs_rank <= 300` — confirmed fantasy relevance
+
+G floor raised 20→40 (Session 19 audit: 97/120 overrides were fringe bench at G=20-39).
+pa_so_far >= 80 gate eliminates injured/optioned players with <25 PA who fire on ratio alone.
+Override count: 120 (Session 19 initial) → 30 (after gate tightening) → ~9 target (Session 20).
+
+**Rice before/after:**
+- Old: PA=285, HR=11, R=36, RBI=32, surplus=-47 (vs C replacement 219.4)
+- New: PA=384, HR=15, R=48, RBI=42, surplus=-15 (vs C replacement 239.2)
+- Improvement: +32 surplus points. Gate tuning continues Session 20.
+
+**Smell tests re-verified after Session 19 gate changes:**
+- Case 1 (Skenes→Rice): give+95/get-15/delta-110 → AVOID ✓
+- Case 2 (Skubal→Rice): give+84/get-15/delta-98 → AVOID ✓
+- Case 3 (Acuña→Rice): give+198/get-15/delta-213 → AVOID ✓
+
+### Max Muncy MLBAM disambiguation — bug fixed
+
+Root cause: `project_player(name="Max Muncy")` used `_fuzzy_find()` → always returned LAD row (first match). ATH Muncy (691777) was silently getting LAD Muncy's (571970) projections in `projections_2026.csv` and `player_values.json`.
+
+Fix: optional `mlbam_id` parameter added to `project_player()`. When provided, filters fuzzy matches by MLBAM ID — exact row selected, not first-alphabetical. `generate_projections.py` now passes `batter=` and `pitcher=` IDs from source CSVs to `project_player()` for every player.
+
+General fix — applies to any future duplicate-name player (no hardcoded Muncy logic).
+
+Verification:
+- LAD Muncy (571970): .233 AVG / 15 HR / 52 R / 41 RBI — Sell High
+- ATH Muncy (691777): .208 AVG / 10 HR / 31 R / 30 RBI — Sell High (distinct, lower stats)
+- Both appear correctly in luck_scores.csv (was always correct — uses batter ID for dedup)
+
+### Ohtani display edge case — flagged, no code change
+
+Standard leagues: Ohtani appears as hitter only. His pitcher_luck_scores.csv classification as RP
+produces +216 surplus when hitter CBS stats are run through pitcher formula — nonsense.
+Only surfaces in position-table diagnostics, not in user-facing trade tool output.
+Requires `two_way_player` flag in league_settings.json before trade tool goes public.
+Logged in Tier 2 parking lot. Non-blocking for beta.
+
+### Full override player audit completed
+
+120 override players characterized. Three categories:
+- TOP (surplus > 0, 6 players): Dingler +53, Aranda +53, Baldwin +53, Goodman +17, Anthony +20, Rice +3
+- BORDERLINE (−20 to 0, 3 players): Schmitt ≈0, Kim +6, Moniak −1
+- NOISE (surplus < −20, 111 players): deep bench, <1% owned, CBS rank >250
+Gate tightening (G 40+, PA 80+) reduced 120→30. Session 20 ownership gate reduces to ~9.
+
+### 37/37 PASS. All invariants PASS.
+Sanchez rank=22 ✓ | Yordan rank=8 ✓ | Raleigh rank=2 ✓ | Baldwin rank=3 ✓ | Contreras rank=5 ✓
+
+**Files modified:**
+- stat_projections.py (stale-Steamer override, G floor 20→40, PA>=80 gate, mlbam_id param in project_player)
+- generate_projections.py (mlbam_id passed for hitters + pitchers)
+- data/projections_2026.csv (regenerated — Muncy fixed, override count 30, new stats)
+- data/player_values.json (regenerated via score_value.py --write — Muncy surplus corrected)
+- CLAUDE.md (Session 19 changelogs — two entries)
+- thread_handoff.md (this file)
+- career_weight_sweep.py (new diagnostic — not production)
+
+**Commits:** ba07bd7 (stale-Steamer fix + short-baseline flag) | 37a2e1e (gate tightening + Muncy fix)
+
+**Remaining Tier 1 (Session 20):**
+- Fourth gate: fp_ownership >= 10% OR cbs_rank <= 300 → targets override to ~9 legit cases
+- Step 4: All-Star break PA crossover simulation (at what PA does Rice surplus flip positive?)
+- Week 3 article (May 5-6 deadline): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+- Weekly tracker mechanism classifier
+- April Big Board
+
+---
+
+*End of thread_handoff.md — Sections 1-19 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*

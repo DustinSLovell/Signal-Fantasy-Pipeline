@@ -30,11 +30,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 472610,823648,2.0,0.0,0.0,True,False,False
 472610,823649,1.0,2.0,18.0,False,False,False
 472610,823651,1.0,1.0,9.0,False,False,False
+472610,823713,1.0,0.0,0.0,False,False,False
+472610,823715,0.0,2.0,,False,False,False
 472610,823716,1.0,2.0,18.0,False,False,False
 500743,822832,1.0,1.0,9.0,False,False,False
 500779,823635,5.333333333333333,1.0,1.69,True,False,False
 500779,823891,4.0,2.0,4.5,True,False,False
 500779,824209,3.6666666666666665,3.0,7.36,True,False,False
+500779,824366,6.0,1.0,1.5,True,True,False
 500779,824370,5.0,5.0,9.0,True,False,False
 518585,822907,1.0,0.0,0.0,False,False,False
 518585,822908,1.0,0.0,0.0,False,False,False
@@ -42,6 +45,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 518585,823157,0.6666666666666666,0.0,0.0,False,False,False
 518585,823159,0.6666666666666666,0.0,0.0,False,False,False
 518585,823243,0.6666666666666666,0.0,0.0,False,False,False
+518585,823557,0.6666666666666666,1.0,13.5,False,False,False
 518585,823560,0.6666666666666666,3.0,40.5,False,False,False
 518585,823561,0.6666666666666666,0.0,0.0,False,False,False
 518585,823563,0.3333333333333333,1.0,27.0,False,False,False
@@ -57,6 +61,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 518886,823639,0.6666666666666666,0.0,0.0,False,False,False
 518886,823644,1.0,0.0,0.0,False,False,False
 518886,823964,0.6666666666666666,0.0,0.0,False,False,False
+518886,824042,1.0,0.0,0.0,False,False,False
 518886,824691,0.6666666666666666,0.0,0.0,False,False,False
 518886,824694,1.0,0.0,0.0,False,False,False
 519141,823561,1.3333333333333333,0.0,0.0,False,False,False
@@ -74,6 +79,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 519141,824699,1.3333333333333333,0.0,0.0,False,False,False
 519242,823474,7.0,1.0,1.29,True,True,False
 519242,824052,4.0,6.0,13.5,True,False,True
+519242,824365,7.0,1.0,1.29,True,True,False
 519242,824934,6.0,0.0,0.0,True,True,False
 519242,824938,6.0,1.0,1.5,True,True,False
 519242,824940,6.0,1.0,1.5,True,True,False
@@ -102,6 +108,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 543056,824211,1.0,1.0,9.0,False,False,False
 543056,824540,0.6666666666666666,0.0,0.0,False,False,False
 543056,824770,0.6666666666666666,0.0,0.0,False,False,False
+543056,824772,0.6666666666666666,0.0,0.0,False,False,False
 543056,824776,0.6666666666666666,0.0,0.0,False,False,False
 543056,824781,0.3333333333333333,0.0,0.0,False,False,False
 543056,824782,0.6666666666666666,0.0,0.0,False,False,False
@@ -119,9 +126,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 543243,824776,2.6666666666666665,1.0,3.38,True,False,False
 543243,824779,6.333333333333333,0.0,0.0,True,True,False
 543243,824786,6.0,2.0,3.0,True,True,False
+543510,823795,1.0,1.0,9.0,False,False,False
 543510,823798,1.0,0.0,0.0,False,False,False
 543510,825099,1.0,1.0,9.0,False,False,False
 543510,825105,1.0,5.0,45.0,False,False,False
+544150,823557,2.6666666666666665,1.0,3.38,True,False,False
 544150,824451,2.0,1.0,4.5,True,False,False
 544150,824851,3.6666666666666665,4.0,9.82,True,False,False
 544150,824856,1.6666666666666667,3.0,16.2,False,False,False
@@ -134,6 +143,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 547179,824371,5.0,3.0,5.4,True,False,False
 547179,824374,5.666666666666667,1.0,1.59,True,False,False
 547179,824377,3.0,9.0,27.0,True,False,True
+547179,824524,5.333333333333333,3.0,5.06,True,False,False
 547184,822838,1.3333333333333333,1.0,6.75,False,False,False
 547184,824943,1.0,1.0,9.0,False,False,False
 547184,825026,1.0,1.0,9.0,False,False,False
@@ -141,6 +151,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 547973,823723,1.0,0.0,0.0,False,False,False
 547973,824540,1.0,0.0,0.0,False,False,False
 547973,824541,1.0,0.0,0.0,False,False,False
+547973,824772,1.0,0.0,0.0,False,False,False
 547973,824776,0.6666666666666666,2.0,27.0,False,False,False
 547973,824778,0.6666666666666666,0.0,0.0,False,False,False
 547973,824780,1.0,0.0,0.0,False,False,False
@@ -150,17 +161,20 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 548384,823078,1.0,0.0,0.0,False,False,False
 548384,823080,1.0,0.0,0.0,False,False,False
 548384,823240,0.6666666666666666,1.0,13.5,False,False,False
+548384,823634,1.0,0.0,0.0,False,False,False
 548384,823637,1.0,0.0,0.0,False,False,False
 548384,823641,0.6666666666666666,0.0,0.0,False,False,False
 548384,823644,1.0,0.0,0.0,False,False,False
 548384,823648,1.0,0.0,0.0,False,False,False
 548384,823651,1.0,0.0,0.0,False,False,False
 548384,823965,1.0,1.0,9.0,False,False,False
+548384,824041,1.0,0.0,0.0,False,False,False
 548384,824691,0.6666666666666666,0.0,0.0,False,False,False
 548384,824694,0.6666666666666666,3.0,40.5,False,False,False
 552640,824849,1.0,0.0,0.0,False,False,False
 552640,824852,1.0,0.0,0.0,False,False,False
 552640,824854,1.0,0.0,0.0,False,False,False
+554430,823877,6.0,1.0,1.5,True,True,False
 554430,824933,5.0,2.0,3.6,True,False,False
 571510,823311,4.0,4.0,9.0,True,False,False
 571510,824688,4.666666666666667,2.0,3.86,True,False,False
@@ -168,6 +182,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 571510,824704,3.3333333333333335,5.0,13.5,True,False,True
 571578,822824,4.333333333333333,2.0,4.15,True,False,False
 571578,822829,4.0,4.0,9.0,True,False,False
+571578,823713,5.0,2.0,3.6,True,False,False
 571578,823801,5.0,1.0,1.8,True,False,False
 571578,824045,5.0,1.0,1.8,True,False,False
 571927,822995,3.0,4.0,12.0,True,False,True
@@ -180,6 +195,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 571945,822753,3.0,2.0,6.0,True,False,False
 571945,822758,4.333333333333333,10.0,20.77,True,False,True
 571945,823398,3.3333333333333335,3.0,8.1,True,False,False
+571945,823634,4.0,3.0,6.75,True,False,False
 571945,824611,3.3333333333333335,1.0,2.7,True,False,False
 571945,824701,5.0,6.0,10.8,True,False,True
 571948,822999,1.3333333333333333,0.0,0.0,False,False,False
@@ -197,12 +213,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 571948,824699,0.3333333333333333,0.0,0.0,False,False,False
 571948,824700,1.0,2.0,18.0,False,False,False
 571948,824704,1.0,0.0,0.0,False,False,False
+572143,824287,2.0,1.0,4.5,True,False,False
 572143,824288,1.3333333333333333,0.0,0.0,False,False,False
 572143,824527,2.0,0.0,0.0,True,False,False
 572143,824931,2.0,1.0,4.5,True,False,False
 572955,822917,0.6666666666666666,0.0,0.0,False,False,False
 572955,822994,1.0,0.0,0.0,False,False,False
 572955,822995,1.0,0.0,0.0,False,False,False
+572955,823389,1.0,1.0,9.0,False,False,False
 572955,823721,1.0,0.0,0.0,False,False,False
 572955,823885,1.0,0.0,0.0,False,False,False
 572955,823887,0.6666666666666666,0.0,0.0,False,False,False
@@ -220,6 +238,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 573009,822828,1.6666666666666667,2.0,10.8,False,False,False
 573009,822829,1.0,0.0,0.0,False,False,False
 573009,822832,0.6666666666666666,1.0,13.5,False,False,False
+573009,823714,0.6666666666666666,1.0,13.5,False,False,False
 573009,823801,1.0,1.0,9.0,False,False,False
 573009,824044,1.3333333333333333,0.0,0.0,False,False,False
 573009,824620,1.3333333333333333,0.0,0.0,False,False,False
@@ -227,6 +246,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 573124,822829,1.3333333333333333,1.0,6.75,False,False,False
 573124,822989,0.0,1.0,,False,False,False
 573124,823641,0.3333333333333333,0.0,0.0,False,False,False
+573124,823713,1.0,0.0,0.0,False,False,False
 573124,823717,0.6666666666666666,1.0,13.5,False,False,False
 573124,823718,0.6666666666666666,0.0,0.0,False,False,False
 573124,823719,1.0,0.0,0.0,False,False,False
@@ -268,15 +288,18 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 592332,822831,5.666666666666667,3.0,4.76,True,False,False
 592332,822835,6.0,0.0,0.0,True,True,False
 592332,822839,6.0,1.0,1.5,True,True,False
+592332,823714,5.666666666666667,4.0,6.35,True,False,False
 592332,823802,5.0,3.0,5.4,True,False,False
 592332,825100,6.0,2.0,3.0,True,True,False
 592662,822750,6.0,3.0,4.5,True,True,False
+592662,822990,6.0,3.0,4.5,True,True,False
 592662,823229,5.0,1.0,1.8,True,False,False
 592662,823235,6.666666666666667,0.0,0.0,True,True,False
 592662,823242,5.333333333333333,2.0,3.38,True,False,False
 592662,823243,5.333333333333333,2.0,3.38,True,False,False
 592662,824531,4.666666666666667,2.0,3.86,True,False,False
 592773,822755,0.6666666666666666,3.0,40.5,False,False,False
+592773,823067,1.0,0.0,0.0,False,False,False
 592773,823068,1.0,0.0,0.0,False,False,False
 592773,823070,0.6666666666666666,0.0,0.0,False,False,False
 592773,823072,0.6666666666666666,3.0,40.5,False,False,False
@@ -285,6 +308,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 592773,823078,0.6666666666666666,0.0,0.0,False,False,False
 592773,823081,1.0,0.0,0.0,False,False,False
 592773,823082,1.3333333333333333,4.0,27.0,False,False,False
+592773,823391,1.0,0.0,0.0,False,False,False
 592773,823392,0.3333333333333333,0.0,0.0,False,False,False
 592773,823880,0.6666666666666666,2.0,27.0,False,False,False
 592773,824205,1.0,0.0,0.0,False,False,False
@@ -308,6 +332,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 593958,824855,5.0,4.0,7.2,True,False,False
 593958,825097,5.0,4.0,7.2,True,False,False
 593958,825103,7.0,0.0,0.0,True,True,False
+593974,823309,2.0,0.0,0.0,True,False,False
 593974,823310,1.0,4.0,36.0,False,False,False
 593974,823314,1.0,0.0,0.0,False,False,False
 593974,823316,1.3333333333333333,0.0,0.0,False,False,False
@@ -324,6 +349,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 594580,822917,0.3333333333333333,0.0,0.0,False,False,False
 594580,822919,1.0,0.0,0.0,False,False,False
 594580,822995,1.3333333333333333,0.0,0.0,False,False,False
+594580,823388,1.6666666666666667,1.0,5.4,False,False,False
+594580,823389,0.6666666666666666,0.0,0.0,False,False,False
 594580,823721,0.3333333333333333,1.0,27.0,False,False,False
 594580,823885,2.0,0.0,0.0,True,False,False
 594580,824527,1.0,0.0,0.0,False,False,False
@@ -363,6 +390,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 595345,824375,1.0,0.0,0.0,False,False,False
 595345,824449,0.6666666666666666,0.0,0.0,False,False,False
 595345,824450,1.0,0.0,0.0,False,False,False
+595345,824848,0.6666666666666666,4.0,54.0,False,False,False
 595345,824849,0.3333333333333333,0.0,0.0,False,False,False
 595345,825025,0.3333333333333333,3.0,81.0,False,False,False
 595345,825027,1.0,0.0,0.0,False,False,False
@@ -377,11 +405,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 596001,823150,1.0,0.0,0.0,False,False,False
 596001,823488,2.0,0.0,0.0,True,False,False
 596001,823966,1.0,0.0,0.0,False,False,False
+596001,824287,1.0,0.0,0.0,False,False,False
 596001,824861,1.0,0.0,0.0,False,False,False
 596001,824863,1.0,0.0,0.0,False,False,False
 596001,825023,1.3333333333333333,0.0,0.0,False,False,False
 596133,823078,1.0,0.0,0.0,False,False,False
 596133,823238,1.0,0.0,0.0,False,False,False
+596133,823634,1.0,2.0,18.0,False,False,False
 596133,823637,0.6666666666666666,0.0,0.0,False,False,False
 596133,823641,1.3333333333333333,0.0,0.0,False,False,False
 596133,823644,1.0,4.0,36.0,False,False,False
@@ -389,6 +419,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 596133,823647,1.0,0.0,0.0,False,False,False
 596133,823648,1.0,0.0,0.0,False,False,False
 596133,823651,1.0,0.0,0.0,False,False,False
+596133,824041,1.0,0.0,0.0,False,False,False
 596133,824691,1.3333333333333333,0.0,0.0,False,False,False
 596133,824694,0.6666666666666666,0.0,0.0,False,False,False
 601713,823317,3.0,0.0,0.0,True,False,False
@@ -403,6 +434,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 605130,823642,1.0,0.0,0.0,False,False,False
 605130,823643,0.6666666666666666,0.0,0.0,False,False,False
 605130,824942,1.0,0.0,0.0,False,False,False
+605130,825014,1.3333333333333333,0.0,0.0,False,False,False
+605130,825016,1.0,0.0,0.0,False,False,False
 605130,825017,1.0,0.0,0.0,False,False,False
 605130,825018,1.0,0.0,0.0,False,False,False
 605130,825021,1.0,0.0,0.0,False,False,False
@@ -411,6 +444,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 605135,823405,2.0,6.0,27.0,True,False,True
 605135,824123,5.333333333333333,4.0,6.75,True,False,False
 605135,824454,4.666666666666667,0.0,0.0,True,False,False
+605135,824848,6.333333333333333,1.0,1.42,True,True,False
 605135,824857,4.666666666666667,2.0,3.86,True,False,False
 605135,824863,4.333333333333333,4.0,8.31,True,False,False
 605218,823633,2.6666666666666665,2.0,6.75,True,False,False
@@ -425,6 +459,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 605288,823232,4.0,8.0,18.0,True,False,True
 605288,823237,6.0,2.0,3.0,True,True,False
 605288,823321,5.333333333333333,3.0,5.06,True,False,False
+605288,823471,4.666666666666667,2.0,3.86,True,False,False
 605288,824859,4.666666666666667,4.0,7.71,True,False,False
 605400,823234,6.0,3.0,4.5,True,True,False
 605400,823478,4.666666666666667,3.0,5.79,True,False,False
@@ -450,9 +485,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 605488,822838,5.0,1.0,1.8,True,False,False
 605488,822910,6.0,4.0,6.0,True,False,False
 605488,823565,7.0,0.0,0.0,True,True,False
+605488,825016,3.0,2.0,6.0,True,False,False
 605488,825018,5.0,7.0,12.6,True,False,True
 605488,825022,6.333333333333333,1.0,1.42,True,True,False
 605488,825026,6.0,1.0,1.5,True,True,False
+605540,823795,1.3333333333333333,0.0,0.0,False,False,False
 605540,823800,4.666666666666667,3.0,5.79,True,False,False
 605540,823804,6.0,2.0,3.0,True,True,False
 605540,823807,5.0,2.0,3.6,True,False,False
@@ -462,6 +499,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 606303,822749,1.0,0.0,0.0,False,False,False
 606303,824050,0.3333333333333333,0.0,0.0,False,False,False
 606303,824052,1.0,0.0,0.0,False,False,False
+606303,824929,0.3333333333333333,1.0,27.0,False,False,False
 606303,824932,1.0,0.0,0.0,False,False,False
 606303,824934,1.0,0.0,0.0,False,False,False
 606303,824939,0.3333333333333333,0.0,0.0,False,False,False
@@ -469,7 +507,10 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 606303,824942,1.0,1.0,9.0,False,False,False
 606303,824945,0.3333333333333333,0.0,0.0,False,False,False
 606303,825102,0.0,0.0,,False,False,False
+606965,823388,0.3333333333333333,2.0,54.0,False,False,False
+606965,823391,1.3333333333333333,3.0,20.25,False,False,False
 606965,823392,0.6666666666666666,2.0,27.0,False,False,False
+606996,823308,1.0,0.0,0.0,False,False,False
 606996,823310,0.6666666666666666,0.0,0.0,False,False,False
 606996,823317,2.3333333333333335,2.0,7.71,True,False,False
 606996,823318,0.6666666666666666,0.0,0.0,False,False,False
@@ -484,6 +525,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 607067,823478,6.0,3.0,4.5,True,True,False
 607067,823960,3.3333333333333335,4.0,10.8,True,False,True
 607067,824458,3.3333333333333335,0.0,0.0,True,False,False
+607067,824686,5.333333333333333,1.0,1.69,True,False,False
 607067,824692,6.666666666666667,1.0,1.35,True,True,False
 607067,824702,3.0,2.0,6.0,True,False,False
 607192,822757,6.0,2.0,3.0,True,True,False
@@ -509,6 +551,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 607455,822992,0.6666666666666666,0.0,0.0,False,False,False
 607455,823639,0.3333333333333333,3.0,81.0,False,False,False
 607455,823640,1.0,0.0,0.0,False,False,False
+607455,823714,0.6666666666666666,0.0,0.0,False,False,False
+607455,823715,1.0,6.0,54.0,False,False,False
 607455,823717,1.0,0.0,0.0,False,False,False
 607455,823722,1.0,2.0,18.0,False,False,False
 607455,823726,0.6666666666666666,3.0,40.5,False,False,False
@@ -523,6 +567,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 607481,823475,0.3333333333333333,0.0,0.0,False,False,False
 607481,824051,0.3333333333333333,0.0,0.0,False,False,False
 607481,824052,1.0,0.0,0.0,False,False,False
+607481,824929,0.6666666666666666,1.0,13.5,False,False,False
 607481,824931,1.0,2.0,18.0,False,False,False
 607481,824932,1.0,0.0,0.0,False,False,False
 607481,824934,1.0,2.0,18.0,False,False,False
@@ -535,6 +580,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 607536,823893,4.333333333333333,2.0,4.15,True,False,False
 607536,824375,6.333333333333333,1.0,1.42,True,True,False
 607536,824526,5.0,4.0,7.2,True,False,False
+607625,823144,5.666666666666667,2.0,3.18,True,False,False
 607625,824122,6.333333333333333,7.0,9.95,True,False,False
 607625,824125,6.666666666666667,0.0,0.0,True,True,False
 607625,824130,6.333333333333333,1.0,1.42,True,True,False
@@ -569,15 +615,18 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 608379,824456,7.0,1.0,1.29,True,True,False
 608379,824945,6.0,0.0,0.0,True,True,False
 608379,825015,4.0,4.0,9.0,True,False,False
+608566,823309,4.333333333333333,7.0,14.54,True,False,True
 608566,823316,4.666666666666667,4.0,7.71,True,False,False
 608566,823322,3.0,4.0,12.0,True,False,True
 608566,823401,4.666666666666667,0.0,0.0,True,False,False
 608566,824049,5.333333333333333,0.0,0.0,True,False,False
 608566,825093,6.0,4.0,6.0,True,False,False
 608650,823406,1.0,1.0,9.0,False,False,False
+608650,823554,0.6666666666666666,0.0,0.0,False,False,False
 608650,824862,1.6666666666666667,1.0,5.4,False,False,False
 608650,824863,1.6666666666666667,0.0,0.0,False,False,False
 608718,823560,1.6666666666666667,1.0,5.4,False,False,False
+608718,824041,0.6666666666666666,1.0,13.5,False,False,False
 608718,824044,1.0,0.0,0.0,False,False,False
 608718,824047,1.0,0.0,0.0,False,False,False
 608718,824050,2.0,0.0,0.0,True,False,False
@@ -591,6 +640,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 608723,824620,2.6666666666666665,2.0,6.75,True,False,False
 615698,822909,3.0,2.0,6.0,True,False,False
 615698,823151,3.0,3.0,9.0,True,False,False
+615698,824284,3.0,0.0,0.0,True,False,False
 615698,825023,1.0,0.0,0.0,False,False,False
 621107,824861,3.6666666666666665,1.0,2.45,True,False,False
 621111,823310,4.666666666666667,2.0,3.86,True,False,False
@@ -600,6 +650,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 621111,824367,2.6666666666666665,4.0,13.5,True,False,True
 621111,824781,2.6666666666666665,3.0,10.12,True,False,True
 621112,823159,1.3333333333333333,0.0,0.0,False,False,False
+621112,823554,2.0,0.0,0.0,True,False,False
 621112,823558,2.0,2.0,9.0,True,False,False
 621112,823562,1.0,2.0,18.0,False,False,False
 621112,823563,1.0,0.0,0.0,False,False,False
@@ -610,9 +661,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 621121,824204,4.666666666666667,6.0,11.57,True,False,True
 621121,824206,5.0,4.0,7.2,True,False,False
 621121,824214,7.0,1.0,1.29,True,True,False
+621121,824850,6.0,3.0,4.5,True,True,False
 621121,825025,4.0,1.0,2.25,True,False,False
 621237,823234,1.0,2.0,18.0,False,False,False
 621237,823237,1.0,0.0,0.0,False,False,False
+621237,823471,0.6666666666666666,1.0,13.5,False,False,False
 621237,823474,1.0,0.0,0.0,False,False,False
 621237,823477,1.0,0.0,0.0,False,False,False
 621237,823479,0.3333333333333333,1.0,27.0,False,False,False
@@ -620,6 +673,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 621237,823483,0.6666666666666666,0.0,0.0,False,False,False
 621237,823484,0.3333333333333333,3.0,81.0,False,False,False
 621237,823488,1.0,0.0,0.0,False,False,False
+621237,823877,0.3333333333333333,1.0,27.0,False,False,False
 621237,824378,0.3333333333333333,0.0,0.0,False,False,False
 621237,824689,1.0,0.0,0.0,False,False,False
 621237,824690,0.3333333333333333,1.0,27.0,False,False,False
@@ -632,6 +686,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 621242,823973,1.0,0.0,0.0,False,False,False
 621242,824371,0.0,2.0,,False,False,False
 621366,822751,0.3333333333333333,0.0,0.0,False,False,False
+621366,822988,1.3333333333333333,0.0,0.0,False,False,False
 621366,823232,1.0,0.0,0.0,False,False,False
 621366,823236,1.0,0.0,0.0,False,False,False
 621366,823237,0.3333333333333333,3.0,81.0,False,False,False
@@ -639,8 +694,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 621366,823241,1.0,1.0,9.0,False,False,False
 621366,823243,0.6666666666666666,0.0,0.0,False,False,False
 621366,823321,0.6666666666666666,0.0,0.0,False,False,False
+621366,823471,0.3333333333333333,2.0,54.0,False,False,False
 621366,824532,1.0,0.0,0.0,False,False,False
 621366,824857,1.3333333333333333,1.0,6.75,False,False,False
+621381,823144,1.0,0.0,0.0,False,False,False
+621381,823146,1.0,0.0,0.0,False,False,False
 621381,824124,1.0,0.0,0.0,False,False,False
 621381,824125,1.0,0.0,0.0,False,False,False
 621381,824127,1.0,2.0,18.0,False,False,False
@@ -653,12 +711,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 621381,824945,1.0,0.0,0.0,False,False,False
 621381,825017,1.0,0.0,0.0,False,False,False
 621383,823235,1.0,0.0,0.0,False,False,False
+621383,823472,1.3333333333333333,0.0,0.0,False,False,False
 621383,823474,1.0,0.0,0.0,False,False,False
 621383,823476,1.0,0.0,0.0,False,False,False
 621383,823478,1.0,3.0,27.0,False,False,False
 621383,823482,1.0,0.0,0.0,False,False,False
 621383,823485,1.6666666666666667,2.0,10.8,False,False,False
 621383,823488,1.0,0.0,0.0,False,False,False
+621383,823876,1.0,1.0,9.0,False,False,False
 621383,824379,1.0,0.0,0.0,False,False,False
 621383,824689,0.3333333333333333,0.0,0.0,False,False,False
 621383,824690,1.0,2.0,18.0,False,False,False
@@ -669,6 +729,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 622491,823313,5.333333333333333,4.0,6.75,True,False,False
 622491,823719,5.0,7.0,12.6,True,False,True
 622491,824053,3.6666666666666665,3.0,7.36,True,False,False
+622554,823308,0.6666666666666666,0.0,0.0,False,False,False
 622554,823810,0.3333333333333333,5.0,135.0,False,False,False
 622554,823811,1.0,0.0,0.0,False,False,False
 622554,824126,1.0,0.0,0.0,False,False,False
@@ -691,6 +752,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 622608,824367,2.0,1.0,4.5,True,False,False
 622608,824371,2.0,1.0,4.5,True,False,False
 622608,824375,2.6666666666666665,0.0,0.0,True,False,False
+622608,824524,1.6666666666666667,1.0,5.4,False,False,False
 622663,822839,5.0,2.0,3.6,True,False,False
 622663,822909,6.666666666666667,1.0,1.35,True,True,False
 622663,823564,5.0,2.0,3.6,True,False,False
@@ -723,6 +785,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 623211,823647,1.6666666666666667,0.0,0.0,False,False,False
 623211,823648,0.3333333333333333,3.0,81.0,False,False,False
 623211,823651,0.6666666666666666,0.0,0.0,False,False,False
+623211,824041,1.0,0.0,0.0,False,False,False
+623211,824042,1.3333333333333333,0.0,0.0,False,False,False
 623211,824691,0.3333333333333333,0.0,0.0,False,False,False
 623211,824693,0.6666666666666666,1.0,13.5,False,False,False
 623437,822828,1.0,0.0,0.0,False,False,False
@@ -730,6 +794,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 623437,822991,1.0,0.0,0.0,False,False,False
 623437,823640,1.0,0.0,0.0,False,False,False
 623437,823641,0.3333333333333333,1.0,27.0,False,False,False
+623437,823714,1.0,0.0,0.0,False,False,False
+623437,823715,0.6666666666666666,1.0,13.5,False,False,False
 623437,823720,1.0,0.0,0.0,False,False,False
 623437,823721,0.6666666666666666,0.0,0.0,False,False,False
 623437,823722,1.0,0.0,0.0,False,False,False
@@ -743,12 +809,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 623437,824865,1.0,2.0,18.0,False,False,False
 623454,823325,1.3333333333333333,1.0,6.75,False,False,False
 623454,823728,3.0,0.0,0.0,True,False,False
+623454,824284,2.3333333333333335,0.0,0.0,True,False,False
 623454,824289,0.3333333333333333,2.0,54.0,False,False,False
 623454,824294,3.3333333333333335,0.0,0.0,True,False,False
 623454,824295,1.0,4.0,36.0,False,False,False
 623454,824527,2.6666666666666665,1.0,3.38,True,False,False
 623454,824529,1.0,0.0,0.0,False,False,False
 623454,824776,1.3333333333333333,2.0,13.5,False,False,False
+623454,824929,2.0,0.0,0.0,True,False,False
 623454,825107,1.0,0.0,0.0,False,False,False
 623474,822835,1.0,0.0,0.0,False,False,False
 623474,823316,1.0,0.0,0.0,False,False,False
@@ -769,6 +837,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 624133,824778,7.666666666666667,0.0,0.0,True,True,False
 624133,824781,3.3333333333333335,3.0,8.1,True,False,False
 624428,824121,0.3333333333333333,2.0,54.0,False,False,False
+624431,823388,2.0,2.0,9.0,True,False,False
+624431,823389,1.0,0.0,0.0,False,False,False
 624431,824525,1.0,5.0,45.0,False,False,False
 624512,824615,1.0,0.0,0.0,False,False,False
 625643,822747,1.0,4.0,36.0,False,False,False
@@ -796,6 +866,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 640448,824529,1.3333333333333333,1.0,6.75,False,False,False
 640448,824777,1.0,0.0,0.0,False,False,False
 640448,824778,1.0,0.0,0.0,False,False,False
+640448,824929,1.0,0.0,0.0,False,False,False
 640448,824930,1.0,0.0,0.0,False,False,False
 640448,825106,1.0,0.0,0.0,False,False,False
 640448,825108,0.3333333333333333,0.0,0.0,False,False,False
@@ -819,6 +890,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641302,823486,1.0,0.0,0.0,False,False,False
 641302,823488,1.0,1.0,9.0,False,False,False
 641302,823967,2.3333333333333335,0.0,0.0,True,False,False
+641302,824287,1.0,0.0,0.0,False,False,False
 641302,824860,1.0,2.0,18.0,False,False,False
 641302,824863,1.0,0.0,0.0,False,False,False
 641302,825022,1.3333333333333333,0.0,0.0,False,False,False
@@ -832,6 +904,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641312,824121,0.6666666666666666,3.0,40.5,False,False,False
 641312,824124,1.0,0.0,0.0,False,False,False
 641312,824702,3.0,1.0,3.0,True,False,False
+641329,822990,1.0,0.0,0.0,False,False,False
 641329,822991,1.0,0.0,0.0,False,False,False
 641329,822992,1.0,0.0,0.0,False,False,False
 641329,822996,1.0,2.0,18.0,False,False,False
@@ -856,6 +929,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641401,824458,1.0,0.0,0.0,False,False,False
 641401,824459,1.0,1.0,9.0,False,False,False
 641401,824939,0.3333333333333333,0.0,0.0,False,False,False
+641401,825012,0.6666666666666666,0.0,0.0,False,False,False
 641585,823153,2.0,0.0,0.0,True,False,False
 641585,823156,2.3333333333333335,4.0,15.43,True,False,True
 641585,824207,2.0,2.0,9.0,True,False,False
@@ -867,6 +941,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641743,824622,4.333333333333333,2.0,4.15,True,False,False
 641743,825097,3.6666666666666665,7.0,17.18,True,False,True
 641745,823237,1.0,0.0,0.0,False,False,False
+641745,823471,1.0,0.0,0.0,False,False,False
 641745,823474,0.6666666666666666,0.0,0.0,False,False,False
 641745,823478,0.6666666666666666,2.0,27.0,False,False,False
 641745,823480,1.0,1.0,9.0,False,False,False
@@ -874,6 +949,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641745,823483,1.0,3.0,27.0,False,False,False
 641745,823485,1.0,0.0,0.0,False,False,False
 641745,823487,1.0,0.0,0.0,False,False,False
+641745,823877,1.0,1.0,9.0,False,False,False
 641745,824378,1.0,0.0,0.0,False,False,False
 641745,824689,1.0,1.0,9.0,False,False,False
 641745,824690,0.6666666666666666,0.0,0.0,False,False,False
@@ -882,6 +958,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641755,822749,1.0,0.0,0.0,False,False,False
 641755,823475,1.0,0.0,0.0,False,False,False
 641755,824051,0.6666666666666666,0.0,0.0,False,False,False
+641755,824929,1.0,0.0,0.0,False,False,False
 641755,824931,1.0,0.0,0.0,False,False,False
 641755,824933,1.0,0.0,0.0,False,False,False
 641755,824935,1.0,0.0,0.0,False,False,False
@@ -911,6 +988,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641816,823473,5.0,4.0,7.2,True,False,False
 641816,824532,3.6666666666666665,8.0,19.64,True,False,True
 641835,823237,1.0,0.0,0.0,False,False,False
+641835,823471,2.0,0.0,0.0,True,False,False
 641835,823473,1.0,0.0,0.0,False,False,False
 641835,823475,1.0,3.0,27.0,False,False,False
 641835,823476,2.0,0.0,0.0,True,False,False
@@ -925,6 +1003,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641835,824932,1.0,0.0,0.0,False,False,False
 641835,824934,1.0,0.0,0.0,False,False,False
 641927,822989,5.666666666666667,2.0,3.18,True,False,False
+641927,823714,6.0,1.0,1.5,True,True,False
 641927,823718,6.333333333333333,1.0,1.42,True,True,False
 641927,823725,6.0,4.0,6.0,True,False,False
 641927,823726,5.666666666666667,2.0,3.18,True,False,False
@@ -936,6 +1015,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 641941,823720,1.0,0.0,0.0,False,False,False
 641941,823886,1.0,0.0,0.0,False,False,False
 641941,823887,1.0,0.0,0.0,False,False,False
+641941,824524,1.0,2.0,18.0,False,False,False
 641941,824527,1.0,0.0,0.0,False,False,False
 641941,824531,1.0,0.0,0.0,False,False,False
 641941,824535,1.0,0.0,0.0,False,False,False
@@ -957,6 +1037,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 642100,823717,0.6666666666666666,1.0,13.5,False,False,False
 642100,824053,0.6666666666666666,0.0,0.0,False,False,False
 642100,824056,1.0,1.0,9.0,False,False,False
+642121,822990,1.0,0.0,0.0,False,False,False
 642121,822991,1.3333333333333333,0.0,0.0,False,False,False
 642121,822992,1.0,0.0,0.0,False,False,False
 642121,822994,1.0,0.0,0.0,False,False,False
@@ -972,12 +1053,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 642207,823078,1.0,0.0,0.0,False,False,False
 642207,823080,1.0,0.0,0.0,False,False,False
 642207,823238,0.6666666666666666,0.0,0.0,False,False,False
+642207,823634,0.6666666666666666,0.0,0.0,False,False,False
 642207,823637,1.0,0.0,0.0,False,False,False
 642207,823639,0.6666666666666666,1.0,13.5,False,False,False
 642207,823640,0.3333333333333333,2.0,54.0,False,False,False
 642207,823648,1.0,0.0,0.0,False,False,False
 642207,823651,1.0,0.0,0.0,False,False,False
 642207,823963,0.3333333333333333,4.0,108.0,False,False,False
+642207,824041,1.0,0.0,0.0,False,False,False
 642207,824691,1.0,1.0,9.0,False,False,False
 642215,824851,1.0,5.0,45.0,False,False,False
 642232,822997,1.6666666666666667,0.0,0.0,False,False,False
@@ -988,6 +1071,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 642232,824202,1.0,0.0,0.0,False,False,False
 642232,824204,2.0,0.0,0.0,True,False,False
 642397,822913,1.0,2.0,18.0,False,False,False
+642397,823388,1.0,0.0,0.0,False,False,False
 642397,823394,1.0,0.0,0.0,False,False,False
 642397,823395,1.0,0.0,0.0,False,False,False
 642397,823397,1.0,0.0,0.0,False,False,False
@@ -1005,8 +1089,10 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 642528,823479,1.0,0.0,0.0,False,False,False
 642528,823482,1.0,0.0,0.0,False,False,False
 642528,823648,1.0,1.0,9.0,False,False,False
+642528,823795,0.6666666666666666,3.0,40.5,False,False,False
 642528,823971,1.3333333333333333,0.0,0.0,False,False,False
 642528,823973,1.0,1.0,9.0,False,False,False
+642528,824685,0.3333333333333333,0.0,0.0,False,False,False
 642528,824856,0.6666666666666666,2.0,27.0,False,False,False
 642528,825093,1.0,0.0,0.0,False,False,False
 642528,825094,1.0,0.0,0.0,False,False,False
@@ -1017,6 +1103,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 642528,825104,1.0,0.0,0.0,False,False,False
 642528,825106,1.0,0.0,0.0,False,False,False
 642547,823078,5.333333333333333,0.0,0.0,True,False,False
+642547,823634,6.0,3.0,4.5,True,True,False
 642547,823638,5.666666666666667,2.0,3.18,True,False,False
 642547,823642,6.0,1.0,1.5,True,True,False
 642547,823648,4.666666666666667,0.0,0.0,True,False,False
@@ -1040,6 +1127,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 642759,822745,2.0,1.0,4.5,True,False,False
 642759,822748,1.0,0.0,0.0,False,False,False
 642759,822749,1.0,2.0,18.0,False,False,False
+643377,822988,2.6666666666666665,0.0,0.0,True,False,False
 643377,822991,2.3333333333333335,0.0,0.0,True,False,False
 643377,822995,1.3333333333333333,1.0,6.75,False,False,False
 643377,822996,0.3333333333333333,0.0,0.0,False,False,False
@@ -1076,6 +1164,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 643511,822835,1.0,0.0,0.0,False,False,False
 643511,822838,1.0,0.0,0.0,False,False,False
 643511,822839,1.0,0.0,0.0,False,False,False
+643511,823713,1.0,0.0,0.0,False,False,False
 643511,823802,1.0,0.0,0.0,False,False,False
 643511,823803,1.0,2.0,18.0,False,False,False
 643511,824045,1.0,0.0,0.0,False,False,False
@@ -1091,6 +1180,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 645261,824293,6.0,7.0,10.5,True,False,True
 646241,823324,1.0,0.0,0.0,False,False,False
 646241,823726,0.6666666666666666,1.0,13.5,False,False,False
+646241,824287,1.3333333333333333,0.0,0.0,False,False,False
 646241,824289,1.0,0.0,0.0,False,False,False
 646241,824290,1.3333333333333333,4.0,27.0,False,False,False
 646241,824296,3.0,3.0,9.0,True,False,False
@@ -1103,6 +1193,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 647315,823487,1.0,2.0,18.0,False,False,False
 647315,824377,1.0,0.0,0.0,False,False,False
 647336,823482,5.333333333333333,4.0,6.75,True,False,False
+647336,823795,3.0,8.0,24.0,True,False,True
 647336,825096,5.0,1.0,1.8,True,False,False
 647336,825101,7.0,2.0,2.57,True,True,False
 647336,825104,4.666666666666667,1.0,1.93,True,False,False
@@ -1116,7 +1207,9 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 650556,824213,1.0,3.0,27.0,False,False,False
 650556,824215,0.3333333333333333,0.0,0.0,False,False,False
 650556,824374,1.0,1.0,9.0,False,False,False
+650556,824850,1.0,1.0,9.0,False,False,False
 650556,825025,0.0,0.0,,False,False,False
+650633,823308,5.666666666666667,3.0,4.76,True,False,False
 650633,823315,6.0,1.0,1.5,True,True,False
 650633,823324,5.0,0.0,0.0,True,False,False
 650633,823403,6.0,0.0,0.0,True,True,False
@@ -1130,6 +1223,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 650644,825017,4.666666666666667,0.0,0.0,True,False,False
 650644,825019,4.666666666666667,4.0,7.71,True,False,False
 650911,823235,4.333333333333333,3.0,6.23,True,False,False
+650911,823472,6.666666666666667,2.0,2.7,True,True,False
 650911,823474,6.0,3.0,4.5,True,True,False
 650911,823481,6.0,2.0,3.0,True,True,False
 650911,823483,5.333333333333333,1.0,1.69,True,False,False
@@ -1148,12 +1242,15 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656222,823486,1.3333333333333333,0.0,0.0,False,False,False
 656222,823488,1.0,0.0,0.0,False,False,False
 656222,823968,1.0,0.0,0.0,False,False,False
+656222,824287,1.6666666666666667,1.0,5.4,False,False,False
 656222,824863,1.0,0.0,0.0,False,False,False
 656222,825021,1.0,0.0,0.0,False,False,False
 656234,822907,1.0,1.0,9.0,False,False,False
 656234,822997,1.0,0.0,0.0,False,False,False
 656234,823159,1.0,0.0,0.0,False,False,False
 656234,823241,1.6666666666666667,0.0,0.0,False,False,False
+656234,823554,1.0,2.0,18.0,False,False,False
+656234,823557,1.0,0.0,0.0,False,False,False
 656234,823563,1.0,4.0,36.0,False,False,False
 656234,823566,0.0,2.0,,False,False,False
 656234,823567,0.6666666666666666,0.0,0.0,False,False,False
@@ -1162,6 +1259,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656271,822917,1.0,0.0,0.0,False,False,False
 656271,822993,1.0,0.0,0.0,False,False,False
 656271,822994,1.0,0.0,0.0,False,False,False
+656271,823388,1.0,5.0,45.0,False,False,False
 656271,823721,1.0,0.0,0.0,False,False,False
 656271,823884,0.6666666666666666,0.0,0.0,False,False,False
 656271,823886,0.3333333333333333,0.0,0.0,False,False,False
@@ -1177,11 +1275,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656302,822825,5.666666666666667,4.0,6.35,True,False,False
 656302,822833,5.0,1.0,1.8,True,False,False
 656302,822838,5.333333333333333,1.0,1.69,True,False,False
+656302,823715,7.0,4.0,5.14,True,False,False
 656302,823803,6.0,0.0,0.0,True,True,False
 656302,824046,5.0,2.0,3.6,True,False,False
 656302,824621,4.333333333333333,3.0,6.23,True,False,False
 656427,823323,4.333333333333333,2.0,4.15,True,False,False
 656427,823724,5.666666666666667,1.0,1.59,True,False,False
+656427,824287,3.6666666666666665,4.0,9.82,True,False,False
 656427,824291,6.0,1.0,1.5,True,True,False
 656427,824295,4.0,2.0,4.5,True,False,False
 656427,824527,2.0,6.0,27.0,True,False,True
@@ -1193,6 +1293,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656464,823648,1.0,0.0,0.0,False,False,False
 656464,823796,1.3333333333333333,0.0,0.0,False,False,False
 656464,823971,1.0,1.0,9.0,False,False,False
+656464,824685,0.3333333333333333,0.0,0.0,False,False,False
+656464,824686,1.0,0.0,0.0,False,False,False
 656464,824855,2.0,1.0,4.5,True,False,False
 656464,825094,1.0,1.0,9.0,False,False,False
 656464,825096,1.6666666666666667,0.0,0.0,False,False,False
@@ -1201,6 +1303,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656464,825102,1.0,0.0,0.0,False,False,False
 656464,825105,0.3333333333333333,5.0,135.0,False,False,False
 656464,825108,1.0,0.0,0.0,False,False,False
+656492,822746,6.0,3.0,4.5,True,True,False
 656492,822747,6.0,3.0,4.5,True,True,False
 656492,822756,5.0,1.0,1.8,True,False,False
 656492,823396,5.333333333333333,4.0,6.75,True,False,False
@@ -1216,6 +1319,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656546,822836,1.0,0.0,0.0,False,False,False
 656546,822837,1.0,0.0,0.0,False,False,False
 656546,822839,1.3333333333333333,1.0,6.75,False,False,False
+656546,823713,1.0,1.0,9.0,False,False,False
 656546,823802,0.6666666666666666,2.0,27.0,False,False,False
 656546,824045,0.3333333333333333,1.0,27.0,False,False,False
 656546,824046,1.0,0.0,0.0,False,False,False
@@ -1223,10 +1327,12 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656546,825098,1.0,4.0,36.0,False,False,False
 656550,823475,4.666666666666667,2.0,3.86,True,False,False
 656550,824050,6.666666666666667,2.0,2.7,True,True,False
+656550,824366,5.0,6.0,10.8,True,False,True
 656550,824932,6.0,3.0,4.5,True,True,False
 656550,824937,4.0,3.0,6.75,True,False,False
 656550,824944,5.0,3.0,5.4,True,False,False
 656550,825103,6.0,0.0,0.0,True,True,False
+656605,823389,7.0,1.0,1.29,True,True,False
 656605,823393,6.666666666666667,2.0,2.7,True,True,False
 656605,823398,3.6666666666666665,5.0,12.27,True,False,True
 656605,823403,6.0,0.0,0.0,True,True,False
@@ -1244,6 +1350,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656638,824455,2.0,1.0,4.5,True,False,False
 656638,824946,1.0,0.0,0.0,False,False,False
 656638,825015,1.0,0.0,0.0,False,False,False
+656638,825016,1.0,0.0,0.0,False,False,False
 656641,822907,2.0,0.0,0.0,True,False,False
 656641,822910,1.0,0.0,0.0,False,False,False
 656641,822914,1.0,0.0,0.0,False,False,False
@@ -1254,6 +1361,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656641,823488,4.0,0.0,0.0,True,False,False
 656641,823966,0.6666666666666666,1.0,13.5,False,False,False
 656641,823968,0.6666666666666666,0.0,0.0,False,False,False
+656641,824287,1.0,0.0,0.0,False,False,False
 656641,824860,1.0,0.0,0.0,False,False,False
 656641,825021,1.0,0.0,0.0,False,False,False
 656641,825023,0.3333333333333333,3.0,81.0,False,False,False
@@ -1262,6 +1370,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656686,824688,1.0,0.0,0.0,False,False,False
 656686,824691,1.0,0.0,0.0,False,False,False
 656686,824692,1.0,0.0,0.0,False,False,False
+656730,822746,1.0,0.0,0.0,False,False,False
+656730,823795,1.0,0.0,0.0,False,False,False
 656730,823797,1.0,0.0,0.0,False,False,False
 656730,823801,1.0,0.0,0.0,False,False,False
 656730,823802,0.6666666666666666,3.0,40.5,False,False,False
@@ -1327,6 +1437,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 656945,823972,1.0,0.0,0.0,False,False,False
 656945,823974,1.0,0.0,0.0,False,False,False
 656986,824203,0.0,2.0,,False,False,False
+656986,824771,0.0,2.0,,False,False,False
+656986,824772,1.0,0.0,0.0,False,False,False
 656986,824849,1.0,0.0,0.0,False,False,False
 657044,823479,0.6666666666666666,0.0,0.0,False,False,False
 657044,823480,1.0,0.0,0.0,False,False,False
@@ -1335,6 +1447,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 657044,823798,0.6666666666666666,0.0,0.0,False,False,False
 657044,823971,1.0,0.0,0.0,False,False,False
 657044,823974,1.0,0.0,0.0,False,False,False
+657044,824686,1.3333333333333333,0.0,0.0,False,False,False
 657044,824853,0.3333333333333333,0.0,0.0,False,False,False
 657044,824855,1.0,0.0,0.0,False,False,False
 657044,825094,0.6666666666666666,0.0,0.0,False,False,False
@@ -1350,6 +1463,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 657097,823481,0.6666666666666666,0.0,0.0,False,False,False
 657097,824458,1.0,0.0,0.0,False,False,False
 657097,824460,0.3333333333333333,2.0,54.0,False,False,False
+657097,824686,2.0,0.0,0.0,True,False,False
 657097,824689,0.3333333333333333,1.0,27.0,False,False,False
 657097,824690,0.3333333333333333,1.0,27.0,False,False,False
 657097,824691,1.3333333333333333,0.0,0.0,False,False,False
@@ -1361,9 +1475,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 657277,823233,7.0,3.0,3.86,True,True,False
 657277,823238,7.0,1.0,1.29,True,True,False
 657277,823322,6.0,3.0,4.5,True,True,False
+657277,823472,6.666666666666667,1.0,1.35,True,True,False
 657277,824857,6.0,4.0,6.0,True,False,False
 657424,822751,1.0,0.0,0.0,False,False,False
 657424,822752,1.0,1.0,9.0,False,False,False
+657424,822988,0.6666666666666666,0.0,0.0,False,False,False
 657424,823229,1.0,0.0,0.0,False,False,False
 657424,823234,0.6666666666666666,0.0,0.0,False,False,False
 657424,823236,0.6666666666666666,0.0,0.0,False,False,False
@@ -1372,6 +1488,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 657424,823241,1.0,0.0,0.0,False,False,False
 657424,823243,1.0,0.0,0.0,False,False,False
 657424,823320,1.0,0.0,0.0,False,False,False
+657424,823471,0.6666666666666666,0.0,0.0,False,False,False
 657424,823473,1.0,1.0,9.0,False,False,False
 657424,824858,0.3333333333333333,0.0,0.0,False,False,False
 657424,824859,0.6666666666666666,0.0,0.0,False,False,False
@@ -1382,6 +1499,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 657514,823319,1.0,1.0,9.0,False,False,False
 657514,823892,0.6666666666666666,0.0,0.0,False,False,False
 657514,823893,0.3333333333333333,0.0,0.0,False,False,False
+657514,824365,0.6666666666666666,2.0,27.0,False,False,False
 657514,824368,0.6666666666666666,0.0,0.0,False,False,False
 657514,824369,1.0,0.0,0.0,False,False,False
 657514,824372,1.0,0.0,0.0,False,False,False
@@ -1395,6 +1513,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 657612,823158,1.0,0.0,0.0,False,False,False
 657612,823241,1.3333333333333333,0.0,0.0,False,False,False
 657612,823243,1.0,0.0,0.0,False,False,False
+657612,823554,0.3333333333333333,0.0,0.0,False,False,False
 657612,823561,1.0,0.0,0.0,False,False,False
 657612,823563,1.6666666666666667,0.0,0.0,False,False,False
 657612,823564,1.3333333333333333,0.0,0.0,False,False,False
@@ -1429,6 +1548,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 660761,822747,3.0,0.0,0.0,True,False,False
 660761,823476,3.0,0.0,0.0,True,False,False
 660761,824050,2.0,0.0,0.0,True,False,False
+660761,824929,0.6666666666666666,1.0,13.5,False,False,False
 660761,824933,1.0,4.0,36.0,False,False,False
 660761,824937,2.0,1.0,4.5,True,False,False
 660761,824941,0.6666666666666666,3.0,40.5,False,False,False
@@ -1437,6 +1557,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 660825,822915,1.0,0.0,0.0,False,False,False
 660825,823068,1.3333333333333333,0.0,0.0,False,False,False
 660825,823069,0.6666666666666666,0.0,0.0,False,False,False
+660825,823144,1.0,0.0,0.0,False,False,False
 660825,823148,1.0,1.0,9.0,False,False,False
 660825,823151,1.0,0.0,0.0,False,False,False
 660825,823152,0.6666666666666666,0.0,0.0,False,False,False
@@ -1459,6 +1580,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 660853,824376,1.0,0.0,0.0,False,False,False
 660853,824448,0.3333333333333333,1.0,27.0,False,False,False
 660853,824449,1.3333333333333333,0.0,0.0,False,False,False
+660853,824771,1.6666666666666667,0.0,0.0,False,False,False
+660853,824850,1.0,0.0,0.0,False,False,False
 661395,823237,1.0,0.0,0.0,False,False,False
 661395,823480,1.0,0.0,0.0,False,False,False
 661395,823483,1.0,0.0,0.0,False,False,False
@@ -1472,6 +1595,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 661563,824773,6.333333333333333,0.0,0.0,True,True,False
 662253,823069,1.0,0.0,0.0,False,False,False
 662253,823070,1.0,0.0,0.0,False,False,False
+662253,823144,1.0,1.0,9.0,False,False,False
 662253,823147,1.0,1.0,9.0,False,False,False
 662253,823150,1.3333333333333333,0.0,0.0,False,False,False
 662253,823151,0.3333333333333333,0.0,0.0,False,False,False
@@ -1487,6 +1611,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663158,823474,1.0,0.0,0.0,False,False,False
 663158,823475,1.0,0.0,0.0,False,False,False
 663158,824051,1.0,0.0,0.0,False,False,False
+663158,824366,1.0,0.0,0.0,False,False,False
 663158,824932,1.0,0.0,0.0,False,False,False
 663158,824934,1.0,0.0,0.0,False,False,False
 663158,824935,1.0,1.0,9.0,False,False,False
@@ -1532,6 +1657,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663485,823729,2.0,0.0,0.0,True,False,False
 663485,824133,0.6666666666666666,1.0,13.5,False,False,False
 663485,824862,1.0,0.0,0.0,False,False,False
+663542,823308,1.0,0.0,0.0,False,False,False
 663542,823811,0.6666666666666666,1.0,13.5,False,False,False
 663542,823888,2.0,2.0,9.0,True,False,False
 663542,824126,1.0,0.0,0.0,False,False,False
@@ -1554,6 +1680,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663554,824931,2.3333333333333335,1.0,3.86,True,False,False
 663554,825107,5.666666666666667,1.0,1.59,True,False,False
 663556,822989,5.0,0.0,0.0,True,False,False
+663556,822990,5.666666666666667,0.0,0.0,True,False,False
 663556,823002,4.0,2.0,4.5,True,False,False
 663556,823393,4.333333333333333,4.0,8.31,True,False,False
 663556,823807,4.666666666666667,3.0,5.79,True,False,False
@@ -1571,12 +1698,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663559,824946,3.0,2.0,6.0,True,False,False
 663567,824207,5.0,4.0,7.2,True,False,False
 663567,824449,6.0,0.0,0.0,True,True,False
+663567,824848,4.333333333333333,1.0,2.08,True,False,False
 663574,822919,1.0,0.0,0.0,False,False,False
 663574,822920,1.0,0.0,0.0,False,False,False
 663574,822993,0.6666666666666666,0.0,0.0,False,False,False
 663574,823720,1.0,0.0,0.0,False,False,False
 663574,823721,1.0,0.0,0.0,False,False,False
 663574,823886,1.0,0.0,0.0,False,False,False
+663574,824524,0.6666666666666666,0.0,0.0,False,False,False
 663574,824526,1.0,0.0,0.0,False,False,False
 663574,824529,1.0,3.0,27.0,False,False,False
 663574,824531,1.0,0.0,0.0,False,False,False
@@ -1584,6 +1713,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663574,824536,1.0,0.0,0.0,False,False,False
 663574,824538,0.6666666666666666,0.0,0.0,False,False,False
 663574,824540,1.0,0.0,0.0,False,False,False
+663623,822744,5.0,4.0,7.2,True,False,False
 663623,822749,4.666666666666667,2.0,3.86,True,False,False
 663623,822757,4.0,6.0,13.5,True,False,True
 663623,823399,5.0,2.0,3.6,True,False,False
@@ -1601,12 +1731,15 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663687,823642,1.0,0.0,0.0,False,False,False
 663687,824940,2.0,0.0,0.0,True,False,False
 663687,824942,1.0,0.0,0.0,False,False,False
+663687,825012,1.3333333333333333,1.0,6.75,False,False,False
+663687,825014,0.3333333333333333,3.0,81.0,False,False,False
 663687,825017,0.6666666666666666,1.0,13.5,False,False,False
 663687,825020,1.3333333333333333,1.0,6.75,False,False,False
 663687,825021,0.6666666666666666,0.0,0.0,False,False,False
 663687,825022,0.6666666666666666,0.0,0.0,False,False,False
 663687,825025,1.3333333333333333,1.0,6.75,False,False,False
 663687,825027,1.0,3.0,27.0,False,False,False
+663738,823146,1.0,2.0,18.0,False,False,False
 663738,824121,1.0,0.0,0.0,False,False,False
 663738,824124,0.3333333333333333,0.0,0.0,False,False,False
 663738,824125,1.3333333333333333,0.0,0.0,False,False,False
@@ -1618,6 +1751,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663738,824291,0.3333333333333333,0.0,0.0,False,False,False
 663738,824457,1.3333333333333333,0.0,0.0,False,False,False
 663738,825017,1.0,0.0,0.0,False,False,False
+663765,823795,1.0,0.0,0.0,False,False,False
 663765,823798,3.0,0.0,0.0,True,False,False
 663765,823804,1.0,0.0,0.0,False,False,False
 663765,823810,2.0,0.0,0.0,True,False,False
@@ -1626,6 +1760,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663765,824290,2.0,3.0,13.5,True,False,True
 663765,824779,3.0,2.0,6.0,True,False,False
 663765,824780,0.3333333333333333,0.0,0.0,False,False,False
+663767,823471,1.0,0.0,0.0,False,False,False
+663767,823472,0.3333333333333333,0.0,0.0,False,False,False
 663767,823475,0.6666666666666666,0.0,0.0,False,False,False
 663767,823476,1.0,1.0,9.0,False,False,False
 663767,823478,2.0,0.0,0.0,True,False,False
@@ -1633,6 +1769,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663767,824692,2.0,0.0,0.0,True,False,False
 663767,824932,0.3333333333333333,0.0,0.0,False,False,False
 663767,824934,0.6666666666666666,0.0,0.0,False,False,False
+663855,823309,1.0,0.0,0.0,False,False,False
 663855,823810,0.3333333333333333,0.0,0.0,False,False,False
 663855,823812,0.3333333333333333,2.0,54.0,False,False,False
 663855,823890,1.3333333333333333,0.0,0.0,False,False,False
@@ -1653,6 +1790,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663893,824621,1.0,0.0,0.0,False,False,False
 663893,824622,0.3333333333333333,3.0,81.0,False,False,False
 663903,822919,5.0,2.0,3.6,True,False,False
+663903,823389,3.3333333333333335,4.0,10.8,True,False,True
 663903,823718,5.666666666666667,3.0,4.76,True,False,False
 663903,823885,2.6666666666666665,6.0,20.25,True,False,True
 663903,824527,5.333333333333333,2.0,3.38,True,False,False
@@ -1692,6 +1830,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663992,822752,1.0,1.0,9.0,False,False,False
 663992,823077,2.0,1.0,4.5,True,False,False
 663992,823240,1.0,1.0,9.0,False,False,False
+663992,823634,0.6666666666666666,0.0,0.0,False,False,False
 663992,823643,0.6666666666666666,0.0,0.0,False,False,False
 663992,823645,1.6666666666666667,0.0,0.0,False,False,False
 663992,823647,1.0,2.0,18.0,False,False,False
@@ -1699,6 +1838,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 663992,824611,0.6666666666666666,1.0,13.5,False,False,False
 663992,824612,1.0,0.0,0.0,False,False,False
 664074,822834,2.3333333333333335,1.0,3.86,True,False,False
+664076,822988,1.0,0.0,0.0,False,False,False
 664076,823079,1.0,0.0,0.0,False,False,False
 664076,823081,0.3333333333333333,1.0,27.0,False,False,False
 664076,823809,1.0,0.0,0.0,False,False,False
@@ -1713,6 +1853,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 664126,823961,0.3333333333333333,1.0,27.0,False,False,False
 664126,824935,1.0,3.0,27.0,False,False,False
 664141,822750,1.0,0.0,0.0,False,False,False
+664141,822990,1.6666666666666667,0.0,0.0,False,False,False
 664141,823232,3.0,1.0,3.0,True,False,False
 664141,823238,1.0,0.0,0.0,False,False,False
 664141,823240,1.3333333333333333,2.0,13.5,False,False,False
@@ -1732,6 +1873,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 664199,823796,1.0,0.0,0.0,False,False,False
 664199,823798,1.0,0.0,0.0,False,False,False
 664199,823974,0.3333333333333333,4.0,108.0,False,False,False
+664199,824685,0.6666666666666666,0.0,0.0,False,False,False
 664199,824853,1.3333333333333333,0.0,0.0,False,False,False
 664199,824855,1.0,0.0,0.0,False,False,False
 664199,825093,1.0,4.0,36.0,False,False,False
@@ -1744,6 +1886,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 664208,822999,0.6666666666666666,2.0,27.0,False,False,False
 664208,823002,1.0,2.0,18.0,False,False,False
 664208,823311,1.0,2.0,18.0,False,False,False
+664208,824686,1.0,0.0,0.0,False,False,False
 664208,824699,0.6666666666666666,2.0,27.0,False,False,False
 664208,824700,1.0,1.0,9.0,False,False,False
 664208,824701,0.6666666666666666,0.0,0.0,False,False,False
@@ -1755,6 +1898,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 664285,824299,6.0,0.0,0.0,True,True,False
 664285,824529,4.333333333333333,2.0,4.15,True,False,False
 664285,824777,6.0,1.0,1.5,True,True,False
+664285,824929,6.0,2.0,3.0,True,True,False
 664299,824213,4.666666666666667,5.0,9.64,True,False,False
 664299,824374,1.0,1.0,9.0,False,False,False
 664299,825026,3.6666666666666665,5.0,12.27,True,False,True
@@ -1764,6 +1908,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 664353,823647,0.6666666666666666,1.0,13.5,False,False,False
 664353,824696,0.3333333333333333,0.0,0.0,False,False,False
 664731,824534,1.0,0.0,0.0,False,False,False
+664744,824848,1.0,0.0,0.0,False,False,False
 664854,823404,0.3333333333333333,0.0,0.0,False,False,False
 664854,824125,1.0,0.0,0.0,False,False,False
 664854,824127,0.3333333333333333,0.0,0.0,False,False,False
@@ -1778,6 +1923,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 664854,824865,1.0,0.0,0.0,False,False,False
 664875,822912,1.0,0.0,0.0,False,False,False
 664875,822914,1.0,0.0,0.0,False,False,False
+664875,823389,1.0,0.0,0.0,False,False,False
 664875,823394,1.6666666666666667,0.0,0.0,False,False,False
 664875,823395,1.0,0.0,0.0,False,False,False
 664875,823396,1.0,0.0,0.0,False,False,False
@@ -1791,6 +1937,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 664875,824696,1.0,2.0,18.0,False,False,False
 664875,824697,0.6666666666666666,1.0,13.5,False,False,False
 664991,823404,1.0,0.0,0.0,False,False,False
+664991,823554,1.0,0.0,0.0,False,False,False
 664991,824125,0.6666666666666666,0.0,0.0,False,False,False
 664991,824127,0.6666666666666666,0.0,0.0,False,False,False
 664991,824454,0.6666666666666666,0.0,0.0,False,False,False
@@ -1808,6 +1955,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 665622,822909,1.0,0.0,0.0,False,False,False
 665622,823644,1.0,0.0,0.0,False,False,False
 665622,824940,2.0,0.0,0.0,True,False,False
+665622,825016,2.3333333333333335,0.0,0.0,True,False,False
 665622,825018,1.0,0.0,0.0,False,False,False
 665622,825023,1.3333333333333333,1.0,6.75,False,False,False
 665622,825024,1.3333333333333333,0.0,0.0,False,False,False
@@ -1833,6 +1981,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 665871,823960,2.3333333333333335,7.0,27.0,True,False,True
 665871,824689,1.0,0.0,0.0,False,False,False
 665871,824691,5.666666666666667,1.0,1.59,True,False,False
+666142,823146,5.333333333333333,4.0,6.75,True,False,False
 666142,823556,4.333333333333333,7.0,14.54,True,False,True
 666142,824121,6.0,1.0,1.5,True,True,False
 666142,824133,5.333333333333333,1.0,1.69,True,False,False
@@ -1840,6 +1989,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 666142,824455,0.6666666666666666,2.0,27.0,False,False,False
 666142,824946,3.6666666666666665,4.0,9.82,True,False,False
 666171,823562,1.0,0.0,0.0,False,False,False
+666171,824042,2.0,0.0,0.0,True,False,False
 666171,824044,1.3333333333333333,0.0,0.0,False,False,False
 666171,824049,1.0,2.0,18.0,False,False,False
 666171,824050,1.6666666666666667,3.0,16.2,False,False,False
@@ -1857,6 +2007,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 666200,824378,6.333333333333333,1.0,1.42,True,True,False
 666200,824690,4.666666666666667,0.0,0.0,True,False,False
 666277,822754,2.0,0.0,0.0,True,False,False
+666277,823066,1.3333333333333333,0.0,0.0,False,False,False
 666277,823069,0.6666666666666666,0.0,0.0,False,False,False
 666277,823070,1.0,1.0,9.0,False,False,False
 666277,823072,1.0,0.0,0.0,False,False,False
@@ -1883,11 +2034,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 666374,823716,1.0,0.0,0.0,False,False,False
 666374,824053,1.0,1.0,9.0,False,False,False
 666374,824056,1.0,0.0,0.0,False,False,False
+666619,822988,1.3333333333333333,1.0,6.75,False,False,False
 666661,823482,1.3333333333333333,0.0,0.0,False,False,False
 666661,823648,1.0,0.0,0.0,False,False,False
 666661,823796,1.0,0.0,0.0,False,False,False
 666661,823973,0.6666666666666666,2.0,27.0,False,False,False
 666661,823974,1.0,1.0,9.0,False,False,False
+666661,824685,1.0,1.0,9.0,False,False,False
 666661,824853,0.6666666666666666,1.0,13.5,False,False,False
 666661,824855,1.0,0.0,0.0,False,False,False
 666661,825094,1.0,0.0,0.0,False,False,False
@@ -1904,6 +2057,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 666808,823157,0.6666666666666666,0.0,0.0,False,False,False
 666808,823159,0.3333333333333333,0.0,0.0,False,False,False
 666808,823243,1.0,0.0,0.0,False,False,False
+666808,823554,0.6666666666666666,1.0,13.5,False,False,False
+666808,823557,1.0,0.0,0.0,False,False,False
 666808,823559,1.0,1.0,9.0,False,False,False
 666808,823563,1.3333333333333333,2.0,13.5,False,False,False
 666808,823564,1.0,0.0,0.0,False,False,False
@@ -1914,6 +2069,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 666974,824125,1.0,0.0,0.0,False,False,False
 666974,824454,0.6666666666666666,0.0,0.0,False,False,False
 666974,824618,1.0,0.0,0.0,False,False,False
+666974,824850,1.0,0.0,0.0,False,False,False
 666974,824852,0.6666666666666666,0.0,0.0,False,False,False
 666974,824853,1.0,0.0,0.0,False,False,False
 666974,824854,0.3333333333333333,0.0,0.0,False,False,False
@@ -1932,6 +2088,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 667297,822835,0.3333333333333333,1.0,27.0,False,False,False
 667297,822837,0.6666666666666666,0.0,0.0,False,False,False
 667297,822838,1.3333333333333333,0.0,0.0,False,False,False
+667297,823714,1.3333333333333333,0.0,0.0,False,False,False
 667297,823801,0.6666666666666666,0.0,0.0,False,False,False
 667297,824044,1.3333333333333333,0.0,0.0,False,False,False
 667297,824622,1.6666666666666667,0.0,0.0,False,False,False
@@ -1970,9 +2127,12 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 668390,823487,0.6666666666666666,1.0,13.5,False,False,False
 668390,823488,1.0,0.0,0.0,False,False,False
 668390,823966,1.3333333333333333,0.0,0.0,False,False,False
+668390,824287,0.6666666666666666,0.0,0.0,False,False,False
 668390,824861,1.3333333333333333,0.0,0.0,False,False,False
 668390,825021,1.0,4.0,36.0,False,False,False
 668670,824290,1.0,0.0,0.0,False,False,False
+668674,823144,1.0,0.0,0.0,False,False,False
+668674,823146,1.0,0.0,0.0,False,False,False
 668674,824122,1.0,1.0,9.0,False,False,False
 668674,824124,1.0,0.0,0.0,False,False,False
 668674,824125,0.6666666666666666,1.0,13.5,False,False,False
@@ -1989,9 +2149,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 668678,823479,4.666666666666667,3.0,5.79,True,False,False
 668678,823648,5.0,2.0,3.6,True,False,False
 668678,823974,4.0,3.0,6.75,True,False,False
+668678,824686,3.6666666666666665,6.0,14.73,True,False,True
 668678,825093,3.0,0.0,0.0,True,False,False
 668678,825098,5.333333333333333,2.0,3.38,True,False,False
 668678,825106,6.0,0.0,0.0,True,True,False
+668834,822744,1.0,0.0,0.0,False,False,False
 668834,823808,1.0,1.0,9.0,False,False,False
 668873,822751,2.0,0.0,0.0,True,False,False
 668873,822752,1.0,0.0,0.0,False,False,False
@@ -2002,6 +2164,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 668873,823239,1.0,0.0,0.0,False,False,False
 668873,823240,0.3333333333333333,0.0,0.0,False,False,False
 668873,823321,1.6666666666666667,0.0,0.0,False,False,False
+668873,823471,2.0,0.0,0.0,True,False,False
 668873,824531,1.0,0.0,0.0,False,False,False
 668873,824857,0.6666666666666666,1.0,13.5,False,False,False
 668909,822827,6.0,6.0,9.0,True,False,False
@@ -2013,6 +2176,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 668909,824457,5.333333333333333,1.0,1.69,True,False,False
 668933,822919,1.0,1.0,9.0,False,False,False
 668933,822920,1.0,0.0,0.0,False,False,False
+668933,823388,1.0,0.0,0.0,False,False,False
 668933,823718,1.0,0.0,0.0,False,False,False
 668933,823720,1.0,0.0,0.0,False,False,False
 668933,823887,1.0,1.0,9.0,False,False,False
@@ -2027,6 +2191,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 668933,824540,1.0,1.0,9.0,False,False,False
 668933,824541,0.6666666666666666,0.0,0.0,False,False,False
 668941,822755,1.0,0.0,0.0,False,False,False
+668941,823067,1.0,0.0,0.0,False,False,False
 668941,823068,1.0,1.0,9.0,False,False,False
 668941,823070,0.6666666666666666,0.0,0.0,False,False,False
 668941,823071,1.3333333333333333,0.0,0.0,False,False,False
@@ -2036,6 +2201,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 668941,823078,1.3333333333333333,0.0,0.0,False,False,False
 668941,823081,0.6666666666666666,0.0,0.0,False,False,False
 668941,823082,1.0,0.0,0.0,False,False,False
+668941,823391,0.6666666666666666,1.0,13.5,False,False,False
 668941,823392,0.6666666666666666,2.0,27.0,False,False,False
 668941,824205,0.6666666666666666,1.0,13.5,False,False,False
 668941,824207,1.0,0.0,0.0,False,False,False
@@ -2048,7 +2214,9 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 668964,823643,3.0,3.0,9.0,True,False,False
 668964,823649,3.0,1.0,3.0,True,False,False
 668964,823963,2.0,1.0,4.5,True,False,False
+668964,824042,2.6666666666666665,0.0,0.0,True,False,False
 668964,824691,2.0,0.0,0.0,True,False,False
+668984,822988,1.0,0.0,0.0,False,False,False
 668984,823149,0.6666666666666666,3.0,40.5,False,False,False
 668984,823152,2.3333333333333335,2.0,7.71,True,False,False
 668984,823155,1.6666666666666667,0.0,0.0,False,False,False
@@ -2061,11 +2229,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669020,823310,2.0,0.0,0.0,True,False,False
 669020,823478,1.0,0.0,0.0,False,False,False
 669020,823962,2.6666666666666665,0.0,0.0,True,False,False
+669020,824686,0.6666666666666666,4.0,54.0,False,False,False
 669022,822910,5.0,3.0,5.4,True,False,False
 669022,822915,5.0,0.0,0.0,True,False,False
 669022,822919,6.0,3.0,4.5,True,True,False
 669022,823150,5.0,5.0,9.0,True,False,False
 669022,823487,5.333333333333333,1.0,1.69,True,False,False
+669022,824287,3.6666666666666665,3.0,7.36,True,False,False
 669022,825022,4.666666666666667,2.0,3.86,True,False,False
 669062,822751,1.0,0.0,0.0,False,False,False
 669062,823229,1.0,0.0,0.0,False,False,False
@@ -2076,8 +2246,10 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669062,823240,0.6666666666666666,2.0,27.0,False,False,False
 669062,823241,0.6666666666666666,0.0,0.0,False,False,False
 669062,823243,1.0,0.0,0.0,False,False,False
+669062,823472,1.0,0.0,0.0,False,False,False
 669062,824530,1.0,0.0,0.0,False,False,False
 669062,824859,1.0,1.0,9.0,False,False,False
+669084,822746,0.3333333333333333,0.0,0.0,False,False,False
 669084,823796,2.0,0.0,0.0,True,False,False
 669084,823802,0.6666666666666666,0.0,0.0,False,False,False
 669084,823803,0.3333333333333333,0.0,0.0,False,False,False
@@ -2090,6 +2262,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669084,824134,1.6666666666666667,0.0,0.0,False,False,False
 669084,824286,2.0,0.0,0.0,True,False,False
 669084,824780,2.3333333333333335,3.0,11.57,True,False,True
+669093,823308,1.0,0.0,0.0,False,False,False
 669093,823319,1.3333333333333333,2.0,13.5,False,False,False
 669093,823321,1.0,0.0,0.0,False,False,False
 669093,823322,1.0,0.0,0.0,False,False,False
@@ -2103,6 +2276,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669160,823395,5.333333333333333,2.0,3.38,True,False,False
 669160,823880,4.666666666666667,1.0,1.93,True,False,False
 669160,824295,2.6666666666666665,6.0,20.25,True,False,True
+669165,823066,1.0,0.0,0.0,False,False,False
 669165,823231,1.0,0.0,0.0,False,False,False
 669165,823958,1.0,0.0,0.0,False,False,False
 669165,823959,1.0,0.0,0.0,False,False,False
@@ -2111,18 +2285,22 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669165,824371,1.0,1.0,9.0,False,False,False
 669194,823646,5.666666666666667,1.0,1.59,True,False,False
 669194,823971,4.666666666666667,4.0,7.71,True,False,False
+669194,824685,5.666666666666667,1.0,1.59,True,False,False
 669194,824856,5.333333333333333,1.0,1.69,True,False,False
 669194,825094,5.0,6.0,10.8,True,False,True
 669194,825100,0.3333333333333333,8.0,216.0,False,False,False
 669194,825105,4.666666666666667,5.0,9.64,True,False,False
 669199,823232,2.0,1.0,4.5,True,False,False
 669199,823568,0.6666666666666666,2.0,27.0,False,False,False
+669199,823877,2.3333333333333335,0.0,0.0,True,False,False
 669199,823878,0.3333333333333333,1.0,27.0,False,False,False
 669199,823882,2.3333333333333335,0.0,0.0,True,False,False
 669199,823885,1.0,0.0,0.0,False,False,False
 669199,823890,3.0,1.0,3.0,True,False,False
 669199,824297,2.0,0.0,0.0,True,False,False
 669199,824937,2.0,0.0,0.0,True,False,False
+669211,823554,1.0,1.0,9.0,False,False,False
+669211,824850,1.0,0.0,0.0,False,False,False
 669211,824851,1.0,5.0,45.0,False,False,False
 669212,823556,1.0,0.0,0.0,False,False,False
 669212,823559,1.0,0.0,0.0,False,False,False
@@ -2138,6 +2316,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669270,823567,0.3333333333333333,0.0,0.0,False,False,False
 669270,823642,1.0,0.0,0.0,False,False,False
 669270,823644,1.0,1.0,9.0,False,False,False
+669270,825012,1.6666666666666667,0.0,0.0,False,False,False
 669270,825015,1.6666666666666667,1.0,5.4,False,False,False
 669270,825020,1.3333333333333333,0.0,0.0,False,False,False
 669270,825021,1.3333333333333333,0.0,0.0,False,False,False
@@ -2146,6 +2325,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669276,823474,1.0,0.0,0.0,False,False,False
 669276,823475,1.0,0.0,0.0,False,False,False
 669276,824051,0.3333333333333333,0.0,0.0,False,False,False
+669276,824365,1.0,0.0,0.0,False,False,False
 669276,824930,1.6666666666666667,0.0,0.0,False,False,False
 669276,824933,1.0,1.0,9.0,False,False,False
 669276,824935,1.0,0.0,0.0,False,False,False
@@ -2164,11 +2344,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669302,823163,5.333333333333333,3.0,5.06,True,False,False
 669302,823716,5.0,1.0,1.8,True,False,False
 669330,823406,2.0,0.0,0.0,True,False,False
+669330,823557,1.3333333333333333,1.0,6.75,False,False,False
 669330,824123,1.6666666666666667,0.0,0.0,False,False,False
 669330,824452,2.0,0.0,0.0,True,False,False
 669330,824453,0.3333333333333333,0.0,0.0,False,False,False
 669330,824617,1.0,0.0,0.0,False,False,False
 669330,824619,2.0,0.0,0.0,True,False,False
+669330,824850,1.0,0.0,0.0,False,False,False
 669330,824851,1.3333333333333333,0.0,0.0,False,False,False
 669330,824855,1.0,3.0,27.0,False,False,False
 669330,824859,2.0,1.0,4.5,True,False,False
@@ -2192,6 +2374,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669372,822911,3.3333333333333335,0.0,0.0,True,False,False
 669372,823149,5.333333333333333,3.0,5.06,True,False,False
 669372,823643,4.0,0.0,0.0,True,False,False
+669372,825012,4.333333333333333,4.0,8.31,True,False,False
 669372,825021,5.333333333333333,2.0,3.38,True,False,False
 669372,825025,1.3333333333333333,2.0,13.5,False,False,False
 669372,825026,2.0,2.0,9.0,True,False,False
@@ -2203,6 +2386,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669373,824930,7.0,2.0,2.57,True,True,False
 669373,825106,7.0,1.0,1.29,True,True,False
 669387,822914,4.333333333333333,4.0,8.31,True,False,False
+669387,823388,5.666666666666667,4.0,6.35,True,False,False
 669387,823399,6.0,0.0,0.0,True,True,False
 669387,823404,4.666666666666667,2.0,3.86,True,False,False
 669387,823647,4.333333333333333,2.0,4.15,True,False,False
@@ -2224,6 +2408,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669438,824615,0.6666666666666666,0.0,0.0,False,False,False
 669438,824616,1.0,0.0,0.0,False,False,False
 669461,822754,5.0,4.0,7.2,True,False,False
+669461,823066,5.666666666666667,2.0,3.18,True,False,False
 669461,823070,3.0,5.0,15.0,True,False,True
 669461,823073,4.666666666666667,4.0,7.71,True,False,False
 669461,823078,5.666666666666667,1.0,1.59,True,False,False
@@ -2236,10 +2421,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669467,823392,6.0,1.0,1.5,True,True,False
 669467,824206,5.0,1.0,1.8,True,False,False
 669620,823147,0.6666666666666666,1.0,13.5,False,False,False
+669620,825012,0.6666666666666666,2.0,27.0,False,False,False
+669620,825016,1.3333333333333333,1.0,6.75,False,False,False
 669622,823229,0.6666666666666666,1.0,13.5,False,False,False
 669622,823230,1.0,0.0,0.0,False,False,False
 669622,823566,1.0,2.0,18.0,False,False,False
 669622,823569,0.3333333333333333,2.0,54.0,False,False,False
+669622,823876,1.0,0.0,0.0,False,False,False
 669622,823878,1.0,0.0,0.0,False,False,False
 669622,823879,0.6666666666666666,0.0,0.0,False,False,False
 669622,823882,0.6666666666666666,2.0,27.0,False,False,False
@@ -2270,7 +2458,9 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669711,824781,1.0,3.0,27.0,False,False,False
 669711,824786,1.0,0.0,0.0,False,False,False
 669711,824851,1.0,1.0,9.0,False,False,False
+669724,824287,1.0,0.0,0.0,False,False,False
 669724,824528,1.0,0.0,0.0,False,False,False
+669920,824848,2.0,5.0,22.5,True,False,True
 669923,822916,8.0,3.0,3.38,True,True,False
 669923,823069,6.0,2.0,3.0,True,True,False
 669923,823151,5.666666666666667,1.0,1.59,True,False,False
@@ -2278,6 +2468,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 669923,823157,5.666666666666667,4.0,6.35,True,False,False
 669923,823162,6.0,1.0,1.5,True,True,False
 669923,823717,5.666666666666667,2.0,3.18,True,False,False
+669947,822988,3.0,1.0,3.0,True,False,False
 669947,822991,4.333333333333333,2.0,4.15,True,False,False
 669947,822994,5.666666666666667,5.0,7.94,True,False,False
 669947,823000,4.666666666666667,0.0,0.0,True,False,False
@@ -2294,10 +2485,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 670036,824458,0.6666666666666666,0.0,0.0,False,False,False
 670036,824460,1.0,2.0,18.0,False,False,False
 670036,824941,0.6666666666666666,3.0,40.5,False,False,False
+670036,825012,0.6666666666666666,0.0,0.0,False,False,False
+670036,825014,0.3333333333333333,0.0,0.0,False,False,False
 670059,822824,1.3333333333333333,0.0,0.0,False,False,False
 670059,823160,2.0,1.0,4.5,True,False,False
 670059,823162,1.0,2.0,18.0,False,False,False
 670059,824446,2.0,0.0,0.0,True,False,False
+670059,825014,1.6666666666666667,1.0,5.4,False,False,False
 670167,823556,1.0,0.0,0.0,False,False,False
 670167,824121,1.0,0.0,0.0,False,False,False
 670167,824125,0.6666666666666666,1.0,13.5,False,False,False
@@ -2309,6 +2503,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 670167,824289,0.3333333333333333,2.0,54.0,False,False,False
 670167,824457,0.3333333333333333,0.0,0.0,False,False,False
 670167,824944,1.0,1.0,9.0,False,False,False
+670167,825016,1.6666666666666667,1.0,5.4,False,False,False
 670167,825017,1.0,0.0,0.0,False,False,False
 670183,822989,1.0,1.0,9.0,False,False,False
 670183,823718,1.6666666666666667,3.0,16.2,False,False,False
@@ -2321,6 +2516,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 670245,824212,1.3333333333333333,2.0,13.5,False,False,False
 670245,824540,2.3333333333333335,0.0,0.0,True,False,False
 670245,824770,0.6666666666666666,0.0,0.0,False,False,False
+670245,824771,3.0,1.0,3.0,True,False,False
 670245,824776,1.3333333333333333,1.0,6.75,False,False,False
 670245,824777,1.0,0.0,0.0,False,False,False
 670245,824779,1.0,0.0,0.0,False,False,False
@@ -2347,6 +2543,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 670329,824454,1.0,0.0,0.0,False,False,False
 670329,824617,1.0,0.0,0.0,False,False,False
 670329,824619,1.0,0.0,0.0,False,False,False
+670329,824848,0.3333333333333333,0.0,0.0,False,False,False
 670329,824849,0.3333333333333333,0.0,0.0,False,False,False
 670329,824852,1.0,0.0,0.0,False,False,False
 670329,824853,1.3333333333333333,0.0,0.0,False,False,False
@@ -2355,6 +2552,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 670329,824863,2.0,0.0,0.0,True,False,False
 670329,824864,0.3333333333333333,0.0,0.0,False,False,False
 670912,824214,3.3333333333333335,4.0,10.8,True,False,True
+670950,823471,2.3333333333333335,2.0,7.71,True,False,False
+670950,823876,1.6666666666666667,0.0,0.0,False,False,False
 670970,823311,1.6666666666666667,0.0,0.0,False,False,False
 670970,823312,0.6666666666666666,1.0,13.5,False,False,False
 670970,823313,1.6666666666666667,0.0,0.0,False,False,False
@@ -2370,6 +2569,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 670970,824782,1.0,1.0,9.0,False,False,False
 670970,825093,1.0,0.0,0.0,False,False,False
 670990,822912,1.0,0.0,0.0,False,False,False
+670990,823388,2.0,1.0,4.5,True,False,False
+670990,823391,1.0,0.0,0.0,False,False,False
 670990,823392,1.0,0.0,0.0,False,False,False
 670990,823394,3.0,3.0,9.0,True,False,False
 670990,823396,1.0,2.0,18.0,False,False,False
@@ -2384,10 +2585,12 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 670990,824697,2.0,0.0,0.0,True,False,False
 671096,823721,4.666666666666667,3.0,5.79,True,False,False
 671096,823887,5.333333333333333,2.0,3.38,True,False,False
+671096,824524,6.0,2.0,3.0,True,True,False
 671096,824529,3.6666666666666665,5.0,12.27,True,False,True
 671096,824533,3.0,6.0,18.0,True,False,True
 671096,824536,5.666666666666667,3.0,4.76,True,False,False
 671096,824541,6.0,0.0,0.0,True,True,False
+671109,823067,1.0,0.0,0.0,False,False,False
 671109,823960,1.0,0.0,0.0,False,False,False
 671109,823961,1.0,0.0,0.0,False,False,False
 671109,824370,1.0,1.0,9.0,False,False,False
@@ -2398,6 +2601,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 671382,824125,1.0,3.0,27.0,False,False,False
 671382,824452,1.0,2.0,18.0,False,False,False
 671382,824453,1.6666666666666667,0.0,0.0,False,False,False
+671382,824850,2.0,1.0,4.5,True,False,False
 671382,824854,2.0,0.0,0.0,True,False,False
 671737,822828,5.0,1.0,1.8,True,False,False
 671737,822992,6.333333333333333,6.0,8.53,True,False,False
@@ -2420,12 +2624,15 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 671922,824457,1.0,0.0,0.0,False,False,False
 671922,824458,1.0,0.0,0.0,False,False,False
 671922,824460,1.0,1.0,9.0,False,False,False
+671922,825012,1.3333333333333333,0.0,0.0,False,False,False
 672282,823562,7.0,0.0,0.0,True,True,False
+672282,824042,6.333333333333333,3.0,4.26,True,True,False
 672282,824046,6.0,3.0,4.5,True,True,False
 672282,824050,4.333333333333333,5.0,10.38,True,False,True
 672282,824056,6.333333333333333,0.0,0.0,True,True,False
 672282,824122,5.0,3.0,5.4,True,False,False
 672282,824213,4.666666666666667,2.0,3.86,True,False,False
+672335,822744,2.0,0.0,0.0,True,False,False
 672335,822745,0.3333333333333333,0.0,0.0,False,False,False
 672335,822747,1.0,1.0,9.0,False,False,False
 672335,822751,2.0,1.0,4.5,True,False,False
@@ -2441,6 +2648,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 672335,824613,1.0,0.0,0.0,False,False,False
 672335,824700,1.0,1.0,9.0,False,False,False
 672335,824704,1.0,0.0,0.0,False,False,False
+672456,824284,6.666666666666667,1.0,1.35,True,True,False
 672456,824289,6.0,3.0,4.5,True,True,False
 672456,824290,5.333333333333333,3.0,5.06,True,False,False
 672456,824296,4.333333333333333,1.0,2.08,True,False,False
@@ -2486,6 +2694,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 673929,824621,1.0,2.0,18.0,False,False,False
 673929,825018,0.3333333333333333,1.0,27.0,False,False,False
 673929,825020,1.0,2.0,18.0,False,False,False
+674370,823309,1.0,2.0,18.0,False,False,False
 674370,824052,2.0,0.0,0.0,True,False,False
 674370,824609,3.0,1.0,3.0,True,False,False
 674370,824613,0.3333333333333333,0.0,0.0,False,False,False
@@ -2501,6 +2710,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 674444,824136,0.6666666666666666,0.0,0.0,False,False,False
 674444,824455,1.3333333333333333,5.0,33.75,False,False,False
 674841,822750,4.333333333333333,0.0,0.0,True,False,False
+675660,823795,4.0,1.0,2.25,True,False,False
 675660,823798,1.0,0.0,0.0,False,False,False
 675660,823800,4.0,3.0,6.75,True,False,False
 675660,824779,2.6666666666666665,3.0,10.12,True,False,True
@@ -2511,16 +2721,19 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 675848,823893,2.0,0.0,0.0,True,False,False
 675848,824208,0.6666666666666666,2.0,27.0,False,False,False
 675848,824210,1.0,0.0,0.0,False,False,False
+675848,824366,1.0,2.0,18.0,False,False,False
 675848,824368,1.6666666666666667,1.0,5.4,False,False,False
 675848,824369,1.0,0.0,0.0,False,False,False
 675848,824376,1.6666666666666667,0.0,0.0,False,False,False
 675848,824378,1.0,0.0,0.0,False,False,False
 675848,824525,1.0,0.0,0.0,False,False,False
+675919,823554,1.0,0.0,0.0,False,False,False
 675919,824853,0.6666666666666666,0.0,0.0,False,False,False
 675919,824858,1.0,3.0,27.0,False,False,False
 675989,823154,1.0,1.0,9.0,False,False,False
 675989,824212,3.0,1.0,3.0,True,False,False
 675989,824376,4.333333333333333,0.0,0.0,True,False,False
+675989,824850,1.0,1.0,9.0,False,False,False
 676083,823878,5.0,0.0,0.0,True,False,False
 676083,823883,5.333333333333333,4.0,6.75,True,False,False
 676083,823886,6.666666666666667,2.0,2.7,True,True,False
@@ -2528,6 +2741,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676083,823956,6.0,0.0,0.0,True,True,False
 676083,824294,5.0,5.0,9.0,True,False,False
 676106,823068,6.0,2.0,3.0,True,True,False
+676106,823144,7.0,1.0,1.29,True,True,False
 676106,823149,4.666666666666667,3.0,5.79,True,False,False
 676106,823156,5.0,3.0,5.4,True,False,False
 676106,823160,6.0,0.0,0.0,True,True,False
@@ -2545,12 +2759,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676254,823242,0.6666666666666666,0.0,0.0,False,False,False
 676254,823243,0.3333333333333333,0.0,0.0,False,False,False
 676254,823320,1.0,2.0,18.0,False,False,False
+676254,823472,0.6666666666666666,1.0,13.5,False,False,False
 676254,824530,1.0,0.0,0.0,False,False,False
 676254,824531,1.0,0.0,0.0,False,False,False
 676254,824859,0.6666666666666666,1.0,13.5,False,False,False
 676263,822756,1.0,0.0,0.0,False,False,False
 676263,822758,0.3333333333333333,0.0,0.0,False,False,False
 676263,822833,0.3333333333333333,2.0,54.0,False,False,False
+676263,823066,1.3333333333333333,0.0,0.0,False,False,False
 676263,823231,1.0,3.0,27.0,False,False,False
 676263,823956,1.0,0.0,0.0,False,False,False
 676263,823959,1.0,0.0,0.0,False,False,False
@@ -2567,6 +2783,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676282,824452,4.666666666666667,3.0,5.79,True,False,False
 676282,824455,5.666666666666667,2.0,3.18,True,False,False
 676282,824458,5.333333333333333,1.0,1.69,True,False,False
+676282,825012,4.0,4.0,9.0,True,False,False
 676395,822917,0.3333333333333333,1.0,27.0,False,False,False
 676395,822918,1.0,0.0,0.0,False,False,False
 676395,823487,1.0,0.0,0.0,False,False,False
@@ -2579,6 +2796,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676428,823323,1.0,1.0,9.0,False,False,False
 676428,823724,0.3333333333333333,0.0,0.0,False,False,False
 676428,823728,0.6666666666666666,2.0,27.0,False,False,False
+676428,824287,1.0,0.0,0.0,False,False,False
 676428,824288,0.6666666666666666,0.0,0.0,False,False,False
 676428,824295,1.0,0.0,0.0,False,False,False
 676428,824297,1.0,0.0,0.0,False,False,False
@@ -2605,6 +2823,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676477,824211,1.0,0.0,0.0,False,False,False
 676477,824540,1.0,0.0,0.0,False,False,False
 676477,824541,1.0,0.0,0.0,False,False,False
+676477,824772,1.0,0.0,0.0,False,False,False
 676477,824776,1.0,0.0,0.0,False,False,False
 676477,824778,1.0,0.0,0.0,False,False,False
 676477,824780,1.0,0.0,0.0,False,False,False
@@ -2615,6 +2834,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676508,822833,1.0,1.0,9.0,False,False,False
 676508,823966,1.0,0.0,0.0,False,False,False
 676508,823971,0.6666666666666666,0.0,0.0,False,False,False
+676510,823471,2.0,1.0,4.5,True,False,False
 676510,824934,1.3333333333333333,0.0,0.0,False,False,False
 676534,823230,1.0,2.0,18.0,False,False,False
 676534,823566,1.0,0.0,0.0,False,False,False
@@ -2648,6 +2868,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676596,822832,3.0,4.0,12.0,True,False,True
 676617,822753,1.0,0.0,0.0,False,False,False
 676617,822754,1.0,1.0,9.0,False,False,False
+676617,823067,1.0,2.0,18.0,False,False,False
 676617,823070,1.0,4.0,36.0,False,False,False
 676617,823071,1.0,0.0,0.0,False,False,False
 676617,823072,1.0,0.0,0.0,False,False,False
@@ -2674,9 +2895,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676684,824777,1.0,0.0,0.0,False,False,False
 676684,824778,1.3333333333333333,0.0,0.0,False,False,False
 676684,825107,0.6666666666666666,3.0,40.5,False,False,False
+676702,824365,1.0,0.0,0.0,False,False,False
 676742,823394,0.6666666666666666,2.0,27.0,False,False,False
 676742,823395,0.3333333333333333,0.0,0.0,False,False,False
 676742,823797,2.0,0.0,0.0,True,False,False
+676755,823391,0.6666666666666666,2.0,27.0,False,False,False
 676755,823393,1.0,0.0,0.0,False,False,False
 676755,823394,1.0,0.0,0.0,False,False,False
 676755,823395,0.3333333333333333,0.0,0.0,False,False,False
@@ -2693,6 +2916,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676755,824539,1.0,0.0,0.0,False,False,False
 676755,824695,1.0,0.0,0.0,False,False,False
 676755,824697,1.0,0.0,0.0,False,False,False
+676760,823309,2.0,1.0,4.5,True,False,False
 676760,823310,2.0,0.0,0.0,True,False,False
 676760,823314,2.0,2.0,9.0,True,False,False
 676760,823316,1.6666666666666667,1.0,5.4,False,False,False
@@ -2712,9 +2936,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676775,823239,1.0,1.0,9.0,False,False,False
 676775,823241,1.0,0.0,0.0,False,False,False
 676775,823320,1.0,0.0,0.0,False,False,False
+676775,823471,2.0,1.0,4.5,True,False,False
 676775,824530,1.0,0.0,0.0,False,False,False
 676775,824531,1.0,0.0,0.0,False,False,False
 676775,824858,1.0,0.0,0.0,False,False,False
+676879,822744,2.6666666666666665,1.0,3.38,True,False,False
 676879,823797,1.0,0.0,0.0,False,False,False
 676879,823799,2.0,0.0,0.0,True,False,False
 676879,823801,0.3333333333333333,0.0,0.0,False,False,False
@@ -2742,6 +2968,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676962,823312,1.6666666666666667,1.0,5.4,False,False,False
 676962,823477,2.0,0.0,0.0,True,False,False
 676962,824460,2.0,3.0,13.5,True,False,True
+676962,824685,2.0,0.0,0.0,True,False,False
 676962,824688,2.3333333333333335,0.0,0.0,True,False,False
 676962,824694,2.0,1.0,4.5,True,False,False
 676962,824697,2.0,0.0,0.0,True,False,False
@@ -2749,6 +2976,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 676962,824704,3.0,3.0,9.0,True,False,False
 676974,823230,5.0,1.0,1.8,True,False,False
 676974,823569,4.666666666666667,2.0,3.86,True,False,False
+676974,823876,7.0,0.0,0.0,True,True,False
 676974,823879,5.333333333333333,1.0,1.69,True,False,False
 676974,823884,5.0,1.0,1.8,True,False,False
 676974,823891,5.0,3.0,5.4,True,False,False
@@ -2762,6 +2990,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 677053,823230,1.0,3.0,27.0,False,False,False
 677053,823566,1.0,0.0,0.0,False,False,False
 677053,823569,0.3333333333333333,0.0,0.0,False,False,False
+677053,823876,1.0,0.0,0.0,False,False,False
 677053,823878,1.0,0.0,0.0,False,False,False
 677053,823879,1.3333333333333333,0.0,0.0,False,False,False
 677053,823881,0.0,2.0,,False,False,False
@@ -2775,6 +3004,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 677161,822823,1.0,1.0,9.0,False,False,False
 677161,823075,2.0,1.0,4.5,True,False,False
 677161,823076,0.6666666666666666,2.0,27.0,False,False,False
+677161,824772,1.3333333333333333,0.0,0.0,False,False,False
 677161,824774,1.0,0.0,0.0,False,False,False
 677161,824775,1.0,0.0,0.0,False,False,False
 677161,824776,1.6666666666666667,1.0,5.4,False,False,False
@@ -2793,6 +3023,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 677865,823079,2.0,0.0,0.0,True,False,False
 677865,823081,0.3333333333333333,2.0,54.0,False,False,False
 677865,823390,1.0,3.0,27.0,False,False,False
+677865,823391,0.6666666666666666,2.0,27.0,False,False,False
 677865,823880,1.6666666666666667,0.0,0.0,False,False,False
 677865,824205,0.6666666666666666,0.0,0.0,False,False,False
 677865,824207,1.0,0.0,0.0,False,False,False
@@ -2804,6 +3035,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 677944,824450,5.0,7.0,12.6,True,False,True
 677944,824459,6.0,0.0,0.0,True,True,False
 677944,824941,5.333333333333333,4.0,6.75,True,False,False
+677944,825014,5.333333333333333,5.0,8.44,True,False,False
 677952,822913,7.0,2.0,2.57,True,True,False
 677952,823390,4.333333333333333,5.0,10.38,True,False,True
 677952,823396,5.666666666666667,4.0,6.35,True,False,False
@@ -2819,6 +3051,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 677955,823892,1.6666666666666667,1.0,5.4,False,False,False
 677955,824208,1.0,0.0,0.0,False,False,False
 677955,824209,0.3333333333333333,0.0,0.0,False,False,False
+677955,824366,0.6666666666666666,4.0,54.0,False,False,False
 677955,824367,1.3333333333333333,1.0,6.75,False,False,False
 677955,824372,1.0,0.0,0.0,False,False,False
 677955,824378,0.6666666666666666,0.0,0.0,False,False,False
@@ -2827,13 +3060,16 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 677958,822914,6.0,1.0,1.5,True,True,False
 677958,822920,5.0,2.0,3.6,True,False,False
 677958,823968,5.0,3.0,5.4,True,False,False
+677958,824284,1.6666666666666667,5.0,27.0,False,False,False
 677958,825021,4.666666666666667,2.0,3.86,True,False,False
 677960,823159,4.333333333333333,1.0,2.08,True,False,False
+677960,823554,5.0,1.0,1.8,True,False,False
 677960,823556,7.0,0.0,0.0,True,True,False
 677960,823562,5.0,4.0,7.2,True,False,False
 677960,823565,8.0,1.0,1.12,True,True,False
 677960,823569,3.3333333333333335,3.0,8.1,True,False,False
 677960,824203,5.0,2.0,3.6,True,False,False
+677961,823146,1.0,0.0,0.0,False,False,False
 677961,823148,2.0,1.0,4.5,True,False,False
 677961,823151,0.6666666666666666,2.0,27.0,False,False,False
 677961,823153,1.0,0.0,0.0,False,False,False
@@ -2848,6 +3084,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 678022,822911,2.0,0.0,0.0,True,False,False
 678022,823148,2.0,0.0,0.0,True,False,False
 678022,823643,2.3333333333333335,0.0,0.0,True,False,False
+678022,825016,1.0,0.0,0.0,False,False,False
 678022,825017,1.0,0.0,0.0,False,False,False
 678022,825020,2.3333333333333335,0.0,0.0,True,False,False
 678022,825023,1.0,0.0,0.0,False,False,False
@@ -2865,6 +3102,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 678606,822918,1.0,0.0,0.0,False,False,False
 678606,823068,1.0,0.0,0.0,False,False,False
 678606,823070,2.0,0.0,0.0,True,False,False
+678606,823146,1.0,1.0,9.0,False,False,False
 678606,823147,2.0,0.0,0.0,True,False,False
 678606,823149,1.0,0.0,0.0,False,False,False
 678606,823151,0.3333333333333333,0.0,0.0,False,False,False
@@ -2887,11 +3125,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 678906,824374,1.3333333333333333,0.0,0.0,False,False,False
 678906,824375,0.6666666666666666,2.0,27.0,False,False,False
 678906,824448,2.6666666666666665,0.0,0.0,True,False,False
+678906,824771,1.3333333333333333,0.0,0.0,False,False,False
 678906,824849,2.6666666666666665,2.0,6.75,True,False,False
 678906,825027,2.3333333333333335,0.0,0.0,True,False,False
 679358,822989,1.0,2.0,18.0,False,False,False
 679358,822992,1.0,0.0,0.0,False,False,False
 679358,823641,1.0,0.0,0.0,False,False,False
+679358,823713,2.3333333333333335,1.0,3.86,True,False,False
 679358,823717,0.3333333333333333,2.0,54.0,False,False,False
 679358,823721,1.0,1.0,9.0,False,False,False
 679358,823722,1.0,0.0,0.0,False,False,False
@@ -2911,16 +3151,19 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 679775,824692,0.6666666666666666,0.0,0.0,False,False,False
 679775,824932,1.0,0.0,0.0,False,False,False
 679775,824933,1.0,1.0,9.0,False,False,False
+679883,823144,2.0,0.0,0.0,True,False,False
 679883,824132,2.3333333333333335,5.0,19.29,True,False,True
 679883,824455,2.6666666666666665,2.0,6.75,True,False,False
 679883,825015,1.0,1.0,9.0,False,False,False
 680573,822829,3.6666666666666665,5.0,12.27,True,False,True
 680573,822991,4.0,4.0,9.0,True,False,False
 680573,823640,5.0,3.0,5.4,True,False,False
+680573,823713,4.666666666666667,6.0,11.57,True,False,True
 680573,823722,5.0,7.0,12.6,True,False,True
 680573,823729,6.666666666666667,1.0,1.35,True,True,False
 680573,824135,5.0,2.0,3.6,True,False,False
 680694,823406,3.6666666666666665,4.0,9.82,True,False,False
+680694,823554,4.0,5.0,11.25,True,False,True
 680694,824125,5.0,1.0,1.8,True,False,False
 680694,824617,5.0,3.0,5.4,True,False,False
 680694,824852,4.666666666666667,3.0,5.79,True,False,False
@@ -2928,6 +3171,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 680694,824862,4.666666666666667,3.0,5.79,True,False,False
 680702,823964,2.0,0.0,0.0,True,False,False
 680704,823560,1.0,2.0,18.0,False,False,False
+680704,824041,1.6666666666666667,0.0,0.0,False,False,False
 680704,824045,1.0,0.0,0.0,False,False,False
 680704,824049,1.6666666666666667,2.0,10.8,False,False,False
 680704,824121,1.0,0.0,0.0,False,False,False
@@ -2936,7 +3180,9 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 680730,822748,2.0,0.0,0.0,True,False,False
 680730,822751,3.0,3.0,9.0,True,False,False
 680730,823398,2.0,0.0,0.0,True,False,False
+680730,823634,3.0,1.0,3.0,True,False,False
 680730,824613,1.3333333333333333,0.0,0.0,False,False,False
+680732,823308,6.0,0.0,0.0,True,True,False
 680732,823811,4.0,4.0,9.0,True,False,False
 680732,824612,7.0,0.0,0.0,True,True,False
 680732,824615,5.333333333333333,4.0,6.75,True,False,False
@@ -2950,11 +3196,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 680736,824370,7.0,1.0,1.29,True,True,False
 680742,823234,1.0,0.0,0.0,False,False,False
 680742,823237,1.0,0.0,0.0,False,False,False
+680742,823471,1.0,1.0,9.0,False,False,False
 680742,823479,0.6666666666666666,1.0,13.5,False,False,False
 680742,823482,1.3333333333333333,0.0,0.0,False,False,False
 680742,823483,0.6666666666666666,1.0,13.5,False,False,False
 680742,823484,1.0,2.0,18.0,False,False,False
 680742,823486,1.0,0.0,0.0,False,False,False
+680742,823877,0.6666666666666666,2.0,27.0,False,False,False
 680755,822821,1.6666666666666667,0.0,0.0,False,False,False
 680755,822824,1.3333333333333333,0.0,0.0,False,False,False
 680755,822827,1.0,0.0,0.0,False,False,False
@@ -2962,6 +3210,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 680755,822836,1.0,0.0,0.0,False,False,False
 680755,822837,1.6666666666666667,0.0,0.0,False,False,False
 680755,822838,0.6666666666666666,0.0,0.0,False,False,False
+680755,823713,0.6666666666666666,0.0,0.0,False,False,False
 680755,823802,1.0,1.0,9.0,False,False,False
 680755,823803,0.3333333333333333,0.0,0.0,False,False,False
 680755,824044,0.3333333333333333,4.0,108.0,False,False,False
@@ -2981,6 +3230,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 680767,824372,1.0,0.0,0.0,False,False,False
 680767,824378,1.0,0.0,0.0,False,False,False
 680767,824379,1.0,0.0,0.0,False,False,False
+680767,824524,1.0,2.0,18.0,False,False,False
 680802,823156,2.3333333333333335,2.0,7.71,True,False,False
 680802,824208,3.3333333333333335,2.0,5.4,True,False,False
 680802,824214,2.0,0.0,0.0,True,False,False
@@ -2991,6 +3241,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 680802,825026,3.0,0.0,0.0,True,False,False
 680951,825019,2.0,1.0,4.5,True,False,False
 681035,823639,1.3333333333333333,1.0,6.75,False,False,False
+681035,824041,5.0,3.0,5.4,True,False,False
 681151,823154,2.0,3.0,13.5,True,False,True
 681151,824203,1.0,2.0,18.0,False,False,False
 681151,824204,1.0,0.0,0.0,False,False,False
@@ -3006,6 +3257,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681190,824782,5.666666666666667,1.0,1.59,True,False,False
 681217,823560,1.0,0.0,0.0,False,False,False
 681217,823562,1.0,1.0,9.0,False,False,False
+681217,824041,0.3333333333333333,2.0,54.0,False,False,False
 681217,824044,0.6666666666666666,3.0,40.5,False,False,False
 681217,824046,1.0,1.0,9.0,False,False,False
 681217,824048,0.3333333333333333,0.0,0.0,False,False,False
@@ -3025,6 +3277,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681293,824202,7.0,1.0,1.29,True,True,False
 681293,824209,6.0,1.0,1.5,True,True,False
 681293,824450,5.0,2.0,3.6,True,False,False
+681293,824771,5.0,1.0,1.8,True,False,False
 681343,823812,1.6666666666666667,4.0,21.6,False,False,False
 681343,823889,2.6666666666666665,8.0,27.0,True,False,True
 681343,824618,3.6666666666666665,0.0,0.0,True,False,False
@@ -3034,6 +3287,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681347,824211,5.0,2.0,3.6,True,False,False
 681347,824216,5.666666666666667,5.0,7.94,True,False,False
 681347,824375,5.333333333333333,3.0,5.06,True,False,False
+681347,824772,6.0,3.0,4.5,True,True,False
 681402,822745,0.6666666666666666,4.0,54.0,False,False,False
 681402,822747,1.0,0.0,0.0,False,False,False
 681402,822751,1.0,0.0,0.0,False,False,False
@@ -3042,6 +3296,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681402,822758,0.6666666666666666,1.0,13.5,False,False,False
 681402,823396,0.6666666666666666,0.0,0.0,False,False,False
 681402,823398,1.0,0.0,0.0,False,False,False
+681402,823634,1.3333333333333333,0.0,0.0,False,False,False
 681402,823804,1.0,0.0,0.0,False,False,False
 681402,824612,1.0,0.0,0.0,False,False,False
 681402,824613,1.0,2.0,18.0,False,False,False
@@ -3064,8 +3319,10 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681810,823635,2.0,0.0,0.0,True,False,False
 681810,823640,1.0,0.0,0.0,False,False,False
 681810,823963,0.6666666666666666,1.0,13.5,False,False,False
+681810,824042,0.6666666666666666,0.0,0.0,False,False,False
 681867,822918,1.0,0.0,0.0,False,False,False
 681867,823070,2.0,2.0,9.0,True,False,False
+681867,823144,1.0,1.0,9.0,False,False,False
 681867,823147,1.0,0.0,0.0,False,False,False
 681867,823149,1.0,0.0,0.0,False,False,False
 681867,823154,1.0,0.0,0.0,False,False,False
@@ -3091,8 +3348,10 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681870,824457,1.0,0.0,0.0,False,False,False
 681870,824460,0.6666666666666666,0.0,0.0,False,False,False
 681870,824939,1.0,0.0,0.0,False,False,False
+681870,825012,1.0,0.0,0.0,False,False,False
 681892,822830,1.0,0.0,0.0,False,False,False
 681892,822991,1.0,0.0,0.0,False,False,False
+681892,823715,1.3333333333333333,0.0,0.0,False,False,False
 681892,823716,1.3333333333333333,1.0,6.75,False,False,False
 681892,823720,1.0,0.0,0.0,False,False,False
 681892,823721,0.3333333333333333,1.0,27.0,False,False,False
@@ -3107,6 +3366,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681892,824865,0.6666666666666666,0.0,0.0,False,False,False
 681895,822912,1.6666666666666667,0.0,0.0,False,False,False
 681895,822914,1.0,0.0,0.0,False,False,False
+681895,823389,1.0,0.0,0.0,False,False,False
 681895,823392,1.3333333333333333,0.0,0.0,False,False,False
 681895,823394,1.3333333333333333,3.0,20.25,False,False,False
 681895,823395,0.6666666666666666,0.0,0.0,False,False,False
@@ -3115,6 +3375,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681895,823797,1.3333333333333333,0.0,0.0,False,False,False
 681911,822756,1.0,0.0,0.0,False,False,False
 681911,822831,1.0,0.0,0.0,False,False,False
+681911,823067,1.0,0.0,0.0,False,False,False
 681911,823958,0.3333333333333333,0.0,0.0,False,False,False
 681911,823961,1.0,0.0,0.0,False,False,False
 681911,823962,0.6666666666666666,3.0,40.5,False,False,False
@@ -3126,6 +3387,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 681911,823973,1.0,0.0,0.0,False,False,False
 681911,824371,0.3333333333333333,0.0,0.0,False,False,False
 681911,824372,1.0,0.0,0.0,False,False,False
+681982,822746,0.6666666666666666,0.0,0.0,False,False,False
+681982,823795,0.6666666666666666,0.0,0.0,False,False,False
 681982,823796,1.0,2.0,18.0,False,False,False
 681982,823799,0.3333333333333333,2.0,54.0,False,False,False
 681982,823802,0.6666666666666666,3.0,40.5,False,False,False
@@ -3145,6 +3408,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 682052,823148,5.0,2.0,3.6,True,False,False
 682052,823644,5.0,4.0,7.2,True,False,False
 682052,824943,3.6666666666666665,3.0,7.36,True,False,False
+682052,825014,5.333333333333333,6.0,10.12,True,False,True
 682052,825023,5.0,2.0,3.6,True,False,False
 682052,825025,4.333333333333333,2.0,4.15,True,False,False
 682120,822824,1.0,0.0,0.0,False,False,False
@@ -3158,12 +3422,15 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 682120,824456,0.3333333333333333,0.0,0.0,False,False,False
 682120,824457,0.3333333333333333,0.0,0.0,False,False,False
 682120,824459,1.0,0.0,0.0,False,False,False
+682120,825012,1.0,0.0,0.0,False,False,False
+682120,825014,1.0,0.0,0.0,False,False,False
 682227,822993,4.333333333333333,5.0,10.38,True,False,True
 682227,823720,5.333333333333333,1.0,1.69,True,False,False
 682227,823886,6.666666666666667,0.0,0.0,True,True,False
 682227,824525,3.0,4.0,12.0,True,False,True
 682227,824535,4.0,3.0,6.75,True,False,False
 682227,824537,4.666666666666667,6.0,11.57,True,False,True
+682254,823391,1.0,0.0,0.0,False,False,False
 682254,823395,1.0,0.0,0.0,False,False,False
 682254,823397,1.0,0.0,0.0,False,False,False
 682254,823398,1.0,0.0,0.0,False,False,False
@@ -3183,10 +3450,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 682608,822906,2.0,0.0,0.0,True,False,False
 682608,822911,1.0,0.0,0.0,False,False,False
 682608,822912,1.0,0.0,0.0,False,False,False
+682608,824284,2.0,0.0,0.0,True,False,False
 682610,824215,2.0,2.0,9.0,True,False,False
 682610,824216,0.6666666666666666,0.0,0.0,False,False,False
 682610,825026,1.3333333333333333,6.0,40.5,False,False,False
+682825,823389,1.0,0.0,0.0,False,False,False
 682825,824525,2.0,1.0,4.5,True,False,False
+682842,822746,1.0,0.0,0.0,False,False,False
 682842,823797,1.0,0.0,0.0,False,False,False
 682842,823799,1.0,0.0,0.0,False,False,False
 682842,823802,1.0,1.0,9.0,False,False,False
@@ -3215,9 +3485,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 683175,822917,1.0,0.0,0.0,False,False,False
 683175,822993,2.0,1.0,4.5,True,False,False
 683175,822994,1.0,0.0,0.0,False,False,False
+683175,823388,0.0,4.0,,False,False,False
 683175,823718,1.0,0.0,0.0,False,False,False
 683175,823720,0.6666666666666666,0.0,0.0,False,False,False
 683175,823885,2.0,1.0,4.5,True,False,False
+683175,824524,1.0,0.0,0.0,False,False,False
 683175,824527,0.6666666666666666,0.0,0.0,False,False,False
 683175,824530,1.0,1.0,9.0,False,False,False
 683175,824533,1.0,0.0,0.0,False,False,False
@@ -3227,6 +3499,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 683175,824539,1.0,0.0,0.0,False,False,False
 683175,824540,2.0,0.0,0.0,True,False,False
 683175,824541,0.6666666666666666,1.0,13.5,False,False,False
+683232,823146,0.6666666666666666,0.0,0.0,False,False,False
 683232,824122,1.0,0.0,0.0,False,False,False
 683232,824124,0.3333333333333333,2.0,54.0,False,False,False
 683232,824126,0.6666666666666666,1.0,13.5,False,False,False
@@ -3244,6 +3517,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 683618,822757,1.0,1.0,9.0,False,False,False
 683618,822758,1.0,2.0,18.0,False,False,False
 683618,822832,1.0,0.0,0.0,False,False,False
+683618,823066,1.0,3.0,27.0,False,False,False
 683618,823959,1.0,0.0,0.0,False,False,False
 683618,823961,1.0,0.0,0.0,False,False,False
 683618,823962,0.3333333333333333,0.0,0.0,False,False,False
@@ -3251,6 +3525,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 683618,823971,1.0,0.0,0.0,False,False,False
 683618,824370,1.0,1.0,9.0,False,False,False
 683618,824372,1.0,0.0,0.0,False,False,False
+683627,824366,2.0,0.0,0.0,True,False,False
+683742,823388,1.0,0.0,0.0,False,False,False
 683742,823884,2.0,3.0,13.5,True,False,True
 683742,823887,2.0,0.0,0.0,True,False,False
 683742,824525,3.0,3.0,9.0,True,False,False
@@ -3263,9 +3539,12 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 683769,824449,1.0,0.0,0.0,False,False,False
 683769,824451,1.0,1.0,9.0,False,False,False
 683769,824454,1.0,0.0,0.0,False,False,False
+683769,825012,0.0,1.0,,False,False,False
+683769,825014,0.3333333333333333,0.0,0.0,False,False,False
 684007,823477,6.0,1.0,1.5,True,True,False
 684007,823959,5.333333333333333,4.0,6.75,True,False,False
 684007,824460,5.0,0.0,0.0,True,False,False
+684007,824685,7.0,0.0,0.0,True,True,False
 684007,824690,7.0,1.0,1.29,True,True,False
 684007,824695,6.0,0.0,0.0,True,True,False
 684007,824700,5.0,3.0,5.4,True,False,False
@@ -3279,6 +3558,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 685126,824126,1.0,2.0,18.0,False,False,False
 685126,824616,1.3333333333333333,2.0,13.5,False,False,False
 685299,824209,4.0,0.0,0.0,True,False,False
+685299,824365,3.0,1.0,3.0,True,False,False
 685299,824370,4.333333333333333,7.0,14.54,True,False,True
 685299,824526,3.0,3.0,9.0,True,False,False
 685801,822989,1.0,0.0,0.0,False,False,False
@@ -3290,6 +3570,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 685801,823732,0.6666666666666666,0.0,0.0,False,False,False
 685801,824616,1.0,0.0,0.0,False,False,False
 686218,822758,5.666666666666667,4.0,6.35,True,False,False
+686218,823066,4.666666666666667,4.0,7.71,True,False,False
 686218,823962,6.0,0.0,0.0,True,True,False
 686218,823967,6.0,3.0,4.5,True,True,False
 686218,823971,3.0,2.0,6.0,True,False,False
@@ -3301,6 +3582,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 686560,822913,1.0,0.0,0.0,False,False,False
 686560,823150,0.3333333333333333,0.0,0.0,False,False,False
 686560,823152,1.3333333333333333,0.0,0.0,False,False,False
+686560,824284,1.0,0.0,0.0,False,False,False
 686560,825021,0.3333333333333333,0.0,0.0,False,False,False
 686563,824126,0.0,2.0,,False,False,False
 686580,824540,0.3333333333333333,0.0,0.0,False,False,False
@@ -3335,6 +3617,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 686973,822834,1.3333333333333333,1.0,6.75,False,False,False
 686973,822838,1.0,1.0,9.0,False,False,False
 686973,822839,1.0,0.0,0.0,False,False,False
+686973,823713,1.0,0.0,0.0,False,False,False
 686973,823801,0.6666666666666666,0.0,0.0,False,False,False
 686973,823802,1.3333333333333333,1.0,6.75,False,False,False
 686973,824045,0.6666666666666666,0.0,0.0,False,False,False
@@ -3349,12 +3632,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 686993,823644,1.0,1.0,9.0,False,False,False
 686993,824942,1.0,0.0,0.0,False,False,False
 686993,824943,1.0,0.0,0.0,False,False,False
+686993,825012,1.0,1.0,9.0,False,False,False
 686993,825017,1.0,3.0,27.0,False,False,False
 686993,825019,2.3333333333333335,0.0,0.0,True,False,False
 686993,825022,0.6666666666666666,0.0,0.0,False,False,False
 686993,825023,1.0,4.0,36.0,False,False,False
 686993,825025,1.0,1.0,9.0,False,False,False
 687064,824619,5.0,0.0,0.0,True,False,False
+687064,824850,4.0,10.0,22.5,True,False,True
 687064,824854,5.666666666666667,3.0,4.76,True,False,False
 687075,823796,4.0,4.0,9.0,True,False,False
 687075,823801,6.666666666666667,1.0,1.35,True,True,False
@@ -3362,6 +3647,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 687075,823810,3.0,7.0,21.0,True,False,True
 687075,824134,3.3333333333333335,2.0,5.4,True,False,False
 687075,824288,5.333333333333333,2.0,3.38,True,False,False
+687209,823389,1.0,4.0,36.0,False,False,False
+687330,822988,1.3333333333333333,0.0,0.0,False,False,False
 687330,822989,2.0,0.0,0.0,True,False,False
 687330,822993,1.0,0.0,0.0,False,False,False
 687330,822996,0.3333333333333333,0.0,0.0,False,False,False
@@ -3374,6 +3661,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 687330,823809,0.3333333333333333,0.0,0.0,False,False,False
 687330,824447,0.3333333333333333,0.0,0.0,False,False,False
 687330,824614,2.0,1.0,4.5,True,False,False
+687377,822746,1.0,0.0,0.0,False,False,False
 687377,823396,1.0,0.0,0.0,False,False,False
 687377,823400,1.0,0.0,0.0,False,False,False
 687396,822907,1.3333333333333333,0.0,0.0,False,False,False
@@ -3393,8 +3681,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 687396,824773,0.6666666666666666,0.0,0.0,False,False,False
 687396,824774,1.0,1.0,9.0,False,False,False
 687473,823885,1.0,0.0,0.0,False,False,False
+687562,824772,5.0,1.0,1.8,True,False,False
 687570,823641,4.0,2.0,4.5,True,False,False
+687570,823715,5.0,2.0,3.6,True,False,False
 687570,823719,5.0,2.0,3.6,True,False,False
+687606,822744,1.0,0.0,0.0,False,False,False
 687606,822752,3.0,1.0,3.0,True,False,False
 687606,822754,1.0,0.0,0.0,False,False,False
 687606,823396,0.3333333333333333,1.0,27.0,False,False,False
@@ -3414,6 +3705,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 687911,824215,0.6666666666666666,1.0,13.5,False,False,False
 687911,824218,1.0,1.0,9.0,False,False,False
 687911,824448,0.6666666666666666,5.0,67.5,False,False,False
+687911,824771,1.0,0.0,0.0,False,False,False
+687911,824772,1.0,0.0,0.0,False,False,False
 687911,825025,1.6666666666666667,0.0,0.0,False,False,False
 688158,823310,0.6666666666666666,2.0,27.0,False,False,False
 688158,823317,1.6666666666666667,0.0,0.0,False,False,False
@@ -3439,6 +3732,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 688642,823637,1.0,0.0,0.0,False,False,False
 688642,823892,1.3333333333333333,0.0,0.0,False,False,False
 688642,824210,1.0,0.0,0.0,False,False,False
+688642,824366,1.3333333333333333,1.0,6.75,False,False,False
 688642,824368,3.0,2.0,6.0,True,False,False
 688642,824373,4.0,2.0,4.5,True,False,False
 688642,824374,3.3333333333333335,0.0,0.0,True,False,False
@@ -3453,12 +3747,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 688883,824459,1.0,0.0,0.0,False,False,False
 688883,824941,1.0,2.0,18.0,False,False,False
 689147,823235,1.0,2.0,18.0,False,False,False
+689147,823472,0.6666666666666666,0.0,0.0,False,False,False
 689147,823473,1.0,0.0,0.0,False,False,False
 689147,823475,1.0,0.0,0.0,False,False,False
 689147,823476,1.0,1.0,9.0,False,False,False
 689147,823480,1.0,0.0,0.0,False,False,False
 689147,823481,1.3333333333333333,0.0,0.0,False,False,False
 689147,823482,1.0,0.0,0.0,False,False,False
+689147,823877,1.0,0.0,0.0,False,False,False
 689147,824689,1.0,0.0,0.0,False,False,False
 689147,824690,0.3333333333333333,1.0,27.0,False,False,False
 689147,824933,1.3333333333333333,0.0,0.0,False,False,False
@@ -3472,6 +3768,8 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 689254,822836,0.6666666666666666,0.0,0.0,False,False,False
 689254,822837,0.3333333333333333,0.0,0.0,False,False,False
 689254,822838,0.0,0.0,,False,False,False
+689254,823714,0.3333333333333333,2.0,54.0,False,False,False
+689254,823715,1.0,0.0,0.0,False,False,False
 689254,823802,1.0,0.0,0.0,False,False,False
 689254,823803,0.6666666666666666,0.0,0.0,False,False,False
 689254,824045,0.6666666666666666,0.0,0.0,False,False,False
@@ -3480,11 +3778,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 689266,822747,1.0,1.0,9.0,False,False,False
 689266,824938,3.0,0.0,0.0,True,False,False
 689296,823404,1.0,1.0,9.0,False,False,False
+689296,823554,0.0,3.0,,False,False,False
 689296,824123,1.0,0.0,0.0,False,False,False
 689296,824125,1.6666666666666667,1.0,5.4,False,False,False
 689296,824454,0.6666666666666666,4.0,54.0,False,False,False
 689296,824617,1.0,0.0,0.0,False,False,False
 689296,824618,0.3333333333333333,0.0,0.0,False,False,False
+689296,824848,1.0,2.0,18.0,False,False,False
 689296,824849,1.0,2.0,18.0,False,False,False
 689296,824852,1.0,0.0,0.0,False,False,False
 689296,824855,1.0,0.0,0.0,False,False,False
@@ -3510,10 +3810,12 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 690925,823808,1.0,0.0,0.0,False,False,False
 690925,824700,1.0,0.0,0.0,False,False,False
 690925,824704,1.0,0.0,0.0,False,False,False
+690928,823391,4.333333333333333,1.0,2.08,True,False,False
 690953,823723,7.0,0.0,0.0,True,True,False
 690953,823724,6.0,0.0,0.0,True,True,False
 690953,823730,4.0,4.0,9.0,True,False,False
 690953,824864,3.0,5.0,15.0,True,False,True
+690986,822746,6.0,1.0,1.5,True,True,False
 690986,823797,6.0,0.0,0.0,True,True,False
 690986,823805,3.6666666666666665,2.0,4.91,True,False,False
 690986,823809,5.0,1.0,1.8,True,False,False
@@ -3527,9 +3829,11 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 690997,823645,6.333333333333333,0.0,0.0,True,True,False
 690997,823647,5.0,2.0,3.6,True,False,False
 690997,823965,7.0,1.0,1.29,True,True,False
+690997,824042,3.6666666666666665,3.0,7.36,True,False,False
 691548,824937,2.0,3.0,13.5,True,False,True
 691587,823229,5.0,3.0,5.4,True,False,False
 691587,823568,4.0,4.0,9.0,True,False,False
+691587,823877,5.0,2.0,3.6,True,False,False
 691587,823881,6.0,1.0,1.5,True,True,False
 691587,823885,5.0,4.0,7.2,True,False,False
 691587,823892,7.0,3.0,3.86,True,True,False
@@ -3538,7 +3842,10 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 691725,823475,4.0,1.0,2.25,True,False,False
 691725,823479,5.0,1.0,1.8,True,False,False
 691725,823485,5.333333333333333,0.0,0.0,True,False,False
+691725,823876,5.0,3.0,5.4,True,False,False
 691725,824932,5.666666666666667,5.0,7.94,True,False,False
+691769,823795,2.3333333333333335,0.0,0.0,True,False,False
+691799,823308,1.3333333333333333,0.0,0.0,False,False,False
 691799,823810,1.0,0.0,0.0,False,False,False
 691799,823811,1.0,1.0,9.0,False,False,False
 691799,824126,2.0,0.0,0.0,True,False,False
@@ -3569,6 +3876,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 693312,824534,0.6666666666666666,5.0,67.5,False,False,False
 693433,822915,5.0,3.0,5.4,True,False,False
 693433,823070,3.0,7.0,21.0,True,False,True
+693433,823146,6.0,6.0,9.0,True,False,False
 693433,823150,7.0,2.0,2.57,True,True,False
 693433,823161,6.0,2.0,3.0,True,True,False
 693433,823315,7.0,3.0,3.86,True,True,False
@@ -3586,15 +3894,18 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 693686,822832,1.0,1.0,9.0,False,False,False
 693686,822834,1.3333333333333333,2.0,13.5,False,False,False
 693686,822838,1.0,0.0,0.0,False,False,False
+693686,823715,1.0,0.0,0.0,False,False,False
 693686,824045,1.3333333333333333,0.0,0.0,False,False,False
 693686,824620,2.0,0.0,0.0,True,False,False
 693686,825101,1.0,2.0,18.0,False,False,False
 693821,822749,6.666666666666667,4.0,5.4,True,False,False
+693821,824929,5.666666666666667,1.0,1.59,True,False,False
 693821,824933,7.0,3.0,3.86,True,True,False
 693821,824936,5.666666666666667,0.0,0.0,True,False,False
 693821,824941,4.666666666666667,2.0,3.86,True,False,False
 693821,824943,5.666666666666667,0.0,0.0,True,False,False
 693821,825104,7.0,2.0,2.57,True,True,False
+693855,822990,1.0,0.0,0.0,False,False,False
 693855,822995,1.0,0.0,0.0,False,False,False
 693855,822996,1.6666666666666667,0.0,0.0,False,False,False
 693855,822997,1.0,0.0,0.0,False,False,False
@@ -3613,12 +3924,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 694037,824698,1.0,0.0,0.0,False,False,False
 694037,824700,0.6666666666666666,0.0,0.0,False,False,False
 694297,823480,6.0,4.0,6.0,True,False,False
+694297,823795,1.0,1.0,9.0,False,False,False
 694297,825093,3.0,1.0,3.0,True,False,False
 694297,825100,6.333333333333333,1.0,1.42,True,True,False
 694297,825102,4.666666666666667,3.0,5.79,True,False,False
 694297,825107,6.0,5.0,7.5,True,False,False
 694335,822753,1.6666666666666667,0.0,0.0,False,False,False
 694335,822755,0.6666666666666666,3.0,40.5,False,False,False
+694335,823066,1.0,0.0,0.0,False,False,False
 694335,823068,1.0,1.0,9.0,False,False,False
 694335,823070,0.6666666666666666,0.0,0.0,False,False,False
 694335,823072,1.0,0.0,0.0,False,False,False
@@ -3627,6 +3940,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 694335,823081,0.3333333333333333,0.0,0.0,False,False,False
 694335,823082,0.6666666666666666,1.0,13.5,False,False,False
 694335,823390,1.0,1.0,9.0,False,False,False
+694335,823391,1.0,1.0,9.0,False,False,False
 694335,823878,1.0,0.0,0.0,False,False,False
 694335,823879,1.3333333333333333,0.0,0.0,False,False,False
 694335,824206,1.0,1.0,9.0,False,False,False
@@ -3651,12 +3965,14 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 694680,822989,1.0,1.0,9.0,False,False,False
 694680,822992,1.0,1.0,9.0,False,False,False
 694680,822994,2.3333333333333335,1.0,3.86,True,False,False
+694738,822988,4.0,4.0,9.0,True,False,False
 694738,823230,7.666666666666667,3.0,3.52,True,True,False
 694738,823236,5.0,1.0,1.8,True,False,False
 694738,823239,4.666666666666667,5.0,9.64,True,False,False
 694738,823320,6.0,0.0,0.0,True,True,False
 694738,824530,6.0,0.0,0.0,True,True,False
 694738,824858,6.0,1.0,1.5,True,True,False
+694819,822744,5.333333333333333,0.0,0.0,True,False,False
 694819,823799,6.0,3.0,4.5,True,True,False
 694819,823802,5.333333333333333,2.0,3.38,True,False,False
 694819,823806,6.0,2.0,3.0,True,True,False
@@ -3679,6 +3995,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 694918,823473,2.0,2.0,9.0,True,False,False
 694918,824532,1.0,0.0,0.0,False,False,False
 694918,824858,1.0,2.0,18.0,False,False,False
+694973,823391,5.0,5.0,9.0,True,False,False
 694973,823394,4.0,0.0,0.0,True,False,False
 694973,823400,6.0,1.0,1.5,True,True,False
 694973,823402,6.333333333333333,1.0,1.42,True,True,False
@@ -3687,6 +4004,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 694973,824536,5.0,1.0,1.8,True,False,False
 695076,822920,6.0,0.0,0.0,True,True,False
 695076,822994,6.0,1.0,1.5,True,True,False
+695076,823388,1.3333333333333333,5.0,33.75,False,False,False
 695076,823884,5.333333333333333,5.0,8.44,True,False,False
 695076,824528,5.0,2.0,3.6,True,False,False
 695076,824532,6.666666666666667,2.0,2.7,True,True,False
@@ -3706,7 +4024,9 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 695243,824781,1.0,0.0,0.0,False,False,False
 695243,824782,1.0,0.0,0.0,False,False,False
 695243,825093,1.0,0.0,0.0,False,False,False
+695380,823146,1.0,0.0,0.0,False,False,False
 695380,823719,1.6666666666666667,3.0,16.2,False,False,False
+695418,822746,2.0,1.0,4.5,True,False,False
 695418,822749,2.6666666666666665,3.0,10.12,True,False,True
 695418,822753,3.0,1.0,3.0,True,False,False
 695418,822757,2.0,3.0,13.5,True,False,True
@@ -3734,6 +4054,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 696131,824123,0.6666666666666666,0.0,0.0,False,False,False
 696131,825015,1.0,0.0,0.0,False,False,False
 696147,823560,2.6666666666666665,0.0,0.0,True,False,False
+696147,824042,1.6666666666666667,0.0,0.0,False,False,False
 696147,824045,1.3333333333333333,0.0,0.0,False,False,False
 696147,824047,2.0,1.0,4.5,True,False,False
 696147,824050,1.0,0.0,0.0,False,False,False
@@ -3751,6 +4072,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 696149,824537,4.333333333333333,1.0,2.08,True,False,False
 696149,824696,5.333333333333333,3.0,5.06,True,False,False
 696270,824702,3.3333333333333335,6.0,16.2,True,False,True
+699134,823308,1.0,1.0,9.0,False,False,False
 699134,823312,1.3333333333333333,0.0,0.0,False,False,False
 699134,823313,0.3333333333333333,1.0,27.0,False,False,False
 699134,823316,0.6666666666666666,0.0,0.0,False,False,False
@@ -3766,18 +4088,22 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 699151,823811,0.3333333333333333,0.0,0.0,False,False,False
 699151,823812,1.3333333333333333,4.0,27.0,False,False,False
 699151,823888,1.3333333333333333,3.0,20.25,False,False,False
+699823,823309,1.0,0.0,0.0,False,False,False
 699823,824608,1.0,0.0,0.0,False,False,False
 699823,824613,1.0,0.0,0.0,False,False,False
 700241,822753,6.0,1.0,1.5,True,True,False
+700241,823067,6.0,0.0,0.0,True,True,False
 700241,823068,5.666666666666667,1.0,1.59,True,False,False
 700241,823072,5.0,2.0,3.6,True,False,False
 700241,823082,6.0,0.0,0.0,True,True,False
 700241,823879,5.333333333333333,4.0,6.75,True,False,False
 700241,824299,4.333333333333333,2.0,4.15,True,False,False
 700249,823405,5.666666666666667,2.0,3.18,True,False,False
+700249,823557,4.0,5.0,11.25,True,False,True
 700249,824859,6.666666666666667,1.0,1.35,True,True,False
 700413,824781,2.6666666666666665,1.0,3.38,True,False,False
 700669,822754,2.0,1.0,4.5,True,False,False
+700669,823066,1.0,0.0,0.0,False,False,False
 700669,823069,2.0,0.0,0.0,True,False,False
 700669,823070,0.6666666666666666,0.0,0.0,False,False,False
 700669,823073,1.3333333333333333,0.0,0.0,False,False,False
@@ -3785,10 +4111,12 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 700669,823077,1.0,0.0,0.0,False,False,False
 700669,823078,0.6666666666666666,0.0,0.0,False,False,False
 700669,823390,1.6666666666666667,0.0,0.0,False,False,False
+700669,823391,1.3333333333333333,0.0,0.0,False,False,False
 700669,823878,1.0,0.0,0.0,False,False,False
 700669,824205,0.3333333333333333,1.0,27.0,False,False,False
 700669,824206,2.0,0.0,0.0,True,False,False
 700669,824299,1.0,0.0,0.0,False,False,False
+700712,824041,5.0,0.0,0.0,True,False,False
 700712,824047,6.0,1.0,1.5,True,True,False
 700712,824121,3.3333333333333335,4.0,10.8,True,False,True
 700712,824213,1.0,5.0,45.0,False,False,False
@@ -3796,11 +4124,13 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 700842,824774,3.3333333333333335,0.0,0.0,True,False,False
 701474,824128,1.0,0.0,0.0,False,False,False
 701542,823241,4.333333333333333,1.0,2.08,True,False,False
+701542,823557,6.333333333333333,1.0,1.42,True,True,False
 701542,823558,6.666666666666667,2.0,2.7,True,True,False
 701542,823563,3.6666666666666665,3.0,7.36,True,False,False
 701542,823564,4.666666666666667,2.0,3.86,True,False,False
 701542,823568,5.666666666666667,2.0,3.18,True,False,False
 701542,824204,5.333333333333333,2.0,3.38,True,False,False
+701552,822744,1.0,2.0,18.0,False,False,False
 701552,822755,0.6666666666666666,2.0,27.0,False,False,False
 701552,822756,0.3333333333333333,0.0,0.0,False,False,False
 701552,822758,2.0,1.0,4.5,True,False,False
@@ -3812,6 +4142,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 701719,823076,0.6666666666666666,0.0,0.0,False,False,False
 701719,823725,2.0,0.0,0.0,True,False,False
 701719,824770,1.3333333333333333,0.0,0.0,False,False,False
+701719,824771,2.0,0.0,0.0,True,False,False
 701719,824773,1.6666666666666667,0.0,0.0,False,False,False
 701719,824779,1.0,0.0,0.0,False,False,False
 701719,824851,1.0,0.0,0.0,False,False,False
@@ -3821,11 +4152,15 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 702070,824126,5.0,4.0,7.2,True,False,False
 702070,824136,5.0,1.0,1.8,True,False,False
 702070,824457,5.666666666666667,1.0,1.59,True,False,False
+702070,825016,5.333333333333333,5.0,8.44,True,False,False
+702153,823795,1.0,0.0,0.0,False,False,False
 702153,823796,1.3333333333333333,0.0,0.0,False,False,False
 702193,822828,3.0,1.0,3.0,True,False,False
 702193,823639,2.6666666666666665,0.0,0.0,True,False,False
+702193,823714,1.3333333333333333,0.0,0.0,False,False,False
 702193,823718,1.3333333333333333,3.0,20.25,False,False,False
 702193,823719,2.6666666666666665,2.0,6.75,True,False,False
+702273,823309,6.0,0.0,0.0,True,True,False
 702273,824613,6.0,2.0,3.0,True,True,False
 702273,824616,4.333333333333333,4.0,8.31,True,False,False
 702273,825018,5.0,1.0,1.8,True,False,False
@@ -3846,6 +4181,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 800048,824460,5.0,1.0,1.8,True,False,False
 800048,824939,6.666666666666667,0.0,0.0,True,True,False
 800311,822748,3.0,4.0,12.0,True,False,True
+800311,824366,1.0,0.0,0.0,False,False,False
 800311,824931,2.0,0.0,0.0,True,False,False
 800311,824944,4.0,1.0,2.25,True,False,False
 801139,822823,4.333333333333333,2.0,4.15,True,False,False
@@ -3855,8 +4191,10 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 801403,823319,4.333333333333333,1.0,2.08,True,False,False
 801403,823637,6.666666666666667,0.0,0.0,True,True,False
 801403,824208,5.333333333333333,0.0,0.0,True,False,False
+801403,824365,5.0,6.0,10.8,True,False,True
 801403,824369,6.0,1.0,1.5,True,True,False
 801403,824378,4.333333333333333,1.0,2.08,True,False,False
+804619,823715,1.0,0.0,0.0,False,False,False
 805123,823155,1.0,0.0,0.0,False,False,False
 805123,824203,1.3333333333333333,1.0,6.75,False,False,False
 805123,824206,1.3333333333333333,0.0,0.0,False,False,False
@@ -3868,11 +4206,16 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 805123,824374,1.0,5.0,45.0,False,False,False
 805123,824449,1.0,0.0,0.0,False,False,False
 805123,824450,1.0,0.0,0.0,False,False,False
+805123,824848,1.0,0.0,0.0,False,False,False
 805123,825025,2.0,3.0,13.5,True,False,True
+805299,824686,2.0,0.0,0.0,True,False,False
 805326,824617,1.3333333333333333,1.0,6.75,False,False,False
+806188,823877,1.6666666666666667,4.0,21.6,False,False,False
 806960,822837,4.333333333333333,4.0,8.31,True,False,False
+806960,825014,2.0,5.0,22.5,True,False,True
 806960,825027,3.0,4.0,12.0,True,False,True
 808963,822756,5.0,6.0,10.8,True,False,True
+808963,823067,6.0,3.0,4.5,True,True,False
 808963,823960,5.0,4.0,7.2,True,False,False
 808963,823966,4.0,2.0,4.5,True,False,False
 808963,823972,4.0,1.0,2.25,True,False,False
@@ -3887,6 +4230,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 813349,823076,4.333333333333333,1.0,2.08,True,False,False
 813349,823722,6.0,1.0,1.5,True,True,False
 813349,824538,5.333333333333333,0.0,0.0,True,False,False
+813349,824771,4.0,5.0,11.25,True,False,True
 813349,824773,5.333333333333333,3.0,5.06,True,False,False
 813349,824782,4.0,2.0,4.5,True,False,False
 813349,824852,6.666666666666667,2.0,2.7,True,True,False
@@ -3894,6 +4238,7 @@ pitcher,game_pk,start_ip,start_ra,start_era,qualifying,is_qs,is_disaster
 815083,824051,1.0,2.0,18.0,False,False,False
 815083,824534,2.0,1.0,4.5,True,False,False
 815083,824608,3.3333333333333335,1.0,2.7,True,False,False
+820862,824041,1.0,1.0,9.0,False,False,False
 820862,824609,1.0,0.0,0.0,False,False,False
 820862,824610,1.6666666666666667,1.0,5.4,False,False,False
 837227,823156,0.3333333333333333,3.0,81.0,False,False,False
