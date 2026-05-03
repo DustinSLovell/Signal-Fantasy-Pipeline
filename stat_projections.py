@@ -397,9 +397,17 @@ def _blend_pa(
     il_penalty = {"DAY_TO_DAY": 5, "INJURY_RESERVE": 12}.get(status, 0)
     games_rem_adj = max(0, games_rem - il_penalty)
 
-    if games_played < 20:
+    # When the GP lookup returns 0 (ESPN endpoint limitation) but we have PA data,
+    # estimate games played from PA at ~4.0 PA/game. This prevents Steamer
+    # projections from dominating for breakout players whose 2025 Steamer role
+    # (backup) no longer reflects their 2026 usage (starter).
+    gp_eff = games_played
+    if (gp_eff is None or gp_eff < 5) and pa_so_far >= 5:
+        gp_eff = max(int(pa_so_far / 4.0), 5)
+
+    if gp_eff < 20:
         w_s, w_p = 0.70, 0.30
-    elif games_played < 50:
+    elif gp_eff < 50:
         w_s, w_p = 0.60, 0.40
     else:
         w_s, w_p = 0.40, 0.60
@@ -408,8 +416,8 @@ def _blend_pa(
     steamer_ros  = steamer_full * (games_rem / 162) if steamer_full else None
 
     pace_ros = (
-        (pa_so_far / games_played) * games_rem_adj * 0.90
-        if games_played >= 5 else None
+        (pa_so_far / gp_eff) * games_rem_adj * 0.90
+        if gp_eff >= 5 else None
     )
 
     if steamer_ros and pace_ros:

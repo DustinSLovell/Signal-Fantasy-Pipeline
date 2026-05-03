@@ -30,6 +30,7 @@ from config import (
 from replacement_level import (
     load_replacement_levels, load_position_map,
     get_surplus, FANTASY_POS_MAP, build_replacement_table,
+    DEFAULT_ROSTER_N,
 )
 
 BASE_DIR      = Path(__file__).parent
@@ -700,8 +701,201 @@ def _trade_verdict_v3(surplus_delta: Optional[float]) -> str:
     return "NEUTRAL — comparable projected value on both sides"
 
 
+def _fmt(v, dec: int = 0) -> str:
+    """Format a value for explain walkthrough; tolerates None/NaN."""
+    try:
+        f = float(v)
+        if f != f:  # NaN
+            return "?"
+        fmt = f"{{:.{dec}f}}"
+        return fmt.format(f)
+    except (TypeError, ValueError):
+        return str(v) if v is not None else "?"
+
+
+def _explain_walkthrough(
+    give_rows: list[pd.Series],
+    get_rows: list[pd.Series],
+    give_adj: list[pd.Series],
+    get_adj: list[pd.Series],
+    give_surplus_vals: list,
+    get_surplus_vals: list,
+    give_surplus_total: Optional[float],
+    get_surplus_total: Optional[float],
+    surplus_delta: Optional[float],
+    verdict: str,
+) -> None:
+    """Print step-by-step CBS FPTS + surplus walkthrough (--explain mode)."""
+
+    SEP  = "=" * WIDE
+    LINE = "  " + "─" * (WIDE - 2)
+
+    def _explain_one(row_orig: pd.Series, row_adj: pd.Series) -> None:
+        name    = row_orig.get("name", "?")
+        ptype   = row_orig.get("_type", "hitter")
+        fpos    = row_orig.get("_fpos") or "?"
+        sig     = str(row_orig.get("verdict", "Neutral"))
+        repl    = _REPL_LEVELS.get(fpos)
+        n_repl  = DEFAULT_ROSTER_N.get(fpos, "?")
+
+        print()
+        print(f"  {name}  [{fpos}  |  {sig}]")
+        print(LINE)
+
+        # Step 1: model projected stats (already contain LUCK_MULTIPLIERS from stat_projections.py)
+        print("  Step 1 — Model projections  (projections_2026.csv, signal-informed):")
+        v_low = sig.lower()
+        if "sell high" in v_low:
+            note = "  [in-model: R/RBI ×0.94, SB ×0.95, AVG ×0.94 already applied]"
+        elif "slight sell" in v_low:
+            note = "  [in-model: R/RBI ×0.97, SB ×0.98, AVG ×0.97 already applied]"
+        elif "buy low" in v_low:
+            note = "  [in-model: R/RBI ×1.06, HR ×1.08, SB ×1.05 already applied]"
+        elif "slight buy" in v_low or "buy" in v_low:
+            note = "  [in-model: R/RBI ×1.03, HR ×1.04, SB ×1.02 already applied]"
+        else:
+            note = ""
+
+        if ptype == "hitter":
+            print(f"           R {_fmt(row_orig.get('proj_r'))}  HR {_fmt(row_orig.get('proj_hr'))}"
+                  f"  RBI {_fmt(row_orig.get('proj_rbi'))}  SB {_fmt(row_orig.get('proj_sb'))}"
+                  f"  AVG {_fmt(row_orig.get('proj_avg'), 3)}{note}")
+        else:
+            print(f"           W {_fmt(row_orig.get('proj_w'))}  ERA {_fmt(row_orig.get('proj_era'), 2)}"
+                  f"  WHIP {_fmt(row_orig.get('proj_whip'), 2)}  K {_fmt(row_orig.get('proj_k'))}"
+                  f"  SV+H {_fmt(row_orig.get('proj_sv_h'))}{note}")
+
+        # Step 2: trade-tool signal multipliers (Backtest B v2)
+        print("  Step 2 — Trade-tool signal adjustment  (Backtest B v2 multipliers):")
+        table = _H_SIGNAL_MULTS if ptype == "hitter" else _P_SIGNAL_MULTS
+        mults_applied: Optional[dict] = None
+        for tier, m in table.items():
+            if tier in v_low:
+                mults_applied = m
+                break
+
+        if mults_applied:
+            mult_parts = [f"{k.replace('proj_', '')} ×{v:.2f}" for k, v in mults_applied.items()]
+            print(f"           Applied: {',  '.join(mult_parts)}")
+            if ptype == "hitter":
+                print(f"           Adjusted: R {_fmt(row_adj.get('proj_r'), 1)}"
+                      f"  HR {_fmt(row_adj.get('proj_hr'), 1)}"
+                      f"  RBI {_fmt(row_adj.get('proj_rbi'), 1)}"
+                      f"  SB {_fmt(row_adj.get('proj_sb'), 1)}"
+                      f"  AVG {_fmt(row_adj.get('proj_avg'), 3)}")
+            else:
+                print(f"           Adjusted: W {_fmt(row_adj.get('proj_w'), 1)}"
+                      f"  ERA {_fmt(row_adj.get('proj_era'), 2)}"
+                      f"  WHIP {_fmt(row_adj.get('proj_whip'), 2)}"
+                      f"  K {_fmt(row_adj.get('proj_k'), 1)}"
+                      f"  SV+H {_fmt(row_adj.get('proj_sv_h'), 1)}")
+        else:
+            print(f"           Signal: {sig} — no trade-tool adjustments applied")
+
+        # Step 3: CBS FPTS with per-term breakdown
+        print("  Step 3 — CBS Fantasy Points  (signal-adjusted projections × coefficients):")
+
+        def _fv(col: str) -> Optional[float]:
+            v = row_adj.get(col)
+            try:
+                f = float(v)
+                return f if f == f else None
+            except (TypeError, ValueError):
+                return None
+
+        if ptype == "hitter":
+            r, hr, rbi, sb, avg = _fv("proj_r"), _fv("proj_hr"), _fv("proj_rbi"), _fv("proj_sb"), _fv("proj_avg")
+            if None not in (r, hr, rbi, sb, avg):
+                fpts = (CBS_H_COEF_R * r + CBS_H_COEF_HR * hr + CBS_H_COEF_RBI * rbi
+                        + CBS_H_COEF_SB * sb + CBS_H_COEF_AVG * avg + CBS_H_INTERCEPT)
+                print(f"           R   {r:>6.1f} × {CBS_H_COEF_R:>8.4f}  =  {r * CBS_H_COEF_R:>8.1f}")
+                print(f"           HR  {hr:>6.1f} × {CBS_H_COEF_HR:>8.4f}  =  {hr * CBS_H_COEF_HR:>8.1f}")
+                print(f"           RBI {rbi:>6.1f} × {CBS_H_COEF_RBI:>8.4f}  =  {rbi * CBS_H_COEF_RBI:>8.1f}")
+                print(f"           SB  {sb:>6.1f} × {CBS_H_COEF_SB:>8.4f}  =  {sb * CBS_H_COEF_SB:>8.1f}")
+                print(f"           AVG {avg:>6.3f} × {CBS_H_COEF_AVG:>8.2f}  =  {avg * CBS_H_COEF_AVG:>8.1f}")
+                print(f"           Intercept                   =  {CBS_H_INTERCEPT:>8.1f}")
+                print(f"           {'─'*40}")
+                print(f"           Total FPTS                  =  {fpts:>8.1f}")
+            else:
+                fpts = None
+                print("           (insufficient projection data)")
+        else:
+            w, era, whip, k, sv = _fv("proj_w"), _fv("proj_era"), _fv("proj_whip"), _fv("proj_k"), _fv("proj_sv_h")
+            if None not in (w, era, whip, k, sv):
+                fpts = (CBS_P_COEF_W * w + CBS_P_COEF_ERA * era + CBS_P_COEF_WHIP * whip
+                        + CBS_P_COEF_K * k + CBS_P_COEF_SV * sv + CBS_P_INTERCEPT)
+                print(f"           W    {w:>6.1f} × {CBS_P_COEF_W:>8.4f}  =  {w * CBS_P_COEF_W:>8.1f}")
+                print(f"           ERA  {era:>6.2f} × {CBS_P_COEF_ERA:>8.4f}  =  {era * CBS_P_COEF_ERA:>8.1f}")
+                print(f"           WHIP {whip:>6.2f} × {CBS_P_COEF_WHIP:>8.2f}  =  {whip * CBS_P_COEF_WHIP:>8.1f}")
+                print(f"           K    {k:>6.1f} × {CBS_P_COEF_K:>8.4f}  =  {k * CBS_P_COEF_K:>8.1f}")
+                print(f"           SV+H {sv:>6.1f} × {CBS_P_COEF_SV:>8.4f}  =  {sv * CBS_P_COEF_SV:>8.1f}")
+                print(f"           Intercept                   =  {CBS_P_INTERCEPT:>8.1f}")
+                print(f"           {'─'*40}")
+                print(f"           Total FPTS                  =  {fpts:>8.1f}")
+            else:
+                fpts = None
+                print("           (insufficient projection data)")
+
+        # Step 4: positional surplus
+        print("  Step 4 — Positional Surplus:")
+        if fpts is not None and repl is not None:
+            s = fpts - repl
+            print(f"           Position: {fpos}  |  Replacement: {repl:.1f} FPTS  (N={n_repl}, 12-team standard)")
+            print(f"           Surplus = {fpts:.1f} − {repl:.1f} = {s:+.1f}")
+            if s < 0:
+                print(f"           [Model projects player BELOW typical {fpos} starter on ROS basis]")
+        else:
+            print(f"           Position: {fpos}  |  Replacement data unavailable")
+
+    # --- Print each player ---
+    print()
+    print(SEP)
+    print("  DETAILED VALUATION WALKTHROUGH")
+    print(SEP)
+
+    print()
+    print(f"  GIVING ({len(give_rows)} player{'s' if len(give_rows) > 1 else ''}):")
+    for row_o, row_a in zip(give_rows, give_adj):
+        _explain_one(row_o, row_a)
+
+    print()
+    print(f"  GETTING ({len(get_rows)} player{'s' if len(get_rows) > 1 else ''}):")
+    for row_o, row_a in zip(get_rows, get_adj):
+        _explain_one(row_o, row_a)
+
+    # --- Verdict summary ---
+    print()
+    print(SEP)
+    print("  VERDICT SUMMARY")
+    print(SEP)
+    for row, surp, adj in zip(give_rows, give_surplus_vals, give_adj):
+        nm   = row.get("name", "?")
+        fpos = row.get("_fpos") or "?"
+        repl = _REPL_LEVELS.get(fpos)
+        sv   = f"{surp:+.1f}" if surp is not None else "N/A"
+        rl   = f"{repl:.0f}" if repl is not None else "?"
+        print(f"  Give  {nm:<24s} {sv:>6s}  ({fpos}, repl {rl})")
+    for row, surp, adj in zip(get_rows, get_surplus_vals, get_adj):
+        nm   = row.get("name", "?")
+        fpos = row.get("_fpos") or "?"
+        repl = _REPL_LEVELS.get(fpos)
+        sv   = f"{surp:+.1f}" if surp is not None else "N/A"
+        rl   = f"{repl:.0f}" if repl is not None else "?"
+        print(f"  Get   {nm:<24s} {sv:>6s}  ({fpos}, repl {rl})")
+    print()
+    sg  = f"{give_surplus_total:+.1f}" if give_surplus_total is not None else "N/A"
+    sge = f"{get_surplus_total:+.1f}"  if get_surplus_total  is not None else "N/A"
+    sd  = f"{surplus_delta:+.1f}"      if surplus_delta      is not None else "N/A"
+    print(f"  {'Give total surplus:':30s} {sg}")
+    print(f"  {'Get  total surplus:':30s} {sge}")
+    print(f"  {'Surplus delta:':30s} {sd}")
+    print()
+    print(f"  ➤  {verdict}")
+    print(SEP)
+
+
 def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
-                         config: dict) -> str:
+                         config: dict, explain: bool = False) -> str:
     """Display full trade analysis and return verdict string."""
     # --- GIVING side ---
     print()
@@ -779,13 +973,27 @@ def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
     print(f"  Luck scores     : give {give_luck_str}  |  get {get_luck_str}  |  delta {luck_delta_str}")
 
     if give_surplus_total is not None and get_surplus_total is not None:
-        sg_str  = f"{give_surplus_total:+.0f}"
-        sge_str = f"{get_surplus_total:+.0f}"
         note = "value edge incoming" if surplus_delta >= 0 else "value edge outgoing"
-        print(f"  Adj surplus     : give {sg_str}  |  get {sge_str}  |  delta {surplus_delta:+.0f} ({note})")
+
+        def _surplus_breakdown(rows: list, surplus_vals: list) -> str:
+            parts = []
+            for row, sv in zip(rows, surplus_vals):
+                nm   = row.get("name", "?")
+                fpos = row.get("_fpos") or "?"
+                repl = _REPL_LEVELS.get(fpos)
+                repl_str = f"repl {repl:.0f}" if repl is not None else "repl ?"
+                sv_str = f"{sv:+.0f}" if sv is not None else "N/A"
+                parts.append(f"{nm} {sv_str} ({fpos}, {repl_str})")
+            return "  |  ".join(parts)
+
+        give_bk = _surplus_breakdown(give_adj, give_surplus_vals)
+        get_bk  = _surplus_breakdown(get_adj,  get_surplus_vals)
+        print(f"  Give surplus    : {give_bk}")
+        print(f"  Get  surplus    : {get_bk}")
+        print(f"  Surplus delta   : {surplus_delta:+.0f}  ({note})")
     elif give_fpts_total is not None or get_fpts_total is not None:
-        gf = f"{give_fpts_total:.0f}" if give_fpts_total is not None else "N/A"
-        gf2 = f"{get_fpts_total:.0f}" if get_fpts_total  is not None else "N/A"
+        gf  = f"{give_fpts_total:.0f}" if give_fpts_total is not None else "N/A"
+        gf2 = f"{get_fpts_total:.0f}"  if get_fpts_total  is not None else "N/A"
         print(f"  Adj FPTS        : give {gf}  |  get {gf2}")
 
     if trajectory_notes:
@@ -797,6 +1005,15 @@ def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
     print()
     print(f"  ➤  {verdict}")
     print(THIN)
+
+    if explain:
+        _explain_walkthrough(
+            give_rows, get_rows,
+            give_adj, get_adj,
+            give_surplus_vals, get_surplus_vals,
+            give_surplus_total, get_surplus_total,
+            surplus_delta, verdict,
+        )
 
     return verdict
 
@@ -871,8 +1088,10 @@ def _print_header(config: dict) -> None:
     print(f"  (Append [POS] tag like 'Salvador Perez [C]' for scarcity context)")
 
 
-def analyze_trade(players: pd.DataFrame, config: dict) -> None:
+def analyze_trade(players: pd.DataFrame, config: dict, explain: bool = False) -> None:
     _print_header(config)
+    if explain:
+        print("  [--explain mode: full valuation walkthrough will follow each verdict]")
     while True:
         print()
         give_input = input("  Players you're GIVING (comma-separated, or 'quit'): ").strip()
@@ -891,7 +1110,7 @@ def analyze_trade(players: pd.DataFrame, config: dict) -> None:
         if not get_rows:
             continue
 
-        verdict = _analyze_and_display(give_rows, get_rows, config)
+        verdict = _analyze_and_display(give_rows, get_rows, config, explain=explain)
         _log_trade(give_rows, get_rows, verdict, config)
 
         again = input("\n  Analyze another trade? (Y/N): ").strip().lower()
@@ -996,6 +1215,8 @@ def main() -> None:
     parser.add_argument("--test",              action="store_true", help="Run non-interactive test suite")
     parser.add_argument("--history",           action="store_true", help="Show trade history")
     parser.add_argument("--replacement-table", action="store_true", help="Show replacement level table")
+    parser.add_argument("--explain",           action="store_true",
+                        help="Print step-by-step valuation walkthrough (CBS coefs, surplus calc) after each verdict")
     args = parser.parse_args()
 
     if args.setup:
@@ -1034,7 +1255,7 @@ def main() -> None:
         run_tests(players, config)
         return
 
-    analyze_trade(players, config)
+    analyze_trade(players, config, explain=args.explain)
 
 
 if __name__ == "__main__":
