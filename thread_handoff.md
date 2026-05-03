@@ -1179,6 +1179,49 @@ _CBS_ALIASES = {
 
 ### TIER 1 — Do immediately
 
+**Young Breakout Player Projection Fix (Tier 1 — actively producing wrong trade verdicts):**
+Current problem: career weight of 0.60 anchors HR-rate projections to pre-breakout baselines
+for young players with thin career PA. Produces systematically wrong surplus in the trade tool.
+
+Example: Ben Rice (122 PA, wOBA .492, barrel 20.8%, CBS projects 28 HR):
+- Model projects 11 HR ROS (blended HR rate 0.041 = 0.60 × career 0.029 + 0.40 × current 0.052)
+- True surplus should be strongly positive (+60 to +100 vs C replacement)
+- Tool shows -47 — a ~100-150 point error on a top-35 player
+- Any trade involving Rice gives wrong verdict in both directions
+
+Fix needed:
+1. Reduce career weight for players under 300 career PA. Proposed: 0.30-0.40 (vs 0.60 for vets).
+   Implementation: in hitter_true_talent(), add thin_pa_weight = 0.30 if career_pa < 300 else
+   0.40 if career_pa < 600 else standard weight.
+2. Sensitivity sweep: test career weights 0.30/0.40/0.50 for thin-baseline players on 2025 OOS data.
+   Same methodology as thin baseline fix in Session 11 (career_pa < 1000 → ×0.85 career weight).
+   This extends that fix to also cover very young breakout players.
+3. Short-baseline confidence flag in trade tool and dashboard for players under 300 career PA:
+   "Short baseline — under 300 career PA. Signal confidence reduced. Verify barrel rate /
+   exit velocity trend before acting on this call."
+   Display only — does not change verdict, adds transparency.
+
+Jordan Walker is the same archetype: thin baseline, genuine breakout possible, current Sell High
+signal may be correct OR anchored to pre-breakout baseline. Short-baseline flag applies there too.
+
+**Trade Tool Edge Case Analysis (Tier 1 — schedule first thing next session):**
+Three specific verifications needed:
+1. C replacement level (Drake Baldwin, 219.4 FPTS) calibration: is this correct for 2026?
+   Baldwin projects well but runs --replacement-table and verify it's using current projection data.
+2. Career weight sensitivity sweep: what weight produces correct surplus for Rice, Walker, and
+   other young breakout candidates? Target: Rice surplus moves from -47 to +60 to +100 range.
+3. PA threshold crossover: at what career PA count does the model start correctly valuing Rice?
+   Run project_player simulations at career_pa = 300, 400, 500, 600 to find where -47 flips
+   to positive. This identifies the model's "blind spot window" for breakout players.
+
+**--explain Flag (paid tier feature — fully built, commit 4277a8f):**
+Built Session 18. Prints full CBS coefficient walkthrough for any trade on demand.
+Free tier: verdict label only.
+Paid tier: full --explain breakdown — projection inputs, signal multipliers, per-term FPTS
+calculation, replacement level reference, surplus.
+ALREADY BUILT: python trade_analyzer.py --explain
+Next: surface this in dashboard as premium feature toggle.
+
 **Week 3 article (May 5-6 deadline):** Monday run → update → report. Lead: Matt Chapman LA delta -17.2°. Manual Get Hyped: Cam Schlittler (ERA 1.96/FIP 1.41/xERA 1.57/CBS #3 — three metrics agree). CBS divergences: Soto ESPN#7/CBS#186, Betts ESPN#43/CBS#268. Ohtani quiet worry flag. April Big Board: 17/23 = 73.9%. Release luck score spreadsheet (promised Article #2).
 
 **Trade tool architecture fix — COMPLETE (Session 17, commit fda45c4):** Correct 5-step flow implemented. Signals adjust projected stats only. Verdict = adjusted surplus delta. Skenes correctly SP+95 surplus, Rice correctly -47 surplus. All 3 smell tests PASS. See Section 11.

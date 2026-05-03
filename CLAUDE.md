@@ -1253,6 +1253,12 @@ PENDING MANUAL ACTIONS:
 
 6. 37/37 PASS. All invariants PASS (Sanchez rank 22, Yordan rank 8).
 
+7. Parking lot additions (Tier 1) — thread_handoff.md updated:
+   - Young Breakout Player Projection Fix: career weight 0.60 too high for players <300 career PA
+     (Rice/Walker case). Target: reduce to 0.30-0.40 with sensitivity sweep + short-baseline confidence flag.
+   - Trade Tool Edge Case Analysis: C replacement calibration, career weight sweep, PA crossover threshold.
+   - --explain Flag paid tier surface: built Session 18 (commit 4277a8f); surface in dashboard premium toggle.
+
 PENDING MANUAL ACTIONS:
   - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
   - Career lessons database (Sessions 17-18) — add new lessons manually in Claude.ai
