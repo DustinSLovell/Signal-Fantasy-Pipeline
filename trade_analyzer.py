@@ -496,6 +496,14 @@ def _display_player(row: pd.Series, config: dict) -> None:
     if auction_str:
         print(f"     Auction  : {auction_str}")
 
+    # Short career baseline flag — display only, no verdict change
+    try:
+        if float(row.get("career_pa", 9999)) < 300:
+            print("     ⚠ Short baseline — under 300 career PA. Verify barrel rate and "
+                  "exit velocity trend before acting on this call.")
+    except (TypeError, ValueError):
+        pass
+
     print(f"     Note     : {_assessment(verdict, ptype)}")
 
 

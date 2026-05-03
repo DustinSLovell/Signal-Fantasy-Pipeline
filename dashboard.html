@@ -540,6 +540,20 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
   vertical-align: middle;
 }
 
+.short-baseline-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  color: #6b21a8;
+  background: #f3e8ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: help;
+}
+
 .cqs-badge {
   display: inline-block;
   font-size: 9px;
@@ -1341,7 +1355,9 @@ const F = {
     if (isNA(v)) return `<td class="name-cell">—</td>`;
     const park = (r && (r.park_change === 'True' || r.park_change === true))
       ? `<span class="park-badge" title="${esc((r && r.park_change_label) || 'Park change — career baseline less reliable')}">⚠ Park</span>` : '';
-    return `<td class="name-cell">${esc(v)}${park}</td>`;
+    const shortSample = (r && r.career_pa && parseFloat(r.career_pa) < 300)
+      ? `<span class="short-baseline-badge" title="Short baseline — under 300 career PA. Verify barrel rate and exit velocity trend before acting on this call.">Short Sample</span>` : '';
+    return `<td class="name-cell">${esc(v)}${park}${shortSample}</td>`;
   },
   team(v)  { return isNA(v) ? `<td class="na">—</td>` : `<td>${esc(v)}</td>`; },
   int(v)   {
@@ -2208,7 +2224,9 @@ function renderSimpleTable() {
       : '';
     // Simple View: name + pos tag + own% + badges, all in one cell
     const posTag = pos ? ` <span style="font-size:10px;color:var(--muted);font-weight:600">${esc(pos)}</span>` : '';
-    const playerNameCell = `<td class="name-cell">${esc(r.name || '—')}${posTag}${ageWarn}${parkBadge}${cqsBadge}${rankBadge}${ownLabel}</td>`;
+    const shortBaselineBadge = (tab === 'hitters' && r.career_pa && parseFloat(r.career_pa) < 300)
+      ? `<span class="short-baseline-badge" title="Short baseline — under 300 career PA. Verify barrel rate and exit velocity trend before acting on this call.">Short Sample</span>` : '';
+    const playerNameCell = `<td class="name-cell">${esc(r.name || '—')}${posTag}${ageWarn}${parkBadge}${shortBaselineBadge}${cqsBadge}${rankBadge}${ownLabel}</td>`;
 
     const showConf = confLabel && (r.verdict === 'Buy low' || r.verdict === 'Sell high');
     const confSpan = showConf ? `<span class="signal-conf">${confLabel}</span>` : '';

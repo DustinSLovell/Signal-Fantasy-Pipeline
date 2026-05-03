@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 2, 2026 (Sessions 1-18)
+# Last updated: May 3, 2026 (Sessions 1-19)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1263,6 +1263,55 @@ PENDING MANUAL ACTIONS:
   - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
   - Career lessons database (Sessions 17-18) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
+
+--- May 3, 2026 (Session 19) ---
+
+1. career_weight_sweep.py (new diagnostic) — sensitivity sweep proving career weight is NOT the lever
+   - Rice surplus ranges -36.3 to -35.4 across ALL weights (0.30-0.60) — HR accounts for only +1.7 FPTS
+   - R/RBI are 6.5× more valuable per unit than HR in CBS FPTS formula
+   - Real fix: Steamer G=48.4 (backup projection) was dominating PA blend
+   - PA scenario confirmed: ~480 PA needed for +60 surplus; stale-Steamer fix is the correct lever
+   - Crossover diagnostic: surplus=+60 requires 233.8 HRs (impossible) — career weight irrelevant
+
+2. stat_projections.py — stale-Steamer override fix in _blend_pa()
+   - Added _STEAMER_G module-level dict + loading in _load_pt_lookups()
+   - Added _STEAMER_PT_OVERRIDE_FLAGS module-level dict
+   - Trigger: pace_ros > steamer_ros × 1.5 AND Steamer G ∈ [20, 80) → w_s=0.30, w_p=0.70
+   - G >= 20 floor prevents rookies/NPB players (G < 20) from trivially firing override
+   - 120 hitters with steamer_pt_override=True (all legitimate part-timer→starter cases)
+   - Ben Rice: PA 285 → 384; HR 11→15, R 36→48, RBI 32→42, SB 2→6
+   - project_player(): steamer_pt_override flag threaded to projected stats dict
+
+3. generate_projections.py — steamer_pt_override column added to COLUMNS and row dicts
+
+4. trade_analyzer.py — short-baseline confidence flag (display-only)
+   - career_pa < 300: prints "⚠ Short baseline — under 300 career PA. Verify barrel rate
+     and exit velocity trend before acting on this call."
+   - No verdict change
+
+5. dashboard.html — .short-baseline-badge CSS + Simple View + Advanced View badges
+   - Purple/lavender badge "Short Sample" for career_pa < 300 hitters
+   - Both views wired; title tooltip with full warning text
+
+6. Rice before/after:
+   - Old: PA=285, HR=11, R=36, RBI=32, surplus=-47 (C repl 219.4)
+   - New: PA≈384, HR=15, R=48, RBI=42, surplus=-15 (C repl 239)
+   - Improvement: +32 surplus points. Still negative (SH signal suppresses counting stats).
+   - Target +60 to +100 requires ~480 PA — stale-Steamer fix is a real improvement but
+     won't reach target until Rice accumulates 400+ PA and model trust shifts to current pace.
+
+7. Smell tests — all PASS with new values:
+   Case 1 (Skenes→Rice): delta -110 → AVOID ✓
+   Case 2 (Skubal→Rice): delta -98 → AVOID ✓
+   Case 3 (Acuña→Rice): delta -213 → AVOID ✓
+
+8. 37/37 PASS. All invariants PASS (Sanchez rank=22, Yordan rank=8, Raleigh rank=2, Baldwin rank=3).
+
+PENDING MANUAL ACTIONS:
+  - Week 3 article (May 5-6 deadline — check if overdue): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Sessions 17-19) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Update thread_handoff.md in Claude.ai with Session 19 summary
 
 ---
 *This file is the persistent memory for Claude Code sessions.*

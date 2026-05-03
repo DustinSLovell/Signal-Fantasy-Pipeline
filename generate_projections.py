@@ -22,6 +22,7 @@ COLUMNS = [
     "proj_avg", "proj_hr", "proj_r", "proj_rbi", "proj_sb",
     "proj_era", "proj_whip", "proj_k", "proj_w", "proj_sv_h", "proj_ip",
     "confidence", "games_remaining", "generated_date", "pf_adj_applied",
+    "steamer_pt_override",
 ]
 
 
@@ -73,6 +74,7 @@ def main() -> None:
             "games_remaining": proj["games_remaining"],
             "generated_date":  today,
             "pf_adj_applied":  ps.get("pf_adj_applied", False),
+            "steamer_pt_override": ps.get("steamer_pt_override", False),
         })
 
     # Pitchers
@@ -107,6 +109,7 @@ def main() -> None:
             "games_remaining": proj["games_remaining"],
             "generated_date":  today,
             "pf_adj_applied":  False,
+            "steamer_pt_override": False,
         })
 
     df = pd.DataFrame(rows, columns=COLUMNS)

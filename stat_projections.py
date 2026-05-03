@@ -128,10 +128,14 @@ _CACHE: dict = {}
 
 # Playing-time module lookups (populated on first call to _blend_pa / _blend_ip)
 _STEAMER_PA:  dict = {}   # str(mlbam_id) → full-season PA float
+_STEAMER_G:   dict = {}   # str(mlbam_id) → full-season G float (for stale-projection detection)
 _STEAMER_IP:  dict = {}   # str(mlbam_id) → {"IP": float, "GS": float}
 _IL_STATUS:   dict = {}   # int(mlbam_id) → "ACTIVE" | "INJURY_RESERVE" | "DAY_TO_DAY"
 _HITTER_GP:   dict = {}   # int(batter_id) → games_played (unique game_pk count)
 _PT_LOADED:   bool = False
+# Side-effect flag: set True for any player where _blend_pa fires the stale-Steamer override.
+# Consumed by project_player() to tag the steamer_pt_override column.
+_STEAMER_PT_OVERRIDE_FLAGS: dict = {}  # int(mlbam_id) → True
 
 # ---------------------------------------------------------------------------
 # Name normalisation (mirrors trade_analyzer.py)
@@ -320,7 +324,7 @@ def load_all_career_data() -> dict:
 
 def _load_pt_lookups() -> None:
     """Lazy-load Steamer PA/IP, IL status, and hitter games-played lookups."""
-    global _STEAMER_PA, _STEAMER_IP, _IL_STATUS, _HITTER_GP, _PT_LOADED
+    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _IL_STATUS, _HITTER_GP, _PT_LOADED
     if _PT_LOADED:
         return
 
@@ -332,8 +336,14 @@ def _load_pt_lookups() -> None:
                     pa = float(row["PA"])
                 except (KeyError, ValueError, TypeError):
                     pa = float("nan")
+                try:
+                    g = float(row["G"])
+                except (KeyError, ValueError, TypeError):
+                    g = float("nan")
                 if mid and math.isfinite(pa) and pa > 0:
                     _STEAMER_PA[mid] = pa
+                if mid and math.isfinite(g):
+                    _STEAMER_G[mid] = g
 
     if STEAMER_PIT_CSV.exists():
         with open(STEAMER_PIT_CSV, newline="", encoding="utf-8-sig") as f:
@@ -419,6 +429,18 @@ def _blend_pa(
         (pa_so_far / gp_eff) * games_rem_adj * 0.90
         if gp_eff >= 5 else None
     )
+
+    # Stale-Steamer override: Steamer projected the player as a part-time/backup
+    # (G in [20, 80)) but current pace says significantly more playing time (pace
+    # > 1.5× steamer_ros). Reduce Steamer trust to 0.30 so real usage drives the
+    # PA projection. G >= 20 floor avoids triggering on rookies/NPB players who
+    # had near-zero Steamer projections — for them Steamer is absent, not stale.
+    if (steamer_ros is not None and pace_ros is not None
+            and pace_ros > steamer_ros * 1.5):
+        steamer_games = _STEAMER_G.get(str(mlbam_id), 999.0)
+        if 20.0 <= steamer_games < 80.0:
+            w_s, w_p = 0.30, 0.70
+            _STEAMER_PT_OVERRIDE_FLAGS[mlbam_id] = True
 
     if steamer_ros and pace_ros:
         return int(w_s * steamer_ros + w_p * pace_ros)
@@ -1317,6 +1339,7 @@ def project_player(name: str,
         )
         proj_counting["sample_confidence"] = _sample_confidence_label(pa)
         proj_counting["pf_adj_applied"] = False
+        proj_counting["steamer_pt_override"] = _STEAMER_PT_OVERRIDE_FLAGS.get(batter_id, False)
 
         # Park factor adjustment — only for hitters who changed parks this offseason.
         # Scales proj_hr/avg/r/rbi by the ratio of new park to old park.
