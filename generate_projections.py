@@ -47,7 +47,11 @@ def main() -> None:
         name = str(hrow.get("name", ""))
         if not name:
             continue
-        proj = project_player(name, hitters, pitchers, career, sprint)
+        try:
+            mlbam_id = int(hrow.get("batter")) if hrow.get("batter") else None
+        except (TypeError, ValueError):
+            mlbam_id = None
+        proj = project_player(name, hitters, pitchers, career, sprint, mlbam_id=mlbam_id)
         if "error" in proj:
             continue
         ps = proj["projected_stats"]
@@ -82,7 +86,11 @@ def main() -> None:
         name = str(prow.get("name", ""))
         if not name:
             continue
-        proj = project_player(name, hitters, pitchers, career, sprint)
+        try:
+            mlbam_id = int(prow.get("pitcher")) if prow.get("pitcher") else None
+        except (TypeError, ValueError):
+            mlbam_id = None
+        proj = project_player(name, hitters, pitchers, career, sprint, mlbam_id=mlbam_id)
         if "error" in proj:
             continue
         ps = proj["projected_stats"]

@@ -1313,6 +1313,41 @@ PENDING MANUAL ACTIONS:
   - White paper Section 10 update in 2-3 weeks
   - Update thread_handoff.md in Claude.ai with Session 19 summary
 
+--- May 3, 2026 (Session 19 — continued audit + fixes) ---
+
+1. _blend_pa() gate tightening (stat_projections.py) — override count 120 → 30
+   - Raised G floor: 20 → 40 (eliminates fringe bench players with G=20-39 getting opportunistic ABs)
+   - Added PA gate: pa_so_far >= 80 required (prevents injured/optioned players with <25 PA from firing)
+   - All 9 legitimate cases from audit preserved; 90 noise overrides eliminated
+   - New gates: G ∈ [40, 80) AND pace_ros > steamer_ros × 1.5 AND pa_so_far >= 80
+
+2. Max Muncy MLBAM ID disambiguation bug — FIXED (stat_projections.py + generate_projections.py)
+   - Root cause: project_player(name="Max Muncy") used _fuzzy_find() → always picked LAD row (first match)
+   - ATH Muncy (691777) was getting LAD Muncy's (571970) stats in both projections_2026.csv and player_values.json
+   - Fix: project_player() now accepts optional mlbam_id param; when provided, filters fuzzy matches by ID
+   - generate_projections.py: passes batter= (hitters) and pitcher= (pitchers) MLBAM IDs to project_player()
+   - Post-fix: ATH Muncy now shows distinct stats (proj_avg .208 / HR 10 / R 31 vs LAD's .233 / HR 15 / R 52)
+   - This pattern applies to any duplicate name — the fix is general, not Muncy-specific
+
+3. Ohtani display edge case — KNOWN ISSUE, logged here (no code change)
+   - In standard leagues: Ohtani appears as hitter only (RP classification in pitcher_luck_scores.csv
+     produces +216 surplus vs RP replacement, which is noise from his hitting stats)
+   - In two-way player leagues: he should split into hitter + pitcher with separate surplus calculations
+   - Do NOT hardcode a suppression rule — this requires league_settings.json configuration
+   - Action required before trade tool goes public: add two_way_player flag to league settings schema;
+     in standard leagues suppress pitcher row for Ohtani; in two-way leagues show both rows separately
+   - Current state: trade tool displays Ohtani correctly as hitter when queried directly; the RP surplus
+     noise only appears in diagnostic position tables (Part 2 audit), not in user-facing trade output
+
+4. 37/37 PASS. All invariants PASS (Sanchez rank=22, Yordan rank=8, Raleigh rank=2, Baldwin rank=3).
+   Smell tests re-verified after gate changes (Skenes→Rice: -110 AVOID, Skubal→Rice: -98 AVOID).
+
+PENDING MANUAL ACTIONS:
+  - Week 3 article (May 5-6 deadline — check if overdue): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Sessions 17-19) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Update thread_handoff.md in Claude.ai with Session 19 summary (include Session 19 continued)
+
 ---
 *This file is the persistent memory for Claude Code sessions.*
 *thread_handoff.md in Claude.ai is the persistent memory for Claude.ai sessions.*

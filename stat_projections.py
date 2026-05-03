@@ -431,14 +431,19 @@ def _blend_pa(
     )
 
     # Stale-Steamer override: Steamer projected the player as a part-time/backup
-    # (G in [20, 80)) but current pace says significantly more playing time (pace
-    # > 1.5× steamer_ros). Reduce Steamer trust to 0.30 so real usage drives the
-    # PA projection. G >= 20 floor avoids triggering on rookies/NPB players who
-    # had near-zero Steamer projections — for them Steamer is absent, not stale.
+    # (G in [40, 80)) but current pace says significantly more playing time (pace
+    # > 1.5× steamer_ros) AND player has accumulated ≥80 PA to confirm the role.
+    # G >= 40 floor: avoids fringe bench players (Steamer G=20-39) who are merely
+    # getting opportunistic at-bats rather than a genuine role change. The G=20
+    # floor was too permissive — audit showed 97/120 triggers were noise (deep bench,
+    # <1% owned, CBS rank >250). G >= 40 preserves all 9 legitimate cases from audit.
+    # PA >= 80 gate: prevents firing on injured/optioned players with <25 PA who
+    # happen to have Steamer G in range. Requires sustained usage evidence first.
     if (steamer_ros is not None and pace_ros is not None
-            and pace_ros > steamer_ros * 1.5):
+            and pace_ros > steamer_ros * 1.5
+            and pa_so_far >= 80):
         steamer_games = _STEAMER_G.get(str(mlbam_id), 999.0)
-        if 20.0 <= steamer_games < 80.0:
+        if 40.0 <= steamer_games < 80.0:
             w_s, w_p = 0.30, 0.70
             _STEAMER_PT_OVERRIDE_FLAGS[mlbam_id] = True
 
@@ -1248,7 +1253,8 @@ def project_player(name: str,
                    hitters_df: Optional[pd.DataFrame] = None,
                    pitchers_df: Optional[pd.DataFrame] = None,
                    career_data: Optional[dict] = None,
-                   sprint_data: Optional[dict] = None) -> dict:
+                   sprint_data: Optional[dict] = None,
+                   mlbam_id: Optional[int] = None) -> dict:
     """Run full projection pipeline for one player.
     Pass hitters_df/pitchers_df/career_data to avoid repeated loading;
     omit to use lazy-loaded cache.
@@ -1277,11 +1283,17 @@ def project_player(name: str,
     # Find player
     ptype = None
     row   = None
-    for df, pt in ((hitters_df, "hitter"), (pitchers_df, "pitcher")):
+    for df, pt, id_col in ((hitters_df, "hitter", "batter"),
+                           (pitchers_df, "pitcher", "pitcher")):
         if df.empty:
             continue
         matches = _fuzzy_find(name, df)
         if not matches.empty:
+            # Disambiguate by MLBAM ID when provided (handles duplicate names like Max Muncy)
+            if mlbam_id is not None and id_col in matches.columns:
+                id_match = matches[matches[id_col] == mlbam_id]
+                if not id_match.empty:
+                    matches = id_match
             row   = matches.iloc[0]
             ptype = pt
             break
