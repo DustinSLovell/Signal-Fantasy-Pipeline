@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 2, 2026 (Sessions 1-17)
+# Last updated: May 2, 2026 (Sessions 1-18)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1216,7 +1216,46 @@ PENDING MANUAL ACTIONS:
 
 PENDING MANUAL ACTIONS:
   - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
-  - Career lessons database (Session 17) — add new lessons manually in Claude.ai
+  - Career lessons database (Sessions 17-18) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+
+--- May 2, 2026 (Session 18) ---
+
+1. trade_analyzer.py surplus display — per-player breakdown with position and replacement FPTS reference.
+   Old: "give +95 | get -47 | delta -142"
+   New: "Give surplus: Paul Skenes +95 (SP, repl 201) | Get surplus: Ben Rice -47 (C, repl 219)"
+   Commit 4277a8f.
+
+2. trade_analyzer.py --explain flag — step-by-step CBS valuation walkthrough.
+   Shows: model projections → trade-tool signal multipliers → per-term CBS FPTS calculation →
+   replacement level and N → surplus → verdict summary.
+   Usage: python trade_analyzer.py --explain
+   Commit 4277a8f.
+
+3. stat_projections.py _blend_pa GP estimation fix — when games_played=0 (ESPN endpoint
+   limitation) but pa_so_far >= 5, estimate gp_eff = max(pa_so_far // 4, 5).
+   Prevents Steamer-only domination for breakout players whose 2025 Steamer PA is stale.
+   Rice: projected_pa 155 → 285. Counting stats unchanged (rate-based model).
+   Commit 4277a8f.
+
+4. Rice surplus clarified — -47 (adjusted) is model's honest Sell High signal.
+   Architecture: projections_2026.csv has in-model LUCK_MULTIPLIERS (R×0.94 for SH);
+   trade tool adds Backtest B v2 multipliers (R×0.92) on top. Combined: R×0.865.
+   Career HR baseline drag (0.029 career vs 0.052 current) also constrains HR projection.
+   CBS projects 28 HR vs our 11 HR — known under-projection for young breakout players
+   (documented in Backtest C, Session 12). Not a bug; will improve when native projection
+   system replaces Steamer 2025 proxy.
+
+5. All 3 smell tests PASS with new per-player display:
+   Case 1 (Skenes→Rice): delta -142 → AVOID ✓
+   Case 2 (Skubal→Rice): delta -131 → AVOID ✓
+   Case 3 (Acuña→Rice): delta -255 → AVOID ✓
+
+6. 37/37 PASS. All invariants PASS (Sanchez rank 22, Yordan rank 8).
+
+PENDING MANUAL ACTIONS:
+  - Week 3 article (May 5-6): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Sessions 17-18) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
 
 ---
