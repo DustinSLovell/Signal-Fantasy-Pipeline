@@ -1670,20 +1670,24 @@ def main():
         _no_signal  = df["luck_score"].abs() < WORRY_LUCK_BAND
         _woba_valid = df["wOBA"].notna() & df["xwoba_3yr"].notna()
         # CONCERN: high-pedigree player struggling with no luck explanation
+        # PA >= 75 guards against small-sample wOBA noise
         _concern = (
             _no_signal & _woba_valid
             & df["fp_rank"].notna()
             & (df["fp_rank"] < 50)
             & ((df["xwoba_3yr"] - df["wOBA"]) > WORRY_WOBA_GAP)
+            & (df["PA"] >= 75)
         )
         df.loc[_concern, "worry_flag"]  = True
         df.loc[_concern, "worry_label"] = "No luck signal detected — struggle may be real, not random"
         # BREAKOUT: surprise performer with no regression signal
+        # PA >= 100 guards against hot-start noise (Drew Romo .631 wOBA / 13 PA type cases)
         _breakout = (
             _no_signal & _woba_valid
             & df["fp_rank"].notna()
             & (df["fp_rank"] > 100)
             & ((df["wOBA"] - df["xwoba_3yr"]) > WORRY_WOBA_GAP)
+            & (df["PA"] >= 100)
         )
         df.loc[_breakout, "breakout_flag"] = True
         df.loc[_breakout, "worry_label"]   = "No regression signal detected — breakout may be real"
