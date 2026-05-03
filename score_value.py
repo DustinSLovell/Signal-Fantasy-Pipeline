@@ -1481,7 +1481,7 @@ def main():
     # Key: MLBAM ID (int).  Value: position abbreviation string.
     # Updated each season as platform eligibility changes.
     MANUAL_POSITION_OVERRIDES = {
-        670541: "DH",  # Yordan Álvarez — platform Util-only this season (API says LF)
+        670541: "LF",  # Yordan Álvarez — OF/DH eligible (not 1B); API says LF, DH override was wrong
         514888: "2B",  # José Altuve — MLB API returns LF; fantasy eligibility is 2B
     }
     hitter_df["position"] = hitter_df.apply(
