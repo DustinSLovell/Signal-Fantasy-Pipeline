@@ -35,10 +35,25 @@ CALL_DATE   = "2026-04-22"   # Week 1 article date
 WOBA_THRESH  = 0.020   # wOBA movement to classify
 XWOBA_THRESH = 0.015   # xwOBA movement to classify
 
+# Luck normalization thresholds for refuted gate.
+# A call is only marked "refuted" if the underlying luck signal has faded.
+# Luck still strongly positive/negative = signal still active → "still_waiting".
+# Thresholds match production Slight Buy/Sell floors.
+LUCK_NORMALIZE_BUY  =  0.100   # below this → buy signal effectively gone
+LUCK_NORMALIZE_SELL = -0.085   # above this → sell signal effectively gone
+
+# Rolling 4-week window luck deepening threshold
+LUCK_DEEPEN_THRESH  =  0.030   # luck score moved this much → signal deepening
+
+# Week 10 = mid-June: when Track 1 official accuracy reporting begins
+TRACK1_RESOLUTION_WEEK = 10
+
 # Mechanism → human-readable status label and emoji
 # Mechanisms:
-#   BUY calls:  results_improving | contact_deteriorating | confirmed | refuted | insufficient_movement
-#   SELL calls: results_declining | contact_improving     | genuine_decline | refuted | insufficient_movement
+#   BUY calls:  results_improving | contact_deteriorating | confirmed | refuted
+#               still_waiting | insufficient_movement
+#   SELL calls: results_declining | contact_improving | genuine_decline | refuted
+#               still_waiting | insufficient_movement
 STATUS_LABEL = {
     "results_improving":     "Normalizing",
     "results_declining":     "Normalizing",
@@ -47,6 +62,7 @@ STATUS_LABEL = {
     "confirmed":             "Confirmed",
     "genuine_decline":       "Confirmed",
     "refuted":               "Refuted",
+    "still_waiting":         "Signal Active",  # luck intact, results not yet moving
     "insufficient_movement": "Watch",
 }
 STATUS_EMOJI = {
@@ -57,7 +73,17 @@ STATUS_EMOJI = {
     "confirmed":             "✅",
     "genuine_decline":       "✅",
     "refuted":               "❌",
+    "still_waiting":         "⏳",
     "insufficient_movement": "⏳",
+}
+
+# Window signal labels for rolling 4-week view
+WINDOW_LABEL = {
+    "confirming":       "Window confirming ✅",
+    "deepening":        "Signal deepening ↑",
+    "still_waiting":    "Still waiting ⏳",
+    "refuted_4wk":      "4-wk window wrong ⚠",
+    "insufficient_data":"Not enough data",
 }
 
 BUY_VERDICTS  = {"Buy low", "Slight buy"}
@@ -106,33 +132,63 @@ def _current_week_num(df: pd.DataFrame) -> int:
 
 
 def _compute_deltas(df: pd.DataFrame) -> pd.DataFrame:
-    """Recompute woba_delta, xwoba_delta, mechanism, prediction_correct."""
+    """Recompute woba_delta, xwoba_delta, rolling window columns, mechanism, prediction_correct."""
     wc = _week_cols(df)
     if not wc:
         return df
 
-    latest = wc[-1].split("_")[0]  # e.g. "week3"
+    latest = wc[-1].split("_")[0]  # e.g. "week8"
+    sign   = df["type"].map(lambda t: -1 if t == "Pitcher" else 1)
 
     for col, base in [("woba_delta", "woba"), ("xwoba_delta", "xwoba")]:
         init_col    = f"week1_{base}"
         current_col = f"{latest}_{base}"
         if init_col in df.columns and current_col in df.columns:
             # For pitchers: woba=ERA (lower is better → flip sign)
-            sign = df["type"].map(lambda t: -1 if t == "Pitcher" else 1)
             df[col] = (df[current_col] - df[init_col]) * sign
         else:
             df[col] = float("nan")
 
-    # luck_delta: used by sell refuted check — negative means sell signal deepened
-    init_luck = "week1_luck"
+    # luck_delta: week1→current; positive = luck signal strengthened (more positive)
+    init_luck     = "week1_luck"
     curr_luck_col = f"{latest}_luck"
     if init_luck in df.columns and curr_luck_col in df.columns:
-        df["luck_delta"] = pd.to_numeric(df[curr_luck_col], errors="coerce") - pd.to_numeric(df[init_luck], errors="coerce")
+        df["luck_delta"] = (pd.to_numeric(df[curr_luck_col], errors="coerce")
+                            - pd.to_numeric(df[init_luck],    errors="coerce"))
     else:
         df["luck_delta"] = float("nan")
 
-    df["mechanism"]         = df.apply(_classify_mechanism, axis=1)
+    # Rolling 4-week window: latest vs 4 weeks prior
+    # wc[-5] = "week(latest-4)_luck" when we have ≥5 weeks of data
+    if len(wc) >= 5:
+        win_start_prefix = wc[-5].split("_")[0]   # e.g. "week4"
+        w4_woba  = f"{win_start_prefix}_woba"
+        w4_luck  = f"{win_start_prefix}_luck"
+        lat_woba = f"{latest}_woba"
+        lat_luck = f"{latest}_luck"
+
+        if w4_woba in df.columns and lat_woba in df.columns:
+            df["rolling_4wk_woba_delta"] = (
+                (pd.to_numeric(df[lat_woba], errors="coerce")
+                 - pd.to_numeric(df[w4_woba], errors="coerce")) * sign
+            )
+        else:
+            df["rolling_4wk_woba_delta"] = float("nan")
+
+        if w4_luck in df.columns and lat_luck in df.columns:
+            df["rolling_4wk_luck_delta"] = (
+                pd.to_numeric(df[lat_luck], errors="coerce")
+                - pd.to_numeric(df[w4_luck], errors="coerce")
+            )
+        else:
+            df["rolling_4wk_luck_delta"] = float("nan")
+    else:
+        df["rolling_4wk_woba_delta"] = float("nan")
+        df["rolling_4wk_luck_delta"] = float("nan")
+
+    df["mechanism"]          = df.apply(_classify_mechanism, axis=1)
     df["prediction_correct"] = df.apply(_classify_correct, axis=1)
+    df["window_signal"]      = df.apply(_classify_window_signal, axis=1)
     df["last_updated"]       = str(date.today())
     return df
 
@@ -192,11 +248,27 @@ def _classify_mechanism(row) -> str:
     xwoba_sig_neg = (not math.isnan(xd)) and xd <= -XWOBA_THRESH
     xwoba_stable  = (not math.isnan(xd)) and abs(xd) < XWOBA_THRESH
 
+    # Get current luck score for luck-normalization gate on "refuted".
+    # A call is only marked refuted if the luck signal has substantially normalized.
+    # Luck still strongly positive/negative = signal still active → "still_waiting".
+    luck_cols = sorted(
+        [c for c in row.index if c.startswith("week") and c.endswith("_luck")],
+        key=lambda c: int(c.split("_")[0][4:])
+    )
+    try:
+        curr_luck = float(row[luck_cols[-1]]) if luck_cols else float("nan")
+    except (ValueError, TypeError):
+        curr_luck = float("nan")
+
     if is_buy:
         if woba_sig_pos and xwoba_sig_pos:
             return "confirmed"               # both improving — buy confirmed
         if woba_sig_neg and xwoba_sig_neg:
-            return "refuted"                 # both declining — buy call wrong
+            # Only mark refuted when the luck signal itself has normalized.
+            # If luck still >> 0, the underlying mispricing signal is intact.
+            if not math.isnan(curr_luck) and curr_luck >= LUCK_NORMALIZE_BUY:
+                return "still_waiting"       # luck active, wOBA not moving yet
+            return "refuted"                 # luck normalized + both declining
         if xwoba_sig_neg:
             return "contact_deteriorating"   # xwOBA down — re-evaluate
         if woba_sig_pos and (xwoba_stable or math.isnan(xd)):
@@ -205,18 +277,18 @@ def _classify_mechanism(row) -> str:
         if woba_sig_neg and xwoba_sig_neg:
             return "genuine_decline"         # both declining — confirmed genuine decline
         if woba_sig_pos and xwoba_sig_pos:
-            # ERA and FIP both dropped in absolute terms, but check if the
-            # ERA-FIP gap widened (luck score deepened). If luck deepened by
-            # >0.02 the sell signal is actually stronger — ERA dropped less
-            # than FIP in gap terms. Label as results_declining, not refuted.
+            # Check luck delta: if sell signal deepened, label as results_declining not refuted
             ld = row.get("luck_delta", float("nan"))
             try:
                 ld = float(ld)
             except (TypeError, ValueError):
                 ld = float("nan")
             if not math.isnan(ld) and ld < -0.02:
-                return "results_declining"   # luck deepened — sell signal stronger despite absolute improvement
-            return "refuted"                 # both improving — sell call wrong
+                return "results_declining"   # luck deepened — sell signal stronger
+            # Only mark refuted if the sell luck signal has normalized
+            if not math.isnan(curr_luck) and curr_luck <= LUCK_NORMALIZE_SELL:
+                return "still_waiting"       # sell signal still active, player just hitting
+            return "refuted"                 # luck normalized + both improving
         if xwoba_sig_pos:
             return "contact_improving"       # xwOBA improving — re-evaluate
         if woba_sig_neg and (xwoba_stable or math.isnan(xd)):
@@ -227,13 +299,65 @@ def _classify_mechanism(row) -> str:
 def _classify_correct(row) -> object:
     """Returns 1 (correct), 0 (refuted), or None (unresolved).
     Requires both wOBA and xwOBA to confirm (mechanism-based, not threshold-only).
+    still_waiting is UNRESOLVED — luck active, prediction not yet confirmed OR denied.
     """
     mech = row.get("mechanism", "insufficient_movement")
     if mech in ("confirmed", "genuine_decline"):
         return 1
     if mech == "refuted":
         return 0
-    return None
+    return None   # still_waiting, insufficient_movement, contact_*, results_* = unresolved
+
+
+def _classify_window_signal(row) -> str:
+    """Rolling 4-week window signal direction.
+
+    window_signal:
+      confirming  — results moving the correct direction in the last 4 weeks
+      deepening   — luck score getting stronger (signal intensifying) despite flat results
+      refuted_4wk — results moved the WRONG direction in the last 4 weeks
+      still_waiting — insufficient movement in either direction
+      insufficient_data — not enough weeks of data yet
+    """
+    import math
+    rwd  = row.get("rolling_4wk_woba_delta",  float("nan"))
+    rld  = row.get("rolling_4wk_luck_delta",  float("nan"))
+    call = row.get("call", "")
+
+    try:
+        rwd = float(rwd)
+    except (TypeError, ValueError):
+        rwd = float("nan")
+    try:
+        rld = float(rld)
+    except (TypeError, ValueError):
+        rld = float("nan")
+
+    if math.isnan(rwd) and math.isnan(rld):
+        return "insufficient_data"
+
+    is_buy  = call in BUY_VERDICTS
+    is_sell = call in SELL_VERDICTS
+
+    if is_buy:
+        if not math.isnan(rld) and rld >= LUCK_DEEPEN_THRESH:
+            return "deepening"          # luck getting stronger; results may lag
+        if not math.isnan(rwd) and rwd >= WOBA_THRESH:
+            return "confirming"         # results improving in last 4 weeks
+        if not math.isnan(rwd) and rwd <= -WOBA_THRESH:
+            return "refuted_4wk"        # results wrong direction in window
+        return "still_waiting"
+
+    if is_sell:
+        if not math.isnan(rld) and rld <= -LUCK_DEEPEN_THRESH:
+            return "deepening"          # sell signal getting stronger
+        if not math.isnan(rwd) and rwd <= -WOBA_THRESH:
+            return "confirming"         # results declining as predicted
+        if not math.isnan(rwd) and rwd >= WOBA_THRESH:
+            return "refuted_4wk"        # player improving in window
+        return "still_waiting"
+
+    return "still_waiting"
 
 
 # ── init ─────────────────────────────────────────────────────────────────────
@@ -418,9 +542,21 @@ def cmd_report(top_n: int = 99):
         "",
     ]
 
-    if n_denom > 0:
+    # Track 1 accuracy: collection-only until Week 10 (mid-June resolution window)
+    if len(wc) >= TRACK1_RESOLUTION_WEEK and n_denom > 0:
         lines += [
             f"**Running accuracy: {accuracy}** ({n_conf}/{n_denom} resolved calls)",
+            "",
+        ]
+    else:
+        weeks_to_resolution = max(0, TRACK1_RESOLUTION_WEEK - len(wc))
+        still_active = (df["mechanism"] == "still_waiting").sum()
+        deepening    = (df.get("window_signal", pd.Series(dtype=str)) == "deepening").sum()
+        lines += [
+            f"*Track 1 signals — resolution window opens Week {TRACK1_RESOLUTION_WEEK} "
+            f"(~{weeks_to_resolution} week{'s' if weeks_to_resolution != 1 else ''} away)*",
+            f"*Confirmed: {n_conf} | Still active / signal intact: {still_active} | "
+            f"Signal deepening: {deepening} | Honest misses: {n_ref}*",
             "",
         ]
 
@@ -429,7 +565,7 @@ def cmd_report(top_n: int = 99):
         (SELL_VERDICTS, "### Sell Signals"),
     ]:
         group = df[df["call"].isin(call_group)].copy()
-        # Sort: confirmed → normalizing → re-evaluate → refuted → watch
+        # Sort: confirmed → normalizing → re-evaluate → still_waiting → refuted → watch
         mech_order = {
             "confirmed":             0,
             "genuine_decline":       0,
@@ -437,8 +573,9 @@ def cmd_report(top_n: int = 99):
             "results_declining":     1,
             "contact_deteriorating": 2,
             "contact_improving":     2,
-            "refuted":               3,
-            "insufficient_movement": 4,
+            "still_waiting":         3,
+            "refuted":               4,
+            "insufficient_movement": 5,
         }
         group["_sort"] = group["mechanism"].map(lambda m: mech_order.get(m, 4))
         group = group.sort_values(["_sort", "call"])
@@ -521,8 +658,18 @@ def _format_row(row, weeks_elapsed: int) -> str:
     is_sell = call in SELL_VERDICTS
 
     # Story sentence per spec
+    # Rolling window signal for context
+    win_sig = row.get("window_signal", "")
+
     if mech == "insufficient_movement" or (wd_val is None and xd_val is None):
         story = f"Too early — {weeks_elapsed} week{'s' if weeks_elapsed != 1 else ''} of data"
+    elif mech == "still_waiting":
+        # Luck signal still strongly active; results haven't moved yet
+        luck_cols_r = sorted([c for c in row.index if c.startswith("week") and c.endswith("_luck")],
+                             key=lambda c: int(c.split("_")[0][4:]))
+        curr_luck_r = float(row[luck_cols_r[-1]]) if luck_cols_r else 0.0
+        win_note = " — signal deepening" if win_sig == "deepening" else ""
+        story = f"Signal intact (luck {curr_luck_r:+.3f}){win_note} — results pending"
     elif mech == "results_improving":
         story = f"{_m1_str()} — results improving as predicted"
     elif mech == "results_declining":
@@ -553,13 +700,21 @@ def _print_summary(df: pd.DataFrame):
     for m, c in mechs.items():
         print(f"  {m:30s} {c}")
 
+    if "window_signal" in df.columns:
+        print("\nRolling 4-week window:")
+        for ws, c in df["window_signal"].value_counts().items():
+            print(f"  {ws:25s} {c}")
+
     n_corr = (df["prediction_correct"] == 1).sum()
     n_ref  = (df["prediction_correct"] == 0).sum()
-    if n_corr + n_ref > 0:
+    wc = _week_cols(df)
+    if n_corr + n_ref > 0 and len(wc) >= TRACK1_RESOLUTION_WEEK:
         print(f"\nAccuracy: {n_corr/(n_corr+n_ref)*100:.1f}%  "
               f"({n_corr} confirmed / {n_ref} refuted)")
-    else:
-        print("\nNo resolved calls yet.")
+    elif n_corr + n_ref > 0:
+        print(f"\nTrack 1 collection phase (Week {len(wc)}/{TRACK1_RESOLUTION_WEEK}): "
+              f"{n_corr} confirmed | {n_ref} honest misses | "
+              f"{(df['mechanism']=='still_waiting').sum()} signal active")
 
 
 # ── main ──────────────────────────────────────────────────────────────────────

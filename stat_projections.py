@@ -130,6 +130,7 @@ _CACHE: dict = {}
 _STEAMER_PA:  dict = {}   # str(mlbam_id) → full-season PA float
 _STEAMER_G:   dict = {}   # str(mlbam_id) → full-season G float (for stale-projection detection)
 _STEAMER_IP:  dict = {}   # str(mlbam_id) → {"IP": float, "GS": float}
+_STEAMER_SVH: dict = {}   # str(mlbam_id) → {"SV": float, "HLD": float}
 _IL_STATUS:   dict = {}   # int(mlbam_id) → "ACTIVE" | "INJURY_RESERVE" | "DAY_TO_DAY"
 _HITTER_GP:   dict = {}   # int(batter_id) → games_played (unique game_pk count)
 _PT_LOADED:   bool = False
@@ -323,8 +324,8 @@ def load_all_career_data() -> dict:
 
 
 def _load_pt_lookups() -> None:
-    """Lazy-load Steamer PA/IP, IL status, and hitter games-played lookups."""
-    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _IL_STATUS, _HITTER_GP, _PT_LOADED
+    """Lazy-load Steamer PA/IP/SV/HLD, IL status, and hitter games-played lookups."""
+    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _STEAMER_SVH, _IL_STATUS, _HITTER_GP, _PT_LOADED
     if _PT_LOADED:
         return
 
@@ -359,6 +360,17 @@ def _load_pt_lookups() -> None:
                     gs = float("nan")
                 if mid and math.isfinite(ip) and ip > 0:
                     _STEAMER_IP[mid] = {"IP": ip, "GS": gs if math.isfinite(gs) else 0.0}
+                # SV / HLD — only meaningful for relievers (starters get 0 from Steamer)
+                try:
+                    sv  = float(row.get("SV",  0) or 0)
+                    hld = float(row.get("HLD", 0) or 0)
+                except (ValueError, TypeError):
+                    sv, hld = 0.0, 0.0
+                if mid and (math.isfinite(sv) or math.isfinite(hld)):
+                    _STEAMER_SVH[mid] = {
+                        "SV":  sv  if math.isfinite(sv)  else 0.0,
+                        "HLD": hld if math.isfinite(hld) else 0.0,
+                    }
 
     if OWNERSHIP_CSV.exists():
         try:
@@ -987,6 +999,47 @@ def project_hitter_counting(blended: dict,
     }
 
 
+def _blend_sv_h(mlbam_id: Optional[int],
+                games_remaining: int,
+                is_starter: bool,
+                current_ip: float) -> tuple[float, float]:
+    """Return (proj_sv, proj_hld) for rest-of-season.
+
+    Blend logic:
+    - Starters: always (0, 0)
+    - Relievers: Steamer full-season SV/HLD scaled to remaining schedule fraction.
+      IP used to estimate fraction of season already elapsed (RP_FULL_IP = 60 IP).
+      Formula: proj = steamer_full * (1 - ip_used_frac) * (games_rem / 162)
+      Future improvement: blend with live SV/HLD pace when data becomes available
+      (Statcast does not expose saves/holds; FanGraphs blocked as of May 2026).
+    """
+    _load_pt_lookups()
+    if is_starter:
+        return 0.0, 0.0
+
+    FULL_SEASON_GAMES = 162.0
+    RP_FULL_IP        = 60.0   # typical full-season RP workload
+
+    s_data = _STEAMER_SVH.get(str(mlbam_id), {}) if mlbam_id else {}
+    s_sv   = float(s_data.get("SV",  0) or 0)
+    s_hld  = float(s_data.get("HLD", 0) or 0)
+
+    if s_sv == 0.0 and s_hld == 0.0:
+        return 0.0, 0.0
+
+    # Fraction of season remaining: use games_remaining as primary signal,
+    # cross-checked against IP-based usage (RP accumulate ~60 IP in full season).
+    games_frac = min(1.0, games_remaining / FULL_SEASON_GAMES)
+    ip_used_frac = min(0.80, current_ip / RP_FULL_IP) if current_ip > 0 else 0.0
+    # Composite remaining fraction: 70% games-based, 30% IP-based
+    remaining_frac = min(1.0, 0.70 * games_frac + 0.30 * (1.0 - ip_used_frac))
+
+    proj_sv  = round(s_sv  * remaining_frac)
+    proj_hld = round(s_hld * remaining_frac)
+
+    return float(proj_sv), float(proj_hld)
+
+
 def project_pitcher_counting(blended: dict,
                               games_remaining: int,
                               is_starter: bool = True,
@@ -1024,8 +1077,11 @@ def project_pitcher_counting(blended: dict,
     k_per9 = blended.get("true_k_per9", 8.50)
 
     K  = max(0, int(k_per9 / 9.0 * projected_ip))
-    W  = max(0, int(starts_remaining * 0.33)) if is_starter else 0
-    SV_H = 0  # starters get 0; relievers would need separate logic
+    W = max(0, int(starts_remaining * 0.33)) if is_starter else 0
+
+    # Saves + holds projection (relievers only; starters always 0)
+    proj_sv, proj_hld = _blend_sv_h(mlbam_id, games_remaining, is_starter, current_ip)
+    SV_H = int(proj_sv + proj_hld)   # CBS scoring: SV and HLD combined in proj_sv_h
 
     # Hard clamp — safety net after all blending; Tasks 1+2 handle root causes
     era  = max(1.80, min(7.00, era))

@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 4, 2026 (Sessions 1-20)
+# Last updated: May 5, 2026 (Sessions 1-21)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -481,14 +481,25 @@ without clear labeling would corrupt the published track record.
   proj_sv_h in projections_2026.csv or player_values.json. Fix: wire score_value.py tier estimates
   back to stat_projections.py output column so RP surplus is meaningful.
 
-- **SB/speed projection accuracy audit** — pos-default SB formula (CF=9.0, SS=8.5, C=7.5) is
-  Steamer-independent and ignores in-season stolen base pace. Several players showing dramatically
-  different 2026 SB pace vs Steamer projection. Compare actual SB pace to proj_sb for top 20 SB
-  leaders; validate or update position defaults.
+- **SB/speed projection fix** — DIAGNOSED Session 21. Top divergences (Steamer ROS vs model):
+  Elly De La Cruz: Steamer 40.9 ROS vs model 13.0 (-27.9 gap)
+  Corbin Carroll: Steamer 31.8 vs model 12.0 (-19.8)
+  Maikel Garcia: Steamer 21.9 vs model 6.0 (-15.9)
+  CJ Abrams: Steamer 27.8 vs model 13.0 (-14.8)
+  Root cause: position defaults (CF=9.0, SS=8.5, C=7.5) ignore individual speed profiles.
+  Fix: blend proj_sb with Steamer ROS SB using _blend_pa() pattern in stat_projections.py.
+  No live 2026 SB data exists in Statcast — Steamer-only blend is correct first step.
+  Implement in stat_projections._blend_sv_h() or a new _blend_sb() function.
 
-- **2B full position audit** — Two confirmed divergences from Session 20 position tables:
-  Jazz Chisholm model #14 / FP-POS #2 (batting slot stale — slot 6 in data vs actual slot 3;
-    needs slot refresh + build_lineup_context.py re-run)
+- **2B full position audit** — COMPLETED Session 21. Key findings:
+  Chisholm (NYY): slot=6 (n=27 games), speed_flag+chase_flag firing, luck=+0.099 (not a buy).
+    Action needed: verify if actual slot is now 3 in NYY lineup; if so, manually update
+    hitter_batting_slot_2026.json entry for MLBAM 665862 and re-run build_lineup_context.py.
+    slot 3 would significantly improve R_mult (slots 4/5 SLG=.570/.540 vs current slot 7/8/9).
+  Altuve (HOU): slot=3 (n=26), age=36, la_delta=-8.7°, NO decline flags currently firing.
+    Hard hit rate actually UP +6.7pp. Model 2B #8, FP rank #40 overall.
+    Gap is FP projecting more playing time/production at age 36 — decline layer would close this.
+    Decline detection layer (parking lot Tier 1) remains the correct fix.
   Altuve model #3 / FP-OVR #80 (age/decline candidate — all LA delta, sprint speed, K-rate,
     chase-rate flags firing; FP sees regression, model doesn't have decline layer).
   Run full 2B table after slot refresh; confirm Chisholm moves toward FP position rank.
@@ -1457,10 +1468,88 @@ Final commit hashes (Session 20):
   - 2e4655a — Session 19-20 data refresh + pipeline run May 4 2026
 
 PENDING MANUAL ACTIONS:
-  - Week 3 article (May 5-6 — TOMORROW): run_pipeline.py --write → weekly_update.py --update → --report --top 15
-  - Career lessons database (Sessions 17-20) — add new lessons manually in Claude.ai
+  - Week 3 article (May 5-6 — TODAY): outputs/week3_article_draft.md ready. Review and publish to Substack.
+  - Career lessons database (Sessions 17-21) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
-  - Update thread_handoff.md in Claude.ai with Session 20 summary
+  - Update thread_handoff.md in Claude.ai with Session 21 summary
+
+--- May 5, 2026 (Session 21) ---
+
+Two-track accuracy framework (weekly_update.py):
+  - LUCK_NORMALIZE_BUY=0.100, LUCK_NORMALIZE_SELL=-0.085: refuted only fires when luck signal clears
+  - LUCK_DEEPEN_THRESH=0.030: new "deepening" classification when luck score rises 30+ pts in 4-week window
+  - TRACK1_RESOLUTION_WEEK=10: official accuracy % suppressed until Week 10 (~mid-June)
+  - Rolling 4-week window: rolling_4wk_woba_delta, rolling_4wk_luck_delta, window_signal columns
+  - window_signal: "confirming" | "deepening" | "still_waiting" | "refuted_4wk" | "insufficient_data"
+  - WINDOW_LABEL dict for article-ready display strings
+  - _classify_window_signal() function added; import math added at top
+  - _classify_mechanism() updated: checks curr_luck before marking "refuted"
+  - cmd_report(): shows collection-phase breakdown instead of accuracy % before Week 10
+    "Confirmed: 30 | Still active: 15 | Signal deepening: 58 | Honest misses: 2"
+  - Recomputed mechanism: 17 refuted → 2 genuine refuted + 15 still_waiting
+  - 2 genuine refuted: Isaac Collins (slight sell, luck -0.074 normalized), Pete Crow-Armstrong (luck -0.014)
+  - Bradish (luck 0.111 = still_waiting but window_signal=refuted_4wk — honest miss framing in article)
+  - 37/37 PASS
+
+RP saves/holds projection fix (stat_projections.py):
+  - _STEAMER_SVH dict: loads Steamer full-season SV+HLD per pitcher from Steamers 2025 pitchers.csv
+  - _blend_sv_h(mlbam_id, games_remaining, is_starter, current_ip): Steamer-scaled by remaining fraction
+    remaining_frac = min(1.0, 0.70 × games_frac + 0.30 × (1.0 - ip_used_frac))
+  - Starters always return (0.0, 0.0); RPs with no Steamer data return (0.0, 0.0)
+  - proj_sv_h = int(proj_sv + proj_hld); was 0 for ALL 415 pitchers before this fix
+  - 165 RPs now have proj_sv_h > 0: Helsley 30, Iglesias 28, Williams 27, Miller 25 (all reasonable)
+  - Note: no live 2026 SV/HLD data exists in Statcast. Pace blending deferred.
+  - data/projections_2026.csv regenerated; data/player_values.json regenerated
+  - 37/37 PASS; all invariants PASS (Sanchez C#24, Yordan #2, Raleigh C#2, Baldwin C#4, Contreras C#5)
+
+Week 3 article draft (Task 3):
+  - outputs/week3_article_draft.md — complete draft ready for Substack
+  - Lead: Luzardo ERA 6.41→4.72 (luck +0.369→+0.720), strongest buy low confirmation in dataset
+  - Deepening: Stewart (luck +0.214→+0.439), Carter (luck +0.227→+0.449), Ramírez (luck +0.508→+0.496)
+  - Honest miss: Bradish (FIP up 1.24 — skill issue, luck +0.178→+0.111)
+  - New buy: Trent Grisham (luck +0.577, BABIP .145, xwOBA .395, 15% owned)
+  - Ke'Bryan Hayes (luck +0.551, BABIP .136, 0.5% owned) — secondary buy
+  - Get Hyped: Cam Schlittler (ERA 1.96, FIP 1.41, SwStr 15.7%, 41.3 IP — skill, not luck)
+  - Chapman LA delta: -17.2° (career 21.0° → current 3.7°) — confirmed sell signal
+  - CBS divergences: Soto ESPN#7/CBS#186 (data artifact), Betts ESPN#43/CBS#268 (low PA)
+  - No win/loss % published. Rolling 4-week window framing throughout.
+  - Full luck score spreadsheet release promised (INSERT LINK before publishing)
+
+2B audit (Task 4 — diagnostic):
+  - Chisholm: slot=6 (n=27 games, NYY), speed_flag=True + chase_flag=True (penalties correct)
+    Model 2B #14 (overall #149). slot 6 data is current (refreshed May 4 pipeline run).
+    NYY slot 6: OBP=.268/SLG=.343 — both below league avg. R_mult=0.935, RBI_mult=1.121.
+    If true slot is 3: R_mult would increase significantly (slots 4/5 SLG=.570/.540 behind him).
+    Action needed: verify Chisholm actual batting slot; if slot 3, update hitter_batting_slot_2026.json manually.
+    luck=0.099, wOBA=.280, xwOBA=.292 — small gap, not a buy signal. Speed + chase penalties correct.
+  - Altuve: slot=3 (n=26), age=36, la_delta=-8.7°, speed_trend=-0.2 ft/s (below -0.3 threshold)
+    Model 2B #8 (overall #115), FP rank #40. hh_rate_delta=+6.7pp (hard hit rate actually up).
+    K_pct_delta=-0.9pp, pull_pct_delta=-1.5pp — both below flag thresholds.
+    No active decline flags firing. FP divergence (~7 2B spots) driven by FP projecting more PA/production.
+    Decline detection layer needed (age ≥32 projection modifier — Tier 1 parking lot item still pending).
+  - NOTE: CLAUDE.md parking lot entry said "Altuve model #3/FP-OVR #80" — stale numbers from earlier session.
+    Current state: model 2B #8, FP rank #40.
+
+SB/speed projection diagnostic (Task 5 — no fix):
+  - Top 10 over-projections: all fringe players (Lile, Kemp, etc.) with Steamer SB ≈0 but position defaults ≥13
+    Root cause: model uses position defaults (CF=9.0, SS=8.5, etc.) ignoring individual speed profiles
+  - Top 10 under-projections: Elly De La Cruz (-27.9 vs Steamer ROS), Carroll (-19.8), Garcia (-15.9),
+    Abrams (-14.8), Turang (-14.1), Ohtani (-12.2), Lindor (-12.1)
+  - Systematic finding: position-default SB formula cannot capture extreme speed outliers (De La Cruz-type)
+    or correctly zero out players Steamer projects for <1 SB
+  - Fix approach (DEFERRED): blend proj_sb with Steamer ROS SB using same pattern as _blend_pa()
+    Priority: Tier 1 parking lot. De La Cruz (-27.9), Carroll (-19.8) are the most visible misses.
+  - Data source: Steamers 2025 batters.csv SB column (full-season). No 2026 live SB data in Statcast.
+
+Files modified this session:
+  - weekly_update.py (accuracy framework — constants, _classify_mechanism, _classify_window_signal, cmd_report)
+  - stat_projections.py (_STEAMER_SVH, _load_pt_lookups, _blend_sv_h, project_pitcher_counting)
+  - generate_projections.py (proj_sv_h column output)
+  - data/projections_2026.csv (regenerated)
+  - data/player_values.json (regenerated)
+  - data/calls_tracker.csv (rolling_4wk columns + mechanism recompute)
+  - outputs/week3_article_draft.md (NEW — full Week 3 article draft)
+  - CLAUDE.md (this changelog)
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
