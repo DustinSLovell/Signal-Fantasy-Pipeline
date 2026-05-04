@@ -66,6 +66,30 @@ def _norm(s: str) -> str:
     return re.sub(r"[^a-z ]", "", s.lower()).strip()
 
 
+def _norm_strip_suffix(s: str) -> str:
+    """Like _norm() but also strips trailing generational suffixes (jr, sr, ii, iii, iv, v).
+    Used when matching our pipeline names (which strip suffixes) against ESPN/FP names (which keep them).
+    """
+    s = _norm(s)
+    s = re.sub(r"\s+\b(jr|sr|ii|iii|iv|v)\b$", "", s).strip()
+    return re.sub(r"\s+", " ", s)
+
+
+# Maps our normalized pipeline name → FP/ESPN normalized name when they differ by more
+# than accents/capitalization (i.e. suffix differences _norm_strip_suffix cannot catch
+# in both directions).  Keys are _norm() of our name, values are _norm() of FP's name.
+_FP_ALIASES: dict[str, str] = {
+    # Generational suffixes kept by FP/ESPN, stripped in our Statcast pipeline
+    "bobby witt":         "bobby witt jr",
+    "vladimir guerrero":  "vladimir guerrero jr",
+    "jazz chisholm":      "jazz chisholm jr",
+    "michael harris":     "michael harris ii",
+    "ronald acuna":       "ronald acuna jr",
+    "fernando tatis":     "fernando tatis jr",
+    "daniel lynch":       "daniel lynch iv",
+}
+
+
 # ---------------------------------------------------------------------------
 # HTTP fetch
 # ---------------------------------------------------------------------------
@@ -325,9 +349,13 @@ def main():
 
     for row in existing:
         nk = _norm(row.get("player_name", ""))
+        # Alias fallback: if our pipeline name strips a suffix that FP/ESPN keeps,
+        # try the alias key before giving up.  _norm_strip_suffix covers the reverse
+        # direction (FP name has suffix, our lookup key does not).
+        nk_alias = _FP_ALIASES.get(nk, _FP_ALIASES.get(_norm_strip_suffix(nk), ""))
 
         # Ownership + VBR
-        fp = fp_lookup.get(nk)
+        fp = fp_lookup.get(nk) or (fp_lookup.get(nk_alias) if nk_alias else None)
         if fp:
             row["fp_ownership"] = f"{fp['fp_ownership']:.1f}"
             row["fp_espn_own"]  = (f"{fp['fp_espn_own']:.1f}"
@@ -343,6 +371,8 @@ def main():
 
         # ROS rank
         ros_rank = ros_lookup.get(nk)
+        if ros_rank is None and nk_alias:
+            ros_rank = ros_lookup.get(nk_alias)
         if ros_rank is not None:
             row["fp_ros_rank"] = str(ros_rank)
             updated_ros += 1
