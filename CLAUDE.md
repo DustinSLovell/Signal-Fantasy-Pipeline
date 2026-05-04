@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 3, 2026 (Sessions 1-19)
+# Last updated: May 4, 2026 (Sessions 1-20)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -469,34 +469,45 @@ without clear labeling would corrupt the published track record.
 
 ## PARKING LOT
 
-### TIER 1 — Do immediately after Week 2 publishes
+### TIER 1 — Session 21 priorities
 
-- **Playing time / injury module** — HIGHEST PRIORITY after Backtest C (Session 12 finding).
-  Fixes K, R, RBI, and HR projection errors simultaneously. The is_sp fix proved IP is the root
-  cause of K MAE (39.4 vs Steamer 21.9). The remaining gap is not K/9 error — it's IP error.
-  Design: for starters, load real IP projections from Steamer (already have the CSV) rather than
-  the fixed 22 starts × 5.6 IP formula. For relievers, use Steamer appearances. This makes our
-  IP match Steamer IP, so counting stat projections should close most of the accuracy gap.
-  Implementation: add steamer_ip field to all pitcher projections. For hitters, Steamer's PA
-  projection replaces 4.1 PA/game × games_rem. One source of truth for playing time.
-  Benefit: projection accuracy improves on K (biggest gap), R, RBI, HR without changing signal logic.
-  Note: this is a BACKTEST improvement only — production stat_projections.py uses real in-season
-  data which self-corrects for PT. The backtest needs PT from an external source because it
-  projects from April data forward without knowing who got hurt.
+- **Week 3 article pipeline run** — DEADLINE May 5-6. Run fresh Monday morning:
+  `python run_pipeline.py --write → weekly_update.py --update → --report --top 15`
+  Note: Session 20 data already refreshed May 4. If running same day, skip run_pipeline.py.
 
-- **Weekly tracker mechanism classifier** — HIGHEST PRIORITY build after Week 2. This is the core
-  accountability engine and the content foundation for the entire May-August publishing schedule.
-  Implement wOBA vs xwOBA decomposition in weekly_update.py to distinguish "results declining as
-  predicted" vs "contact quality improving" — same luck score movement, opposite meanings.
-  Add mechanism column with values: Normalizing | Re-evaluate | Confirmed | Refuted | Watch.
-  Without this, the tracker is showing movement but not explaining it. With it, every weekly
-  article has a built-in narrative engine ("these 3 calls are normalizing, these 2 need re-eval").
+- **RP saves/holds projection fix** — proj_sv_h=0 for ALL pitchers, entire RP table non-functional.
+  No saves/holds data available (FanGraphs blocked). Current workaround: tier-based SV/H estimates
+  in score_value.py (Elite→25SV/10H, Good→8SV/22H, Avg→3SV/8H) but these don't flow to
+  proj_sv_h in projections_2026.csv or player_values.json. Fix: wire score_value.py tier estimates
+  back to stat_projections.py output column so RP surplus is meaningful.
 
-- **April Big Board** — Consolidated view of all April calls, current status, and what the model
-  expects going forward. Publish as Week 3 content. Format: table with player, call date, signal,
-  current wOBA vs xwOBA, mechanism, status. This is the track record proof-of-work document.
+- **SB/speed projection accuracy audit** — pos-default SB formula (CF=9.0, SS=8.5, C=7.5) is
+  Steamer-independent and ignores in-season stolen base pace. Several players showing dramatically
+  different 2026 SB pace vs Steamer projection. Compare actual SB pace to proj_sb for top 20 SB
+  leaders; validate or update position defaults.
 
-### TIER 2 — This week
+- **2B full position audit** — Two confirmed divergences from Session 20 position tables:
+  Jazz Chisholm model #14 / FP-POS #2 (batting slot stale — slot 6 in data vs actual slot 3;
+    needs slot refresh + build_lineup_context.py re-run)
+  Altuve model #3 / FP-OVR #80 (age/decline candidate — all LA delta, sprint speed, K-rate,
+    chase-rate flags firing; FP sees regression, model doesn't have decline layer).
+  Run full 2B table after slot refresh; confirm Chisholm moves toward FP position rank.
+
+- **Player decline detection layer** — LA delta, sprint speed, HH rate, chase rate, K rate all
+  exist in luck model but do not feed into the projection engine. Build projection_decline_modifier
+  for age >= 32 with compounding deterioration signal. Altuve is the canonical case:
+  FP #80 overall, model projects as full 500 PA starter with no age/decline penalty.
+  Requires ablation test to validate before wiring to production projections.
+  Design: separate from signal model (no Layer 1 touch); applies to Layer 2 (stat_projections.py)
+  as a PA or rate multiplier only.
+
+- **CQS interaction with active Buy Low signals** — Ramírez, Stewart, Caminero all suppressed by
+  CQS floors/tiers despite strong Buy Low signals and FP top-3 position rankings. Review whether
+  CQS should be capped or bypassed when player has an active buy signal above 0.150 threshold.
+  Canonical question: should a FP-top-3 position player with luck score +0.48 be ranked below
+  a mediocre player whose CQS floor is higher? Design requires signal-aware CQS interaction rule.
+
+### TIER 2 — This session and next
 
 - **Pitcher Slight Buy sensitivity analysis** — n=4 historically is too thin to validate.
   Ablation test ERA floor (4.00→3.75?), luck score window width, IP minimum threshold independently.
@@ -505,6 +516,36 @@ without clear labeling would corrupt the published track record.
 
 - **is_article_worthy() gate** — build after Week 2 publishes. Filter signals worth featuring
   in articles from borderline cases. Prevents weak signals from cluttering the article table.
+
+- **SS multi-eligibility noise** — 12 of 15 SS in top-15 table flagged with ⚠ divergence vs FP.
+  Multi-position players distorting surplus calculations. Investigate whether SS pool is being
+  diluted by CI/MI eligibles who inflate replacement level.
+
+- **Skubal Sell High tension** — FP #1 overall SP, model #10 with Sell High signal. Investigate
+  whether sell signal is BABIP-driven (normalizes) or structural (velo drop, pitch mix change).
+  If BABIP-only sell, consider whether xwOBA components independently support the signal.
+
+- **SP divergences feature confirmation** — Schlittler, Misiorowski, McLean model top-5 vs FP
+  #20-28. Verify projected IP and K are reasonable for rookie arms. Check if role_override is
+  correctly classifying these pitchers as SP and not inflating IP via role_override fallback.
+
+- **Ownership acceleration tracking** — week-over-week ownership delta columns for breakout
+  detection. Add `own_delta_7d` column to player_ownership_2026.csv. Requires two consecutive
+  ownership snapshots; second snapshot available after Week 3 run.
+
+- **Ohtani two-player league configuration** — trade tool displays RP surplus noise for Ohtani
+  in standard leagues. Add two_way_player flag to league_settings.json schema; suppress pitcher
+  row for Ohtani in standard leagues; show both rows in two-way leagues.
+
+### TIER 3 — Post-season research
+
+- **OF replacement level review** — Jake McCarthy at N=36 may be elevated, compressing OF
+  surplus. If McCarthy is not reliably rostered in 12-team CBS leagues, replacement level
+  should shift to a weaker player. Re-run replacement_level.py with updated roster counts.
+
+- **SS replacement level review** — Masyn Winn at 252.2 FPTS appears high for replacement level.
+  Check if this is realistic for 12-team leagues or if a deeper SS (e.g., Ha-Seong Kim) is
+  more appropriate. Affects all SS surplus calculations.
 
 ### RESEARCH AGENDA (post-2026 season)
 
@@ -1342,11 +1383,84 @@ PENDING MANUAL ACTIONS:
 4. 37/37 PASS. All invariants PASS (Sanchez rank=22, Yordan rank=8, Raleigh rank=2, Baldwin rank=3).
    Smell tests re-verified after gate changes (Skenes→Rice: -110 AVOID, Skubal→Rice: -98 AVOID).
 
-PENDING MANUAL ACTIONS:
-  - Week 3 article (May 5-6 deadline — check if overdue): run_pipeline.py --write → weekly_update.py --update → --report --top 15
-  - Career lessons database (Sessions 17-19) — add new lessons manually in Claude.ai
+PENDING MANUAL ACTIONS (Sessions 19-20):
+  - Week 3 article (May 5-6 deadline — IMMINENT): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Sessions 17-20) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
-  - Update thread_handoff.md in Claude.ai with Session 19 summary (include Session 19 continued)
+  - Update thread_handoff.md in Claude.ai with Session 20 summary
+
+--- May 4, 2026 (Session 20) ---
+
+BARREL_TO_HR recalibration: 0.42 → 0.57 (stat_projections.py)
+  - Empirical median from 271 Steamer-matched players (N=271, May 2026 calibration)
+  - Impact: Guerrero Jr. HR 17→20 (+3), FPTS 310→331; Ramírez HR 16→18 (+2), FPTS 318→352
+  - Downstream: 1B and 3B position ranks improved for power hitters
+
+Lineup context R_mult floor for batting slots 3 and 4 (lineup_context.py):
+  - Cleanup hitters cap downside at 0.93 (7% penalty max) regardless of team lineup quality
+  - Prevents 3/4 slot stars from being penalized when their lineup is weak behind them
+  - Committed with BARREL_TO_HR change
+
+FP ROS rank scrape (fetch_fantasypros_ownership.py):
+  - New endpoint: FP ROS projections page → fp_ros_rank + fp_vbr_rank columns
+  - Coverage: 8% → 96% (fp_rank populated for ~415 of 434 hitters)
+  - fp_ros_pos_rank computed per position group from FP data
+  - _FP_ALIASES dict built: 23/24 name match failures resolved (Mike King, Louis Varland, etc.)
+  - Yordan position fix: DH → LF (correctly placed in OF pool, not 1B pool)
+
+steamer_pt_override 4-gate tightening (stat_projections.py):
+  - Override fires when: G ∈ [40, 80) AND pace_ros > steamer_ros × 1.5 AND pa_so_far >= 80
+  - Raised G floor 20 → 40 (eliminates fringe bench players)
+  - Added PA gate pa_so_far >= 80 (prevents <25 PA injured/optioned players from firing)
+  - Count: 120 → ~9 legitimate overrides
+  - Ben Rice: PA 285→384; surplus improved from -47 to approximately neutral range
+
+Position table generation (new diagnostic — Session 20):
+  - 8-position tables (C, 1B, 2B, 3B, SS, OF, SP, RP), 15 rows each
+  - Columns: Rk | Name | Team | FPTS | Surplus | Signal | OvrRk | Own% | FP_POS | FP_OVR | ⚠ | Note
+  - Divergence flag (⚠) fires only when fp_rank data available AND |pos_rk - fp_pos_rk| > 5
+  - Key divergences identified: 12/15 SS flagged; Chisholm 2B #14 vs FP #2; Rutschman C #15 vs FP #1
+
+Fix 1 — Career BA anchor (stat_projections.py):
+  - Veteran exception: career_pa >= 1000 AND formula_avg >= 0.240 AND formula_avg >= career_ba
+    → reduces CAREER_BA_WEIGHT from 0.65 → 0.50 (50/50 blend vs 65/35)
+  - Guard: formula_avg >= career_ba required — only fires when current contact EXCEEDS career level
+  - AVG floor raised 0.195 → 0.210
+  - Impact: Chisholm proj_avg 0.173→0.247 (stat_projections); Donovan 0.178→0.256 in projections_2026.csv
+  - Guerrero Jr. unaffected (guard correctly prevents regression when formula_avg < career_ba)
+  - 37/37 PASS
+
+Fix 2 — score_value.py conditional AVG floor:
+  - Added _load_fg_career_ba() helper: PA-weighted career BA from data/fg_batting_{2022-2025}.csv
+  - Gate: career_ba >= 0.240 AND (career_ba - xBA) > 0.040 → AVG_proj = max(xBA, career_ba × 0.75)
+  - Chisholm (career_ba=0.250, xBA=0.171): AVG_proj 0.171 → 0.188 (+3.8 CBS FPTS)
+  - Donovan (career_ba=0.282, xBA=0.178): AVG_proj 0.178 → 0.212 (+7.6 CBS FPTS)
+  - Sanchez (career_ba=0.214 < 0.240): GATE FAILS → unchanged → invariant preserved (rank 24)
+  - 37/37 PASS; all invariants PASS
+
+Fix 3 — CQS PA-scaled floor decay (score_value.py):
+  - Formula: floor_eff = floor_base × max(0.50, 1.0 − (pa_2026 − 150) / 600)
+  - < 150 PA: full floor (small-sample protection); 150-750 PA: linear 100%→50% decay
+  - > 750 PA: permanent 50% floor (reputation protection never zeroes out)
+  - Adds PA column to h_merged; stores cqs_floor_base in player_values.json separately
+  - Current state: all 5 egregious cases (Yelich, Goldschmidt, Springer, Betts, Rutschman) < 150 PA
+    → decay dormant; will activate mid-May as PA accumulate
+  - Decay schedule at floor_base=60: PA=200→55, PA=300→45, PA=500→30, PA=750+→30
+  - 37/37 PASS; Sanchez rank=24; all invariants PASS
+
+Two-Muncy disambiguation: MLBAM IDs confirmed
+  - LAD Muncy: 571970 (age 36); ATH Muncy: 691777 (age 24)
+  - Fixed in prior session; verified in Session 20 audit
+
+Final commit hashes (Session 20):
+  - f1123e1 — AVG floor fixes + CQS time-decay (Fixes 1-3)
+  - 2e4655a — Session 19-20 data refresh + pipeline run May 4 2026
+
+PENDING MANUAL ACTIONS:
+  - Week 3 article (May 5-6 — TOMORROW): run_pipeline.py --write → weekly_update.py --update → --report --top 15
+  - Career lessons database (Sessions 17-20) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Update thread_handoff.md in Claude.ai with Session 20 summary
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
