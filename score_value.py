@@ -262,6 +262,32 @@ def compute_pitcher_kbb(sc_path: str) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
+# Career BA from FanGraphs batting files
+# ---------------------------------------------------------------------------
+
+def _load_fg_career_ba() -> dict:
+    """PA-weighted career batting average from multi-year FG data.
+    Returns {mlbam_id (int): career_ba (float)} for all batters found.
+    Gracefully returns {} if no files are present.
+    """
+    FG_YEARS = [2022, 2023, 2024, 2025]
+    frames = []
+    for yr in FG_YEARS:
+        path = os.path.join(BASE_DIR, "data", f"fg_batting_{yr}.csv")
+        if os.path.exists(path):
+            frames.append(pd.read_csv(path))
+    if not frames:
+        return {}
+    fg = pd.concat(frames, ignore_index=True).dropna(subset=["batter_id", "pa", "ba"])
+    result = {}
+    for bid, grp in fg.groupby("batter_id"):
+        total_pa = grp["pa"].sum()
+        if total_pa >= 1:
+            result[int(bid)] = float((grp["ba"] * grp["pa"]).sum() / total_pa)
+    return result
+
+
+# ---------------------------------------------------------------------------
 # Sprint speed (Baseball Savant API)
 # ---------------------------------------------------------------------------
 
@@ -749,7 +775,8 @@ def compute_quality_points_pitchers(pitcher_df: pd.DataFrame,
 # Hitter projection
 # ---------------------------------------------------------------------------
 
-def project_hitter_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
+def project_hitter_stats(df: pd.DataFrame, cfg: dict,
+                         career_ba_lookup: dict | None = None) -> pd.DataFrame:
     """
     Project full-season counting and rate stats from Statcast expected metrics.
 
@@ -846,7 +873,28 @@ HR    = blended_barrel_rate × 0.60 BBE/PA ...
     out["OBP_proj"] = (xba_col + bb_col * (1.0 - xba_col) + 0.005).clip(0.200, 0.600)
 
     # ── AVG (League 2 category) ───────────────────────────────────────────────
-    out["AVG_proj"] = xba_col.clip(0.100, 0.400)
+    # Base: xBA clipped to [0.100, 0.400]
+    # Conditional career floor: established hitters (.240+ career BA) whose April
+    # xBA is dragging far below career level get a floor at career_ba × 0.75.
+    # Gate: career_ba >= 0.240 AND (career_ba - xBA) > 0.040.
+    # This prevents xBA noise from catastrophically under-projecting AVG for
+    # hitters with a proven track record (Chisholm, Donovan cases from Session 20).
+    # Sanchez guard: career_ba = 0.214 < 0.240 → gate fails → no change (invariant preserved).
+    avg_proj = xba_col.copy()
+    if career_ba_lookup:
+        batter_col = out["batter"] if "batter" in out.columns else pd.Series(dtype=float)
+        for idx in out.index:
+            try:
+                bid = int(batter_col.at[idx])
+            except (ValueError, TypeError, KeyError):
+                continue
+            cba = career_ba_lookup.get(bid)
+            if cba is None:
+                continue
+            xba = avg_proj.at[idx]
+            if cba >= 0.240 and (cba - xba) > 0.040:
+                avg_proj.at[idx] = max(xba, cba * 0.75)
+    out["AVG_proj"] = avg_proj.clip(0.100, 0.400)
 
     return out
 
@@ -1531,9 +1579,14 @@ def main():
         lambda bid: (hitter_luck.get(int(bid)) or {}).get("xwoba_3yr")
     )
 
+    # ── Load career BA for conditional AVG floor ──────────────────────────
+    print("Loading FG career BA for AVG floor ...")
+    _career_ba_lookup = _load_fg_career_ba()
+    print(f"  Loaded career BA for {len(_career_ba_lookup):,} batters")
+
     # ── Project stats ──────────────────────────────────────────────────────
     print("Projecting hitter stats ...")
-    hitter_df = project_hitter_stats(hitter_df, cfg)
+    hitter_df = project_hitter_stats(hitter_df, cfg, career_ba_lookup=_career_ba_lookup)
 
     # ── Lineup context multipliers — adjust R_proj and RBI_proj ────────────
     # Backtest-validated against 2025 actuals (n=141): R MAE -0.94, RBI MAE -0.62.
@@ -1691,7 +1744,8 @@ def main():
 
     h_merged = hitter_df[["batter", "name", "position"] +
         [f"{c}_proj" for c in set(h_cats_l1 + h_cats_l2) if f"{c}_proj" in hitter_df.columns] +
-        ["PA_proj"]
+        ["PA_proj"] +
+        (["PA"] if "PA" in hitter_df.columns else [])
     ].copy()
 
     h_merged = h_merged.merge(
@@ -1741,14 +1795,29 @@ def main():
         l1_val  = _round_proj(row.get("league1_value"), 1) or 0.0
         l2_val  = _round_proj(row.get("league2_value"), 1) or 0.0
 
-        # ── CQS floor application ────────────────────────────────────────────
+        # ── CQS floor application — PA-scaled decay ─────────────────────────
+        # Floor decays linearly from 100% to 50% as season PA accumulates:
+        #   < 150 PA  : full floor (small-sample protection)
+        #   150-750 PA: floor × max(0.50, 1.0 − (pa_2026 − 150) / 600)
+        #   > 750 PA  : floor × 0.50 (permanent half-floor; never zero)
+        # This prevents sustained underperformers (Goldschmidt, Yelich) from
+        # being propped at full floor-value deep into the season.
         cqs_rec      = cqs_data.get(pid_str, {})
         cqs_val      = cqs_rec.get("cqs")
         cqs_tier     = cqs_rec.get("tier")
-        cqs_floor    = int(cqs_rec.get("floor", 0) or 0)
+        cqs_floor_base = int(cqs_rec.get("floor", 0) or 0)
         conv_flag    = cqs_rec.get("conversion_flag")
         conv_note    = cqs_rec.get("conversion_note")
         avail_flag   = cqs_rec.get("availability_flag")
+
+        # Compute effective (decayed) floor
+        _pa_2026 = float(row.get("PA") or 0)
+        if cqs_floor_base > 0 and _pa_2026 > 150:
+            _decay = max(0.50, 1.0 - (_pa_2026 - 150) / 600)
+            cqs_floor = round(cqs_floor_base * _decay)
+        else:
+            cqs_floor = cqs_floor_base
+
         floor_applied = False
         if cqs_floor > 0:
             if isinstance(l1_val, (int, float)) and l1_val < cqs_floor:
@@ -1786,6 +1855,7 @@ def main():
             # CQS fields
             "cqs":              round(cqs_val, 1) if cqs_val is not None else None,
             "cqs_tier":         cqs_tier,
+            "cqs_floor_base":   cqs_floor_base if cqs_floor_base > 0 else None,
             "cqs_floor":        cqs_floor if cqs_floor > 0 else None,
             "cqs_floor_applied":floor_applied,
             "conversion_flag":  conv_flag if isinstance(conv_flag, str) and conv_flag else None,

@@ -105,6 +105,11 @@ def compute_lineup_multipliers(mlbam_id: int, team: str) -> tuple[float, float]:
     r_raw  = 1.0 + R_SENSITIVITY * (weighted_slg / lg_slg - 1.0)
     r_mult = round(min(MULT_MAX, max(MULT_MIN, r_raw)), 4)
 
+    # Cleanup hitter protection: slots 3 and 4 drive their own run-scoring
+    # opportunities; cap downside at 7% penalty regardless of team lineup quality.
+    if slot in (3, 4):
+        r_mult = max(r_mult, 0.93)
+
     # RBI multiplier — OBP of batters who bat before this player
     weighted_obp = sum(
         w * _get_obp(team, _cyclic(slot, -off))

@@ -60,7 +60,7 @@ FG_YEARS      = [2022, 2023, 2024, 2025]
 # Constants
 # ---------------------------------------------------------------------------
 SEASON_END_2026   = date(2026, 10, 1)
-BARREL_TO_HR      = 0.42
+BARREL_TO_HR      = 0.57   # calibrated to Steamer-implied median (N=271, May 2026)
 SWSTR_TO_K9       = 77.3   # swstr_rate is decimal (0.110 = 11%); 0.110 × 77.3 ≈ 8.5 K/9
 WHIP_ERA_SLOPE    = 0.20
 WHIP_ERA_INTERCEPT = 0.55
@@ -648,8 +648,18 @@ def hitter_true_talent(row: pd.Series, baseline: dict) -> dict:
     # Primary blend: career BA anchors against April xwOBA swings.
     # Backtest A finding: pure xwOBA formula over-projects AVG for high-xwOBA hitters
     # whose career BA lags — career data is a better stabilizer at small April samples.
+    # Veteran exception: for established players (career_pa >= 1000) whose current
+    # contact quality EXCEEDS their career average (formula_avg >= career_ba AND >= 0.240),
+    # reduce career anchor to 0.50 — the 65% weight suppresses real positive signal.
+    # Guard: if formula_avg < career_ba, keep 65% anchor (it's protecting a higher career BA).
     if career_ba == career_ba and career_pa >= MIN_CAREER_PA_BA:
-        true_avg = career_ba * CAREER_BA_WEIGHT + formula_avg * APRIL_AVG_WEIGHT
+        if career_pa >= 1000 and formula_avg >= 0.240 and formula_avg >= career_ba:
+            ba_weight = 0.50
+            fa_weight = 0.50
+        else:
+            ba_weight = CAREER_BA_WEIGHT
+            fa_weight = APRIL_AVG_WEIGHT
+        true_avg = career_ba * ba_weight + formula_avg * fa_weight
     else:
         true_avg = formula_avg  # sparse career data — fall back to xwOBA formula
 
@@ -659,7 +669,7 @@ def hitter_true_talent(row: pd.Series, baseline: dict) -> dict:
     elif xwoba_gap < -0.030:
         true_avg -= 0.008   # lucky hitter — nudge AVG down toward true contact
 
-    true_avg = max(0.195, min(0.375, true_avg))
+    true_avg = max(0.210, min(0.375, true_avg))
 
     # TRUE_TALENT_POWER — barrel rate × BARREL_TO_HR adjusted for BBE rate
     barrel_rate = _safe_float(row.get("barrel_rate"), 0.065)
@@ -927,7 +937,7 @@ def project_hitter_counting(blended: dict,
     k_pct   = blended.get("true_k_pct",   0.220)
     sb_pg   = blended.get("true_sb_per_game", 0.0)
 
-    HR  = max(0, int(projected_pa * hr_rate))
+    HR  = min(45, max(0, int(projected_pa * hr_rate)))   # 45 HR ROS hard cap
     BB  = max(0, int(projected_pa * bb_pct))
     H   = max(0, int(projected_pa * avg * (1 - bb_pct)))
     if H < HR:
