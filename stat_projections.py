@@ -131,12 +131,50 @@ _STEAMER_PA:  dict = {}   # str(mlbam_id) → full-season PA float
 _STEAMER_G:   dict = {}   # str(mlbam_id) → full-season G float (for stale-projection detection)
 _STEAMER_IP:  dict = {}   # str(mlbam_id) → {"IP": float, "GS": float}
 _STEAMER_SVH: dict = {}   # str(mlbam_id) → {"SV": float, "HLD": float}
+_STEAMER_SB:  dict = {}   # str(mlbam_id) → full-season SB float
 _IL_STATUS:   dict = {}   # int(mlbam_id) → "ACTIVE" | "INJURY_RESERVE" | "DAY_TO_DAY"
 _HITTER_GP:   dict = {}   # int(batter_id) → games_played (unique game_pk count)
 _PT_LOADED:   bool = False
 # Side-effect flag: set True for any player where _blend_pa fires the stale-Steamer override.
 # Consumed by project_player() to tag the steamer_pt_override column.
 _STEAMER_PT_OVERRIDE_FLAGS: dict = {}  # int(mlbam_id) → True
+
+# Decline detection: yearly sprint speed data (loaded once, keyed by str(mlbam_id))
+_SPRINT_YEARLY:   dict = {}   # str(mlbam_id) → {speeds:{year:mph}, latest_speed, ...}
+_SPRINT_Y_LOADED: bool = False
+
+SPRINT_YEARLY_JSON = BASE_DIR / "data" / "hitter_sprint_speed.json"
+
+
+def _load_sprint_yearly() -> None:
+    global _SPRINT_YEARLY, _SPRINT_Y_LOADED
+    if _SPRINT_Y_LOADED:
+        return
+    if SPRINT_YEARLY_JSON.exists():
+        try:
+            raw = json.loads(SPRINT_YEARLY_JSON.read_text(encoding="utf-8"))
+            _SPRINT_YEARLY = {str(k): v for k, v in raw.items()}
+        except Exception:
+            pass
+    _SPRINT_Y_LOADED = True
+
+
+def _speed_vs_career(mlbam_id: int) -> float:
+    """Return current sprint speed minus career average. NaN if data insufficient."""
+    _load_sprint_yearly()
+    sp = _SPRINT_YEARLY.get(str(mlbam_id), {})
+    if not sp:
+        return float("nan")
+    speeds_dict = sp.get("speeds", {})
+    latest = sp.get("latest_speed")
+    if not latest or not speeds_dict or len(speeds_dict) < 2:
+        return float("nan")
+    all_speeds = [float(v) for v in speeds_dict.values() if v is not None]
+    if len(all_speeds) < 2:
+        return float("nan")
+    career_avg = sum(all_speeds[:-1]) / len(all_speeds[:-1])
+    return float(latest) - career_avg
+
 
 # ---------------------------------------------------------------------------
 # Name normalisation (mirrors trade_analyzer.py)
@@ -325,7 +363,7 @@ def load_all_career_data() -> dict:
 
 def _load_pt_lookups() -> None:
     """Lazy-load Steamer PA/IP/SV/HLD, IL status, and hitter games-played lookups."""
-    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _STEAMER_SVH, _IL_STATUS, _HITTER_GP, _PT_LOADED
+    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _STEAMER_SVH, _STEAMER_SB, _IL_STATUS, _HITTER_GP, _PT_LOADED
     if _PT_LOADED:
         return
 
@@ -345,6 +383,12 @@ def _load_pt_lookups() -> None:
                     _STEAMER_PA[mid] = pa
                 if mid and math.isfinite(g):
                     _STEAMER_G[mid] = g
+                try:
+                    sb = float(row.get("SB", 0) or 0)
+                except (ValueError, TypeError):
+                    sb = 0.0
+                if mid and math.isfinite(sb) and sb >= 0:
+                    _STEAMER_SB[mid] = sb
 
     if STEAMER_PIT_CSV.exists():
         with open(STEAMER_PIT_CSV, newline="", encoding="utf-8-sig") as f:
@@ -963,7 +1007,9 @@ def project_hitter_counting(blended: dict,
     RBI_per_H  = 0.32
     RBI = max(0, int(HR * RBI_per_HR + (H - HR) * RBI_per_H))
 
-    SB  = max(0, int(sb_pg * games_remaining * health_factor))
+    sprint_sb = sb_pg * games_remaining * health_factor
+    blended_sb = _blend_sb(mlbam_id, games_remaining, sprint_sb)
+    SB = max(0, int(blended_sb))
 
     # Apply luck signal multiplier — injects buy/sell direction into counting stats
     mult = LUCK_MULTIPLIERS.get(signal, LUCK_MULTIPLIERS["Neutral"])
@@ -1038,6 +1084,41 @@ def _blend_sv_h(mlbam_id: Optional[int],
     proj_hld = round(s_hld * remaining_frac)
 
     return float(proj_sv), float(proj_hld)
+
+
+def _blend_sb(
+    mlbam_id: Optional[int],
+    games_remaining: int,
+    sprint_sb: float,
+) -> float:
+    """Return blended rest-of-season SB projection.
+
+    Blends Steamer individual SB projection (scaled to ROS) with the sprint-speed-
+    tier estimate. When no Steamer data is available, falls back to sprint_sb unchanged.
+
+    Blend weights: 0.50 Steamer / 0.50 sprint tier. Equal weight because SB is more
+    volatile than PA and individual player speed is already captured by the sprint tier.
+
+    No live 2026 SB data is available from Statcast (SB events are not in pitch-level
+    data). FanGraphs blocked as of May 2026. Steamer-only blend is the correct
+    first implementation; pace blending deferred until live data is available.
+
+    Hard cap: 65 SB ROS (historically extreme; prevents outlier pace inflation).
+    """
+    _load_pt_lookups()
+    if mlbam_id is None:
+        return sprint_sb
+
+    s_sb_full = _STEAMER_SB.get(str(mlbam_id))
+    if s_sb_full is None or s_sb_full < 0:
+        return sprint_sb
+
+    steamer_ros = s_sb_full * (games_remaining / 162.0)
+    # 0.65/0.35 calibrated from 2025 OOS backtest (n=235):
+    # 50/50 MAE=5.84, 65/35 MAE=5.42, Steamer pure MAE=4.72.
+    # 65/35 is within 15% of Steamer (threshold per calibration rule).
+    blended = 0.65 * steamer_ros + 0.35 * sprint_sb
+    return min(65.0, max(0.0, blended))
 
 
 def project_pitcher_counting(blended: dict,
@@ -1441,6 +1522,37 @@ def project_player(name: str,
                     proj_counting["projected_rbi"] = max(0, round(
                         proj_counting["projected_rbi"] * (1 + _pf_delta * 0.7)))
                     proj_counting["pf_adj_applied"] = True
+
+        # Decline detection — for age 32+ players with compounding deterioration signals.
+        # ALL conditions must fire before multipliers are applied:
+        #   1. Age >= 32
+        #   2. Sprint speed current year > 0.5 ft/sec below career average (multi-year)
+        #   3. Hard hit rate below career average by > 3pp
+        #   4. EITHER LA delta < 0 (swing flattening) OR chase delta > +2pp above career
+        # Multipliers: proj_r × 0.94, proj_rbi × 0.94, proj_hr × 0.92. AVG unchanged
+        # (AVG already anchored to career BA). Does not compound with luck signal mult
+        # (both applied to base projection independently; net effect is product of both).
+        # Speed uses multi-year career average from sprint JSON, not YoY (more reliable
+        # for sustained decline detection vs one-year fluctuations).
+        age_val        = _safe_float(row.get("age"),          float("nan"))
+        hh_rate_delta  = _safe_float(row.get("hh_rate_delta"), float("nan"))
+        la_delta_val   = _safe_float(row.get("la_delta"),     float("nan"))
+        chase_delta_v  = _safe_float(row.get("chase_delta"),  float("nan"))
+
+        # Sprint speed: current vs career average (multi-year, from hitter_sprint_speed.json)
+        speed_vs_career = _speed_vs_career(batter_id)
+
+        decline_triggered = False
+        if (not math.isnan(age_val) and age_val >= 32
+                and not math.isnan(speed_vs_career) and speed_vs_career < -0.5
+                and not math.isnan(hh_rate_delta) and hh_rate_delta < -0.03
+                and (not math.isnan(la_delta_val) and la_delta_val < 0
+                     or not math.isnan(chase_delta_v) and chase_delta_v > 0.02)):
+            proj_counting["projected_r"]   = max(0, round(proj_counting["projected_r"]   * 0.94))
+            proj_counting["projected_rbi"] = max(0, round(proj_counting["projected_rbi"] * 0.94))
+            proj_counting["projected_hr"]  = max(0, round(proj_counting["projected_hr"]  * 0.92))
+            decline_triggered = True
+        proj_counting["decline_flag"] = decline_triggered
 
         warnings      = _sanity_check_hitter(proj_counting, row)
 

@@ -481,15 +481,16 @@ without clear labeling would corrupt the published track record.
   proj_sv_h in projections_2026.csv or player_values.json. Fix: wire score_value.py tier estimates
   back to stat_projections.py output column so RP surplus is meaningful.
 
-- **SB/speed projection fix** — DIAGNOSED Session 21. Top divergences (Steamer ROS vs model):
-  Elly De La Cruz: Steamer 40.9 ROS vs model 13.0 (-27.9 gap)
-  Corbin Carroll: Steamer 31.8 vs model 12.0 (-19.8)
-  Maikel Garcia: Steamer 21.9 vs model 6.0 (-15.9)
-  CJ Abrams: Steamer 27.8 vs model 13.0 (-14.8)
-  Root cause: position defaults (CF=9.0, SS=8.5, C=7.5) ignore individual speed profiles.
-  Fix: blend proj_sb with Steamer ROS SB using _blend_pa() pattern in stat_projections.py.
-  No live 2026 SB data exists in Statcast — Steamer-only blend is correct first step.
-  Implement in stat_projections._blend_sv_h() or a new _blend_sb() function.
+- **SB/speed projection fix** — PARTIALLY FIXED Session 22.
+  stat_projections.py: _blend_sb() IMPLEMENTED (0.65/0.35 Steamer-ROS/sprint-tier blend).
+  Backtest result (n=235): Sprint-only 7.53 MAE | 65/35 blend 5.42 MAE | Steamer pure 4.72 MAE.
+  After fix (ROS SB): De La Cruz 13→31, Carroll 9→22, Turang 9→29.
+  **STILL BROKEN in score_value.py**: player_values.json / ranking engine still uses position defaults
+  (SS=8.5, CF=9.0) + PLAYER_SB_PER_600 dict (only Ohtani hardcoded). Does NOT call _blend_sb().
+  This drives 9 of top 15 model vs FP ranking divergences (Session 22 audit).
+  **PRIORITY FIX**: Load Steamer SB into score_value.py → replace POS_SB_DEFAULT lookup with
+  Steamer-first approach. Same pattern as _blend_pa(). 30-line change.
+  Target: close 6+ of top-10 divergences (Henderson gap=98, De La Cruz 94, Turner 94, Turang 78, etc.)
 
 - **2B full position audit** — COMPLETED Session 21. Key findings:
   Chisholm (NYY): slot=6 (n=27 games), speed_flag+chase_flag firing, luck=+0.099 (not a buy).
@@ -1550,6 +1551,87 @@ Files modified this session:
   - data/calls_tracker.csv (rolling_4wk columns + mechanism recompute)
   - outputs/week3_article_draft.md (NEW — full Week 3 article draft)
   - CLAUDE.md (this changelog)
+
+--- May 5, 2026 (Session 22) ---
+
+Task 1 — Chisholm batting slot fix (data/hitter_batting_slot_2026.json):
+  - Slot 6 → 5 for Jazz Chisholm (MLBAM 665862); manual_override=True flag added
+  - RBI_mult 1.1209 → 1.2000 (hit 1.20 cap); R_mult 0.9353 → 0.9482
+  - Impact: projected RBI 48→52 (+4). Rank unchanged at 2B #14 — CQS tier cluster
+  - FP #2 gap not closable by slot alone; speed_flag+chase_flag penalties still active
+
+Task 2 — _blend_sb() module (stat_projections.py):
+  - _STEAMER_SB module-level dict (loads Steamers 2025 batters.csv SB column)
+  - SPRINT_YEARLY_JSON + _load_sprint_yearly() + _speed_vs_career() functions
+    (read hitter_sprint_speed.json multi-year speed structure, NOT hitter_career_sprint.json)
+  - _blend_sb(mlbam_id, games_remaining, sprint_sb): 0.65/0.35 Steamer-ROS/sprint blend
+    SB cap: 65.0 max; returns sprint_sb when no Steamer data available
+  - project_hitter_counting(): sprint_sb → blended_sb → SB (replaces position-default formula)
+  - Before/after top divergences: De La Cruz 13→31, Carroll 9→22, Turang 9→29 (ROS SB)
+  - NOTE: score_value.py has its own SB logic (position defaults + PLAYER_SB_PER_600 dict)
+    and does NOT use _blend_sb(). Divergence impact requires separate score_value.py fix.
+
+Task 3 — SB backtest (weight calibration):
+  - Weight sweep results (n=235, CBS 2025 actuals):
+    Sprint-only: 7.53 MAE | 50/50 blend: 5.84 MAE | 65/35 blend: 5.42 MAE | Steamer pure: 4.72 MAE
+  - 65/35 is 14.8% worse than Steamer (within 15% threshold) → adopted as production weight
+  - Systematic miss: elite breakout speedsters (Chandler Simpson 44 actual/6 projected; Soto 38/4)
+    No system catches these well — roster-level unknown, no predictive signal in April data
+  - 37/37 PASS throughout
+
+Task 4 — Decline detection layer (stat_projections.py, generate_projections.py):
+  - _speed_vs_career(mlbam_id): reads hitter_sprint_speed.json (NOT hitter_career_sprint.json)
+    Computes latest_speed minus average of all prior years; requires ≥2 seasons
+  - Trigger conditions (ALL must pass): age ≥ 32 AND speed_vs_career < -0.5 AND
+    hh_rate_delta < -0.03 AND (la_delta < 0 OR chase_delta > 0.02)
+  - Multipliers: proj_r × 0.94, proj_rbi × 0.94, proj_hr × 0.92
+  - 3 triggers out of 98 age 32+ hitters:
+    Corey Seager (32): R 61→57, RBI 54→51, HR 18→17 | Buy Low signal
+    Bryce Harper (34): R 65→61, RBI 64→60, HR 23→21 | Buy Low signal
+    Jorge Polanco (33): R 40→38, RBI 34→32, HR 9→8 | Neutral
+  - Altuve correctly NOT triggered: speed -0.47 (above -0.5 threshold), HH rate +6.7pp (positive)
+  - Freeman correctly NOT triggered: speed -0.87 BUT hh_rate_delta +3.7pp (positive HH)
+  - CQS floors dominate for Seager/Harper → no rank change in player_values.json (ESV < floor)
+  - generate_projections.py: decline_flag column added to COLUMNS and both hitter/pitcher row dicts
+  - 37/37 PASS; all invariants PASS
+
+Task 5 — Ranking audit (model vs FP top 25 divergences):
+  Root cause analysis: SB under-projection in score_value.py is the dominant driver
+  - score_value.py uses position-based SB defaults (SS=8.5, CF=9.0) NOT Steamer individual SB
+  - Only hardcoded override: Ohtani (660271) → 40 SB/600PA
+  - 9 of 15 largest divergences are primarily SB-driven (Henderson, De La Cruz, Turner, Turang,
+    Julio Rodríguez, Bobby Witt, Carroll, Ramírez, Bichette)
+  Top classifications:
+    NEEDS REVIEW: Henderson (SB+AVG), De La Cruz (SB), Turner (SB+AVG), Turang (SB),
+      Julio (SB), Witt (SB), Carroll (SB+Sell High), Ramírez (SB), Bichette (SB),
+      Rutschman (low-PA slump), Adames (AVG), Bregman (AVG)
+    JUSTIFIED: Altuve (age 36), Correa (realistic current stats), Raleigh (model correctly bullish)
+  ACTION REQUIRED: Wire _blend_sb() (or Steamer SB lookup) into score_value.py
+    Fix estimated to close 6+ of the top 10 divergences
+    Add as Tier 1 parking lot item: "score_value.py SB fix — wire Steamer individual SB"
+
+Task 6 — Saves/holds validation:
+  - _blend_sv_h() correctly scales Steamer 2025 full-season SV+HLD by remaining-games fraction
+  - Our proj vs Steamer ROS-scaled: MAE = 0.6 (15 matched closers) — essentially identical
+  - Steamer full-season SV vs CBS 2025 actual SV: MAE = 5.8 (baseline accuracy for closer projections)
+  - Closer projections are inherently volatile (role changes, trades, injuries dominate vs model skill)
+  - Our top-closer ordering (Helsley 30, Iglesias 28, Williams 27) looks reasonable for ROS 2026
+
+Files modified this session:
+  - data/hitter_batting_slot_2026.json (Chisholm slot 5, manual_override=True)
+  - stat_projections.py (_STEAMER_SB, _load_sprint_yearly, _speed_vs_career, _blend_sb,
+    project_hitter_counting SB line, decline detection block)
+  - generate_projections.py (decline_flag column)
+  - data/projections_2026.csv (regenerated — decline flags + SB blend)
+  - data/player_values.json (regenerated)
+  - CLAUDE.md (this changelog)
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — overdue deadline was May 5-6
+  - score_value.py SB fix — Tier 1 parking lot (see Task 5 above)
+  - Career lessons database (Sessions 22) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Update thread_handoff.md in Claude.ai with Session 22 summary
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
