@@ -1966,6 +1966,77 @@ PENDING MANUAL ACTIONS:
   - White paper Section 10 update in 2-3 weeks
   - Download updated thread_handoff.md to Claude.ai
 
+--- May 5, 2026 (Session 32) ---
+Pure diagnostic + design session — no production code changes.
+
+HR Projection Audit (Tasks 2a-2c):
+  - Tier breakdown (backtest_C_hitters_2025.csv, n=230):
+    <10 HR (n=74):  Model MAE=3.194, Steamer MAE=2.741 — Steamer wins (+0.453)
+    10-20 HR (n=78): Model MAE=3.253, Steamer MAE=5.125 — MODEL WINS (-1.872)
+    20-30 HR (n=57): Model MAE=5.776, Steamer MAE=5.054 — Steamer wins (+0.722)
+    30+ HR (n=21):  Model MAE=17.190, Steamer MAE=12.905 — Steamer wins (+4.285, structural PA miss)
+    Overall:        Model MAE=6.22,   Steamer MAE=5.92  — Steamer wins (+0.30)
+  - Signal tier: Buy Low (n=44) model MAE=6.062 vs Steamer 6.344 — MODEL WINS
+    Sell High (n=25) model MAE=8.124 vs Steamer 6.720 — Steamer wins
+  - BARREL_TO_HR=0.57 calibration check:
+    Implied BTR median = 0.482 (n=183 with ≥30 BBE April 2025)
+    5-10% barrel tier (n=60): implied 0.532, within 8% of 0.57 — acceptable
+    10%+ barrel tier: implied lower (0.430, 0.385) — seasonal effect, not calibration error
+    Elite power hitters accumulate HR disproportionately in summer; April conservative
+    Verdict: no recalibration. Reducing BTR would worsen elite under-projection.
+  - Steamer HR blend sweep (weights 0.10 to 0.90):
+    Best: 50/50 at MAE=5.3713 (-13.7% improvement from 6.22 baseline)
+    Gate requires 15% (MAE < 5.29) — GATE FAIL
+    DO NOT implement. Four reasons: (1) gate fails; (2) model already beats Steamer for 10-20 HR tier;
+    (3) Buy Low signal HR beats Steamer — blend would reverse this advantage;
+    (4) elite under-projection is structural (same PA problem as R/RBI, partially addressed by R/RBI blend)
+  - HR projection: NO CHANGE. 6.22 baseline unchanged.
+
+wOBA Audit (Task 3):
+  - wOBA MAE = 0.0344 (unchanged from Session 28; wOBA is rate-based, unaffected by Session 31 R/RBI blend)
+  - Tier breakdown: Neutral (n=135): 0.0376 MAE, Buy Low (n=44): 0.0291 (beats Steamer 0.0297)
+    Sell High (n=25): 0.0217 (crushes Steamer 0.0274, -20.8%)
+  - Gap vs Steamer (0.0277) = 0.0067 concentrated in Neutral players
+  - Structural gap from April xwOBA noise vs Steamer preseason calibration — not fixable without 
+    full-season Statcast. No action warranted.
+
+Full hitter scorecard (Task 4) — outputs/hitter_scorecard_s32.csv (NEW):
+  | Stat | N   | S29 MAE | Current MAE | Steamer MAE | RTM MAE | Winner  | vs Steamer |
+  |------|-----|---------|-------------|-------------|---------|---------|------------|
+  | AVG  | 234 | 0.0215  | 0.0215      | 0.0187      | 0.0197  | Steamer | +0.0028    |
+  | OBP  | 240 | 0.0125  | 0.0125      | —           | —       | MODEL   | —          |
+  | HR   | 230 | 6.22    | 6.22        | 5.92        | 6.63    | Steamer | +0.30      |
+  | R    | 234 | 17.13   | 13.42       | 15.12       | 17.91   | MODEL   | -1.70      |
+  | RBI  | 234 | 16.93   | 14.96       | 16.49       | 17.71   | MODEL   | -1.53      |
+  | SB   | 235 | 5.42    | 5.42        | 4.72        | —       | Steamer | +0.70      |
+  | wOBA | 199 | 0.0344  | 0.0344      | 0.0277      | 0.0390  | Steamer | +0.0067    |
+  Model now beats Steamer on R and RBI (confirmed first time as of Session 32).
+  Buy Low wOBA beats Steamer; Sell High wOBA crushes Steamer.
+
+Ownership acceleration tracking (Task 5 — design only, no implementation):
+  - data/ownership_history.json: keyed by mlbam_id, list of {date, owned_pct, fp_ownership} snapshots
+  - calls_tracker.csv new columns: delta_own_1w (weekly change), delta_own_4w (4-week trend), own_momentum
+  - own_momentum: "surging" (Δ1w > +10), "rising" (Δ1w +3 to +10), "stable", "falling" (Δ1w < -3)
+  - Logic: first snapshot = baseline; each --update adds current snapshot and computes deltas
+  - Implementation deferred to Session 33
+
+Invariants (Task 6):
+  - validate_formulas.py: 37/37 PASS
+  - score_value.py --check-invariants: Sanchez C#26, Yordan rank=3, Raleigh C#2, Baldwin C#3, Contreras C#6
+  - All PASS. No production files modified this session.
+
+Files created this session:
+  - outputs/hitter_scorecard_s32.csv (NEW — 7-row complete hitter scorecard)
+  - thread_handoff.md (Session 32 changelog appended)
+  - CLAUDE.md (this changelog)
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-32) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Download updated thread_handoff.md to Claude.ai
+  - Session 33: implement ownership acceleration tracking (design spec complete)
+
 ---
 *This file is the persistent memory for Claude Code sessions.*
 *thread_handoff.md in Claude.ai is the persistent memory for Claude.ai sessions.*
