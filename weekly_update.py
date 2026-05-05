@@ -412,6 +412,97 @@ def _classify_window_signal(row) -> str:
     return "still_waiting"
 
 
+# ── signal decay classifier ───────────────────────────────────────────────────
+
+def _load_luck_classifier_data() -> dict:
+    """Load the subset of luck_scores.csv columns needed for signal type classification.
+    Returns {mlbam_id: {field: value}} lookup.  Empty dict if file missing.
+    """
+    needed = ["batter", "xwOBA", "xwoba_3yr", "hh_flag", "speed_flag",
+              "chase_flag", "la_trending_down"]
+    try:
+        df = pd.read_csv(LUCK_H, usecols=[c for c in needed if c in
+                                           pd.read_csv(LUCK_H, nrows=0).columns])
+        result = {}
+        for _, r in df.iterrows():
+            try:
+                bid = int(r["batter"])
+            except (ValueError, TypeError):
+                continue
+            result[bid] = r.to_dict()
+        return result
+    except Exception:
+        return {}
+
+
+def _classify_signal_type(pid: int, luck_lookup: dict) -> tuple[str, float]:
+    """Classify a buy signal as PURE_LUCK / MECHANICAL / INJURY_RISK.
+
+    Returns (signal_type, confidence_weight).
+    Only applied to Buy Low and Slight Buy calls; others get ('N/A', 1.0).
+
+    Rules (evaluated in priority order):
+      INJURY_RISK (0.30): speed_flag=True AND hh_flag=True
+        → both physical indicators declining simultaneously; possible injury-driven
+      MECHANICAL  (0.60): xwOBA < xwoba_3yr - 0.020 (contact quality fading)
+                          OR chase_flag=True (discipline deteriorating)
+        → some mechanical degradation explains part of the unlucky result
+      PURE_LUCK   (1.00): everything else
+        → BABIP-driven noise; xwOBA stable; clean regression candidate
+    """
+    lr = luck_lookup.get(pid)
+    if lr is None:
+        return "PURE_LUCK", 1.00
+
+    speed_flag     = bool(lr.get("speed_flag", False))
+    hh_flag        = bool(lr.get("hh_flag", False))
+    chase_flag     = bool(lr.get("chase_flag", False))
+    la_down        = bool(lr.get("la_trending_down", False))
+
+    import math
+    xwoba     = lr.get("xwOBA")
+    xwoba_3yr = lr.get("xwoba_3yr")
+    try:
+        xwoba     = float(xwoba)
+        xwoba_3yr = float(xwoba_3yr)
+        xwoba_below_career = (not math.isnan(xwoba) and not math.isnan(xwoba_3yr)
+                              and xwoba < xwoba_3yr - 0.020)
+    except (TypeError, ValueError):
+        xwoba_below_career = False
+
+    if speed_flag and hh_flag:
+        return "INJURY_RISK", 0.30
+
+    if xwoba_below_career or chase_flag:
+        return "MECHANICAL", 0.60
+
+    return "PURE_LUCK", 1.00
+
+
+def _apply_signal_classifier(df: pd.DataFrame) -> pd.DataFrame:
+    """Add signal_type and confidence_weight columns to calls_tracker.
+    Only buy signals receive a classification; sell signals get N/A.
+    """
+    luck_lookup = _load_luck_classifier_data()
+    signal_types  = []
+    conf_weights  = []
+    for _, row in df.iterrows():
+        call = str(row.get("call", ""))
+        if call in BUY_VERDICTS:
+            try:
+                pid = int(row["player_id"])
+            except (ValueError, TypeError):
+                pid = -1
+            st, cw = _classify_signal_type(pid, luck_lookup)
+        else:
+            st, cw = "N/A", 1.00
+        signal_types.append(st)
+        conf_weights.append(cw)
+    df["signal_type"]        = signal_types
+    df["confidence_weight"]  = conf_weights
+    return df
+
+
 # ── init ─────────────────────────────────────────────────────────────────────
 
 def cmd_init():
@@ -563,6 +654,7 @@ def cmd_update():
     df[f"{prefix}_xwoba"] = new_xwoba
 
     df = _compute_deltas(df)
+    df = _apply_signal_classifier(df)
     df.to_csv(TRACKER, index=False)
     print(f"Updated → {TRACKER}  (now at {prefix})")
     _print_summary(df)

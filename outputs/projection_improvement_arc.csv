@@ -1,0 +1,11 @@
+fix,session,stat,before_mae,after_mae,rtm_mae,delta_mae,notes
+Lineup context R/RBI multipliers,10,R,17.19,17.19,17.96,0.0,Baseline already included; R_mult/RBI_mult validated vs 2025 actuals
+Lineup context R/RBI multipliers,10,RBI,17.01,17.01,17.76,0.0,"Sell High RBI cap min(rbi_mult, 1.05) applied"
+Career BA anchor (AVG floor ×0.85),11,AVG,0.0232,0.0216,0.0198,-0.0016,Bias corrected +0.0058→-0.0023; established hitters gate career_ba≥0.240
+RP WHIP blend toward LG_WHIP=1.20,27,WHIP,0.1944,0.1772,0.155,-0.0172,RP gap vs RTM: 0.056→0.023 (58.8% closed); SP unchanged
+Career BB% blend (Steamer anchor),28,OBP,0.0253,0.0125,,-0.0128,50.5% MAE improvement vs Steamer ground truth; 240 players affected
+Signal multipliers wOBA adjustment,11,wOBA,0.035,0.0342,0.0397,-0.0008,Buy Low wOBA MAE 0.0335→0.0303; Signal beats RTM by 0.005
+Signal multipliers HR (buy-side),11,HR,6.3048,6.256,6.6926,-0.0488,"Buy Low ×1.05, Slight Buy ×1.02; sell-side unchanged"
+Pitcher signal mults ERA,11,ERA,0.882,0.878,,-0.004,Sell High ERA×1.10; model ERA bias +0.25 vs Steamer +0.41
+SB Steamer individual rates,23,SB,,,,,"No 2025 actuals for direct SB MAE; De La Cruz 8.5→48.4, Turang 8.5→37.3"
+OBP career anchor (avg_proj),25,OBP,,,,,OBP uses career-anchored avg_proj; Turner OBP 0.286→0.313 (+0.027)

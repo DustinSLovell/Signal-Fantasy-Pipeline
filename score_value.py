@@ -321,6 +321,37 @@ def _load_steamer_sb() -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Steamer BB% — career walk-rate anchor
+# ---------------------------------------------------------------------------
+
+def _load_steamer_bb() -> dict:
+    """Load Steamer full-season BB% projections as a career walk-rate anchor.
+    Returns {mlbam_id (int): career_bb_pct (float)}.
+    Gracefully returns {} if the CSV is missing.
+
+    Used in project_hitter_stats() to blend raw April bb_pct toward the
+    Steamer talent-level estimate when the gap exceeds 0.020.
+    """
+    path = os.path.join(BASE_DIR, "Steamers 2025 batters.csv")
+    if not os.path.exists(path):
+        return {}
+    try:
+        df = pd.read_csv(path, usecols=["MLBAMID", "BB%"])
+        result = {}
+        for _, row in df.iterrows():
+            try:
+                mid = int(float(row["MLBAMID"]))
+                bb  = float(row["BB%"])
+            except (ValueError, TypeError):
+                continue
+            if 0.0 <= bb <= 0.30:
+                result[mid] = bb
+        return result
+    except Exception:
+        return {}
+
+
+# ---------------------------------------------------------------------------
 # Sprint speed (Baseball Savant API)
 # ---------------------------------------------------------------------------
 
@@ -809,7 +840,8 @@ def compute_quality_points_pitchers(pitcher_df: pd.DataFrame,
 # ---------------------------------------------------------------------------
 
 def project_hitter_stats(df: pd.DataFrame, cfg: dict,
-                         career_ba_lookup: dict | None = None) -> pd.DataFrame:
+                         career_ba_lookup: dict | None = None,
+                         career_bb_lookup: dict | None = None) -> pd.DataFrame:
     """
     Project full-season counting and rate stats from Statcast expected metrics.
 
@@ -902,6 +934,32 @@ HR    = blended_barrel_rate × 0.60 BBE/PA ...
 
     xba_col  = out["xBA"].fillna(LG_XBA) if "xBA" in out.columns else pd.Series(LG_XBA, index=out.index)
     bb_col   = out["bb_pct"].fillna(LG_BB) if "bb_pct" in out.columns else pd.Series(LG_BB, index=out.index)
+
+    # ── Career BB% blend (Steamer anchor) ────────────────────────────────────
+    # Blends raw April walk rate toward the Steamer career-talent estimate when
+    # the gap exceeds 0.020.  Same PA-weighted pattern as barrel/xwOBA anchors.
+    # At PA=0: fully trust career (blend_w=0).  At PA=150+: fully trust April.
+    # Gate: abs(april_bb - career_bb) > 0.020 (below that, April noise ≈ signal).
+    # Sanchez guard: career_bb=0.0848; April often high → blend REDUCES OBP (safe).
+    if career_bb_lookup:
+        batter_col = out["batter"] if "batter" in out.columns else pd.Series(dtype=float)
+        pa_col     = out["PA"]     if "PA"     in out.columns else pd.Series(150, index=out.index)
+        bb_col_new = bb_col.copy()
+        for idx in out.index:
+            try:
+                bid = int(batter_col.at[idx])
+            except (ValueError, TypeError, KeyError):
+                continue
+            career_bb = career_bb_lookup.get(bid)
+            if career_bb is None:
+                continue
+            april_bb = bb_col.at[idx]
+            if abs(april_bb - career_bb) <= 0.020:
+                continue
+            pa = float(pa_col.at[idx])
+            blend_w = min(1.0, pa / 150.0)
+            bb_col_new.at[idx] = blend_w * april_bb + (1.0 - blend_w) * career_bb
+        bb_col = bb_col_new
 
     # ── AVG + OBP (computed together so OBP shares the career anchor) ────────
     # Conditional career floor for AVG: established hitters (.240+ career BA) whose
@@ -1623,9 +1681,17 @@ def main():
     _steamer_sb_per_pa = _load_steamer_sb()
     print(f"  Loaded Steamer SB rates for {len(_steamer_sb_per_pa):,} players")
 
+    print("Loading Steamer BB% for career walk-rate anchor ...")
+    _steamer_bb_lookup = _load_steamer_bb()
+    print(f"  Loaded career BB% for {len(_steamer_bb_lookup):,} players")
+
     # ── Project stats ──────────────────────────────────────────────────────
     print("Projecting hitter stats ...")
-    hitter_df = project_hitter_stats(hitter_df, cfg, career_ba_lookup=_career_ba_lookup)
+    hitter_df = project_hitter_stats(
+        hitter_df, cfg,
+        career_ba_lookup=_career_ba_lookup,
+        career_bb_lookup=_steamer_bb_lookup,
+    )
 
     # ── Replace position-based SB defaults with Steamer individual rates ──
     # Steamer SB per PA replaces the coarse position default (SS=8.5/600 PA).

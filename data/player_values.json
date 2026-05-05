@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T09:24:57",
+  "generated_at": "2026-05-05T10:24:52",
   "season_start": "2026-03-27",
   "season_days": 39,
   "leagues": {
@@ -12,10 +12,10 @@
       "name": "Drake Baldwin",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 60.8,
+      "league1_value": 59.3,
       "league2_value": 38.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 12.792,
+      "expected_stats_value_l1": 12.639,
       "expected_stats_value_l2": 7.566,
       "track_record_multiplier": 0.79,
       "quality_points": 2,
@@ -36,12 +36,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.342,
+        "R": 114.2,
         "SB": 2.3,
         "AVG": 0.267,
+        "HR": 26.7,
         "RBI": 95.4,
-        "R": 114.2,
-        "HR": 26.7
+        "OBP": 0.342
       }
     },
     {
@@ -49,10 +49,10 @@
       "name": "Zach Neto",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 17.7,
+      "league1_value": 17.4,
       "league2_value": 15.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.256,
+      "expected_stats_value_l1": 3.236,
       "expected_stats_value_l2": 2.139,
       "track_record_multiplier": 0.88,
       "quality_points": 1,
@@ -73,12 +73,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.322,
+        "R": 92.3,
         "SB": 25.4,
         "AVG": 0.21,
+        "HR": 22.1,
         "RBI": 80.3,
-        "R": 92.3,
-        "HR": 22.1
+        "OBP": 0.322
       }
     },
     {
@@ -89,7 +89,7 @@
       "league1_value": 59.0,
       "league2_value": 59.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.837,
+      "expected_stats_value_l1": 3.88,
       "expected_stats_value_l2": 4.058,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -110,12 +110,12 @@
       "fp_rank": 30,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.328,
+        "R": 102.7,
         "SB": 0.7,
         "AVG": 0.227,
+        "HR": 30.9,
         "RBI": 109.7,
-        "R": 102.7,
-        "HR": 30.9
+        "OBP": 0.328
       }
     },
     {
@@ -126,7 +126,7 @@
       "league1_value": 63.1,
       "league2_value": 56.8,
       "PA_proj": 600,
-      "expected_stats_value_l1": 12.14,
+      "expected_stats_value_l1": 12.289,
       "expected_stats_value_l2": 10.347,
       "track_record_multiplier": 0.84,
       "quality_points": 3,
@@ -147,12 +147,12 @@
       "fp_rank": 26,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.374,
+        "R": 100.1,
         "SB": 18.2,
         "AVG": 0.22,
+        "HR": 39.1,
         "RBI": 91.8,
-        "R": 100.1,
-        "HR": 39.1
+        "OBP": 0.374
       }
     },
     {
@@ -160,10 +160,10 @@
       "name": "Bobby Witt",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 38.6,
+      "league1_value": 38.2,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.362,
+      "expected_stats_value_l1": 6.373,
       "expected_stats_value_l2": 6.251,
       "track_record_multiplier": 0.98,
       "quality_points": 0,
@@ -184,12 +184,12 @@
       "fp_rank": 38,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.345,
+        "R": 92.2,
         "SB": 31.6,
         "AVG": 0.26,
+        "HR": 23.2,
         "RBI": 93.4,
-        "R": 92.2,
-        "HR": 23.2
+        "OBP": 0.345
       }
     },
     {
@@ -197,10 +197,10 @@
       "name": "Yordan \u00c1lvarez",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 82.7,
+      "league1_value": 82.8,
       "league2_value": 91.7,
       "PA_proj": 600,
-      "expected_stats_value_l1": 13.076,
+      "expected_stats_value_l1": 13.262,
       "expected_stats_value_l2": 13.724,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -221,12 +221,12 @@
       "fp_rank": 3,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.404,
+        "R": 118.1,
         "SB": 3.4,
         "AVG": 0.307,
+        "HR": 30.1,
         "RBI": 120.4,
-        "R": 118.1,
-        "HR": 30.1
+        "OBP": 0.404
       }
     },
     {
@@ -234,10 +234,10 @@
       "name": "Iv\u00e1n Herrera",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 55.7,
+      "league1_value": 54.3,
       "league2_value": 20.3,
       "PA_proj": 600,
-      "expected_stats_value_l1": 10.995,
+      "expected_stats_value_l1": 10.861,
       "expected_stats_value_l2": 3.796,
       "track_record_multiplier": 0.82,
       "quality_points": 2,
@@ -258,12 +258,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.379,
+        "R": 90.7,
         "SB": 8.1,
         "AVG": 0.243,
+        "HR": 19.8,
         "RBI": 85.6,
-        "R": 90.7,
-        "HR": 19.8
+        "OBP": 0.379
       }
     },
     {
@@ -274,7 +274,7 @@
       "league1_value": 68.0,
       "league2_value": 59.5,
       "PA_proj": 600,
-      "expected_stats_value_l1": 11.014,
+      "expected_stats_value_l1": 11.154,
       "expected_stats_value_l2": 9.134,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -295,12 +295,12 @@
       "fp_rank": 12,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.377,
+        "R": 101.4,
         "SB": 9.3,
         "AVG": 0.217,
+        "HR": 34.7,
         "RBI": 107.2,
-        "R": 101.4,
-        "HR": 34.7
+        "OBP": 0.377
       }
     },
     {
@@ -332,12 +332,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.292,
+        "R": 85.1,
         "SB": 6.3,
         "AVG": 0.194,
+        "HR": 19.1,
         "RBI": 66.7,
-        "R": 85.1,
-        "HR": 19.1
+        "OBP": 0.292
       }
     },
     {
@@ -348,7 +348,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 1.976,
+      "expected_stats_value_l1": 1.994,
       "expected_stats_value_l2": 1.423,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -369,12 +369,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.304,
+        "R": 91.0,
         "SB": 11.0,
         "AVG": 0.241,
+        "HR": 16.0,
         "RBI": 86.0,
-        "R": 91.0,
-        "HR": 16.0
+        "OBP": 0.304
       }
     },
     {
@@ -385,7 +385,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.648,
+      "expected_stats_value_l1": 3.699,
       "expected_stats_value_l2": 4.236,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -406,12 +406,12 @@
       "fp_rank": 21,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.319,
+        "R": 101.6,
         "SB": 3.2,
         "AVG": 0.223,
+        "HR": 18.3,
         "RBI": 96.6,
-        "R": 101.6,
-        "HR": 18.3
+        "OBP": 0.319
       }
     },
     {
@@ -422,7 +422,7 @@
       "league1_value": 28.1,
       "league2_value": 28.3,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.423,
+      "expected_stats_value_l1": 5.497,
       "expected_stats_value_l2": 5.181,
       "track_record_multiplier": 0.78,
       "quality_points": 0,
@@ -443,12 +443,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.355,
+        "R": 89.8,
         "SB": 23.2,
         "AVG": 0.248,
+        "HR": 13.3,
         "RBI": 70.9,
-        "R": 89.8,
-        "HR": 13.3
+        "OBP": 0.355
       }
     },
     {
@@ -459,7 +459,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.421,
+      "expected_stats_value_l1": 2.36,
       "expected_stats_value_l2": 2.577,
       "track_record_multiplier": 0.93,
       "quality_points": 0,
@@ -480,12 +480,12 @@
       "fp_rank": 11,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.294,
+        "R": 90.9,
         "SB": 15.4,
         "AVG": 0.229,
+        "HR": 21.9,
         "RBI": 85.2,
-        "R": 90.9,
-        "HR": 21.9
+        "OBP": 0.294
       }
     },
     {
@@ -493,10 +493,10 @@
       "name": "Julio Rodr\u00edguez",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 33.3,
+      "league1_value": 33.1,
       "league2_value": 40.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.548,
+      "expected_stats_value_l1": 5.578,
       "expected_stats_value_l2": 6.321,
       "track_record_multiplier": 0.97,
       "quality_points": 0,
@@ -517,12 +517,12 @@
       "fp_rank": 15,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.311,
+        "R": 84.9,
         "SB": 24.6,
         "AVG": 0.241,
+        "HR": 18.7,
         "RBI": 79.4,
-        "R": 84.9,
-        "HR": 18.7
+        "OBP": 0.311
       }
     },
     {
@@ -533,7 +533,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.937,
+      "expected_stats_value_l1": 8.823,
       "expected_stats_value_l2": 5.57,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -554,12 +554,12 @@
       "fp_rank": 2,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.376,
+        "R": 103.8,
         "SB": 40.0,
         "AVG": 0.248,
+        "HR": 28.5,
         "RBI": 116.4,
-        "R": 103.8,
-        "HR": 28.5
+        "OBP": 0.376
       }
     },
     {
@@ -567,10 +567,10 @@
       "name": "Nico Hoerner",
       "type": "hitter",
       "pos": "2B",
-      "league1_value": 26.8,
+      "league1_value": 26.7,
       "league2_value": 24.9,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.354,
+      "expected_stats_value_l1": 4.401,
       "expected_stats_value_l2": 3.834,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -591,12 +591,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.325,
+        "R": 89.4,
         "SB": 28.0,
         "AVG": 0.257,
+        "HR": 13.6,
         "RBI": 94.5,
-        "R": 89.4,
-        "HR": 13.6
+        "OBP": 0.325
       }
     },
     {
@@ -604,14 +604,14 @@
       "name": "Nick Kurtz",
       "type": "hitter",
       "pos": "1B",
-      "league1_value": 23.9,
+      "league1_value": 25.6,
       "league2_value": 17.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.258,
+      "expected_stats_value_l1": 5.404,
       "expected_stats_value_l2": 3.571,
       "track_record_multiplier": 0.8,
       "quality_points": 3,
-      "luck_adjustment": 0.92,
+      "luck_adjustment": 0.97,
       "verdict": "Sell high",
       "tier_sell": "Sell High on Perception",
       "age_flag": null,
@@ -628,12 +628,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.419,
+        "R": 111.6,
         "SB": 7.5,
         "AVG": 0.246,
+        "HR": 30.3,
         "RBI": 75.6,
-        "R": 111.6,
-        "HR": 30.3
+        "OBP": 0.419
       }
     },
     {
@@ -641,10 +641,10 @@
       "name": "Ronald Acu\u00f1a",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 85.1,
+      "league1_value": 84.8,
       "league2_value": 89.6,
       "PA_proj": 600,
-      "expected_stats_value_l1": 13.382,
+      "expected_stats_value_l1": 13.505,
       "expected_stats_value_l2": 13.339,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -665,12 +665,12 @@
       "fp_rank": 4,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.356,
+        "R": 123.5,
         "SB": 45.2,
         "AVG": 0.252,
+        "HR": 23.5,
         "RBI": 95.8,
-        "R": 123.5,
-        "HR": 23.5
+        "OBP": 0.356
       }
     },
     {
@@ -681,7 +681,7 @@
       "league1_value": 45.0,
       "league2_value": 45.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.211,
+      "expected_stats_value_l1": 2.234,
       "expected_stats_value_l2": 3.53,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -702,12 +702,12 @@
       "fp_rank": 31,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.3,
+        "R": 83.5,
         "SB": 1.9,
         "AVG": 0.229,
+        "HR": 20.5,
         "RBI": 96.7,
-        "R": 83.5,
-        "HR": 20.5
+        "OBP": 0.3
       }
     },
     {
@@ -718,7 +718,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.175,
+      "expected_stats_value_l1": 6.282,
       "expected_stats_value_l2": 4.379,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -739,12 +739,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.376,
+        "R": 83.2,
         "SB": 8.1,
         "AVG": 0.222,
+        "HR": 21.2,
         "RBI": 80.9,
-        "R": 83.2,
-        "HR": 21.2
+        "OBP": 0.376
       }
     },
     {
@@ -755,7 +755,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.078,
+      "expected_stats_value_l1": 4.114,
       "expected_stats_value_l2": 3.056,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -776,12 +776,12 @@
       "fp_rank": 28,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.32,
+        "R": 97.0,
         "SB": 5.6,
         "AVG": 0.18,
+        "HR": 30.2,
         "RBI": 83.8,
-        "R": 97.0,
-        "HR": 30.2
+        "OBP": 0.32
       }
     },
     {
@@ -792,7 +792,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.105,
+      "expected_stats_value_l1": 6.222,
       "expected_stats_value_l2": 4.506,
       "track_record_multiplier": 0.99,
       "quality_points": 2,
@@ -813,12 +813,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.387,
+        "R": 93.3,
         "SB": 7.5,
         "AVG": 0.236,
+        "HR": 17.3,
         "RBI": 76.8,
-        "R": 93.3,
-        "HR": 17.3
+        "OBP": 0.387
       }
     },
     {
@@ -829,7 +829,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.103,
+      "expected_stats_value_l1": 6.208,
       "expected_stats_value_l2": 5.957,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -850,12 +850,12 @@
       "fp_rank": 7,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.364,
+        "R": 85.9,
         "SB": 27.7,
         "AVG": 0.239,
+        "HR": 20.5,
         "RBI": 86.8,
-        "R": 85.9,
-        "HR": 20.5
+        "OBP": 0.364
       }
     },
     {
@@ -866,7 +866,7 @@
       "league1_value": 14.9,
       "league2_value": 12.2,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.008,
+      "expected_stats_value_l1": 3.057,
       "expected_stats_value_l2": 2.331,
       "track_record_multiplier": 0.8,
       "quality_points": 3,
@@ -887,12 +887,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.335,
+        "R": 91.3,
         "SB": 8.5,
         "AVG": 0.189,
+        "HR": 33.3,
         "RBI": 75.4,
-        "R": 91.3,
-        "HR": 33.3
+        "OBP": 0.335
       }
     },
     {
@@ -900,10 +900,10 @@
       "name": "Elly De la cruz",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 44.9,
+      "league1_value": 44.4,
       "league2_value": 44.4,
       "PA_proj": 600,
-      "expected_stats_value_l1": 8.017,
+      "expected_stats_value_l1": 8.019,
       "expected_stats_value_l2": 7.498,
       "track_record_multiplier": 0.91,
       "quality_points": 2,
@@ -924,12 +924,12 @@
       "fp_rank": 9,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.328,
+        "R": 100.6,
         "SB": 48.4,
         "AVG": 0.237,
+        "HR": 27.0,
         "RBI": 81.9,
-        "R": 100.6,
-        "HR": 27.0
+        "OBP": 0.328
       }
     },
     {
@@ -940,7 +940,7 @@
       "league1_value": 100.0,
       "league2_value": 100.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 16.202,
+      "expected_stats_value_l1": 16.411,
       "expected_stats_value_l2": 15.342,
       "track_record_multiplier": 1.0,
       "quality_points": 3,
@@ -961,12 +961,12 @@
       "fp_rank": 1,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.402,
+        "R": 145.1,
         "SB": 7.2,
         "AVG": 0.265,
+        "HR": 39.5,
         "RBI": 111.3,
-        "R": 145.1,
-        "HR": 39.5
+        "OBP": 0.402
       }
     },
     {
@@ -998,12 +998,12 @@
       "fp_rank": 14,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.316,
+        "R": 76.0,
         "SB": 10.3,
         "AVG": 0.272,
+        "HR": 14.7,
         "RBI": 65.5,
-        "R": 76.0,
-        "HR": 14.7
+        "OBP": 0.316
       }
     },
     {
@@ -1011,10 +1011,10 @@
       "name": "Jo Adell",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 16.7,
+      "league1_value": 16.5,
       "league2_value": 31.7,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.297,
+      "expected_stats_value_l1": 3.286,
       "expected_stats_value_l2": 5.609,
       "track_record_multiplier": 0.89,
       "quality_points": 0,
@@ -1035,12 +1035,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.276,
+        "R": 83.3,
         "SB": 18.5,
         "AVG": 0.256,
+        "HR": 16.7,
         "RBI": 76.8,
-        "R": 83.3,
-        "HR": 16.7
+        "OBP": 0.276
       }
     },
     {
@@ -1048,10 +1048,10 @@
       "name": "Xavier Edwards",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 21.2,
+      "league1_value": 20.9,
       "league2_value": 20.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.443,
+      "expected_stats_value_l1": 4.446,
       "expected_stats_value_l2": 3.831,
       "track_record_multiplier": 0.84,
       "quality_points": 0,
@@ -1072,12 +1072,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.356,
+        "R": 91.3,
         "SB": 33.2,
         "AVG": 0.256,
+        "HR": 17.3,
         "RBI": 74.7,
-        "R": 91.3,
-        "HR": 17.3
+        "OBP": 0.356
       }
     },
     {
@@ -1088,7 +1088,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 1.544,
+      "expected_stats_value_l1": 1.604,
       "expected_stats_value_l2": 2.528,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -1109,12 +1109,12 @@
       "fp_rank": 10,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.363,
+        "R": 90.8,
         "SB": 4.5,
         "AVG": 0.276,
+        "HR": 22.0,
         "RBI": 90.5,
-        "R": 90.8,
-        "HR": 22.0
+        "OBP": 0.363
       }
     },
     {
@@ -1125,7 +1125,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.733,
+      "expected_stats_value_l1": 0.678,
       "expected_stats_value_l2": 0.989,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -1146,12 +1146,12 @@
       "fp_rank": 18,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.313,
+        "R": 87.2,
         "SB": 20.3,
         "AVG": 0.247,
+        "HR": 16.9,
         "RBI": 62.3,
-        "R": 87.2,
-        "HR": 16.9
+        "OBP": 0.313
       }
     },
     {
@@ -1162,7 +1162,7 @@
       "league1_value": 29.8,
       "league2_value": 34.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.169,
+      "expected_stats_value_l1": 6.235,
       "expected_stats_value_l2": 6.65,
       "track_record_multiplier": 0.76,
       "quality_points": 1,
@@ -1183,12 +1183,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.325,
+        "R": 94.4,
         "SB": 7.8,
         "AVG": 0.225,
+        "HR": 29.4,
         "RBI": 101.9,
-        "R": 94.4,
-        "HR": 29.4
+        "OBP": 0.325
       }
     },
     {
@@ -1199,7 +1199,7 @@
       "league1_value": 15.0,
       "league2_value": 15.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 1.172,
+      "expected_stats_value_l1": 1.168,
       "expected_stats_value_l2": 1.773,
       "track_record_multiplier": 0.88,
       "quality_points": 0,
@@ -1220,12 +1220,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.323,
+        "R": 87.5,
         "SB": 8.5,
         "AVG": 0.235,
+        "HR": 23.2,
         "RBI": 95.8,
-        "R": 87.5,
-        "HR": 23.2
+        "OBP": 0.322
       }
     },
     {
@@ -1233,10 +1233,10 @@
       "name": "Oneil Cruz",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 41.0,
+      "league1_value": 40.7,
       "league2_value": 49.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 7.736,
+      "expected_stats_value_l1": 7.783,
       "expected_stats_value_l2": 8.771,
       "track_record_multiplier": 0.89,
       "quality_points": 1,
@@ -1257,12 +1257,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.305,
+        "R": 90.9,
         "SB": 18.2,
         "AVG": 0.243,
+        "HR": 32.6,
         "RBI": 81.3,
-        "R": 90.9,
-        "HR": 32.6
+        "OBP": 0.305
       }
     },
     {
@@ -1294,12 +1294,12 @@
       "fp_rank": 17,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.314,
+        "R": 86.3,
         "SB": 3.6,
         "AVG": 0.212,
+        "HR": 22.1,
         "RBI": 93.6,
-        "R": 86.3,
-        "HR": 22.1
+        "OBP": 0.314
       }
     },
     {
@@ -1307,10 +1307,10 @@
       "name": "Daylen Lile",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 21.3,
+      "league1_value": 21.2,
       "league2_value": 26.7,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.393,
+      "expected_stats_value_l1": 4.435,
       "expected_stats_value_l2": 5.224,
       "track_record_multiplier": 0.79,
       "quality_points": 0,
@@ -1331,12 +1331,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.326,
+        "R": 91.7,
         "SB": 11.7,
         "AVG": 0.254,
+        "HR": 15.9,
         "RBI": 76.2,
-        "R": 91.7,
-        "HR": 15.9
+        "OBP": 0.326
       }
     },
     {
@@ -1347,7 +1347,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.081,
+      "expected_stats_value_l1": 4.105,
       "expected_stats_value_l2": 3.868,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -1368,12 +1368,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.312,
+        "R": 83.4,
         "SB": 19.9,
         "AVG": 0.216,
+        "HR": 17.7,
         "RBI": 73.5,
-        "R": 83.4,
-        "HR": 17.7
+        "OBP": 0.312
       }
     },
     {
@@ -1381,10 +1381,10 @@
       "name": "Shea Langeliers",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 60.7,
+      "league1_value": 59.1,
       "league2_value": 37.4,
       "PA_proj": 600,
-      "expected_stats_value_l1": 11.299,
+      "expected_stats_value_l1": 11.147,
       "expected_stats_value_l2": 6.602,
       "track_record_multiplier": 0.9,
       "quality_points": 1,
@@ -1405,12 +1405,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.353,
+        "R": 101.6,
         "SB": 5.0,
         "AVG": 0.289,
+        "HR": 26.9,
         "RBI": 76.8,
-        "R": 101.6,
-        "HR": 26.9
+        "OBP": 0.353
       }
     },
     {
@@ -1418,10 +1418,10 @@
       "name": "Kyle Tucker",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 52.9,
+      "league1_value": 52.6,
       "league2_value": 57.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 8.327,
+      "expected_stats_value_l1": 8.387,
       "expected_stats_value_l2": 8.487,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -1442,12 +1442,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.321,
+        "R": 105.6,
         "SB": 18.8,
         "AVG": 0.232,
+        "HR": 19.2,
         "RBI": 103.4,
-        "R": 105.6,
-        "HR": 19.2
+        "OBP": 0.321
       }
     },
     {
@@ -1455,10 +1455,10 @@
       "name": "Ian Happ",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 45.7,
+      "league1_value": 45.5,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 7.404,
+      "expected_stats_value_l1": 7.463,
       "expected_stats_value_l2": 6.122,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -1479,12 +1479,12 @@
       "fp_rank": 37,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.353,
+        "R": 101.4,
         "SB": 10.8,
         "AVG": 0.213,
+        "HR": 25.1,
         "RBI": 91.5,
-        "R": 101.4,
-        "HR": 25.1
+        "OBP": 0.352
       }
     },
     {
@@ -1495,7 +1495,7 @@
       "league1_value": 16.9,
       "league2_value": 15.4,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.209,
+      "expected_stats_value_l1": 3.248,
       "expected_stats_value_l2": 2.773,
       "track_record_multiplier": 0.85,
       "quality_points": 2,
@@ -1516,12 +1516,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.338,
+        "R": 84.9,
         "SB": 13.3,
         "AVG": 0.209,
+        "HR": 23.4,
         "RBI": 81.9,
-        "R": 84.9,
-        "HR": 23.4
+        "OBP": 0.337
       }
     },
     {
@@ -1529,10 +1529,10 @@
       "name": "Kevin McGonigle",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 13.8,
+      "league1_value": 13.5,
       "league2_value": 10.9,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.962,
+      "expected_stats_value_l1": 2.935,
       "expected_stats_value_l2": 2.214,
       "track_record_multiplier": 0.76,
       "quality_points": 1,
@@ -1553,12 +1553,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.354,
+        "R": 90.8,
         "SB": 12.1,
         "AVG": 0.251,
+        "HR": 23.5,
         "RBI": 69.0,
-        "R": 90.8,
-        "HR": 23.5
+        "OBP": 0.353
       }
     },
     {
@@ -1569,7 +1569,7 @@
       "league1_value": 23.6,
       "league2_value": 33.4,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.212,
+      "expected_stats_value_l1": 4.259,
       "expected_stats_value_l2": 5.635,
       "track_record_multiplier": 0.91,
       "quality_points": 0,
@@ -1590,12 +1590,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.319,
+        "R": 83.9,
         "SB": 30.6,
         "AVG": 0.247,
+        "HR": 18.6,
         "RBI": 80.5,
-        "R": 83.9,
-        "HR": 18.6
+        "OBP": 0.319
       }
     },
     {
@@ -1606,7 +1606,7 @@
       "league1_value": 15.0,
       "league2_value": 16.3,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.705,
+      "expected_stats_value_l1": 2.745,
       "expected_stats_value_l2": 3.227,
       "track_record_multiplier": 0.84,
       "quality_points": 0,
@@ -1627,12 +1627,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.305,
+        "R": 77.2,
         "SB": 20.1,
         "AVG": 0.27,
+        "HR": 20.5,
         "RBI": 84.1,
-        "R": 77.2,
-        "HR": 20.5
+        "OBP": 0.306
       }
     },
     {
@@ -1643,7 +1643,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.142,
+      "expected_stats_value_l1": 0.148,
       "expected_stats_value_l2": 0.858,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -1664,12 +1664,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.319,
+        "R": 82.8,
         "SB": 5.0,
         "AVG": 0.235,
+        "HR": 24.1,
         "RBI": 89.7,
-        "R": 82.8,
-        "HR": 24.1
+        "OBP": 0.319
       }
     },
     {
@@ -1680,7 +1680,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.252,
+      "expected_stats_value_l1": 2.298,
       "expected_stats_value_l2": 2.441,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -1701,12 +1701,12 @@
       "fp_rank": 29,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.345,
+        "R": 91.0,
         "SB": 9.5,
         "AVG": 0.24,
+        "HR": 25.7,
         "RBI": 91.0,
-        "R": 91.0,
-        "HR": 25.7
+        "OBP": 0.345
       }
     },
     {
@@ -1738,12 +1738,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.306,
+        "R": 74.9,
         "SB": 5.4,
         "AVG": 0.243,
+        "HR": 19.5,
         "RBI": 73.4,
-        "R": 74.9,
-        "HR": 19.5
+        "OBP": 0.306
       }
     },
     {
@@ -1754,7 +1754,7 @@
       "league1_value": 10.0,
       "league2_value": 10.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.183,
+      "expected_stats_value_l1": 0.18,
       "expected_stats_value_l2": 0.283,
       "track_record_multiplier": 0.86,
       "quality_points": 0,
@@ -1775,12 +1775,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.31,
+        "R": 98.3,
         "SB": 3.0,
         "AVG": 0.212,
+        "HR": 19.9,
         "RBI": 93.9,
-        "R": 98.3,
-        "HR": 19.9
+        "OBP": 0.31
       }
     },
     {
@@ -1791,7 +1791,7 @@
       "league1_value": 20.0,
       "league2_value": 21.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.932,
+      "expected_stats_value_l1": 2.963,
       "expected_stats_value_l2": 3.091,
       "track_record_multiplier": 0.97,
       "quality_points": 0,
@@ -1812,12 +1812,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.329,
+        "R": 76.3,
         "SB": 16.8,
         "AVG": 0.239,
+        "HR": 12.2,
         "RBI": 70.4,
-        "R": 76.3,
-        "HR": 12.2
+        "OBP": 0.329
       }
     },
     {
@@ -1849,12 +1849,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.287,
+        "R": 68.2,
         "SB": 4.1,
         "AVG": 0.261,
+        "HR": 12.9,
         "RBI": 75.5,
-        "R": 68.2,
-        "HR": 12.9
+        "OBP": 0.288
       }
     },
     {
@@ -1862,10 +1862,10 @@
       "name": "Riley Greene",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 42.0,
+      "league1_value": 41.8,
       "league2_value": 42.5,
       "PA_proj": 600,
-      "expected_stats_value_l1": 7.551,
+      "expected_stats_value_l1": 7.618,
       "expected_stats_value_l2": 7.232,
       "track_record_multiplier": 0.93,
       "quality_points": 3,
@@ -1886,12 +1886,12 @@
       "fp_rank": 34,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.355,
+        "R": 89.8,
         "SB": 6.1,
         "AVG": 0.246,
+        "HR": 26.4,
         "RBI": 92.5,
-        "R": 89.8,
-        "HR": 26.4
+        "OBP": 0.354
       }
     },
     {
@@ -1902,7 +1902,7 @@
       "league1_value": 66.0,
       "league2_value": 66.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.3,
+      "expected_stats_value_l1": 4.148,
       "expected_stats_value_l2": 0.538,
       "track_record_multiplier": 0.96,
       "quality_points": 0,
@@ -1923,12 +1923,12 @@
       "fp_rank": 27,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.271,
+        "R": 80.8,
         "SB": 3.6,
         "AVG": 0.18,
+        "HR": 24.7,
         "RBI": 81.7,
-        "R": 80.8,
-        "HR": 24.7
+        "OBP": 0.271
       }
     },
     {
@@ -1936,10 +1936,10 @@
       "name": "Jos\u00e9 Altuve",
       "type": "hitter",
       "pos": "2B",
-      "league1_value": 25.1,
+      "league1_value": 25.0,
       "league2_value": 20.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.07,
+      "expected_stats_value_l1": 4.1,
       "expected_stats_value_l2": 2.855,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -1960,12 +1960,12 @@
       "fp_rank": 40,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.336,
+        "R": 87.8,
         "SB": 16.8,
         "AVG": 0.247,
+        "HR": 18.3,
         "RBI": 91.6,
-        "R": 87.8,
-        "HR": 18.3
+        "OBP": 0.335
       }
     },
     {
@@ -1997,12 +1997,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.287,
+        "R": 66.5,
         "SB": 12.3,
         "AVG": 0.256,
+        "HR": 11.3,
         "RBI": 65.0,
-        "R": 66.5,
-        "HR": 11.3
+        "OBP": 0.287
       }
     },
     {
@@ -2013,7 +2013,7 @@
       "league1_value": 9.7,
       "league2_value": 12.6,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.073,
+      "expected_stats_value_l1": 2.105,
       "expected_stats_value_l2": 2.562,
       "track_record_multiplier": 0.76,
       "quality_points": 1,
@@ -2034,12 +2034,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.307,
+        "R": 89.2,
         "SB": 8.5,
         "AVG": 0.214,
+        "HR": 26.4,
         "RBI": 64.9,
-        "R": 89.2,
-        "HR": 26.4
+        "OBP": 0.307
       }
     },
     {
@@ -2050,7 +2050,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.353,
+      "expected_stats_value_l1": 5.098,
       "expected_stats_value_l2": 1.339,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -2071,12 +2071,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.243,
+        "R": 86.2,
         "SB": 0.5,
         "AVG": 0.216,
+        "HR": 20.5,
         "RBI": 79.7,
-        "R": 86.2,
-        "HR": 20.5
+        "OBP": 0.244
       }
     },
     {
@@ -2087,7 +2087,7 @@
       "league1_value": 40.0,
       "league2_value": 40.5,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.356,
+      "expected_stats_value_l1": 5.44,
       "expected_stats_value_l2": 6.405,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -2108,12 +2108,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.33,
+        "R": 87.1,
         "SB": 7.4,
         "AVG": 0.263,
+        "HR": 21.2,
         "RBI": 85.6,
-        "R": 87.1,
-        "HR": 21.2
+        "OBP": 0.331
       }
     },
     {
@@ -2124,7 +2124,7 @@
       "league1_value": 30.0,
       "league2_value": 30.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.998,
+      "expected_stats_value_l1": 3.993,
       "expected_stats_value_l2": 4.613,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -2145,12 +2145,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.27,
+        "R": 80.1,
         "SB": 9.8,
         "AVG": 0.209,
+        "HR": 29.9,
         "RBI": 84.8,
-        "R": 80.1,
-        "HR": 29.9
+        "OBP": 0.27
       }
     },
     {
@@ -2158,10 +2158,10 @@
       "name": "Chandler Simpson",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 27.4,
+      "league1_value": 27.1,
       "league2_value": 37.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.773,
+      "expected_stats_value_l1": 5.797,
       "expected_stats_value_l2": 7.407,
       "track_record_multiplier": 0.79,
       "quality_points": 0,
@@ -2182,12 +2182,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.292,
+        "R": 79.3,
         "SB": 58.0,
         "AVG": 0.251,
+        "HR": 11.3,
         "RBI": 66.0,
-        "R": 79.3,
-        "HR": 11.3
+        "OBP": 0.293
       }
     },
     {
@@ -2195,10 +2195,10 @@
       "name": "Jordan Walker",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 38.2,
+      "league1_value": 38.0,
       "league2_value": 44.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 7.581,
+      "expected_stats_value_l1": 7.631,
       "expected_stats_value_l2": 8.287,
       "track_record_multiplier": 0.84,
       "quality_points": 2,
@@ -2219,12 +2219,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.337,
+        "R": 83.7,
         "SB": 7.9,
         "AVG": 0.259,
+        "HR": 32.3,
         "RBI": 88.3,
-        "R": 83.7,
-        "HR": 32.3
+        "OBP": 0.336
       }
     },
     {
@@ -2235,7 +2235,7 @@
       "league1_value": 45.0,
       "league2_value": 45.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 1.942,
+      "expected_stats_value_l1": 1.958,
       "expected_stats_value_l2": 2.512,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -2256,12 +2256,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.312,
+        "R": 102.3,
         "SB": 6.1,
         "AVG": 0.225,
+        "HR": 29.9,
         "RBI": 83.5,
-        "R": 102.3,
-        "HR": 29.9
+        "OBP": 0.312
       }
     },
     {
@@ -2269,10 +2269,10 @@
       "name": "Cody Bellinger",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 48.1,
+      "league1_value": 47.6,
       "league2_value": 48.1,
       "PA_proj": 600,
-      "expected_stats_value_l1": 7.794,
+      "expected_stats_value_l1": 7.813,
       "expected_stats_value_l2": 7.387,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -2293,12 +2293,12 @@
       "fp_rank": 22,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.354,
+        "R": 103.8,
         "SB": 12.0,
         "AVG": 0.242,
+        "HR": 19.9,
         "RBI": 91.9,
-        "R": 103.8,
-        "HR": 19.9
+        "OBP": 0.351
       }
     },
     {
@@ -2330,12 +2330,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.318,
+        "R": 84.0,
         "SB": 1.9,
         "AVG": 0.226,
+        "HR": 21.6,
         "RBI": 88.0,
-        "R": 84.0,
-        "HR": 21.6
+        "OBP": 0.318
       }
     },
     {
@@ -2367,12 +2367,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.268,
+        "R": 86.7,
         "SB": 8.5,
         "AVG": 0.188,
+        "HR": 15.7,
         "RBI": 74.5,
-        "R": 86.7,
-        "HR": 15.7
+        "OBP": 0.268
       }
     },
     {
@@ -2383,7 +2383,7 @@
       "league1_value": 30.9,
       "league2_value": 33.3,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.991,
+      "expected_stats_value_l1": 6.067,
       "expected_stats_value_l2": 6.128,
       "track_record_multiplier": 0.83,
       "quality_points": 1,
@@ -2404,12 +2404,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.347,
+        "R": 82.8,
         "SB": 11.2,
         "AVG": 0.252,
+        "HR": 22.3,
         "RBI": 83.0,
-        "R": 82.8,
-        "HR": 22.3
+        "OBP": 0.347
       }
     },
     {
@@ -2417,10 +2417,10 @@
       "name": "Colson Montgomery",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 2.7,
+      "league1_value": 2.4,
       "league2_value": 0.4,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.552,
+      "expected_stats_value_l1": 0.502,
       "expected_stats_value_l2": 0.088,
       "track_record_multiplier": 0.78,
       "quality_points": 0,
@@ -2441,12 +2441,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.274,
+        "R": 83.0,
         "SB": 5.3,
         "AVG": 0.189,
+        "HR": 25.6,
         "RBI": 84.7,
-        "R": 83.0,
-        "HR": 25.6
+        "OBP": 0.274
       }
     },
     {
@@ -2457,7 +2457,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.775,
+      "expected_stats_value_l1": 2.855,
       "expected_stats_value_l2": 4.6,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -2478,12 +2478,12 @@
       "fp_rank": 6,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.326,
+        "R": 112.7,
         "SB": 9.6,
         "AVG": 0.269,
+        "HR": 22.9,
         "RBI": 93.4,
-        "R": 112.7,
-        "HR": 22.9
+        "OBP": 0.327
       }
     },
     {
@@ -2491,10 +2491,10 @@
       "name": "Junior Caminero",
       "type": "hitter",
       "pos": "3B",
-      "league1_value": 15.7,
+      "league1_value": 15.5,
       "league2_value": 22.7,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.065,
+      "expected_stats_value_l1": 3.069,
       "expected_stats_value_l2": 4.2,
       "track_record_multiplier": 0.83,
       "quality_points": 0,
@@ -2515,12 +2515,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.32,
+        "R": 87.6,
         "SB": 4.2,
         "AVG": 0.239,
+        "HR": 21.9,
         "RBI": 90.1,
-        "R": 87.6,
-        "HR": 21.9
+        "OBP": 0.318
       }
     },
     {
@@ -2552,12 +2552,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.302,
+        "R": 77.2,
         "SB": 7.4,
         "AVG": 0.271,
+        "HR": 11.4,
         "RBI": 59.4,
-        "R": 77.2,
-        "HR": 11.4
+        "OBP": 0.303
       }
     },
     {
@@ -2589,12 +2589,12 @@
       "fp_rank": 25,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.234,
+        "R": 75.5,
         "SB": 12.4,
         "AVG": 0.195,
+        "HR": 20.1,
         "RBI": 60.8,
-        "R": 75.5,
-        "HR": 20.1
+        "OBP": 0.237
       }
     },
     {
@@ -2602,10 +2602,10 @@
       "name": "Jonathan Aranda",
       "type": "hitter",
       "pos": "1B",
-      "league1_value": 3.9,
+      "league1_value": 3.8,
       "league2_value": 5.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.775,
+      "expected_stats_value_l1": 0.765,
       "expected_stats_value_l2": 0.928,
       "track_record_multiplier": 0.82,
       "quality_points": 0,
@@ -2626,12 +2626,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.337,
+        "R": 94.9,
         "SB": 2.0,
         "AVG": 0.233,
+        "HR": 20.4,
         "RBI": 94.1,
-        "R": 94.9,
-        "HR": 20.4
+        "OBP": 0.336
       }
     },
     {
@@ -2663,12 +2663,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.293,
+        "R": 76.7,
         "SB": 9.1,
         "AVG": 0.215,
+        "HR": 14.6,
         "RBI": 64.2,
-        "R": 76.7,
-        "HR": 14.6
+        "OBP": 0.295
       }
     },
     {
@@ -2700,12 +2700,12 @@
       "fp_rank": 16,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.285,
+        "R": 87.4,
         "SB": 3.4,
         "AVG": 0.231,
+        "HR": 19.2,
         "RBI": 77.7,
-        "R": 87.4,
-        "HR": 19.2
+        "OBP": 0.287
       }
     },
     {
@@ -2716,7 +2716,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.609,
+      "expected_stats_value_l1": 6.66,
       "expected_stats_value_l2": 6.987,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -2737,12 +2737,12 @@
       "fp_rank": 19,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.318,
+        "R": 94.7,
         "SB": 16.9,
         "AVG": 0.236,
+        "HR": 24.8,
         "RBI": 78.4,
-        "R": 94.7,
-        "HR": 24.8
+        "OBP": 0.318
       }
     },
     {
@@ -2753,7 +2753,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.253,
+      "expected_stats_value_l1": 3.209,
       "expected_stats_value_l2": 0.372,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -2774,12 +2774,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.361,
+        "R": 96.5,
         "SB": 7.5,
         "AVG": 0.222,
+        "HR": 17.7,
         "RBI": 76.2,
-        "R": 96.5,
-        "HR": 17.7
+        "OBP": 0.357
       }
     },
     {
@@ -2787,10 +2787,10 @@
       "name": "Brice Turang",
       "type": "hitter",
       "pos": "2B",
-      "league1_value": 41.4,
+      "league1_value": 40.7,
       "league2_value": 26.7,
       "PA_proj": 600,
-      "expected_stats_value_l1": 7.699,
+      "expected_stats_value_l1": 7.664,
       "expected_stats_value_l2": 4.694,
       "track_record_multiplier": 0.9,
       "quality_points": 3,
@@ -2811,12 +2811,12 @@
       "fp_rank": 24,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.383,
+        "R": 90.9,
         "SB": 37.3,
         "AVG": 0.235,
+        "HR": 23.2,
         "RBI": 79.2,
-        "R": 90.9,
-        "HR": 23.2
+        "OBP": 0.378
       }
     },
     {
@@ -2827,7 +2827,7 @@
       "league1_value": 15.0,
       "league2_value": 15.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 1.723,
+      "expected_stats_value_l1": 1.713,
       "expected_stats_value_l2": 0.113,
       "track_record_multiplier": 0.84,
       "quality_points": 0,
@@ -2848,12 +2848,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.313,
+        "R": 93.3,
         "SB": 17.4,
         "AVG": 0.211,
+        "HR": 19.6,
         "RBI": 62.3,
-        "R": 93.3,
-        "HR": 19.6
+        "OBP": 0.312
       }
     },
     {
@@ -2864,7 +2864,7 @@
       "league1_value": 45.0,
       "league2_value": 45.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.834,
+      "expected_stats_value_l1": 3.79,
       "expected_stats_value_l2": 2.958,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -2885,12 +2885,12 @@
       "fp_rank": 36,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.341,
+        "R": 95.6,
         "SB": 2.7,
         "AVG": 0.237,
+        "HR": 26.4,
         "RBI": 89.0,
-        "R": 95.6,
-        "HR": 26.4
+        "OBP": 0.339
       }
     },
     {
@@ -2898,10 +2898,10 @@
       "name": "Cj Abrams",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 21.3,
+      "league1_value": 20.3,
       "league2_value": 20.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.693,
+      "expected_stats_value_l1": 3.571,
       "expected_stats_value_l2": 2.886,
       "track_record_multiplier": 0.93,
       "quality_points": 1,
@@ -2922,12 +2922,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.331,
+        "R": 76.9,
         "SB": 35.7,
         "AVG": 0.232,
+        "HR": 22.0,
         "RBI": 71.9,
-        "R": 76.9,
-        "HR": 22.0
+        "OBP": 0.328
       }
     },
     {
@@ -2959,12 +2959,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.3,
+        "R": 82.9,
         "SB": 6.9,
         "AVG": 0.235,
+        "HR": 18.0,
         "RBI": 81.7,
-        "R": 82.9,
-        "HR": 18.0
+        "OBP": 0.3
       }
     },
     {
@@ -2972,10 +2972,10 @@
       "name": "Luke Keaschall",
       "type": "hitter",
       "pos": "2B",
-      "league1_value": 3.1,
+      "league1_value": 3.3,
       "league2_value": 1.9,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.647,
+      "expected_stats_value_l1": 0.703,
       "expected_stats_value_l2": 0.37,
       "track_record_multiplier": 0.77,
       "quality_points": 0,
@@ -2996,12 +2996,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.315,
+        "R": 77.7,
         "SB": 12.5,
         "AVG": 0.257,
+        "HR": 15.1,
         "RBI": 74.5,
-        "R": 77.7,
-        "HR": 15.1
+        "OBP": 0.316
       }
     },
     {
@@ -3009,10 +3009,10 @@
       "name": "Pete Crow-armstrong",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 26.3,
+      "league1_value": 25.9,
       "league2_value": 31.7,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.042,
+      "expected_stats_value_l1": 5.037,
       "expected_stats_value_l2": 5.759,
       "track_record_multiplier": 0.85,
       "quality_points": 0,
@@ -3033,12 +3033,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.277,
+        "R": 86.8,
         "SB": 30.4,
         "AVG": 0.216,
+        "HR": 20.2,
         "RBI": 78.0,
-        "R": 86.8,
-        "HR": 20.2
+        "OBP": 0.277
       }
     },
     {
@@ -3049,7 +3049,7 @@
       "league1_value": 9.6,
       "league2_value": 7.4,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.001,
+      "expected_stats_value_l1": 2.024,
       "expected_stats_value_l2": 1.462,
       "track_record_multiplier": 0.78,
       "quality_points": 0,
@@ -3070,12 +3070,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.311,
+        "R": 73.8,
         "SB": 13.1,
         "AVG": 0.246,
+        "HR": 19.5,
         "RBI": 87.7,
-        "R": 73.8,
-        "HR": 19.5
+        "OBP": 0.311
       }
     },
     {
@@ -3107,12 +3107,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.255,
+        "R": 72.1,
         "SB": 21.9,
         "AVG": 0.21,
+        "HR": 13.6,
         "RBI": 60.8,
-        "R": 72.1,
-        "HR": 13.6
+        "OBP": 0.257
       }
     },
     {
@@ -3123,7 +3123,7 @@
       "league1_value": 38.0,
       "league2_value": 38.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 6.943,
+      "expected_stats_value_l1": 6.728,
       "expected_stats_value_l2": 2.4,
       "track_record_multiplier": 0.83,
       "quality_points": 1,
@@ -3144,12 +3144,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.274,
+        "R": 86.4,
         "SB": 4.6,
         "AVG": 0.211,
+        "HR": 26.4,
         "RBI": 80.8,
-        "R": 86.4,
-        "HR": 26.4
+        "OBP": 0.274
       }
     },
     {
@@ -3157,10 +3157,10 @@
       "name": "William Contreras",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 53.2,
+      "league1_value": 51.6,
       "league2_value": 24.5,
       "PA_proj": 600,
-      "expected_stats_value_l1": 8.936,
+      "expected_stats_value_l1": 8.784,
       "expected_stats_value_l2": 3.895,
       "track_record_multiplier": 0.96,
       "quality_points": 0,
@@ -3181,12 +3181,12 @@
       "fp_rank": 23,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.338,
+        "R": 91.5,
         "SB": 6.5,
         "AVG": 0.269,
+        "HR": 18.4,
         "RBI": 77.8,
-        "R": 91.5,
-        "HR": 18.4
+        "OBP": 0.339
       }
     },
     {
@@ -3194,10 +3194,10 @@
       "name": "Tyler Soderstrom",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 28.6,
+      "league1_value": 28.1,
       "league2_value": 28.7,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.121,
+      "expected_stats_value_l1": 5.094,
       "expected_stats_value_l2": 5.116,
       "track_record_multiplier": 0.84,
       "quality_points": 0,
@@ -3218,12 +3218,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.308,
+        "R": 81.5,
         "SB": 1.9,
         "AVG": 0.218,
+        "HR": 24.6,
         "RBI": 98.0,
-        "R": 81.5,
-        "HR": 24.6
+        "OBP": 0.306
       }
     },
     {
@@ -3255,12 +3255,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.308,
+        "R": 80.9,
         "SB": 8.2,
         "AVG": 0.248,
+        "HR": 13.3,
         "RBI": 91.7,
-        "R": 80.9,
-        "HR": 13.3
+        "OBP": 0.311
       }
     },
     {
@@ -3271,7 +3271,7 @@
       "league1_value": 30.0,
       "league2_value": 30.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.997,
+      "expected_stats_value_l1": 3.965,
       "expected_stats_value_l2": 3.309,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -3292,12 +3292,12 @@
       "fp_rank": 39,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.358,
+        "R": 93.5,
         "SB": 1.2,
         "AVG": 0.255,
+        "HR": 21.6,
         "RBI": 100.8,
-        "R": 93.5,
-        "HR": 21.6
+        "OBP": 0.356
       }
     },
     {
@@ -3305,10 +3305,10 @@
       "name": "Cam Smith",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 27.6,
+      "league1_value": 27.2,
       "league2_value": 31.4,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.62,
+      "expected_stats_value_l1": 5.594,
       "expected_stats_value_l2": 6.045,
       "track_record_multiplier": 0.8,
       "quality_points": 0,
@@ -3329,12 +3329,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.307,
+        "R": 83.3,
         "SB": 6.2,
         "AVG": 0.229,
+        "HR": 26.7,
         "RBI": 89.8,
-        "R": 83.3,
-        "HR": 26.7
+        "OBP": 0.305
       }
     },
     {
@@ -3366,12 +3366,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.244,
+        "R": 77.2,
         "SB": 2.2,
         "AVG": 0.21,
+        "HR": 21.2,
         "RBI": 73.0,
-        "R": 77.2,
-        "HR": 21.2
+        "OBP": 0.245
       }
     },
     {
@@ -3382,7 +3382,7 @@
       "league1_value": 23.2,
       "league2_value": 34.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.848,
+      "expected_stats_value_l1": 4.893,
       "expected_stats_value_l2": 6.362,
       "track_record_multiplier": 0.84,
       "quality_points": 1,
@@ -3403,12 +3403,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.324,
+        "R": 97.4,
         "SB": 6.5,
         "AVG": 0.271,
+        "HR": 16.6,
         "RBI": 83.8,
-        "R": 97.4,
-        "HR": 16.6
+        "OBP": 0.324
       }
     },
     {
@@ -3416,10 +3416,10 @@
       "name": "Jackson Merrill",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 29.6,
+      "league1_value": 29.4,
       "league2_value": 36.9,
       "PA_proj": 600,
-      "expected_stats_value_l1": 5.514,
+      "expected_stats_value_l1": 5.538,
       "expected_stats_value_l2": 6.506,
       "track_record_multiplier": 0.85,
       "quality_points": 0,
@@ -3440,12 +3440,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.299,
+        "R": 98.0,
         "SB": 13.0,
         "AVG": 0.238,
+        "HR": 21.9,
         "RBI": 80.4,
-        "R": 98.0,
-        "HR": 21.9
+        "OBP": 0.299
       }
     },
     {
@@ -3456,7 +3456,7 @@
       "league1_value": 30.0,
       "league2_value": 30.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.372,
+      "expected_stats_value_l1": 0.315,
       "expected_stats_value_l2": 1.006,
       "track_record_multiplier": 0.96,
       "quality_points": 1,
@@ -3477,12 +3477,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.346,
+        "R": 84.5,
         "SB": 4.3,
         "AVG": 0.254,
+        "HR": 18.8,
         "RBI": 95.0,
-        "R": 84.5,
-        "HR": 18.8
+        "OBP": 0.343
       }
     },
     {
@@ -3490,10 +3490,10 @@
       "name": "Jazz Chisholm",
       "type": "hitter",
       "pos": "2B",
-      "league1_value": 18.4,
+      "league1_value": 17.9,
       "league2_value": 15.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.137,
+      "expected_stats_value_l1": 3.098,
       "expected_stats_value_l2": 1.723,
       "track_record_multiplier": 0.95,
       "quality_points": 0,
@@ -3514,12 +3514,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.305,
+        "R": 74.6,
         "SB": 33.2,
         "AVG": 0.213,
+        "HR": 17.4,
         "RBI": 88.5,
-        "R": 74.6,
-        "HR": 17.4
+        "OBP": 0.303
       }
     },
     {
@@ -3551,12 +3551,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.296,
+        "R": 88.8,
         "SB": 6.7,
         "AVG": 0.24,
+        "HR": 17.2,
         "RBI": 66.0,
-        "R": 88.8,
-        "HR": 17.2
+        "OBP": 0.296
       }
     },
     {
@@ -3588,12 +3588,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.265,
+        "R": 69.4,
         "SB": 9.9,
         "AVG": 0.22,
+        "HR": 20.2,
         "RBI": 67.9,
-        "R": 69.4,
-        "HR": 20.2
+        "OBP": 0.265
       }
     },
     {
@@ -3604,7 +3604,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 1.449,
+      "expected_stats_value_l1": 1.428,
       "expected_stats_value_l2": 2.133,
       "track_record_multiplier": 0.91,
       "quality_points": 0,
@@ -3625,12 +3625,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.282,
+        "R": 82.6,
         "SB": 18.0,
         "AVG": 0.218,
+        "HR": 15.0,
         "RBI": 53.8,
-        "R": 82.6,
-        "HR": 15.0
+        "OBP": 0.282
       }
     },
     {
@@ -3641,7 +3641,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.418,
+      "expected_stats_value_l1": 2.416,
       "expected_stats_value_l2": 3.032,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -3662,12 +3662,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.294,
+        "R": 70.1,
         "SB": 11.1,
         "AVG": 0.225,
+        "HR": 20.3,
         "RBI": 70.6,
-        "R": 70.1,
-        "HR": 20.3
+        "OBP": 0.294
       }
     },
     {
@@ -3678,7 +3678,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.603,
+      "expected_stats_value_l1": 0.633,
       "expected_stats_value_l2": 2.011,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -3699,12 +3699,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.34,
+        "R": 105.3,
         "SB": 2.5,
         "AVG": 0.269,
+        "HR": 17.3,
         "RBI": 87.9,
-        "R": 105.3,
-        "HR": 17.3
+        "OBP": 0.34
       }
     },
     {
@@ -3715,7 +3715,7 @@
       "league1_value": 30.0,
       "league2_value": 30.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.333,
+      "expected_stats_value_l1": 2.332,
       "expected_stats_value_l2": 2.025,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -3736,12 +3736,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.28,
+        "R": 81.3,
         "SB": 1.5,
         "AVG": 0.183,
+        "HR": 23.2,
         "RBI": 95.6,
-        "R": 81.3,
-        "HR": 23.2
+        "OBP": 0.28
       }
     },
     {
@@ -3752,7 +3752,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.007,
+      "expected_stats_value_l1": 3.867,
       "expected_stats_value_l2": 2.694,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -3773,12 +3773,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.332,
+        "R": 89.6,
         "SB": 13.5,
         "AVG": 0.215,
+        "HR": 23.1,
         "RBI": 100.0,
-        "R": 89.6,
-        "HR": 23.1
+        "OBP": 0.327
       }
     },
     {
@@ -3789,7 +3789,7 @@
       "league1_value": 11.3,
       "league2_value": 18.3,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.228,
+      "expected_stats_value_l1": 2.253,
       "expected_stats_value_l2": 3.428,
       "track_record_multiplier": 0.82,
       "quality_points": 0,
@@ -3810,12 +3810,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.323,
+        "R": 80.0,
         "SB": 9.6,
         "AVG": 0.263,
+        "HR": 14.4,
         "RBI": 63.9,
-        "R": 80.0,
-        "HR": 14.4
+        "OBP": 0.323
       }
     },
     {
@@ -3826,7 +3826,7 @@
       "league1_value": 15.0,
       "league2_value": 15.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 1.998,
+      "expected_stats_value_l1": 1.886,
       "expected_stats_value_l2": 1.498,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -3847,12 +3847,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.33,
+        "R": 90.7,
         "SB": 13.0,
         "AVG": 0.239,
+        "HR": 17.4,
         "RBI": 79.6,
-        "R": 90.7,
-        "HR": 17.4
+        "OBP": 0.327
       }
     },
     {
@@ -3863,7 +3863,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.296,
+      "expected_stats_value_l1": 3.435,
       "expected_stats_value_l2": 3.196,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -3884,12 +3884,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.337,
+        "R": 95.5,
         "SB": 7.4,
         "AVG": 0.278,
+        "HR": 20.5,
         "RBI": 80.6,
-        "R": 95.5,
-        "HR": 20.5
+        "OBP": 0.34
       }
     },
     {
@@ -3897,10 +3897,10 @@
       "name": "Ram\u00f3n Laureano",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 21.5,
+      "league1_value": 21.3,
       "league2_value": 25.2,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.519,
+      "expected_stats_value_l1": 3.518,
       "expected_stats_value_l2": 3.896,
       "track_record_multiplier": 0.99,
       "quality_points": 0,
@@ -3921,12 +3921,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.281,
+        "R": 80.3,
         "SB": 13.2,
         "AVG": 0.21,
+        "HR": 24.5,
         "RBI": 79.0,
-        "R": 80.3,
-        "HR": 24.5
+        "OBP": 0.281
       }
     },
     {
@@ -3937,7 +3937,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 0.086,
+      "expected_stats_value_l1": 0.011,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.93,
       "quality_points": 1,
@@ -3958,12 +3958,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.321,
+        "R": 79.6,
         "SB": 1.8,
         "AVG": 0.2,
+        "HR": 27.4,
         "RBI": 87.8,
-        "R": 79.6,
-        "HR": 27.4
+        "OBP": 0.317
       }
     },
     {
@@ -3995,12 +3995,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.298,
+        "R": 85.2,
         "SB": 1.2,
         "AVG": 0.215,
+        "HR": 21.4,
         "RBI": 82.4,
-        "R": 85.2,
-        "HR": 21.4
+        "OBP": 0.298
       }
     },
     {
@@ -4032,12 +4032,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.265,
+        "R": 62.6,
         "SB": 10.3,
         "AVG": 0.212,
+        "HR": 17.7,
         "RBI": 66.7,
-        "R": 62.6,
-        "HR": 17.7
+        "OBP": 0.268
       }
     },
     {
@@ -4069,12 +4069,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.289,
+        "R": 73.4,
         "SB": 4.7,
         "AVG": 0.238,
+        "HR": 12.6,
         "RBI": 78.0,
-        "R": 73.4,
-        "HR": 12.6
+        "OBP": 0.289
       }
     },
     {
@@ -4085,7 +4085,7 @@
       "league1_value": 30.0,
       "league2_value": 30.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 2.069,
+      "expected_stats_value_l1": 1.987,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -4106,12 +4106,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.332,
+        "R": 84.3,
         "SB": 6.4,
         "AVG": 0.212,
+        "HR": 23.1,
         "RBI": 75.1,
-        "R": 84.3,
-        "HR": 23.1
+        "OBP": 0.327
       }
     },
     {
@@ -4122,7 +4122,7 @@
       "league1_value": 20.0,
       "league2_value": 30.8,
       "PA_proj": 600,
-      "expected_stats_value_l1": 4.032,
+      "expected_stats_value_l1": 4.121,
       "expected_stats_value_l2": 5.639,
       "track_record_multiplier": 0.86,
       "quality_points": 1,
@@ -4143,12 +4143,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.302,
+        "R": 75.2,
         "SB": 7.0,
         "AVG": 0.257,
+        "HR": 26.0,
         "RBI": 76.9,
-        "R": 75.2,
-        "HR": 26.0
+        "OBP": 0.304
       }
     },
     {
@@ -4159,7 +4159,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 600,
-      "expected_stats_value_l1": 3.263,
+      "expected_stats_value_l1": 3.161,
       "expected_stats_value_l2": 3.49,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -4180,12 +4180,12 @@
       "fp_rank": 20,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.346,
+        "R": 96.1,
         "SB": 6.8,
         "AVG": 0.235,
+        "HR": 18.3,
         "RBI": 79.6,
-        "R": 96.1,
-        "HR": 18.3
+        "OBP": 0.34
       }
     },
     {
@@ -4193,10 +4193,10 @@
       "name": "Ben Rice",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 78.4,
+      "league1_value": 76.1,
       "league2_value": 47.8,
       "PA_proj": 595,
-      "expected_stats_value_l1": 16.09,
+      "expected_stats_value_l1": 15.812,
       "expected_stats_value_l2": 9.278,
       "track_record_multiplier": 0.81,
       "quality_points": 3,
@@ -4217,12 +4217,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.394,
+        "R": 113.0,
         "SB": 6.3,
         "AVG": 0.263,
+        "HR": 30.9,
         "RBI": 106.2,
-        "R": 113.0,
-        "HR": 30.9
+        "OBP": 0.387
       }
     },
     {
@@ -4233,7 +4233,7 @@
       "league1_value": 50.0,
       "league2_value": 50.0,
       "PA_proj": 595,
-      "expected_stats_value_l1": 4.127,
+      "expected_stats_value_l1": 3.976,
       "expected_stats_value_l2": 0.508,
       "track_record_multiplier": 0.8,
       "quality_points": 0,
@@ -4254,12 +4254,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.283,
+        "R": 90.4,
         "SB": 10.5,
         "AVG": 0.197,
+        "HR": 15.9,
         "RBI": 74.9,
-        "R": 90.4,
-        "HR": 15.9
+        "OBP": 0.283
       }
     },
     {
@@ -4267,10 +4267,10 @@
       "name": "Max Muncy",
       "type": "hitter",
       "pos": "3B",
-      "league1_value": 44.1,
+      "league1_value": 44.2,
       "league2_value": 50.8,
       "PA_proj": 591,
-      "expected_stats_value_l1": 7.361,
+      "expected_stats_value_l1": 7.485,
       "expected_stats_value_l2": 8.04,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -4291,12 +4291,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.361,
+        "R": 117.6,
         "SB": 3.2,
         "AVG": 0.258,
+        "HR": 27.2,
         "RBI": 94.8,
-        "R": 117.6,
-        "HR": 27.2
+        "OBP": 0.361
       }
     },
     {
@@ -4304,10 +4304,10 @@
       "name": "Trent Grisham",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 27.5,
+      "league1_value": 26.6,
       "league2_value": 20.9,
       "PA_proj": 591,
-      "expected_stats_value_l1": 4.169,
+      "expected_stats_value_l1": 4.079,
       "expected_stats_value_l2": 2.996,
       "track_record_multiplier": 0.99,
       "quality_points": 3,
@@ -4328,12 +4328,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.338,
+        "R": 107.4,
         "SB": 11.0,
         "AVG": 0.187,
+        "HR": 23.4,
         "RBI": 78.5,
-        "R": 107.4,
-        "HR": 23.4
+        "OBP": 0.33
       }
     },
     {
@@ -4341,10 +4341,10 @@
       "name": "Daulton Varsho",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 12.1,
+      "league1_value": 11.9,
       "league2_value": 17.0,
       "PA_proj": 586,
-      "expected_stats_value_l1": 2.05,
+      "expected_stats_value_l1": 2.04,
       "expected_stats_value_l2": 2.736,
       "track_record_multiplier": 0.95,
       "quality_points": 0,
@@ -4365,12 +4365,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.29,
+        "R": 78.2,
         "SB": 13.5,
         "AVG": 0.223,
+        "HR": 17.3,
         "RBI": 63.6,
-        "R": 78.2,
-        "HR": 17.3
+        "OBP": 0.29
       }
     },
     {
@@ -4402,12 +4402,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.269,
+        "R": 75.2,
         "SB": 7.5,
         "AVG": 0.194,
+        "HR": 20.2,
         "RBI": 76.9,
-        "R": 75.2,
-        "HR": 20.2
+        "OBP": 0.269
       }
     },
     {
@@ -4418,7 +4418,7 @@
       "league1_value": 15.0,
       "league2_value": 15.0,
       "PA_proj": 582,
-      "expected_stats_value_l1": 0.153,
+      "expected_stats_value_l1": 0.149,
       "expected_stats_value_l2": 0.771,
       "track_record_multiplier": 0.94,
       "quality_points": 0,
@@ -4439,12 +4439,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.287,
+        "R": 84.7,
         "SB": 1.9,
         "AVG": 0.206,
+        "HR": 14.4,
         "RBI": 87.8,
-        "R": 84.7,
-        "HR": 14.4
+        "OBP": 0.287
       }
     },
     {
@@ -4476,12 +4476,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.288,
+        "R": 65.0,
         "SB": 15.0,
         "AVG": 0.214,
+        "HR": 13.2,
         "RBI": 60.6,
-        "R": 65.0,
-        "HR": 13.2
+        "OBP": 0.288
       }
     },
     {
@@ -4489,10 +4489,10 @@
       "name": "Roman Anthony",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 28.8,
+      "league1_value": 28.2,
       "league2_value": 28.7,
       "PA_proj": 577,
-      "expected_stats_value_l1": 5.806,
+      "expected_stats_value_l1": 5.746,
       "expected_stats_value_l2": 5.213,
       "track_record_multiplier": 0.78,
       "quality_points": 1,
@@ -4513,12 +4513,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.367,
+        "R": 82.6,
         "SB": 11.6,
         "AVG": 0.248,
+        "HR": 19.8,
         "RBI": 78.0,
-        "R": 82.6,
-        "HR": 19.8
+        "OBP": 0.362
       }
     },
     {
@@ -4529,7 +4529,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 577,
-      "expected_stats_value_l1": 7.008,
+      "expected_stats_value_l1": 6.947,
       "expected_stats_value_l2": 6.398,
       "track_record_multiplier": 0.93,
       "quality_points": 1,
@@ -4550,12 +4550,12 @@
       "fp_rank": 8,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.33,
+        "R": 79.3,
         "SB": 34.8,
         "AVG": 0.219,
+        "HR": 22.4,
         "RBI": 74.9,
-        "R": 79.3,
-        "HR": 22.4
+        "OBP": 0.326
       }
     },
     {
@@ -4563,10 +4563,10 @@
       "name": "Chase Delauter",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 17.1,
+      "league1_value": 16.1,
       "league2_value": 16.3,
       "PA_proj": 577,
-      "expected_stats_value_l1": 3.671,
+      "expected_stats_value_l1": 3.508,
       "expected_stats_value_l2": 3.318,
       "track_record_multiplier": 0.75,
       "quality_points": 2,
@@ -4587,12 +4587,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.349,
+        "R": 74.6,
         "SB": 6.9,
         "AVG": 0.241,
+        "HR": 16.9,
         "RBI": 76.6,
-        "R": 74.6,
-        "HR": 16.9
+        "OBP": 0.342
       }
     },
     {
@@ -4624,12 +4624,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.241,
+        "R": 73.8,
         "SB": 47.8,
         "AVG": 0.198,
+        "HR": 14.3,
         "RBI": 60.7,
-        "R": 73.8,
-        "HR": 14.3
+        "OBP": 0.246
       }
     },
     {
@@ -4661,12 +4661,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.312,
+        "R": 74.6,
         "SB": 13.3,
         "AVG": 0.233,
+        "HR": 14.3,
         "RBI": 62.0,
-        "R": 74.6,
-        "HR": 14.3
+        "OBP": 0.309
       }
     },
     {
@@ -4698,12 +4698,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.282,
+        "R": 66.0,
         "SB": 5.0,
         "AVG": 0.213,
+        "HR": 20.3,
         "RBI": 70.2,
-        "R": 66.0,
-        "HR": 20.3
+        "OBP": 0.277
       }
     },
     {
@@ -4735,12 +4735,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.247,
+        "R": 73.8,
         "SB": 24.3,
         "AVG": 0.217,
+        "HR": 13.8,
         "RBI": 53.2,
-        "R": 73.8,
-        "HR": 13.8
+        "OBP": 0.247
       }
     },
     {
@@ -4751,7 +4751,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 568,
-      "expected_stats_value_l1": 4.762,
+      "expected_stats_value_l1": 4.653,
       "expected_stats_value_l2": 4.864,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -4772,12 +4772,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.309,
+        "R": 96.8,
         "SB": 7.3,
         "AVG": 0.222,
+        "HR": 20.4,
         "RBI": 78.3,
-        "R": 96.8,
-        "HR": 20.4
+        "OBP": 0.305
       }
     },
     {
@@ -4788,7 +4788,7 @@
       "league1_value": 10.0,
       "league2_value": 17.6,
       "PA_proj": 563,
-      "expected_stats_value_l1": 1.342,
+      "expected_stats_value_l1": 1.315,
       "expected_stats_value_l2": 3.4,
       "track_record_multiplier": 0.86,
       "quality_points": 2,
@@ -4809,12 +4809,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.353,
+        "R": 79.1,
         "SB": 5.6,
         "AVG": 0.29,
+        "HR": 15.7,
         "RBI": 73.1,
-        "R": 79.1,
-        "HR": 15.7
+        "OBP": 0.35
       }
     },
     {
@@ -4846,12 +4846,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.34,
+        "R": 64.0,
         "SB": 6.7,
         "AVG": 0.288,
+        "HR": 12.2,
         "RBI": 72.2,
-        "R": 64.0,
-        "HR": 12.2
+        "OBP": 0.34
       }
     },
     {
@@ -4862,7 +4862,7 @@
       "league1_value": 40.0,
       "league2_value": 40.0,
       "PA_proj": 563,
-      "expected_stats_value_l1": 4.099,
+      "expected_stats_value_l1": 4.096,
       "expected_stats_value_l2": 5.15,
       "track_record_multiplier": 0.93,
       "quality_points": 0,
@@ -4883,12 +4883,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.285,
+        "R": 81.2,
         "SB": 25.3,
         "AVG": 0.229,
+        "HR": 21.5,
         "RBI": 64.6,
-        "R": 81.2,
-        "HR": 21.5
+        "OBP": 0.285
       }
     },
     {
@@ -4920,12 +4920,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.317,
+        "R": 62.8,
         "SB": 13.0,
         "AVG": 0.23,
+        "HR": 19.0,
         "RBI": 75.3,
-        "R": 62.8,
-        "HR": 19.0
+        "OBP": 0.317
       }
     },
     {
@@ -4936,7 +4936,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 554,
-      "expected_stats_value_l1": 0.982,
+      "expected_stats_value_l1": 0.731,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -4957,12 +4957,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.358,
+        "R": 74.7,
         "SB": 5.1,
         "AVG": 0.208,
+        "HR": 18.5,
         "RBI": 80.8,
-        "R": 74.7,
-        "HR": 18.5
+        "OBP": 0.348
       }
     },
     {
@@ -4970,14 +4970,14 @@
       "name": "Geraldo Perdomo",
       "type": "hitter",
       "pos": "SS",
-      "league1_value": 0.3,
+      "league1_value": 0.0,
       "league2_value": 0.0,
       "PA_proj": 554,
-      "expected_stats_value_l1": 0.041,
+      "expected_stats_value_l1": 0.0,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.93,
       "quality_points": 1,
-      "luck_adjustment": 1.14,
+      "luck_adjustment": 1.22,
       "verdict": "Buy low",
       "tier_sell": null,
       "age_flag": null,
@@ -4994,12 +4994,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.338,
+        "R": 70.4,
         "SB": 16.3,
         "AVG": 0.216,
+        "HR": 13.1,
         "RBI": 73.3,
-        "R": 70.4,
-        "HR": 13.1
+        "OBP": 0.332
       }
     },
     {
@@ -5031,12 +5031,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.296,
+        "R": 65.4,
         "SB": 14.6,
         "AVG": 0.234,
+        "HR": 25.3,
         "RBI": 83.0,
-        "R": 65.4,
-        "HR": 25.3
+        "OBP": 0.301
       }
     },
     {
@@ -5047,7 +5047,7 @@
       "league1_value": 10.0,
       "league2_value": 10.0,
       "PA_proj": 554,
-      "expected_stats_value_l1": 1.089,
+      "expected_stats_value_l1": 0.988,
       "expected_stats_value_l2": 1.168,
       "track_record_multiplier": 0.87,
       "quality_points": 0,
@@ -5068,12 +5068,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.318,
+        "R": 55.5,
         "SB": 15.0,
         "AVG": 0.229,
+        "HR": 13.8,
         "RBI": 66.3,
-        "R": 55.5,
-        "HR": 13.8
+        "OBP": 0.314
       }
     },
     {
@@ -5081,10 +5081,10 @@
       "name": "Carter Jensen",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 43.7,
+      "league1_value": 42.3,
       "league2_value": 35.0,
       "PA_proj": 549,
-      "expected_stats_value_l1": 9.324,
+      "expected_stats_value_l1": 9.143,
       "expected_stats_value_l2": 3.648,
       "track_record_multiplier": 0.76,
       "quality_points": 0,
@@ -5105,12 +5105,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.341,
+        "R": 91.9,
         "SB": 6.7,
         "AVG": 0.255,
+        "HR": 20.1,
         "RBI": 76.7,
-        "R": 91.9,
-        "HR": 20.1
+        "OBP": 0.341
       }
     },
     {
@@ -5121,7 +5121,7 @@
       "league1_value": 2.5,
       "league2_value": 5.6,
       "PA_proj": 549,
-      "expected_stats_value_l1": 0.624,
+      "expected_stats_value_l1": 0.619,
       "expected_stats_value_l2": 1.315,
       "track_record_multiplier": 0.76,
       "quality_points": 0,
@@ -5142,12 +5142,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.305,
+        "R": 65.1,
         "SB": 9.2,
         "AVG": 0.235,
+        "HR": 13.0,
         "RBI": 66.6,
-        "R": 65.1,
-        "HR": 13.0
+        "OBP": 0.305
       }
     },
     {
@@ -5179,12 +5179,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.293,
+        "R": 65.9,
         "SB": 9.0,
         "AVG": 0.209,
+        "HR": 19.3,
         "RBI": 76.5,
-        "R": 65.9,
-        "HR": 19.3
+        "OBP": 0.293
       }
     },
     {
@@ -5192,10 +5192,10 @@
       "name": "Evan Carter",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 5.5,
+      "league1_value": 5.1,
       "league2_value": 1.9,
       "PA_proj": 549,
-      "expected_stats_value_l1": 0.989,
+      "expected_stats_value_l1": 0.921,
       "expected_stats_value_l2": 0.326,
       "track_record_multiplier": 0.79,
       "quality_points": 0,
@@ -5216,12 +5216,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.293,
+        "R": 71.8,
         "SB": 12.9,
         "AVG": 0.178,
+        "HR": 17.8,
         "RBI": 62.8,
-        "R": 71.8,
-        "HR": 17.8
+        "OBP": 0.289
       }
     },
     {
@@ -5253,12 +5253,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.256,
+        "R": 53.2,
         "SB": 21.6,
         "AVG": 0.211,
+        "HR": 16.0,
         "RBI": 55.7,
-        "R": 53.2,
-        "HR": 16.0
+        "OBP": 0.256
       }
     },
     {
@@ -5269,7 +5269,7 @@
       "league1_value": 30.0,
       "league2_value": 30.0,
       "PA_proj": 545,
-      "expected_stats_value_l1": 3.043,
+      "expected_stats_value_l1": 3.24,
       "expected_stats_value_l2": 4.925,
       "track_record_multiplier": 0.93,
       "quality_points": 0,
@@ -5290,12 +5290,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.297,
+        "R": 72.8,
         "SB": 10.4,
         "AVG": 0.26,
+        "HR": 17.1,
         "RBI": 85.3,
-        "R": 72.8,
-        "HR": 17.1
+        "OBP": 0.303
       }
     },
     {
@@ -5327,12 +5327,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.289,
+        "R": 55.5,
         "SB": 23.0,
         "AVG": 0.218,
+        "HR": 11.9,
         "RBI": 65.2,
-        "R": 55.5,
-        "HR": 11.9
+        "OBP": 0.289
       }
     },
     {
@@ -5364,12 +5364,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.344,
+        "R": 69.3,
         "SB": 6.1,
         "AVG": 0.212,
+        "HR": 16.6,
         "RBI": 56.4,
-        "R": 69.3,
-        "HR": 16.6
+        "OBP": 0.328
       }
     },
     {
@@ -5401,12 +5401,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.334,
+        "R": 62.9,
         "SB": 5.6,
         "AVG": 0.266,
+        "HR": 11.8,
         "RBI": 62.5,
-        "R": 62.9,
-        "HR": 11.8
+        "OBP": 0.334
       }
     },
     {
@@ -5438,12 +5438,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.287,
+        "R": 76.5,
         "SB": 1.0,
         "AVG": 0.222,
+        "HR": 18.3,
         "RBI": 86.2,
-        "R": 76.5,
-        "HR": 18.3
+        "OBP": 0.287
       }
     },
     {
@@ -5475,12 +5475,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.258,
+        "R": 77.1,
         "SB": 9.7,
         "AVG": 0.24,
+        "HR": 17.0,
         "RBI": 65.7,
-        "R": 77.1,
-        "HR": 17.0
+        "OBP": 0.264
       }
     },
     {
@@ -5512,12 +5512,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.252,
+        "R": 62.3,
         "SB": 5.9,
         "AVG": 0.192,
+        "HR": 14.4,
         "RBI": 70.6,
-        "R": 62.3,
-        "HR": 14.4
+        "OBP": 0.252
       }
     },
     {
@@ -5525,10 +5525,10 @@
       "name": "Liam Hicks",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 34.6,
+      "league1_value": 33.9,
       "league2_value": 11.3,
       "PA_proj": 535,
-      "expected_stats_value_l1": 7.117,
+      "expected_stats_value_l1": 7.061,
       "expected_stats_value_l2": 2.206,
       "track_record_multiplier": 0.79,
       "quality_points": 1,
@@ -5549,12 +5549,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.327,
+        "R": 81.6,
         "SB": 3.6,
         "AVG": 0.264,
+        "HR": 16.5,
         "RBI": 74.6,
-        "R": 81.6,
-        "HR": 16.5
+        "OBP": 0.332
       }
     },
     {
@@ -5562,10 +5562,10 @@
       "name": "Garrett Mitchell",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 16.5,
+      "league1_value": 15.0,
       "league2_value": 11.5,
       "PA_proj": 531,
-      "expected_stats_value_l1": 3.667,
+      "expected_stats_value_l1": 3.39,
       "expected_stats_value_l2": 2.425,
       "track_record_multiplier": 0.79,
       "quality_points": 2,
@@ -5586,12 +5586,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.35,
+        "R": 55.8,
         "SB": 21.3,
         "AVG": 0.215,
+        "HR": 20.7,
         "RBI": 67.5,
-        "R": 55.8,
-        "HR": 20.7
+        "OBP": 0.338
       }
     },
     {
@@ -5599,10 +5599,10 @@
       "name": "Jacob Young",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 11.8,
+      "league1_value": 12.2,
       "league2_value": 22.1,
       "PA_proj": 531,
-      "expected_stats_value_l1": 2.283,
+      "expected_stats_value_l1": 2.386,
       "expected_stats_value_l2": 4.04,
       "track_record_multiplier": 0.84,
       "quality_points": 0,
@@ -5623,12 +5623,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.29,
+        "R": 70.8,
         "SB": 30.1,
         "AVG": 0.253,
+        "HR": 13.4,
         "RBI": 59.5,
-        "R": 70.8,
-        "HR": 13.4
+        "OBP": 0.294
       }
     },
     {
@@ -5639,7 +5639,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 526,
-      "expected_stats_value_l1": 0.905,
+      "expected_stats_value_l1": 1.195,
       "expected_stats_value_l2": 2.66,
       "track_record_multiplier": 0.93,
       "quality_points": 0,
@@ -5660,12 +5660,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.292,
+        "R": 69.3,
         "SB": 16.1,
         "AVG": 0.254,
+        "HR": 15.2,
         "RBI": 56.3,
-        "R": 69.3,
-        "HR": 15.2
+        "OBP": 0.302
       }
     },
     {
@@ -5673,10 +5673,10 @@
       "name": "Michael Harris",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 43.6,
+      "league1_value": 43.5,
       "league2_value": 59.7,
       "PA_proj": 526,
-      "expected_stats_value_l1": 7.596,
+      "expected_stats_value_l1": 7.693,
       "expected_stats_value_l2": 9.862,
       "track_record_multiplier": 0.93,
       "quality_points": 2,
@@ -5697,12 +5697,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.357,
+        "R": 98.6,
         "SB": 16.4,
         "AVG": 0.316,
+        "HR": 24.5,
         "RBI": 74.1,
-        "R": 98.6,
-        "HR": 24.5
+        "OBP": 0.357
       }
     },
     {
@@ -5734,12 +5734,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.275,
+        "R": 66.7,
         "SB": 7.5,
         "AVG": 0.215,
+        "HR": 17.8,
         "RBI": 69.8,
-        "R": 66.7,
-        "HR": 17.8
+        "OBP": 0.275
       }
     },
     {
@@ -5747,10 +5747,10 @@
       "name": "Jac Caglianone",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 11.2,
+      "league1_value": 9.8,
       "league2_value": 13.0,
       "PA_proj": 526,
-      "expected_stats_value_l1": 2.542,
+      "expected_stats_value_l1": 2.259,
       "expected_stats_value_l2": 2.803,
       "track_record_multiplier": 0.77,
       "quality_points": 1,
@@ -5771,12 +5771,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.301,
+        "R": 72.1,
         "SB": 6.1,
         "AVG": 0.22,
+        "HR": 23.1,
         "RBI": 67.6,
-        "R": 72.1,
-        "HR": 23.1
+        "OBP": 0.291
       }
     },
     {
@@ -5808,12 +5808,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.288,
+        "R": 79.3,
         "SB": 2.8,
         "AVG": 0.243,
+        "HR": 16.7,
         "RBI": 70.6,
-        "R": 79.3,
-        "HR": 16.7
+        "OBP": 0.288
       }
     },
     {
@@ -5821,10 +5821,10 @@
       "name": "Dillon Dingler",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 48.3,
+      "league1_value": 46.7,
       "league2_value": 28.6,
       "PA_proj": 522,
-      "expected_stats_value_l1": 9.489,
+      "expected_stats_value_l1": 9.295,
       "expected_stats_value_l2": 5.073,
       "track_record_multiplier": 0.8,
       "quality_points": 2,
@@ -5845,12 +5845,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.328,
+        "R": 81.0,
         "SB": 4.5,
         "AVG": 0.278,
+        "HR": 22.5,
         "RBI": 92.2,
-        "R": 81.0,
-        "HR": 22.5
+        "OBP": 0.328
       }
     },
     {
@@ -5861,7 +5861,7 @@
       "league1_value": 2.2,
       "league2_value": 15.0,
       "PA_proj": 522,
-      "expected_stats_value_l1": 0.51,
+      "expected_stats_value_l1": 0.526,
       "expected_stats_value_l2": 3.073,
       "track_record_multiplier": 0.82,
       "quality_points": 0,
@@ -5882,12 +5882,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.302,
+        "R": 74.2,
         "SB": 6.5,
         "AVG": 0.265,
+        "HR": 23.3,
         "RBI": 65.7,
-        "R": 74.2,
-        "HR": 23.3
+        "OBP": 0.302
       }
     },
     {
@@ -5919,12 +5919,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.264,
+        "R": 70.1,
         "SB": 4.5,
         "AVG": 0.203,
+        "HR": 12.6,
         "RBI": 70.8,
-        "R": 70.1,
-        "HR": 12.6
+        "OBP": 0.269
       }
     },
     {
@@ -5932,10 +5932,10 @@
       "name": "Matt Wallner",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 3.1,
+      "league1_value": 3.4,
       "league2_value": 4.9,
       "PA_proj": 522,
-      "expected_stats_value_l1": 0.599,
+      "expected_stats_value_l1": 0.673,
       "expected_stats_value_l2": 0.903,
       "track_record_multiplier": 0.84,
       "quality_points": 0,
@@ -5956,12 +5956,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.254,
+        "R": 75.8,
         "SB": 5.0,
         "AVG": 0.192,
+        "HR": 18.0,
         "RBI": 76.4,
-        "R": 75.8,
-        "HR": 18.0
+        "OBP": 0.26
       }
     },
     {
@@ -5972,7 +5972,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 517,
-      "expected_stats_value_l1": 1.695,
+      "expected_stats_value_l1": 1.553,
       "expected_stats_value_l2": 1.614,
       "track_record_multiplier": 0.86,
       "quality_points": 0,
@@ -5993,12 +5993,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.301,
+        "R": 71.7,
         "SB": 15.9,
         "AVG": 0.211,
+        "HR": 15.8,
         "RBI": 64.9,
-        "R": 71.7,
-        "HR": 15.8
+        "OBP": 0.295
       }
     },
     {
@@ -6030,12 +6030,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.357,
+        "R": 71.1,
         "SB": 3.0,
         "AVG": 0.228,
+        "HR": 11.5,
         "RBI": 67.1,
-        "R": 71.1,
-        "HR": 11.5
+        "OBP": 0.35
       }
     },
     {
@@ -6067,12 +6067,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.296,
+        "R": 64.1,
         "SB": 27.8,
         "AVG": 0.198,
+        "HR": 10.6,
         "RBI": 62.5,
-        "R": 64.1,
-        "HR": 10.6
+        "OBP": 0.296
       }
     },
     {
@@ -6080,10 +6080,10 @@
       "name": "Mickey Moniak",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 14.8,
+      "league1_value": 14.5,
       "league2_value": 21.7,
       "PA_proj": 512,
-      "expected_stats_value_l1": 2.761,
+      "expected_stats_value_l1": 2.749,
       "expected_stats_value_l2": 3.842,
       "track_record_multiplier": 0.87,
       "quality_points": 1,
@@ -6104,12 +6104,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.281,
+        "R": 78.4,
         "SB": 10.5,
         "AVG": 0.227,
+        "HR": 20.8,
         "RBI": 72.8,
-        "R": 78.4,
-        "HR": 20.8
+        "OBP": 0.281
       }
     },
     {
@@ -6120,7 +6120,7 @@
       "league1_value": 15.0,
       "league2_value": 15.0,
       "PA_proj": 512,
-      "expected_stats_value_l1": 0.586,
+      "expected_stats_value_l1": 0.733,
       "expected_stats_value_l2": 1.894,
       "track_record_multiplier": 1.0,
       "quality_points": 1,
@@ -6141,12 +6141,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.278,
+        "R": 74.1,
         "SB": 6.1,
         "AVG": 0.231,
+        "HR": 18.9,
         "RBI": 57.7,
-        "R": 74.1,
-        "HR": 18.9
+        "OBP": 0.284
       }
     },
     {
@@ -6154,14 +6154,14 @@
       "name": "Angel Mart\u00ednez",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 0.0,
+      "league1_value": 0.9,
       "league2_value": 9.9,
       "PA_proj": 512,
-      "expected_stats_value_l1": 0.0,
+      "expected_stats_value_l1": 0.221,
       "expected_stats_value_l2": 2.033,
       "track_record_multiplier": 0.81,
       "quality_points": 0,
-      "luck_adjustment": 0.78,
+      "luck_adjustment": 0.86,
       "verdict": "Slight sell",
       "tier_sell": "Slight Regression Expected",
       "age_flag": null,
@@ -6178,12 +6178,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.297,
+        "R": 56.6,
         "SB": 8.2,
         "AVG": 0.266,
+        "HR": 17.3,
         "RBI": 58.7,
-        "R": 56.6,
-        "HR": 17.3
+        "OBP": 0.305
       }
     },
     {
@@ -6215,12 +6215,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.284,
+        "R": 51.0,
         "SB": 20.0,
         "AVG": 0.223,
+        "HR": 15.3,
         "RBI": 67.1,
-        "R": 51.0,
-        "HR": 15.3
+        "OBP": 0.284
       }
     },
     {
@@ -6252,12 +6252,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.282,
+        "R": 68.4,
         "SB": 14.4,
         "AVG": 0.25,
+        "HR": 14.5,
         "RBI": 73.3,
-        "R": 68.4,
-        "HR": 14.5
+        "OBP": 0.286
       }
     },
     {
@@ -6289,12 +6289,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.295,
+        "R": 62.8,
         "SB": 3.9,
         "AVG": 0.186,
+        "HR": 14.4,
         "RBI": 64.2,
-        "R": 62.8,
-        "HR": 14.4
+        "OBP": 0.286
       }
     },
     {
@@ -6326,12 +6326,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 52.3,
         "SB": 26.1,
         "AVG": 0.144,
+        "HR": 12.3,
         "RBI": 55.9,
-        "R": 52.3,
-        "HR": 12.3
+        "OBP": 0.202
       }
     },
     {
@@ -6339,10 +6339,10 @@
       "name": "Isaac Collins",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 12.1,
+      "league1_value": 11.4,
       "league2_value": 9.3,
       "PA_proj": 503,
-      "expected_stats_value_l1": 2.464,
+      "expected_stats_value_l1": 2.368,
       "expected_stats_value_l2": 1.791,
       "track_record_multiplier": 0.79,
       "quality_points": 1,
@@ -6363,12 +6363,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.331,
+        "R": 68.7,
         "SB": 14.9,
         "AVG": 0.218,
+        "HR": 15.0,
         "RBI": 66.3,
-        "R": 68.7,
-        "HR": 15.0
+        "OBP": 0.327
       }
     },
     {
@@ -6376,10 +6376,10 @@
       "name": "Ildemaro Vargas",
       "type": "hitter",
       "pos": "2B",
-      "league1_value": 0.4,
+      "league1_value": 1.3,
       "league2_value": 6.1,
       "PA_proj": 498,
-      "expected_stats_value_l1": 0.083,
+      "expected_stats_value_l1": 0.285,
       "expected_stats_value_l2": 1.263,
       "track_record_multiplier": 0.86,
       "quality_points": 1,
@@ -6400,12 +6400,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.36,
+        "R": 76.7,
         "SB": 10.1,
         "AVG": 0.33,
+        "HR": 14.0,
         "RBI": 55.0,
-        "R": 76.7,
-        "HR": 14.0
+        "OBP": 0.365
       }
     },
     {
@@ -6413,10 +6413,10 @@
       "name": "Will Smith",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 50.8,
+      "league1_value": 48.9,
       "league2_value": 40.0,
       "PA_proj": 498,
-      "expected_stats_value_l1": 8.231,
+      "expected_stats_value_l1": 8.022,
       "expected_stats_value_l2": 2.5,
       "track_record_multiplier": 1.0,
       "quality_points": 0,
@@ -6437,12 +6437,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.32,
+        "R": 89.6,
         "SB": 2.2,
         "AVG": 0.237,
+        "HR": 19.9,
         "RBI": 79.3,
-        "R": 89.6,
-        "HR": 19.9
+        "OBP": 0.32
       }
     },
     {
@@ -6474,12 +6474,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.268,
+        "R": 53.6,
         "SB": 2.2,
         "AVG": 0.195,
+        "HR": 15.3,
         "RBI": 50.3,
-        "R": 53.6,
-        "HR": 15.3
+        "OBP": 0.268
       }
     },
     {
@@ -6511,12 +6511,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 53.1,
         "SB": 21.5,
         "AVG": 0.216,
+        "HR": 13.5,
         "RBI": 59.6,
-        "R": 53.1,
-        "HR": 13.5
+        "OBP": 0.272
       }
     },
     {
@@ -6548,12 +6548,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.291,
+        "R": 65.9,
         "SB": 18.6,
         "AVG": 0.228,
+        "HR": 11.1,
         "RBI": 47.7,
-        "R": 65.9,
-        "HR": 11.1
+        "OBP": 0.286
       }
     },
     {
@@ -6564,7 +6564,7 @@
       "league1_value": 35.0,
       "league2_value": 35.0,
       "PA_proj": 485,
-      "expected_stats_value_l1": 1.286,
+      "expected_stats_value_l1": 1.112,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.84,
       "quality_points": 0,
@@ -6585,12 +6585,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.267,
+        "R": 52.6,
         "SB": 2.8,
         "AVG": 0.193,
+        "HR": 19.5,
         "RBI": 48.5,
-        "R": 52.6,
-        "HR": 19.5
+        "OBP": 0.267
       }
     },
     {
@@ -6622,12 +6622,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.308,
+        "R": 63.2,
         "SB": 7.8,
         "AVG": 0.196,
+        "HR": 13.8,
         "RBI": 58.9,
-        "R": 63.2,
-        "HR": 13.8
+        "OBP": 0.298
       }
     },
     {
@@ -6635,10 +6635,10 @@
       "name": "Kerry Carpenter",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 12.7,
+      "league1_value": 11.4,
       "league2_value": 14.3,
       "PA_proj": 485,
-      "expected_stats_value_l1": 2.369,
+      "expected_stats_value_l1": 2.165,
       "expected_stats_value_l2": 2.535,
       "track_record_multiplier": 0.87,
       "quality_points": 1,
@@ -6659,12 +6659,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.314,
+        "R": 75.2,
         "SB": 3.3,
         "AVG": 0.228,
+        "HR": 18.3,
         "RBI": 73.3,
-        "R": 75.2,
-        "HR": 18.3
+        "OBP": 0.306
       }
     },
     {
@@ -6696,12 +6696,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.286,
+        "R": 54.1,
         "SB": 7.2,
         "AVG": 0.222,
+        "HR": 12.7,
         "RBI": 51.2,
-        "R": 54.1,
-        "HR": 12.7
+        "OBP": 0.286
       }
     },
     {
@@ -6733,12 +6733,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.264,
+        "R": 52.6,
         "SB": 10.3,
         "AVG": 0.229,
+        "HR": 18.5,
         "RBI": 50.3,
-        "R": 52.6,
-        "HR": 18.5
+        "OBP": 0.271
       }
     },
     {
@@ -6770,12 +6770,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.249,
+        "R": 49.5,
         "SB": 8.2,
         "AVG": 0.198,
+        "HR": 17.9,
         "RBI": 49.3,
-        "R": 49.5,
-        "HR": 17.9
+        "OBP": 0.249
       }
     },
     {
@@ -6807,12 +6807,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.253,
+        "R": 56.4,
         "SB": 3.3,
         "AVG": 0.139,
+        "HR": 16.2,
         "RBI": 63.3,
-        "R": 56.4,
-        "HR": 16.2
+        "OBP": 0.242
       }
     },
     {
@@ -6844,12 +6844,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.23,
+        "R": 42.9,
         "SB": 5.8,
         "AVG": 0.186,
+        "HR": 17.0,
         "RBI": 55.9,
-        "R": 42.9,
-        "HR": 17.0
+        "OBP": 0.243
       }
     },
     {
@@ -6881,12 +6881,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.325,
+        "R": 73.7,
         "SB": 7.0,
         "AVG": 0.221,
+        "HR": 16.2,
         "RBI": 59.1,
-        "R": 73.7,
-        "HR": 16.2
+        "OBP": 0.325
       }
     },
     {
@@ -6918,12 +6918,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 58.0,
         "SB": 15.3,
         "AVG": 0.206,
+        "HR": 14.1,
         "RBI": 59.5,
-        "R": 58.0,
-        "HR": 14.1
+        "OBP": 0.266
       }
     },
     {
@@ -6955,12 +6955,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.31,
+        "R": 75.1,
         "SB": 4.4,
         "AVG": 0.27,
+        "HR": 14.1,
         "RBI": 64.1,
-        "R": 75.1,
-        "HR": 14.1
+        "OBP": 0.318
       }
     },
     {
@@ -6971,7 +6971,7 @@
       "league1_value": 34.0,
       "league2_value": 34.0,
       "PA_proj": 471,
-      "expected_stats_value_l1": 2.678,
+      "expected_stats_value_l1": 2.543,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.89,
       "quality_points": 0,
@@ -6992,12 +6992,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.257,
+        "R": 76.2,
         "SB": 1.4,
         "AVG": 0.237,
+        "HR": 12.1,
         "RBI": 58.8,
-        "R": 76.2,
-        "HR": 12.1
+        "OBP": 0.263
       }
     },
     {
@@ -7029,12 +7029,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.253,
+        "R": 57.9,
         "SB": 2.1,
         "AVG": 0.184,
+        "HR": 15.2,
         "RBI": 59.5,
-        "R": 57.9,
-        "HR": 15.2
+        "OBP": 0.261
       }
     },
     {
@@ -7045,7 +7045,7 @@
       "league1_value": 33.0,
       "league2_value": 33.0,
       "PA_proj": 466,
-      "expected_stats_value_l1": 4.909,
+      "expected_stats_value_l1": 4.348,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.91,
       "quality_points": 2,
@@ -7066,12 +7066,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.331,
+        "R": 72.1,
         "SB": 3.4,
         "AVG": 0.209,
+        "HR": 17.9,
         "RBI": 64.4,
-        "R": 72.1,
-        "HR": 17.9
+        "OBP": 0.315
       }
     },
     {
@@ -7103,12 +7103,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.301,
+        "R": 60.3,
         "SB": 15.9,
         "AVG": 0.234,
+        "HR": 15.6,
         "RBI": 53.2,
-        "R": 60.3,
-        "HR": 15.6
+        "OBP": 0.301
       }
     },
     {
@@ -7140,12 +7140,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.236,
+        "R": 52.3,
         "SB": 19.2,
         "AVG": 0.127,
+        "HR": 10.9,
         "RBI": 53.0,
-        "R": 52.3,
-        "HR": 10.9
+        "OBP": 0.236
       }
     },
     {
@@ -7153,10 +7153,10 @@
       "name": "Samuel Basallo",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 15.3,
+      "league1_value": 13.1,
       "league2_value": 0.0,
       "PA_proj": 462,
-      "expected_stats_value_l1": 3.242,
+      "expected_stats_value_l1": 2.813,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.76,
       "quality_points": 0,
@@ -7177,12 +7177,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.297,
+        "R": 60.3,
         "SB": 5.9,
         "AVG": 0.213,
+        "HR": 15.6,
         "RBI": 56.1,
-        "R": 60.3,
-        "HR": 15.6
+        "OBP": 0.289
       }
     },
     {
@@ -7214,12 +7214,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.251,
+        "R": 60.7,
         "SB": 20.3,
         "AVG": 0.172,
+        "HR": 12.1,
         "RBI": 46.8,
-        "R": 60.7,
-        "HR": 12.1
+        "OBP": 0.245
       }
     },
     {
@@ -7251,12 +7251,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.231,
+        "R": 53.7,
         "SB": 24.8,
         "AVG": 0.167,
+        "HR": 10.8,
         "RBI": 44.0,
-        "R": 53.7,
-        "HR": 10.8
+        "OBP": 0.231
       }
     },
     {
@@ -7264,10 +7264,10 @@
       "name": "Dylan Beavers",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 0.3,
+      "league1_value": 0.2,
       "league2_value": 0.0,
       "PA_proj": 457,
-      "expected_stats_value_l1": 0.065,
+      "expected_stats_value_l1": 0.047,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.77,
       "quality_points": 0,
@@ -7288,12 +7288,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.286,
+        "R": 66.0,
         "SB": 11.9,
         "AVG": 0.2,
+        "HR": 13.3,
         "RBI": 60.8,
-        "R": 66.0,
-        "HR": 13.3
+        "OBP": 0.286
       }
     },
     {
@@ -7325,12 +7325,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.292,
+        "R": 65.9,
         "SB": 15.3,
         "AVG": 0.233,
+        "HR": 15.1,
         "RBI": 52.1,
-        "R": 65.9,
-        "HR": 15.1
+        "OBP": 0.292
       }
     },
     {
@@ -7362,12 +7362,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.26,
+        "R": 43.0,
         "SB": 8.0,
         "AVG": 0.198,
+        "HR": 13.9,
         "RBI": 51.3,
-        "R": 43.0,
-        "HR": 13.9
+        "OBP": 0.26
       }
     },
     {
@@ -7399,12 +7399,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.271,
+        "R": 44.9,
         "SB": 34.3,
         "AVG": 0.183,
+        "HR": 11.5,
         "RBI": 51.6,
-        "R": 44.9,
-        "HR": 11.5
+        "OBP": 0.271
       }
     },
     {
@@ -7412,10 +7412,10 @@
       "name": "V\u00edctor Caratini",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 13.4,
+      "league1_value": 11.7,
       "league2_value": 0.0,
       "PA_proj": 448,
-      "expected_stats_value_l1": 2.131,
+      "expected_stats_value_l1": 1.893,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.94,
       "quality_points": 0,
@@ -7436,12 +7436,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.28,
+        "R": 63.5,
         "SB": 2.5,
         "AVG": 0.21,
+        "HR": 12.1,
         "RBI": 57.8,
-        "R": 63.5,
-        "HR": 12.1
+        "OBP": 0.28
       }
     },
     {
@@ -7473,12 +7473,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.283,
+        "R": 69.3,
         "SB": 5.6,
         "AVG": 0.246,
+        "HR": 12.7,
         "RBI": 59.2,
-        "R": 69.3,
-        "HR": 12.7
+        "OBP": 0.283
       }
     },
     {
@@ -7510,12 +7510,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.278,
+        "R": 58.0,
         "SB": 10.2,
         "AVG": 0.208,
+        "HR": 15.2,
         "RBI": 58.2,
-        "R": 58.0,
-        "HR": 15.2
+        "OBP": 0.278
       }
     },
     {
@@ -7523,10 +7523,10 @@
       "name": "Carson Kelly",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 20.6,
+      "league1_value": 17.7,
       "league2_value": 0.0,
       "PA_proj": 443,
-      "expected_stats_value_l1": 3.858,
+      "expected_stats_value_l1": 3.364,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.94,
       "quality_points": 0,
@@ -7547,12 +7547,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.318,
+        "R": 66.4,
         "SB": 2.3,
         "AVG": 0.215,
+        "HR": 14.5,
         "RBI": 58.3,
-        "R": 66.4,
-        "HR": 14.5
+        "OBP": 0.307
       }
     },
     {
@@ -7584,12 +7584,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 50.7,
         "SB": 1.7,
         "AVG": 0.184,
+        "HR": 14.4,
         "RBI": 63.6,
-        "R": 50.7,
-        "HR": 14.4
+        "OBP": 0.266
       }
     },
     {
@@ -7621,12 +7621,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.268,
+        "R": 63.3,
         "SB": 2.6,
         "AVG": 0.222,
+        "HR": 15.3,
         "RBI": 57.7,
-        "R": 63.3,
-        "HR": 15.3
+        "OBP": 0.276
       }
     },
     {
@@ -7634,14 +7634,14 @@
       "name": "Austin Wells",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 13.5,
+      "league1_value": 11.0,
       "league2_value": 0.0,
       "PA_proj": 443,
-      "expected_stats_value_l1": 2.431,
+      "expected_stats_value_l1": 1.9,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.83,
       "quality_points": 2,
-      "luck_adjustment": 1.08,
+      "luck_adjustment": 1.14,
       "verdict": "Buy low",
       "tier_sell": null,
       "age_flag": null,
@@ -7658,12 +7658,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.33,
+        "R": 61.9,
         "SB": 4.4,
         "AVG": 0.18,
+        "HR": 13.3,
         "RBI": 56.3,
-        "R": 61.9,
-        "HR": 13.3
+        "OBP": 0.307
       }
     },
     {
@@ -7695,12 +7695,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.298,
+        "R": 46.0,
         "SB": 7.6,
         "AVG": 0.22,
+        "HR": 9.5,
         "RBI": 48.9,
-        "R": 46.0,
-        "HR": 9.5
+        "OBP": 0.298
       }
     },
     {
@@ -7711,7 +7711,7 @@
       "league1_value": 20.0,
       "league2_value": 20.0,
       "PA_proj": 443,
-      "expected_stats_value_l1": 3.283,
+      "expected_stats_value_l1": 3.178,
       "expected_stats_value_l2": 3.313,
       "track_record_multiplier": 0.94,
       "quality_points": 1,
@@ -7732,12 +7732,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.351,
+        "R": 77.7,
         "SB": 9.4,
         "AVG": 0.253,
+        "HR": 15.1,
         "RBI": 67.9,
-        "R": 77.7,
-        "HR": 15.1
+        "OBP": 0.346
       }
     },
     {
@@ -7769,12 +7769,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.307,
+        "R": 52.1,
         "SB": 0.8,
         "AVG": 0.255,
+        "HR": 15.1,
         "RBI": 53.7,
-        "R": 52.1,
-        "HR": 15.1
+        "OBP": 0.307
       }
     },
     {
@@ -7806,12 +7806,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.312,
+        "R": 57.7,
         "SB": 7.1,
         "AVG": 0.235,
+        "HR": 15.1,
         "RBI": 51.1,
-        "R": 57.7,
-        "HR": 15.1
+        "OBP": 0.312
       }
     },
     {
@@ -7843,12 +7843,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.258,
+        "R": 58.8,
         "SB": 20.1,
         "AVG": 0.212,
+        "HR": 14.7,
         "RBI": 50.7,
-        "R": 58.8,
-        "HR": 14.7
+        "OBP": 0.268
       }
     },
     {
@@ -7880,12 +7880,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.267,
+        "R": 51.2,
         "SB": 12.4,
         "AVG": 0.221,
+        "HR": 13.0,
         "RBI": 49.5,
-        "R": 51.2,
-        "HR": 13.0
+        "OBP": 0.267
       }
     },
     {
@@ -7893,10 +7893,10 @@
       "name": "Luke Raley",
       "type": "hitter",
       "pos": "RF",
-      "league1_value": 5.2,
+      "league1_value": 5.1,
       "league2_value": 12.7,
       "PA_proj": 438,
-      "expected_stats_value_l1": 1.138,
+      "expected_stats_value_l1": 1.139,
       "expected_stats_value_l2": 2.466,
       "track_record_multiplier": 0.86,
       "quality_points": 2,
@@ -7917,12 +7917,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.305,
+        "R": 60.0,
         "SB": 9.1,
         "AVG": 0.252,
+        "HR": 19.7,
         "RBI": 61.4,
-        "R": 60.0,
-        "HR": 19.7
+        "OBP": 0.305
       }
     },
     {
@@ -7954,12 +7954,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.291,
+        "R": 55.2,
         "SB": 2.2,
         "AVG": 0.14,
+        "HR": 13.7,
         "RBI": 51.8,
-        "R": 55.2,
-        "HR": 13.7
+        "OBP": 0.27
       }
     },
     {
@@ -7967,10 +7967,10 @@
       "name": "Tyler Stephenson",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 17.6,
+      "league1_value": 14.5,
       "league2_value": 10.0,
       "PA_proj": 429,
-      "expected_stats_value_l1": 2.867,
+      "expected_stats_value_l1": 2.407,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.92,
       "quality_points": 1,
@@ -7991,12 +7991,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.314,
+        "R": 47.4,
         "SB": 1.5,
         "AVG": 0.216,
+        "HR": 17.2,
         "RBI": 54.7,
-        "R": 47.4,
-        "HR": 17.2
+        "OBP": 0.306
       }
     },
     {
@@ -8028,12 +8028,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.319,
+        "R": 54.1,
         "SB": 17.4,
         "AVG": 0.212,
+        "HR": 10.9,
         "RBI": 43.4,
-        "R": 54.1,
-        "HR": 10.9
+        "OBP": 0.298
       }
     },
     {
@@ -8041,10 +8041,10 @@
       "name": "Austin Martin",
       "type": "hitter",
       "pos": "CF",
-      "league1_value": 9.4,
+      "league1_value": 5.6,
       "league2_value": 0.0,
       "PA_proj": 425,
-      "expected_stats_value_l1": 2.239,
+      "expected_stats_value_l1": 1.342,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.79,
       "quality_points": 1,
@@ -8065,12 +8065,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.399,
+        "R": 58.8,
         "SB": 13.5,
         "AVG": 0.225,
+        "HR": 11.1,
         "RBI": 55.4,
-        "R": 58.8,
-        "HR": 11.1
+        "OBP": 0.365
       }
     },
     {
@@ -8081,11 +8081,11 @@
       "league1_value": 10.0,
       "league2_value": 10.0,
       "PA_proj": 425,
-      "expected_stats_value_l1": 0.576,
+      "expected_stats_value_l1": 0.0,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.89,
       "quality_points": 1,
-      "luck_adjustment": 0.86,
+      "luck_adjustment": 0.78,
       "verdict": "Sell high",
       "tier_sell": "Sell and Move On",
       "age_flag": null,
@@ -8102,12 +8102,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.368,
+        "R": 58.2,
         "SB": 3.3,
         "AVG": 0.208,
+        "HR": 13.7,
         "RBI": 55.3,
-        "R": 58.2,
-        "HR": 13.7
+        "OBP": 0.341
       }
     },
     {
@@ -8139,12 +8139,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.286,
+        "R": 44.2,
         "SB": 21.3,
         "AVG": 0.193,
+        "HR": 10.2,
         "RBI": 42.8,
-        "R": 44.2,
-        "HR": 10.2
+        "OBP": 0.278
       }
     },
     {
@@ -8176,12 +8176,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.276,
+        "R": 57.5,
         "SB": 1.0,
         "AVG": 0.22,
+        "HR": 18.1,
         "RBI": 60.4,
-        "R": 57.5,
-        "HR": 18.1
+        "OBP": 0.284
       }
     },
     {
@@ -8189,10 +8189,10 @@
       "name": "Mois\u00e9s Ballesteros",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 25.7,
+      "league1_value": 23.5,
       "league2_value": 0.0,
       "PA_proj": 425,
-      "expected_stats_value_l1": 5.487,
+      "expected_stats_value_l1": 5.077,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.76,
       "quality_points": 1,
@@ -8213,12 +8213,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.331,
+        "R": 63.9,
         "SB": 2.2,
         "AVG": 0.253,
+        "HR": 15.2,
         "RBI": 71.0,
-        "R": 63.9,
-        "HR": 15.2
+        "OBP": 0.325
       }
     },
     {
@@ -8250,12 +8250,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.318,
+        "R": 57.3,
         "SB": 4.6,
         "AVG": 0.209,
+        "HR": 11.0,
         "RBI": 50.5,
-        "R": 57.3,
-        "HR": 11.0
+        "OBP": 0.311
       }
     },
     {
@@ -8287,12 +8287,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.275,
+        "R": 57.1,
         "SB": 10.9,
         "AVG": 0.209,
+        "HR": 16.3,
         "RBI": 40.6,
-        "R": 57.1,
-        "HR": 16.3
+        "OBP": 0.275
       }
     },
     {
@@ -8324,12 +8324,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.258,
+        "R": 53.5,
         "SB": 3.6,
         "AVG": 0.191,
+        "HR": 12.7,
         "RBI": 44.7,
-        "R": 53.5,
-        "HR": 12.7
+        "OBP": 0.258
       }
     },
     {
@@ -8361,12 +8361,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.347,
+        "R": 51.8,
         "SB": 15.5,
         "AVG": 0.221,
+        "HR": 11.7,
         "RBI": 46.0,
-        "R": 51.8,
-        "HR": 11.7
+        "OBP": 0.323
       }
     },
     {
@@ -8398,12 +8398,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.283,
+        "R": 64.2,
         "SB": 4.8,
         "AVG": 0.198,
+        "HR": 14.6,
         "RBI": 47.8,
-        "R": 64.2,
-        "HR": 14.6
+        "OBP": 0.283
       }
     },
     {
@@ -8435,12 +8435,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.292,
+        "R": 57.4,
         "SB": 4.0,
         "AVG": 0.207,
+        "HR": 17.5,
         "RBI": 51.1,
-        "R": 57.4,
-        "HR": 17.5
+        "OBP": 0.282
       }
     },
     {
@@ -8451,7 +8451,7 @@
       "league1_value": 10.0,
       "league2_value": 10.0,
       "PA_proj": 411,
-      "expected_stats_value_l1": 1.012,
+      "expected_stats_value_l1": 0.557,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.85,
       "quality_points": 0,
@@ -8472,12 +8472,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.265,
+        "R": 59.7,
         "SB": 3.2,
         "AVG": 0.155,
+        "HR": 14.4,
         "RBI": 48.9,
-        "R": 59.7,
-        "HR": 14.4
+        "OBP": 0.249
       }
     },
     {
@@ -8485,10 +8485,10 @@
       "name": "Gary S\u00e1nchez",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 15.1,
+      "league1_value": 10.6,
       "league2_value": 0.0,
       "PA_proj": 411,
-      "expected_stats_value_l1": 2.442,
+      "expected_stats_value_l1": 1.733,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 1.0,
       "quality_points": 2,
@@ -8509,12 +8509,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.34,
+        "R": 55.9,
         "SB": 1.4,
         "AVG": 0.178,
+        "HR": 15.4,
         "RBI": 57.0,
-        "R": 55.9,
-        "HR": 15.4
+        "OBP": 0.306
       }
     },
     {
@@ -8546,12 +8546,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.244,
+        "R": 59.7,
         "SB": 9.3,
         "AVG": 0.213,
+        "HR": 12.9,
         "RBI": 41.3,
-        "R": 59.7,
-        "HR": 12.9
+        "OBP": 0.255
       }
     },
     {
@@ -8583,12 +8583,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.281,
+        "R": 44.4,
         "SB": 4.1,
         "AVG": 0.259,
+        "HR": 9.6,
         "RBI": 38.7,
-        "R": 44.4,
-        "HR": 9.6
+        "OBP": 0.292
       }
     },
     {
@@ -8620,12 +8620,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.269,
+        "R": 32.2,
         "SB": 6.4,
         "AVG": 0.208,
+        "HR": 10.3,
         "RBI": 25.4,
-        "R": 32.2,
-        "HR": 10.3
+        "OBP": 0.276
       }
     },
     {
@@ -8633,10 +8633,10 @@
       "name": "Edgar Quero",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 2.5,
+      "league1_value": 1.5,
       "league2_value": 0.0,
       "PA_proj": 392,
-      "expected_stats_value_l1": 0.521,
+      "expected_stats_value_l1": 0.313,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.79,
       "quality_points": 0,
@@ -8657,12 +8657,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.315,
+        "R": 40.1,
         "SB": 2.2,
         "AVG": 0.228,
+        "HR": 8.7,
         "RBI": 47.3,
-        "R": 40.1,
-        "HR": 8.7
+        "OBP": 0.315
       }
     },
     {
@@ -8694,12 +8694,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.232,
+        "R": 46.4,
         "SB": 17.8,
         "AVG": 0.135,
+        "HR": 8.7,
         "RBI": 37.7,
-        "R": 46.4,
-        "HR": 8.7
+        "OBP": 0.232
       }
     },
     {
@@ -8707,10 +8707,10 @@
       "name": "Carlos Cortes",
       "type": "hitter",
       "pos": "LF",
-      "league1_value": 3.4,
+      "league1_value": 3.5,
       "league2_value": 7.6,
       "PA_proj": 388,
-      "expected_stats_value_l1": 0.83,
+      "expected_stats_value_l1": 0.886,
       "expected_stats_value_l2": 1.774,
       "track_record_multiplier": 0.76,
       "quality_points": 1,
@@ -8731,12 +8731,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.376,
+        "R": 63.7,
         "SB": 2.8,
         "AVG": 0.304,
+        "HR": 14.6,
         "RBI": 50.2,
-        "R": 63.7,
-        "HR": 14.6
+        "OBP": 0.376
       }
     },
     {
@@ -8768,12 +8768,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.298,
+        "R": 53.4,
         "SB": 11.3,
         "AVG": 0.248,
+        "HR": 11.4,
         "RBI": 50.8,
-        "R": 53.4,
-        "HR": 11.4
+        "OBP": 0.305
       }
     },
     {
@@ -8805,12 +8805,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.276,
+        "R": 48.4,
         "SB": 18.4,
         "AVG": 0.214,
+        "HR": 10.0,
         "RBI": 37.4,
-        "R": 48.4,
-        "HR": 10.0
+        "OBP": 0.276
       }
     },
     {
@@ -8821,11 +8821,11 @@
       "league1_value": 10.0,
       "league2_value": 10.0,
       "PA_proj": 383,
-      "expected_stats_value_l1": 0.062,
+      "expected_stats_value_l1": 0.0,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.86,
       "quality_points": 0,
-      "luck_adjustment": 1.14,
+      "luck_adjustment": 1.22,
       "verdict": "Slight buy",
       "tier_sell": null,
       "age_flag": null,
@@ -8842,12 +8842,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.283,
+        "R": 43.1,
         "SB": 2.8,
         "AVG": 0.211,
+        "HR": 10.1,
         "RBI": 44.4,
-        "R": 43.1,
-        "HR": 10.1
+        "OBP": 0.283
       }
     },
     {
@@ -8879,12 +8879,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.291,
+        "R": 45.7,
         "SB": 5.2,
         "AVG": 0.22,
+        "HR": 9.8,
         "RBI": 49.5,
-        "R": 45.7,
-        "HR": 9.8
+        "OBP": 0.291
       }
     },
     {
@@ -8916,12 +8916,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.267,
+        "R": 45.4,
         "SB": 4.0,
         "AVG": 0.243,
+        "HR": 10.4,
         "RBI": 44.5,
-        "R": 45.4,
-        "HR": 10.4
+        "OBP": 0.28
       }
     },
     {
@@ -8953,12 +8953,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.267,
+        "R": 50.6,
         "SB": 8.7,
         "AVG": 0.203,
+        "HR": 9.2,
         "RBI": 49.4,
-        "R": 50.6,
-        "HR": 9.2
+        "OBP": 0.275
       }
     },
     {
@@ -8990,12 +8990,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.309,
+        "R": 52.7,
         "SB": 4.7,
         "AVG": 0.259,
+        "HR": 8.5,
         "RBI": 44.4,
-        "R": 52.7,
-        "HR": 8.5
+        "OBP": 0.309
       }
     },
     {
@@ -9027,12 +9027,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.308,
+        "R": 51.4,
         "SB": 5.6,
         "AVG": 0.216,
+        "HR": 12.6,
         "RBI": 43.6,
-        "R": 51.4,
-        "HR": 12.6
+        "OBP": 0.293
       }
     },
     {
@@ -9064,12 +9064,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.309,
+        "R": 47.1,
         "SB": 3.9,
         "AVG": 0.217,
+        "HR": 13.7,
         "RBI": 53.8,
-        "R": 47.1,
-        "HR": 13.7
+        "OBP": 0.3
       }
     },
     {
@@ -9080,7 +9080,7 @@
       "league1_value": 60.0,
       "league2_value": 60.0,
       "PA_proj": 374,
-      "expected_stats_value_l1": 2.072,
+      "expected_stats_value_l1": 2.569,
       "expected_stats_value_l2": 1.612,
       "track_record_multiplier": 1.0,
       "quality_points": 3,
@@ -9101,12 +9101,12 @@
       "fp_rank": 5,
       "fp_rank_tier": "Elite",
       "proj": {
-        "OBP": 0.37,
+        "R": 61.6,
         "SB": 5.0,
         "AVG": 0.255,
+        "HR": 19.1,
         "RBI": 53.9,
-        "R": 61.6,
-        "HR": 19.1
+        "OBP": 0.384
       }
     },
     {
@@ -9138,12 +9138,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.252,
+        "R": 55.3,
         "SB": 13.3,
         "AVG": 0.165,
+        "HR": 12.2,
         "RBI": 40.2,
-        "R": 55.3,
-        "HR": 12.2
+        "OBP": 0.252
       }
     },
     {
@@ -9175,12 +9175,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.258,
+        "R": 41.3,
         "SB": 7.6,
         "AVG": 0.17,
+        "HR": 9.8,
         "RBI": 40.1,
-        "R": 41.3,
-        "HR": 9.8
+        "OBP": 0.258
       }
     },
     {
@@ -9212,12 +9212,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.246,
+        "R": 44.6,
         "SB": 5.7,
         "AVG": 0.168,
+        "HR": 12.0,
         "RBI": 43.5,
-        "R": 44.6,
-        "HR": 12.0
+        "OBP": 0.246
       }
     },
     {
@@ -9249,12 +9249,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.25,
+        "R": 41.7,
         "SB": 2.5,
         "AVG": 0.206,
+        "HR": 11.4,
         "RBI": 38.0,
-        "R": 41.7,
-        "HR": 11.4
+        "OBP": 0.261
       }
     },
     {
@@ -9286,12 +9286,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.286,
+        "R": 51.4,
         "SB": 10.7,
         "AVG": 0.244,
+        "HR": 10.4,
         "RBI": 50.8,
-        "R": 51.4,
-        "HR": 10.4
+        "OBP": 0.303
       }
     },
     {
@@ -9323,12 +9323,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.308,
+        "R": 48.6,
         "SB": 3.4,
         "AVG": 0.235,
+        "HR": 13.6,
         "RBI": 52.8,
-        "R": 48.6,
-        "HR": 13.6
+        "OBP": 0.308
       }
     },
     {
@@ -9360,12 +9360,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.323,
+        "R": 43.8,
         "SB": 8.7,
         "AVG": 0.252,
+        "HR": 8.2,
         "RBI": 41.8,
-        "R": 43.8,
-        "HR": 8.2
+        "OBP": 0.308
       }
     },
     {
@@ -9397,12 +9397,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.353,
+        "R": 46.4,
         "SB": 15.7,
         "AVG": 0.207,
+        "HR": 9.0,
         "RBI": 44.4,
-        "R": 46.4,
-        "HR": 9.0
+        "OBP": 0.317
       }
     },
     {
@@ -9434,12 +9434,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.272,
+        "R": 43.5,
         "SB": 6.2,
         "AVG": 0.206,
+        "HR": 11.7,
         "RBI": 38.0,
-        "R": 43.5,
-        "HR": 11.7
+        "OBP": 0.283
       }
     },
     {
@@ -9471,12 +9471,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.277,
+        "R": 47.9,
         "SB": 7.2,
         "AVG": 0.262,
+        "HR": 9.4,
         "RBI": 36.0,
-        "R": 47.9,
-        "HR": 9.4
+        "OBP": 0.289
       }
     },
     {
@@ -9508,12 +9508,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.3,
+        "R": 40.5,
         "SB": 7.9,
         "AVG": 0.226,
+        "HR": 10.3,
         "RBI": 48.2,
-        "R": 40.5,
-        "HR": 10.3
+        "OBP": 0.3
       }
     },
     {
@@ -9524,7 +9524,7 @@
       "league1_value": 35.0,
       "league2_value": 35.0,
       "PA_proj": 355,
-      "expected_stats_value_l1": 1.07,
+      "expected_stats_value_l1": 1.332,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.93,
       "quality_points": 0,
@@ -9545,12 +9545,12 @@
       "fp_rank": 13,
       "fp_rank_tier": "Premium",
       "proj": {
-        "OBP": 0.281,
+        "R": 48.2,
         "SB": 1.4,
         "AVG": 0.225,
+        "HR": 11.1,
         "RBI": 54.3,
-        "R": 48.2,
-        "HR": 11.1
+        "OBP": 0.299
       }
     },
     {
@@ -9582,12 +9582,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.233,
+        "R": 45.4,
         "SB": 1.0,
         "AVG": 0.151,
+        "HR": 10.7,
         "RBI": 42.8,
-        "R": 45.4,
-        "HR": 10.7
+        "OBP": 0.233
       }
     },
     {
@@ -9619,12 +9619,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 39.3,
         "SB": 5.6,
         "AVG": 0.137,
+        "HR": 9.5,
         "RBI": 35.0,
-        "R": 39.3,
-        "HR": 9.5
+        "OBP": 0.2
       }
     },
     {
@@ -9656,12 +9656,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.301,
+        "R": 48.7,
         "SB": 4.4,
         "AVG": 0.225,
+        "HR": 13.1,
         "RBI": 58.2,
-        "R": 48.7,
-        "HR": 13.1
+        "OBP": 0.301
       }
     },
     {
@@ -9693,12 +9693,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.282,
+        "R": 39.2,
         "SB": 8.0,
         "AVG": 0.204,
+        "HR": 8.6,
         "RBI": 34.8,
-        "R": 39.2,
-        "HR": 8.6
+        "OBP": 0.272
       }
     },
     {
@@ -9730,12 +9730,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.206,
+        "R": 37.5,
         "SB": 8.6,
         "AVG": 0.156,
+        "HR": 11.1,
         "RBI": 29.8,
-        "R": 37.5,
-        "HR": 11.1
+        "OBP": 0.221
       }
     },
     {
@@ -9767,12 +9767,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.307,
+        "R": 44.5,
         "SB": 5.9,
         "AVG": 0.231,
+        "HR": 9.4,
         "RBI": 41.8,
-        "R": 44.5,
-        "HR": 9.4
+        "OBP": 0.292
       }
     },
     {
@@ -9804,12 +9804,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.241,
+        "R": 39.8,
         "SB": 2.7,
         "AVG": 0.236,
+        "HR": 10.4,
         "RBI": 45.7,
-        "R": 39.8,
-        "HR": 10.4
+        "OBP": 0.258
       }
     },
     {
@@ -9841,12 +9841,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.311,
+        "R": 51.8,
         "SB": 7.6,
         "AVG": 0.223,
+        "HR": 10.7,
         "RBI": 46.6,
-        "R": 51.8,
-        "HR": 10.7
+        "OBP": 0.311
       }
     },
     {
@@ -9878,12 +9878,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.258,
+        "R": 36.8,
         "SB": 3.7,
         "AVG": 0.21,
+        "HR": 11.4,
         "RBI": 40.9,
-        "R": 36.8,
-        "HR": 11.4
+        "OBP": 0.278
       }
     },
     {
@@ -9915,12 +9915,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.25,
+        "R": 45.6,
         "SB": 7.8,
         "AVG": 0.202,
+        "HR": 9.2,
         "RBI": 35.2,
-        "R": 45.6,
-        "HR": 9.2
+        "OBP": 0.262
       }
     },
     {
@@ -9952,12 +9952,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.336,
+        "R": 45.4,
         "SB": 2.9,
         "AVG": 0.226,
+        "HR": 9.3,
         "RBI": 40.2,
-        "R": 45.4,
-        "HR": 9.3
+        "OBP": 0.323
       }
     },
     {
@@ -9989,12 +9989,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.337,
+        "R": 53.8,
         "SB": 1.8,
         "AVG": 0.304,
+        "HR": 11.2,
         "RBI": 45.8,
-        "R": 53.8,
-        "HR": 11.2
+        "OBP": 0.351
       }
     },
     {
@@ -10026,12 +10026,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.274,
+        "R": 50.1,
         "SB": 10.1,
         "AVG": 0.238,
+        "HR": 7.7,
         "RBI": 38.4,
-        "R": 50.1,
-        "HR": 7.7
+        "OBP": 0.285
       }
     },
     {
@@ -10063,12 +10063,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.33,
+        "R": 41.9,
         "SB": 12.3,
         "AVG": 0.254,
+        "HR": 9.0,
         "RBI": 41.3,
-        "R": 41.9,
-        "HR": 9.0
+        "OBP": 0.316
       }
     },
     {
@@ -10100,12 +10100,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.333,
+        "R": 41.3,
         "SB": 1.2,
         "AVG": 0.245,
+        "HR": 12.9,
         "RBI": 51.8,
-        "R": 41.3,
-        "HR": 12.9
+        "OBP": 0.333
       }
     },
     {
@@ -10137,12 +10137,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.302,
+        "R": 46.6,
         "SB": 17.0,
         "AVG": 0.223,
+        "HR": 9.2,
         "RBI": 35.9,
-        "R": 46.6,
-        "HR": 9.2
+        "OBP": 0.294
       }
     },
     {
@@ -10174,12 +10174,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.301,
+        "R": 39.5,
         "SB": 14.0,
         "AVG": 0.221,
+        "HR": 10.7,
         "RBI": 42.6,
-        "R": 39.5,
-        "HR": 10.7
+        "OBP": 0.301
       }
     },
     {
@@ -10211,12 +10211,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.282,
+        "R": 42.8,
         "SB": 12.0,
         "AVG": 0.246,
+        "HR": 9.5,
         "RBI": 34.9,
-        "R": 42.8,
-        "HR": 9.5
+        "OBP": 0.295
       }
     },
     {
@@ -10248,12 +10248,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.296,
+        "R": 49.4,
         "SB": 5.8,
         "AVG": 0.175,
+        "HR": 10.9,
         "RBI": 40.7,
-        "R": 49.4,
-        "HR": 10.9
+        "OBP": 0.281
       }
     },
     {
@@ -10285,12 +10285,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.269,
+        "R": 31.9,
         "SB": 5.9,
         "AVG": 0.218,
+        "HR": 10.8,
         "RBI": 38.3,
-        "R": 31.9,
-        "HR": 10.8
+        "OBP": 0.269
       }
     },
     {
@@ -10322,12 +10322,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.288,
+        "R": 37.5,
         "SB": 2.1,
         "AVG": 0.214,
+        "HR": 10.6,
         "RBI": 35.5,
-        "R": 37.5,
-        "HR": 10.6
+        "OBP": 0.288
       }
     },
     {
@@ -10359,12 +10359,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.347,
+        "R": 43.7,
         "SB": 3.6,
         "AVG": 0.24,
+        "HR": 7.9,
         "RBI": 39.6,
-        "R": 43.7,
-        "HR": 7.9
+        "OBP": 0.328
       }
     },
     {
@@ -10396,12 +10396,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.247,
+        "R": 36.5,
         "SB": 2.6,
         "AVG": 0.206,
+        "HR": 9.1,
         "RBI": 32.7,
-        "R": 36.5,
-        "HR": 9.1
+        "OBP": 0.247
       }
     },
     {
@@ -10433,12 +10433,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.304,
+        "R": 39.5,
         "SB": 9.4,
         "AVG": 0.243,
+        "HR": 10.8,
         "RBI": 47.1,
-        "R": 39.5,
-        "HR": 10.8
+        "OBP": 0.291
       }
     },
     {
@@ -10470,12 +10470,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.27,
+        "R": 34.8,
         "SB": 1.7,
         "AVG": 0.23,
+        "HR": 9.3,
         "RBI": 37.5,
-        "R": 34.8,
-        "HR": 9.3
+        "OBP": 0.289
       }
     },
     {
@@ -10507,12 +10507,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.281,
+        "R": 42.2,
         "SB": 4.9,
         "AVG": 0.204,
+        "HR": 7.9,
         "RBI": 33.1,
-        "R": 42.2,
-        "HR": 7.9
+        "OBP": 0.281
       }
     },
     {
@@ -10544,12 +10544,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.34,
+        "R": 36.9,
         "SB": 4.3,
         "AVG": 0.269,
+        "HR": 10.7,
         "RBI": 38.7,
-        "R": 36.9,
-        "HR": 10.7
+        "OBP": 0.34
       }
     },
     {
@@ -10581,12 +10581,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.362,
+        "R": 41.7,
         "SB": 2.0,
         "AVG": 0.24,
+        "HR": 7.1,
         "RBI": 32.7,
-        "R": 41.7,
-        "HR": 7.1
+        "OBP": 0.329
       }
     },
     {
@@ -10618,12 +10618,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.274,
+        "R": 41.5,
         "SB": 7.5,
         "AVG": 0.208,
+        "HR": 9.7,
         "RBI": 38.6,
-        "R": 41.5,
-        "HR": 9.7
+        "OBP": 0.274
       }
     },
     {
@@ -10655,12 +10655,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.238,
+        "R": 31.0,
         "SB": 6.8,
         "AVG": 0.209,
+        "HR": 8.2,
         "RBI": 28.2,
-        "R": 31.0,
-        "HR": 8.2
+        "OBP": 0.25
       }
     },
     {
@@ -10692,12 +10692,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.322,
+        "R": 43.0,
         "SB": 3.6,
         "AVG": 0.13,
+        "HR": 10.7,
         "RBI": 36.3,
-        "R": 43.0,
-        "HR": 10.7
+        "OBP": 0.273
       }
     },
     {
@@ -10729,12 +10729,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.281,
+        "R": 37.6,
         "SB": 3.0,
         "AVG": 0.227,
+        "HR": 9.5,
         "RBI": 37.0,
-        "R": 37.6,
-        "HR": 9.5
+        "OBP": 0.281
       }
     },
     {
@@ -10766,12 +10766,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.289,
+        "R": 41.6,
         "SB": 4.7,
         "AVG": 0.223,
+        "HR": 7.5,
         "RBI": 30.2,
-        "R": 41.6,
-        "HR": 7.5
+        "OBP": 0.289
       }
     },
     {
@@ -10803,12 +10803,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.314,
+        "R": 32.0,
         "SB": 1.4,
         "AVG": 0.225,
+        "HR": 7.0,
         "RBI": 34.1,
-        "R": 32.0,
-        "HR": 7.0
+        "OBP": 0.301
       }
     },
     {
@@ -10840,12 +10840,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.364,
+        "R": 40.7,
         "SB": 10.6,
         "AVG": 0.279,
+        "HR": 8.5,
         "RBI": 34.1,
-        "R": 40.7,
-        "HR": 8.5
+        "OBP": 0.354
       }
     },
     {
@@ -10877,12 +10877,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 40.5,
         "SB": 2.8,
         "AVG": 0.198,
+        "HR": 7.5,
         "RBI": 29.2,
-        "R": 40.5,
-        "HR": 7.5
+        "OBP": 0.255
       }
     },
     {
@@ -10914,12 +10914,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 37.3,
         "SB": 6.9,
         "AVG": 0.167,
+        "HR": 9.4,
         "RBI": 31.7,
-        "R": 37.3,
-        "HR": 9.4
+        "OBP": 0.256
       }
     },
     {
@@ -10951,12 +10951,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.279,
+        "R": 38.8,
         "SB": 1.8,
         "AVG": 0.167,
+        "HR": 8.8,
         "RBI": 37.0,
-        "R": 38.8,
-        "HR": 8.8
+        "OBP": 0.254
       }
     },
     {
@@ -10988,12 +10988,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.292,
+        "R": 39.3,
         "SB": 6.1,
         "AVG": 0.211,
+        "HR": 8.2,
         "RBI": 28.5,
-        "R": 39.3,
-        "HR": 8.2
+        "OBP": 0.28
       }
     },
     {
@@ -11025,12 +11025,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.228,
+        "R": 36.9,
         "SB": 2.3,
         "AVG": 0.21,
+        "HR": 8.2,
         "RBI": 31.2,
-        "R": 36.9,
-        "HR": 8.2
+        "OBP": 0.246
       }
     },
     {
@@ -11062,12 +11062,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.303,
+        "R": 37.2,
         "SB": 5.6,
         "AVG": 0.235,
+        "HR": 7.4,
         "RBI": 31.3,
-        "R": 37.2,
-        "HR": 7.4
+        "OBP": 0.303
       }
     },
     {
@@ -11099,12 +11099,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.326,
+        "R": 43.1,
         "SB": 8.6,
         "AVG": 0.188,
+        "HR": 8.1,
         "RBI": 35.0,
-        "R": 43.1,
-        "HR": 8.1
+        "OBP": 0.305
       }
     },
     {
@@ -11136,12 +11136,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.26,
+        "R": 37.6,
         "SB": 1.2,
         "AVG": 0.216,
+        "HR": 9.6,
         "RBI": 40.4,
-        "R": 37.6,
-        "HR": 9.6
+        "OBP": 0.26
       }
     },
     {
@@ -11173,12 +11173,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.204,
+        "R": 31.5,
         "SB": 8.9,
         "AVG": 0.141,
+        "HR": 7.5,
         "RBI": 24.9,
-        "R": 31.5,
-        "HR": 7.5
+        "OBP": 0.204
       }
     },
     {
@@ -11210,12 +11210,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.259,
+        "R": 36.8,
         "SB": 6.2,
         "AVG": 0.214,
+        "HR": 7.3,
         "RBI": 31.0,
-        "R": 36.8,
-        "HR": 7.3
+        "OBP": 0.259
       }
     },
     {
@@ -11247,12 +11247,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.285,
+        "R": 38.1,
         "SB": 12.2,
         "AVG": 0.153,
+        "HR": 9.7,
         "RBI": 27.0,
-        "R": 38.1,
-        "HR": 9.7
+        "OBP": 0.273
       }
     },
     {
@@ -11284,12 +11284,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.321,
+        "R": 36.0,
         "SB": 5.4,
         "AVG": 0.207,
+        "HR": 7.8,
         "RBI": 32.1,
-        "R": 36.0,
-        "HR": 7.8
+        "OBP": 0.306
       }
     },
     {
@@ -11321,12 +11321,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.227,
+        "R": 32.7,
         "SB": 4.2,
         "AVG": 0.208,
+        "HR": 6.4,
         "RBI": 27.3,
-        "R": 32.7,
-        "HR": 6.4
+        "OBP": 0.265
       }
     },
     {
@@ -11334,10 +11334,10 @@
       "name": "Dalton Rushing",
       "type": "hitter",
       "pos": "C",
-      "league1_value": 0.4,
+      "league1_value": 1.0,
       "league2_value": 0.0,
       "PA_proj": 263,
-      "expected_stats_value_l1": 0.079,
+      "expected_stats_value_l1": 0.219,
       "expected_stats_value_l2": 0.0,
       "track_record_multiplier": 0.76,
       "quality_points": 1,
@@ -11358,12 +11358,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.314,
+        "R": 40.7,
         "SB": 1.6,
         "AVG": 0.257,
+        "HR": 9.5,
         "RBI": 37.3,
-        "R": 40.7,
-        "HR": 9.5
+        "OBP": 0.33
       }
     },
     {
@@ -11395,12 +11395,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.274,
+        "R": 36.0,
         "SB": 4.8,
         "AVG": 0.167,
+        "HR": 6.4,
         "RBI": 28.2,
-        "R": 36.0,
-        "HR": 6.4
+        "OBP": 0.246
       }
     },
     {
@@ -11432,12 +11432,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.318,
+        "R": 41.6,
         "SB": 1.2,
         "AVG": 0.233,
+        "HR": 7.0,
         "RBI": 33.9,
-        "R": 41.6,
-        "HR": 7.0
+        "OBP": 0.318
       }
     },
     {
@@ -11469,12 +11469,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.273,
+        "R": 28.3,
         "SB": 2.9,
         "AVG": 0.212,
+        "HR": 7.0,
         "RBI": 25.7,
-        "R": 28.3,
-        "HR": 7.0
+        "OBP": 0.273
       }
     },
     {
@@ -11506,12 +11506,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.27,
+        "R": 39.7,
         "SB": 9.1,
         "AVG": 0.238,
+        "HR": 7.9,
         "RBI": 29.6,
-        "R": 39.7,
-        "HR": 7.9
+        "OBP": 0.293
       }
     },
     {
@@ -11543,12 +11543,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.318,
+        "R": 30.9,
         "SB": 5.1,
         "AVG": 0.217,
+        "HR": 7.8,
         "RBI": 34.6,
-        "R": 30.9,
-        "HR": 7.8
+        "OBP": 0.302
       }
     },
     {
@@ -11580,12 +11580,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.269,
+        "R": 29.9,
         "SB": 2.3,
         "AVG": 0.222,
+        "HR": 6.3,
         "RBI": 23.1,
-        "R": 29.9,
-        "HR": 6.3
+        "OBP": 0.281
       }
     },
     {
@@ -11617,12 +11617,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.252,
+        "R": 33.8,
         "SB": 2.4,
         "AVG": 0.204,
+        "HR": 6.7,
         "RBI": 29.0,
-        "R": 33.8,
-        "HR": 6.7
+        "OBP": 0.277
       }
     },
     {
@@ -11654,12 +11654,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.322,
+        "R": 35.6,
         "SB": 0.8,
         "AVG": 0.292,
+        "HR": 9.4,
         "RBI": 35.1,
-        "R": 35.6,
-        "HR": 9.4
+        "OBP": 0.338
       }
     },
     {
@@ -11691,12 +11691,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.26,
+        "R": 34.5,
         "SB": 3.7,
         "AVG": 0.242,
+        "HR": 6.3,
         "RBI": 30.9,
-        "R": 34.5,
-        "HR": 6.3
+        "OBP": 0.289
       }
     },
     {
@@ -11728,12 +11728,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.25,
+        "R": 33.4,
         "SB": 3.5,
         "AVG": 0.187,
+        "HR": 6.9,
         "RBI": 28.1,
-        "R": 33.4,
-        "HR": 6.9
+        "OBP": 0.267
       }
     },
     {
@@ -11765,12 +11765,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.246,
+        "R": 26.3,
         "SB": 3.1,
         "AVG": 0.198,
+        "HR": 7.2,
         "RBI": 27.2,
-        "R": 26.3,
-        "HR": 7.2
+        "OBP": 0.261
       }
     },
     {
@@ -11802,12 +11802,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.324,
+        "R": 26.1,
         "SB": 7.5,
         "AVG": 0.251,
+        "HR": 7.7,
         "RBI": 27.3,
-        "R": 26.1,
-        "HR": 7.7
+        "OBP": 0.324
       }
     },
     {
@@ -11839,12 +11839,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.387,
+        "R": 37.6,
         "SB": 5.1,
         "AVG": 0.258,
+        "HR": 8.6,
         "RBI": 26.5,
-        "R": 37.6,
-        "HR": 8.6
+        "OBP": 0.34
       }
     },
     {
@@ -11876,12 +11876,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 30.7,
         "SB": 1.9,
         "AVG": 0.141,
+        "HR": 6.6,
         "RBI": 22.4,
-        "R": 30.7,
-        "HR": 6.6
+        "OBP": 0.2
       }
     },
     {
@@ -11913,12 +11913,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.296,
+        "R": 30.6,
         "SB": 0.9,
         "AVG": 0.234,
+        "HR": 8.4,
         "RBI": 32.8,
-        "R": 30.6,
-        "HR": 8.4
+        "OBP": 0.296
       }
     },
     {
@@ -11950,12 +11950,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.313,
+        "R": 31.0,
         "SB": 0.6,
         "AVG": 0.147,
+        "HR": 7.4,
         "RBI": 31.5,
-        "R": 31.0,
-        "HR": 7.4
+        "OBP": 0.271
       }
     },
     {
@@ -11987,12 +11987,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.281,
+        "R": 29.7,
         "SB": 2.0,
         "AVG": 0.184,
+        "HR": 8.4,
         "RBI": 27.8,
-        "R": 29.7,
-        "HR": 8.4
+        "OBP": 0.252
       }
     },
     {
@@ -12024,12 +12024,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 34.6,
         "SB": 2.4,
         "AVG": 0.151,
+        "HR": 7.0,
         "RBI": 23.9,
-        "R": 34.6,
-        "HR": 7.0
+        "OBP": 0.2
       }
     },
     {
@@ -12061,12 +12061,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.218,
+        "R": 25.7,
         "SB": 9.0,
         "AVG": 0.129,
+        "HR": 6.5,
         "RBI": 24.9,
-        "R": 25.7,
-        "HR": 6.5
+        "OBP": 0.218
       }
     },
     {
@@ -12098,12 +12098,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.329,
+        "R": 31.9,
         "SB": 8.5,
         "AVG": 0.236,
+        "HR": 5.9,
         "RBI": 23.1,
-        "R": 31.9,
-        "HR": 5.9
+        "OBP": 0.317
       }
     },
     {
@@ -12135,12 +12135,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.248,
+        "R": 26.4,
         "SB": 10.4,
         "AVG": 0.213,
+        "HR": 7.5,
         "RBI": 26.7,
-        "R": 26.4,
-        "HR": 7.5
+        "OBP": 0.248
       }
     },
     {
@@ -12172,12 +12172,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.306,
+        "R": 34.2,
         "SB": 4.6,
         "AVG": 0.243,
+        "HR": 7.3,
         "RBI": 34.0,
-        "R": 34.2,
-        "HR": 7.3
+        "OBP": 0.306
       }
     },
     {
@@ -12209,12 +12209,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.275,
+        "R": 34.0,
         "SB": 2.7,
         "AVG": 0.154,
+        "HR": 6.4,
         "RBI": 31.3,
-        "R": 34.0,
-        "HR": 6.4
+        "OBP": 0.254
       }
     },
     {
@@ -12246,12 +12246,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.251,
+        "R": 34.1,
         "SB": 1.4,
         "AVG": 0.198,
+        "HR": 7.5,
         "RBI": 28.6,
-        "R": 34.1,
-        "HR": 7.5
+        "OBP": 0.264
       }
     },
     {
@@ -12283,12 +12283,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.312,
+        "R": 28.6,
         "SB": 2.3,
         "AVG": 0.159,
+        "HR": 7.9,
         "RBI": 26.9,
-        "R": 28.6,
-        "HR": 7.9
+        "OBP": 0.266
       }
     },
     {
@@ -12320,12 +12320,12 @@
       "fp_rank": 32,
       "fp_rank_tier": "Starter",
       "proj": {
-        "OBP": 0.296,
+        "R": 32.1,
         "SB": 9.0,
         "AVG": 0.231,
+        "HR": 6.9,
         "RBI": 28.8,
-        "R": 32.1,
-        "HR": 6.9
+        "OBP": 0.319
       }
     },
     {
@@ -12357,12 +12357,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.286,
+        "R": 31.8,
         "SB": 3.3,
         "AVG": 0.183,
+        "HR": 6.3,
         "RBI": 24.8,
-        "R": 31.8,
-        "HR": 6.3
+        "OBP": 0.259
       }
     },
     {
@@ -12394,12 +12394,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.293,
+        "R": 31.0,
         "SB": 2.8,
         "AVG": 0.242,
+        "HR": 8.2,
         "RBI": 33.4,
-        "R": 31.0,
-        "HR": 8.2
+        "OBP": 0.311
       }
     },
     {
@@ -12431,12 +12431,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.338,
+        "R": 29.8,
         "SB": 4.2,
         "AVG": 0.305,
+        "HR": 6.5,
         "RBI": 21.7,
-        "R": 29.8,
-        "HR": 6.5
+        "OBP": 0.338
       }
     },
     {
@@ -12468,12 +12468,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.26,
+        "R": 29.9,
         "SB": 14.8,
         "AVG": 0.222,
+        "HR": 7.6,
         "RBI": 22.5,
-        "R": 29.9,
-        "HR": 7.6
+        "OBP": 0.26
       }
     },
     {
@@ -12505,12 +12505,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.304,
+        "R": 28.8,
         "SB": 2.8,
         "AVG": 0.234,
+        "HR": 6.9,
         "RBI": 26.3,
-        "R": 28.8,
-        "HR": 6.9
+        "OBP": 0.304
       }
     },
     {
@@ -12542,12 +12542,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.202,
+        "R": 28.9,
         "SB": 0.7,
         "AVG": 0.161,
+        "HR": 6.6,
         "RBI": 28.0,
-        "R": 28.9,
-        "HR": 6.6
+        "OBP": 0.222
       }
     },
     {
@@ -12579,12 +12579,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.28,
+        "R": 22.0,
         "SB": 4.0,
         "AVG": 0.208,
+        "HR": 5.9,
         "RBI": 24.3,
-        "R": 22.0,
-        "HR": 5.9
+        "OBP": 0.267
       }
     },
     {
@@ -12616,12 +12616,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.253,
+        "R": 28.4,
         "SB": 7.1,
         "AVG": 0.196,
+        "HR": 5.8,
         "RBI": 26.3,
-        "R": 28.4,
-        "HR": 5.8
+        "OBP": 0.253
       }
     },
     {
@@ -12653,12 +12653,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.261,
+        "R": 29.5,
         "SB": 2.4,
         "AVG": 0.204,
+        "HR": 6.4,
         "RBI": 27.7,
-        "R": 29.5,
-        "HR": 6.4
+        "OBP": 0.289
       }
     },
     {
@@ -12690,12 +12690,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.308,
+        "R": 21.8,
         "SB": 2.6,
         "AVG": 0.254,
+        "HR": 5.3,
         "RBI": 18.9,
-        "R": 21.8,
-        "HR": 5.3
+        "OBP": 0.308
       }
     },
     {
@@ -12727,12 +12727,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.359,
+        "R": 34.7,
         "SB": 5.5,
         "AVG": 0.309,
+        "HR": 5.7,
         "RBI": 25.7,
-        "R": 34.7,
-        "HR": 5.7
+        "OBP": 0.359
       }
     },
     {
@@ -12764,12 +12764,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.289,
+        "R": 26.8,
         "SB": 2.1,
         "AVG": 0.234,
+        "HR": 6.2,
         "RBI": 28.7,
-        "R": 26.8,
-        "HR": 6.2
+        "OBP": 0.289
       }
     },
     {
@@ -12801,12 +12801,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.329,
+        "R": 36.8,
         "SB": 2.6,
         "AVG": 0.239,
+        "HR": 7.6,
         "RBI": 26.9,
-        "R": 36.8,
-        "HR": 7.6
+        "OBP": 0.329
       }
     },
     {
@@ -12838,12 +12838,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 30.8,
         "SB": 1.3,
         "AVG": 0.169,
+        "HR": 6.0,
         "RBI": 23.2,
-        "R": 30.8,
-        "HR": 6.0
+        "OBP": 0.242
       }
     },
     {
@@ -12875,12 +12875,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.316,
+        "R": 28.3,
         "SB": 4.7,
         "AVG": 0.222,
+        "HR": 6.3,
         "RBI": 21.9,
-        "R": 28.3,
-        "HR": 6.3
+        "OBP": 0.287
       }
     },
     {
@@ -12912,12 +12912,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.276,
+        "R": 27.8,
         "SB": 7.7,
         "AVG": 0.236,
+        "HR": 6.0,
         "RBI": 21.9,
-        "R": 27.8,
-        "HR": 6.0
+        "OBP": 0.294
       }
     },
     {
@@ -12949,12 +12949,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.288,
+        "R": 24.7,
         "SB": 4.2,
         "AVG": 0.229,
+        "HR": 5.5,
         "RBI": 20.2,
-        "R": 24.7,
-        "HR": 5.5
+        "OBP": 0.288
       }
     },
     {
@@ -12986,12 +12986,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.307,
+        "R": 34.0,
         "SB": 5.0,
         "AVG": 0.267,
+        "HR": 7.6,
         "RBI": 25.6,
-        "R": 34.0,
-        "HR": 7.6
+        "OBP": 0.336
       }
     },
     {
@@ -13023,12 +13023,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.229,
+        "R": 22.7,
         "SB": 2.7,
         "AVG": 0.164,
+        "HR": 6.8,
         "RBI": 21.3,
-        "R": 22.7,
-        "HR": 6.8
+        "OBP": 0.245
       }
     },
     {
@@ -13060,12 +13060,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.336,
+        "R": 24.1,
         "SB": 2.5,
         "AVG": 0.216,
+        "HR": 5.5,
         "RBI": 23.2,
-        "R": 24.1,
-        "HR": 5.5
+        "OBP": 0.304
       }
     },
     {
@@ -13097,12 +13097,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.308,
+        "R": 22.2,
         "SB": 1.9,
         "AVG": 0.285,
+        "HR": 5.6,
         "RBI": 26.4,
-        "R": 22.2,
-        "HR": 5.6
+        "OBP": 0.327
       }
     },
     {
@@ -13134,12 +13134,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.307,
+        "R": 25.5,
         "SB": 1.0,
         "AVG": 0.179,
+        "HR": 5.1,
         "RBI": 20.8,
-        "R": 25.5,
-        "HR": 5.1
+        "OBP": 0.281
       }
     },
     {
@@ -13171,12 +13171,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.241,
+        "R": 28.3,
         "SB": 3.8,
         "AVG": 0.174,
+        "HR": 7.2,
         "RBI": 26.5,
-        "R": 28.3,
-        "HR": 7.2
+        "OBP": 0.241
       }
     },
     {
@@ -13208,12 +13208,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.362,
+        "R": 29.1,
         "SB": 5.2,
         "AVG": 0.217,
+        "HR": 5.1,
         "RBI": 28.8,
-        "R": 29.1,
-        "HR": 5.1
+        "OBP": 0.327
       }
     },
     {
@@ -13245,12 +13245,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.283,
+        "R": 23.2,
         "SB": 1.8,
         "AVG": 0.218,
+        "HR": 6.0,
         "RBI": 21.1,
-        "R": 23.2,
-        "HR": 6.0
+        "OBP": 0.283
       }
     },
     {
@@ -13282,12 +13282,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.292,
+        "R": 30.8,
         "SB": 4.2,
         "AVG": 0.228,
+        "HR": 6.9,
         "RBI": 27.0,
-        "R": 30.8,
-        "HR": 6.9
+        "OBP": 0.292
       }
     },
     {
@@ -13319,12 +13319,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.215,
+        "R": 21.4,
         "SB": 2.0,
         "AVG": 0.188,
+        "HR": 5.2,
         "RBI": 20.1,
-        "R": 21.4,
-        "HR": 5.2
+        "OBP": 0.262
       }
     },
     {
@@ -13356,12 +13356,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.251,
+        "R": 28.5,
         "SB": 0.8,
         "AVG": 0.182,
+        "HR": 6.5,
         "RBI": 23.3,
-        "R": 28.5,
-        "HR": 6.5
+        "OBP": 0.251
       }
     },
     {
@@ -13393,12 +13393,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 22.2,
         "SB": 2.3,
         "AVG": 0.241,
+        "HR": 5.2,
         "RBI": 20.1,
-        "R": 22.2,
-        "HR": 5.2
+        "OBP": 0.291
       }
     },
     {
@@ -13430,12 +13430,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.259,
+        "R": 25.7,
         "SB": 5.6,
         "AVG": 0.19,
+        "HR": 5.2,
         "RBI": 21.0,
-        "R": 25.7,
-        "HR": 5.2
+        "OBP": 0.272
       }
     },
     {
@@ -13467,12 +13467,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.393,
+        "R": 31.0,
         "SB": 0.9,
         "AVG": 0.25,
+        "HR": 6.2,
         "RBI": 29.4,
-        "R": 31.0,
-        "HR": 6.2
+        "OBP": 0.343
       }
     },
     {
@@ -13504,12 +13504,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.216,
+        "R": 27.9,
         "SB": 1.1,
         "AVG": 0.189,
+        "HR": 6.6,
         "RBI": 21.1,
-        "R": 27.9,
-        "HR": 6.6
+        "OBP": 0.245
       }
     },
     {
@@ -13541,12 +13541,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.298,
+        "R": 29.0,
         "SB": 3.8,
         "AVG": 0.207,
+        "HR": 5.7,
         "RBI": 23.1,
-        "R": 29.0,
-        "HR": 5.7
+        "OBP": 0.298
       }
     },
     {
@@ -13578,12 +13578,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.295,
+        "R": 19.0,
         "SB": 5.6,
         "AVG": 0.249,
+        "HR": 5.6,
         "RBI": 19.9,
-        "R": 19.0,
-        "HR": 5.6
+        "OBP": 0.295
       }
     },
     {
@@ -13615,12 +13615,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 23.5,
         "SB": 5.1,
         "AVG": 0.117,
+        "HR": 5.2,
         "RBI": 21.7,
-        "R": 23.5,
-        "HR": 5.2
+        "OBP": 0.2
       }
     },
     {
@@ -13652,12 +13652,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.25,
+        "R": 24.9,
         "SB": 1.5,
         "AVG": 0.224,
+        "HR": 6.1,
         "RBI": 22.8,
-        "R": 24.9,
-        "HR": 6.1
+        "OBP": 0.285
       }
     },
     {
@@ -13689,12 +13689,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.299,
+        "R": 22.7,
         "SB": 0.9,
         "AVG": 0.228,
+        "HR": 5.7,
         "RBI": 26.0,
-        "R": 22.7,
-        "HR": 5.7
+        "OBP": 0.299
       }
     },
     {
@@ -13726,12 +13726,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.236,
+        "R": 25.8,
         "SB": 7.3,
         "AVG": 0.231,
+        "HR": 6.6,
         "RBI": 23.1,
-        "R": 25.8,
-        "HR": 6.6
+        "OBP": 0.274
       }
     },
     {
@@ -13763,12 +13763,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.202,
+        "R": 21.0,
         "SB": 7.1,
         "AVG": 0.149,
+        "HR": 6.5,
         "RBI": 16.8,
-        "R": 21.0,
-        "HR": 6.5
+        "OBP": 0.202
       }
     },
     {
@@ -13800,12 +13800,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.245,
+        "R": 26.6,
         "SB": 7.3,
         "AVG": 0.194,
+        "HR": 5.7,
         "RBI": 24.7,
-        "R": 26.6,
-        "HR": 5.7
+        "OBP": 0.267
       }
     },
     {
@@ -13837,12 +13837,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.213,
+        "R": 26.3,
         "SB": 1.4,
         "AVG": 0.184,
+        "HR": 6.1,
         "RBI": 23.3,
-        "R": 26.3,
-        "HR": 6.1
+        "OBP": 0.25
       }
     },
     {
@@ -13874,12 +13874,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.261,
+        "R": 26.2,
         "SB": 1.0,
         "AVG": 0.234,
+        "HR": 7.1,
         "RBI": 29.6,
-        "R": 26.2,
-        "HR": 7.1
+        "OBP": 0.279
       }
     },
     {
@@ -13911,12 +13911,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.291,
+        "R": 28.4,
         "SB": 5.0,
         "AVG": 0.188,
+        "HR": 5.8,
         "RBI": 20.6,
-        "R": 28.4,
-        "HR": 5.8
+        "OBP": 0.291
       }
     },
     {
@@ -13948,12 +13948,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.264,
+        "R": 20.4,
         "SB": 2.4,
         "AVG": 0.211,
+        "HR": 5.2,
         "RBI": 18.2,
-        "R": 20.4,
-        "HR": 5.2
+        "OBP": 0.264
       }
     },
     {
@@ -13985,12 +13985,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.218,
+        "R": 23.1,
         "SB": 1.4,
         "AVG": 0.162,
+        "HR": 6.2,
         "RBI": 23.8,
-        "R": 23.1,
-        "HR": 6.2
+        "OBP": 0.218
       }
     },
     {
@@ -14022,12 +14022,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 23.7,
         "SB": 3.6,
         "AVG": 0.141,
+        "HR": 5.2,
         "RBI": 25.3,
-        "R": 23.7,
-        "HR": 5.2
+        "OBP": 0.228
       }
     },
     {
@@ -14059,12 +14059,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.202,
+        "R": 20.2,
         "SB": 5.3,
         "AVG": 0.197,
+        "HR": 6.3,
         "RBI": 19.3,
-        "R": 20.2,
-        "HR": 6.3
+        "OBP": 0.237
       }
     },
     {
@@ -14096,12 +14096,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.275,
+        "R": 22.0,
         "SB": 6.2,
         "AVG": 0.216,
+        "HR": 5.3,
         "RBI": 20.3,
-        "R": 22.0,
-        "HR": 5.3
+        "OBP": 0.275
       }
     },
     {
@@ -14133,12 +14133,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.212,
+        "R": 24.6,
         "SB": 1.5,
         "AVG": 0.207,
+        "HR": 5.8,
         "RBI": 26.4,
-        "R": 24.6,
-        "HR": 5.8
+        "OBP": 0.238
       }
     },
     {
@@ -14170,12 +14170,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.251,
+        "R": 24.8,
         "SB": 4.9,
         "AVG": 0.188,
+        "HR": 7.3,
         "RBI": 21.7,
-        "R": 24.8,
-        "HR": 7.3
+        "OBP": 0.251
       }
     },
     {
@@ -14207,12 +14207,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.275,
+        "R": 26.2,
         "SB": 4.1,
         "AVG": 0.27,
+        "HR": 5.4,
         "RBI": 26.0,
-        "R": 26.2,
-        "HR": 5.4
+        "OBP": 0.317
       }
     },
     {
@@ -14244,12 +14244,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.328,
+        "R": 37.6,
         "SB": 4.5,
         "AVG": 0.239,
+        "HR": 6.2,
         "RBI": 32.9,
-        "R": 37.6,
-        "HR": 6.2
+        "OBP": 0.328
       }
     },
     {
@@ -14281,12 +14281,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.246,
+        "R": 25.7,
         "SB": 9.0,
         "AVG": 0.211,
+        "HR": 5.4,
         "RBI": 24.2,
-        "R": 25.7,
-        "HR": 5.4
+        "OBP": 0.277
       }
     },
     {
@@ -14318,12 +14318,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.405,
+        "R": 27.4,
         "SB": 2.8,
         "AVG": 0.22,
+        "HR": 5.9,
         "RBI": 25.7,
-        "R": 27.4,
-        "HR": 5.9
+        "OBP": 0.297
       }
     },
     {
@@ -14355,12 +14355,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 21.7,
         "SB": 6.7,
         "AVG": 0.1,
+        "HR": 5.4,
         "RBI": 22.2,
-        "R": 21.7,
-        "HR": 5.4
+        "OBP": 0.2
       }
     },
     {
@@ -14392,12 +14392,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.222,
+        "R": 27.1,
         "SB": 1.7,
         "AVG": 0.149,
+        "HR": 7.2,
         "RBI": 23.0,
-        "R": 27.1,
-        "HR": 7.2
+        "OBP": 0.222
       }
     },
     {
@@ -14429,12 +14429,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.463,
+        "R": 32.0,
         "SB": 1.7,
         "AVG": 0.323,
+        "HR": 6.4,
         "RBI": 20.9,
-        "R": 32.0,
-        "HR": 6.4
+        "OBP": 0.418
       }
     },
     {
@@ -14466,12 +14466,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.39,
+        "R": 25.7,
         "SB": 0.6,
         "AVG": 0.331,
+        "HR": 7.4,
         "RBI": 23.1,
-        "R": 25.7,
-        "HR": 7.4
+        "OBP": 0.39
       }
     },
     {
@@ -14503,12 +14503,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.389,
+        "R": 26.8,
         "SB": 2.1,
         "AVG": 0.357,
+        "HR": 5.8,
         "RBI": 23.8,
-        "R": 26.8,
-        "HR": 5.8
+        "OBP": 0.389
       }
     },
     {
@@ -14540,12 +14540,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.355,
+        "R": 32.4,
         "SB": 7.1,
         "AVG": 0.322,
+        "HR": 5.4,
         "RBI": 23.4,
-        "R": 32.4,
-        "HR": 5.4
+        "OBP": 0.387
       }
     },
     {
@@ -14577,12 +14577,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.253,
+        "R": 24.1,
         "SB": 3.7,
         "AVG": 0.176,
+        "HR": 5.4,
         "RBI": 25.2,
-        "R": 24.1,
-        "HR": 5.4
+        "OBP": 0.253
       }
     },
     {
@@ -14614,12 +14614,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 22.1,
         "SB": 6.2,
         "AVG": 0.145,
+        "HR": 5.4,
         "RBI": 22.4,
-        "R": 22.1,
-        "HR": 5.4
+        "OBP": 0.237
       }
     },
     {
@@ -14651,12 +14651,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.225,
+        "R": 24.4,
         "SB": 2.0,
         "AVG": 0.103,
+        "HR": 5.4,
         "RBI": 28.5,
-        "R": 24.4,
-        "HR": 5.4
+        "OBP": 0.2
       }
     },
     {
@@ -14688,12 +14688,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.316,
+        "R": 20.2,
         "SB": 2.6,
         "AVG": 0.245,
+        "HR": 6.7,
         "RBI": 18.5,
-        "R": 20.2,
-        "HR": 6.7
+        "OBP": 0.316
       }
     },
     {
@@ -14725,12 +14725,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.225,
+        "R": 30.4,
         "SB": 1.1,
         "AVG": 0.146,
+        "HR": 5.4,
         "RBI": 21.8,
-        "R": 30.4,
-        "HR": 5.4
+        "OBP": 0.225
       }
     },
     {
@@ -14762,12 +14762,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.33,
+        "R": 25.1,
         "SB": 2.0,
         "AVG": 0.219,
+        "HR": 6.6,
         "RBI": 25.6,
-        "R": 25.1,
-        "HR": 6.6
+        "OBP": 0.31
       }
     },
     {
@@ -14799,12 +14799,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.306,
+        "R": 25.5,
         "SB": 0.4,
         "AVG": 0.231,
+        "HR": 5.9,
         "RBI": 29.1,
-        "R": 25.5,
-        "HR": 5.9
+        "OBP": 0.306
       }
     },
     {
@@ -14836,12 +14836,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.335,
+        "R": 29.4,
         "SB": 4.1,
         "AVG": 0.182,
+        "HR": 5.5,
         "RBI": 27.5,
-        "R": 29.4,
-        "HR": 5.5
+        "OBP": 0.26
       }
     },
     {
@@ -14873,12 +14873,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 21.5,
         "SB": 9.8,
         "AVG": 0.179,
+        "HR": 5.5,
         "RBI": 25.7,
-        "R": 21.5,
-        "HR": 5.5
+        "OBP": 0.23
       }
     },
     {
@@ -14910,12 +14910,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.209,
+        "R": 26.2,
         "SB": 3.6,
         "AVG": 0.166,
+        "HR": 5.5,
         "RBI": 19.1,
-        "R": 26.2,
-        "HR": 5.5
+        "OBP": 0.231
       }
     },
     {
@@ -14947,12 +14947,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.252,
+        "R": 28.0,
         "SB": 2.2,
         "AVG": 0.21,
+        "HR": 5.5,
         "RBI": 21.9,
-        "R": 28.0,
-        "HR": 5.5
+        "OBP": 0.252
       }
     },
     {
@@ -14984,12 +14984,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.325,
+        "R": 32.0,
         "SB": 5.1,
         "AVG": 0.206,
+        "HR": 6.2,
         "RBI": 27.1,
-        "R": 32.0,
-        "HR": 6.2
+        "OBP": 0.293
       }
     },
     {
@@ -15021,12 +15021,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.418,
+        "R": 15.6,
         "SB": 2.5,
         "AVG": 0.178,
+        "HR": 7.4,
         "RBI": 14.4,
-        "R": 15.6,
-        "HR": 7.4
+        "OBP": 0.25
       }
     },
     {
@@ -15058,12 +15058,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.295,
+        "R": 25.3,
         "SB": 4.8,
         "AVG": 0.215,
+        "HR": 5.5,
         "RBI": 18.3,
-        "R": 25.3,
-        "HR": 5.5
+        "OBP": 0.295
       }
     },
     {
@@ -15095,12 +15095,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 18.5,
         "SB": 2.9,
         "AVG": 0.1,
+        "HR": 5.5,
         "RBI": 24.3,
-        "R": 18.5,
-        "HR": 5.5
+        "OBP": 0.2
       }
     },
     {
@@ -15132,12 +15132,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.282,
+        "R": 22.1,
         "SB": 1.5,
         "AVG": 0.157,
+        "HR": 5.5,
         "RBI": 21.7,
-        "R": 22.1,
-        "HR": 5.5
+        "OBP": 0.238
       }
     },
     {
@@ -15169,12 +15169,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 28.5,
         "SB": 2.2,
         "AVG": 0.15,
+        "HR": 5.5,
         "RBI": 22.3,
-        "R": 28.5,
-        "HR": 5.5
+        "OBP": 0.218
       }
     },
     {
@@ -15206,12 +15206,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 21.2,
         "SB": 5.9,
         "AVG": 0.147,
+        "HR": 5.5,
         "RBI": 17.4,
-        "R": 21.2,
-        "HR": 5.5
+        "OBP": 0.218
       }
     },
     {
@@ -15243,12 +15243,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.239,
+        "R": 26.2,
         "SB": 2.2,
         "AVG": 0.194,
+        "HR": 5.5,
         "RBI": 17.2,
-        "R": 26.2,
-        "HR": 5.5
+        "OBP": 0.239
       }
     },
     {
@@ -15280,12 +15280,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.424,
+        "R": 28.8,
         "SB": 2.8,
         "AVG": 0.387,
+        "HR": 5.9,
         "RBI": 20.6,
-        "R": 28.8,
-        "HR": 5.9
+        "OBP": 0.435
       }
     },
     {
@@ -15317,12 +15317,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.275,
+        "R": 23.9,
         "SB": 3.3,
         "AVG": 0.179,
+        "HR": 6.1,
         "RBI": 23.3,
-        "R": 23.9,
-        "HR": 6.1
+        "OBP": 0.233
       }
     },
     {
@@ -15354,12 +15354,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.405,
+        "R": 18.8,
         "SB": 6.1,
         "AVG": 0.228,
+        "HR": 6.6,
         "RBI": 20.5,
-        "R": 18.8,
-        "HR": 6.6
+        "OBP": 0.318
       }
     },
     {
@@ -15391,12 +15391,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.289,
+        "R": 20.2,
         "SB": 3.8,
         "AVG": 0.239,
+        "HR": 5.6,
         "RBI": 14.9,
-        "R": 20.2,
-        "HR": 5.6
+        "OBP": 0.313
       }
     },
     {
@@ -15428,12 +15428,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.265,
+        "R": 23.5,
         "SB": 1.1,
         "AVG": 0.26,
+        "HR": 5.6,
         "RBI": 19.4,
-        "R": 23.5,
-        "HR": 5.6
+        "OBP": 0.285
       }
     },
     {
@@ -15465,12 +15465,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.326,
+        "R": 30.9,
         "SB": 4.8,
         "AVG": 0.231,
+        "HR": 5.6,
         "RBI": 22.3,
-        "R": 30.9,
-        "HR": 5.6
+        "OBP": 0.29
       }
     },
     {
@@ -15502,12 +15502,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.289,
+        "R": 22.8,
         "SB": 6.0,
         "AVG": 0.24,
+        "HR": 6.1,
         "RBI": 18.0,
-        "R": 22.8,
-        "HR": 6.1
+        "OBP": 0.308
       }
     },
     {
@@ -15539,12 +15539,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.276,
+        "R": 26.8,
         "SB": 3.7,
         "AVG": 0.222,
+        "HR": 5.6,
         "RBI": 25.1,
-        "R": 26.8,
-        "HR": 5.6
+        "OBP": 0.299
       }
     },
     {
@@ -15576,12 +15576,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.315,
+        "R": 31.8,
         "SB": 1.3,
         "AVG": 0.26,
+        "HR": 5.6,
         "RBI": 26.9,
-        "R": 31.8,
-        "HR": 5.6
+        "OBP": 0.315
       }
     },
     {
@@ -15613,12 +15613,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.266,
+        "R": 24.9,
         "SB": 11.5,
         "AVG": 0.1,
+        "HR": 5.6,
         "RBI": 18.2,
-        "R": 24.9,
-        "HR": 5.6
+        "OBP": 0.2
       }
     },
     {
@@ -15650,12 +15650,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.227,
+        "R": 23.2,
         "SB": 19.1,
         "AVG": 0.222,
+        "HR": 6.7,
         "RBI": 20.8,
-        "R": 23.2,
-        "HR": 6.7
+        "OBP": 0.273
       }
     },
     {
@@ -15687,12 +15687,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.27,
+        "R": 22.4,
         "SB": 4.7,
         "AVG": 0.209,
+        "HR": 5.6,
         "RBI": 20.3,
-        "R": 22.4,
-        "HR": 5.6
+        "OBP": 0.27
       }
     },
     {
@@ -15724,12 +15724,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 28.0,
         "SB": 5.0,
         "AVG": 0.1,
+        "HR": 6.6,
         "RBI": 20.4,
-        "R": 28.0,
-        "HR": 6.6
+        "OBP": 0.2
       }
     },
     {
@@ -15761,12 +15761,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.237,
+        "R": 23.5,
         "SB": 12.6,
         "AVG": 0.232,
+        "HR": 6.1,
         "RBI": 25.4,
-        "R": 23.5,
-        "HR": 6.1
+        "OBP": 0.288
       }
     },
     {
@@ -15798,12 +15798,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.3,
+        "R": 30.2,
         "SB": 3.2,
         "AVG": 0.295,
+        "HR": 5.6,
         "RBI": 23.4,
-        "R": 30.2,
-        "HR": 5.6
+        "OBP": 0.339
       }
     },
     {
@@ -15835,12 +15835,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.233,
+        "R": 24.6,
         "SB": 5.5,
         "AVG": 0.228,
+        "HR": 5.7,
         "RBI": 23.8,
-        "R": 24.6,
-        "HR": 5.7
+        "OBP": 0.283
       }
     },
     {
@@ -15872,12 +15872,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.229,
+        "R": 24.8,
         "SB": 3.6,
         "AVG": 0.224,
+        "HR": 5.7,
         "RBI": 22.1,
-        "R": 24.8,
-        "HR": 5.7
+        "OBP": 0.267
       }
     },
     {
@@ -15909,12 +15909,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.358,
+        "R": 24.7,
         "SB": 0.8,
         "AVG": 0.294,
+        "HR": 6.5,
         "RBI": 23.9,
-        "R": 24.7,
-        "HR": 6.5
+        "OBP": 0.358
       }
     },
     {
@@ -15946,12 +15946,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.406,
+        "R": 27.3,
         "SB": 4.2,
         "AVG": 0.346,
+        "HR": 6.5,
         "RBI": 25.7,
-        "R": 27.3,
-        "HR": 6.5
+        "OBP": 0.406
       }
     },
     {
@@ -15983,12 +15983,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.323,
+        "R": 28.6,
         "SB": 0.7,
         "AVG": 0.256,
+        "HR": 5.7,
         "RBI": 20.1,
-        "R": 28.6,
-        "HR": 5.7
+        "OBP": 0.323
       }
     },
     {
@@ -16020,12 +16020,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.326,
+        "R": 21.6,
         "SB": 1.6,
         "AVG": 0.1,
+        "HR": 5.7,
         "RBI": 24.5,
-        "R": 21.6,
-        "HR": 5.7
+        "OBP": 0.2
       }
     },
     {
@@ -16057,12 +16057,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.2,
+        "R": 21.0,
         "SB": 6.0,
         "AVG": 0.165,
+        "HR": 6.2,
         "RBI": 15.5,
-        "R": 21.0,
-        "HR": 6.2
+        "OBP": 0.211
       }
     },
     {
@@ -16094,12 +16094,12 @@
       "fp_rank": null,
       "fp_rank_tier": null,
       "proj": {
-        "OBP": 0.321,
+        "R": 21.4,
         "SB": 1.6,
         "AVG": 0.316,
+        "HR": 5.7,
         "RBI": 17.2,
-        "R": 21.4,
-        "HR": 5.7
+        "OBP": 0.364
       }
     },
     {
