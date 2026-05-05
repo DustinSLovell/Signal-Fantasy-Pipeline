@@ -2057,7 +2057,7 @@ Session 27 commit: 8cfb312 — RP WHIP fix (stat_projections.py LG_WHIP blend) +
 Session 28 commit: 684d70c — Career BB% anchor (build_hitter_career_bb.py + score_value.py) + Signal Decay Classifier (weekly_update.py) + projection_improvement_arc.csv
 Session 28 handoff commit: 274213d — thread_handoff.md complete overwrite with all Session 28 cross-references updated
 Session 29 commit: [see thread] — Full projection backtest scorecard (outputs/projection_scorecard_2025.csv) + improvement arc 3 new rows + thread_handoff.md Session 29 changelog
-Session 30 commit: [see below] — W projection fix (_STEAMER_W + _blend_w) + SP K blend (gs<10) + projection_scorecard_s30.csv + improvement arc 2 new rows + validate_formulas.py Test A8 update
+Session 30 commit: 71867a2 — W projection fix (_STEAMER_W + _blend_w) + SP K blend (gs<10) + projection_scorecard_s30.csv + improvement arc 2 new rows + validate_formulas.py Test A8 update
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -3419,7 +3419,7 @@ Blend weight: at gs=0 → 100% Steamer; at gs=5 → 50/50; at gs≥10 → 100% p
 - thread_handoff.md (this file — Section 9 stat_projections.py update, Section 10 W+K COMPLETED, Section 16 commit hash, this changelog)
 - CLAUDE.md (Session 30 changelog appended)
 
-**Commit hash:** [to be filled after git push]
+**Commit hash:** 71867a2
 
 **PENDING MANUAL ACTIONS:**
 - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE since May 5-6
