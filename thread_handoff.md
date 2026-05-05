@@ -1895,7 +1895,7 @@ Canary: grep -n "77.3" stat_projections.py
 **GitHub:**
 Repo: DustinSLovell/Signal-Fantasy-Pipeline (private)
 Last push: May 5, 2026 (commit d18cf76 — Session 23: score_value.py SB fix (_load_steamer_sb) + decline backtest + AVG audit + Rutschman audit + CLAUDE.md changelog)
-Session 24 commit: TBD — AVG floor 0.85 fix + ablation (0.240 threshold blocked) + projection scorecard + thread_handoff.md update
+Session 24 commit: 57acd3d — AVG floor 0.75→0.85 + ablation (0.240 threshold blocked) + projection scorecard + thread_handoff.md
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -2607,7 +2607,7 @@ Key finding: CQS floor interaction with active buy signals (Ramírez, Stewart, C
 - score_value.py (0.75→0.85 multiplier change, line ~929)
 - thread_handoff.md (this file — Section 8 Henderson/Turner notes, Section 9 score_value.py entry, Section 10 Tier 1 parking lot, Section 13 career lessons, Section 16 GitHub hash, this changelog)
 
-**Commit hash:** TBD (commit after this handoff)
+**Commit hash:** 57acd3d
 
 ---
 
