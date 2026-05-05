@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-28)
+# Last updated: May 5, 2026 (Sessions 1-30)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1899,6 +1899,45 @@ PENDING MANUAL ACTIONS:
   - Career lessons database (Sessions 22-28) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
   - Update thread_handoff.md in Claude.ai with Session 28 summary
+
+--- May 5, 2026 (Session 29) ---
+Pure diagnostic session — no production code changes.
+Full projection backtest scorecard computed from data/backtest_C_pitchers_2025.csv (n=165).
+SP ERA win confirmed: Model 0.619 < Steamer 0.629 — only stat where Model beats Steamer (SP n=79).
+W structural gap identified: model_w=0 for all 165 pitchers (stale CSV). Steamer MAE=2.35. Fix: wire Steamer W × remaining fraction (Tier 2).
+SP K gap quantified: SP K MAE 50.87 vs Steamer 24.45. Fix when gs<10 (Tier 2).
+Outputs: outputs/projection_scorecard_2025.csv (19 rows), improvement arc 3 new rows.
+37/37 PASS. All invariants PASS (Sanchez C#26).
+
+--- May 5, 2026 (Session 30) ---
+W Projection Fix (stat_projections.py):
+  - _STEAMER_W dict: loads full-season W from Steamers 2025 pitchers.csv "W" column
+  - _blend_w(mlbam_id, games_remaining, is_starter): SP W = Steamer_W × (games_rem/162); RPs → 0.0
+  - Replaces old starts_remaining × 0.33 formula in project_pitcher_counting()
+  - ALL W MAE: 7.45 → 3.95 (Gate PASS < 4.0); SP W MAE: 9.80 → 2.50 (matches Steamer exactly)
+SP K Projection Blend (stat_projections.py):
+  - _STEAMER_K dict: loads full-season SO from Steamers 2025 pitchers.csv "SO" column
+  - Blend when is_starter AND mlbam_id AND current_gs < 10:
+    blend_w_k = gs/10.0; pace_k = blend_w_k × pace_k + (1-blend_w_k) × steamer_ros_k
+  - At gs=0: 100% Steamer; at gs=9: 90% pace; at gs≥10: no blend
+  - SP K MAE: 50.87 → 32.17 (Gate PASS < 39.8); 71% gap closure vs Steamer 24.45
+validate_formulas.py Test A8 updated:
+  - Old: W = starts × 0.33 → 8-12 range
+  - New: with mlbam_id=669373 (Skubal) → 8-14 range AND without mlbam_id → W=0
+  - 37/37 PASS
+Outputs:
+  - data/projections_2026.csv (regenerated — W and K Steamer-informed)
+  - data/player_values.json (regenerated)
+  - outputs/projection_scorecard_s30.csv (NEW — 21-row pitcher scorecard with s29/s30 MAE)
+  - outputs/projection_improvement_arc.csv (2 new rows: W fix + SP K fix; now 17 rows)
+All invariants PASS (Sanchez C#26, Yordan top-20, Raleigh C#2, Baldwin C#3, Contreras C#6).
+Parking lot: W Projection Fix → COMPLETED. SP K Fix → COMPLETED. Both removed from Tier 2.
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-30) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Download updated thread_handoff.md to Claude.ai
 
 ---
 *This file is the persistent memory for Claude Code sessions.*

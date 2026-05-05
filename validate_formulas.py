@@ -166,15 +166,20 @@ def run_section_a() -> int:
                ok, f"{whip:.3f}", "1.20 – 1.50"):
         passed += 1
 
-    # A8: Win rate — 30 starts, 0.33 rate
-    games_rem = 153   # ~30 starts at games/5*0.85
+    # A8: Win projection — Steamer W blend (Session 30 fix)
+    # Skubal (669373): Steamer full-season W=13.25; 153 games rem → 12.5 ROS
+    # Fallback (no mlbam_id): W=0 (no Steamer data — expected)
+    games_rem = 153
     blended = {"true_era": 3.90, "true_whip": 1.28, "true_k_per9": 9.0,
                "true_bb_per9": 3.0, "true_ip_per_start": 5.8}
-    proj = project_pitcher_counting(blended, games_rem, is_starter=True)
-    w = proj["projected_w"]
-    ok = 8 <= w <= 12
-    if _report("A8: Win projection ≈30 starts × 0.33 win rate",
-               ok, w, "8 – 12"):
+    proj_sp  = project_pitcher_counting(blended, games_rem, is_starter=True,
+                                         mlbam_id=669373)   # Skubal
+    proj_fb  = project_pitcher_counting(blended, games_rem, is_starter=True)  # no ID
+    w_sp = proj_sp["projected_w"]
+    w_fb = proj_fb["projected_w"]
+    ok = (8 <= w_sp <= 14) and (w_fb == 0)
+    if _report("A8: Win projection — Steamer blend (SP ≥8W) + fallback=0",
+               ok, f"SP={w_sp} fallback={w_fb}", "SP: 8–14, fallback: 0"):
         passed += 1
 
     # A9: IP per start — 30 starts × 0.85 × 5.8 ip/start ≈ 148 IP

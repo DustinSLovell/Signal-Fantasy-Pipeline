@@ -1,0 +1,21 @@
+category,stat,bucket,n,s29_mae,s30_mae,steamer_mae,rtm_mae,s29_bias,s30_bias,winner,gap_vs_steamer,notes
+HITTER,AVG,ALL,234,0.0215,0.0215,0.0187,0.0197,-0.0021,-0.0021,Steamer,+0.0028,Unchanged S30. Career BA anchor (0.85x) partially closes gap.
+HITTER,OBP,ALL,240,0.0125,0.0125,,,−,−,MODEL,−,Unchanged S30. Session 28 BB% blend; Steamer/RTM OBP not in backtest file.
+HITTER,HR,ALL,230,6.22,6.22,5.92,6.63,-1.98,-1.98,Steamer,+0.30,Unchanged S30. Model beats RTM (6.63 vs 6.22).
+HITTER,R,ALL,234,17.13,17.13,15.12,17.91,+0.96,+0.96,Steamer,+2.01,Unchanged S30. Model beats RTM.
+HITTER,RBI,ALL,234,16.93,16.93,16.49,17.71,-3.83,-3.83,Steamer,+0.45,Unchanged S30. RBI bias from lineup suppression.
+HITTER,SB,ALL,235,5.42,5.42,4.72,,,−,Steamer,+0.70,Unchanged S30. 65/35 Steamer/sprint blend (Session 22).
+HITTER,wOBA,ALL,199,0.0344,0.0344,0.0277,0.0390,-0.0114,-0.0114,Steamer,+0.0067,Unchanged S30. Signal mults help vs raw model (0.035→0.034).
+PITCHER,ERA,SP,79,0.619,0.619,0.629,0.753,-0.136,-0.136,MODEL,-0.010,Unchanged S30. ONLY stat where Model beats Steamer.
+PITCHER,ERA,RP,86,1.124,1.124,0.929,1.249,+0.606,+0.606,Steamer,+0.195,Unchanged S30. RP ERA dominated by small-sample noise.
+PITCHER,ERA,ALL,165,0.882,0.882,0.786,1.012,+0.251,+0.251,Steamer,+0.097,Unchanged S30. Model bias +0.25 vs Steamer +0.41 — model less biased.
+PITCHER,WHIP,SP,79,0.155,0.155,0.104,0.134,+0.093,+0.093,Steamer,+0.050,Unchanged S30. Gap manageable.
+PITCHER,WHIP,RP_prefx,86,0.231,0.231,0.166,0.175,+0.157,+0.157,Steamer,+0.065,PRE-Session27 fix. Historical reference only.
+PITCHER,WHIP,RP_postfix,86,0.198,0.198,0.166,0.175,est,est,Steamer,+0.032,POST-Session27 LG_WHIP blend. 58.8% gap closed vs RTM. Unchanged S30.
+PITCHER,K,SP,79,50.87,32.17,24.45,103.43,-48.44,-27.11,Steamer,+7.72,S30 FIX: gs<10 blend closes 71% of Session 29 gap. Gate 32.17<39.8 PASS.
+PITCHER,K,RP,86,28.95,28.95,19.50,31.48,+20.74,+20.74,Steamer,+9.45,Unchanged S30. RP K over-projected (positive bias). Model better than RTM.
+PITCHER,K,ALL,165,39.45,30.56,21.87,65.93,-12.38,-3.18,Steamer,+8.69,S30 K blend improves ALL from 39.45→30.56.
+PITCHER,W,SP,79,9.80,2.50,2.50,9.80,-9.80,-0.00,MODEL=Steamer,-0.00,S30 FIX: Steamer W blend. SP MAE 9.80→2.50. Matches Steamer MAE exactly.
+PITCHER,W,RP,86,5.29,5.29,2.21,5.29,-5.29,-5.29,Steamer,+3.08,Unchanged S30. RPs return W=0 (by design — SPs get W credit).
+PITCHER,W,ALL,165,7.45,3.95,2.35,7.45,-7.45,-2.90,Steamer,+1.60,S30 FIX: Steamer W blend. ALL MAE 7.45→3.95. Gate 3.95<4.0 PASS.
+PITCHER,SV+H,RP,,−,−,−,−,−,−,−,−,Not in backtest file. _blend_sv_h() MAE=0.6 vs Steamer ROS-scaled.

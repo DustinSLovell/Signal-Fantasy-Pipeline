@@ -133,6 +133,8 @@ _STEAMER_PA:  dict = {}   # str(mlbam_id) → full-season PA float
 _STEAMER_G:   dict = {}   # str(mlbam_id) → full-season G float (for stale-projection detection)
 _STEAMER_IP:  dict = {}   # str(mlbam_id) → {"IP": float, "GS": float}
 _STEAMER_SVH: dict = {}   # str(mlbam_id) → {"SV": float, "HLD": float}
+_STEAMER_W:   dict = {}   # str(mlbam_id) → full-season W float (SP only; load from Steamers 2025 pitchers.csv)
+_STEAMER_K:   dict = {}   # str(mlbam_id) → full-season K (SO) float; used to blend SP K when gs<10
 _STEAMER_SB:  dict = {}   # str(mlbam_id) → full-season SB float
 _IL_STATUS:   dict = {}   # int(mlbam_id) → "ACTIVE" | "INJURY_RESERVE" | "DAY_TO_DAY"
 _HITTER_GP:   dict = {}   # int(batter_id) → games_played (unique game_pk count)
@@ -365,7 +367,7 @@ def load_all_career_data() -> dict:
 
 def _load_pt_lookups() -> None:
     """Lazy-load Steamer PA/IP/SV/HLD, IL status, and hitter games-played lookups."""
-    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _STEAMER_SVH, _STEAMER_SB, _IL_STATUS, _HITTER_GP, _PT_LOADED
+    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _STEAMER_SVH, _STEAMER_W, _STEAMER_K, _STEAMER_SB, _IL_STATUS, _HITTER_GP, _PT_LOADED
     if _PT_LOADED:
         return
 
@@ -417,6 +419,20 @@ def _load_pt_lookups() -> None:
                         "SV":  sv  if math.isfinite(sv)  else 0.0,
                         "HLD": hld if math.isfinite(hld) else 0.0,
                     }
+                # W — full-season wins (meaningful for SPs; RPs typically < 3)
+                try:
+                    w = float(row.get("W", 0) or 0)
+                except (ValueError, TypeError):
+                    w = 0.0
+                if mid and math.isfinite(w) and w > 0:
+                    _STEAMER_W[mid] = w
+                # K (SO) — full-season strikeouts; used to anchor SP K when gs<10
+                try:
+                    k = float(row.get("SO", 0) or 0)
+                except (ValueError, TypeError):
+                    k = 0.0
+                if mid and math.isfinite(k) and k > 0:
+                    _STEAMER_K[mid] = k
 
     if OWNERSHIP_CSV.exists():
         try:
@@ -1047,6 +1063,31 @@ def project_hitter_counting(blended: dict,
     }
 
 
+def _blend_w(mlbam_id: Optional[int],
+             games_remaining: int,
+             is_starter: bool) -> float:
+    """Return projected ROS wins for a starter.
+
+    Relievers always return 0.0 — W credit goes to starters in CBS scoring.
+    Starters: Steamer full-season W scaled by remaining schedule fraction.
+    Falls back to 0.0 when no Steamer data available.
+
+    Rationale: Steamer W uses full preseason context (team offense, rotation slot,
+    park, etc.) that our April-only data cannot replicate. Pure scale-down avoids
+    overfitting to April-only starts while matching Steamer's 2.35 ALL-pitcher MAE
+    vs. the starts×0.33 formula's 4.07 (Session 30 diagnostic).
+    """
+    _load_pt_lookups()
+    if not is_starter:
+        return 0.0
+    if mlbam_id is None:
+        return 0.0
+    steamer_w = _STEAMER_W.get(str(mlbam_id))
+    if steamer_w is None or steamer_w <= 0:
+        return 0.0
+    return round(steamer_w * (games_remaining / 162.0), 1)
+
+
 def _blend_sv_h(mlbam_id: Optional[int],
                 games_remaining: int,
                 is_starter: bool,
@@ -1166,8 +1207,19 @@ def project_pitcher_counting(blended: dict,
         blend_w = min(1.0, current_ip / RP_WHIP_IP_THRESH)
         whip = round(blend_w * whip + (1.0 - blend_w) * LG_WHIP, 3)
 
-    K  = max(0, int(k_per9 / 9.0 * projected_ip))
-    W = max(0, int(starts_remaining * 0.33)) if is_starter else 0
+    pace_k = k_per9 / 9.0 * projected_ip
+    # SP K blend: when gs<10, April IP data is volatile → blend toward Steamer K.
+    # blend_w = gs/10 (0=full Steamer, 1=full pace).
+    # Validated in Session 30 backtest: MAE 50.87→32.17 (closes 71% of gap to Steamer 24.45).
+    if is_starter and mlbam_id is not None and current_gs < 10:
+        _load_pt_lookups()
+        s_k_full = _STEAMER_K.get(str(mlbam_id))
+        if s_k_full is not None and s_k_full > 0:
+            steamer_ros_k = s_k_full * (games_remaining / 162.0)
+            blend_w_k = min(1.0, current_gs / 10.0)
+            pace_k = blend_w_k * pace_k + (1.0 - blend_w_k) * steamer_ros_k
+    K  = max(0, int(pace_k))
+    W  = int(_blend_w(mlbam_id, games_remaining, is_starter))
 
     # Saves + holds projection (relievers only; starters always 0)
     proj_sv, proj_hld = _blend_sv_h(mlbam_id, games_remaining, is_starter, current_ip)

@@ -12,3 +12,5 @@ OBP career anchor (avg_proj),25,OBP,,,,,OBP uses career-anchored avg_proj; Turne
 SP ERA win confirmed (scorecard audit),29,ERA_SP,0.629,0.619,,+0.010,Session 29 backtest audit: Model 0.619 < Steamer 0.629 — only stat where Model beats Steamer. SP n=79.
 W projection gap identified (structural),29,W,7.45,,,+5.10,model_w=0 for all 165 pitchers. Steamer MAE=2.35. Fix: wire Steamer W × remaining fraction (Tier 2).
 SP K gap quantified,29,K_SP,50.87,,,+26.42,SP K MAE 50.87 vs Steamer 24.45. Reduce by increasing Steamer K weight when gs<10 (Tier 2).
+W projection fix (Steamer blend),30,W_ALL,7.45,3.95,7.45,-3.50,Gate PASS 3.95<4.0; SP MAE 9.80→2.50 (ties Steamer); RPs return 0 by design; _STEAMER_W + _blend_w() added
+SP K projection blend (gs<10),30,K_SP,50.87,32.17,103.43,-18.70,Gate PASS 32.17<39.8; 71% gap closure vs Steamer 24.45; blend_w=gs/10; _STEAMER_K loaded from Steamers SO column
