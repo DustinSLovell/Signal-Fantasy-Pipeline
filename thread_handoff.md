@@ -4133,7 +4133,7 @@ Same pattern as hitters: extreme signals reliable, slight signals noisy. Pitcher
 - `outputs/whitepaper_section10_draft.md` (NEW — full Section 10 white paper draft, 7 sections)
 
 ### GitHub (Session 34)
-Session 34 commit: [pushed at session close — see git log for hash]
+Session 34 commit: d860f81 — signal context overrides + signal backtest + white paper section 10
 Files: signal_context.py, data/player_injury_context.json, outputs/signal_accuracy_full_matrix.csv, outputs/whitepaper_section10_draft.md, CLAUDE.md, thread_handoff.md
 
 ### Parking lot changes (Session 34)
