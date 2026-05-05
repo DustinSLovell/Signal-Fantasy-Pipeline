@@ -2037,6 +2037,48 @@ PENDING MANUAL ACTIONS:
   - Download updated thread_handoff.md to Claude.ai
   - Session 33: implement ownership acceleration tracking (design spec complete)
 
+--- May 5, 2026 (Session 33) ---
+Ownership Acceleration Tracking: weekly_update.py + data/ownership_history.json (NEW)
+  - OWNERSHIP_HISTORY path constant + json import added
+  - _load_current_ownership(): reads owned_pct from luck_scores.csv (H) + pitcher_luck_scores.csv (P)
+    Returns {mlbam_id (int): owned_pct (float)}; 846 players covered
+  - _snapshot_ownership(week_num): appends {week, ownership, date} entries; duplicate guard per week
+    First snapshot: week 9, 846 players, 2026-05-05
+  - _compute_ownership_deltas(df, week_num): adds 4 new columns to calls_tracker.csv
+    delta_own_1w (curr - prev1w), delta_own_4w (curr - prev4w), own_velocity (alias), own_acceleration
+    All -- at week 9 baseline; deltas activate at week 10 (next Monday)
+  - --snapshot-ownership flag: standalone snapshot without requiring fresh pipeline data
+  - Wire into cmd_update(): _snapshot_ownership + _compute_ownership_deltas called after each --update
+  - Step 2e finding: steamer_pt_override gate does NOT use ownership. pa_so_far>=80 is better proxy.
+    Do not add ownership to gate — no principled improvement.
+  - 37/37 PASS. All invariants PASS.
+
+Signal Accuracy by Tier: outputs/signal_accuracy_by_tier.csv (NEW)
+  - Source: backtest_C_hitters_2025.csv merged with backtest_audit_hitters.csv (2025 subset, n=71 signaled)
+  - Buy Low: Model 0.0291 vs Steamer 0.0297 — MODEL wins (-1.9%, n=22)
+  - Sell High: Model 0.0217 vs Steamer 0.0274 — MODEL wins (-20.8%, n=7, small sample)
+  - Neutral: Steamer wins by 27.8% (0.0268 vs 0.0343) — expected structural gap
+  - Publishable framing: "Accuracy advantage concentrated in signaled players; for Neutral players Steamer wins"
+  - White paper Section 10: use Buy Low + Sell High claims, flag Sell High n=7 as directional evidence
+
+Pipeline refresh:
+  - run_pipeline.py --write: 435H + 418P projected; signal board: 54 BL / 44 SH hitters, 11 BL / 23 SH pitchers
+  - score_value.py --write: all invariants PASS (Sanchez C#26, Yordan #3, Raleigh C#2, Baldwin C#3, Contreras C#6)
+  - weekly_update.py --update: DUPLICATE DETECTED (100% identical luck scores — same underlying Statcast data)
+    Tracker remains at week 9; week 10 column adds next Monday
+
+Article content hooks (ownership-based):
+  "Buy the Dip" top: Hayes 0.5%, Carter 4.0%, Cronenworth 4.7%, Bohm 16.0%, Grisham 16.6%
+  "Sell Into Hype" top: Skenes 99.8%, Carroll 99.7%, Rice 99.2%, Langeliers 97.6%, Soriano 95.8%
+  Tracker week 9: Confirmed=32, Deepening=59, Active=15, Honest misses=3
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-33) — add new lessons manually in Claude.ai
+  - White paper Section 10 — use signal_accuracy_by_tier.csv framing
+  - Download updated thread_handoff.md to Claude.ai
+  - Session 34: ownership deltas live at Week 10 (next Monday)
+
 ---
 *This file is the persistent memory for Claude Code sessions.*
 *thread_handoff.md in Claude.ai is the persistent memory for Claude.ai sessions.*

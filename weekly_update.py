@@ -19,17 +19,19 @@ Column notes:
     (wOBA up for buys, ERA down for pitchers on buy calls → positive delta)
 """
 
+import json
 import sys
 from datetime import date
 from pathlib import Path
 
 import pandas as pd
 
-BASE_DIR    = Path(__file__).parent
-TRACKER     = BASE_DIR / "data" / "calls_tracker.csv"
-LUCK_H      = BASE_DIR / "luck_scores.csv"
-LUCK_P      = BASE_DIR / "pitcher_luck_scores.csv"
-CALL_DATE   = "2026-04-22"   # Week 1 article date
+BASE_DIR          = Path(__file__).parent
+TRACKER           = BASE_DIR / "data" / "calls_tracker.csv"
+LUCK_H            = BASE_DIR / "luck_scores.csv"
+LUCK_P            = BASE_DIR / "pitcher_luck_scores.csv"
+OWNERSHIP_HISTORY = BASE_DIR / "data" / "ownership_history.json"
+CALL_DATE         = "2026-04-22"   # Week 1 article date
 
 # Significance thresholds (from spec)
 WOBA_THRESH  = 0.020   # wOBA movement to classify
@@ -503,6 +505,109 @@ def _apply_signal_classifier(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+# ── ownership acceleration tracking ──────────────────────────────────────────
+
+def _load_current_ownership() -> dict:
+    """Return {mlbam_id (int): owned_pct (float)} from both luck CSVs."""
+    out: dict[int, float] = {}
+    for path, id_col in [(LUCK_H, "batter"), (LUCK_P, "pitcher")]:
+        try:
+            df = pd.read_csv(path, usecols=[id_col, "owned_pct"])
+            for _, r in df.iterrows():
+                try:
+                    bid = int(r[id_col])
+                    pct = float(r["owned_pct"])
+                    if not pd.isna(pct):
+                        out[bid] = round(pct, 2)
+                except (ValueError, TypeError):
+                    continue
+        except Exception:
+            continue
+    return out
+
+
+def _snapshot_ownership(week_num: int) -> None:
+    """Append current ownership snapshot to data/ownership_history.json.
+
+    Structure: {str(mlbam_id): [{week, ownership, date}, ...]}
+    Retains full season history (no pruning).
+    """
+    today_str  = date.today().isoformat()
+    current    = _load_current_ownership()
+    if not current:
+        print("  [ownership] No ownership data found — skipping snapshot.")
+        return
+
+    if OWNERSHIP_HISTORY.exists():
+        with open(OWNERSHIP_HISTORY, encoding="utf-8") as f:
+            history: dict = json.load(f)
+    else:
+        history = {}
+
+    added = 0
+    for mlbam_id, pct in current.items():
+        key     = str(mlbam_id)
+        records = history.get(key, [])
+        # Avoid duplicate entry for same week
+        if records and records[-1]["week"] == week_num:
+            continue
+        records.append({"week": week_num, "ownership": pct, "date": today_str})
+        history[key] = records
+        added += 1
+
+    with open(OWNERSHIP_HISTORY, "w", encoding="utf-8") as f:
+        json.dump(history, f, separators=(",", ":"))
+    print(f"  [ownership] Snapshotted {added} players at week {week_num} -> {OWNERSHIP_HISTORY.name}")
+
+
+def _compute_ownership_deltas(df: pd.DataFrame, week_num: int) -> pd.DataFrame:
+    """Add delta_own_1w, delta_own_4w, own_velocity, own_acceleration to tracker.
+
+    delta_own_1w:     current ownership - ownership 1 week ago (None if < 2 weeks)
+    delta_own_4w:     current ownership - ownership 4 weeks ago (None if < 4 weeks)
+    own_velocity:     same as delta_own_1w (alias for clarity in reports)
+    own_acceleration: delta_own_1w (this week) - delta_own_1w_prior_week
+                      positive = rise accelerating, negative = decelerating
+    """
+    if not OWNERSHIP_HISTORY.exists():
+        for col in ("delta_own_1w", "delta_own_4w", "own_velocity", "own_acceleration"):
+            if col not in df.columns:
+                df[col] = float("nan")
+        return df
+
+    with open(OWNERSHIP_HISTORY, encoding="utf-8") as f:
+        history: dict = json.load(f)
+
+    d1w, d4w, vel, acc = [], [], [], []
+    for _, row in df.iterrows():
+        key     = str(int(row["player_id"]))
+        records = history.get(key, [])
+        rec_map = {r["week"]: r["ownership"] for r in records}
+
+        curr      = rec_map.get(week_num)
+        prev_1w   = rec_map.get(week_num - 1)
+        prev_2w   = rec_map.get(week_num - 2)
+        prev_4w   = rec_map.get(week_num - 4)
+
+        delta_1 = round(curr - prev_1w, 2) if (curr is not None and prev_1w is not None) else float("nan")
+        delta_4 = round(curr - prev_4w, 2) if (curr is not None and prev_4w is not None) else float("nan")
+
+        # Acceleration: change in weekly velocity vs prior week's velocity
+        delta_prev = round(prev_1w - prev_2w, 2) if (prev_1w is not None and prev_2w is not None) else float("nan")
+        accel = round(delta_1 - delta_prev, 2) if (not pd.isna(delta_1) and not pd.isna(delta_prev)) else float("nan")
+
+        d1w.append(delta_1)
+        d4w.append(delta_4)
+        vel.append(delta_1)   # velocity = 1-week delta
+        acc.append(accel)
+
+    df["delta_own_1w"]     = d1w
+    df["delta_own_4w"]     = d4w
+    df["own_velocity"]     = vel
+    df["own_acceleration"] = acc
+    return df
+
+
 # ── init ─────────────────────────────────────────────────────────────────────
 
 def cmd_init():
@@ -655,6 +760,8 @@ def cmd_update():
 
     df = _compute_deltas(df)
     df = _apply_signal_classifier(df)
+    _snapshot_ownership(next_week)
+    df = _compute_ownership_deltas(df, next_week)
     df.to_csv(TRACKER, index=False)
     print(f"Updated → {TRACKER}  (now at {prefix})")
     _print_summary(df)
@@ -869,6 +976,39 @@ def main():
         cmd_init()
     elif "--update" in args:
         cmd_update()
+    elif "--snapshot-ownership" in args:
+        # Snapshot current ownership without requiring a new pipeline run.
+        # Uses the current week number from the tracker (does not advance it).
+        if not TRACKER.exists():
+            print("No tracker found. Run --init first.")
+            return
+        df = pd.read_csv(TRACKER)
+        week_num = _current_week_num(df)
+        if week_num == 0:
+            week_num = 1
+        _snapshot_ownership(week_num)
+        df = _compute_ownership_deltas(df, week_num)
+        df.to_csv(TRACKER, index=False)
+        print(f"Ownership snapshot complete at week {week_num}.")
+        # Show current ownership for players in tracker
+        current = _load_current_ownership()
+        active  = df[df["mechanism"].isin(["still_waiting", "results_improving",
+                                            "results_declining", "confirming",
+                                            "insufficient_movement"])]
+        print(f"\nTop 10 active signals - current ownership%:")
+        shown = 0
+        for _, row in active.sort_values("luck_delta", ascending=False, key=abs).iterrows():
+            pid = int(row["player_id"])
+            own = current.get(pid)
+            if own is not None:
+                d1 = row.get("delta_own_1w")
+                d4 = row.get("delta_own_4w")
+                d1_str = f"d1w={d1:+.1f}" if not pd.isna(d1) else "d1w=--"
+                d4_str = f"d4w={d4:+.1f}" if not pd.isna(d4) else "d4w=--"
+                print(f"  {row['name']:<22} {own:5.1f}%  {d1_str}  {d4_str}  [{row.get('call','')}]")
+                shown += 1
+                if shown >= 10:
+                    break
     elif "--report" in args:
         top_n = 99
         if "--top" in args:
