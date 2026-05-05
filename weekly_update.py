@@ -48,6 +48,11 @@ LUCK_DEEPEN_THRESH  =  0.030   # luck score moved this much → signal deepening
 # Week 10 = mid-June: when Track 1 official accuracy reporting begins
 TRACK1_RESOLUTION_WEEK = 10
 
+# Rolling window age / urgency constants
+WINDOW_ACTIVE_MAX   = 4    # weeks 1-4: active resolution window
+WINDOW_EXTENDED_MAX = 8    # weeks 5-8: extended window
+AVG_LUCK_DECAY_PER_WEEK = 0.050  # assumed weekly luck decay rate for ETA calculation
+
 # Mechanism → human-readable status label and emoji
 # Mechanisms:
 #   BUY calls:  results_improving | contact_deteriorating | confirmed | refuted
@@ -189,6 +194,53 @@ def _compute_deltas(df: pd.DataFrame) -> pd.DataFrame:
     df["mechanism"]          = df.apply(_classify_mechanism, axis=1)
     df["prediction_correct"] = df.apply(_classify_correct, axis=1)
     df["window_signal"]      = df.apply(_classify_window_signal, axis=1)
+
+    # ── Rolling window age / urgency columns ────────────────────────────────
+    # signal_age_weeks: how many weekly updates have elapsed since call_date.
+    # All calls were made at Week 1 (April 22, 2026), so age = current_week - 1.
+    current_week = len(wc)   # number of weekN_luck columns = weeks of data
+    df["signal_age_weeks"] = max(0, current_week - 1)
+
+    # window_4wk_status: "active" (≤4 wks), "extended" (5-8 wks), "stale" (>8 wks)
+    def _status(age: int) -> str:
+        if age <= WINDOW_ACTIVE_MAX:
+            return "active"
+        if age <= WINDOW_EXTENDED_MAX:
+            return "extended"
+        return "stale"
+    df["window_4wk_status"] = df["signal_age_weeks"].map(_status)
+
+    # urgency_flag: deepening signal that has been active 3+ weeks without confirming
+    def _urgency(row) -> bool:
+        return (row.get("window_signal") == "deepening"
+                and int(row.get("signal_age_weeks", 0)) >= 3)
+    df["urgency_flag"] = df.apply(_urgency, axis=1)
+
+    # resolution_eta: estimated weeks until luck score crosses the normalization threshold.
+    # Formula: (|luck_score| - normalization_threshold) / AVG_LUCK_DECAY_PER_WEEK
+    # Clipped to [0, 20]. NaN when no current luck data.
+    curr_luck_col = f"{latest}_luck" if latest else None
+    if curr_luck_col and curr_luck_col in df.columns:
+        def _eta(row) -> object:
+            luck = row.get(curr_luck_col)
+            try:
+                luck = float(luck)
+            except (TypeError, ValueError):
+                return float("nan")
+            import math
+            if math.isnan(luck):
+                return float("nan")
+            call = row.get("call", "")
+            is_buy = any(b in str(call).lower() for b in ("buy",))
+            threshold = LUCK_NORMALIZE_BUY if is_buy else abs(LUCK_NORMALIZE_SELL)
+            gap = abs(luck) - threshold
+            if gap <= 0:
+                return 0.0
+            return round(min(20.0, gap / AVG_LUCK_DECAY_PER_WEEK), 1)
+        df["resolution_eta"] = df.apply(_eta, axis=1)
+    else:
+        df["resolution_eta"] = float("nan")
+
     df["last_updated"]       = str(date.today())
     return df
 

@@ -67,6 +67,8 @@ WHIP_ERA_INTERCEPT = 0.55
 FIP_CONST         = 3.10    # standard FIP constant
 LG_H9             = 8.8     # league avg H/9 (2022-2024 era)
 LG_BB9            = 3.1     # league avg BB/9 (2022-2024 era)
+LG_WHIP           = 1.20    # league avg WHIP (2022-2024 era); RP small-sample fallback
+RP_WHIP_IP_THRESH = 15.0    # IP below which RP WHIP blends toward league average
 CAREER_BA_WEIGHT  = 0.65    # AVG blend: career BA anchor weight
 APRIL_AVG_WEIGHT  = 0.35    # AVG blend: xwOBA-derived current-season weight
 MIN_CAREER_PA_BA  = 200     # minimum career PA before trusting career_ba anchor
@@ -1156,6 +1158,13 @@ def project_pitcher_counting(blended: dict,
     era   = blended.get("true_era",   4.20)
     whip  = blended.get("true_whip",  1.30)
     k_per9 = blended.get("true_k_per9", 8.50)
+
+    # RP WHIP small-sample blend: component formula over-projects by +0.157 bias for
+    # pitchers with < 15 IP (Session 26 diagnostic). Linear interpolation toward LG_WHIP.
+    # Applies to: all RPs, and SPs with < RP_WHIP_IP_THRESH IP (SPs with ≥ 20 IP gap = 0.020).
+    if not is_starter or current_ip < RP_WHIP_IP_THRESH:
+        blend_w = min(1.0, current_ip / RP_WHIP_IP_THRESH)
+        whip = round(blend_w * whip + (1.0 - blend_w) * LG_WHIP, 3)
 
     K  = max(0, int(k_per9 / 9.0 * projected_ip))
     W = max(0, int(starts_remaining * 0.33)) if is_starter else 0

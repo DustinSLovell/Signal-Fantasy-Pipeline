@@ -1779,6 +1779,75 @@ PENDING MANUAL ACTIONS:
   - White paper Section 10 update in 2-3 weeks
   - Update thread_handoff.md in Claude.ai with Session 26 summary
 
+--- May 5, 2026 (Session 27) ---
+
+RP WHIP fix: stat_projections.py
+  - Root cause (Session 26 diagnostic): component formula over-projects RP WHIP by +0.157 bias
+    for pitchers with < 15 IP (small sample extrapolation). RTM wins by anchoring to 1.20-1.30.
+  - Fix: linear blend toward LG_WHIP (1.20) for all RPs AND SPs with < 15 current IP.
+    whip = (ip/15) × component_whip + (1 - ip/15) × LG_WHIP
+    At IP=0: pure 1.20; at IP=15: pure component. SP with ≥20 IP unchanged (gap was 0.020).
+  - New constants: LG_WHIP=1.20, RP_WHIP_IP_THRESH=15.0 (added near LG_H9/LG_BB9)
+  - Backtest result (analytical from backtest_A_pitchers_2025.csv, n=86 RP):
+    RP MAE: 0.2309 → 0.1980 (Δ=-0.033). Gap vs RTM: 0.056 → 0.023 (58.8% closed).
+    Criterion MET: ≥50% gap closure AND new gap 0.023 < 0.028 target.
+  - SP bucket unchanged: MAE 0.1546 → 0.1546. Overall: 0.1944 → 0.1772.
+  - 37/37 PASS. All invariants PASS.
+
+Raw stats audit: score_value.py project_hitter_stats() — DIAGNOSTIC ONLY
+  Flagged (raw April, no career anchor):
+    BB% (bb_col = bb_rate): raw April walk rate used in OBP formula. No career BB% file exists.
+    Highest impact: Turner (BB%=0.036 vs LG=0.085 → OBP suppressed ~0.034). 110 PA sample.
+    Fix direction: build_hitter_career_bb.py from v4_april CSVs (same pattern as career K%/pull).
+    Priority: Tier 2 — BB% is more stable than BABIP; ~10-15 players affected meaningfully.
+  Already anchored (no action needed):
+    xwOBA → R/RBI: career anchor (xwoba_3yr PA-blend) in place since Session 14
+    Barrel rate → HR: PA-weighted league-mean regression in place since Session 14
+    AVG: career_ba gate (≥0.240, gap >0.040, floor=×0.85) since Sessions 23-25
+    OBP: uses anchored avg_proj since Session 25
+  Not used in value projection (no action):
+    K%: luck signal flag only; BABIP: Layer 1 only; HR/FB: barrel-based formula used
+    EV: captured indirectly via xwOBA_3yr regression
+
+Rolling window module: weekly_update.py
+  New constants: WINDOW_ACTIVE_MAX=4, WINDOW_EXTENDED_MAX=8, AVG_LUCK_DECAY_PER_WEEK=0.050
+  New columns added to calls_tracker.csv (computed in _compute_deltas()):
+    signal_age_weeks: current_week - 1 (all calls are Week 1 baseline)
+    window_4wk_status: "active" (≤4 wks) | "extended" (5-8 wks) | "stale" (>8 wks)
+    urgency_flag: True if window_signal="deepening" AND signal_age_weeks >= 3
+    resolution_eta: (|luck| - threshold) / 0.050 per week, clipped [0, 20]
+  Current state (Week 9):
+    Stewart: age=8, status=extended, urgency=True, eta=6.4 wks, signal=deepening
+    Carter: age=8, status=extended, urgency=True, eta=7.0 wks, signal=deepening
+    Ramírez: age=8, status=extended, urgency=False, eta=7.5 wks, signal=still_waiting
+    Grisham: age=8, status=extended, urgency=False, eta=6.6 wks, signal=still_waiting
+  Top urgency (deepening, age≥3): Luzardo (eta=12.4), Sugano (-10.9), McGreevy (-10.4),
+    Hayes (9.7), Martínez (-9.2)
+  37/37 PASS. Existing window_signal logic unchanged — only new columns added.
+
+Files modified this session:
+  - stat_projections.py (LG_WHIP, RP_WHIP_IP_THRESH constants; RP WHIP blend in project_pitcher_counting)
+  - weekly_update.py (WINDOW_ACTIVE_MAX, WINDOW_EXTENDED_MAX, AVG_LUCK_DECAY_PER_WEEK constants;
+    signal_age_weeks, window_4wk_status, urgency_flag, resolution_eta in _compute_deltas)
+  - data/projections_2026.csv (regenerated — WHIP fix applied to all 418 pitchers)
+  - data/player_values.json (regenerated)
+  - data/calls_tracker.csv (--update run, new rolling window columns populated)
+  - thread_handoff.md (full regeneration — see handoff ownership note in session task list)
+  - CLAUDE.md (this changelog)
+
+Parking lot changes (Session 27):
+  Tier 2 new item: career BB% anchor — build_hitter_career_bb.py
+    Reads v4_april CSVs, identifies ball/called-strike events (bb_type), computes career BB% per batter.
+    Wire into score_value.py OBP formula as league-average blend when career > |curr - LG| > 0.030.
+    Sanity check: Turner (0.036) → likely career BB% ~0.075-0.090 based on FP projection history.
+    Fixes ~10-15 outlier OBP projections. LOW urgency — BB% is more stable than BABIP.
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — overdue
+  - Career lessons database (Sessions 22-27) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Download updated thread_handoff.md from Claude Code to Claude.ai
+
 ---
 *This file is the persistent memory for Claude Code sessions.*
 *thread_handoff.md in Claude.ai is the persistent memory for Claude.ai sessions.*
