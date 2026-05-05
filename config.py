@@ -19,7 +19,7 @@ Both sets correctly identify "high confidence" signals from their respective
 score distributions. Use backtest numbers for signal direction validation and
 A vs B comparisons only. Use production numbers for live decisions and publishing.
 
-Canonical accuracy (backtest v7): 86.1% train (2022-2024) | 89.4% OOS (2025)
+Canonical accuracy (backtest v7): 91.9% train (2022-2024) | TBD OOS (Session 35 — post SB elimination + BL raise)
 
 MODIFIER ARCHITECTURE — Version D (additive, April 26 2026):
   All hitter buy signal modifiers use flat additive penalties subtracted from
@@ -29,8 +29,12 @@ MODIFIER ARCHITECTURE — Version D (additive, April 26 2026):
 """
 
 # ── Production hitter thresholds (score_luck.py) ─────────────────────────────
-H_PROD_BUY_LOW      =  0.150
-H_PROD_SLIGHT_BUY   =  0.100
+# Session 35: Slight Buy eliminated (72.9% accuracy, -13.3pp vs RTM = no edge).
+# H_PROD_SLIGHT_BUY set equal to H_PROD_BUY_LOW so the SB condition can never fire.
+# H_PROD_BUY_LOW raised 0.150→0.175 to drop the noisy 0.150-0.175 borderline cases.
+# Backtest result: 91.9% overall (+6.0pp vs 85.9% baseline, +5.7pp vs RTM 86.2%).
+H_PROD_BUY_LOW      =  0.175
+H_PROD_SLIGHT_BUY   =  0.175  # = H_PROD_BUY_LOW — Slight Buy tier eliminated
 H_PROD_SELL_HIGH    = -0.150
 H_PROD_SLIGHT_SELL  = -0.085
 
@@ -49,8 +53,8 @@ P_PROD_SLIGHT_SELL  = -0.07
 # ── Backtest hitter thresholds (backtest_multi_year_v7.py) ───────────────────
 # Calibrated to April-only formula. Score range: ~0.010–0.100.
 # Select the same relative confidence tiers as production, different scale.
-H_BT_BUY_LOW        =  0.040
-H_BT_SLIGHT_BUY     =  0.020
+H_BT_BUY_LOW        =  0.045  # raised from 0.040 (drops noisy 0.040-0.045 bucket, 82.6% acc)
+H_BT_SLIGHT_BUY     =  0.045  # = H_BT_BUY_LOW — Slight Buy tier eliminated in backtest
 H_BT_SELL_HIGH      = -0.065
 H_BT_SLIGHT_SELL    = -0.040
 

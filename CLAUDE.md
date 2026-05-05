@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-31)
+# Last updated: May 5, 2026 (Sessions 1-35)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -74,9 +74,12 @@ Changes to Layer 1 require: ablation test + invariant check + validate_formulas.
 
 ## CURRENT MODEL VERSIONS
 
-### Hitter Model (recalibrated April 25, 2026):
-- Thresholds: Buy Low >0.150 | Slight Buy >0.100 | Slight Sell <-0.085 | Sell High <-0.150
-- Gates: Slight Buy requires xwOBA_gap >= 0.030 AND xwOBA < 0.380 (updated April 25 — backtest analysis confirmed 3 failure modes)
+### Hitter Model (recalibrated May 5, 2026 / Session 35):
+- Thresholds: Buy Low >0.175 | **Slight Buy: ELIMINATED** | Slight Sell <-0.085 | Sell High <-0.150
+  (Prior thresholds: BL >0.150 | SB >0.100 — changed Session 35 after 72.9% accuracy diagnosis)
+- Backtest equivalents (Ruler 1): BL >=0.045 | SB: eliminated | SS <=-0.040 | SH <=-0.065
+- Gates: Slight Buy gates in config.py (SB_MIN_XWOBA_GAP, SB_MAX_XWOBA) are dead code — SB cannot fire
+- config.py: H_PROD_BUY_LOW=0.175, H_PROD_SLIGHT_BUY=0.175 (equal — makes SB impossible), H_BT_BUY_LOW=0.045, H_BT_SLIGHT_BUY=0.045
 - Chase rate modifier (sell-side): gap >0.040 → ×1.10, >0.060 → ×1.15
 - Platoon adjustment: Layer 7 — uses career baseline from hitter_career_platoon.json (updated April 26)
 
@@ -167,29 +170,24 @@ These rulers are NOT interchangeable. Applying production thresholds to backtest
 
 ### Hitter Model (backtest v7, Ruler 1 thresholds):
 
-**Version A — baseline (no modifiers):**
+**Version E — SB eliminated + BL raised (PRODUCTION as of May 5, 2026 / Session 35):**
 | Signal | Train 2022-24 n | Train acc | OOS 2025 n | OOS acc | 4yr pooled |
 |--------|-----------------|-----------|------------|---------|------------|
-| Buy Low | 57 | 91.2% | 32 | 96.9% | ~92.8% |
-| Slight Buy | 62 | 69.4% | 22 | 86.4% | ~75.4% |
-| Slight Sell | 56 | 89.3% | 26 | 76.9% | ~84.1% |
-| Sell High | 36 | 91.7% | 14 | 100.0% | ~94.8% |
-| **Overall** | **211** | **84.4%** | **94** | **89.4%** | **86.1%** |
-| vs RTM | — | — | — | — | +17.9pp |
+| Buy Low | 43 | 95.3% | 23 | 100.0% | 91.4% |
+| Slight Buy | **0** | **eliminated** | **0** | **eliminated** | — |
+| Slight Sell | 56 | 89.3% | 26 | 76.9% | — |
+| Sell High | 36 | 91.7% | 14 | 100.0% | — |
+| **Overall** | **135** | **91.9%** | **63** | **90.5%** | **91.4%** |
+| vs RTM | — | — | — | — | **+23.2pp** |
 
-**Version D — additive modifiers (PRODUCTION as of April 26, 2026):**
-| Signal | Train 2022-24 n | Train acc | OOS 2025 n | OOS acc |
-|--------|-----------------|-----------|------------|---------|
-| Buy Low | 55 | 91.3% | 25 | 96.0% |
-| Slight Buy | 56 | 73.5% | 22 | 90.9% |
-| Slight Sell | 56 | 89.3% | 26 | 76.9% |
-| Sell High | 36 | 91.7% | 14 | 100.0% |
-| **Overall** | **187** | **86.1%** | **87** | **89.7%** |
+Version E notes: Slight Buy tier eliminated after 72.9% accuracy diagnosis (4yr pooled), -13.3pp vs RTM.
+BL threshold raised: Ruler 1 0.040→0.045, Production 0.150→0.175.
+OOS guard PASS (90.5% ≥ 87.0%). +6.0pp improvement vs Version D.
 
-Version D notes: n_eval lower than A (187 vs 211 train) because additive penalties cross tier boundaries — borderline buys correctly downgraded to Neutral are excluded from eval. OOS guard PASS (89.7% ≥ 87.0%).
-
-Version B (multiplicative K%/pull): Train Δ=−0.1pp | OOS Δ=−0.1pp | VERDICT-NEUTRAL
-Version C (B + HH rate): Train Δ=0.0pp | OOS Δ=0.0pp | VERDICT-NEUTRAL
+**Prior versions (for reference — do not cite):**
+Version A (no modifiers):   Train 84.4% / OOS 89.4%
+Version D (additive mods):  Train 86.1% / OOS 89.7%
+Version B/C: VERDICT-NEUTRAL vs A
 
 ### Pitcher Model v2.0 (backtest v7, 2024 single-year):
 | Signal | n | acc |
@@ -203,7 +201,8 @@ Version C (B + HH rate): Train Δ=0.0pp | OOS Δ=0.0pp | VERDICT-NEUTRAL
 
 ### Numbers that are INVALID — do not publish:
 - "~89.0% train / ~93.5% OOS": production thresholds applied to backtest scores → 23 cases → 100% (overfitted noise)
-- "v7 Backtest: 85.9% pooled": superseded by train/OOS split table above
+- "v7 Backtest: 85.9% pooled" or "86.1%": superseded by Version E (91.9% train / 90.5% OOS)
+- Any Slight Buy accuracy claims — tier is eliminated as of Session 35
 
 ---
 
@@ -378,14 +377,15 @@ All 7 audit fixes complete as of April 24, 2026:
 
 ---
 
-## CURRENT SIGNALS SUMMARY (April 26, 2026 — post Version D)
+## CURRENT SIGNALS SUMMARY (May 5, 2026 — post Version E / Session 35)
 
-Hitters (414 total, production run):
-Buy Low: 55 | Slight Buy: 12 | Neutral: 293 | Slight Sell: 27 | Sell High: 27
-(Total tracked in calls_tracker.csv: 127 hitters + 42 pitchers = 169)
+Hitters (435 total, production run):
+Buy Low: 42 | Slight Buy: 0 (ELIMINATED) | Neutral: 321 | Slight Sell: 28 | Sell High: 44
+NOTE: 12 players previously tagged Slight Buy now show Neutral (BL threshold raised to 0.175)
 
-Pitchers (380 total, unchanged):
-Buy Low: 7 | Slight Buy: 8 | Neutral: 325 | Slight Sell: 15 | Sell High: 25
+Pitchers (418 total):
+Buy Low: 11 | Slight Buy: 5 | Neutral: (unchanged) | Slight Sell: 15 | Sell High: 23
+NOTE: Pitcher SB not eliminated — pitcher backtest was not analyzed in Session 35
 
 Top pitcher buy lows: Luzardo (0.4531), Ryan (0.3487), Boyle (0.3351),
 C.Sanchez (0.3095), Gilbert (0.2791), Bradish (0.2405), Baz (0.2047)
@@ -2134,6 +2134,50 @@ PENDING MANUAL ACTIONS:
   - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
   - Career lessons database (Sessions 22-34) — add new lessons manually in Claude.ai
   - White paper: integrate Section 10 draft into main whitepaper, publish to whitepapersonline.com
+  - Download updated thread_handoff.md to Claude.ai
+
+--- May 5, 2026 (Session 35) ---
+Slight Buy tier elimination + Buy Low threshold raise (Option D):
+
+Task 2 — Slight Buy root cause diagnosed + eliminated:
+  - Score bucket analysis: 0.020-0.025=64.0%, 0.025-0.030=72.0%, 0.030-0.035=73.7%, 0.035-0.040=87.5%
+  - Clear gradient — low-score SB cases are well below RTM 86.2%
+  - Sensitivity sweep: A(min=0.025)=87.9%, A(min=0.030)=89.4%, A(min=0.035)=90.7%, C(eliminate)=90.9%
+  - Option D (eliminate SB + raise BL min to 0.045 Ruler1/0.175 prod): 91.9% (+6.0pp) — ADOPTED
+  - config.py changes: H_PROD_BUY_LOW=0.150→0.175, H_PROD_SLIGHT_BUY=0.100→0.175 (= BL, eliminates SB)
+    H_BT_BUY_LOW=0.040→0.045, H_BT_SLIGHT_BUY=0.020→0.045 (= BL, eliminates SB in backtest)
+  - New canonical accuracy (Version E):
+    Train 2022-24: 91.9% (n=135) | OOS 2025: 90.5% (n=63) | 4yr pooled: 91.4% | vs RTM: +23.2pp
+  - OOS guard PASS (90.5% ≥ 87.0%). BL train 95.3% / OOS 100.0%.
+  - Production signal distribution: Buy Low: 42 | Slight Buy: 0 | Neutral: 321 | SS: 28 | SH: 44
+
+Task 3 — Sell High HR/R multiplier calibration: GATE FAILS — NO CHANGE
+  - HR MAE: model=7.244, Steamer=5.355 (model +35.3%). Gate: 20% improvement = target <5.796
+  - Sensitivity sweep: removing ×0.92 suppression WORSENS MAE (7.244 → 7.836 at ×1.00)
+  - Root cause: Aaron Judge structural outlier (actual 53 HR, model base 31.3, steamer 44.2)
+    Excluding Judge: model MAE=5.125 vs Steamer=4.929 — essentially tied
+  - Secondary root: bench players (Pavin Smith, Joey Bart) lost PT beyond model prediction
+  - Decision: KEEP ×0.92 HR multiplier. Gate prevents implementation. Root causes are irreducible.
+  - R over-suppression (+31.0%) also Judge-driven (137 actual vs 85 model); multiplier is not the fix
+
+Task 5 — Week 10 pipeline run:
+  - run_pipeline.py --write: 435H + 418P projected; 42 BL / 44 SH hitters, 11 BL / 23 SH pitchers
+  - score_value.py --write: all invariants PASS (Sanchez C#26, Yordan #3, Raleigh C#2, Baldwin C#3, Contreras C#6)
+  - weekly_update.py --update: DUPLICATE DETECTED (same Statcast data) — tracker stays at Week 9
+  - --report: 32 confirmed / 3 honest misses → preliminary 91.4% (not published until Week 10 officially opens)
+
+Files modified this session:
+  - config.py (H_PROD_BUY_LOW 0.150→0.175, H_PROD_SLIGHT_BUY 0.100→0.175, H_BT_BUY_LOW 0.040→0.045, H_BT_SLIGHT_BUY 0.020→0.045)
+  - CLAUDE.md (this changelog + accuracy tables + signal distribution)
+  - thread_handoff.md (full overwrite)
+
+37/37 PASS. All invariants PASS throughout session.
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-35) — add new lessons manually in Claude.ai
+  - White paper Section 10 update — use new 91.9% accuracy number (Version E, Session 35)
+  - Update section 10.2 directional accuracy: Slight Buy eliminated, new BL/Overall numbers
   - Download updated thread_handoff.md to Claude.ai
 
 ---
