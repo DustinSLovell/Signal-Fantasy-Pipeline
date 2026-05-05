@@ -72,6 +72,11 @@ RP_WHIP_IP_THRESH = 15.0    # IP below which RP WHIP blends toward league averag
 CAREER_BA_WEIGHT  = 0.65    # AVG blend: career BA anchor weight
 APRIL_AVG_WEIGHT  = 0.35    # AVG blend: xwOBA-derived current-season weight
 MIN_CAREER_PA_BA  = 200     # minimum career PA before trusting career_ba anchor
+# R/RBI Steamer blend weights (calibrated from 2025 OOS backtest, n=235):
+# 40/60 Model/Steamer: R MAE 17.19→13.42 (22% improvement), RBI MAE 17.01→14.96 (12%).
+# Gate: ≥10% improvement required; both pass. Model bias +0.96→-2.75 (trades over for under).
+STEAMER_R_MODEL_W = 0.40   # model weight in R/RBI blend
+STEAMER_R_STMR_W  = 0.60   # Steamer weight in R/RBI blend
 
 # Luck signal multipliers — applied after all blending to inject signal into counts
 LUCK_MULTIPLIERS: dict = {
@@ -136,6 +141,8 @@ _STEAMER_SVH: dict = {}   # str(mlbam_id) → {"SV": float, "HLD": float}
 _STEAMER_W:   dict = {}   # str(mlbam_id) → full-season W float (SP only; load from Steamers 2025 pitchers.csv)
 _STEAMER_K:   dict = {}   # str(mlbam_id) → full-season K (SO) float; used to blend SP K when gs<10
 _STEAMER_SB:  dict = {}   # str(mlbam_id) → full-season SB float
+_STEAMER_R:   dict = {}   # str(mlbam_id) → full-season R float
+_STEAMER_RBI: dict = {}   # str(mlbam_id) → full-season RBI float
 _IL_STATUS:   dict = {}   # int(mlbam_id) → "ACTIVE" | "INJURY_RESERVE" | "DAY_TO_DAY"
 _HITTER_GP:   dict = {}   # int(batter_id) → games_played (unique game_pk count)
 _PT_LOADED:   bool = False
@@ -367,7 +374,7 @@ def load_all_career_data() -> dict:
 
 def _load_pt_lookups() -> None:
     """Lazy-load Steamer PA/IP/SV/HLD, IL status, and hitter games-played lookups."""
-    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _STEAMER_SVH, _STEAMER_W, _STEAMER_K, _STEAMER_SB, _IL_STATUS, _HITTER_GP, _PT_LOADED
+    global _STEAMER_PA, _STEAMER_G, _STEAMER_IP, _STEAMER_SVH, _STEAMER_W, _STEAMER_K, _STEAMER_SB, _STEAMER_R, _STEAMER_RBI, _IL_STATUS, _HITTER_GP, _PT_LOADED
     if _PT_LOADED:
         return
 
@@ -393,6 +400,18 @@ def _load_pt_lookups() -> None:
                     sb = 0.0
                 if mid and math.isfinite(sb) and sb >= 0:
                     _STEAMER_SB[mid] = sb
+                try:
+                    r_val = float(row.get("R", 0) or 0)
+                except (ValueError, TypeError):
+                    r_val = 0.0
+                if mid and math.isfinite(r_val) and r_val >= 0:
+                    _STEAMER_R[mid] = r_val
+                try:
+                    rbi_val = float(row.get("RBI", 0) or 0)
+                except (ValueError, TypeError):
+                    rbi_val = 0.0
+                if mid and math.isfinite(rbi_val) and rbi_val >= 0:
+                    _STEAMER_RBI[mid] = rbi_val
 
     if STEAMER_PIT_CSV.exists():
         with open(STEAMER_PIT_CSV, newline="", encoding="utf-8-sig") as f:
@@ -1050,6 +1069,19 @@ def project_hitter_counting(blended: dict,
     # Lineup context multipliers (backtest-validated; default 1.0 = no change)
     R   = max(0, round(R   * r_mult))
     RBI = max(0, round(RBI * rbi_mult))
+
+    # Steamer R/RBI blend: 40/60 model/Steamer (calibrated from 2025 OOS n=235, Session 31).
+    # R MAE improvement: 17.19→13.42 (22%). RBI: 17.01→14.96 (12%). Gate ≥10% PASS.
+    if mlbam_id is not None:
+        _load_pt_lookups()
+        s_r_full = _STEAMER_R.get(str(mlbam_id))
+        if s_r_full is not None and s_r_full > 0:
+            steamer_r_ros = s_r_full * (games_remaining / 162.0)
+            R = max(0, round(STEAMER_R_MODEL_W * R + STEAMER_R_STMR_W * steamer_r_ros))
+        s_rbi_full = _STEAMER_RBI.get(str(mlbam_id))
+        if s_rbi_full is not None and s_rbi_full > 0:
+            steamer_rbi_ros = s_rbi_full * (games_remaining / 162.0)
+            RBI = max(0, round(STEAMER_R_MODEL_W * RBI + STEAMER_R_STMR_W * steamer_rbi_ros))
 
     return {
         "projected_avg":  avg,

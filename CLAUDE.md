@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-30)
+# Last updated: May 5, 2026 (Sessions 1-31)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1936,6 +1936,33 @@ Parking lot: W Projection Fix → COMPLETED. SP K Fix → COMPLETED. Both remove
 PENDING MANUAL ACTIONS:
   - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
   - Career lessons database (Sessions 22-30) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Download updated thread_handoff.md to Claude.ai
+
+--- May 5, 2026 (Session 31) ---
+R/RBI Projection Audit + Lineup Context Validation + Steamer R/RBI Blend:
+  - Lineup context ON vs OFF: LC reduces R MAE by 0.93, RBI by 1.15. KEEP (validated).
+    Used correct compute_lineup_multipliers() formula. Previous session used backwards formula.
+  - PA projection audit (n=235): PA MAE=113.9; bias=-28.9.
+    Worst over-projections: Riley/Bregman/Rutschman (injury). Worst under: Clemens/Barger/McNeil (late call-up).
+    PA error explains only 4% of R error variance (r=-0.20). PA is NOT the root cause.
+  - Gap classification: part-time over-projection STRUCTURAL. Elite under-projection STRUCTURAL.
+    Middle bucket (40-70 R, n=107): MODEL BEATS STEAMER (8.55 vs 15.03 MAE). Model's wheelhouse.
+  - Steamer R/RBI blend (40/60 model/Steamer) IMPLEMENTED:
+    R MAE: 17.19 → 13.42 (22% improvement, gate ≥10% PASS)
+    RBI MAE: 17.01 → 14.96 (12% improvement, gate ≥10% PASS)
+    _STEAMER_R + _STEAMER_RBI dicts added; loaded from Steamers 2025 batters.csv R/RBI columns
+    STEAMER_R_MODEL_W=0.40, STEAMER_R_STMR_W=0.60 constants added
+    Blend applied in project_hitter_counting() after lineup context multipliers
+    Steamer ROS = full_season × (games_remaining / 162.0)
+    For players with no Steamer data (rookies/NPB): model-only unchanged
+  - PA-conditioned blend also tested (higher Steamer weight for low April PA): loses to flat 40/60 overall.
+  - 37/37 PASS. All invariants PASS (Sanchez C#26, Yordan rank=3, Raleigh C#2, Baldwin C#3, Contreras C#6).
+  - data/projections_2026.csv and data/player_values.json regenerated.
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-31) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
   - Download updated thread_handoff.md to Claude.ai
 
