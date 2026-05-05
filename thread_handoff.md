@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 5, 2026 (Sessions 1–23)
+# Last updated: May 5, 2026 (Sessions 1–24)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -1100,13 +1100,17 @@ def _load_steamer_sb() -> dict:
 - De La Cruz SB 8.5→48.4 (+23.4 L1)
 - Turang SB 8.5→37.3 (+18.5 L1)
 
-**Henderson/Turner still floor-propped — AVG-driven, NOT SB-driven:**
-After SB fix, Henderson and Turner remain at CQS floor. Root cause is AVG liability mult:
-- Henderson: AVG_proj=0.209 → avg_liability_mult=0.802 (20% ESV penalty) → ESV=1.779 < floor=20.
-- Career BA gate fires (career_ba=0.270 ≥ 0.240, gap=0.061 > 0.040) BUT floor = max(xBA=0.209, career_ba×0.75=0.202) = 0.209 → no improvement because 0.75 multiplier too conservative.
-- **Fix needed:** raise 0.75→0.85 → floor=0.230 > xBA → AVG_proj=0.230 → liability penalty eliminated.
-- Turner: career_ba=0.229 from FG 2022-2025 (injury years only), gate threshold 0.240 → gate fails.
-- Both items are new Tier 1 parking lot (see Section 10).
+**Henderson/Turner still floor-propped — root cause updated (Session 24):**
+After SB fix AND 0.85 floor fix (Session 24), Henderson remains at CQS floor. Root cause confirmed:
+- Henderson: After 0.85 fix, AVG_proj=0.230 → avg_liability_mult=1.000 (penalty fully eliminated). ESV=2.211.
+  CQS floor = 20.0. ESV 2.211 still below floor → floor-propped. SB and AVG fixes closed the gap but
+  CQS floor = 20.0 requires ~10× more ESV than current projections can deliver at this PA level.
+  Not fixable via AVG gate or SB fix — Henderson's model rank reflects real projection, not a bug.
+- Turner: career_ba=0.290 (NOT 0.229 — prior session had a data error). Gate fires at 0.240 threshold.
+  ESV=0.179 because Turner bats leadoff (PHI slot 1): RBI_mult=0.83 (17% RBI suppression). His projected
+  RBI_proj≈63 is pulled down by lineup context. Z-score ~13th SS out of 18 roster spots = near replacement.
+  Turner's issue is structural surplus calculation + leadoff RBI penalty, not AVG gate.
+  Fix requires architectural change (CQS bypass for buylow signals, or surplus formula redesign).
 
 ---
 
@@ -1186,7 +1190,10 @@ Burns: 123.3 → 110.0 IP after fix.
 **generate_projections.py** — Layer 2 runner. Outputs: data/projections_2026.csv (794 players, 20 cols, pf_adj_applied flag).
 
 **score_value.py** — Layer 3 value engine. Inputs: luck CSVs + projections + career_quality.json + player_positions.json. Outputs: data/player_values.json (825 players). Key: xwOBA career regression (XWOBA_PA_STAB=250), barrel regression (LG_BARREL=0.066, BARREL_PA_STAB=250), AVG penalty (proj_avg<0.220 load-bearing). Run: --write then --check-invariants.
-**Session 23 additions:** `_load_steamer_sb()` (reads Steamers 2025 batters.csv → {mlbam_id: sb_per_pa}); SB override block in main() replaces position-default SB with Steamer-individual for 428/434 hitters. Career BA conditional floor: gate `career_ba>=0.240 AND (career_ba-xBA)>0.040 → AVG_proj=max(xBA, career_ba×0.75)`. Known gap: 0.75 multiplier too conservative for Henderson (floor below xBA → no help). See parking lot Tier 1.
+**Session 23 additions:** `_load_steamer_sb()` (reads Steamers 2025 batters.csv → {mlbam_id: sb_per_pa}); SB override block in main() replaces position-default SB with Steamer-individual for 428/434 hitters. Career BA conditional floor: gate `career_ba>=0.240 AND (career_ba-xBA)>0.040 → AVG_proj=max(xBA, career_ba×0.75)`.
+**Session 24 update (COMPLETED):** Raised 0.75→0.85. Henderson: AVG_proj 0.209→0.230, avg_liability_mult 0.802→1.000 (penalty eliminated). ESV 1.779→2.211 (+24%). Still CQS floor-propped (ESV 2.211 < floor 20.0). Backtest C validation: gate-fires MAE 0.0679→0.0507 (-25%) on 7 historical players.
+0.240→0.230 threshold lowering: BLOCKED — Chapman (Sell High, cba=0.237) would get avg_liability_mult relief (0.424→0.666), which is directionally wrong. Threshold stays at 0.240.
+Turner: career_ba=0.290 (NOT 0.229 as prior session stated — that was a data error). Turner ALREADY fires the gate. His ESV=0.179 is Z-score rank: he's ~13th SS in 13-team league (near replacement level). Not an AVG issue. ESV fix requires architectural change to surplus calculation, not AVG gate.
 
 **trade_analyzer.py** — Layer 4. CBS FPTS _compute_cbs_fpts() + replacement level surplus. Verdict thresholds: >=75% Strong, >=60% Favorable, >=40% Neutral, >=25% Unfavorable, <25% Avoid.
 
@@ -1258,18 +1265,17 @@ _CBS_ALIASES = {
 
 ### TIER 1 — Do immediately (Session 24+)
 
-**Career BA floor multiplier fix: 0.75 → 0.85 (HIGHEST PRIORITY):**
-In score_value.py, the conditional career BA floor gate: `career_ba >= 0.240 AND (career_ba - xBA) > 0.040 → AVG_proj = max(xBA, career_ba * 0.75)`.
-**Problem:** 0.75 multiplier is too conservative. For Henderson (career_ba=0.270, xBA=0.209):
-floor = max(0.209, 0.270×0.75=0.202) = 0.209 → floor is BELOW xBA → gate fires but has no effect.
-**Fix:** Change 0.75→0.85. New floor = max(0.209, 0.270×0.85=0.230) = 0.230 > xBA → floor applied.
-Result: AVG_proj rises from 0.209→0.230, eliminating avg_liability_mult penalty (20% ESV suppression).
-Henderson ESV should jump from ~1.78 to ~5+, escaping CQS floor prop.
-**Sanchez guard confirmed safe:** career_ba=0.214 < 0.240 → gate fails → unchanged. Invariant preserved.
-**Turner issue:** career_ba=0.229 from FG window 2022-2025 (injury years only) → 0.229 < 0.240 threshold → gate still fails.
-Separate fix: lower threshold 0.240→0.230 to capture Turner (only if ablation shows no false positives).
-**Estimated change:** 1 line in score_value.py (line ~929). Ablation: show every player newly captured.
-Low risk: gate still requires career_ba ≥ 0.240 (0.85) or ≥ 0.230 (threshold fix) AND gap > 0.040.
+**Career BA floor multiplier fix: 0.75 → 0.85 (COMPLETED Session 24):**
+score_value.py line ~929: `career_ba >= 0.240 AND (career_ba - xBA) > 0.040 → AVG_proj = max(xBA, career_ba * 0.85)`.
+Henderson: AVG_proj 0.209→0.230, avg_liability_mult 0.802→1.000 (penalty eliminated). ESV 1.779→2.211 (+24%).
+Backtest C validation: gate-fires MAE 0.0679→0.0507 (-25%) on 7 historical players — all improved individually.
+Henderson still CQS floor-propped (ESV 2.211 < floor 20.0) — SB and AVG fixes closed the gap but CQS dominates.
+**0.240→0.230 threshold: PERMANENTLY BLOCKED.** Chapman (Sell High, career_ba=0.237) would receive
+avg_liability_mult relief (0.424→0.666) — partially undoing the sell signal. Wrong direction. Do not revisit.
+**Turner correction:** career_ba=0.290 (NOT 0.229 as prior session stated — that was a data error from FG_YEARS=[2022-2025]).
+Turner ALREADY fires the gate at 0.240 threshold. His ESV=0.179 is near replacement level (Z-score rank: ~13th SS
+in 13-team league). Not fixable via AVG gate — requires architectural change to how surplus is computed for leadoff
+hitters with PHI slot-1 RBI_mult=0.83 suppression.
 
 **RP saves/holds projection fix (COMPLETED Session 21):**
 `_blend_sv_h()` wired in stat_projections.py. `_STEAMER_SVH` dict loads Steamer 2025 full-season
@@ -1713,6 +1719,12 @@ Pitchers: 8 BL | 7 SB | 354 N | 8 SS | 25 SH
 
 **Career BA Gate Design (0.240 / 0.040):** The conditional floor gate has two components: (1) career_ba ≥ 0.240 ensures the floor only applies to legitimate contact hitters, not career-low-AVG players using a bad April as cover; (2) gap > 0.040 ensures the floor only fires when the deviation is meaningful, not for normal statistical noise. Gary Sanchez (career_ba=0.214) correctly fails gate (1). This dual-gate design is reusable pattern for any career-based floor logic.
 
+**Ablation Gate Design for Sell-Signal Players:** Before lowering any buy-side threshold, explicitly list every player newly captured and check their current signal. Chapman (Sell High, career_ba=0.237) failing the 0.230 ablation test is the canonical case: lowering the gate fires a "correct" career BA floor but reduces a sell penalty — directionally wrong. The sell-side incompatibility is invisible until you enumerate the new-capture list. Always enumerate before committing.
+
+**Career BA Verification Against Live Data vs Summaries:** Prior session summary said Turner career_ba=0.229 (FG "injury years only"). Live _load_fg_career_ba() returned 0.290. The summary was wrong — it described a hypothesis about what the data would show, not what it actually showed. When a memory or summary describes what data "should" contain, verify against the actual code/file output before acting on it. Summaries rot; code doesn't.
+
+**ESV vs CBS FPTS — Not the Same Number:** ESV (Expected Stats Value) is a Z-score above replacement, not CBS FPTS. A player projecting 300 FPTS who ranks 13th at their position in a 13-team league has ESV ≈ 0 (near replacement). Turner's ESV=0.179 is not a projection bug — he projects fine (87R/17HR/63RBI/20SB/0.247), but Z-scored against 18 SS roster spots, he's ~13th. The scale_to_100 then maps that near-zero Z-score to near-zero L1. Confusing ESV for "raw value" leads to phantom debugging.
+
 ---
 
 ## SECTION 14: SESSION START/END CHECKLISTS
@@ -1883,6 +1895,7 @@ Canary: grep -n "77.3" stat_projections.py
 **GitHub:**
 Repo: DustinSLovell/Signal-Fantasy-Pipeline (private)
 Last push: May 5, 2026 (commit d18cf76 — Session 23: score_value.py SB fix (_load_steamer_sb) + decline backtest + AVG audit + Rutschman audit + CLAUDE.md changelog)
+Session 24 commit: TBD — AVG floor 0.85 fix + ablation (0.240 threshold blocked) + projection scorecard + thread_handoff.md update
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -2509,6 +2522,95 @@ Requires ablation test first: show all newly captured players; if any look wrong
 
 ---
 
-*End of thread_handoff.md — Sections 1-23 complete.*
+## SECTION 21: SESSION 24 CHANGELOG
+
+**Session 24 — May 5, 2026**
+
+Continuation from Session 23 close. No Layer 1 signal model changes. All work in score_value.py.
+
+### Task 1 — Session start baseline (established before any changes)
+
+Scorecard confirmed:
+- validate_formulas.py: 37/37 PASS
+- Sanchez: C#25, L1=16.4 (invariant: 21+) — PASS (note: rank number changed from Session 23 due to pipeline re-run)
+- Yordan: overall #2, L1=97.4 — PASS
+- Henderson: ESV=1.779, CQS floor-propped, AVG_proj=0.209, avg_liability_mult=0.802
+
+### Task 2 — Career BA floor multiplier 0.75→0.85 (COMPLETED)
+
+**Change:** score_value.py line ~929: `cba * 0.75` → `cba * 0.85`
+
+**Before/after Henderson:**
+- AVG_proj: 0.209 → 0.230
+- avg_liability_mult: 0.802 → 1.000 (penalty fully eliminated)
+- ESV: 1.779 → 2.211 (+24%)
+- Still CQS floor-propped (ESV 2.211 < floor 20.0) — floor closes it out
+
+**Backtest C validation (gate-fires n=7):**
+| Metric | No Floor | ×0.75 | ×0.85 | Steamer |
+|--------|----------|-------|-------|---------|
+| All 235 MAE | 0.0216 | 0.0214 | 0.0211 | 0.0187 |
+| Gate-fires (n=7) MAE | 0.0679 | 0.0623 | 0.0507 | — |
+
+All 7 gate-firing players improve individually. All errors remain negative (still conservative).
+7 gate-firing players from backtest C: Jacob Wilson, Jake Mangum, Chandler Simpson, Nick Kurtz, Dillon Dingler, Isaac Collins, Hunter Goodman.
+
+**37/37 PASS. Sanchez rank 25 (still ≥ 21). All invariants PASS.**
+
+### Task 3 — AVG gate threshold ablation: 0.240 → 0.230 (BLOCKED — do not implement)
+
+Ablation showed 32 new players captured at 0.230. Three have sell signals:
+- **Matt Chapman (Sell High, career_ba=0.237, xBA=0.188):** avg_liability_mult 0.424 → 0.666. This REDUCES the sell penalty — wrong direction. Chapman's sell signal is confirmed by LA delta -17.2° and contact quality degradation. Undoing part of his penalty is architecturally incorrect.
+- Eugenio Suárez (Slight Sell, career_ba=0.238): same issue — sell penalty partially undone
+- Jorge Soler (Slight Sell, career_ba=0.233): same issue
+
+Decision: threshold stays at 0.240. The sell-signal incompatibility is a hard blocker.
+
+**Turner correction identified:** Prior session summary claimed Turner career_ba=0.229 (FG "injury years only"). Actual _load_fg_career_ba() output = 0.290. Turner ALREADY fires the gate at 0.240. His ESV=0.179 is a surplus ranking issue (Z-score ~13th SS in 13-team league, with PHI slot-1 RBI_mult=0.83 suppression), not an AVG gate issue.
+
+### Task 4 — Backtest validation of 0.85 fix
+
+Already covered in Task 2 table. Validated — gate-fires MAE -25%. Fix adopted.
+
+### Task 5 — Bregman investigation
+
+Checked fg_batting_2025.csv: EXISTS. Bregman (MLBAM 608324) PA=495, BA=0.273.
+Prior session claim "2025 data missing" was WRONG — it was a faulty summary.
+career_ba = 0.263 (PA-weighted 2022-2025). Gate fires at 0.240 (0.263 ≥ 0.240, gap=0.047 > 0.040).
+0.85 fix benefits Bregman: floor 0.216→0.224, avg_liability_mult 0.933→1.000.
+
+### Task 6 — Full projection scorecard
+
+Top 10 model vs FP divergences at session close:
+
+| Name | Model Rank | FP Rank | Gap | Root Cause |
+|------|-----------|---------|-----|------------|
+| Ben Rice | #4 overall | FP #28 | -24 | Sell High signal + young breakout under-proj |
+| Gunnar Henderson | SS#4 (ovr ~15) | FP #8 | ~7 | CQS floor props, SB fix improved, ESV still suppressed |
+| Trea Turner | SS#5 (ovr ~21) | FP #12 | ~9 | Leadoff RBI penalty (slot-1 mult 0.83) + Z-score near repl |
+| Cam Schlittler | SP#1 (ovr ~8) | FP #22 | +14 | Model bullish on ERA 1.96/FIP 1.41 elite; FP cautious on IP |
+| Elly De La Cruz | CF#3 (ovr ~12) | FP #6 | +6 | SB improved (48→correct), still minor gap |
+| Corey Seager | SS#1 (ovr ~11) | FP #22 | ~11 | Model Buy Low; FP sees current .306 wOBA |
+| José Ramírez | 3B#1 (ovr ~4) | FP #4 | ~0 | Aligned (Buy Low holding; CQS floor props) |
+| Brandon Lowe | 2B (mid-tier) | FP ~#80 | — | FP sees PA risk; model projects full workload |
+
+Key finding: CQS floor interaction with active buy signals (Ramírez, Stewart, Caminero) remains unresolved — see Tier 1 parking lot.
+
+**37/37 PASS. All invariants PASS:**
+- Sanchez: C#25, L1=16.4 ✓ (21+)
+- Yordan: #2 overall, L1=97.4 ✓
+- Raleigh: C#2 ✓
+- Baldwin: C#4 ✓
+- Contreras: C#5 ✓
+
+### Files modified this session:
+- score_value.py (0.75→0.85 multiplier change, line ~929)
+- thread_handoff.md (this file — Section 8 Henderson/Turner notes, Section 9 score_value.py entry, Section 10 Tier 1 parking lot, Section 13 career lessons, Section 16 GitHub hash, this changelog)
+
+**Commit hash:** TBD (commit after this handoff)
+
+---
+
+*End of thread_handoff.md — Sections 1-24 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*

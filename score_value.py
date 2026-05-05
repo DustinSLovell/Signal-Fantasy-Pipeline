@@ -908,10 +908,10 @@ HR    = blended_barrel_rate × 0.60 BBE/PA ...
     # ── AVG (League 2 category) ───────────────────────────────────────────────
     # Base: xBA clipped to [0.100, 0.400]
     # Conditional career floor: established hitters (.240+ career BA) whose April
-    # xBA is dragging far below career level get a floor at career_ba × 0.75.
+    # xBA is dragging far below career level get a floor at career_ba × 0.85.
     # Gate: career_ba >= 0.240 AND (career_ba - xBA) > 0.040.
-    # This prevents xBA noise from catastrophically under-projecting AVG for
-    # hitters with a proven track record (Chisholm, Donovan cases from Session 20).
+    # Raised 0.75→0.85 (Session 24): Henderson (career .270, xBA .209) old floor=0.202 < xBA
+    # → useless. New floor=0.230 > xBA → applies. Eliminates avg_liability_mult penalty.
     # Sanchez guard: career_ba = 0.214 < 0.240 → gate fails → no change (invariant preserved).
     avg_proj = xba_col.copy()
     if career_ba_lookup:
@@ -926,7 +926,7 @@ HR    = blended_barrel_rate × 0.60 BBE/PA ...
                 continue
             xba = avg_proj.at[idx]
             if cba >= 0.240 and (cba - xba) > 0.040:
-                avg_proj.at[idx] = max(xba, cba * 0.75)
+                avg_proj.at[idx] = max(xba, cba * 0.85)
     out["AVG_proj"] = avg_proj.clip(0.100, 0.400)
 
     return out
