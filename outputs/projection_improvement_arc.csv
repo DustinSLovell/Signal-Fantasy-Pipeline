@@ -9,3 +9,6 @@ Signal multipliers HR (buy-side),11,HR,6.3048,6.256,6.6926,-0.0488,"Buy Low ×1.
 Pitcher signal mults ERA,11,ERA,0.882,0.878,,-0.004,Sell High ERA×1.10; model ERA bias +0.25 vs Steamer +0.41
 SB Steamer individual rates,23,SB,,,,,"No 2025 actuals for direct SB MAE; De La Cruz 8.5→48.4, Turang 8.5→37.3"
 OBP career anchor (avg_proj),25,OBP,,,,,OBP uses career-anchored avg_proj; Turner OBP 0.286→0.313 (+0.027)
+SP ERA win confirmed (scorecard audit),29,ERA_SP,0.629,0.619,,+0.010,Session 29 backtest audit: Model 0.619 < Steamer 0.629 — only stat where Model beats Steamer. SP n=79.
+W projection gap identified (structural),29,W,7.45,,,+5.10,model_w=0 for all 165 pitchers. Steamer MAE=2.35. Fix: wire Steamer W × remaining fraction (Tier 2).
+SP K gap quantified,29,K_SP,50.87,,,+26.42,SP K MAE 50.87 vs Steamer 24.45. Reduce by increasing Steamer K weight when gs<10 (Tier 2).

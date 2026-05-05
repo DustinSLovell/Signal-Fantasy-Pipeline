@@ -1,0 +1,21 @@
+category,stat,bucket,n,model_mae,steamer_mae,rtm_mae,model_bias,winner,gap_vs_steamer,notes
+HITTER,AVG,ALL,234,0.0215,0.0187,0.0197,-0.0021,Steamer,+0.0028,Career BA anchor (0.85x) partially closes gap; RTM near-competitive
+HITTER,OBP,ALL,240,0.0125,,,-,MODEL,-,"Session 28 BB% blend; Steamer/RTM OBP not in backtest file. MAE vs Steamer BB% ground truth."
+HITTER,HR,ALL,230,6.22,5.92,6.63,-1.98,Steamer,+0.30,Model beats RTM (6.63 vs 6.22). Signal buy-side mults help (+0.05)
+HITTER,R,ALL,234,17.13,15.12,17.91,+0.96,Steamer,+2.01,Model beats RTM (17.91 vs 17.13). Lineup context wired but Steamer wins.
+HITTER,RBI,ALL,234,16.93,16.49,17.71,-3.83,Steamer,+0.45,RBI bias -3.83 from lineup suppression (slot context partial fix)
+HITTER,SB,ALL,235,5.42,4.72,,,-,Steamer,+0.70,"65/35 Steamer/sprint blend (Session 22). RTM not computed. Source: SB calibration backtest."
+HITTER,wOBA,ALL,199,0.0344,0.0277,0.0390,-0.0114,Steamer,+0.0067,Model BEATS RTM (0.040 vs 0.034). Signal mults help vs raw model (0.035→0.034).
+PITCHER,ERA,SP,79,0.619,0.629,0.753,-0.136,MODEL,-0.010,ONLY stat where Model beats Steamer. SP ERA model wins by 0.010.
+PITCHER,ERA,RP,86,1.124,0.929,1.249,+0.606,Steamer,+0.195,RP ERA dominated by small-sample noise. Model loses badly.
+PITCHER,ERA,ALL,165,0.882,0.786,1.012,+0.251,Steamer,+0.097,Overall bias +0.25 vs Steamer +0.41 — model LESS biased on ERA direction
+PITCHER,WHIP,SP,79,0.155,0.104,0.134,+0.093,Steamer,+0.050,SP WHIP gap manageable (0.050). Session 27 fix targets RP only.
+PITCHER,WHIP,RP_prefx,86,0.231,0.166,0.175,+0.157,Steamer,+0.065,PRE-Session27 fix. RTM wins over model and barely over Steamer.
+PITCHER,WHIP,RP_postfix,86,0.198,0.166,0.175,est,Steamer,+0.032,"POST-Session27 LG_WHIP blend (analytical validation). 58.8% gap closed vs RTM."
+PITCHER,K,SP,79,50.87,24.45,103.43,-48.44,Steamer,+26.42,Largest absolute gap. SP K under-projected from April IP uncertainty.
+PITCHER,K,RP,86,28.95,19.50,31.48,+20.74,Steamer,+9.45,RP K over-projected (positive bias). Model better than RTM (31.48 vs 28.95).
+PITCHER,K,ALL,165,39.45,21.87,65.93,-12.38,Steamer,+17.58,Overall K gap: model loses to Steamer by 17.6. is_sp tautology fix reduced from 45.8 (Session 12).
+PITCHER,W,SP,79,9.80,2.50,9.80,-9.80,Steamer,+7.30,model_w=0 for ALL pitchers (structural gap). MAE = mean of actuals.
+PITCHER,W,RP,86,5.29,2.21,5.29,-5.29,Steamer,+3.08,model_w=0 for ALL pitchers (structural gap).
+PITCHER,W,ALL,165,7.45,2.35,7.45,-7.45,Steamer,+5.10,model_w=0 structural. Fix: wire Steamer W × remaining fraction (Tier 2 parking lot).
+PITCHER,SV+H,RP,,-,-,-,-,-,-,Not in backtest file. _blend_sv_h() MAE=0.6 vs Steamer ROS-scaled (essentially identical).
