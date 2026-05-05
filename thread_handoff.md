@@ -1904,7 +1904,7 @@ Canary: grep -n "77.3" stat_projections.py
 Repo: DustinSLovell/Signal-Fantasy-Pipeline (private)
 Last push: May 5, 2026 (commit d18cf76 — Session 23: score_value.py SB fix (_load_steamer_sb) + decline backtest + AVG audit + Rutschman audit + CLAUDE.md changelog)
 Session 24 commit: 57acd3d — AVG floor 0.75→0.85 + ablation (0.240 threshold blocked) + projection scorecard + thread_handoff.md
-Session 25 commit: pending push — OBP anchor fix (score_value.py OBP_proj now uses career-anchored avg_proj) + Turner/SS diagnostic + thread_handoff.md
+Session 25 commit: fbc249a — OBP anchor fix (score_value.py OBP_proj now uses career-anchored avg_proj) + Turner/SS diagnostic + thread_handoff.md
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -2689,7 +2689,7 @@ Sanchez: C#24, L1=15.1 ✓ | Yordan: overall #3 ✓ | Raleigh: C#2 ✓ | Baldwin
 - data/player_values.json (regenerated — OBP/ESV/L1 updated for ~50 hitters)
 - thread_handoff.md (this file — Sections 8, 9, 10, 13, 14, 16, this changelog)
 
-**Commit hash:** pending
+**Commit hash:** fbc249a
 
 ---
 
