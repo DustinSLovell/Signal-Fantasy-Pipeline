@@ -1929,7 +1929,7 @@ Last push: May 5, 2026 (commit d18cf76 — Session 23: score_value.py SB fix (_l
 Session 24 commit: 57acd3d — AVG floor 0.75→0.85 + ablation (0.240 threshold blocked) + projection scorecard + thread_handoff.md
 Session 25 commit: fbc249a — OBP anchor fix (score_value.py OBP_proj now uses career-anchored avg_proj) + Turner/SS diagnostic + thread_handoff.md
 Session 26 commit: 6c20094 — Henderson CQS floor diagnostic + WHIP audit (diagnostic only, no code changes)
-Session 27 commit: [pending — RP WHIP fix + raw stats audit + rolling window module]
+Session 27 commit: 8cfb312 — RP WHIP fix (stat_projections.py LG_WHIP blend) + raw stats audit (BB% flagged) + rolling window module (weekly_update.py 4 new columns)
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -2906,7 +2906,7 @@ AVG_LUCK_DECAY_PER_WEEK  = 0.050 # assumed weekly luck decay rate for ETA calcul
 - CLAUDE.md (Session 27 changelog)
 - thread_handoff.md (this file)
 
-**Commit hash:** [this commit — Session 27]
+**Commit hash:** 8cfb312
 
 ---
 
