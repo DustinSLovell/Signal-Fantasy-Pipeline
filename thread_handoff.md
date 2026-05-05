@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 5, 2026 (Sessions 1–29)
+# Last updated: May 5, 2026 (Sessions 1–34)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -1379,8 +1379,12 @@ Session 28 Signal Decay Classifier (three new functions + two new columns, runs 
 - Steamers 2025 batters.csv (root) — 4,140 players, MLBAMID + PA/HR/AVG/wOBA
 - Steamers 2025 pitchers.csv (root) — 5,215 players, MLBAMID + IP/GS/ERA/WHIP/K
 - career_lessons_database.html — 88+ career concepts (open in browser)
-- data/backtest_audit_hitters.csv — 305 row-level hitter backtest
-- data/backtest_audit_pitchers.csv — 284 row-level pitcher backtest
+- data/backtest_audit_hitters.csv — 305 row-level hitter backtest (2022-2025; source of truth for Section 10 accuracy tables)
+- data/backtest_audit_pitchers.csv — 284 row-level pitcher backtest (2022-2025)
+- signal_context.py (NEW Session 34) — post-processing context overrides (elite gate + injury recovery; does NOT touch Layer 1)
+- data/player_injury_context.json (NEW Session 34) — Carroll + Lindor hamate surgery entries
+- outputs/signal_accuracy_full_matrix.csv (NEW Session 34) — 10-row multi-stat matrix (Buy Low/Sell High × HR/R/RBI/AVG/wOBA)
+- outputs/whitepaper_section10_draft.md (NEW Session 34) — complete Section 10 draft for white paper
 
 ---
 
@@ -2058,6 +2062,10 @@ Session 28 commit: 684d70c — Career BB% anchor (build_hitter_career_bb.py + sc
 Session 28 handoff commit: 274213d — thread_handoff.md complete overwrite with all Session 28 cross-references updated
 Session 29 commit: [see thread] — Full projection backtest scorecard (outputs/projection_scorecard_2025.csv) + improvement arc 3 new rows + thread_handoff.md Session 29 changelog
 Session 30 commit: 71867a2 — W projection fix (_STEAMER_W + _blend_w) + SP K blend (gs<10) + projection_scorecard_s30.csv + improvement arc 2 new rows + validate_formulas.py Test A8 update
+Session 31 commit: [Steamer R/RBI blend + R/RBI backtest + lineup context validation]
+Session 32 commit: [HR audit + wOBA audit + hitter_scorecard_s32.csv — pure diagnostic, no production changes]
+Session 33 commit: [ownership acceleration tracking + signal_accuracy_by_tier.csv + pipeline refresh]
+Session 34 commit: [signal_context.py + player_injury_context.json + signal_accuracy_full_matrix.csv + whitepaper_section10_draft.md]
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -3977,6 +3985,171 @@ Computed from backtest_C_hitters_2025.csv (n=235); signals from backtest_audit_h
 
 ---
 
-*End of thread_handoff.md — Sections 1-33 complete.*
+---
+
+## SECTION 35: SESSION 34 CHANGELOG
+
+**Session 34 — May 5, 2026**
+
+### Task 1 — Session start verification
+37/37 PASS (validate_formulas.py). All CLAUDE.md greps confirmed. Sanchez C#26.
+
+### Task 2 — Pitcher Sell High Floor: Elite Track Record Gate (signal_context.py — NEW FILE)
+
+**signal_context.py** — new post-processing module. Does NOT touch score_pitcher_luck.py (Layer 1 sacred). Adds context columns to pitcher/hitter DataFrames for display and confidence-weighting purposes only.
+
+**Gate constants:**
+```python
+ELITE_ERA_THRESHOLD  = 2.50   # career 2yr ERA below this = generational talent
+ELITE_GAP_REQUIRED   = 0.50   # |ERA - FIP| must exceed this to stand for elite pitchers
+ELITE_CONF_WEIGHT    = 0.50   # confidence weight when gap is marginal but not overriding
+INJURY_CONF_WEIGHT   = 0.30   # confidence weight for players in recovery window
+```
+
+**`apply_pitcher_elite_gate(pitcher_df)`**: For Sell High pitchers — if Elite tier + career_era_2yr < 2.50 + |ERA-FIP gap| < 0.50 → sets `signal_override='ELITE_TRACK_RECORD'`, `override_confidence=0.50`. Does NOT change `verdict` column.
+
+**Backtest validation:** Gate fires 0 cases in 2025. All 2025 elite-tier Sell High pitchers had ERA-FIP gaps > 1.37 — all resolved correctly (100% accuracy). Gate is forward-looking safeguard, not retroactive correction.
+
+**Current state (May 5, 2026):** 0 pitchers downgraded. Ranger Suárez (career ERA 0.78, gap -0.56) is borderline — would fire if threshold moved from 0.50 to 0.60.
+
+### Task 3 — Injury Recovery Context Layer (data/player_injury_context.json — NEW FILE + signal_context.py)
+
+**`data/player_injury_context.json`** — new file with 2 entries:
+- Corbin Carroll (682998): hamate surgery Feb 14, 2026, expected_recovery_weeks=8
+- Francisco Lindor (596019): hamate surgery Feb 1, 2026, expected_recovery_weeks=8
+
+**`apply_injury_context(df, id_col)`**: For any player in context — if weeks elapsed < expected_recovery_weeks → `signal_override='INJURY_RECOVERY'`, `override_confidence=0.30`. Works for hitters (id_col='batter') and pitchers (id_col='pitcher'). Does not change verdict.
+
+**Current state (May 5, 2026):** 0 active flags. Carroll: 11.4 weeks elapsed (> 8 threshold, flag inactive). Lindor: 13.3 weeks elapsed (> 8 threshold, flag inactive). Both have passed recovery windows. Infrastructure would have fired March–April 2026 during active recovery.
+
+**Carroll signal note:** His Sell High is driven by BABIP=0.373 vs career 0.308 (+65pt gap) with xwOBA=0.366 slightly above career (0.348). The hamate surgery did NOT suppress his xwOBA — the sell signal is legitimate BABIP luck, not an injury artifact. Flag would have been labeled "injury context" during recovery but signal direction would remain valid.
+
+### Task 4 — Luck Score Threshold Sweep + Bootstrap CI (Ruler 1 thresholds)
+
+**CRITICAL FIX DISCOVERED:** Initial threshold sweep used production-scale thresholds (0.10, 0.15, 0.20) against Ruler 1 backtest data (max 0.091). Resulted in 0 matching rows. Fixed by switching to Ruler 1 calibrated thresholds (0.020-0.060 for buys, -0.040 to -0.090 for sells).
+
+**Threshold at which model beats Steamer (wOBA MAE):**
+- Buy >0.020: Steamer wins (+5.7%)
+- Buy >0.030: Steamer wins (+3.1%)
+- **Buy >0.040: MODEL wins (-1.9%, n=21)** ← Buy Low tier threshold
+- Buy >0.050: n=9 too small (Steamer wins with noise)
+- Sell <-0.040: Steamer wins (+11.5%)
+- Sell <-0.050: Tied (+0.6%)
+- **Sell <-0.065: MODEL wins (-20.8%, n=7)** ← Sell High tier threshold
+- Sell <-0.090: n=3 too small
+
+**Bootstrap CI (1,000-sample, 95% CI on Model MAE − Steamer MAE):**
+- Buy Low (n=21): observed diff −0.0005, CI [−0.0100, +0.0095], model wins 53% — NOT significant (CI includes zero)
+- Sell High (n=7): observed diff −0.0057, CI [−0.0211, +0.0101], model wins 76% — NOT significant (CI includes zero)
+
+**Honest conclusion:** Both findings are directional but not statistically significant. Buy Low result barely directional (53%). Sell High result more convincing (76%) but n=7. These are not established findings — they are evidence consistent with the hypothesis that strong signals improve wOBA projection accuracy. Publishing with full disclosure in white paper Section 10.3.
+
+### Task 5 — Full Signal Backtest 2022–2025 (backtest_audit_hitters.csv + pitchers)
+
+**Hitter backtest (n=305, years 2022–2025):**
+
+| Signal | n | Accuracy | vs Baseline (+50%) | vs RTM (86.2%) | FP Rate |
+|--------|---|----------|--------------------|----------------|---------|
+| Buy Low | 88 | **94.3%** | +44.3pp | +8.1pp | 5.7% |
+| Slight Buy | 85 | 72.9% | +22.9pp | **-13.3pp** | 27.1% |
+| Slight Sell | 82 | 85.4% | +35.4pp | -0.9pp | 14.6% |
+| Sell High | 50 | **94.0%** | +44.0pp | +7.8pp | 6.0% |
+| **Overall** | **305** | **85.9%** | +35.9pp | -0.3pp | — |
+
+RTM accuracy = 86.2% on this dataset.
+
+**Year-over-year (no OOS degradation — model not overfitting):**
+| Year | n | Overall | Buy Low | Sell High |
+|------|---|---------|---------|-----------|
+| 2022 | 51 | 86.3% | 94.4% | 100.0% |
+| 2023 | 64 | 87.5% | 89.5% | 92.3% |
+| 2024 | 96 | 81.2% | 94.7% | 86.7% |
+| 2025 | 94 | 89.4% | 96.9% | 100.0% |
+
+2025 OOS = 89.4% — HIGHEST year in dataset. Buy Low at 96.9% OOS (n=32) = strongest single-year result. Model is not overfitting to 2022-2024 training years.
+
+**Pitcher backtest (n=284, years 2022–2025):**
+| Signal | n | Accuracy | FP Rate |
+|--------|---|----------|---------|
+| Buy Low | 89 | 86.5% | 13.5% |
+| Slight Buy | 50 | 62.0% | 38.0% |
+| Slight Sell | 76 | 82.9% | 17.1% |
+| Sell High | 69 | 91.3% | 8.7% |
+| **Overall** | **284** | **82.4%** | — |
+
+Same pattern as hitters: extreme signals reliable, slight signals noisy. Pitcher Slight Buy (62.0%) barely better than random.
+
+**KEY FINDING — model advantage concentrated at extreme tiers:**
+- Buy Low and Sell High BOTH add ~8pp vs RTM → use with full authority
+- Slight signals: Slight Buy is 13pp WORSE than RTM for hitters → leading indicators only, not confident calls
+- False positive rates: BL 5.7% / SH 6.0% (very reliable) vs SB 27.1% (noisy)
+
+### Task 6 — Multi-Stat Signal Accuracy Matrix (outputs/signal_accuracy_full_matrix.csv — NEW FILE)
+
+**10-row matrix (Buy Low + Sell High × 5 stats):**
+
+| Tier | Stat | N | Model MAE | Steamer MAE | Winner | Margin |
+|------|------|---|-----------|-------------|--------|--------|
+| Buy Low | HR | 24 | 6.06 | 6.34 | MODEL | -4.4% |
+| Buy Low | R | 24 | 12.03 | 14.65 | **MODEL** | **-17.8%** |
+| Buy Low | RBI | 24 | 17.16 | 18.35 | MODEL | -6.5% |
+| Buy Low | AVG | 24 | 0.0188 | 0.0148 | Steamer | +26.8% |
+| Buy Low | wOBA | 22 | 0.0291 | 0.0297 | MODEL | -1.9% |
+| Sell High | HR | 9 | 7.24 | 5.36 | Steamer | +35.3% |
+| Sell High | R | 9 | 18.33 | 13.99 | Steamer | +31.0% |
+| Sell High | RBI | 9 | 13.60 | 13.46 | Steamer | +1.0% (tied) |
+| Sell High | AVG | 9 | 0.0131 | 0.0177 | **MODEL** | **-25.9%** |
+| Sell High | wOBA | 7 | 0.0217 | 0.0274 | MODEL | -20.8% |
+
+**Buy Low signal adds most value on:** R (-17.8%), HR (-4.4%), RBI (-6.5%). Loses on AVG (+26.8% — April AVG fundamentally noisy, R²=0.056, industry-wide limitation).
+
+**Sell High signal adds most value on:** AVG (-25.9%), wOBA (-20.8%) — correctly identifies unsustainable BABIP runs. Loses on HR (+35.3%) and R (+31.0%) — contact quality decline detected correctly, but counting stat suppression is overdone.
+
+**Practical trade implication:** Sell High signals are most reliable for wOBA/AVG-based valuation. Counting stats (HR, R) may not decline as fast as model predicts. Trust the contact quality signal; discount the counting stat projection suppression when evaluating trades.
+
+### Task 7 — White Paper Section 10
+
+**outputs/whitepaper_section10_draft.md** (NEW — 7-section complete draft):
+- 10.1: Two-track framework rationale (Track 1 validated vs Track 2 hypothesis)
+- 10.2: Directional accuracy tables (hitter by tier + year, pitcher by tier) — from full backtest
+- 10.3: wOBA projection accuracy + threshold analysis + bootstrap CIs (honest NOT significant)
+- 10.4: Multi-stat matrix with practical trade interpretation
+- 10.5: Five honest model limitations (slight signals, small samples, AVG, counting stats, pitcher WHIP)
+- 10.6: Signal context overrides (elite gate + injury recovery, both from signal_context.py)
+- 10.7: Live 2026 tracker status — Week 9: 32 confirmed, 59 deepening, 15 active, 3 misses = 169 total
+
+**Official accuracy reporting:** Begins Week 10 (mid-June 2026). Current preliminary rate: 32/35 = 91.4% — but reported as "preliminary, subject to resolution of 124 active signals."
+
+### Session 34 — Invariants and Validation
+
+- validate_formulas.py: **37/37 PASS**
+- score_value.py --check-invariants: Sanchez C#26, Yordan top-20, Raleigh C#2, Baldwin C#3, Contreras C#6 — **ALL PASS**
+- No production scoring code modified (score_luck.py, score_pitcher_luck.py, stat_projections.py, score_value.py, weekly_update.py ALL UNCHANGED)
+
+### Files created this session (all new):
+- `signal_context.py` (NEW — elite track record gate + injury context override module)
+- `data/player_injury_context.json` (NEW — Carroll + Lindor hamate surgery entries)
+- `outputs/signal_accuracy_full_matrix.csv` (NEW — 10-row multi-stat matrix, Buy Low + Sell High × 5 stats)
+- `outputs/whitepaper_section10_draft.md` (NEW — full Section 10 white paper draft, 7 sections)
+
+### GitHub (Session 34)
+Session 34 commit: [pushed at session close — see git log for hash]
+Files: signal_context.py, data/player_injury_context.json, outputs/signal_accuracy_full_matrix.csv, outputs/whitepaper_section10_draft.md, CLAUDE.md, thread_handoff.md
+
+### Parking lot changes (Session 34)
+- WHITE PAPER SECTION 10: Draft complete (outputs/whitepaper_section10_draft.md). Ready to integrate into main whitepaper document. Publish to whitepapersonline.com after Section 10 merge.
+- SIGNAL CONTEXT OVERRIDES: Built (signal_context.py). Used as display layer — integrate into dashboard and article generation pipeline when ready.
+- INJURY CONTEXT JSON: Built (data/player_injury_context.json). Add new injuries as season progresses.
+- BOOTSTRAP CI: Both BL and SH results not statistically significant. Need 50+ resolved cases per tier before publishing definitive accuracy claims.
+
+### PENDING MANUAL ACTIONS (carry forward)
+- Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE since May 5-6
+- Career lessons database (Sessions 22-34) — add manually in Claude.ai
+- White paper: integrate Section 10 draft into main whitepaper document, then publish to whitepapersonline.com
+- Download updated thread_handoff.md to Claude.ai after git push
+
+---
+
+*End of thread_handoff.md — Sections 1-34 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*

@@ -2079,6 +2079,63 @@ PENDING MANUAL ACTIONS:
   - Download updated thread_handoff.md to Claude.ai
   - Session 34: ownership deltas live at Week 10 (next Monday)
 
+--- May 5, 2026 (Session 34) ---
+Signal context overrides module (signal_context.py — NEW):
+  - apply_pitcher_elite_gate(): career_era_2yr < 2.50 + Elite tier + |ERA-FIP gap| < 0.50 → ELITE_TRACK_RECORD
+    Thresholds: ELITE_ERA_THRESHOLD=2.50, ELITE_GAP_REQUIRED=0.50, ELITE_CONF_WEIGHT=0.50
+    Backtest validation: 0 fires in 2025 (all elite Sell High pitchers had gaps > 1.37, resolved correctly)
+    Current state: 0 downgraded. Ranger Suárez borderline (career ERA 0.78, gap -0.56 < 0.60 but > 0.50)
+  - apply_injury_context(): player in player_injury_context.json + weeks_since < expected_recovery_weeks
+    → INJURY_RECOVERY, override_confidence=0.30
+    INJURY_CONF_WEIGHT=0.30. Both Carroll (11.4 wks) and Lindor (13.3 wks) past 8-week windows → 0 active flags
+  - Does NOT modify score_luck.py or score_pitcher_luck.py (Layer 1 sacred)
+  - Standalone run available: python signal_context.py
+
+data/player_injury_context.json (NEW):
+  - Corbin Carroll (682998): hamate surgery 2026-02-14, expected_recovery_weeks=8
+  - Francisco Lindor (596019): hamate surgery 2026-02-01, expected_recovery_weeks=8
+  - Carroll signal note: Sell High is BABIP .373 vs career .308 (+65pt gap); xwOBA .366 > career .348 — signal valid
+
+Luck score threshold sweep + Bootstrap CI (Ruler 1 thresholds):
+  - Critical fix: initial sweep used production thresholds (0.10+) vs Ruler 1 data (max 0.091) → 0 rows matched
+    Fixed by switching to Ruler 1 calibrated thresholds (0.040 Buy Low, -0.065 Sell High)
+  - Model beats Steamer: Buy >0.040 (-1.9%, n=21) | Sell <-0.065 (-20.8%, n=7)
+  - Bootstrap CI (1,000-sample): Buy Low CI [-0.0100, +0.0095] (53% win rate) — NOT significant
+    Sell High CI [-0.0211, +0.0101] (76% win rate) — NOT significant. Both CIs include zero.
+
+Full signal backtest 2022-2025 (n=305 hitters, n=284 pitchers):
+  Hitter results:
+    Buy Low (n=88): 94.3% accuracy | 5.7% FP rate | +8.1pp vs RTM
+    Slight Buy (n=85): 72.9% | 27.1% FP | -13.3pp vs RTM (WORSE than RTM)
+    Slight Sell (n=82): 85.4% | 14.6% FP | -0.9pp vs RTM
+    Sell High (n=50): 94.0% | 6.0% FP | +7.8pp vs RTM
+    Overall (n=305): 85.9% | RTM = 86.2%
+  Year-over-year: 2025 OOS = 89.4% (HIGHEST — not overfitting). Buy Low 96.9% OOS (n=32).
+  Pitcher results:
+    Buy Low (n=89): 86.5% | Slight Buy (n=50): 62.0% | Sell High (n=69): 91.3%
+  Key finding: model advantage concentrated at extremes (BL/SH +8pp vs RTM); slight signals noisy
+
+Multi-stat signal accuracy (outputs/signal_accuracy_full_matrix.csv — NEW):
+  Buy Low adds most value: R (-17.8% vs Steamer), HR (-4.4%), RBI (-6.5%), wOBA (-1.9%)
+  Buy Low loses on: AVG (+26.8%) — April AVG R²=0.056, industry-wide limitation
+  Sell High adds most value: AVG (-25.9%), wOBA (-20.8%)
+  Sell High loses on: HR (+35.3%), R (+31.0%) — contact quality detected; counting stat suppression overdone
+
+outputs/whitepaper_section10_draft.md (NEW — 7 sections):
+  10.1: Two-track framework | 10.2: Directional accuracy (hitter+pitcher by tier+year) | 10.3: wOBA projection
+  accuracy + threshold analysis + bootstrap CIs (honest NOT significant) | 10.4: Multi-stat matrix with trade
+  interpretation | 10.5: 5 honest limitations | 10.6: Signal context overrides | 10.7: Week 9 tracker status
+  Official accuracy reporting begins Week 10 (mid-June 2026). Preliminary 32/35 = 91.4% (not publishable yet).
+
+37/37 PASS. All invariants PASS (Sanchez C#26, Yordan top-20, Raleigh C#2, Baldwin C#3, Contreras C#6).
+No production code modified (all scoring models unchanged).
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-34) — add new lessons manually in Claude.ai
+  - White paper: integrate Section 10 draft into main whitepaper, publish to whitepapersonline.com
+  - Download updated thread_handoff.md to Claude.ai
+
 ---
 *This file is the persistent memory for Claude Code sessions.*
 *thread_handoff.md in Claude.ai is the persistent memory for Claude.ai sessions.*

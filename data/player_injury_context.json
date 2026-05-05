@@ -1,0 +1,18 @@
+{
+  "682998": {
+    "name": "Corbin Carroll",
+    "injury_type": "hamate_surgery",
+    "surgery_date": "2026-02-14",
+    "expected_recovery_weeks": 8,
+    "source": "reported Feb 2026",
+    "note": "Hamate surgery limits wrist rotation and bat speed; may suppress exit velocity and barrel rate in early-season. Signal direction still valid but recovery timeline adds uncertainty."
+  },
+  "596019": {
+    "name": "Francisco Lindor",
+    "injury_type": "hamate_surgery",
+    "surgery_date": "2026-02-01",
+    "expected_recovery_weeks": 8,
+    "source": "reported Feb 2026",
+    "note": "Hamate surgery. Expected to be at full strength by late April. Monitor barrel rate and exit velocity trends as season progresses."
+  }
+}
