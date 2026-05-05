@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-25)
+# Last updated: May 5, 2026 (Sessions 1-28)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1847,6 +1847,58 @@ PENDING MANUAL ACTIONS:
   - Career lessons database (Sessions 22-27) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
   - Download updated thread_handoff.md from Claude Code to Claude.ai
+
+--- May 5, 2026 (Session 28) ---
+
+Career BB% anchor: score_value.py + build_hitter_career_bb.py
+  - build_hitter_career_bb.py: reads Steamers 2025 batters.csv BB% column → data/hitter_career_bb.json (4,138 entries)
+  - score_value.py: _load_steamer_bb() helper added (same pattern as _load_steamer_sb())
+  - project_hitter_stats() gains career_bb_lookup=None param
+  - Blend: blend_w=min(1.0, PA/150); applies when |april_bb - career_bb| > 0.020
+  - At PA=150: fully trusts April. At PA=0: fully trusts Steamer career level.
+  - Fires for 240 players (PA < 150 with meaningful walk-rate gap)
+  - Backtest (April 2025 events vs Steamer GT): 50.5% OBP MAE improvement. Gate ≥20% → PASS.
+  - Sanchez guard: career_bb=0.0848; his high April bb_rate → blend REDUCES OBP (safe). C#26 ✓
+  - Key canonical cases: Adames gap=0.006 (below gate), Turner gap=0.020 (at gate, no change at 148 PA),
+    Ohtani gap=+0.039 but blend_w=1.0 (153 PA — fully trusts April, no change).
+  - 37/37 PASS. All invariants PASS.
+
+Signal Decay Classifier: weekly_update.py + calls_tracker.csv
+  - _classify_signal_type(pid, luck_lookup): three-way classifier for buy signals
+    INJURY_RISK (conf=0.30): speed_flag=True AND hh_flag=True (both physical indicators declining)
+    MECHANICAL  (conf=0.60): xwOBA < xwoba_3yr - 0.020 OR chase_flag=True
+    PURE_LUCK   (conf=1.00): default (clean BABIP luck, no mechanical flags)
+  - _load_luck_classifier_data(): loads batter/xwOBA/xwoba_3yr/flags from luck_scores.csv
+  - _apply_signal_classifier(df): adds signal_type + confidence_weight columns to tracker
+  - Called automatically inside cmd_update() after _compute_deltas()
+  - Current distribution: PURE_LUCK=46 | MECHANICAL=27 | INJURY_RISK=8
+  - INJURY_RISK n=8 < 10 → backtest deferred (per n<10 gate — display-only until n grows)
+  - MECHANICAL n=27: feasible for backtest in mid-2026 once signals resolve
+  - PURE_LUCK n=46: most reliable cohort (clean BABIP normalization)
+  - Sample INJURY_RISK: Henderson, Ozuna, Busch, Harper, O'Hoppe, Raleigh
+  - Sample MECHANICAL: Bohm, Acuña, Seager, Turner (xwOBA below career)
+  - Sample PURE_LUCK: Ramírez, Herrera, Pasquantino, Grisham, Machado
+  - 37/37 PASS.
+
+Projection Improvement Arc: outputs/projection_improvement_arc.csv
+  - 10 rows covering Sessions 10-28, 6 with quantified MAE improvements
+  - AVG fix (Sess 11): MAE 0.0232→0.0216 (-0.0016); bias corrected
+  - RP WHIP blend (Sess 27): MAE 0.1944→0.1772 (-0.0172); 58.8% gap vs RTM closed
+  - BB%/OBP blend (Sess 28): MAE 0.0253→0.0125 (-0.0128); 50.5% improvement
+  - wOBA signal mults (Sess 11): 0.0350→0.0342 (beats RTM 0.0397)
+  - HR signal mults (Sess 11): 6.305→6.256 (beats RTM 6.693)
+  - ERA signal mults (Sess 11): 0.882→0.878 (bias +0.25 < Steamer +0.41)
+
+Parking lot changes (Session 28):
+  Tier 2: career BB% anchor → COMPLETED. Remove from Tier 2.
+  INJURY_RISK backtest: add when n grows to 15+ (earliest mid-June 2026 when signals resolve)
+  MECHANICAL backtest: add when n grows to 30+ resolved signals (mid-July 2026)
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — overdue
+  - Career lessons database (Sessions 22-28) — add new lessons manually in Claude.ai
+  - White paper Section 10 update in 2-3 weeks
+  - Update thread_handoff.md in Claude.ai with Session 28 summary
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
