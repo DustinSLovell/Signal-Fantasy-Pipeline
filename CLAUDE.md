@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-21)
+# Last updated: May 5, 2026 (Sessions 1-23)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -481,16 +481,15 @@ without clear labeling would corrupt the published track record.
   proj_sv_h in projections_2026.csv or player_values.json. Fix: wire score_value.py tier estimates
   back to stat_projections.py output column so RP surplus is meaningful.
 
-- **SB/speed projection fix** — PARTIALLY FIXED Session 22.
-  stat_projections.py: _blend_sb() IMPLEMENTED (0.65/0.35 Steamer-ROS/sprint-tier blend).
-  Backtest result (n=235): Sprint-only 7.53 MAE | 65/35 blend 5.42 MAE | Steamer pure 4.72 MAE.
-  After fix (ROS SB): De La Cruz 13→31, Carroll 9→22, Turang 9→29.
-  **STILL BROKEN in score_value.py**: player_values.json / ranking engine still uses position defaults
-  (SS=8.5, CF=9.0) + PLAYER_SB_PER_600 dict (only Ohtani hardcoded). Does NOT call _blend_sb().
-  This drives 9 of top 15 model vs FP ranking divergences (Session 22 audit).
-  **PRIORITY FIX**: Load Steamer SB into score_value.py → replace POS_SB_DEFAULT lookup with
-  Steamer-first approach. Same pattern as _blend_pa(). 30-line change.
-  Target: close 6+ of top-10 divergences (Henderson gap=98, De La Cruz 94, Turner 94, Turang 78, etc.)
+- **SB/speed projection fix** — FULLY FIXED Session 23 (score_value.py).
+  stat_projections.py: _blend_sb() IMPLEMENTED Session 22 (0.65/0.35 Steamer-ROS/sprint-tier blend).
+  score_value.py: _load_steamer_sb() ADDED Session 23 — reads Steamers 2025 batters.csv, converts to
+  per-PA rate (steamer_sb / steamer_pa), overrides position defaults for 428/434 hitters in main().
+  After full fix (Session 23): De La Cruz SB=48.4 (was 8.5), Turang SB=37.3 (was 8.5), L1 impact:
+    De La Cruz L1=45.7 (+23.4), Turang L1=40.9 (+18.5) — both escaped CQS floor suppression.
+    Henderson L1=20.0 (unchanged) — AVG liability mult still suppresses ESV below CQS floor.
+    Turner L1=20.0 (unchanged) — same root cause.
+  Remaining SB-related divergences (Henderson/Turner) require AVG fix, not SB fix.
 
 - **2B full position audit** — COMPLETED Session 21. Key findings:
   Chisholm (NYY): slot=6 (n=27 games), speed_flag+chase_flag firing, luck=+0.099 (not a buy).
@@ -1628,10 +1627,61 @@ Files modified this session:
 
 PENDING MANUAL ACTIONS:
   - Publish Week 3 article (outputs/week3_article_draft.md) — overdue deadline was May 5-6
-  - score_value.py SB fix — Tier 1 parking lot (see Task 5 above)
-  - Career lessons database (Sessions 22) — add new lessons manually in Claude.ai
+  - Career lessons database (Sessions 22-23) — add new lessons manually in Claude.ai
   - White paper Section 10 update in 2-3 weeks
-  - Update thread_handoff.md in Claude.ai with Session 22 summary
+  - Update thread_handoff.md in Claude.ai with Session 23 summary
+
+--- May 5, 2026 (Session 23) ---
+
+score_value.py SB fix — COMPLETED (Tier 1 highest priority):
+  - _load_steamer_sb(): reads Steamers 2025 batters.csv, returns {mlbam_id: sb_per_pa}
+  - SB override block in main(): after project_hitter_stats(), iterates hitter_df and replaces
+    SB_proj = steamer_sb_per_pa[bid] × PA_proj for all 428/434 Steamer-matched hitters
+  - 6 hitters kept position default (not in Steamer CSV; rookies/NPB)
+  - TWP override and PLAYER_SB_PER_600 (Ohtani) still applied LAST, take precedence
+  - Before/after: De La Cruz 8.5→48.4 (+23.4 L1), Turang 8.5→37.3 (+18.5 L1)
+  - Henderson/Turner/Chisholm: SB improved but CQS floor still applies (AVG liability suppresses ESV)
+  - 37/37 PASS; all invariants PASS (Sanchez C#24, Yordan #2, Raleigh C#2, Baldwin C#4, Contreras C#5)
+
+Decline backtest (Task 2) — VERDICT: multipliers unchanged (×0.94 R/RBI, ×0.92 HR):
+  - 2025 OOS analysis: 4-gate triggered players n=3 (Turner, Betts, McNeil)
+  - Turner/Betts: injury recovery years wildly outperformed model — not valid decline cases
+  - McNeil: underperformed as expected (R=42 vs 68 model, -39%)
+  - 3-gate proxy (n=12): median R=0.891, RBI=0.878 — underperformance direction correct
+  - Confirmed declines: Goldschmidt (HR=0.60), Arenado (R=0.74), Rojas (R=0.58)
+  - CONCLUSION: n=3 is too small to calibrate. Multipliers are directionally sound.
+    Need 50+ triggered player-seasons for calibration (earliest: end-of-2026 season).
+  - data/backtest_decline_2025_metrics.csv: per-player April 2025 HH rate + LA metrics (471 players)
+
+AVG projection audit (Task 3) — DIAGNOSTIC ONLY, no fixes:
+  Henderson: career_ba=0.270, gate fires (gap=0.061>0.040) but floor = max(xBA=0.209, 0.270×0.75=0.202)
+    = 0.209 → no improvement. Root cause: 0.75 multiplier too conservative; floor never exceeds xBA.
+    Fix (not implemented): raise floor multiplier 0.75→0.85 → floor=0.230 → escapes avg_liability_mult.
+  Turner: career_ba=0.229 from FG 2022-2025, gate fails (0.229<0.240 threshold). His peak .300 years
+    pre-2022 excluded from FG_YEARS window. Fix (not implemented): lower threshold to 0.225 or 0.230.
+  Adames: career_ba=0.233, gate fails. Correct behavior — genuine low-BA hitter.
+  Bregman: career_ba=0.166 from FG 2022-2024 (injury years only; 2025 missing). Data gap.
+  Key insight: Henderson/Turner ESV floor suppression is AVG-liability-driven, NOT SB-driven.
+    avg_liability_mult for Henderson: (1 - (0.220-0.209)×18) = 0.802 → 20% ESV penalty.
+    Raising floor multiplier 0.75→0.85 would eliminate this penalty for Henderson.
+
+Rutschman audit (Task 4) — NO FIX NEEDED:
+  Model rank C#15, FP rank C#13 — gap is small. PA_proj=341 (vs likely 550+ from FP) suppresses all
+  counting stats. CQS floor=35 correct for Established Star tier. wOBA=0.384>xwOBA=0.355 (no buy signal).
+  Root cause: playing time dispute, not model error.
+
+Parking lot changes (Session 23):
+  Tier 1: SB fix in score_value.py → COMPLETED. Remove from Tier 1.
+  Tier 1 new item: career BA floor multiplier fix (0.75→0.85) — low risk, 10-line change.
+    Will help Henderson (ESV 1.78→~5+, escapes CQS floor) and similar established hitters.
+    Gate: career_ba >= 0.240 AND (career_ba - xBA) > 0.040 AND career_ba × 0.85 > xBA.
+    Sanchez guard confirmed safe: career_ba=0.214 < 0.240 → gate fails.
+
+Files modified this session:
+  - score_value.py (_load_steamer_sb + SB override block in main)
+  - data/player_values.json (regenerated)
+  - data/backtest_decline_2025_metrics.csv (NEW — diagnostic, April 2025 BBE metrics)
+  - CLAUDE.md (this changelog)
 
 ---
 *This file is the persistent memory for Claude Code sessions.*

@@ -288,6 +288,39 @@ def _load_fg_career_ba() -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Steamer SB — individual SB rate per PA
+# ---------------------------------------------------------------------------
+
+def _load_steamer_sb() -> dict:
+    """Load Steamer full-season SB projections and convert to per-PA rate.
+    Returns {mlbam_id (int): sb_per_pa (float)}.
+    Gracefully returns {} if the CSV is missing.
+
+    Usage: SB_proj = sb_per_pa * PA_proj
+    This replaces the coarse position-based default (SS=8.5/600PA) with
+    individual Steamer projections for the ~4,000 players in the CSV.
+    """
+    path = os.path.join(BASE_DIR, "Steamers 2025 batters.csv")
+    if not os.path.exists(path):
+        return {}
+    try:
+        df = pd.read_csv(path, usecols=["MLBAMID", "PA", "SB"])
+        result = {}
+        for _, row in df.iterrows():
+            try:
+                mid = int(float(row["MLBAMID"]))
+                pa  = float(row["PA"])
+                sb  = float(row["SB"])
+            except (ValueError, TypeError):
+                continue
+            if pa > 0 and sb >= 0:
+                result[mid] = sb / pa   # SB per PA (Steamer full-season rate)
+        return result
+    except Exception:
+        return {}
+
+
+# ---------------------------------------------------------------------------
 # Sprint speed (Baseball Savant API)
 # ---------------------------------------------------------------------------
 
@@ -1584,9 +1617,34 @@ def main():
     _career_ba_lookup = _load_fg_career_ba()
     print(f"  Loaded career BA for {len(_career_ba_lookup):,} batters")
 
+    # ── Load Steamer SB rates for individual SB projection ────────────────
+    print("Loading Steamer SB rates ...")
+    _steamer_sb_per_pa = _load_steamer_sb()
+    print(f"  Loaded Steamer SB rates for {len(_steamer_sb_per_pa):,} players")
+
     # ── Project stats ──────────────────────────────────────────────────────
     print("Projecting hitter stats ...")
     hitter_df = project_hitter_stats(hitter_df, cfg, career_ba_lookup=_career_ba_lookup)
+
+    # ── Replace position-based SB defaults with Steamer individual rates ──
+    # Steamer SB per PA replaces the coarse position default (SS=8.5/600 PA).
+    # Applied after project_hitter_stats() so PA_proj is already computed.
+    # Falls back to position default (already in SB_proj) when Steamer has no record.
+    if _steamer_sb_per_pa:
+        _n_sb_override = 0
+        for _idx in hitter_df.index:
+            try:
+                _bid = int(hitter_df.at[_idx, "batter"])
+            except (ValueError, TypeError):
+                continue
+            _sb_rate = _steamer_sb_per_pa.get(_bid)
+            if _sb_rate is None:
+                continue
+            _pa_proj = float(hitter_df.at[_idx, "PA_proj"])
+            hitter_df.at[_idx, "SB_proj"] = max(0.0, _sb_rate * _pa_proj)
+            _n_sb_override += 1
+        print(f"  Steamer SB applied to {_n_sb_override} hitters "
+              f"({len(hitter_df) - _n_sb_override} kept position default)")
 
     # ── Lineup context multipliers — adjust R_proj and RBI_proj ────────────
     # Backtest-validated against 2025 actuals (n=141): R MAE -0.94, RBI MAE -0.62.
