@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 5, 2026 (Sessions 1–24)
+# Last updated: May 5, 2026 (Sessions 1–25)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -1193,7 +1193,12 @@ Burns: 123.3 → 110.0 IP after fix.
 **Session 23 additions:** `_load_steamer_sb()` (reads Steamers 2025 batters.csv → {mlbam_id: sb_per_pa}); SB override block in main() replaces position-default SB with Steamer-individual for 428/434 hitters. Career BA conditional floor: gate `career_ba>=0.240 AND (career_ba-xBA)>0.040 → AVG_proj=max(xBA, career_ba×0.75)`.
 **Session 24 update (COMPLETED):** Raised 0.75→0.85. Henderson: AVG_proj 0.209→0.230, avg_liability_mult 0.802→1.000 (penalty eliminated). ESV 1.779→2.211 (+24%). Still CQS floor-propped (ESV 2.211 < floor 20.0). Backtest C validation: gate-fires MAE 0.0679→0.0507 (-25%) on 7 historical players.
 0.240→0.230 threshold lowering: BLOCKED — Chapman (Sell High, cba=0.237) would get avg_liability_mult relief (0.424→0.666), which is directionally wrong. Threshold stays at 0.240.
-Turner: career_ba=0.290 (NOT 0.229 as prior session stated — that was a data error). Turner ALREADY fires the gate. His ESV=0.179 is Z-score rank: he's ~13th SS in 13-team league (near replacement level). Not an AVG issue. ESV fix requires architectural change to surplus calculation, not AVG gate.
+Turner: career_ba=0.290 (NOT 0.229 as prior session stated — that was a data error). Turner ALREADY fires the gate. His ESV=0.179 (pre-Session-25) was a surplus ranking + OBP calculation issue.
+**Session 25 OBP anchor fix (COMPLETED):** OBP_proj previously used raw xba_col (before career anchor applied), while AVG_proj already had career anchor. Inconsistency: Turner AVG_proj=0.247 (career-anchored) but OBP_proj derived from raw xBA=0.218.
+Fix: moved OBP_proj calculation to AFTER avg_proj career anchor block; use avg_proj instead of xba_col.
+Before/after (5 players): Turner OBP 0.286→0.313, ESV 0.179→0.733 (+309%); Chisholm OBP 0.265→0.305, ESV 2.315→3.137, L1 15.0→18.4; Henderson OBP ~0.284→0.294, ESV 2.211→2.421; Bichette OBP unchanged (gap < 0.040); Montgomery OBP unchanged (career_ba=0.188 < 0.240).
+Turner still CQS floor-propped (ESV 0.733 < floor 20.0). Correct: he's ~13th SS in 14-team OBP league, PHI slot-1 RBI_mult=0.83 (4th worst in MLB). Near-replacement status confirmed as real, not model error. Sanchez guard confirmed: career_ba=0.214 < 0.240 → gate fails → OBP unchanged.
+37/37 PASS. Sanchez C#24 ✓.
 
 **trade_analyzer.py** — Layer 4. CBS FPTS _compute_cbs_fpts() + replacement level surplus. Verdict thresholds: >=75% Strong, >=60% Favorable, >=40% Neutral, >=25% Unfavorable, <25% Avoid.
 
@@ -1272,10 +1277,10 @@ Backtest C validation: gate-fires MAE 0.0679→0.0507 (-25%) on 7 historical pla
 Henderson still CQS floor-propped (ESV 2.211 < floor 20.0) — SB and AVG fixes closed the gap but CQS dominates.
 **0.240→0.230 threshold: PERMANENTLY BLOCKED.** Chapman (Sell High, career_ba=0.237) would receive
 avg_liability_mult relief (0.424→0.666) — partially undoing the sell signal. Wrong direction. Do not revisit.
-**Turner correction:** career_ba=0.290 (NOT 0.229 as prior session stated — that was a data error from FG_YEARS=[2022-2025]).
-Turner ALREADY fires the gate at 0.240 threshold. His ESV=0.179 is near replacement level (Z-score rank: ~13th SS
-in 13-team league). Not fixable via AVG gate — requires architectural change to how surplus is computed for leadoff
-hitters with PHI slot-1 RBI_mult=0.83 suppression.
+**Turner correction + Session 25 OBP anchor fix (COMPLETED):** career_ba=0.290. Turner fires the career AVG gate.
+ESV=0.179 (pre-Session-25) was partly caused by OBP/AVG inconsistency: AVG_proj career-anchored but OBP_proj still used raw xBA=0.218. OBP anchor fix (Session 25) moved OBP calc to after avg_proj anchor; Turner OBP 0.286→0.313, ESV 0.179→0.733 (+309%). Still CQS floor-propped at L1=20.0.
+Full diagnostic (Session 25): PHI slot-1 RBI_mult=0.83 = 4th worst in MLB (slots 7/8/9 OBP .221/.291/.302 → weighted .278 vs lg_avg .324). Turner is ~13th SS in 14-team OBP league. Montgomery (#14 SS replacement) projects 26 HR/85 RBI. Turner's near-replacement status is real in this league configuration, not a model error.
+Fix D verdict confirmed — no further fix warranted for Turner's CQS floor positioning.
 
 **RP saves/holds projection fix (COMPLETED Session 21):**
 `_blend_sv_h()` wired in stat_projections.py. `_STEAMER_SVH` dict loads Steamer 2025 full-season
@@ -1719,6 +1724,8 @@ Pitchers: 8 BL | 7 SB | 354 N | 8 SS | 25 SH
 
 **Career BA Gate Design (0.240 / 0.040):** The conditional floor gate has two components: (1) career_ba ≥ 0.240 ensures the floor only applies to legitimate contact hitters, not career-low-AVG players using a bad April as cover; (2) gap > 0.040 ensures the floor only fires when the deviation is meaningful, not for normal statistical noise. Gary Sanchez (career_ba=0.214) correctly fails gate (1). This dual-gate design is reusable pattern for any career-based floor logic.
 
+**Cross-Stat Consistency in Career Anchoring:** When a career anchor is applied to one stat (AVG), it should be propagated to any other stat that depends on the same underlying input. AVG_proj and OBP_proj both depend on xBA — if xBA is career-anchored for AVG, the same anchored value must be used for OBP or the two stats become inconsistent (Turner AVG=0.247 from career anchor but OBP derived from raw xBA=0.218 before the fix). The principle: one anchor input → one consistent value → all downstream stats. Audit every downstream stat after adding a career anchor.
+
 **Ablation Gate Design for Sell-Signal Players:** Before lowering any buy-side threshold, explicitly list every player newly captured and check their current signal. Chapman (Sell High, career_ba=0.237) failing the 0.230 ablation test is the canonical case: lowering the gate fires a "correct" career BA floor but reduces a sell penalty — directionally wrong. The sell-side incompatibility is invisible until you enumerate the new-capture list. Always enumerate before committing.
 
 **Career BA Verification Against Live Data vs Summaries:** Prior session summary said Turner career_ba=0.229 (FG "injury years only"). Live _load_fg_career_ba() returned 0.290. The summary was wrong — it described a hypothesis about what the data would show, not what it actually showed. When a memory or summary describes what data "should" contain, verify against the actual code/file output before acting on it. Summaries rot; code doesn't.
@@ -1747,12 +1754,13 @@ grep -n "XWOBA_PA_STAB" score_value.py
 grep -n "PARK_FACTORS_PROJ" stat_projections.py
 grep -n "_load_fg_career_ba\|career_ba_lookup" score_value.py
 grep -n "cqs_floor_base\|pa_2026.*150\|floor_base.*decay" score_value.py
+grep -n "avg_proj.*bb_col\|OBP_proj.*avg_proj" score_value.py
 python -c "import pandas as pd; df=pd.read_csv('luck_scores.csv'); print('cbs_rank' in df.columns, df['cbs_rank'].notna().sum())"
 python -c "import pandas as pd; df=pd.read_csv('pitcher_luck_scores.csv'); print('player_type' in df.columns, df['role_override'].sum(), 'overrides')"
 python -c "from league_settings import load_league; lg=load_league('league_1'); print(lg['league_name'], lg['team_count'], 'teams')"
 python -X utf8 validate_formulas.py
 ```
-Expected: all greps find matches, _blend_sb present, decline_flag present, _load_fg_career_ba present in score_value.py, _load_steamer_sb present in score_value.py, cqs_floor_base present, cbs_rank ~330, player_type present + ~33 overrides, league_1 = "CBS 13-Team 13 teams", 37/37 PASS.
+Expected: all greps find matches, _blend_sb present, decline_flag present, _load_fg_career_ba present in score_value.py, _load_steamer_sb present in score_value.py, cqs_floor_base present, OBP_proj uses avg_proj (Session 25 anchor fix), cbs_rank ~330, player_type present + ~33 overrides, league_1 = "CBS 13-Team 13 teams", 37/37 PASS.
 4. Check Sanchez invariant (rank 24 catchers as of Session 20). If any check fails: STOP and report.
 
 ### SESSION END CHECKLIST (no exceptions)
@@ -1896,6 +1904,7 @@ Canary: grep -n "77.3" stat_projections.py
 Repo: DustinSLovell/Signal-Fantasy-Pipeline (private)
 Last push: May 5, 2026 (commit d18cf76 — Session 23: score_value.py SB fix (_load_steamer_sb) + decline backtest + AVG audit + Rutschman audit + CLAUDE.md changelog)
 Session 24 commit: 57acd3d — AVG floor 0.75→0.85 + ablation (0.240 threshold blocked) + projection scorecard + thread_handoff.md
+Session 25 commit: pending push — OBP anchor fix (score_value.py OBP_proj now uses career-anchored avg_proj) + Turner/SS diagnostic + thread_handoff.md
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -2611,6 +2620,79 @@ Key finding: CQS floor interaction with active buy signals (Ramírez, Stewart, C
 
 ---
 
-*End of thread_handoff.md — Sections 1-24 complete.*
+---
+
+## SECTION 22: SESSION 25 CHANGELOG
+
+**Session 25 — May 5, 2026**
+
+Continuation from Session 24 close. Session goal: Turner ESV architecture + SS pool diagnostic. No Layer 1 signal model changes.
+
+### Step 2a — Full ESV trace (Turner)
+
+Confirmed ESV=0.179 comes entirely from MI slot (+0.1592). SS slot = -1.075 (negative).
+Why SS slot negative: Montgomery (SS replacement #14) projects 26 HR/85 RBI. Turner projects 17 HR/63 RBI. HR gap (-9 units, -1.616 z) + RBI gap (-22.5, -1.502 z) = -3.118 negative vs +2.043 positive from R/SB/OBP = -1.075 net.
+
+### Step 2b — SS pool analysis
+
+14-team league, 18 SS roster slots. Turner ranks 13th by pre_score → Montgomery (#14) is replacement.
+Montgomery: 26 HR/85 RBI/0.189 AVG/0.276 OBP/5.3 SB. Career_pa=347 (rookie) — sets high replacement bar in counting stats despite L1=2.7 (avg_liability_mult=0.58 reduces his L1, not his replacement stats).
+
+### Step 2c — PHI slot-1 RBI_mult derivation
+
+PHI slots 7/8/9 OBP: 0.221 / 0.291 / 0.302. Weighted: 0.40×0.302 + 0.35×0.291 + 0.25×0.221 = 0.278.
+rbi_raw = 1.0 + 1.2 × (0.278 / 0.324 − 1.0) = 0.830. PHI is 4th worst in MLB for slot-1 RBI context.
+League median slot-1 RBI_mult = 0.952. PHI (-12%) is a real structural penalty, not noise.
+**Validation:** The 0.221 OBP in PHI slot 7 is the primary driver — empirically correct for 2026 PHI lineup.
+
+### Step 2d — SS peer comparison (post-OBP-anchor fix)
+
+| Player | OBP | HR | RBI | SB | ESV | L1 |
+|--------|-----|----|----|-----|-----|-----|
+| Correa | .358 | 22 | 102 | 1 | 4.00 | 30 |
+| Seager | .341 | 26 | 89 | 3 | 3.83 | 45 |
+| Bogaerts | .330 | 18 | 80 | 13 | 2.00 | 15 |
+| Turner | .313 | 17 | 63 | 20 | 0.73 | 20 |
+| Montgomery | .274 | 26 | 85 | 5 | 0.55 | 2.7 |
+
+Turner's .313 OBP (post-fix) is 45pp below Correa and 28pp below Bogaerts. In OBP-scoring leagues, each .010 OBP gap ≈ 0.5 Z-score units. That's the structural gap.
+
+### Step 3 — Fix E: OBP anchor consistency (IMPLEMENTED)
+
+**Root cause identified:** OBP_proj used raw xba_col; AVG_proj used career-anchored avg_proj. Same underlying xBA input, two different output values. Turner: xBA=0.218 raw vs avg_proj=0.247 (career anchor). OBP_proj should use same anchored value.
+
+**Fix (score_value.py):**
+- Removed standalone OBP_proj line (was line 906)
+- Moved OBP_proj calculation to AFTER avg_proj career anchor block
+- `out["OBP_proj"] = (avg_proj + bb_col * (1.0 - avg_proj) + 0.005).clip(0.200, 0.600)`
+- Both OBP and AVG now use the same career-anchored xBA assumption
+
+**Before/after (5 players):**
+| Player | OBP before | OBP after | ESV before | ESV after | L1 change |
+|--------|-----------|-----------|-----------|-----------|-----------|
+| Trea Turner (SS) | 0.286 | 0.313 | 0.179 | 0.733 | 20.0 → 20.0 (floor) |
+| Jazz Chisholm (2B) | 0.265 | 0.305 | 2.315 | 3.137 | 15.0 → 18.4 |
+| Gunnar Henderson (SS) | ~0.284 | 0.294 | 2.211 | 2.421 | 20.0 → 20.0 (floor) |
+| Bo Bichette (SS) | 0.318 | 0.316 | 0.0 | 0.0 | 40.0 → 40.0 |
+| Colson Montgomery (SS) | 0.276 | 0.274 | 0.728 | 0.552 | 3.6 → 2.7 |
+
+**Sanchez guard confirmed:** career_ba=0.214 < 0.240 → gate fails → OBP unchanged → rank C#24 ✓
+
+**Fix D verdict:** Turner IS near SS replacement level in 14-team OBP league. OBP anchor fix improved his model standing substantially (ESV +309%) but CQS floor (20.0) still propping. Structural conclusion stands.
+
+### 37/37 PASS. All invariants PASS.
+
+Sanchez: C#24, L1=15.1 ✓ | Yordan: overall #3 ✓ | Raleigh: C#2 ✓ | Baldwin: C#3 ✓ | Contreras: C#6 ✓
+
+### Files modified this session:
+- score_value.py (OBP_proj now uses career-anchored avg_proj — Session 25)
+- data/player_values.json (regenerated — OBP/ESV/L1 updated for ~50 hitters)
+- thread_handoff.md (this file — Sections 8, 9, 10, 13, 14, 16, this changelog)
+
+**Commit hash:** pending
+
+---
+
+*End of thread_handoff.md — Sections 1-25 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*

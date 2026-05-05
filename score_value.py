@@ -900,18 +900,15 @@ HR    = blended_barrel_rate × 0.60 BBE/PA ...
         * (out["PA_proj"] / 600.0)
     ).clip(lower=0)
 
-    # ── OBP (League 1 category) ───────────────────────────────────────────────
     xba_col  = out["xBA"].fillna(LG_XBA) if "xBA" in out.columns else pd.Series(LG_XBA, index=out.index)
     bb_col   = out["bb_pct"].fillna(LG_BB) if "bb_pct" in out.columns else pd.Series(LG_BB, index=out.index)
-    out["OBP_proj"] = (xba_col + bb_col * (1.0 - xba_col) + 0.005).clip(0.200, 0.600)
 
-    # ── AVG (League 2 category) ───────────────────────────────────────────────
-    # Base: xBA clipped to [0.100, 0.400]
-    # Conditional career floor: established hitters (.240+ career BA) whose April
-    # xBA is dragging far below career level get a floor at career_ba × 0.85.
+    # ── AVG + OBP (computed together so OBP shares the career anchor) ────────
+    # Conditional career floor for AVG: established hitters (.240+ career BA) whose
+    # April xBA is dragging far below career level get a floor at career_ba × 0.85.
     # Gate: career_ba >= 0.240 AND (career_ba - xBA) > 0.040.
-    # Raised 0.75→0.85 (Session 24): Henderson (career .270, xBA .209) old floor=0.202 < xBA
-    # → useless. New floor=0.230 > xBA → applies. Eliminates avg_liability_mult penalty.
+    # OBP uses the same anchored xBA so that the two stats stay consistent.
+    # Raised 0.75→0.85 (Session 24). OBP anchor added Session 25.
     # Sanchez guard: career_ba = 0.214 < 0.240 → gate fails → no change (invariant preserved).
     avg_proj = xba_col.copy()
     if career_ba_lookup:
@@ -928,6 +925,10 @@ HR    = blended_barrel_rate × 0.60 BBE/PA ...
             if cba >= 0.240 and (cba - xba) > 0.040:
                 avg_proj.at[idx] = max(xba, cba * 0.85)
     out["AVG_proj"] = avg_proj.clip(0.100, 0.400)
+
+    # OBP uses avg_proj (career-anchored when gate fires) instead of raw xba_col
+    # so that OBP and AVG projections reflect the same contact quality assumption.
+    out["OBP_proj"] = (avg_proj + bb_col * (1.0 - avg_proj) + 0.005).clip(0.200, 0.600)
 
     return out
 

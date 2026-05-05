@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-23)
+# Last updated: May 5, 2026 (Sessions 1-25)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -1681,6 +1681,35 @@ Files modified this session:
   - score_value.py (_load_steamer_sb + SB override block in main)
   - data/player_values.json (regenerated)
   - data/backtest_decline_2025_metrics.csv (NEW — diagnostic, April 2025 BBE metrics)
+  - CLAUDE.md (this changelog)
+
+--- May 5, 2026 (Session 25) ---
+
+OBP anchor consistency fix: score_value.py
+  - Root cause found via Turner SS diagnostic: OBP_proj used raw xba_col BEFORE career anchor applied;
+    AVG_proj used career-anchored avg_proj AFTER. Same underlying xBA input, inconsistent downstream stats.
+  - Fix: moved OBP_proj calculation to after avg_proj career anchor block; uses avg_proj instead of xba_col.
+    out["OBP_proj"] = (avg_proj + bb_col * (1.0 - avg_proj) + 0.005).clip(0.200, 0.600)
+  - Before/after (5 players):
+    Turner: OBP 0.286→0.313, ESV 0.179→0.733 (+309%), L1=20.0 (CQS floor still binding)
+    Chisholm: OBP 0.265→0.305, ESV 2.315→3.137, L1 15.0→18.4
+    Henderson: OBP ~0.284→0.294, ESV 2.211→2.421, L1=20.0 (CQS floor)
+    Bichette: OBP unchanged (gap < 0.040 threshold)
+    Montgomery: OBP unchanged (career_ba=0.188 < 0.240 threshold)
+  - Sanchez guard confirmed safe: career_ba=0.214 < 0.240 → gate fails → C#24 ✓
+  - 37/37 PASS. All invariants PASS.
+
+Turner SS diagnostic (Step 2a-2d — confirmed Fix D = correct model behavior):
+  - Turner ESV=0.179 came from MI slot (barely beats José Caballero's 48 SB)
+  - SS slot was -1.075 because Montgomery (#14, replacement) projects 26 HR/85 RBI
+  - PHI slot-1 RBI_mult=0.83 = 4th worst in MLB (weighted OBP=0.278 from slots 7/8/9)
+  - Turner IS near SS replacement in 14-team OBP league — not a model error
+  - Post-fix: ESV 0.733 still CQS floor-propped. Fix D verdict confirmed.
+
+Files modified this session:
+  - score_value.py (OBP_proj uses career-anchored avg_proj)
+  - data/player_values.json (regenerated)
+  - thread_handoff.md (updated)
   - CLAUDE.md (this changelog)
 
 ---
