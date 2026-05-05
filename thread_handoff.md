@@ -4243,8 +4243,8 @@ Already completed by backtest run in Task 2. New canonical numbers confirmed abo
 
 ### GitHub (Session 35)
 Last Session 34 commit: d860f81 — signal context overrides + signal backtest + white paper section 10
-Session 35 commit: [PENDING — commit and push at session close]
-Files to commit: config.py, CLAUDE.md, thread_handoff.md
+Session 35 commit: 07229ff — Slight Buy eliminated + BL threshold raised to 0.175 (Version E)
+Files committed: config.py, CLAUDE.md, thread_handoff.md, data/player_values.json, data/projections_2026.csv, luck_scores.csv, pitcher_luck_scores.csv, outputs/signal_board_latest.xlsx
 
 ### Parking lot changes (Session 35)
 - SLIGHT BUY ELIMINATION: DONE. Remove from all parking lot and pending action lists.
