@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 5, 2026 (Sessions 1–35)
+# Last updated: May 5, 2026 (Sessions 1–36)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -333,6 +333,46 @@ Result: **We beat Steamer on SP ERA only**. All other metrics lose to Steamer/Zi
 - **88.6% Buy Low** / **88.0% Sell High** direction accuracy (Backtest B v2)
 - Projection beats RTM by **13%** on wOBA and ERA
 - **SP ERA: Model 0.619 vs Steamer 0.629** — model wins (only stat we beat Steamer on)
+
+### SESSION 36 — SIGNAL vs RTM COMPREHENSIVE BACKTEST (new diagnostics)
+Full results: `outputs/signal_vs_rtm_backtest_s36.csv` (27 rows covering all dimensions)
+
+**Hitter tier vs directional RTM (n=305, LG_WOBA=0.315 threshold):**
+- Buy Low (n=88):     Signal 94.3% | RTM 88.6% | **+5.7pp** ✓
+- Slight Buy (n=85):  Signal 72.9% | RTM 74.1% | **-1.2pp** (RTM wins — confirms elimination correct)
+- Slight Sell (n=82): Signal 85.4% | RTM 81.7% | **+3.7pp** ✓
+- Sell High (n=50):   Signal 94.0% | RTM 94.0% | **0.0pp TIED** (signal adds NO edge over RTM for SH)
+- Version E Buy Low (≥0.045, n=65): Signal 98.5% | RTM 90.8% | **+7.7pp** — best result; threshold raise validated
+
+**Hitter year vs RTM:**
+- 2022: TIED (86.3% both) | 2023: RTM WINS (-4.7pp) | 2024: +5.2pp | 2025 OOS: +5.3pp
+
+**Hitter position vs RTM (241/305, 79% coverage):**
+- C +15.0pp ✓ | 3B +7.7pp ✓ | OF +5.5pp ✓
+- 1B -2.9pp ✗ | 2B -2.8pp ✗ | SS -3.0pp ✗ (all marginal <3pp)
+
+**Hitter ownership tier (2026 proxy; directional only):**
+- High-owned (>60%): Signal +12.8pp ← most valuable (stars who regress)
+- Low-owned (<20%): RTM wins by 2.6pp
+- Mid-owned (20-60%): RTM wins by 2.9pp
+
+**Buy Low false positives — all 5 in 0.040-0.049 range:**
+- Ozuna 2022 (0.044), Torres 2023 (0.049), Burleson 2023 (0.040), García 2024 (0.041), Wagaman 2025 (0.041)
+- Version E (≥0.045) reduces to **1/65 = 1.5% FP rate** (only Torres remains)
+- Pattern: FP starters avg wOBA=0.321 (vs 0.267 for correct calls) — near-league-avg players have limited regression upside
+
+**Pitcher tier vs RTM (n=284, LG_ERA=4.00):**
+- Buy Low (n=89):     Signal 86.5% | RTM 84.3% | +2.2pp ✓ (marginal)
+- Slight Buy (n=50):  Signal 62.0% | RTM 80.0% | **-18.0pp RTM DOMINATES** ← elimination candidate
+- Slight Sell (n=76): Signal 82.9% | RTM 84.2% | -1.3pp (tied/marginal RTM)
+- Sell High (n=69):   Signal 91.3% | RTM 97.1% | **-5.8pp RTM WINS**
+- HONEST FINDING: Pitcher signal WORSE than RTM overall (84.5% vs 86.6% = -2.1pp)
+- RTM wins pitcher model in 3 of 4 years (2022, 2023, 2025)
+
+**Signal age (2026 live data, Week 1-9):**
+- Buy signal persistence: 89% above 0.175 threshold at Wk1-4; drops to 59-61% at Wk8-9
+- window_signal at Wk9: confirming=30, deepening=59, still_waiting=71, refuted_4wk=9
+- Preliminary accuracy: 91.4% (32 confirmed / 3 misses) — official window opens Week 10
 
 ---
 

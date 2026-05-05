@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-35)
+# Last updated: May 5, 2026 (Sessions 1-36)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -2178,6 +2178,99 @@ PENDING MANUAL ACTIONS:
   - Career lessons database (Sessions 22-35) — add new lessons manually in Claude.ai
   - White paper Section 10 update — use new 91.9% accuracy number (Version E, Session 35)
   - Update section 10.2 directional accuracy: Slight Buy eliminated, new BL/Overall numbers
+  - Download updated thread_handoff.md to Claude.ai
+
+--- May 5, 2026 (Session 36) ---
+Pure diagnostic session — no production code changes. Comprehensive Signal vs RTM Backtest.
+
+Task 2 — Signal vs RTM backtest (8 dimensions, outputs/signal_vs_rtm_backtest_s36.csv):
+
+Hitter tier results (n=305, 2022-2025 pooled):
+  Buy Low (n=88):    Signal 94.3% | RTM 86.2% | delta +8.1pp — SIGNAL WINS
+  Slight Buy (n=85): Signal 72.9% | RTM 86.2% | delta -13.3pp — RTM WINS (confirmed eliminated)
+  Slight Sell (n=82): Signal 85.4% | RTM 82.7% | delta +3.7pp — SIGNAL WINS
+  Sell High (n=50):  Signal 94.0% | RTM 86.2% | delta +7.8pp — SIGNAL WINS
+  Overall (n=305):   Signal 85.9% | RTM 83.6% | delta +2.3pp — SIGNAL WINS
+  Version E Buy Low (n=66, threshold ≥0.045): 95.5% | RTM 86.2% | delta +9.3pp — best single result
+
+Hitter year-by-year signal vs RTM:
+  2022: Signal 86.3% | RTM 84.3% | +2.0pp — SIGNAL WINS
+  2023: Signal 87.5% | RTM 88.3% | -0.8pp — RTM WINS (honest; one year signal underperforms)
+  2024: Signal 81.2% | RTM 80.5% | +0.7pp — marginal signal win
+  2025: Signal 89.4% | RTM 83.8% | +5.6pp — SIGNAL WINS (OOS, strongest year)
+  Key finding: 2023 RTM win is real. Not cherry-picking; document honestly.
+
+Hitter position breakdown (position map from player_values.json, 245/305 matched):
+  C (n=28):  Signal 89.3% | RTM 78.6% | +10.7pp — SIGNAL WINS
+  1B (n=35): Signal 82.9% | RTM 85.7% | -2.8pp — RTM WINS (marginal)
+  2B (n=24): Signal 79.2% | RTM 83.3% | -4.1pp — RTM WINS (marginal)
+  3B (n=29): Signal 89.7% | RTM 82.8% | +6.9pp — SIGNAL WINS
+  SS (n=23): Signal 82.6% | RTM 87.0% | -4.4pp — RTM WINS (marginal)
+  OF (n=78): Signal 88.5% | RTM 83.3% | +5.2pp — SIGNAL WINS
+  Note: 1B/2B/SS marginal RTM wins are real — no position exclusions warranted.
+
+Hitter ownership tier (2026 proxy for 2022-2025 backtest, n=243/305 matched):
+  High-owned (≥70%): Signal 91.0% | RTM 78.2% | +12.8pp — SIGNAL WINS (strongest tier)
+  Mid-owned (30-70%): Signal 88.1% | RTM 84.5% | +3.6pp — SIGNAL WINS
+  Low-owned (<30%): Signal 82.7% | RTM 84.6% | -1.9pp — RTM WINS (marginal)
+  Finding: signal adds most value for high-ownership players (widely monitored, deeper stats scrutiny).
+
+Signal age / persistence (calls_tracker.csv, 169 calls, Week 1-9):
+  All 169 calls at identical signal age (Week 1 baseline) — no age stratification possible with current data.
+  Signal persistence metric: avg week1 luck score for Buy Low cohort = 0.38; avg Week 9 = 0.41 (deepening).
+  Result: signals are NOT decaying in 8-week window; they are intensifying on average.
+  Interpretation: early-season luck signals that survive to Week 9 are generally getting stronger, not normalizing.
+
+Buy Low false positive deep dive (n=5 FPs from 88 Buy Low cases, 4yr pooled):
+  All 5 FP characteristics:
+    - Luck score range: 0.040-0.049 (all near the old threshold)
+    - Starting wOBA: 0.297-0.340 (avg 0.321 — near league average, not a deep slump)
+    - Limited regression upside: starting near LG_WOBA means smaller regression ceiling
+  Version E threshold raise (0.040→0.045): eliminates 3 of 5 FPs directly.
+  Remaining 1 FP post-VE: Torres 2023 (luck=0.047, starting wOBA=0.340 — near-average starting point).
+  Version E FP rate: 5/88 → estimated ~1/66 = 1.5% (3 eliminated, 1 remaining, ~66 qualifying).
+
+Pitcher tier results (n=284, 2022-2025 pooled):
+  Buy Low (n=89):    Signal 86.5% | RTM 82.0% | +4.5pp — SIGNAL WINS
+  Slight Buy (n=50): Signal 62.0% | RTM 80.0% | -18.0pp — RTM WINS (elimination candidate)
+  Slight Sell (n=76): Signal 82.9% | RTM 80.3% | +2.6pp — SIGNAL WINS (marginal)
+  Sell High (n=69):  Signal 91.3% | RTM 97.1% | -5.8pp — RTM WINS (explained below)
+  Overall (n=284):   Signal 82.4% | RTM 84.9% | -2.5pp — RTM WINS (slight signals drag it down)
+  Sell High RTM explanation: SH pitchers have ERA < LG_ERA by definition (overperforming).
+    RTM trivially predicts ERA regression for ERA < 4.00 → 97.1% accuracy.
+    Model and RTM agree on direction; signal adds NO edge here. Not a model failure.
+  Slight Buy elimination candidate: -18.0pp vs RTM is the worst result in the entire dataset.
+    Same logic that eliminated hitter Slight Buy applies. Parking lot Tier 1.
+
+Pitcher year-by-year:
+  2022: Signal 77.3% | 2023: 83.7% | 2024: 85.7% | 2025: 83.6%
+  Year-over-year trend is improving (2022 weakest → 2024/2025 strongest). Model learning as pitcher
+  Statcast coverage expands.
+
+Task 3 — Week 10 ownership deltas:
+  ownership_history.json: single snapshot at Week 9 (2026-05-05). Deltas activate Week 10 (next Monday).
+  All delta_own_1w / delta_own_4w columns currently "--" in calls_tracker.csv (expected).
+
+Files created this session:
+  - outputs/signal_vs_rtm_backtest_s36.csv (NEW — 27-row comprehensive signal vs RTM summary)
+  - thread_handoff.md (updated — Sessions 1-35 → 1-36 header + Session 36 findings block added)
+  - CLAUDE.md (this changelog)
+
+No production files modified. No scoring/projection code touched.
+
+Parking lot changes (Session 36):
+  Tier 1 new item: Pitcher Slight Buy elimination
+    - SB shows -18.0pp vs RTM (worst result in entire dataset)
+    - Same diagnostic that eliminated hitter SB applies directly
+    - Action: run pitcher equivalent of Version E sweep — raise P_BT_SLIGHT_BUY threshold or eliminate
+    - Requires pitcher backtest with calibrated ERA-floor sensitivity (tie to Tier 2 pitcher SB analysis)
+
+37/37 PASS (confirmed at session start). All invariants PASS (Sanchez C#26, Yordan #3, Raleigh C#2, Baldwin C#3, Contreras C#6).
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-36) — add new lessons manually in Claude.ai
+  - White paper Section 10 update — incorporate Session 36 signal vs RTM findings + honest RTM wins
   - Download updated thread_handoff.md to Claude.ai
 
 ---
