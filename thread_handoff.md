@@ -4467,6 +4467,118 @@ Session 37 commit: cc10012 — pitcher Slight Buy eliminated + CSW bug fix (Vers
 
 ---
 
+## Session 37 Article Build — May 5 2026 Evening
+
+**Value rate reconstruction:**
+- `build_value_rate_history.py` built and committed. Uses Statcast pitch-level game logs.
+- `outputs/value_rate_history.csv` — 16 rows, three-snapshot CBS FPTS/game rate per player.
+- R/RBI estimated via wOBA proxy in Statcast version; exact R/RBI/SB from MLB Stats API version.
+
+**Performance windows (final):**
+- `outputs/performance_windows_final.csv` — 36 rows, MLB Stats API exact box score stats.
+- Two windows per player: at-call (season start → call date) and since-call (call date +1 → May 4).
+- Article 1 call date: April 22 | Article 2 call date: April 29.
+
+**CBS formulas used:**
+- Hitter: R×2.8067 + HR×0.4303 + RBI×2.0431 + SB×2.19 + AVG×AB×12.8  (per game)
+- Pitcher: W×5 + K×1 + Sv×5 − ER×1 − BB×1  (per game; approximate standard CBS scoring)
+
+**Corrected MLBAM IDs (use these everywhere):**
+- Gavin Williams = 668909 (not 694973 which is Paul Skenes)
+- Jordan Walker = 691023 (not 694497 which is Evan Carter)
+- Yordan Álvarez = 670541 (not 477600)
+- Pasquantino = 686469 (not 672710)
+- Jesús Luzardo = 666200 (not 660271 which is Ohtani)
+
+**Key article insights from the data:**
+- Chapman 16.6 CBS/g > Seager 12.0 CBS/g at call date — the market saw Chapman as the better
+  producer. That's exactly the mispricing the sell/buy signals catch. Use this in article.
+- Luzardo: ERA 6.91 → 1.35 since call. Textbook buy-low confirmation.
+- Chapman: AVG .273 → .087, CBS/g 15.6 → 4.7 since call. Sharpest post-call collapse.
+- Pasquantino: AVG .160 → .290, CBS/g 9.7 → 16.1. Clean bounce.
+- Jordan Walker tagged Sell High but CBS/g UP 18.7 → 21.1 since call — honest non-confirm.
+- Vargas: .400 AVG since Apr 29, CBS/g still 21.3 — still running hot, no regression yet.
+
+**Ownership finding (Session 36 backtest):**
+- Signal adds most value on HIGH-ownership players (+12.8pp vs RTM, >60% owned).
+- Low-ownership players (<30%): RTM slightly wins (-1.9pp). Sell Into Hype / Buy The Dip Elite
+  article framing is most defensible for the high-ownership tier.
+
+**Output files created this build:**
+- `outputs/value_rate_history.csv` (Statcast-based, R/RBI estimated)
+- `outputs/performance_windows.csv` (Statcast-based with corrected Gavin Williams)
+- `outputs/performance_windows_final.csv` (MLB Stats API, exact counting stats — USE THIS)
+- `build_value_rate_history.py` (standalone diagnostic, read-only)
+
+**CBS Production Index footnote (for article):**
+  "R/RBI not available in pitch-level data; estimated via wOBA × PA proxy in Statcast version.
+   All R/RBI/SB figures in performance_windows_final.csv are exact MLB Stats API box score totals."
+
+---
+
+## SESSION 37 EVENING — Article Build Work (May 5, 2026)
+
+### Value Rate Reconstruction
+- build_value_rate_history.py: built and saved in repo root
+- Uses Statcast game logs for point-in-time reconstruction
+- Snapshot dates: Apr 22 (Art1), Apr 29 (Art2), May 4 (current)
+
+### Performance Windows — Final Architecture
+- File: outputs/performance_windows_final.csv (36 rows)
+- Source: MLB Stats API game logs — exact box score stats
+- At-call window: season start → call date
+- Since-call window: call date +1 → May 4
+- Hitter CBS formula: R×2.81 + HR×0.43 + RBI×2.04 + SB×2.19 + AVG×AB×12.8
+- Pitcher CBS formula: W×5 + K×1 + Sv×5 - ER×1 - BB×1
+- Both per game (÷ games played)
+- SB now included (pulled from MLB API, fixes earlier gap)
+- W/K/Sv/ERA/WHIP now exact for pitchers (fixes earlier proxy)
+
+### Corrected MLBAM IDs (update wherever referenced)
+- Gavin Williams: 668909 (was 694973 = Paul Skenes — wrong)
+- Jordan Walker: 691023 (was 694497 = Evan Carter — wrong)
+
+### Key Article Findings from Performance Windows
+- Luzardo: CBS/G 1.6→13.0 since call. ERA 6.91→1.35. Strongest buy confirmation
+- Chapman: CBS/G 15.6→4.7 since call. .087 AVG, 0 HR, 0 RBI in 6 days. Strongest sell confirmation
+- Jordan Walker: CBS/G 18.7→21.1 since call — NOT confirming. Honest miss. Write it that way.
+- Grisham: CBS/G 8.7→12.2. Quietly confirming
+- Dingler: CBS/G 13.6→18.9 in 5 days since call
+- Seager/Ryan: small since-call window (<4G) — flag as insufficient
+
+### Excel Files Built Tonight
+- outputs/week_over_week_tracker_final.xlsx — luck score tracker
+- outputs/performance_windows_tracker.xlsx — before/after CBS output tracker
+
+### Article 2 Call Date Clarification
+- Article 1: April 22 — Yordan, Pasquantino, Grisham, Cruz,
+  Walker, Luzardo, Wacha, Williams, Bradish
+- Article 2: April 29 — Herrera, Dingler, Seager, Chapman,
+  Vargas, Ryan, Sanchez, Arrighetti, Ray
+
+### Ownership Signal Finding (Session 36)
+- Signal adds most value on HIGH-ownership players (+12.8pp vs RTM)
+- NOT low-ownership as originally hypothesized
+- Best article framing: "we're most useful for the stars everyone is watching"
+
+### CBS Production Index Footnote (for article)
+- Ridge regression coefficients trained on 2024-2025 CBS data
+- Applied to MLB API exact stats ÷ games played
+- Directional — trend matters more than absolute value
+- Hitter and pitcher scales NOT comparable to each other
+
+### CLAUDE.md Size Warning
+- Currently 81.8k chars (threshold 40k) — in parking lot for trimming
+- Affects session start performance
+
+### Pending Before Next Session
+- Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+- Update white paper Section 10 with Version E/F accuracy numbers
+- Career lessons database Sessions 22-37
+- Download updated thread_handoff.md to Claude.ai after push
+
+---
+
 *End of thread_handoff.md — Sessions 1-37 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
