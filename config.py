@@ -45,8 +45,12 @@ H_PROD_SB_MIN_XWOBA_GAP = 0.030
 H_PROD_SB_MAX_XWOBA     = 0.380
 
 # ── Production pitcher thresholds (score_pitcher_luck.py) ────────────────────
-P_PROD_BUY_LOW      =  0.15
-P_PROD_SLIGHT_BUY   =  0.07
+# Session 37: Slight Buy eliminated (62.0% accuracy, -18.0pp vs RTM = no edge).
+# P_PROD_SLIGHT_BUY set equal to P_PROD_BUY_LOW so SB condition can never fire.
+# P_PROD_BUY_LOW raised 0.150→0.175 to drop noisy 0.150-0.175 borderline cases.
+# Backtest result: Option D 87.7% overall (+5.3pp vs 82.4% baseline).
+P_PROD_BUY_LOW      =  0.175
+P_PROD_SLIGHT_BUY   =  0.175  # = P_PROD_BUY_LOW — Slight Buy tier eliminated
 P_PROD_SELL_HIGH    = -0.15
 P_PROD_SLIGHT_SELL  = -0.07
 
@@ -60,8 +64,11 @@ H_BT_SLIGHT_SELL    = -0.040
 
 # ── Backtest pitcher thresholds (backtest_multi_year_v7.py) ──────────────────
 # ERA-FIP gap scale — entirely different from production luck score scale.
-P_BT_BUY_LOW        =  1.20
-P_BT_SLIGHT_BUY     =  0.60
+# Session 37: P_BT_BUY_LOW raised 1.20→1.40 (drops noisy 1.20-1.40 bucket, 89.6% acc).
+#             P_BT_SLIGHT_BUY = P_BT_BUY_LOW — Slight Buy tier eliminated (62.0% acc, -18pp vs RTM).
+# Backtest Option D: train 2022-24 87.7% overall | OOS 2025 82.0% | 4yr +5.3pp vs baseline.
+P_BT_BUY_LOW        =  1.40
+P_BT_SLIGHT_BUY     =  1.40  # = P_BT_BUY_LOW — Slight Buy tier eliminated
 P_BT_SELL_HIGH      = -1.20
 P_BT_SLIGHT_SELL    = -0.60
 

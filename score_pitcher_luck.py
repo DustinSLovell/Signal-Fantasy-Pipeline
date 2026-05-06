@@ -1148,9 +1148,9 @@ def main():
         # Reclassify Buy low only — Slight buy and sells locked
         for _idx in df[_buy_lo].index:
             _ls = df.at[_idx, "luck_score"]
-            if _ls > 0.15:
+            if _ls > P_PROD_BUY_LOW:
                 df.at[_idx, "verdict"] = "Buy low"
-            elif _ls > 0.07:
+            elif _ls > P_PROD_SLIGHT_BUY:
                 df.at[_idx, "verdict"] = "Slight buy"
             else:
                 df.at[_idx, "verdict"] = "Neutral"

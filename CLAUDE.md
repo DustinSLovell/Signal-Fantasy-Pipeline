@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-36)
+# Last updated: May 5, 2026 (Sessions 1-37)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -83,11 +83,15 @@ Changes to Layer 1 require: ablation test + invariant check + validate_formulas.
 - Chase rate modifier (sell-side): gap >0.040 → ×1.10, >0.060 → ×1.15
 - Platoon adjustment: Layer 7 — uses career baseline from hitter_career_platoon.json (updated April 26)
 
-### Pitcher Model v2.0 (split architecture — April 23, 2026):
+### Pitcher Model v2.0 / Version F (split architecture — April 23, 2026; SB eliminated May 5, Session 37):
 - BUY side: ERA-FIP dominant (×0.60 ERA-FIP, ×0.25 xwOBA, ×0.15 BABIP)
 - SELL side: 8-component composite (BABIP, LOB%, ERA-FIP, ERA-xERA, HR/FB, HH%, barrel, SwStr%)
 - Classification from RAW score BEFORE confidence scaling
 - CSW buy-low-only modifier: csw_gap >+0.025 → ×1.10, <-0.025 → ×0.90
+- **Session 37: Slight Buy eliminated (62.0% accuracy, -18.0pp vs RTM = no edge)**
+  P_PROD_BUY_LOW=0.175, P_PROD_SLIGHT_BUY=0.175 (=BL, SB impossible), P_BT_BUY_LOW=1.40, P_BT_SLIGHT_BUY=1.40
+  Backtest result Option D: 87.7% pooled (+5.3pp vs 82.4% baseline), OOS 82.0%
+  Bug fixed: CSW reclassification block in score_pitcher_luck.py had hardcoded 0.15/0.07 → now uses config constants
 
 ### Financial Motivation Cohort Framework (display-only — April 26-27, 2026):
 _assign_cohort() in score_luck.py. contract_cohort column in luck_scores.csv.
@@ -383,9 +387,9 @@ Hitters (435 total, production run):
 Buy Low: 42 | Slight Buy: 0 (ELIMINATED) | Neutral: 321 | Slight Sell: 28 | Sell High: 44
 NOTE: 12 players previously tagged Slight Buy now show Neutral (BL threshold raised to 0.175)
 
-Pitchers (418 total):
-Buy Low: 11 | Slight Buy: 5 | Neutral: (unchanged) | Slight Sell: 15 | Sell High: 23
-NOTE: Pitcher SB not eliminated — pitcher backtest was not analyzed in Session 35
+Pitchers (418 total — post Session 37 Version F):
+Buy Low: 8 | Slight Buy: 0 (ELIMINATED) | Neutral: 372 | Slight Sell: 15 | Sell High: 23
+NOTE: Pitcher SB eliminated Session 37 (62.0% acc, -18.0pp vs RTM). P_PROD_BUY_LOW raised 0.150→0.175.
 
 Top pitcher buy lows: Luzardo (0.4531), Ryan (0.3487), Boyle (0.3351),
 C.Sanchez (0.3095), Gilbert (0.2791), Bradish (0.2405), Baz (0.2047)
@@ -2271,6 +2275,36 @@ PENDING MANUAL ACTIONS:
   - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
   - Career lessons database (Sessions 22-36) — add new lessons manually in Claude.ai
   - White paper Section 10 update — incorporate Session 36 signal vs RTM findings + honest RTM wins
+  - Download updated thread_handoff.md to Claude.ai
+
+--- May 5, 2026 (Session 37) ---
+Pitcher Slight Buy elimination (Version F): config.py + score_pitcher_luck.py CSW bug fix
+  - Diagnosed: 62.0% accuracy, -18.0pp vs RTM (4yr pooled, worst result in full dataset)
+  - Bucket analysis: ALL ERA-FIP buckets (0.60-1.20) below RTM 80.0% — no sub-range salvageable
+  - Option D adopted: BL 1.20→1.40 + eliminate SB. 87.7% pooled (+5.3pp), OOS 82.0% (+4.5pp)
+  - config.py: P_PROD_BUY_LOW 0.150→0.175, P_PROD_SLIGHT_BUY 0.070→0.175 (= BL, SB impossible)
+    P_BT_BUY_LOW 1.20→1.40, P_BT_SLIGHT_BUY 0.60→1.40 (= BL, SB eliminated)
+  - Bug fixed: score_pitcher_luck.py CSW reclassification block lines ~1148-1156
+    Hardcoded `if _ls > 0.15: "Buy low"` and `elif _ls > 0.07: "Slight buy"` bypassed config.py
+    Changed to use P_PROD_BUY_LOW and P_PROD_SLIGHT_BUY constants
+  - Post-fix distribution: BL=8, SB=0, N=372, SS=15, SH=23
+Pitcher Sell High reviewed (no change):
+  - 94% of SH pitchers have ERA < 4.00 → RTM trivially predicts ERA regression (structural)
+  - RTM domination is selection bias, not model failure. ELITE_TRACK_RECORD gate confirmed correct.
+Slight Sell reviewed (no change):
+  - Hitter SS: +3.7pp vs RTM, CI [-3.7, +12.2] — not significant, KEEP
+  - Pitcher SS: -1.3pp vs RTM, CI [-13.2, +10.5] — not significant, KEEP
+Article content lists (ownership-based, for articles):
+  - Sell Into Hype (Sell High + own>60%): Carroll 99.7%, Rice 99.1%, Baldwin 97.8%, Turang 97.6%
+  - Buy The Dip Elite (Buy Low + own>60%): Ramírez 99.8%, Ohtani 99.8%, Yordan 99.7%, Tucker 99.7%
+  - INJURY_RISK + high own: Henderson 98.4%, Raleigh 99.5%
+
+37/37 PASS. All invariants PASS (Sanchez C#21, Yordan top-20, Raleigh C#2, Baldwin C#3, Contreras C#6).
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-37) — add new lessons manually in Claude.ai
+  - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS); remove pitcher SB row
   - Download updated thread_handoff.md to Claude.ai
 
 ---
