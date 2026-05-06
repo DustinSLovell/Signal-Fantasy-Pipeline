@@ -2136,7 +2136,7 @@ Session 33 commit: [ownership acceleration tracking + signal_accuracy_by_tier.cs
 Session 34 commit: [signal_context.py + player_injury_context.json + signal_accuracy_full_matrix.csv + whitepaper_section10_draft.md]
 Session 35 commit: 5140868 — config.py H_PROD_BUY_LOW 0.150→0.175, H_PROD_SLIGHT_BUY 0.100→0.175, H_BT_BUY_LOW 0.040→0.045, H_BT_SLIGHT_BUY 0.020→0.045 (hitter Slight Buy eliminated, Version E)
 Session 36 commit: [signal vs RTM comprehensive backtest, outputs/signal_vs_rtm_backtest_s36.csv — no production code changes]
-Session 37 commit: TBD — pitcher Slight Buy eliminated (Version F) + config.py P_PROD_BUY_LOW 0.150→0.175, P_PROD_SLIGHT_BUY 0.070→0.175, P_BT_BUY_LOW 1.20→1.40, P_BT_SLIGHT_BUY 0.60→1.40 + CSW hardcoded threshold bug fix in score_pitcher_luck.py
+Session 37 commit: cc10012 — pitcher Slight Buy eliminated (Version F) + config.py P_PROD_BUY_LOW 0.150→0.175, P_PROD_SLIGHT_BUY 0.070→0.175, P_BT_BUY_LOW 1.20→1.40, P_BT_SLIGHT_BUY 0.60→1.40 + CSW hardcoded threshold bug fix in score_pitcher_luck.py
 Push every session for IP protection.
 
 **Two-document memory:**
@@ -4451,7 +4451,7 @@ INJURY_RISK + high ownership (INJURY_RISK signal_type + own>50%):
 ### GitHub (Session 37)
 Session 35 commit: 5140868 — hitter Slight Buy eliminated (Version E)
 Session 36 commit: d294b92 — update CLAUDE.md Session 14 changelog (note: CLAUDE.md labels may differ from session numbers)
-Session 37 commit: TBD — pitcher Slight Buy eliminated + CSW bug fix (Version F)
+Session 37 commit: cc10012 — pitcher Slight Buy eliminated + CSW bug fix (Version F)
 
 ### Parking lot changes (Session 37)
 - **Pitcher Slight Buy elimination → COMPLETED**. P_BT_BUY_LOW=1.40, P_PROD_BUY_LOW=0.175.
