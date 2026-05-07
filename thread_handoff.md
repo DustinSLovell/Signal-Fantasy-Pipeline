@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 7, 2026 (Sessions 1–41)
+# Last updated: May 7, 2026 (Sessions 1–42)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -22,6 +22,22 @@ Before responding to ANY session goal, Claude must:
 
 3. Do NOT proceed until Dustin confirms the comprehension check
    looks correct.
+
+---
+
+## CURRENT MODEL STATE (Session 42 — May 7, 2026)
+
+**CLAUDE.md:** Consolidated from 161,957 chars (2,549 lines) → 24,308 chars (498 lines). Sessions 1-34 changelogs were removed from CLAUDE.md — they live here in thread_handoff.md. All operationally critical content (session start checklist, thresholds, invariants, key files, active parking lot, Sessions 35-42 changelog) preserved. Commit 58d48fd.
+
+**fp_ownership vs owned_pct:** These are TWO DIFFERENT COLUMNS in TWO DIFFERENT FILES.
+- `luck_scores.csv` → column is `owned_pct` (ESPN ownership, written by score_luck.py)
+- `player_ownership_2026.csv` → column is `fp_ownership` (FantasyPros ownership, written by fetch_fantasypros_ownership.py)
+Querying `fp_ownership` from `luck_scores.csv` causes a KeyError. Use `owned_pct` for luck_scores.csv queries.
+
+**Ownership deltas (weekly_update.py):**
+- `data/ownership_history.json`: Week 9 (May 5) + Week 10 (May 6) snapshots present. 848 players tracked.
+- `delta_own_1w`: Active — 169 tracker rows have live values. Computed as current − prior week ownership %.
+- `delta_own_4w`: All NaN. Requires 4 snapshots minimum — activates ~Week 13 (early June 2026).
 
 ---
 
@@ -1760,63 +1776,59 @@ Priority: TIER 3 now. Promote to TIER 1 when trigger condition met.
 
 ---
 
-## SECTION 11: TRADE TOOL (known issues)
+## SECTION 11: TRADE TOOL (complete state as of May 7, 2026)
 
-Architecture: trade_analyzer.py. CBS FPTS via _compute_cbs_fpts(). Replacement level via replacement_level.py.
+Architecture: trade_analyzer.py. CBS FPTS via `_compute_cbs_fpts_league()`. Replacement level via replacement_level.py. League settings via data/leagues/league_{id}.json.
 
-**Current replacement levels (ROS scale — from projections_2026.csv):**
+**FULLY BUILT AND VALIDATED (Sessions 38–41). Beta-ready.**
+
+**CLI:**
+```
+python trade_analyzer.py --give "Player Name" --receive "Player2" [--receive "Player3"] --league 1 [--open-slot] [--debug] [--explain]
+```
+
+**League IDs:** 1 = CBS 13-Team Standard (AVG scoring) | 2 = Fantrax 15-Team OBP
+
+**Three-Layer Trade Architecture:**
+1. Signal stat multipliers embedded in base_surplus (Backtest B v2): BL→R×1.08/HR×1.05/RBI×1.08; SH→R×0.92/RBI×0.92
+2. Elite premium × base_surplus → verdict totals: FP≤10→×1.30 | ≤25→×1.15 | ≤50→×1.05
+3. signal_adj display (±luck×0.5) is visualization only — NOT in verdict totals
+
+**Opportunity cost:** `_repl_level_value(team_count)`: ≤10→4.0 | ≤12→2.5 | ≤14→1.5 | 15+→0.5
+Applied only when net_received > 0. `--open-slot` flag bypasses.
+
+**Verdict thresholds:** ≥50 STRONG | ≥20 FAVORABLE | ≥5 SLIGHTLY FAVORABLE | ≤-5 SLIGHTLY UNFAVORABLE | ≤-20 UNFAVORABLE | ≤-50 AVOID
+
+**Output format:** ═══ divider blocks, per-player signal descriptions, ROSTER IMPACT block, VERDICT + SIGNAL CONTEXT sections.
+
+**"Did you mean" fuzzy suggestion (Session 40):** `_suggest_player()` via `difflib.SequenceMatcher`. "Brett Turang" → "Did you mean: Brice Turang (MIL)?" ✓ Was HIGH priority beta gap — fixed.
+
+**`--debug` flag (Session 40):** Per-player table showing Side | FP | EP | Signal | Luck | BaseSurp | SigAdj | EliteAdj | delta_base | delta_elite. Confirms premium directionality.
+
+**Gap 1 display fix (Session 41):** Elite-adjusted line now shows "(applied to base surplus, not signal-adjusted)". Math unchanged. Seager trade delta confirmed at -14.5 after fix.
+
+**7/7 Validation Tests — ALL PASS:**
+1. Both-neutral: ~0 delta (large delta allowed when genuine quality gap, no signal inflation) ✓
+2. BL/SH asymmetry: Give BL, recv SH → negative delta (AVOID) ✓
+3. Elite cancel: top-10 vs top-10 → NEUTRAL ±small (elite premiums cancel symmetrically) ✓
+4. Opp cost: 2-for-1 no open slot → -1.5 applied (13-team) ✓
+5. --open-slot: bypasses opp cost, delta improved by 1.5 pts ✓
+6. Give top-10: recv 2×rank-35 → AVOID, -162.4 (elite premium penalizes giving #1) ✓
+7. League comparison: Seager→Chapman+Dingler: L1=-14.5, L2=-65.1, OBP premium +50.6 ✓
+
+**Beta status:** `outputs/beta_readme.txt` (user guide, non-technical). `outputs/reddit_beta_post.md` (beta recruitment post, ready to post to r/fantasybaseball). `outputs/beta_gaps.txt` (3 documented gaps — Gap 2 fixed; Gap 1 display clarified; Gap 3 Ohtani two-way = Tier 2 parking lot).
+
+**Replacement levels (ROS scale — from projections_2026.csv):**
 C=219.4 | 1B=226.9 | 2B=212.4 | 3B=189.8 | SS=252.2 | OF=247.1 | SP=201.0 | RP=193.2
-(Note: these differ from CLAUDE.md values which were from an earlier pipeline run)
 
-**Bug 3 — FIXED (Session 17, commit fda45c4):** Signals now feed projected stats only. Correct 5-step flow implemented:
-1. Steamer ROS projections (from projections_2026.csv)
-2. _apply_signal_multipliers() — Backtest B v2 multipliers on proj stats
-3. CBS FPTS regression on adjusted projections
-4. Surplus vs replacement level at player's position
-5. Verdict = get_surplus_total − give_surplus_total → _trade_verdict_v3()
+**Week 4 trade scenario deltas (reference):**
+- Ramírez+Ryan→Skenes (League 1): AVOID, delta=-107.0
+- Seager→Chapman+Dingler (League 1): SLIGHTLY UNFAVORABLE, delta=-14.5
+- Turang→Ryan+Ramírez (League 1): STRONG TRADE, delta=+315.1
 
-**Session 18 additions (commit 4277a8f):**
-- Surplus display now per-player with position and replacement reference:
-  "Give surplus: Skenes +95 (SP, repl 201) | Get surplus: Rice -47 (C, repl 219)"
-- --explain flag: step-by-step CBS valuation walkthrough (model projections → signal mults
-  → per-term FPTS calc → replacement level → surplus → verdict summary)
-- _blend_pa GP estimation fix: when games_played=0 (ESPN endpoint limitation) but pa_so_far>=5,
-  estimates gp_eff = max(pa_so_far // 4, 5). Prevents Steamer-only domination.
-  Rice: projected_pa 155→285 (but counting stats unchanged — rate model dominates).
-
-**Rice surplus clarification (permanent architectural note):**
-Rice adj surplus = -47. This is model's intentional Sell High signal, not a bug.
-Architecture: projections_2026.csv has in-model LUCK_MULTIPLIERS (R×0.94 Sell High);
-trade tool adds Backtest B v2 on top (R×0.92). Combined: R×0.865.
-Career HR rate (0.029) blending down current barrel rate (0.052) → 0.041 blended.
-CBS projects 28 HR vs our 11 HR. Known under-projection for young breakout players.
-Will improve when native projection system replaces Steamer 2025 proxy (Tier 2 parking lot).
-
-**Smell test evidence (May 2, 2026):**
-
-Case 1 — Giving Skenes SP / Getting Rice C (Sell High):
-- Skenes: player_type=SP correctly resolved, adj surplus +95 (unadj +95, neutral signal)
-- Rice: Sell High → R×0.92, RBI×0.92 → adj surplus -47 (unadj -34)
-- Delta: -142 → AVOID ✓
-
-Case 2 — Giving Skubal SP / Getting Rice C:
-- Skubal: neutral signal, adj surplus +84
-- Rice: adj surplus -47
-- Delta: -131 → AVOID ✓
-
-Case 3 — Giving Acuña Buy Low / Getting Rice Sell High:
-- Acuña: Buy Low → R×1.08, HR×1.05, RBI×1.08 → adj surplus +208 (unadj +178)
-- Rice: adj surplus -47
-- Delta: -255 → AVOID ✓
-- Architecture confirmed: verdict driven by adjusted surplus delta, not signal badges
-
-**Bug 1 — RESOLVED by Bug 3 fix.** C positional scarcity no longer overweights Rice; Rice actual surplus is -34 (unadj) to -47 (sell-high-adjusted) — correctly below SP/elite OF surplus.
-
-**Bug 2 — Pitcher net stats display:** Still shows raw proj stats in player card, not replacement-level-relative. Lower priority — display issue only, verdict is correct.
-
-**Bug 4 — Search click:** Dashboard onClick intermittent. Tier 3.
-
-**League settings not wired:** league_settings.py and JSON files exist. Replacement levels still fixed at 12-team standard (replacement_level.py). Next Tier 2: load league from data/leagues/ based on active S.league in dashboard. C:2 CBS vs C:1 Fantrax changes Rice surplus between leagues.
+**Remaining Tier 2 parking lot items:**
+- Ohtani two-way player config (two_way_player flag in league_settings.json)
+- 5-10 real trade stress tests with beta user feedback
 
 ---
 
@@ -5044,44 +5056,72 @@ Session 41 commit: [pending push — end of session]
 
 ---
 
-*End of thread_handoff.md — Sessions 1-41 complete.*
-*Overwrite completely at end of every session. Single source of truth.*
-*Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
-
 ---
 
-## Session 42 — CLAUDE.md Consolidation + Housekeeping (May 7, 2026)
+## SESSION 42 CHANGELOG — May 7, 2026
 
-### Summary
+### Focus: CLAUDE.md Consolidation + fp_ownership Audit + Ownership Delta Status
 
-CLAUDE.md reduced from 161,957 chars to 24,308 chars (498 lines). Sessions 1-34 changelogs already
-exist in this file (thread_handoff.md) and were not duplicated. The trimmed CLAUDE.md retains all
-operationally critical content: session start checklist, thresholds, invariants, key files, parking lot
-(active items only), architectural decisions, and Sessions 35-42 changelog.
+### Task 1 — Session Start Verification
+- validate_formulas.py: 37/37 PASS ✓
+- score_pitcher_luck.py: ERA 4.00/3.75/3.50 gates confirmed ✓
+- score_luck.py: 0.150/0.100/0.085/0.030/0.380 thresholds confirmed ✓
+- CAREER_K_PULL_PATH, k_flag/pull_flag confirmed ✓
+- Sanchez C#29 ✓ (all invariants pass)
 
-**fp_ownership audit**: `fp_ownership` is the correct column name in `player_ownership_2026.csv`
-(written by fetch_fantasypros_ownership.py). The column is `owned_pct` in luck_scores.csv.
-The user's KeyError came from querying `fp_ownership` from `luck_scores.csv` — the wrong source file.
-No Python files required changes.
+### Task 2 — CLAUDE.md Consolidation
 
-**thread_handoff.md**: 297KB — under 500KB threshold. No archiving needed.
+**Problem:** CLAUDE.md had grown to 161,957 chars (2,549 lines) across Sessions 1-42.
+Sessions 1-34 changelogs were fully duplicated — they already live in thread_handoff.md.
+This caused slow session starts and poor readability.
 
-### Files modified
+**Action:** Rewrote CLAUDE.md as a lean operational reference.
+- Removed: Sessions 1-34 changelogs (already in thread_handoff.md)
+- Removed: Completed parking lot items, verbose architectural explanations, redundant section text
+- Kept: Session start checklist (exact grep commands), current thresholds, permanent invariants,
+  key files list, active parking lot items, architectural decisions, Sessions 35-42 changelog
 
-- `CLAUDE.md` — consolidated (161,957 → 24,308 chars). Sessions 1-34 changelogs removed (already here).
-- `thread_handoff.md` — Session 42 block appended.
+**Result:** 161,957 chars → 24,308 chars (498 lines). 85% reduction.
+All operationally critical content preserved. All 4 session-start greps validated against source files.
+
+**Commit:** 58d48fd — CLAUDE.md consolidated: 161,957 → 24,308 chars
+
+### Task 3 — fp_ownership Audit
+
+**Trigger:** User ran `luck[['name','team','fp_ownership', ...]]` and received `KeyError: "['fp_ownership'] not in index"`.
+
+**Root cause:** User queried `luck_scores.csv`, which has `owned_pct` (ESPN ownership). The `fp_ownership` column is correctly written to `player_ownership_2026.csv` by `fetch_fantasypros_ownership.py`. Both column names are correct in their respective files.
+
+**Resolution:** No Python files required changes. No bug exists.
+**Rule going forward:** `owned_pct` for luck_scores.csv queries. `fp_ownership` for player_ownership_2026.csv queries.
+
+### Task 4 — Ownership Delta Status
+
+**data/ownership_history.json state:**
+- Weeks present: [9, 10] — Week 10 snapshot confirmed (May 6, 2026), 848 players
+- `delta_own_1w`: Active for all 169 tracker rows (Week 9 → Week 10 deltas live)
+- `delta_own_4w`: All NaN — requires 4 snapshots minimum, activates ~Week 13 (early June 2026)
+- Source: `owned_pct` from luck_scores.csv (hitters) + pitcher_luck_scores.csv (pitchers)
+
+### Session 42 — Invariants and Validation
+- validate_formulas.py: **37/37 PASS**
+- score_value.py --check-invariants: Sanchez C#29, Yordan #3, Raleigh C#1, Baldwin C#4, Contreras C#7 — **ALL PASS**
+- No production scoring code modified this session.
+
+### Files modified (Session 42)
+- `CLAUDE.md` — consolidated (161,957 → 24,308 chars). Sessions 1-34 changelogs removed (preserved here).
+- `thread_handoff.md` — this file (header updated, CURRENT MODEL STATE section added, Section 11 fully updated to Sessions 38-41 state, Session 42 full changelog)
 
 ### GitHub (Session 42)
+- CLAUDE.md reduction commit: 58d48fd
+- Thread handoff final commit: [this push]
 
-Session 42 commit: [pending push — end of session]
-
-### PENDING MANUAL ACTIONS (carry forward)
+### PENDING MANUAL ACTIONS
 
 - **Publish Week 4 article** (outputs/week4_article_draft.md) to Substack
 - **Post Reddit beta post** (outputs/reddit_beta_post.md) to r/fantasybaseball
-- **White paper Section 10**: Version F pitcher accuracy (87.7% pooled, 82.0% OOS). Remove pitcher SB row.
-- **Career lessons database** (Sessions 22-42) — add manually in Claude.ai
-- **Download updated thread_handoff.md to Claude.ai** after git push
+- **White paper Section 10**: Update pitcher accuracy to Version F (87.7% pooled / 82.0% OOS). Remove pitcher Slight Buy row.
+- **Career lessons database** (Sessions 22-42) — add new lessons manually in Claude.ai
 
 ---
 
