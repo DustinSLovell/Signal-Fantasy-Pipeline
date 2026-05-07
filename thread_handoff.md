@@ -5047,3 +5047,44 @@ Session 41 commit: [pending push — end of session]
 *End of thread_handoff.md — Sessions 1-41 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
+
+---
+
+## Session 42 — CLAUDE.md Consolidation + Housekeeping (May 7, 2026)
+
+### Summary
+
+CLAUDE.md reduced from 161,957 chars to 24,308 chars (498 lines). Sessions 1-34 changelogs already
+exist in this file (thread_handoff.md) and were not duplicated. The trimmed CLAUDE.md retains all
+operationally critical content: session start checklist, thresholds, invariants, key files, parking lot
+(active items only), architectural decisions, and Sessions 35-42 changelog.
+
+**fp_ownership audit**: `fp_ownership` is the correct column name in `player_ownership_2026.csv`
+(written by fetch_fantasypros_ownership.py). The column is `owned_pct` in luck_scores.csv.
+The user's KeyError came from querying `fp_ownership` from `luck_scores.csv` — the wrong source file.
+No Python files required changes.
+
+**thread_handoff.md**: 297KB — under 500KB threshold. No archiving needed.
+
+### Files modified
+
+- `CLAUDE.md` — consolidated (161,957 → 24,308 chars). Sessions 1-34 changelogs removed (already here).
+- `thread_handoff.md` — Session 42 block appended.
+
+### GitHub (Session 42)
+
+Session 42 commit: [pending push — end of session]
+
+### PENDING MANUAL ACTIONS (carry forward)
+
+- **Publish Week 4 article** (outputs/week4_article_draft.md) to Substack
+- **Post Reddit beta post** (outputs/reddit_beta_post.md) to r/fantasybaseball
+- **White paper Section 10**: Version F pitcher accuracy (87.7% pooled, 82.0% OOS). Remove pitcher SB row.
+- **Career lessons database** (Sessions 22-42) — add manually in Claude.ai
+- **Download updated thread_handoff.md to Claude.ai** after git push
+
+---
+
+*End of thread_handoff.md — Sessions 1-42 complete.*
+*Overwrite completely at end of every session. Single source of truth.*
+*Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
