@@ -1745,7 +1745,7 @@ def main() -> None:
                 else:
                     tier_str = "top-50 overall"
                 ep_str = f"{elite_surp:+.0f}" if elite_surp is not None else "N/A"
-                print(f"  Elite tier: {fp_str} ({tier_str}) — scarcity premium ×{ep:.2f}  |  Elite-adjusted: {ep_str}")
+                print(f"  Elite tier: {fp_str} ({tier_str}) — scarcity premium ×{ep:.2f}  |  Elite-adjusted: {ep_str}  (applied to base surplus, not signal-adjusted)")
 
         print()
         print("  YOU GIVE:")

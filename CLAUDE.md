@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 7, 2026 (Sessions 1-40, full)
+# Last updated: May 7, 2026 (Sessions 1-41, full)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -2488,6 +2488,58 @@ Files modified this session:
 PENDING MANUAL ACTIONS:
   - Publish Week 4 article (outputs/week4_trade_hook.md + trade_scenarios_week4.txt)
   - Career lessons database (Sessions 22-40) — add new lessons manually in Claude.ai
+  - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS)
+  - Download updated thread_handoff.md to Claude.ai after push
+
+--- May 7, 2026 (Session 41) ---
+Display clarification fix + Week 4 article draft + Beta launch prep.
+
+Gap 1 display fix (trade_analyzer.py):
+  - Issue: per-player output showed "Signal-adjusted: +226" above "Elite-adjusted: +234"
+    without explaining that elite_adj = base_surplus × ep (not signal_adj × ep)
+  - Math was already correct; this was a display clarity problem only
+  - Fix: added "(applied to base surplus, not signal-adjusted)" to elite tier display line
+    Line 1748 now reads: "Elite-adjusted: +234  (applied to base surplus, not signal-adjusted)"
+  - Validated: Seager trade delta unchanged at -14.5; Ramírez display shows +234 with note ✓
+  - outputs/trade_scenarios_week4.txt regenerated with updated display
+
+Week 4 article (outputs/week4_article_draft.md — NEW):
+  Structure: trade tool intro → new signals → trade tool 3 scenarios → beta CTA → tracker update
+  New Buy Low signals (not in Articles 1-3):
+    Ke'Bryan Hayes (CIN): luck=+0.570, BABIP=.129, wOBA=.209, xwOBA=.308, 0.5% owned — LEAD
+    Alec Bohm (PHI): luck=+0.460, BABIP=.183, wOBA=.228, xwOBA=.267, 15.7% owned
+    Evan Carter (TEX): luck=+0.418, wOBA=.296, xwOBA=.352, 4.0% owned
+  New Sell High signals:
+    Riley Greene (DET): luck=-0.350, BABIP=.424, wOBA=.386, xwOBA=.399, 86.4% owned
+    Clay Holmes (NYM): luck=-0.506, ERA=1.69, FIP=3.55, xERA=3.65, LOB%=.894, 58.5% owned (pitcher)
+  Worry: Freddie Freeman (LAD) — wOBA=.345, xwOBA=.387, gap=.042, luck=+0.054 neutral, 95.3% owned
+  Get Hyped: Carmen Mlodzinski (PIT) — ERA=4.50, FIP=2.39, 4.7% owned (skill, not luck)
+  Trade tool section: 3 scenarios from trade_scenarios_week4.txt
+    Scenario 3 expressed qualitatively — raw delta NOT published per guardrail
+  Beta CTA: reply/DM to get access
+
+Beta launch prep:
+  - outputs/reddit_beta_post.md (NEW): Reddit post draft for beta tester recruitment
+    Shows Scenario 2 output (nuanced SLIGHTLY UNFAVORABLE — per guardrail)
+    Lists 5 beta tester profile types with rationale
+    CTA: DM or reply; Week 4 article link
+  - outputs/beta_readme.txt: confirmed readable for non-technical user
+    Covers all commands, verdicts, signals, player names, reporting issues
+
+Files modified this session:
+  - trade_analyzer.py (elite_adj display clarification note, line 1748)
+  - outputs/trade_scenarios_week4.txt (regenerated with display fix)
+  - outputs/week4_article_draft.md (NEW)
+  - outputs/reddit_beta_post.md (NEW)
+  - CLAUDE.md (this changelog)
+  - thread_handoff.md (Session 41 changelog)
+
+37/37 PASS. All invariants PASS (Sanchez C#29, Yordan #3, Raleigh C#1, Baldwin C#4, Contreras C#7).
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 4 article (outputs/week4_article_draft.md) to Substack
+  - Post Reddit beta recruitment post (outputs/reddit_beta_post.md)
+  - Career lessons database (Sessions 22-41) — add new lessons manually in Claude.ai
   - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS)
   - Download updated thread_handoff.md to Claude.ai after push
 

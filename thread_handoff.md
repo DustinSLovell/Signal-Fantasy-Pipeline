@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 7, 2026 (Sessions 1–40)
+# Last updated: May 7, 2026 (Sessions 1–41)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -4952,6 +4952,98 @@ Session 40 commit: [pending push — end of session]
 
 ---
 
-*End of thread_handoff.md — Sessions 1-40 complete.*
+## SESSION 41 — May 7, 2026
+
+### Session 41 — Summary
+
+Primary focus: Gap 1 display fix, Week 4 article draft, beta launch prep.
+
+### Gap 1 Display Fix (trade_analyzer.py)
+
+Issue: Per-player output showed:
+```
+Surplus: +180  |  Signal-adjusted: +226 (+46)
+Elite tier: FP #6 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +234
+```
+Users assume +234 = +226 × 1.30. It's actually +180 × 1.30 = +234 (base surplus × elite premium).
+The math was already correct. This was a display clarity problem only.
+
+Fix: Added "(applied to base surplus, not signal-adjusted)" to line 1748.
+New display: `Elite-adjusted: +234  (applied to base surplus, not signal-adjusted)`
+Validated: Seager trade delta unchanged at -14.5. All Ramírez/Ryan display lines show clarification.
+outputs/trade_scenarios_week4.txt regenerated with updated display.
+
+### Week 4 Article Draft (outputs/week4_article_draft.md — NEW)
+
+Structure:
+1. Trade tool beta launch intro
+2. New buy low signals (not in Articles 1-3)
+3. New sell high signals (not in Articles 1-3)
+4. Pitcher signal of the week
+5. Worry Index + Get Hyped
+6. Trade tool: 3 scenarios (qualitative framing — raw Scenario 3 delta NOT published)
+7. Beta CTA
+8. Tracker update
+
+New signals called in Week 4 article:
+
+**Buy Lows:**
+- Ke'Bryan Hayes (CIN): luck=+0.570, BABIP=.129, wOBA=.209, xwOBA=.308, 0.5% owned — LEAD SIGNAL
+- Alec Bohm (PHI): luck=+0.460, BABIP=.183, wOBA=.228, xwOBA=.267, 15.7% owned
+- Evan Carter (TEX): luck=+0.418, wOBA=.296, xwOBA=.352, 4.0% owned
+
+**Sell Highs:**
+- Riley Greene (DET): luck=-0.350, BABIP=.424, wOBA=.386, xwOBA=.399, 86.4% owned
+- Clay Holmes (NYM): luck=-0.506, ERA=1.69, FIP=3.55, xERA=3.65, LOB%=.894, 58.5% owned
+
+**Worry:** Freddie Freeman (LAD) — wOBA=.345, xwOBA=.387, gap=.042, luck=+0.054 neutral, 95.3% owned
+**Get Hyped:** Carmen Mlodzinski (PIT) — ERA=4.50, FIP=2.39, 4.7% owned (skill call, not luck)
+
+### Beta Launch Prep
+
+- `outputs/reddit_beta_post.md` (NEW): Reddit post draft targeting r/fantasybaseball
+  Title: "I built a fantasy baseball trade analyzer that factors in luck signals — looking for beta testers"
+  Body: what it does, Scenario 2 output (nuanced SLIGHTLY UNFAVORABLE per guardrail), what testers need to do
+  Beta tester profiles (top 5): competitive 12-team CBS, deep OBP league, dynasty/keeper, casual mid-stakes, data-literate skeptic
+- `outputs/beta_readme.txt`: confirmed readable for non-technical users
+  All commands, verdicts, signals, player names, reporting issues clearly explained
+
+### Session 41 — Invariants and Validation
+
+- validate_formulas.py: **37/37 PASS** (confirmed twice — start and end of session)
+- Sanchez C#29, Raleigh C#1, Baldwin C#4, Contreras C#7, Yordan #3 — **ALL PASS**
+
+### Files modified this session
+
+- `trade_analyzer.py` — elite_adj display clarification note (line 1748, display only, no math change)
+- `outputs/trade_scenarios_week4.txt` — regenerated with display fix applied
+- `outputs/week4_article_draft.md` — NEW (full Week 4 article, ready to publish)
+- `outputs/reddit_beta_post.md` — NEW (Reddit beta recruitment post)
+- `CLAUDE.md` — Session 41 full changelog
+- `thread_handoff.md` — this file
+
+### GitHub (Session 41)
+
+Session 40 commit: 7c5fc23
+Session 41 commit: [pending push — end of session]
+
+### Parking lot changes (Session 41)
+
+- Gap 1 (elite_adj display) → COMPLETED (clarifying note added)
+- Week 4 article draft → COMPLETED (outputs/week4_article_draft.md)
+- Beta launch prep → COMPLETED (reddit_beta_post.md, beta_readme.txt confirmed)
+- Gap 3 (Ohtani two-way): still open (Tier 2 parking lot)
+
+### PENDING MANUAL ACTIONS (carry forward)
+
+- **Publish Week 4 article** (outputs/week4_article_draft.md) to Substack
+- **Post Reddit beta post** (outputs/reddit_beta_post.md) to r/fantasybaseball
+- **White paper Section 10**: Update pitcher accuracy to Version F (87.7% pooled, 82.0% OOS). Remove pitcher SB row.
+- **Career lessons database** (Sessions 22-41) — add manually in Claude.ai
+- **Download updated thread_handoff.md to Claude.ai** after git push
+
+---
+
+*End of thread_handoff.md — Sessions 1-41 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*

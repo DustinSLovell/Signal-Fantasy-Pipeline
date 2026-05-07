@@ -19,13 +19,13 @@ You Receive: Paul Skenes (SP, PIT)
   Signal: Buy low (+0.512)
     underperforming contact quality — buy before market adjusts
   Surplus: +180  |  Signal-adjusted: +226 (+46)
-  Elite tier: FP #6 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +234
+  Elite tier: FP #6 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +234  (applied to base surplus, not signal-adjusted)
 
   Joe Ryan (SP, MIN)
   Signal: Buy low (+0.428)
     ERA inflated by luck — peripherals suggest improvement ahead
   Surplus: +145  |  Signal-adjusted: +176 (+31)
-  Elite tier: FP #27 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +153
+  Elite tier: FP #27 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +153  (applied to base surplus, not signal-adjusted)
 
   YOU RECEIVE:
   ─────────────────────────────────────────────────────────
@@ -33,16 +33,29 @@ You Receive: Paul Skenes (SP, PIT)
   Signal: Neutral (-0.041)
     stats roughly matching underlying performance
   Surplus: +215  |  Signal-adjusted: +215
-  Elite tier: FP #2 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +279
+  Elite tier: FP #2 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +279  (applied to base surplus, not signal-adjusted)
+
+  ROSTER IMPACT:
+  ─────────────────────────────────────────────────────────
+  You give 2 players, receive 1.
+  Your trade partner must drop 1 player to make room.
+  Their opportunity cost: ~1.5 surplus points (not applied to this analysis).
 
 ═════════════════════════════════════════════════════════════════
 
   VERDICT: AVOID — significant projected value disadvantage
   Give total: +386.1  |  Get total: +279.1  |  Delta: -107.0
+    (includes elite scarcity premium where applicable)
 
   SIGNAL CONTEXT:
   ⚠  Giving José Ramírez: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
   ⚠  Giving Joe Ryan: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
+
+  ⚠  You are giving up a top-25 overall player (José Ramírez, FP #6).
+     Elite players carry a scarcity premium beyond raw surplus. They are
+     difficult to replace from the waiver wire and provide maximum trade
+     optionality. Consider whether the aggregate production gain justifies
+     losing elite-tier flexibility.
 
 ═════════════════════════════════════════════════════════════════
 
@@ -57,7 +70,7 @@ The elite scarcity premium also fires on Ramírez (FP #6, ×1.30) — meaning
 his true departure cost is even higher than the raw surplus implies.
 
 
-═════════════════════════════════════════════════════════════════
+=================================================================
 
 
 SCENARIO 2: The 2-for-1 Temptation (Mixed Signals)
@@ -89,6 +102,7 @@ You Receive: Matt Chapman (3B, SF) + Dillon Dingler (C, DET)
   Surplus: +44  |  Signal-adjusted: +48 (+5)
 
   ROSTER IMPACT:
+  ─────────────────────────────────────────────────────────
   You give 1 player, receive 2.
   You must drop 1 player to make roster room.
   Estimated opportunity cost: -1.5 surplus points
@@ -116,7 +130,7 @@ hidden cost: receiving two players means dropping one from your roster. That
 flip it: ask for Dingler and a pitcher, not Chapman.
 
 
-═════════════════════════════════════════════════════════════════
+=================================================================
 
 
 SCENARIO 3: The Textbook Signal Trade
@@ -134,7 +148,7 @@ You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
   Signal: Sell high (-0.172)
     overperforming contact quality — sell before regression hits
   Surplus: +66  |  Signal-adjusted: +60 (-6)
-  Elite tier: FP #41 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +69
+  Elite tier: FP #41 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +69  (applied to base surplus, not signal-adjusted)
 
   YOU RECEIVE:
   ─────────────────────────────────────────────────────────
@@ -142,15 +156,16 @@ You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
   Signal: Buy low (+0.428)
     ERA inflated by luck — peripherals suggest improvement ahead
   Surplus: +145  |  Signal-adjusted: +176 (+31)
-  Elite tier: FP #27 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +153
+  Elite tier: FP #27 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +153  (applied to base surplus, not signal-adjusted)
 
   José Ramírez (3B, CLE)
   Signal: Buy low (+0.512)
     underperforming contact quality — buy before market adjusts
   Surplus: +180  |  Signal-adjusted: +226 (+46)
-  Elite tier: FP #6 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +234
+  Elite tier: FP #6 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +234  (applied to base surplus, not signal-adjusted)
 
   ROSTER IMPACT:
+  ─────────────────────────────────────────────────────────
   You give 1 player, receive 2.
   You must drop 1 player to make roster room.
   Estimated opportunity cost: -1.5 surplus points
@@ -161,6 +176,7 @@ You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
 
   VERDICT: STRONG TRADE — clear projected value advantage incoming
   Give total: +69.5  |  Get total: +384.6  |  Delta: +315.1
+    (includes elite scarcity premium where applicable)
 
   SIGNAL CONTEXT:
   ✓  Giving Brice Turang: Sell High — good time to sell at peak value.
@@ -172,11 +188,11 @@ You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
 ARTICLE HOOK: Three green lights — the rarest and clearest signal trade of
 the week. Turang is 97.6% owned and his luck score says he's overperforming
 his contact quality. Ryan and Ramírez are both at-market bargains with their
-peripherals pointing toward improvement. Ramírez also carries an elite scarcity
+peripherals pointing toward improvement. Ramírez carries an elite scarcity
 premium (FP #6, ×1.30) — you're not just buying a Buy Low, you're acquiring
 an elite player whose market price hasn't caught up to the underlying data.
 Yes, you drop one waiver-wire player (-1.5 opportunity cost) to make room.
-That's the only cost. The delta is +315.1 surplus points. Run it.
+That's the only cost. Three green lights. Run it.
 
 =================================================================
 END OF WEEK 4 TRADE SCENARIOS
