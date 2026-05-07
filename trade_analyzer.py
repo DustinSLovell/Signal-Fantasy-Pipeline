@@ -201,6 +201,38 @@ def _compute_roster_n(league_json: dict) -> dict:
     return n
 
 
+def _repl_level_value(team_count: int) -> float:
+    """Opportunity cost of dropping a waiver-wire player to clear a roster slot.
+    Shallower leagues → better wire options → higher opp cost per drop.
+    """
+    if team_count <= 10: return 4.0
+    if team_count <= 12: return 2.5
+    if team_count <= 14: return 1.5
+    return 0.5
+
+
+def _elite_premium(fp_rank) -> float:
+    """Non-linear scarcity premium for elite players based on FantasyPros ROS rank.
+
+    Top-10: genuine scarcity, irreplaceable from waiver wire, maximum optionality → 30%
+    Top-25: elite but some replaceability                                          → 15%
+    Top-50: good, tradeable at fair value                                          →  5%
+    Below 50: standard surplus calculation sufficient                              →  0%
+
+    These are principled starting-point priors — NOT tuned to hit a specific verdict.
+    """
+    try:
+        r = float(fp_rank)
+        if r != r:  # NaN
+            return 1.00
+    except (TypeError, ValueError):
+        return 1.00
+    if r <= 10:  return 1.30
+    if r <= 25:  return 1.15
+    if r <= 50:  return 1.05
+    return 1.00
+
+
 def _compute_cbs_fpts_league(row: pd.Series, league_json: dict) -> Optional[float]:
     """Compute CBS-model projected FPTS respecting league stat_weights.
 
@@ -1462,6 +1494,8 @@ def main() -> None:
                         help="Players you are receiving (non-interactive mode)")
     parser.add_argument("--league",  type=int, default=1, metavar="ID",
                         help="League config ID (default 1)")
+    parser.add_argument("--open-slot", action="store_true",
+                        help="Receiving side has an open roster slot — no opportunity cost applied")
     args = parser.parse_args()
 
     # Non-interactive --give / --receive mode
@@ -1503,10 +1537,30 @@ def main() -> None:
         get_surplus_vals  = [get_surplus(f, r.get("_fpos"), repl_levels)
                              for f, r in zip(get_fpts_vals, get_adj)]
 
-        give_non_none = [v for v in give_surplus_vals if v is not None]
-        get_non_none  = [v for v in get_surplus_vals  if v is not None]
+        # --- Elite premium (applied AFTER signal adjustment, to surplus values) ---
+        give_elite_surplus = [
+            (s * _elite_premium(r.get("fp_rank"))) if s is not None else None
+            for s, r in zip(give_surplus_vals, give_rows)
+        ]
+        get_elite_surplus = [
+            (s * _elite_premium(r.get("fp_rank"))) if s is not None else None
+            for s, r in zip(get_surplus_vals, get_rows)
+        ]
+        give_non_none = [v for v in give_elite_surplus if v is not None]
+        get_non_none  = [v for v in get_elite_surplus  if v is not None]
         give_total    = sum(give_non_none) if give_non_none else None
         get_total     = sum(get_non_none)  if get_non_none  else None
+
+        # --- Opportunity cost (roster space) ---
+        team_count   = league_json.get("team_count", 12)
+        net_received = len(get_rows) - len(give_rows)
+        opp_cost     = 0.0
+        open_slot_flag = getattr(args, 'open_slot', False)
+        if net_received > 0 and not open_slot_flag:
+            opp_cost = _repl_level_value(team_count) * net_received
+            if get_total is not None:
+                get_total -= opp_cost
+
         surplus_delta = (get_total - give_total) if (give_total is not None and get_total is not None) else None
         verdict       = _trade_verdict_v3(surplus_delta)
 
@@ -1518,7 +1572,8 @@ def main() -> None:
         print(f"  THE SIGNAL FANTASY — TRADE ANALYZER  [{league_name}]")
         print(D)
 
-        def _print_trade_player(orig_row: pd.Series, adj_row: pd.Series, surp: Optional[float]) -> None:
+        def _print_trade_player(orig_row: pd.Series, adj_row: pd.Series,
+                                surp: Optional[float], elite_surp: Optional[float] = None) -> None:
             name  = orig_row.get("name", "?")
             team  = orig_row.get("Team", orig_row.get("team", "?"))
             pos   = orig_row.get("_fpos") or _derive_pos(orig_row) or "?"
@@ -1528,7 +1583,7 @@ def main() -> None:
             desc  = _signal_desc(sig, ptype)
             luck_str = f"{luck:+.3f}"
             surp_str = f"{surp:+.0f}" if surp is not None else "N/A"
-            # Signal-adjusted surplus
+            # Signal-adjusted surplus (display only — same logic as in totals)
             if "buy low" in sig.lower() and surp is not None:
                 adj_s    = surp * (1.0 + luck * 0.5)
                 diff_str = f"{adj_s - surp:+.0f}"
@@ -1549,21 +1604,69 @@ def main() -> None:
             print(f"  Signal: {sig} ({luck_str})")
             print(f"    {desc}")
             print(f"  Surplus: {surp_str}  |  Signal-adjusted: {adj_str}")
+            # Elite tier display
+            fp_rank = orig_row.get("fp_rank")
+            ep = _elite_premium(fp_rank)
+            if ep > 1.00:
+                try:
+                    fp_str = f"FP #{int(float(fp_rank))}"
+                except (TypeError, ValueError):
+                    fp_str = "Elite ranked"
+                if ep >= 1.30:
+                    tier_str = "top-10 overall"
+                elif ep >= 1.15:
+                    tier_str = "top-25 overall"
+                else:
+                    tier_str = "top-50 overall"
+                ep_str = f"{elite_surp:+.0f}" if elite_surp is not None else "N/A"
+                print(f"  Elite tier: {fp_str} ({tier_str}) — scarcity premium ×{ep:.2f}  |  Elite-adjusted: {ep_str}")
 
         print()
         print("  YOU GIVE:")
         print(f"  {'─' * 57}")
-        for orig, adj, surp in zip(give_rows, give_adj, give_surplus_vals):
-            _print_trade_player(orig, adj, surp)
+        for orig, adj, surp, esurf in zip(give_rows, give_adj, give_surplus_vals, give_elite_surplus):
+            _print_trade_player(orig, adj, surp, esurf)
             print()
 
         print("  YOU RECEIVE:")
         print(f"  {'─' * 57}")
-        for orig, adj, surp in zip(get_rows, get_adj, get_surplus_vals):
-            _print_trade_player(orig, adj, surp)
+        for orig, adj, surp, esurf in zip(get_rows, get_adj, get_surplus_vals, get_elite_surplus):
+            _print_trade_player(orig, adj, surp, esurf)
+            print()
+
+        # Roster impact (only when player counts differ)
+        if net_received != 0:
+            print("  ROSTER IMPACT:")
+            print(f"  {'─' * 57}")
+            give_n = len(give_rows)
+            get_n  = len(get_rows)
+            print(f"  You give {give_n} player{'s' if give_n > 1 else ''}, receive {get_n}.")
+            if net_received > 0:
+                if open_slot_flag:
+                    print(f"  Open roster slot detected — no opportunity cost applied.")
+                else:
+                    drops = net_received
+                    print(f"  You must drop {drops} player{'s' if drops > 1 else ''} to make roster room.")
+                    print(f"  Estimated opportunity cost: -{opp_cost:.1f} surplus points")
+                    print(f"  ({team_count}-team league replacement level: {_repl_level_value(team_count):.1f} pts/player)")
+                    get_before_opp = get_total + opp_cost if get_total is not None else None
+                    if get_before_opp is not None:
+                        print(f"  Your adjusted get total: {get_before_opp:+.1f} → {get_total:+.1f} after opportunity cost")
+            else:
+                n_partner_drops = abs(net_received)
+                partner_cost = _repl_level_value(team_count) * n_partner_drops
+                print(f"  Your trade partner must drop {n_partner_drops} player{'s' if n_partner_drops > 1 else ''} to make room.")
+                print(f"  Their opportunity cost: ~{partner_cost:.1f} surplus points (not applied to this analysis).")
             print()
 
         # Totals + verdict
+        # Check if any elite premium was applied (for label clarity)
+        any_elite = any(
+            _elite_premium(r.get("fp_rank")) > 1.00
+            for r in give_rows + get_rows
+        )
+        elite_note = "  (includes elite scarcity premium where applicable)" if any_elite else ""
+
         g_str = f"{give_total:+.1f}" if give_total is not None else "N/A"
         r_str = f"{get_total:+.1f}"  if get_total  is not None else "N/A"
         d_str = f"{surplus_delta:+.1f}" if surplus_delta is not None else "N/A"
@@ -1571,8 +1674,10 @@ def main() -> None:
         print()
         print(f"  VERDICT: {verdict}")
         print(f"  Give total: {g_str}  |  Get total: {r_str}  |  Delta: {d_str}")
+        if elite_note:
+            print(f"  {elite_note}")
 
-        # Signal context warnings
+        # Signal context warnings + elite qualitative warnings
         ctx = _signal_context_warnings(give_rows, get_rows)
         print()
         print("  SIGNAL CONTEXT:")
@@ -1581,6 +1686,28 @@ def main() -> None:
                 print(line)
         else:
             print("  No active luck signals on either side — evaluate on surplus value alone.")
+
+        # Elite player qualitative warnings
+        for row in give_rows:
+            fp_rank = row.get("fp_rank")
+            ep = _elite_premium(fp_rank)
+            if ep >= 1.15:
+                try:
+                    rank_str = f"FP #{int(float(fp_rank))}"
+                except (TypeError, ValueError):
+                    rank_str = "Elite tier"
+                name = row.get("name", "?")
+                print()
+                print(f"  ⚠  You are giving up a top-25 overall player ({name}, {rank_str}).")
+                print(f"     Elite players carry a scarcity premium beyond raw surplus. They are")
+                print(f"     difficult to replace from the waiver wire and provide maximum trade")
+                print(f"     optionality. Consider whether the aggregate production gain justifies")
+                print(f"     losing elite-tier flexibility.")
+
+        if open_slot_flag and net_received > 0:
+            print()
+            print(f"  ℹ  Open roster slot — no opportunity cost applied to this analysis.")
+
         print()
         print(D)
         return

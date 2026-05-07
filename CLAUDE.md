@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 7, 2026 (Sessions 1-39)
+# Last updated: May 7, 2026 (Sessions 1-39, full)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -2357,7 +2357,7 @@ PENDING MANUAL ACTIONS:
   - Download updated thread_handoff.md to Claude.ai after push
 
 --- May 7, 2026 (Session 39) ---
-Trade analyzer output rewrite + league settings integration.
+Trade analyzer output rewrite + league settings integration + opportunity cost + elite premium + Week 4 article prep.
 
 Output format rewrite (trade_analyzer.py — --give/--receive CLI):
   - Replaced flat dict printout with ═══ divider blocks, per-player signal descriptions,
@@ -2381,14 +2381,42 @@ League settings integration (trade_analyzer.py):
     load_replacement_levels(roster_n) for league-specific replacement FPTS
   - league_id=1 = CBS 13-Team; league_id=2 = Fantrax 15-Team OBP
 
-Trade scenarios (Week 4 article prep):
-  Scenario 1 (AVOID, -110.3): Ramírez+Ryan→Skenes. Two Buy Lows for one Neutral.
-    "Don't chase Skenes with two Buy Lows — you're selling at the exact wrong moment."
-  Scenario 2 (SLIGHTLY UNFAVORABLE, -13.0): Seager→Chapman+Dingler. Giving BL, receiving SH+BL.
-    "The 2-for-1 temptation: Dingler is the only green light on the receiving side."
-  Scenario 3 (STRONG TRADE, +258.8): Turang→Ryan+Ramírez. Three green signal lights.
-    "Textbook: sell peak value on Sell High, load up on two Buy Lows. Run it."
-  Files: outputs/trade_scenarios_week4.txt, outputs/week4_trade_hook.md
+Roster Space Opportunity Cost (trade_analyzer.py):
+  - _repl_level_value(team_count): tiered opportunity cost for dropping a waiver player
+    ≤10 teams → 4.0 | ≤12 teams → 2.5 | ≤14 teams → 1.5 | 15+ teams → 0.5
+  - Applied only when net_received > 0 (you receive more players than you give)
+    get_total -= _repl_level_value(team_count) × net_received
+  - When give > receive: informational ROSTER IMPACT note only; partner pays the cost
+  - --open-slot flag: bypasses opportunity cost entirely; prints "Open roster slot detected"
+  - ROSTER IMPACT section printed between YOU RECEIVE and VERDICT blocks
+
+Elite Player Premium (trade_analyzer.py):
+  - _elite_premium(fp_rank): non-linear scarcity multiplier based on FantasyPros ROS rank
+    FP ≤10 → ×1.30 | FP ≤25 → ×1.15 | FP ≤50 → ×1.05 | else → ×1.00
+  - Applied to surplus values that feed give_total/get_total (changes verdicts, not just display)
+  - Signal-adjusted surplus per-player (±luck×0.5) is separate display layer; goes to per-player card only
+  - Per-player block shows: "Elite tier: FP #N (top-X overall) — scarcity premium ×Y.YY  |  Elite-adjusted: +ZZZ"
+  - Qualitative warning in SIGNAL CONTEXT when giving a top-25 player (4-line advisory)
+  - These multipliers are principled priors — NOT tuned to hit specific verdicts
+
+League comparison result (Task 5c — Seager→Chapman+Dingler):
+  - League 1 (CBS 13-Team AVG): Delta -14.5 (SLIGHTLY UNFAVORABLE). Seager surplus +74.
+  - League 2 (Fantrax 15-Team OBP): Delta -65.1 (AVOID). Seager surplus +108 (walk rate boosts OBP).
+  - Delta difference: +50.6 pts. OBP substitution is meaningful for walk-rate players like Seager.
+  - Opp cost also differs: L1 = -1.5 (13-team), L2 = -0.5 (15-team).
+
+Trade scenarios (Week 4 article prep — updated with elite premium + opportunity cost):
+  Scenario 1 (AVOID, -107.0): Ramírez+Ryan→Skenes. Both Ramírez (×1.30, FP#6) and Skenes (×1.30, FP#2) get premium.
+    Elite premium on Ramírez makes giving him even more costly. Delta updated from -110.3.
+  Scenario 2 (SLIGHTLY UNFAVORABLE, -14.5): Seager→Chapman+Dingler. 1.5 opp cost applied.
+  Scenario 3 (STRONG TRADE, +315.1): Turang→Ryan+Ramírez. Ramírez elite premium (×1.30) boosts delta.
+    Delta updated from +258.8 to +315.1. Article hook updated accordingly.
+  Files: outputs/trade_scenarios_week4.txt, outputs/week4_trade_hook.md (both regenerated)
+
+Spot tests (Task 6):
+  - Grisham+Nola→Imanaga: UNFAVORABLE, -27.8. Two BL for one SH. Nola FP#34 (×1.05) on give side.
+  - Fake Player error handling: "Player not found: Fake Player / Check spelling or try last name only." ✓
+  - Marte→Sale+Dingler: STRONG TRADE, +73.0. Sale FP#7 (×1.30 elite) boosts receive total despite SH signal.
 
 37/37 PASS. All invariants PASS (Sanchez C#29, Raleigh C#1, Baldwin C#4, Contreras C#7).
 

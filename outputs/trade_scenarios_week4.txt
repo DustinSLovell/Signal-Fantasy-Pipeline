@@ -19,11 +19,13 @@ You Receive: Paul Skenes (SP, PIT)
   Signal: Buy low (+0.512)
     underperforming contact quality — buy before market adjusts
   Surplus: +180  |  Signal-adjusted: +226 (+46)
+  Elite tier: FP #6 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +234
 
   Joe Ryan (SP, MIN)
   Signal: Buy low (+0.428)
     ERA inflated by luck — peripherals suggest improvement ahead
   Surplus: +145  |  Signal-adjusted: +176 (+31)
+  Elite tier: FP #27 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +153
 
   YOU RECEIVE:
   ─────────────────────────────────────────────────────────
@@ -31,11 +33,12 @@ You Receive: Paul Skenes (SP, PIT)
   Signal: Neutral (-0.041)
     stats roughly matching underlying performance
   Surplus: +215  |  Signal-adjusted: +215
+  Elite tier: FP #2 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +279
 
 ═════════════════════════════════════════════════════════════════
 
   VERDICT: AVOID — significant projected value disadvantage
-  Give total: +325.0  |  Get total: +214.7  |  Delta: -110.3
+  Give total: +386.1  |  Get total: +279.1  |  Delta: -107.0
 
   SIGNAL CONTEXT:
   ⚠  Giving José Ramírez: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
@@ -50,6 +53,8 @@ is not inflated). Ramírez and Ryan are both underperforming their expected
 peripherals; their market value is suppressed at exactly the wrong moment.
 This is the most dangerous type of trade: the names on the receiving end look
 impressive, but the signal math says you're selling twice at the bottom.
+The elite scarcity premium also fires on Ramírez (FP #6, ×1.30) — meaning
+his true departure cost is even higher than the raw surplus implies.
 
 
 ═════════════════════════════════════════════════════════════════
@@ -83,10 +88,17 @@ You Receive: Matt Chapman (3B, SF) + Dillon Dingler (C, DET)
     underperforming contact quality — buy before market adjusts
   Surplus: +44  |  Signal-adjusted: +48 (+5)
 
+  ROSTER IMPACT:
+  You give 1 player, receive 2.
+  You must drop 1 player to make roster room.
+  Estimated opportunity cost: -1.5 surplus points
+  (13-team league replacement level: 1.5 pts/player)
+  Your adjusted get total: +61.2 → +59.7 after opportunity cost
+
 ═════════════════════════════════════════════════════════════════
 
   VERDICT: SLIGHTLY UNFAVORABLE — modest projected value gap
-  Give total: +74.2  |  Get total: +61.2  |  Delta: -13.0
+  Give total: +74.2  |  Get total: +59.7  |  Delta: -14.5
 
   SIGNAL CONTEXT:
   ⚠  Giving Corey Seager: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
@@ -98,8 +110,10 @@ You Receive: Matt Chapman (3B, SF) + Dillon Dingler (C, DET)
 ARTICLE HOOK: On the surface, 2-for-1 looks like depth. But the signal
 context tells the real story: you're selling a Buy Low at the worst moment
 and absorbing a Sell High on the way back. Dingler is the only positive signal
-on the receiving end — and he alone can't make up the gap. If you're doing
-this trade, flip it: ask for Dingler and a pitcher, not Chapman.
+on the receiving end — and he alone can't make up the gap. There's also a
+hidden cost: receiving two players means dropping one from your roster. That
+-1.5 surplus opportunity cost is small but real. If you're doing this trade,
+flip it: ask for Dingler and a pitcher, not Chapman.
 
 
 ═════════════════════════════════════════════════════════════════
@@ -120,6 +134,7 @@ You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
   Signal: Sell high (-0.172)
     overperforming contact quality — sell before regression hits
   Surplus: +66  |  Signal-adjusted: +60 (-6)
+  Elite tier: FP #41 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +69
 
   YOU RECEIVE:
   ─────────────────────────────────────────────────────────
@@ -127,16 +142,25 @@ You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
   Signal: Buy low (+0.428)
     ERA inflated by luck — peripherals suggest improvement ahead
   Surplus: +145  |  Signal-adjusted: +176 (+31)
+  Elite tier: FP #27 (top-50 overall) — scarcity premium ×1.05  |  Elite-adjusted: +153
 
   José Ramírez (3B, CLE)
   Signal: Buy low (+0.512)
     underperforming contact quality — buy before market adjusts
   Surplus: +180  |  Signal-adjusted: +226 (+46)
+  Elite tier: FP #6 (top-10 overall) — scarcity premium ×1.30  |  Elite-adjusted: +234
+
+  ROSTER IMPACT:
+  You give 1 player, receive 2.
+  You must drop 1 player to make roster room.
+  Estimated opportunity cost: -1.5 surplus points
+  (13-team league replacement level: 1.5 pts/player)
+  Your adjusted get total: +386.1 → +384.6 after opportunity cost
 
 ═════════════════════════════════════════════════════════════════
 
   VERDICT: STRONG TRADE — clear projected value advantage incoming
-  Give total: +66.2  |  Get total: +325.0  |  Delta: +258.8
+  Give total: +69.5  |  Get total: +384.6  |  Delta: +315.1
 
   SIGNAL CONTEXT:
   ✓  Giving Brice Turang: Sell High — good time to sell at peak value.
@@ -148,10 +172,11 @@ You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
 ARTICLE HOOK: Three green lights — the rarest and clearest signal trade of
 the week. Turang is 97.6% owned and his luck score says he's overperforming
 his contact quality. Ryan and Ramírez are both at-market bargains with their
-peripherals pointing toward improvement. This is exactly the trade the Signal
-model is designed to surface: give peak value on a Sell High, and load up on
-two players whose market price hasn't caught up to the underlying data.
-The delta is +258.8 FPTS surplus. Run it.
+peripherals pointing toward improvement. Ramírez also carries an elite scarcity
+premium (FP #6, ×1.30) — you're not just buying a Buy Low, you're acquiring
+an elite player whose market price hasn't caught up to the underlying data.
+Yes, you drop one waiver-wire player (-1.5 opportunity cost) to make room.
+That's the only cost. The delta is +315.1 surplus points. Run it.
 
 =================================================================
 END OF WEEK 4 TRADE SCENARIOS

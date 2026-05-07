@@ -4764,45 +4764,67 @@ Missing player handling:
   Root cause: League 1 has 26 catcher slots (C×2/team×13), which lowers catcher replacement level.
   Dingler's surplus increased; Chapman's SS gap vs smaller 13-team 3B pool shifted net delta.
 
-**Task 4 — Multi-player + edge case testing:**
-- Multi-player trades: Ramírez+Ryan→Skenes (AVOID -110.3) ✓
-- Missing player: "Brent Turang" → "Player not found" error, "Turang" alone → resolves to Brice Turang ✓
-- Mixed H+P: Turang+Ryan→Skenes, Seager→Chapman+Dingler ✓
+**Task 3 — Roster Space Opportunity Cost:**
+- _repl_level_value(team_count): ≤10→4.0, ≤12→2.5, ≤14→1.5, 15+→0.5
+- Applied only when you receive more players than you give (net_received > 0)
+  get_total -= _repl_level_value(team_count) × net_received
+- When you give more: informational ROSTER IMPACT note only (partner pays the cost)
+- --open-slot flag: bypasses opportunity cost entirely
+- ROSTER IMPACT block prints between YOU RECEIVE and VERDICT
+
+**Task 4 — Elite Player Premium:**
+- _elite_premium(fp_rank): FP ≤10 → ×1.30 | ≤25 → ×1.15 | ≤50 → ×1.05 | else → ×1.00
+- Applied to surplus values that drive give_total/get_total — actually changes verdicts
+- Per-player block shows "Elite tier: FP #N ... scarcity premium ×Y.YY  |  Elite-adjusted: +ZZZ"
+- Qualitative warning in SIGNAL CONTEXT when giving a top-25 player (4-line advisory)
+- Multipliers are principled priors — NOT tuned to hit specific verdicts
+
+**Task 5c — League comparison (Seager→Chapman+Dingler):**
+- League 1 (CBS 13-Team AVG): Delta -14.5 (SLIGHTLY UNFAVORABLE). Seager surplus +74.
+- League 2 (Fantrax 15-Team OBP): Delta -65.1 (AVOID). Seager surplus +108 (walk rate boosts OBP).
+- Delta difference: +50.6 pts between leagues. OBP substitution is meaningful.
+- Opp cost also differs: L1 = -1.5 (13-team), L2 = -0.5 (15-team tier).
+
+**Task 6 — Multi-player + edge case testing:**
+- Grisham+Nola→Imanaga (league 1): UNFAVORABLE, -27.8. Two BL for one SH. 2-for-1 partner cost noted. ✓
+- Unknown player: "Fake Player" → "Player not found: Fake Player / Check spelling or try last name only." ✓
+- Mixed H+P: Marte→Sale+Dingler: STRONG TRADE, +73.0. Sale FP#7 (×1.30) boosts receive total. ✓
 - All 3 smell tests confirmed: Skenes→Rice AVOID ✓ | Skubal→Rice AVOID ✓ | Acuña→Rice AVOID ✓
 
-**Task 5 — Week 4 trade scenarios + article prep:**
+**Task 7 — Week 4 trade scenarios + article prep (updated with new features):**
 
-Three scenarios run (outputs/trade_scenarios_week4.txt):
+Three scenarios run (outputs/trade_scenarios_week4.txt — regenerated with elite premium + opp cost):
 
-Scenario 1 (AVOID, -110.3): Give Ramírez+Ryan, receive Skenes
-  - "Don't chase Skenes with two Buy Lows — you're selling at the exact wrong moment."
-  - Ramírez luck=+0.512, Ryan luck=+0.428; both Buy Low signals
-  - Skenes: Neutral (-0.041) — great pitcher, not a lucky-ERA story
+Scenario 1 (AVOID, -107.0): Give Ramírez+Ryan, receive Skenes
+  - Both Ramírez (FP#6, ×1.30) and Skenes (FP#2, ×1.30) get elite premium; still AVOID
+  - "Don't chase Skenes with two Buy Lows — and you're giving up an elite player."
+  - Delta changed from -110.3 (pre-premium) to -107.0 (Skenes premium partially offsets)
 
-Scenario 2 (SLIGHTLY UNFAVORABLE, -13.0): Give Seager, receive Chapman+Dingler
-  - "The 2-for-1 temptation: Dingler is the only green light on the receiving side."
-  - Seager: BL (+0.327) — giving away mispriced value
-  - Chapman: SH (-0.286) — regression risk; Dingler: BL (+0.209) — partial credit
+Scenario 2 (SLIGHTLY UNFAVORABLE, -14.5): Give Seager, receive Chapman+Dingler
+  - 1-for-2: -1.5 opp cost applied (13-team). Delta -13.0 → -14.5.
+  - "The 2-for-1 temptation: Dingler is the only green light on the receiving side. Hidden cost: drop a player."
 
-Scenario 3 (STRONG TRADE, +258.8): Give Turang, receive Ryan+Ramírez
-  - "Textbook: three green lights. Give Sell High at peak, load up on two Buy Lows."
-  - Turang: SH (-0.172), 97.6% owned; Ryan: BL (+0.428); Ramírez: BL (+0.512)
-  - Article hook: all-green signal context + biggest delta of any scenario
+Scenario 3 (STRONG TRADE, +315.1): Give Turang, receive Ryan+Ramírez
+  - Ramírez FP#6 (×1.30 elite) boosts receive total significantly
+  - Delta changed from +258.8 (pre-premium) to +315.1 (elite scarcity amplified)
+  - "Three green lights + elite acquisition. The clearest trade of the week."
 
-Week 4 article hook (outputs/week4_trade_hook.md):
-  - Lead: Scenario 3 (Turang→Ryan+Ramírez) — clearest signal trade of the week
-  - Warning: Scenario 1 (Ramírez+Ryan→Skenes) — most common trap
-  - Nuance: Scenario 2 (Seager→Chapman+Dingler) — 2-for-1 dissected
+Week 4 article hook (outputs/week4_trade_hook.md — regenerated):
+  - Opening hook updated: "+315.1 FPTS surplus delta — amplified by Ramírez's elite scarcity premium"
+  - All pull quotes updated with new deltas
 
 **Session 39 — Invariants and Validation:**
 - validate_formulas.py: **37/37 PASS**
-- Sanchez C#29, Raleigh C#1, Baldwin C#4, Contreras C#7, Yordan top-5 — **ALL PASS**
+- Sanchez C#29, Raleigh C#1, Baldwin C#4, Contreras C#7, Yordan top-3 — **ALL PASS**
 
 ### Files modified this session:
 - `trade_analyzer.py` — output format rewrite + league helpers + OBP FPTS + missing player errors
-- `outputs/trade_scenarios_week4.txt` (NEW — 3 trade scenarios with article hooks)
-- `outputs/week4_trade_hook.md` (NEW — 2-paragraph article intro + pull quotes)
-- `CLAUDE.md` — Session 39 changelog appended
+  + _repl_level_value() + _elite_premium() + --open-slot flag + ROSTER IMPACT block
+  + elite premium applied to give_total/get_total (drives verdicts)
+  + qualitative elite warning in SIGNAL CONTEXT when giving top-25 player
+- `outputs/trade_scenarios_week4.txt` — regenerated with elite premium + opp cost deltas
+- `outputs/week4_trade_hook.md` — regenerated with updated +315.1 delta
+- `CLAUDE.md` — Session 39 full changelog (Tasks 1-7 complete)
 - `thread_handoff.md` — this file
 
 ### GitHub (Session 39)
@@ -4812,8 +4834,10 @@ Session 39 commit: [pending push]
 ### Parking lot changes (Session 39)
 - Trade output format rewrite → COMPLETED
 - League settings integration (OBP + roster_n) → COMPLETED
-- Week 4 trade scenarios → COMPLETED (3 scenarios in outputs/)
-- Week 3 article: PUBLISHED May 6, 2026 — remove from pending
+- Opportunity cost (roster space) → COMPLETED
+- Elite player premium → COMPLETED
+- Week 4 trade scenarios → COMPLETED (3 scenarios in outputs/, updated deltas)
+- Week 3 article: PUBLISHED May 6, 2026 — removed from pending
 
 ### PENDING MANUAL ACTIONS (carry forward)
 - **White paper Section 10**: Update pitcher accuracy to Version F (87.7% pooled, 82.0% OOS). Remove pitcher SB row.
