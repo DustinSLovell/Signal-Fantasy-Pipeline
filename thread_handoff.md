@@ -4682,7 +4682,7 @@ All 3 smell tests PASS: Skenes→Rice AVOID ✓ | Skubal→Rice AVOID ✓ | Acu�
 
 ### GitHub (Session 38)
 Last Session 37 evening commit: 445c5af — luck_scores_public.csv article spreadsheet
-Session 38 commit: [TBD — see commit hash below after push]
+Session 38 commit: 460a782 — live FP rank pull + dashboard rank column + trade analyzer foundation
 
 ### Parking lot changes (Session 38)
 - FP rank pipeline wiring → COMPLETED. fp_rank now live in both hitter + pitcher luck files.
