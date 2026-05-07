@@ -1203,14 +1203,22 @@ def main():
                 s = _ud.normalize("NFKD", str(s)).encode("ascii", "ignore").decode("ascii").lower()
                 return " ".join(s.split())
 
-            own = pd.read_csv(own_path, usecols=["player_name", "owned_pct"])
+            own_cols = ["player_name", "owned_pct"]
+            if "fp_ros_rank" in pd.read_csv(own_path, nrows=0).columns:
+                own_cols.append("fp_ros_rank")
+            own = pd.read_csv(own_path, usecols=own_cols)
             own["_nkey"] = own["player_name"].apply(_norm_name)
-            own_dedup = own.drop_duplicates("_nkey")[["_nkey", "owned_pct"]]
+            own_dedup = own.drop_duplicates("_nkey")
+            keep = [c for c in ["_nkey", "owned_pct", "fp_ros_rank"] if c in own_dedup.columns]
+            own_dedup = own_dedup[keep]
             df["_nkey"] = df["name"].apply(_norm_name)
             df = df.merge(own_dedup, on="_nkey", how="left")
             df = df.drop(columns=["_nkey"])
+            if "fp_ros_rank" in df.columns:
+                df = df.rename(columns={"fp_ros_rank": "fp_rank"})
             n_matched = df["owned_pct"].notna().sum()
-            print(f"  Pitcher ownership matched: {n_matched}/{len(df)} pitchers")
+            fp_matched = df["fp_rank"].notna().sum() if "fp_rank" in df.columns else 0
+            print(f"  Pitcher ownership matched: {n_matched}/{len(df)} pitchers | fp_rank: {fp_matched}")
         except Exception as e:
             print(f"  Pitcher ownership merge skipped: {e}")
             if "owned_pct" not in df.columns:

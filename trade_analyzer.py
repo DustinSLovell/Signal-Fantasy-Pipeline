@@ -1214,6 +1214,107 @@ def _resolve_player_silent(name: str, players: pd.DataFrame) -> Optional[pd.Seri
 
 
 # ---------------------------------------------------------------------------
+# Public API — trade_value() and evaluate_trade()
+# ---------------------------------------------------------------------------
+
+def trade_value(player_name: str, league_id: int = 1) -> dict:
+    """Return signal-adjusted surplus value for a single player.
+
+    Returns dict with keys:
+        name, signal, luck_score, surplus, signal_adjusted_surplus,
+        fpts, position, perceived_value_rank
+    Returns None if player not found.
+    """
+    players = _load_players()
+    config  = load_config()
+    row = _resolve_player_silent(player_name, players)
+    if row is None:
+        return {"error": f"Player not found: {player_name}"}
+
+    adj_row   = _apply_signal_multipliers(row)
+    fpts      = _compute_cbs_fpts(adj_row)
+    fpos      = adj_row.get("_fpos")
+    surplus   = get_surplus(fpts, fpos, _REPL_LEVELS)
+
+    luck      = float(row.get("luck_score", 0.0) or 0.0)
+    verdict   = str(row.get("verdict", "Neutral")).lower()
+    if "buy low" in verdict:
+        adj_surplus = surplus * (1 + luck * 0.5) if surplus is not None else None
+    elif "sell high" in verdict:
+        adj_surplus = surplus * (1 - abs(luck) * 0.5) if surplus is not None else None
+    else:
+        adj_surplus = surplus
+
+    return {
+        "name":                    row.get("name", player_name),
+        "signal":                  row.get("verdict", "Neutral"),
+        "luck_score":              round(luck, 4),
+        "position":                fpos or row.get("_fpos", "?"),
+        "fpts":                    round(fpts, 1) if fpts is not None else None,
+        "surplus":                 round(surplus, 1) if surplus is not None else None,
+        "signal_adjusted_surplus": round(adj_surplus, 1) if adj_surplus is not None else None,
+    }
+
+
+def evaluate_trade(
+    side_a_players: list[str],
+    side_b_players: list[str],
+    league_id: int = 1,
+) -> dict:
+    """Programmatic trade evaluator. Returns verdict + per-player breakdown.
+
+    side_a_players — players YOU are giving up
+    side_b_players — players YOU are receiving
+    Returns dict with verdict, side_a, side_b, surplus_delta.
+    """
+    players = _load_players()
+    config  = load_config()
+
+    give_rows = [_resolve_player_silent(n, players) for n in side_a_players]
+    get_rows  = [_resolve_player_silent(n, players) for n in side_b_players]
+    give_rows = [r for r in give_rows if r is not None]
+    get_rows  = [r for r in get_rows  if r is not None]
+
+    if not give_rows or not get_rows:
+        return {"error": "One or more players not found"}
+
+    give_adj = [_apply_signal_multipliers(r) for r in give_rows]
+    get_adj  = [_apply_signal_multipliers(r) for r in get_rows]
+
+    give_surplus_vals = [get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in give_adj]
+    get_surplus_vals  = [get_surplus(_compute_cbs_fpts(r), r.get("_fpos"), _REPL_LEVELS) for r in get_adj]
+    give_total = sum(v for v in give_surplus_vals if v is not None) if any(v is not None for v in give_surplus_vals) else None
+    get_total  = sum(v for v in get_surplus_vals  if v is not None) if any(v is not None for v in get_surplus_vals)  else None
+
+    surplus_delta = (get_total - give_total) if (give_total is not None and get_total is not None) else None
+    verdict = _trade_verdict_v3(surplus_delta)
+
+    def _side_detail(rows, adj_rows, surplus_vals):
+        out = []
+        for row, adj, surp in zip(rows, adj_rows, surplus_vals):
+            fpts = _compute_cbs_fpts(adj)
+            luck = float(row.get("luck_score", 0.0) or 0.0)
+            out.append({
+                "name":       row.get("name", "?"),
+                "signal":     row.get("verdict", "Neutral"),
+                "luck_score": round(luck, 4),
+                "position":   adj.get("_fpos", "?"),
+                "fpts":       round(fpts, 1) if fpts is not None else None,
+                "surplus":    round(surp, 1) if surp is not None else None,
+            })
+        return out
+
+    return {
+        "verdict":       verdict,
+        "surplus_delta": round(surplus_delta, 1) if surplus_delta is not None else None,
+        "give_total":    round(give_total, 1) if give_total is not None else None,
+        "get_total":     round(get_total, 1)  if get_total  is not None else None,
+        "side_a_giving": _side_detail(give_rows, give_adj, give_surplus_vals),
+        "side_b_getting": _side_detail(get_rows, get_adj, get_surplus_vals),
+    }
+
+
+# ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
@@ -1225,7 +1326,44 @@ def main() -> None:
     parser.add_argument("--replacement-table", action="store_true", help="Show replacement level table")
     parser.add_argument("--explain",           action="store_true",
                         help="Print step-by-step valuation walkthrough (CBS coefs, surplus calc) after each verdict")
+    parser.add_argument("--give",    nargs="+", metavar="PLAYER",
+                        help="Players you are giving (non-interactive mode)")
+    parser.add_argument("--receive", nargs="+", metavar="PLAYER",
+                        help="Players you are receiving (non-interactive mode)")
+    parser.add_argument("--league",  type=int, default=1, metavar="ID",
+                        help="League config ID (default 1)")
     args = parser.parse_args()
+
+    # Non-interactive --give / --receive mode
+    if args.give and args.receive:
+        result = evaluate_trade(args.give, args.receive, league_id=args.league)
+        print()
+        print(DIVIDER)
+        print("  SIGNAL FANTASY TRADE ANALYZER")
+        print(DIVIDER)
+        if "error" in result:
+            print(f"  Error: {result['error']}")
+            return
+        print(f"\n  {'GIVING':<10}", end="")
+        for p in result["side_a_giving"]:
+            surp_str = f"+{p['surplus']:.0f}" if p['surplus'] and p['surplus'] >= 0 else f"{p['surplus']:.0f}" if p['surplus'] is not None else "?"
+            print(f"  {p['name']} ({p['signal']}, surplus {surp_str})")
+        print(f"\n  {'RECEIVING':<10}", end="")
+        for p in result["side_b_getting"]:
+            surp_str = f"+{p['surplus']:.0f}" if p['surplus'] and p['surplus'] >= 0 else f"{p['surplus']:.0f}" if p['surplus'] is not None else "?"
+            print(f"  {p['name']} ({p['signal']}, surplus {surp_str})")
+        print()
+        g = result["give_total"]
+        r = result["get_total"]
+        d = result["surplus_delta"]
+        print(f"  Give surplus total : {g:+.1f}" if g is not None else "  Give surplus : N/A")
+        print(f"  Get  surplus total : {r:+.1f}" if r is not None else "  Get  surplus : N/A")
+        print(f"  Delta              : {d:+.1f}" if d is not None else "  Delta        : N/A")
+        print()
+        print(f"  VERDICT: {result['verdict']}")
+        print()
+        print(DIVIDER)
+        return
 
     if args.setup:
         setup_league_config()

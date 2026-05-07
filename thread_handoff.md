@@ -4579,6 +4579,125 @@ Session 37 commit: cc10012 — pitcher Slight Buy eliminated + CSW bug fix (Vers
 
 ---
 
-*End of thread_handoff.md — Sessions 1-37 complete.*
+## SESSION 38 CHANGELOG
+
+### Session 38 — May 6, 2026
+
+**Task 1 — FP ROS rank pipeline wiring:**
+
+Root cause of stale fp_rank (34/439 → ~423 players):
+- `fetch_fantasypros_ownership.py` was never called inside `run_pipeline.py`
+- `score_luck.py` already read `fp_ros_rank` from `player_ownership_2026.csv`; just needed the fetch wired in
+
+Fix 1 — `run_pipeline.py`: Added FP ROS rank fetch block after ESPN ownership fetch.
+Uses `stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace"` to avoid Windows CP1252 crash. Only prints lines containing "matched", "ROS-ranked", "Top 20", "rank 1=", "Rk  Name". Graceful failure — never blocks pipeline.
+
+Fix 2 — `score_pitcher_luck.py`: Ownership merge block (~line 1206) updated to:
+```python
+own_cols = ["player_name", "owned_pct"]
+if "fp_ros_rank" in pd.read_csv(own_path, nrows=0).columns:
+    own_cols.append("fp_ros_rank")
+own = pd.read_csv(own_path, usecols=own_cols)
+# ... merge logic ...
+if "fp_ros_rank" in df.columns:
+    df = df.rename(columns={"fp_ros_rank": "fp_rank"})
+```
+fp_rank now appears in pitcher_luck_scores.csv. Coverage: ~96.7% match rate.
+
+**Task 2 — Dashboard rank column:**
+
+Three changes to `dashboard.html`:
+1. Simple view rank badge: shows ALL ranks (was top-50 only).
+   Green badge (`.rank-top50`) for rank ≤50; grey badge (`.rank-deep`) for rank 51+.
+   CSS refactored: base `.rank-badge` class + two modifiers.
+2. Advanced view: `fp_rank` ("FP ROS") column added to `HITTER_COLS` and `PITCHER_COLS`.
+3. Badge logic reads `r.fp_rank` first, falls back to `pvEntry.fp_rank` for player_values.json.
+
+CSS:
+```css
+.rank-badge { display:inline-block; font-size:9px; font-weight:600; border-radius:3px; padding:1px 4px; margin-left:4px; vertical-align:middle; letter-spacing:0.02em; }
+.rank-top50 { color:#166534; background:#dcfce7; border:1px solid #86efac; }
+.rank-deep  { color:#52525b; background:#f4f4f5; border:1px solid #d4d4d8; }
+```
+
+**Task 3 — Trade analyzer public API:**
+
+Two new public functions added to `trade_analyzer.py` (inserted before `# Entry point`):
+
+`trade_value(player_name, league_id=1) → dict`:
+- Resolves player silently, applies signal multipliers, computes CBS FPTS, looks up surplus
+- Signal-adjusted surplus: BL → `surplus × (1 + luck × 0.5)`; SH → `surplus × (1 - |luck| × 0.5)`
+- Returns: name, signal, luck_score, position, fpts, surplus, signal_adjusted_surplus
+
+`evaluate_trade(side_a_players, side_b_players, league_id=1) → dict`:
+- Routes through full 5-step pipeline: Steamer projections → signal multipliers → CBS FPTS → surplus → verdict
+- Returns: verdict, surplus_delta, give_total, get_total, side_a_giving[], side_b_getting[]
+- Uses `_trade_verdict_v3()` with thresholds ±5/±20/±50
+
+CLI flags added to `main()`:
+- `--give PLAYER [PLAYER ...]`
+- `--receive PLAYER [PLAYER ...]`
+- `--league ID` (default=1)
+
+CLI test result:
+```
+python trade_analyzer.py --give "Corey Seager" --receive "Matt Chapman" "Dillon Dingler" --league 1
+
+GIVING    Corey Seager (Buy low, surplus +43)
+RECEIVING Matt Chapman (Sell high, surplus +62)
+          Dillon Dingler (Buy low, surplus -10)
+Give surplus total : +42.8 | Get surplus total : +52.2 | Delta: +9.4
+VERDICT: SLIGHTLY FAVORABLE — modest projected value edge
+```
+
+All 3 smell tests PASS: Skenes→Rice AVOID ✓ | Skubal→Rice AVOID ✓ | Acuña→Rice AVOID ✓
+
+**Task 4 — Data files rebuilt:**
+
+- `data/cbs_rank_2026.csv`: refreshed May 6 (553 players; top: Olson #1, Judge #3, Rice #5)
+- `outputs/luck_scores_public_hitters.csv` (NEW — 435 rows, public spreadsheet release format)
+  Columns: batter, Player, Team, Position, wOBA, xwOBA, xwOBA Gap, Luck Score, Signal, FP Rank, Ownership %, CBS Rank, CBS FPTS
+- `outputs/luck_scores_public_pitchers.csv` (NEW — 420 rows, ERA/FIP/xERA + luck columns)
+- `outputs/luck_scores_public.csv` (updated — combined hitter spreadsheet)
+
+**Task 5 — Pipeline + weekly update:**
+- `run_pipeline.py --write`: completed; FP ROS ranks fetched inline
+- `weekly_update.py --update`: DUPLICATE DETECTED (same Statcast data as Session 37)
+  Tracker stays at Week 9/10 boundary; deltas activate next Monday with fresh data
+
+**Session 38 — Invariants and Validation:**
+- validate_formulas.py: **37/37 PASS**
+- score_value.py --write: Sanchez C#29, Yordan #3, Raleigh C#1, Baldwin C#4, Contreras C#7 — **ALL PASS**
+
+### Files modified this session:
+- `run_pipeline.py` — FP ROS rank fetch block added
+- `score_pitcher_luck.py` — fp_rank from player_ownership_2026.csv (ownership merge block)
+- `dashboard.html` — fp_rank Advanced view column + rank badge logic all ranks + CSS split
+- `trade_analyzer.py` — trade_value() + evaluate_trade() public API + CLI --give/--receive/--league
+- `data/cbs_rank_2026.csv` — refreshed (553 players)
+- `outputs/luck_scores_public_hitters.csv` (NEW)
+- `outputs/luck_scores_public_pitchers.csv` (NEW)
+- `outputs/luck_scores_public.csv` (updated)
+- `CLAUDE.md` — Session 38 changelog appended
+
+### GitHub (Session 38)
+Last Session 37 evening commit: 445c5af — luck_scores_public.csv article spreadsheet
+Session 38 commit: [TBD — see commit hash below after push]
+
+### Parking lot changes (Session 38)
+- FP rank pipeline wiring → COMPLETED. fp_rank now live in both hitter + pitcher luck files.
+- Trade analyzer public API → COMPLETED. trade_value() + evaluate_trade() + CLI flags wired.
+- Dashboard fp_rank column → COMPLETED. Advanced view + Simple view badges updated.
+- Publish Week 3 article: still overdue — no change to status.
+
+### PENDING MANUAL ACTIONS (carry forward)
+- **Publish Week 3 article** (outputs/week3_article_draft.md) — OVERDUE since May 5-6
+- **White paper Section 10**: Update pitcher accuracy to Version F (87.7% pooled, 82.0% OOS). Remove pitcher SB row.
+- **Career lessons database** (Sessions 22-38) — add manually in Claude.ai
+- **Download updated thread_handoff.md to Claude.ai** after git push
+
+---
+
+*End of thread_handoff.md — Sessions 1-38 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*

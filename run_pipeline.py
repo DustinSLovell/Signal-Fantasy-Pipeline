@@ -136,6 +136,25 @@ def main():
             err = (result.stderr or result.stdout or "unknown error")[:200]
             print(f"  Ownership fetch failed — using cached data ({err.splitlines()[0]})")
 
+        # Refresh FantasyPros ROS ranks (fp_ros_rank → player_ownership_2026.csv)
+        # score_luck.py reads fp_ros_rank from that file to populate fp_rank column.
+        print("\nFetching FantasyPros ROS ranks...")
+        result = subprocess.run(
+            [sys.executable, "fetch_fantasypros_ownership.py"],
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            text=True, encoding="utf-8", errors="replace",
+            cwd=Path(__file__).parent,
+        )
+        stdout = result.stdout or ""
+        if result.returncode == 0:
+            for line in stdout.strip().splitlines():
+                if any(kw in line for kw in ["matched", "ROS-ranked", "Top 20", "rank 1=", "Rk  Name"]):
+                    print(f"  {line.strip()}")
+            print("  FP ROS ranks updated")
+        else:
+            err = stdout[:200] or "unknown error"
+            print(f"  FP rank fetch failed — using cached fp_rank ({err.splitlines()[0]})")
+
     pipeline_start = time.perf_counter()
     step_times = []
 

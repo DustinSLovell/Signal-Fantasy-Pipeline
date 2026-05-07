@@ -2307,6 +2307,56 @@ PENDING MANUAL ACTIONS:
   - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS); remove pitcher SB row
   - Download updated thread_handoff.md to Claude.ai
 
+--- May 6, 2026 (Session 38) ---
+Live FP rank pull + dashboard rank column + trade analyzer foundation.
+
+FP ROS rank pipeline wiring (run_pipeline.py + score_pitcher_luck.py):
+  - run_pipeline.py: FP ROS rank fetch block added (runs fetch_fantasypros_ownership.py before
+    score_luck.py); uses stdout=subprocess.PIPE, encoding="utf-8", errors="replace" to avoid
+    Windows CP1252 crash. Prints key summary lines (matched/ROS-ranked/Top 20/rank 1=).
+  - Root cause of stale fp_rank (34/439 → ~423): fetch_fantasypros_ownership.py was never called
+    in run_pipeline.py. score_luck.py already read fp_ros_rank from player_ownership_2026.csv;
+    simply wiring the fetch was sufficient for hitters.
+  - score_pitcher_luck.py: ownership merge block (~line 1206) updated to optionally load
+    fp_ros_rank from player_ownership_2026.csv and rename to fp_rank. Coverage: 96.7% match rate.
+    fp_rank now appears in pitcher_luck_scores.csv alongside hitters.
+
+Dashboard updates (dashboard.html):
+  - Simple view rank badge: now shows ALL ranks (was top-50 only). Green (#dcfce7) for ≤50,
+    grey (#f4f4f5) for 51+. CSS refactored to .rank-badge (base) + .rank-top50 + .rank-deep.
+  - Advanced view: fp_rank ("FP ROS") column added to HITTER_COLS and PITCHER_COLS arrays.
+  - Both views display fp_rank from luck_scores.csv / pitcher_luck_scores.csv.
+
+Trade analyzer public API (trade_analyzer.py):
+  - trade_value(player_name, league_id=1) → dict with name/signal/luck_score/position/fpts/
+    surplus/signal_adjusted_surplus. Uses existing _apply_signal_multipliers + _compute_cbs_fpts
+    + get_surplus internally.
+    Signal-adjusted surplus formula: BL → surplus × (1 + luck × 0.5); SH → surplus × (1 - |luck| × 0.5)
+  - evaluate_trade(side_a, side_b, league_id=1) → dict with verdict/surplus_delta/give_total/
+    get_total/side_a_giving/side_b_getting. Routes through full 5-step signal-adjusted pipeline.
+  - CLI flags added to main(): --give PLAYER [PLAYER ...], --receive PLAYER [PLAYER ...], --league ID
+  - Test (Seager → Chapman + Dingler): Give +42.8 / Get +52.2 / Delta +9.4 → SLIGHTLY FAVORABLE ✓
+  - All 3 smell tests PASS: Skenes→Rice AVOID, Skubal→Rice AVOID, Acuña→Rice AVOID.
+
+Data files rebuilt/refreshed:
+  - data/cbs_rank_2026.csv: refreshed May 6 (553 players). Top hitters: Olson #1, Judge #3, Rice #5.
+  - outputs/luck_scores_public_hitters.csv: NEW (435 rows, 13 columns for public spreadsheet release)
+  - outputs/luck_scores_public_pitchers.csv: NEW (420 rows, ERA/FIP/xERA + luck columns)
+  - outputs/luck_scores_public.csv: rebuilt (combined hitter spreadsheet, 436 rows)
+
+Pipeline run (Session 38 — May 6, 2026):
+  - run_pipeline.py --write: completed successfully. FP ROS ranks fetched and wired.
+  - weekly_update.py --update: DUPLICATE DETECTED — same Statcast data as Session 37.
+    Tracker stays at Week 9/10 boundary. Deltas activate next Monday when fresh data available.
+
+37/37 PASS. All invariants PASS (Sanchez C#29, Yordan #3, Raleigh C#1, Baldwin C#4, Contreras C#7).
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
+  - Career lessons database (Sessions 22-38) — add new lessons manually in Claude.ai
+  - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS)
+  - Download updated thread_handoff.md to Claude.ai after push
+
 ---
 *This file is the persistent memory for Claude Code sessions.*
 *thread_handoff.md in Claude.ai is the persistent memory for Claude.ai sessions.*

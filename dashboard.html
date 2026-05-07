@@ -572,14 +572,21 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
   display: inline-block;
   font-size: 9px;
   font-weight: 600;
-  color: #52525b;
-  background: #f4f4f5;
-  border: 1px solid #d4d4d8;
   border-radius: 3px;
   padding: 1px 4px;
   margin-left: 4px;
   vertical-align: middle;
   letter-spacing: 0.02em;
+}
+.rank-top50 {
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+}
+.rank-deep {
+  color: #52525b;
+  background: #f4f4f5;
+  border: 1px solid #d4d4d8;
 }
 
 .own-label {
@@ -1262,6 +1269,7 @@ const S = {
 const HITTER_COLS = [
   { key:'name',          label:'Player',     fmt:'name'  },
   { key:'owned_pct',     label:'Own%',       fmt:'own'   },
+  { key:'fp_rank',       label:'FP ROS',     fmt:'int'   },
   { key:'cbs_rank',      label:'CBS YTD',    fmt:'int'   },
   { key:'PA',            label:'PA',         fmt:'int'   },
   // ── Scoring components (v2 model) ────────────────────────────────────────
@@ -1281,6 +1289,7 @@ const HITTER_COLS = [
 const PITCHER_COLS = [
   { key:'name',                  label:'Player',    fmt:'name'  },
   { key:'owned_pct',             label:'Own%',      fmt:'own'   },
+  { key:'fp_rank',               label:'FP ROS',    fmt:'int'   },
   { key:'cbs_rank',              label:'CBS YTD',   fmt:'int'   },
   { key:'Team',                  label:'Team',      fmt:'team'  },
   { key:'IP',                    label:'IP',        fmt:'f1'    },
@@ -2215,8 +2224,8 @@ function renderSimpleTable() {
     }
 
     const fpRank = r.fp_rank || (pvEntry && pvEntry.fp_rank);
-    const rankBadge = (fpRank && fpRank <= 50)
-      ? ` <span class="rank-badge" title="FantasyPros consensus rank #${fpRank}">#${fpRank}</span>`
+    const rankBadge = fpRank
+      ? ` <span class="rank-badge ${fpRank <= 50 ? 'rank-top50' : 'rank-deep'}" title="FantasyPros ROS rank #${fpRank}">#${fpRank}</span>`
       : '';
     const ownPct = toNum(r.owned_pct);
     const ownLabel = !isNaN(ownPct)

@@ -1,437 +1,856 @@
-batter,Player,Team,Position,wOBA,xwOBA,xwOBA Gap,Luck Score,Signal,FP Rank,Ownership %,CBS Rank,CBS FPTS
-663647,Ke'Bryan Hayes,CIN,3B,0.209,0.308,0.099,0.5698,Buy low,,0.52,285.0,23.5
-663757,Trent Grisham,NYY,CF,0.3,0.399,0.099,0.5213,Buy low,,18.85,115.0,70.5
-608070,José Ramírez,CLE,3B,0.327,0.397,0.07,0.5027,Buy low,7.0,99.83,15.0,118.0
-664761,Alec Bohm,PHI,3B,0.231,0.271,0.04,0.4533,Buy low,,15.88,237.0,41.0
-694497,Evan Carter,TEX,LF,0.289,0.344,0.055,0.4135,Buy low,,3.96,152.0,62.0
-701398,Sal Stewart,CIN,1B,0.359,0.402,0.043,0.3905,Buy low,,92.65,4.0,134.0
-702332,Caleb Durbin,BOS,3B,0.248,0.278,0.03,0.3669,Buy low,,30.85,170.0,58.0
-681082,Bryson Stott,PHI,2B,0.272,0.324,0.052,0.3651,Buy low,,36.43,239.0,41.0
-608369,Corey Seager,TEX,SS,0.303,0.371,0.068,0.3558,Buy low,36.0,87.36,67.0,84.0
-669224,Austin Wells,NYY,C,0.282,0.362,0.08,0.3523,Buy low,,10.41,231.0,43.5
-686469,Vinnie Pasquantino,KC,1B,0.297,0.326,0.029,0.3224,Buy low,,65.13,144.0,63.0
-641487,J.P. Crawford,SEA,,0.332,0.404,0.072,0.3175,Buy low,,6.37,,
-680776,Jarren Duran,BOS,CF,0.254,0.31,0.056,0.3142,Buy low,,81.33,176.0,55.0
-592518,Manny Machado,SD,3B,0.316,0.35,0.034,0.3124,Buy low,20.0,98.83,83.0,78.0
-678662,Ezequiel Tovar,COL,SS,0.242,0.294,0.052,0.3082,Buy low,,5.42,221.0,44.5
-666139,Josh Lowe,LAA,,0.222,0.295,0.073,0.3046,Buy low,,1.08,,
-650859,Luis Rengifo,MIL,2B,0.262,0.277,0.015,0.2928,Buy low,,0.73,212.0,46.0
-670770,TJ Friedl,CIN,CF,0.258,0.262,0.004,0.2864,Buy low,,13.75,182.0,54.0
-681198,TJ Rumfield,COL,3B,0.333,0.34,0.007,0.2861,Buy low,,10.77,98.0,75.0
-630105,Jake Cronenworth,SD,1B,0.247,0.313,0.066,0.2756,Buy low,,4.52,234.0,42.5
-621020,Dansby Swanson,CHC,SS,0.329,0.383,0.054,0.2706,Buy low,,45.38,34.0,100.0
-701807,Carson Benge,NYM,RF,0.258,0.299,0.041,0.267,Buy low,,6.06,204.0,47.5
-680574,Matt McLain,CIN,SS,0.274,0.311,0.037,0.2618,Buy low,,10.24,121.0,69.0
-670541,Yordan Alvarez,HOU,DH,0.455,0.541,0.086,0.2525,Buy low,3.0,99.69,1.0,158.0
-663586,Austin Riley,ATL,3B,0.289,0.306,0.017,0.2341,Buy low,31.0,83.97,113.0,71.5
-805300,Jakob Marsee,MIA,OF,0.259,0.276,0.017,0.2302,Buy low,,38.1,76.0,80.0
-683002,Gunnar Henderson,BAL,3B,0.318,0.348,0.03,0.2249,Buy low,11.0,98.39,27.0,104.0
-663886,Tyler Stephenson,CIN,C,0.281,0.361,0.08,0.2225,Buy low,,1.72,257.0,32.5
-605137,Josh Bell,MIN,DH,0.288,0.343,0.055,0.2221,Buy low,,14.4,75.0,80.5
-660271,Shohei Ohtani,LAD,DH,0.36,0.397,0.037,0.22,Buy low,2.0,99.82,25.0,105.5
-660271,Shohei Ohtani,LAD,DH,0.36,0.397,0.037,0.22,Buy low,2.0,99.82,19.0,101.0
-606466,Ketel Marte,AZ,2B,0.308,0.372,0.064,0.2192,Buy low,,99.41,112.0,71.5
-686217,Sal Frelick,MIL,RF,0.293,0.309,0.016,0.2123,Buy low,,33.27,149.0,62.5
-691720,Kyle Karros,COL,3B,0.291,0.346,0.055,0.2122,Buy low,,0.27,191.0,52.5
-607208,Trea Turner,PHI,SS,0.3,0.31,0.01,0.2018,Buy low,18.0,90.84,68.0,84.0
-693307,Dillon Dingler,DET,C,0.361,0.438,0.077,0.2012,Buy low,,48.62,89.0,76.5
-660670,Ronald Acuña Jr.,ATL,RF,0.337,0.383,0.046,0.2,Buy low,4.0,99.48,69.0,83.5
-656775,Cedric Mullins,TB,CF,0.215,0.24,0.025,0.1979,Buy low,,1.9,216.0,45.0
-671732,Lawrence Butler,ATH,CF,0.269,0.324,0.055,0.1887,Buy low,,14.87,193.0,52.0
-672695,Geraldo Perdomo,AZ,SS,0.322,0.32,-0.002,0.1855,Buy low,,84.14,119.0,70.0
-687637,Dylan Beavers,BAL,RF,0.283,0.315,0.032,0.1838,Buy low,,1.46,209.0,46.5
-667670,Brent Rooker,ATH,,0.246,0.299,0.053,0.1833,Buy low,,77.85,,
-680757,Steven Kwan,CLE,LF,0.28,0.291,0.011,0.181,Buy low,,79.45,148.0,62.5
-542303,Marcell Ozuna,PIT,,0.266,0.313,0.047,0.1726,Neutral,,5.85,,
-666310,Bo Naylor,CLE,C,0.188,0.295,0.107,0.1707,Neutral,,1.3,319.0,12.0
-691016,Tyler Soderstrom,ATH,C,0.322,0.354,0.032,0.1706,Neutral,,71.28,78.0,79.5
-682668,Luisangel Acuña,CWS,2B,0.191,0.27,0.079,0.1703,Neutral,,1.14,249.0,36.5
-592626,Joc Pederson,TEX,,0.274,0.329,0.055,0.1663,Neutral,,0.2,,
-656941,Kyle Schwarber,PHI,LF,0.366,0.404,0.038,0.1662,Neutral,28.0,99.54,16.0,115.0
-681715,Heriberto Hernández,MIA,,0.259,0.293,0.034,0.1649,Neutral,,0.1,,
-665561,Rafael Marchán,PHI,C,0.143,0.21,0.067,0.1627,Neutral,,0.12,327.0,10.0
-605170,Victor Caratini,MIN,C,0.285,0.34,0.055,0.1604,Neutral,,1.05,233.0,42.5
-663728,Cal Raleigh,SEA,C,0.28,0.328,0.048,0.1591,Neutral,27.0,99.54,86.0,77.5
-669394,Jake Burger,TEX,3B,0.268,0.288,0.02,0.1584,Neutral,,8.16,156.0,61.5
-802139,JJ Wetherholt,STL,2B,0.354,0.373,0.019,0.1572,Neutral,,76.75,14.0,118.5
-672761,Wenceel Pérez,DET,,0.218,0.339,0.121,0.1571,Neutral,,0.73,,
-687597,Jordan Beck,COL,,0.234,0.286,0.052,0.1568,Neutral,,0.97,,
-663656,Kyle Tucker,LAD,RF,0.321,0.334,0.013,0.1549,Neutral,,99.66,61.0,86.5
-668904,Royce Lewis,MIN,3B,0.285,0.326,0.041,0.1518,Neutral,,7.58,217.0,44.5
-691723,Coby Mayo,BAL,3B,0.23,0.28,0.05,0.1516,Neutral,,1.31,230.0,43.5
-676475,Alec Burleson,STL,LF,0.334,0.375,0.041,0.1473,Neutral,,90.11,30.0,101.0
-608324,Alex Bregman,CHC,3B,0.33,0.353,0.023,0.147,Neutral,21.0,94.22,92.0,76.5
-696100,Hunter Goodman,COL,RF,0.342,0.346,0.004,0.1424,Neutral,,72.78,55.0,88.0
-701350,Roman Anthony,BOS,RF,0.296,0.347,0.051,0.1392,Neutral,,80.2,196.0,51.0
-683737,Michael Busch,CHC,3B,0.308,0.321,0.013,0.1347,Neutral,,41.48,167.0,59.0
-807712,Luke Keaschall,MIN,2B,0.286,0.294,0.008,0.1331,Neutral,,57.11,114.0,71.5
-671277,Luis García Jr.,WSH,2B,0.282,0.303,0.021,0.1315,Neutral,,21.54,133.0,66.0
-669701,Josh Smith,TEX,,0.284,0.308,0.024,0.1303,Neutral,,2.53,,
-695657,Colson Montgomery,CWS,SS,0.362,0.374,0.012,0.1265,Neutral,,24.7,53.0,89.0
-641355,Cody Bellinger,NYY,CF,0.394,0.413,0.019,0.1237,Neutral,22.0,98.67,56.0,88.0
-669257,Will Smith,LAD,C,0.315,0.367,0.052,0.1236,Neutral,,0.02,160.0,61.0
-678554,Curtis Mead,WSH,3B,0.349,0.371,0.022,0.122,Neutral,,0.5,162.0,60.5
-647304,Josh Naylor,SEA,1B,0.295,0.34,0.045,0.1197,Neutral,,70.15,124.0,68.5
-666182,Bo Bichette,NYM,3B,0.274,0.338,0.064,0.1187,Neutral,14.0,74.74,134.0,65.5
-663993,Nathaniel Lowe,CIN,,0.415,0.458,0.043,0.1182,Neutral,,4.44,,
-673357,Luis Robert Jr.,NYM,,0.299,0.329,0.03,0.1163,Neutral,,26.11,,
-700337,Edgar Quero,CWS,C,0.224,0.248,0.024,0.1157,Neutral,,0.61,284.0,23.5
-672275,Patrick Bailey,SF,C,0.202,0.292,0.09,0.1154,Neutral,,0.94,278.0,25.5
-701538,Jackson Merrill,SD,SS,0.308,0.33,0.022,0.1145,Neutral,,89.5,87.0,77.5
-663837,Matt Vierling,DET,,0.299,0.325,0.026,0.1132,Neutral,,0.26,,
-543807,George Springer,TOR,,0.312,0.339,0.027,0.1106,Neutral,,75.01,,
-681481,Kerry Carpenter,DET,RF,0.34,0.373,0.033,0.1094,Neutral,,13.86,140.0,64.0
-602104,Ramón Urías,STL,3B,0.283,0.314,0.031,0.1086,Neutral,,0.13,254.0,34.0
-592450,Aaron Judge,NYY,RF,0.469,0.488,0.019,0.1071,Neutral,1.0,99.89,8.0,126.5
-596019,Francisco Lindor,NYM,SS,0.304,0.336,0.032,0.1071,Neutral,,97.83,171.0,57.5
-671056,Iván Herrera,STL,C,0.382,0.399,0.017,0.107,Neutral,,52.65,29.0,102.0
-656555,Rhys Hoskins,CLE,1B,0.309,0.337,0.028,0.1036,Neutral,,1.98,225.0,44.0
-665862,Jazz Chisholm Jr.,NYY,,0.288,0.297,0.009,0.1001,Neutral,,87.94,,
-687462,Spencer Horwitz,PIT,1B,0.358,0.333,-0.025,0.0998,Neutral,,1.39,155.0,61.5
-593428,Xander Bogaerts,SD,SS,0.36,0.363,0.003,0.0994,Neutral,,31.8,54.0,88.5
-592206,Nick Castellanos,SD,,0.232,0.311,0.079,0.0977,Neutral,,0.86,,
-691406,Junior Caminero,TB,3B,0.351,0.375,0.024,0.0957,Neutral,,99.66,49.0,90.0
-543760,Marcus Semien,NYM,2B,0.247,0.283,0.036,0.0941,Neutral,,46.34,197.0,50.0
-660821,Jesús Sánchez,TOR,RF,0.284,0.341,0.057,0.0931,Neutral,,2.76,137.0,65.0
-677950,Alek Thomas,AZ,CF,0.272,0.3,0.028,0.0925,Neutral,,0.69,192.0,52.5
-687363,Victor Scott II,STL,,0.221,0.263,0.042,0.0919,Neutral,,1.46,,
-672580,Maikel Garcia,KC,3B,0.319,0.353,0.034,0.0894,Neutral,,87.35,70.0,83.0
-680779,Henry Davis,PIT,RF,0.241,0.283,0.042,0.089,Neutral,,0.52,279.0,25.5
-808959,Munetaka Murakami,CWS,1B,0.388,0.42,0.032,0.0886,Neutral,,91.25,22.0,108.0
-547180,Bryce Harper,PHI,DH,0.417,0.434,0.017,0.0871,Neutral,29.0,95.95,39.0,98.0
-521692,Salvador Perez,KC,C,0.264,0.301,0.037,0.0859,Neutral,,70.72,174.0,56.5
-695600,Carter Jensen,KC,C,0.328,0.33,0.002,0.0843,Neutral,,21.94,120.0,69.0
-663538,Nico Hoerner,CHC,2B,0.379,0.398,0.019,0.0842,Neutral,,98.92,10.0,123.0
-608701,Rob Refsnyder,SEA,,0.217,0.3,0.083,0.0841,Neutral,,0.12,,
-669357,Nolan Gorman,STL,2B,0.289,0.318,0.029,0.0839,Neutral,,4.98,150.0,62.5
-621439,Byron Buxton,MIN,DH,0.355,0.384,0.029,0.0837,Neutral,,84.98,51.0,90.0
-660844,Leo Rivas,SEA,,0.219,0.235,0.016,0.0809,Neutral,,0.12,,
-688363,Graham Pauley,MIA,3B,0.249,0.227,-0.022,0.0802,Neutral,,0.09,255.0,33.5
-624413,Pete Alonso,BAL,1B,0.343,0.377,0.034,0.0788,Neutral,17.0,97.81,96.0,75.5
-678246,Miguel Vargas,CWS,2B,0.366,0.415,0.049,0.0787,Neutral,,55.17,21.0,109.0
-691785,Marcelo Mayer,BOS,SS,0.29,0.305,0.015,0.0764,Neutral,,3.06,202.0,47.5
-701358,Cam Smith,HOU,3B,0.306,0.359,0.053,0.0759,Neutral,,14.36,84.0,78.0
-679529,Spencer Torkelson,DET,1B,0.333,0.374,0.041,0.0757,Neutral,,28.41,127.0,68.0
-596142,Gary Sánchez,MIL,C,0.371,0.395,0.024,0.0727,Neutral,,4.96,135.0,65.0
-518692,Freddie Freeman,LAD,1B,0.336,0.384,0.048,0.072,Neutral,6.0,95.41,79.0,79.0
-701675,Nathan Church,STL,OF,0.299,0.347,0.048,0.0662,Neutral,,4.79,138.0,65.0
-687401,Joey Ortiz,MIL,,0.21,0.259,0.049,0.0662,Neutral,,0.95,,
-681351,Logan O'Hoppe,LAA,C,0.268,0.298,0.03,0.0644,Neutral,,2.42,240.0,39.5
-671739,Michael Harris II,ATL,,0.372,0.474,0.102,0.064,Neutral,,79.39,,
-694374,Tim Tawa,AZ,2B,0.25,0.304,0.054,0.0625,Neutral,,0.12,300.0,18.5
-677951,Bobby Witt Jr.,KC,,0.355,0.395,0.04,0.0615,Neutral,38.0,99.8,,
-671289,Tyler Freeman,COL,3B,0.324,0.354,0.03,0.0558,Neutral,,0.39,245.0,38.5
-676914,Davis Schneider,TOR,2B,0.281,0.321,0.04,0.0539,Neutral,,0.45,259.0,32.0
-663697,Jonathan India,KC,2B,0.304,0.313,0.009,0.0526,Neutral,,7.99,252.0,34.5
-673237,Yainer Diaz,HOU,C,0.282,0.273,-0.009,0.052,Neutral,,52.07,200.0,48.5
-660688,Keibert Ruiz,WSH,C,0.218,0.233,0.015,0.0518,Neutral,,1.0,274.0,27.5
-696285,Jacob Young,WSH,CF,0.258,0.296,0.038,0.0508,Neutral,,0.71,168.0,58.5
-678218,Brandon Valenzuela,TOR,C,0.28,0.305,0.025,0.0489,Neutral,,0.42,301.0,17.0
-694377,Nick Yorke,PIT,2B,0.293,0.33,0.037,0.0472,Neutral,,0.18,253.0,34.5
-682877,Juan Brito,CLE,SS,0.232,0.256,0.024,0.046,Neutral,,0.08,296.0,19.5
-695734,Daylen Lile,WSH,RF,0.322,0.342,0.02,0.046,Neutral,,41.89,74.0,81.5
-664040,Brandon Lowe,PIT,2B,0.371,0.398,0.027,0.0438,Neutral,,77.8,41.0,94.5
-655316,Andruw Monasterio,BOS,3B,0.295,0.328,0.033,0.0432,Neutral,,0.15,262.0,31.0
-800050,Chase DeLauter,CLE,RF,0.384,0.396,0.012,0.0413,Neutral,,79.39,59.0,86.5
-668715,Spencer Steer,CIN,1B,0.34,0.381,0.041,0.0407,Neutral,,8.14,129.0,67.0
-664983,Jake McCarthy,COL,RF,0.338,0.302,-0.036,0.0404,Neutral,,0.37,224.0,44.0
-641933,Tyler O'Neill,BAL,,0.298,0.305,0.007,0.0399,Neutral,,0.79,,
-502671,Paul Goldschmidt,NYY,1B,0.324,0.42,0.096,0.0366,Neutral,,1.22,286.0,23.0
-694384,Nolan Schanuel,LAA,1B,0.31,0.322,0.012,0.0358,Neutral,,6.92,111.0,71.5
-686452,Drew Millas,WSH,C,0.213,0.259,0.046,0.0356,Neutral,,0.05,312.0,14.0
-642708,Amed Rosario,NYY,SS,0.349,0.385,0.036,0.0354,Neutral,,1.24,199.0,48.5
-680728,Adrian Del Castillo,AZ,C,0.294,0.309,0.015,0.0348,Neutral,,0.21,261.0,31.5
-642851,Austin Wynns,ATH,C,0.137,0.283,0.146,0.0347,Neutral,,0.06,346.0,4.0
-641857,Ryan McMahon,NYY,3B,0.291,0.341,0.05,0.0337,Neutral,,1.3,272.0,27.5
-670242,Matt Wallner,MIN,,0.256,0.3,0.044,0.0335,Neutral,,1.19,,
-592663,J.T. Realmuto,PHI,,0.318,0.317,-0.001,0.0332,Neutral,,14.53,,
-593871,Jorge Polanco,NYM,1B,0.221,0.28,0.059,0.0324,Neutral,,10.77,292.0,20.5
-664056,Harrison Bader,SF,,0.159,0.28,0.121,0.0321,Neutral,,1.76,,
-683083,Nasim Nuñez,WSH,2B,0.277,0.28,0.003,0.0314,Neutral,,4.46,99.0,75.0
-677956,Rece Hinds,CIN,,0.168,0.152,-0.016,0.0312,Neutral,,0.12,,
-803011,Sam Antonacci,CWS,SS,0.374,0.42,0.046,0.0305,Neutral,,5.63,258.0,32.5
-666023,Freddy Fermin,SD,C,0.275,0.271,-0.004,0.0302,Neutral,,0.54,280.0,25.5
-686681,Michael Massey,KC,2B,0.266,0.29,0.024,0.0299,Neutral,,0.17,270.0,27.5
-687231,Darell Hernaiz,ATH,SS,0.275,0.271,-0.004,0.0292,Neutral,,0.17,277.0,26.0
-660162,Yoán Moncada,LAA,3B,0.276,0.295,0.019,0.0287,Neutral,,0.25,218.0,44.5
-650402,Gleyber Torres,DET,2B,0.341,0.365,0.024,0.0286,Neutral,,62.78,82.0,78.5
-701678,Hao-Yu  Lee,DET,,0.232,0.288,0.056,0.0282,Neutral,,0.2,,
-689414,Liam Hicks,MIA,C,0.395,0.44,0.045,0.0279,Neutral,,87.17,23.0,106.0
-621438,Tyrone Taylor,NYM,,0.247,0.282,0.035,0.0275,Neutral,,0.16,,
-665966,Carlos Narváez,BOS,C,0.276,0.304,0.028,0.0258,Neutral,,1.6,276.0,26.5
-695020,Tanner Murray,CWS,3B,0.312,0.33,0.018,0.0245,Neutral,,0.03,315.0,13.5
-642201,Eli White,ATL,,0.287,0.315,0.028,0.0238,Neutral,,0.19,,
-695336,Thomas Saggese,STL,SS,0.204,0.215,0.011,0.0235,Neutral,,0.17,322.0,11.5
-672515,Gabriel Moreno,AZ,C,0.344,0.373,0.029,0.0234,Neutral,,22.23,275.0,27.0
-663368,Blake Perkins,MIL,,0.243,0.22,-0.023,0.0227,Neutral,,0.06,,
-680700,Richie Palacios,TB,,0.305,0.369,0.064,0.0219,Neutral,,0.18,,
-666181,Will Benson,CIN,,0.31,0.306,-0.004,0.0208,Neutral,,0.18,,
-514888,Jose Altuve,HOU,2B,0.328,0.328,0.0,0.0208,Neutral,40.0,94.7,88.0,77.0
-665742,Juan Soto,NYM,LF,0.377,0.477,0.1,0.0197,Neutral,5.0,99.8,186.0,53.0
-687957,Dustin Harris,HOU,,0.291,0.331,0.04,0.0193,Neutral,,0.07,,
-687093,Vaughn Grissom,LAA,2B,0.345,0.359,0.014,0.0177,Neutral,,0.71,251.0,35.5
-657041,Lane Thomas,KC,,0.322,0.332,0.01,0.0166,Neutral,,0.31,,
-677587,Brayan Rocchio,CLE,SS,0.319,0.308,-0.011,0.0163,Neutral,,13.9,81.0,78.5
-678489,Jorge Barrosa,AZ,,0.282,0.242,-0.04,0.0158,Neutral,,0.08,,
-661388,William Contreras,MIL,C,0.352,0.366,0.014,0.0157,Neutral,23.0,98.58,48.0,92.0
-669236,Jeremiah Jackson,BAL,SS,0.325,0.331,0.006,0.0154,Neutral,,29.13,103.0,74.0
-657757,Gavin Sheets,SD,RF,0.312,0.317,0.005,0.0138,Neutral,,4.55,158.0,61.0
-682626,Francisco Alvarez,NYM,C,0.305,0.324,0.019,0.0137,Neutral,,18.2,198.0,49.5
-663330,Jahmai Jones,DET,,0.309,0.384,0.075,0.0132,Neutral,,0.1,,
-672960,Kazuma Okamoto,TOR,3B,0.358,0.375,0.017,0.013,Neutral,,49.85,154.0,62.0
-543309,,TEX,C,0.283,0.305,0.022,0.0106,Neutral,,,295.0,19.5
-664034,Ty France,SD,1B,0.379,0.415,0.036,0.0094,Neutral,,0.44,215.0,45.0
-665019,Kody Clemens,MIN,1B,0.327,0.37,0.043,0.0092,Neutral,,0.54,223.0,44.0
-665161,Jeremy Peña,HOU,SS,0.311,0.36,0.049,0.0086,Neutral,,53.01,291.0,22.0
-623168,Tyler Heineman,TOR,C,0.189,0.225,0.036,0.0083,Neutral,,0.17,329.0,9.5
-656716,Zach McKinstry,DET,3B,0.24,0.245,0.005,0.0069,Neutral,,3.34,297.0,19.0
-664954,Brett Sullivan,COL,C,0.304,0.267,-0.037,0.0056,Neutral,,0.1,281.0,25.5
-668939,Adley Rutschman,BAL,C,0.378,0.369,-0.009,0.0056,Neutral,13.0,82.97,132.0,66.0
-620443,Luis Torrens,NYM,DH,0.217,0.266,0.049,0.0043,Neutral,,0.16,324.0,11.0
-641680,Jonah Heim,ATL,C,0.313,0.287,-0.026,0.004,Neutral,,0.27,305.0,15.5
-596115,Trevor Story,BOS,SS,0.275,0.263,-0.012,0.0038,Neutral,,18.9,177.0,55.0
-641555,J.C. Escarra,NYY,,0.268,0.277,0.009,0.0034,Neutral,,0.11,,
-664770,Nathan Lukes,TOR,,0.288,0.28,-0.008,0.0031,Neutral,,0.39,,
-669720,Austin Hays,CWS,,0.249,0.323,0.074,0.0025,Neutral,,0.73,,
-624641,Edmundo Sosa,PHI,3B,0.311,0.349,0.038,0.0008,Neutral,,0.38,269.0,28.0
-679845,Nick Loftin,KC,1B,0.37,0.323,-0.047,0.0006,Neutral,,0.08,266.0,29.5
-662139,Daulton Varsho,TOR,LF,0.33,0.337,0.007,0.0004,Neutral,,13.67,136.0,65.0
-694376,Shay Whitcomb,HOU,SS,0.193,0.197,0.004,0.0,Neutral,,0.03,340.0,5.5
-669699,Braden Shewmake,HOU,SS,0.479,0.435,-0.044,0.0,Neutral,,0.05,336.0,6.5
-683953,Travis Bazzana,CLE,,0.259,0.392,0.133,0.0,Neutral,,19.11,,
-691176,Jasson Domínguez,NYY,,0.339,0.394,0.055,0.0,Neutral,,9.31,,
-571657,Kyle Farmer,ATL,3B,0.304,0.285,-0.019,0.0,Neutral,,0.05,331.0,8.0
-553869,Elias Díaz,KC,C,0.508,0.486,-0.022,0.0,Neutral,,0.07,310.0,14.5
-664731,P.J. Higgins,CIN,,0.208,0.301,0.093,0.0,Neutral,,0.03,,
-671286,Johnathan Rodríguez,BAL,,0.191,0.33,0.139,0.0,Neutral,,0.03,,
-669369,Bryce Johnson,SD,,0.252,0.16,-0.092,0.0,Neutral,,0.02,,
-683766,Christian Koss,SF,SS,0.096,0.099,0.003,0.0,Neutral,,0.03,357.0,1.5
-695257,Billy Cook,PIT,,0.277,0.199,-0.078,0.0,Neutral,,0.05,,
-645302,Victor Robles,SEA,,0.235,0.256,0.021,0.0,Neutral,,0.32,,
-669289,Santiago Espinal,LAD,2B,0.2,0.275,0.075,0.0,Neutral,,0.07,323.0,11.0
-682818,Yohendrick Piñango,TOR,,0.476,0.368,-0.108,0.0,Neutral,,0.35,,
-665052,Griffin Conine,MIA,,0.402,0.521,0.119,0.0,Neutral,,0.21,,
-669397,Nick Allen,HOU,SS,0.298,0.302,0.004,0.0,Neutral,,0.06,326.0,10.5
-691740,Daniel Susac,SF,C,0.5,0.386,-0.114,0.0,Neutral,,0.47,294.0,19.5
-676724,Jared Young,NYM,1B,0.365,0.364,-0.001,0.0,Neutral,,0.03,316.0,13.5
-605141,Mookie Betts,LAD,RF,0.306,0.417,0.111,0.0,Neutral,,96.85,268.0,28.0
-669707,Jared Triolo,PIT,3B,0.267,0.282,0.015,0.0,Neutral,,0.38,328.0,9.5
-692216,CJ Kayfus,CLE,,0.286,0.329,0.043,0.0,Neutral,,0.16,,
-467793,Carlos Santana,AZ,1B,0.154,0.209,0.055,0.0,Neutral,,0.29,352.0,2.0
-680718,Addison Barger,TOR,SS,0.146,0.23,0.084,0.0,Neutral,,8.66,344.0,5.0
-606992,Eric Haase,SF,,0.34,0.296,-0.044,0.0,Neutral,,0.03,,
-672012,Tyler Black,MIL,2B,0.443,0.182,-0.261,0.0,Neutral,,0.54,303.0,16.0
-672356,Gabriel Arias,CLE,SS,0.302,0.335,0.033,0.0,Neutral,,0.32,306.0,15.0
-664059,Sam Haggerty,TEX,,0.211,0.189,-0.022,0.0,Neutral,,0.04,,
-694025,Felix Reyes,PHI,,0.18,0.275,0.095,0.0,Neutral,,0.22,,
-682622,Noelvi Marte,CIN,3B,0.203,0.171,-0.032,0.0,Neutral,,6.55,347.0,4.0
-596117,Garrett Stubbs,PHI,,0.253,0.267,0.014,0.0,Neutral,,0.08,,
-672284,Jarred Kelenic,CWS,,0.333,0.427,0.094,0.0,Neutral,,0.06,,
-687515,Colby Thomas,ATH,,0.327,0.343,0.016,0.0,Neutral,,0.12,,
-805249,Otto Kemp,PHI,3B,0.145,0.227,0.082,0.0,Neutral,,0.18,366.0,-0.5
-675659,Greg Jones,MIL,,0.091,0.176,0.085,0.0,Neutral,,0.02,,
-672386,Alejandro Kirk,TOR,C,0.252,0.353,0.101,0.0,Neutral,,40.62,320.0,12.0
-656582,Connor Joe,SEA,,0.325,0.384,0.059,0.0,Neutral,,0.04,,
-502054,Tommy Pham,NYM,,0.05,0.137,0.087,0.0,Neutral,,0.05,,
-664238,Dylan Moore,PHI,LF,0.14,0.233,0.093,0.0,Neutral,,0.13,342.0,5.5
-700246,Carson Williams,TB,SS,0.188,0.22,0.032,0.0,Neutral,,0.53,333.0,7.5
-668952,Ryan Kreidler,MIN,,0.447,0.499,0.052,0.0,Neutral,,0.08,,
-624431,Jose Trevino,CIN,C,0.188,0.221,0.033,0.0,Neutral,,0.1,359.0,1.0
-628451,Andy Ibáñez,ATH,2B,0.162,0.185,0.023,0.0,Neutral,,0.05,338.0,6.0
-642215,Weston Wilson,BAL,LF,0.364,0.362,-0.002,0.0,Neutral,,0.02,317.0,13.5
-691011,Drew Romo,CWS,,0.519,0.576,0.057,0.0,Neutral,,0.41,,
-682641,Luis Matos,MIL,,0.205,0.13,-0.075,0.0,Neutral,,0.06,,
-668709,JJ Bleday,CIN,,0.522,0.624,0.102,0.0,Neutral,,4.1,,
-666624,Christopher Morel,MIA,,0.312,0.295,-0.017,0.0,Neutral,,0.35,,
-665923,Esteury Ruiz,MIA,,0.41,0.416,0.006,0.0,Neutral,,0.39,,
-663624,Ryan Mountcastle,BAL,1B,0.31,0.301,-0.009,0.0,Neutral,,0.4,337.0,6.0
-650968,Yohel Pozo,STL,C,0.179,0.247,0.068,0.0,Neutral,,0.06,339.0,6.0
-669288,Daniel Johnson,HOU,,0.229,0.34,0.111,0.0,Neutral,,0.01,,
-691783,Jordan Lawlar,AZ,SS,0.412,0.377,-0.035,0.0,Neutral,,2.94,302.0,16.0
-600869,Jeimer Candelario,LAA,3B,0.195,0.216,0.021,0.0,Neutral,,0.07,345.0,5.0
-676694,Jake Meyers,HOU,,0.349,0.353,0.004,-0.0007,Neutral,,0.52,,
-571448,Nolan Arenado,AZ,3B,0.348,0.343,-0.005,-0.0011,Neutral,,15.83,110.0,72.0
-545341,Randal Grichuk,NYY,,0.233,0.338,0.105,-0.0017,Neutral,,0.07,,
-671655,George Valera,CLE,,0.259,0.198,-0.061,-0.002,Neutral,,0.14,,
-677595,Ronny Mauricio,NYM,2B,0.231,0.24,0.009,-0.002,Neutral,,0.28,350.0,3.0
-646240,Rafael Devers,SF,3B,0.253,0.26,0.007,-0.0024,Neutral,16.0,68.95,238.0,41.0
-672820,Lenyn Sosa,TOR,2B,0.263,0.28,0.017,-0.0024,Neutral,,0.91,289.0,22.5
-805779,Jacob Wilson,ATH,SS,0.322,0.296,-0.026,-0.0027,Neutral,,59.78,91.0,76.5
-666464,Jerar Encarnacion,SF,,0.184,0.21,0.026,-0.003,Neutral,,0.06,,
-667472,Dane Myers,CIN,,0.373,0.466,0.093,-0.0034,Neutral,,0.17,,
-518595,Travis d'Arnaud,LAA,C,0.267,0.302,0.035,-0.0036,Neutral,,0.13,321.0,11.5
-657136,Connor Wong,BOS,C,0.315,0.266,-0.049,-0.0036,Neutral,,0.28,282.0,25.0
-665877,José Fermín,STL,2B,0.334,0.316,-0.018,-0.0042,Neutral,,0.02,298.0,18.5
-668901,Mark Vientos,NYM,DH,0.314,0.356,0.042,-0.0044,Neutral,,4.13,243.0,38.5
-677942,Blaze Alexander,BAL,SS,0.256,0.313,0.057,-0.0052,Neutral,,0.23,287.0,23.0
-643396,Isiah Kiner-Falefa,BOS,CF,0.22,0.278,0.058,-0.0055,Neutral,,0.26,299.0,18.5
-668670,Jake Rogers,DET,C,0.222,0.258,0.036,-0.0057,Neutral,,0.14,325.0,11.0
-664702,Myles Straw,TOR,,0.361,0.404,0.043,-0.0061,Neutral,,0.21,,
-680777,Ryan Jeffers,MIN,C,0.4,0.394,-0.006,-0.0065,Neutral,,27.8,65.0,85.5
-686780,Pedro Pagés,STL,C,0.301,0.308,0.007,-0.0068,Neutral,,0.68,226.0,44.0
-666969,Adolis García,PHI,RF,0.315,0.35,0.035,-0.0068,Neutral,,12.69,146.0,63.0
-543510,James McCann,AZ,C,0.193,0.187,-0.006,-0.0075,Neutral,,0.09,314.0,14.0
-650333,Luis Arraez,SF,2B,0.338,0.299,-0.039,-0.0076,Neutral,,69.58,94.0,76.0
-681546,James Outman,MIN,,0.173,0.186,0.013,-0.008,Neutral,,0.06,,
-669065,Kyle Stowers,MIA,,0.277,0.302,0.025,-0.008,Neutral,,35.38,,
-650391,Eloy Jiménez,TOR,,0.291,0.256,-0.035,-0.0082,Neutral,,0.1,,
-596103,Austin Slater,MIA,,0.255,0.239,-0.016,-0.0082,Neutral,,0.03,,
-666971,Lourdes Gurriel Jr.,AZ,,0.296,0.306,0.01,-0.0083,Neutral,,1.85,,
-624512,Reese McGuire,CWS,C,0.227,0.247,0.02,-0.0085,Neutral,,0.05,330.0,8.5
-678009,Parker Meadows,DET,,0.296,0.255,-0.041,-0.0086,Neutral,,0.57,,
-686668,Brenton Doyle,COL,CF,0.274,0.256,-0.018,-0.0094,Neutral,,7.41,213.0,46.0
-676391,Ernie Clement,TOR,SS,0.313,0.288,-0.025,-0.0099,Neutral,,70.78,100.0,74.5
-642715,Willy Adames,SF,SS,0.259,0.283,0.024,-0.0107,Neutral,25.0,56.47,211.0,46.0
-695578,James Wood,WSH,LF,0.396,0.455,0.059,-0.0112,Neutral,26.0,96.27,3.0,137.0
-680869,Zack Gelof,ATH,2B,0.311,0.328,0.017,-0.0115,Neutral,,0.4,288.0,22.5
-683146,Brett Baty,NYM,3B,0.272,0.29,0.018,-0.0117,Neutral,,3.53,206.0,47.5
-694671,Wyatt Langford,TEX,,0.293,0.306,0.013,-0.0119,Neutral,,63.68,,
-656537,Derek Hill,CWS,,0.317,0.377,0.06,-0.0136,Neutral,,0.06,,
-500743,Miguel Rojas,LAD,SS,0.329,0.351,0.022,-0.0136,Neutral,,1.08,267.0,28.5
-595879,Javier Báez,DET,SS,0.288,0.316,0.028,-0.014,Neutral,,3.91,232.0,43.0
-680977,Brendan Donovan,SEA,2B,0.391,0.375,-0.016,-0.0146,Neutral,,61.13,189.0,53.0
-682829,Elly De La Cruz,CIN,SS,0.394,0.397,0.003,-0.0161,Neutral,9.0,99.53,7.0,127.0
-663698,Joey Bart,PIT,C,0.251,0.253,0.002,-0.0164,Neutral,,0.26,309.0,14.5
-665804,Miguel Amaya,CHC,C,0.346,0.316,-0.03,-0.0166,Neutral,,0.86,248.0,37.5
-457705,Andrew McCutchen,TEX,,0.269,0.25,-0.019,-0.0171,Neutral,,0.24,,
-606192,Teoscar Hernández,LAD,RF,0.306,0.333,0.027,-0.0178,Neutral,,66.92,123.0,68.5
-666211,Taylor Trammell,HOU,,0.389,0.29,-0.099,-0.0182,Neutral,,0.05,,
-678391,Jorbit Vivas,WSH,2B,0.305,0.281,-0.024,-0.0185,Neutral,,0.11,236.0,41.0
-672016,Denzel Clarke,ATH,,0.197,0.205,0.008,-0.0185,Neutral,,0.2,,
-691718,Pete Crow-Armstrong,CHC,CF,0.29,0.313,0.023,-0.0211,Neutral,,92.41,97.0,75.0
-642086,Dominic Smith,ATL,1B,0.374,0.424,0.05,-0.0214,Neutral,,5.21,143.0,63.5
-545361,Mike Trout,LAA,CF,0.427,0.47,0.043,-0.0232,Neutral,12.0,97.44,2.0,142.0
-516782,Starling Marte,KC,,0.307,0.267,-0.04,-0.0233,Neutral,,0.48,,
-694728,Brice Matthews,HOU,SS,0.319,0.292,-0.027,-0.0238,Neutral,,1.98,263.0,30.5
-641598,Mitch Garver,SEA,DH,0.288,0.299,0.011,-0.0247,Neutral,,0.13,308.0,14.5
-669743,Alex Call,LAD,,0.414,0.345,-0.069,-0.0247,Neutral,,0.19,,
-687551,Drew Gilbert,SF,,0.301,0.29,-0.011,-0.0248,Neutral,,0.24,,
-643376,Danny Jansen,TEX,C,0.286,0.264,-0.022,-0.0267,Neutral,,0.57,265.0,29.5
-686527,Dominic Canzone,SEA,LF,0.317,0.356,0.039,-0.0282,Neutral,,3.46,175.0,55.5
-650490,Yandy Díaz,TB,1B,0.385,0.41,0.025,-0.0284,Neutral,,87.78,26.0,105.0
-681297,Colton Cowser,BAL,,0.258,0.282,0.024,-0.0286,Neutral,,1.67,,
-573262,Mike Yastrzemski,ATL,,0.259,0.26,0.001,-0.0289,Neutral,,1.49,,
-807799,Masataka Yoshida,BOS,,0.375,0.288,-0.087,-0.0295,Neutral,,0.93,,
-669326,Bryce Teodosio,LAA,,0.261,0.209,-0.052,-0.0296,Neutral,,0.04,,
-664023,Ian Happ,CHC,LF,0.387,0.367,-0.02,-0.0306,Neutral,37.0,83.83,52.0,89.5
-700932,Kyle Manzardo,CLE,1B,0.255,0.288,0.033,-0.0313,Neutral,,3.25,283.0,24.0
-665926,Andrés Giménez,TOR,2B,0.304,0.281,-0.023,-0.0314,Neutral,,18.9,105.0,73.5
-805808,Kevin McGonigle,DET,SS,0.373,0.393,0.02,-0.0338,Neutral,,88.49,20.0,109.5
-641584,Jake Fraley,TB,,0.33,0.301,-0.029,-0.035,Neutral,,0.16,,
-624424,Michael Conforto,CHC,,0.421,0.443,0.022,-0.0354,Neutral,,0.21,,
-681807,David Fry,CLE,,0.395,0.396,0.001,-0.0358,Neutral,,0.15,,
-687221,Dalton Rushing,LAD,C,0.492,0.487,-0.005,-0.0364,Neutral,,20.44,122.0,68.5
-808982,Jung Hoo Lee,SF,CF,0.329,0.333,0.004,-0.0372,Neutral,,37.46,101.0,74.5
-677592,Everson Pereira,CWS,,0.343,0.348,0.005,-0.0373,Neutral,,0.34,,
-668723,Ryan Vilade,TB,,0.384,0.325,-0.059,-0.0382,Neutral,,0.05,,
-663743,Nick Fortes,TB,C,0.277,0.305,0.028,-0.0393,Neutral,,2.63,235.0,42.0
-641343,Jake Bauers,MIL,RF,0.322,0.35,0.028,-0.0393,Neutral,,20.31,58.0,87.0
-682928,CJ Abrams,WSH,SS,0.406,0.419,0.013,-0.0394,Neutral,,93.42,12.0,119.5
-694212,Samuel Basallo,BAL,C,0.345,0.359,0.014,-0.0395,Neutral,,19.31,187.0,53.0
-665487,Fernando Tatis Jr.,SD,RF,0.289,0.351,0.062,-0.0402,Neutral,19.0,99.35,125.0,68.0
-676356,Jonny DeLuca,TB,LF,0.312,0.305,-0.007,-0.0419,Neutral,,0.6,185.0,53.5
-677594,Julio Rodríguez,SEA,CF,0.338,0.336,-0.002,-0.0431,Neutral,15.0,0.09,104.0,73.5
-666018,Jonathan Aranda,TB,1B,0.361,0.376,0.015,-0.0443,Neutral,,29.29,42.0,94.5
-670623,Isaac Paredes,HOU,3B,0.357,0.336,-0.021,-0.0476,Neutral,,34.66,109.0,72.0
-643289,Mauricio Dubón,ATL,2B,0.349,0.327,-0.022,-0.0498,Neutral,,54.14,102.0,74.0
-702284,Cole Young,SEA,SS,0.323,0.347,0.024,-0.0511,Neutral,,14.0,57.0,87.5
-666160,Mickey Moniak,COL,CF,0.464,0.412,-0.052,-0.0521,Neutral,,64.59,60.0,86.5
-691781,Brady House,WSH,3B,0.293,0.307,0.014,-0.0536,Neutral,,1.82,159.0,61.0
-694208,Moisés Ballesteros,CHC,,0.419,0.413,-0.006,-0.0545,Neutral,,12.85,,
-669134,Luis Campusano,SD,C,0.42,0.379,-0.041,-0.0573,Neutral,,0.83,210.0,46.5
-676439,Hunter Feduccia,TB,C,0.336,0.296,-0.04,-0.0601,Neutral,,0.09,307.0,15.0
-807713,Matt Shaw,CHC,SS,0.361,0.364,0.003,-0.0612,Neutral,,3.31,169.0,58.0
-666152,David Hamilton,MIL,SS,0.278,0.276,-0.002,-0.0617,Neutral,,0.94,188.0,53.0
-621043,Carlos Correa,HOU,SS,0.364,0.383,0.019,-0.0624,Neutral,39.0,50.59,72.0,82.5
-808975,Hyeseong Kim,LAD,,0.343,0.359,0.016,-0.0638,Neutral,,3.32,,
-687263,Zach Neto,LAA,,0.335,0.342,0.007,-0.0655,Neutral,,66.11,,
-669004,MJ Melendez,NYM,,0.385,0.332,-0.053,-0.0656,Neutral,,0.53,,
-624585,Jorge Soler,LAA,DH,0.353,0.349,-0.004,-0.0679,Neutral,,21.65,73.0,82.0
-665750,Leody Taveras,BAL,CF,0.359,0.363,0.004,-0.0711,Neutral,,1.69,153.0,62.0
-595978,Austin Hedges,CLE,C,0.374,0.326,-0.048,-0.0711,Neutral,,0.16,293.0,20.0
-657656,Ramón Laureano,SD,RF,0.309,0.339,0.03,-0.0737,Neutral,,22.07,80.0,78.5
-656484,Tristan Gray,MIN,SS,0.33,0.348,0.018,-0.0776,Neutral,,0.44,244.0,38.5
-656811,Ryan O'Hearn,PIT,1B,0.366,0.39,0.024,-0.0798,Neutral,,79.68,40.0,95.5
-810938,Ben Williamson,TB,3B,0.294,0.292,-0.002,-0.0815,Neutral,,0.4,178.0,54.5
-694388,Joey Loperfido,HOU,,0.305,0.27,-0.035,-0.0823,Neutral,,0.36,,
-553993,Eugenio Suárez,CIN,3B,0.345,0.305,-0.04,-0.0848,Neutral,,63.66,201.0,48.0
-696030,Alejandro Osuna,TEX,,0.34,0.345,0.005,,Neutral,,0.06,,
-677870,Leo Jiménez,MIA,,0.295,0.313,0.018,,Neutral,,0.03,,
-682663,Agustín Ramírez,MIA,C,0.303,0.292,-0.011,-0.0869,Slight sell,,55.31,128.0,67.5
-682657,Angel Martínez,CLE,SS,0.339,0.362,0.023,-0.0872,Slight sell,,22.6,95.0,76.0
-592885,Christian Yelich,MIL,LF,0.353,0.28,-0.073,-0.0877,Slight sell,32.0,82.88,208.0,47.0
-621566,Matt Olson,ATL,1B,0.441,0.437,-0.004,-0.089,Slight sell,30.0,99.06,5.0,131.0
-575929,Willson Contreras,BOS,C,0.387,0.427,0.04,-0.0891,Slight sell,,28.38,50.0,90.0
-702222,Justin Crawford,PHI,CF,0.32,0.286,-0.034,-0.0904,Slight sell,,4.99,205.0,47.5
-643446,Jeff McNeil,ATH,2B,0.353,0.347,-0.006,-0.0912,Slight sell,,9.03,173.0,57.0
-665489,Vladimir Guerrero Jr.,TOR,1B,0.372,0.377,0.005,-0.0939,Slight sell,10.0,99.81,35.0,99.5
-650489,Willi Castro,COL,LF,0.286,0.28,-0.006,-0.0955,Slight sell,,6.12,222.0,44.5
-543877,Christian Vázquez,HOU,C,0.356,0.295,-0.061,-0.0978,Slight sell,,1.04,227.0,44.0
-683357,Owen Caissie,MIA,,0.261,0.282,0.021,-0.1017,Slight sell,,3.96,,
-622761,Jorge Mateo,ATL,SS,0.338,0.283,-0.055,-0.1017,Slight sell,,0.47,290.0,22.5
-669364,Xavier Edwards,MIA,2B,0.399,0.372,-0.027,-0.1034,Slight sell,,87.4,33.0,100.5
-666176,Jo Adell,LAA,RF,0.28,0.31,0.03,-0.1051,Slight sell,,42.31,85.0,78.0
-673548,Seiya Suzuki,CHC,RF,0.402,0.412,0.01,-0.1061,Slight sell,,85.01,141.0,63.5
-643217,Andrew Benintendi,CWS,LF,0.287,0.317,0.03,-0.1091,Slight sell,,2.38,207.0,47.0
-677588,José Tena,WSH,3B,0.338,0.302,-0.036,-0.1109,Slight sell,,0.05,273.0,27.5
-670764,Taylor Walls,TB,3B,0.269,0.241,-0.028,-0.1113,Slight sell,,0.19,260.0,31.5
-645277,Ozzie Albies,ATL,2B,0.408,0.372,-0.036,-0.1122,Slight sell,,96.16,18.0,110.0
-678882,Ceddanne Rafaela,BOS,CF,0.33,0.314,-0.016,-0.1154,Slight sell,,36.08,181.0,54.0
-669016,Brandon Marsh,PHI,CF,0.359,0.356,-0.003,-0.1167,Slight sell,,13.44,90.0,76.5
-677649,Ezequiel Duran,TEX,SS,0.364,0.328,-0.036,-0.1212,Slight sell,,0.69,203.0,47.5
-624428,Adam Frazier,LAA,2B,0.32,0.253,-0.067,-0.123,Slight sell,,0.19,242.0,38.5
-677800,Wilyer Abreu,BOS,CF,0.39,0.411,0.021,-0.1237,Slight sell,,58.52,66.0,85.0
-691026,Masyn Winn,STL,SS,0.346,0.326,-0.02,-0.124,Slight sell,,8.35,118.0,70.5
-686948,Drake Baldwin,ATL,C,0.394,0.415,0.021,-0.1284,Slight sell,,97.85,9.0,124.0
-690976,Alex Freeland,LAD,SS,0.315,0.33,0.015,-0.1318,Slight sell,,0.66,256.0,33.0
-571970,Max Muncy,LAD,,0.4,0.448,0.048,-0.1343,Slight sell,,6.04,,
-621493,Taylor Ward,BAL,LF,0.396,0.388,-0.008,-0.1363,Slight sell,,84.61,37.0,98.5
-802415,Chandler Simpson,TB,CF,0.3,0.264,-0.036,-0.1481,Slight sell,,51.41,71.0,83.0
-607043,Brandon Nimmo,TEX,CF,0.376,0.382,0.006,-0.1483,Slight sell,,82.0,64.0,85.5
-686797,Brooks Lee,MIN,SS,0.362,0.313,-0.049,-0.16,Slight sell,,11.32,108.0,72.0
-691594,Javier Sanoja,MIA,SS,0.343,0.259,-0.084,-0.1618,Slight sell,,4.59,241.0,39.5
-663968,Jake Mangum,PIT,,0.317,0.281,-0.036,-0.1647,Slight sell,,0.55,,
-609280,Miguel Andujar,SD,RF,0.394,0.324,-0.07,-0.1673,Slight sell,,2.01,219.0,44.5
-676609,José Caballero,NYY,2B,0.332,0.291,-0.041,-0.1518,Sell high,,42.9,77.0,79.5
-673962,Josh Jung,TEX,3B,0.419,0.414,-0.005,-0.1536,Sell high,,35.32,62.0,86.5
-695506,Jac Caglianone,KC,1B,0.333,0.342,0.009,-0.155,Sell high,,26.12,229.0,43.5
-686555,Isaac Collins,KC,LF,0.349,0.348,-0.001,-0.1589,Sell high,,0.69,228.0,44.0
-668930,Brice Turang,MIL,2B,0.411,0.434,0.023,-0.1592,Sell high,24.0,97.64,11.0,120.0
-671976,Tristan Peters,CWS,,0.304,0.28,-0.024,-0.162,Sell high,,0.18,,
-519317,Giancarlo Stanton,NYY,DH,0.32,0.328,0.008,-0.1626,Sell high,,27.89,184.0,53.5
-668804,Bryan Reynolds,PIT,LF,0.373,0.361,-0.012,-0.1674,Sell high,,71.2,47.0,93.0
-681393,Connor Norby,MIA,2B,0.326,0.321,-0.005,-0.1683,Sell high,,1.47,180.0,54.0
-682998,Corbin Carroll,AZ,LF,0.384,0.358,-0.026,-0.1693,Sell high,8.0,99.68,28.0,103.0
-701762,Nick Kurtz,ATH,1B,0.362,0.389,0.027,-0.1764,Sell high,,96.53,46.0,93.5
-686894,Joey Wiemer,WSH,CF,0.36,0.287,-0.073,-0.1795,Sell high,,6.61,194.0,51.5
-666397,Edouard Julien,COL,2B,0.347,0.36,0.013,-0.1812,Sell high,,1.18,147.0,63.0
-805367,Chase Meidroth,CWS,SS,0.312,0.3,-0.012,-0.1868,Sell high,,3.82,163.0,60.5
-687859,Troy Johnston,COL,RF,0.366,0.328,-0.038,-0.1934,Sell high,,5.25,130.0,67.0
-664728,Kyle Isbel,KC,CF,0.341,0.332,-0.009,-0.2016,Sell high,,4.09,165.0,59.5
-572233,Christian Walker,HOU,1B,0.426,0.406,-0.02,-0.2027,Sell high,,77.96,19.0,109.5
-671218,Heliot Ramos,SF,LF,0.32,0.344,0.024,-0.206,Sell high,,16.34,151.0,62.5
-665833,Oneil Cruz,PIT,SS,0.364,0.386,0.022,-0.214,Sell high,,91.39,13.0,119.0
-666126,Carlos Cortes,ATH,LF,0.467,0.449,-0.018,-0.218,Sell high,,21.69,106.0,72.5
-690993,Colt Keith,DET,3B,0.339,0.337,-0.002,-0.22,Sell high,,9.3,195.0,51.5
-663616,Trevor Larnach,MIN,LF,0.399,0.345,-0.054,-0.2242,Sell high,,2.6,161.0,60.5
-608348,Carson Kelly,CHC,C,0.385,0.341,-0.044,-0.2267,Sell high,,11.05,164.0,60.5
-699912,Jose Fernandez,AZ,SS,0.359,0.32,-0.039,-0.2303,Sell high,,5.75,142.0,63.5
-670042,Luke Raley,SEA,RF,0.352,0.384,0.032,-0.2313,Sell high,,6.46,179.0,54.5
-668227,Randy Arozarena,SEA,LF,0.343,0.346,0.003,-0.2321,Sell high,,90.42,32.0,100.5
-804606,Konnor Griffin,PIT,SS,0.342,0.331,-0.011,-0.2412,Sell high,,48.21,157.0,61.0
-669127,Shea Langeliers,ATH,C,0.436,0.439,0.003,-0.248,Sell high,,97.4,24.0,105.5
-669477,Casey Schmitt,SF,SS,0.396,0.395,-0.001,-0.2514,Sell high,,15.54,93.0,76.5
-668885,Austin Martin,MIN,SS,0.416,0.381,-0.035,-0.2634,Sell high,,1.27,139.0,64.5
-669003,Garrett Mitchell,MIL,CF,0.323,0.336,0.013,-0.2722,Sell high,,6.06,107.0,72.0
-691777,Max Muncy,ATH,SS,0.318,0.315,-0.003,-0.2759,Sell high,,6.04,183.0,53.5
-693304,Nick Gonzales,PIT,2B,0.331,0.335,0.004,-0.2778,Sell high,,4.52,131.0,66.5
-681624,Andy Pages,LAD,CF,0.378,0.37,-0.008,-0.2793,Sell high,,93.03,31.0,101.0
-682985,Riley Greene,DET,CF,0.381,0.4,0.019,-0.3001,Sell high,34.0,86.73,43.0,94.5
-663604,Brandon Lockridge,MIL,OF,0.328,0.264,-0.064,-0.3064,Sell high,,0.33,214.0,45.0
-656305,Matt Chapman,SF,3B,0.306,0.281,-0.025,-0.3112,Sell high,,69.42,116.0,70.5
-672640,Otto Lopez,MIA,SS,0.407,0.373,-0.034,-0.3142,Sell high,,73.99,44.0,94.0
-700250,Ben Rice,NYY,1B,0.512,0.515,0.003,-0.3166,Sell high,,99.15,6.0,127.5
-691023,Jordan Walker,STL,RF,0.424,0.428,0.004,-0.3308,Sell high,,89.27,17.0,111.5
-545121,Ildemaro Vargas,AZ,3B,0.452,0.424,-0.028,-0.3872,Sell high,,73.55,38.0,98.5
-682177,Daniel Schneemann,CLE,2B,0.357,0.359,0.002,-0.4196,Sell high,,10.25,126.0,68.0
-672724,Oswald Peraza,LAA,3B,0.364,0.37,0.006,-0.4655,Sell high,,2.97,145.0,63.0
+batter,Player,Team,Position,Signal,Luck Score,wOBA,xwOBA,xwOBA Gap,Ownership %,FP Rank,CBS Rank,CBS FPTS,Type,pitcher,ERA,FIP,xERA
+663647.0,Ke'bryan Hayes,CIN,3B,Buy low,0.5698,0.209,0.308,0.099,0.52,,286.0,29.0,Hitter,,,,
+663757.0,Trent Grisham,NYY,CF,Buy low,0.5213,0.3,0.399,0.099,19.06,,67.0,95.0,Hitter,,,,
+608070.0,José Ramírez,CLE,3B,Buy low,0.5027,0.327,0.397,0.07,99.83,7.0,19.0,128.0,Hitter,,,,
+664761.0,Alec Bohm,PHI,3B,Buy low,0.4533,0.231,0.271,0.04,15.84,,224.0,49.0,Hitter,,,,
+694497.0,Evan Carter,TEX,LF,Buy low,0.4135,0.289,0.344,0.055,3.93,,158.0,67.5,Hitter,,,,
+701398.0,Sal Stewart,CIN,1B,Buy low,0.3905,0.359,0.402,0.043,92.48,,12.0,133.5,Hitter,,,,
+702332.0,Caleb Durbin,BOS,3B,Buy low,0.3669,0.248,0.278,0.03,30.8,,174.0,64.5,Hitter,,,,
+681082.0,Bryson Stott,PHI,2B,Buy low,0.3651,0.272,0.324,0.052,36.62,,149.0,69.0,Hitter,,,,
+608369.0,Corey Seager,TEX,SS,Buy low,0.3558,0.303,0.371,0.068,87.19,36.0,86.0,89.5,Hitter,,,,
+669224.0,Austin Wells,NYY,C,Buy low,0.3523,0.282,0.362,0.08,10.39,,222.0,50.0,Hitter,,,,
+686469.0,Vinnie Pasquantino,KC,1B,Buy low,0.3224,0.297,0.326,0.029,65.01,,116.0,80.0,Hitter,,,,
+641487.0,J. p. Crawford,SEA,SS,Buy low,0.3175,0.332,0.404,0.072,6.66,,,79.0,Hitter,,,,
+680776.0,Jarren Duran,BOS,CF,Buy low,0.3142,0.254,0.31,0.056,81.29,,115.0,80.5,Hitter,,,,
+592518.0,Manny Machado,SD,3B,Buy low,0.3124,0.316,0.35,0.034,98.66,20.0,98.0,86.0,Hitter,,,,
+678662.0,Ezequiel Tovar,COL,SS,Buy low,0.3082,0.242,0.294,0.052,5.39,,230.0,47.0,Hitter,,,,
+666139.0,Josh Lowe,LAA,,Buy low,0.3046,0.222,0.295,0.073,1.07,,,,Hitter,,,,
+650859.0,Luis Rengifo,MIL,2B,Buy low,0.2928,0.262,0.277,0.015,0.72,,214.0,51.5,Hitter,,,,
+670770.0,Tj Friedl,CIN,CF,Buy low,0.2864,0.258,0.262,0.004,13.69,,180.0,61.5,Hitter,,,,
+681198.0,Tj Rumfield,COL,3B,Buy low,0.2861,0.333,0.34,0.007,10.82,,99.0,85.5,Hitter,,,,
+630105.0,Jake Cronenworth,SD,1B,Buy low,0.2756,0.247,0.313,0.066,4.47,,240.0,43.5,Hitter,,,,
+621020.0,Dansby Swanson,CHC,SS,Buy low,0.2706,0.329,0.383,0.054,45.44,,47.0,106.0,Hitter,,,,
+701807.0,Carson Benge,NYM,RF,Buy low,0.267,0.258,0.299,0.041,6.11,,184.0,61.0,Hitter,,,,
+680574.0,Matt Mclain,CIN,SS,Buy low,0.2618,0.274,0.311,0.037,10.09,,156.0,67.5,Hitter,,,,
+670541.0,Yordan Álvarez,HOU,DH,Buy low,0.2525,0.455,0.541,0.086,99.69,3.0,2.0,161.0,Hitter,,,,
+663586.0,Austin Riley,ATL,3B,Buy low,0.2341,0.289,0.306,0.017,83.87,31.0,75.0,91.5,Hitter,,,,
+805300.0,Jakob Marsee,MIA,OF,Buy low,0.2302,0.259,0.276,0.017,37.87,,114.0,81.0,Hitter,,,,
+683002.0,Gunnar Henderson,BAL,3B,Buy low,0.2249,0.318,0.348,0.03,98.35,11.0,53.0,105.0,Hitter,,,,
+663886.0,Tyler Stephenson,CIN,C,Buy low,0.2225,0.281,0.361,0.08,1.72,,265.0,36.5,Hitter,,,,
+605137.0,Josh Bell,MIN,DH,Buy low,0.2221,0.288,0.343,0.055,14.21,,106.0,82.0,Hitter,,,,
+660271.0,Shohei Ohtani,LAD,DH,Buy low,0.22,0.36,0.397,0.037,99.82,2.0,37.0,111.0,Hitter,,,,
+606466.0,Ketel Marte,AZ,2B,Buy low,0.2192,0.308,0.372,0.064,99.41,,123.0,77.0,Hitter,,,,
+686217.0,Sal Frelick,MIL,RF,Buy low,0.2123,0.293,0.309,0.016,33.22,,153.0,68.5,Hitter,,,,
+691720.0,Kyle Karros,COL,3B,Buy low,0.2122,0.291,0.346,0.055,0.27,,202.0,56.0,Hitter,,,,
+607208.0,Trea Turner,PHI,SS,Buy low,0.2018,0.3,0.31,0.01,90.82,18.0,77.0,91.0,Hitter,,,,
+693307.0,Dillon Dingler,DET,C,Buy low,0.2012,0.361,0.438,0.077,48.7,,79.0,91.0,Hitter,,,,
+660670.0,Ronald Acuña,ATL,RF,Buy low,0.2,0.337,0.383,0.046,99.42,,,91.5,Hitter,,,,
+656775.0,Cedric Mullins,TB,,Buy low,0.1979,0.215,0.24,0.025,1.88,,,,Hitter,,,,
+671732.0,Lawrence Butler,ATH,CF,Buy low,0.1887,0.269,0.324,0.055,14.79,,206.0,54.0,Hitter,,,,
+672695.0,Geraldo Perdomo,AZ,SS,Buy low,0.1855,0.322,0.32,-0.002,84.28,,91.0,87.0,Hitter,,,,
+687637.0,Dylan Beavers,BAL,RF,Buy low,0.1838,0.283,0.315,0.032,1.45,,201.0,56.0,Hitter,,,,
+667670.0,Brent Rooker,ATH,,Buy low,0.1833,0.246,0.299,0.053,77.64,,,,Hitter,,,,
+680757.0,Steven Kwan,CLE,LF,Buy low,0.181,0.28,0.291,0.011,79.12,,136.0,72.5,Hitter,,,,
+542303.0,Marcell Ozuna,PIT,,Neutral,0.1726,0.266,0.313,0.047,5.83,,,,Hitter,,,,
+666310.0,Bo Naylor,CLE,C,Neutral,0.1707,0.188,0.295,0.107,1.3,,307.0,18.0,Hitter,,,,
+691016.0,Tyler Soderstrom,ATH,C,Neutral,0.1706,0.322,0.354,0.032,71.18,,80.0,91.0,Hitter,,,,
+682668.0,Luisangel Acuña,CWS,2B,Neutral,0.1703,0.191,0.27,0.079,1.12,,271.0,35.0,Hitter,,,,
+592626.0,Joc Pederson,TEX,,Neutral,0.1663,0.274,0.329,0.055,0.2,,,,Hitter,,,,
+656941.0,Kyle Schwarber,PHI,LF,Neutral,0.1662,0.366,0.404,0.038,99.53,28.0,31.0,113.5,Hitter,,,,
+681715.0,Heriberto Hernandez,MIA,,Neutral,0.1649,0.259,0.293,0.034,0.1,,,,Hitter,,,,
+665561.0,Rafael Marchán,PHI,C,Neutral,0.1627,0.143,0.21,0.067,0.12,,331.0,9.5,Hitter,,,,
+605170.0,Víctor Caratini,MIN,C,Neutral,0.1604,0.285,0.34,0.055,1.04,,231.0,46.5,Hitter,,,,
+663728.0,Cal Raleigh,SEA,C,Neutral,0.1591,0.28,0.328,0.048,99.53,27.0,126.0,76.0,Hitter,,,,
+669394.0,Jake Burger,TEX,3B,Neutral,0.1584,0.268,0.288,0.02,8.1,,139.0,71.5,Hitter,,,,
+802139.0,Jj Wetherholt,STL,2B,Neutral,0.1572,0.354,0.373,0.019,77.13,,21.0,124.0,Hitter,,,,
+672761.0,Wenceel Pérez,DET,,Neutral,0.1571,0.218,0.339,0.121,0.71,,,,Hitter,,,,
+687597.0,Jordan Beck,COL,,Neutral,0.1568,0.234,0.286,0.052,0.96,,,,Hitter,,,,
+663656.0,Kyle Tucker,LAD,RF,Neutral,0.1549,0.321,0.334,0.013,99.66,,58.0,103.5,Hitter,,,,
+668904.0,Royce Lewis,MIN,3B,Neutral,0.1518,0.285,0.326,0.041,7.52,,236.0,44.5,Hitter,,,,
+691723.0,Coby Mayo,BAL,3B,Neutral,0.1516,0.23,0.28,0.05,1.3,,244.0,42.5,Hitter,,,,
+676475.0,Alec Burleson,STL,LF,Neutral,0.1473,0.334,0.375,0.041,90.1,,33.0,113.5,Hitter,,,,
+608324.0,Alex Bregman,CHC,3B,Neutral,0.147,0.33,0.353,0.023,94.21,21.0,89.0,88.0,Hitter,,,,
+696100.0,Hunter Goodman,COL,RF,Neutral,0.1424,0.342,0.346,0.004,72.76,,84.0,89.5,Hitter,,,,
+701350.0,Roman Anthony,BOS,RF,Neutral,0.1392,0.296,0.347,0.051,79.89,,185.0,60.5,Hitter,,,,
+683737.0,Michael Busch,CHC,3B,Neutral,0.1347,0.308,0.321,0.013,41.65,,94.0,87.0,Hitter,,,,
+807712.0,Luke Keaschall,MIN,2B,Neutral,0.1331,0.286,0.294,0.008,57.16,,85.0,89.5,Hitter,,,,
+671277.0,Luis García,WSH,2B,Neutral,0.1315,0.282,0.303,0.021,0.0,,175.0,64.5,Hitter,,,,
+669701.0,Josh Smith,TEX,,Neutral,0.1303,0.284,0.308,0.024,2.49,,,,Hitter,,,,
+695657.0,Colson Montgomery,CWS,SS,Neutral,0.1265,0.362,0.374,0.012,24.8,,59.0,102.0,Hitter,,,,
+641355.0,Cody Bellinger,NYY,CF,Neutral,0.1237,0.394,0.413,0.019,98.7,22.0,16.0,131.0,Hitter,,,,
+669257.0,Will Smith,LAD,C,Neutral,0.1236,0.315,0.367,0.052,0.02,,148.0,69.5,Hitter,,,,
+678554.0,Curtis Mead,WSH,3B,Neutral,0.122,0.349,0.371,0.022,0.52,,154.0,68.5,Hitter,,,,
+647304.0,Josh Naylor,SEA,1B,Neutral,0.1197,0.295,0.34,0.045,70.11,,111.0,81.5,Hitter,,,,
+666182.0,Bo Bichette,NYM,3B,Neutral,0.1187,0.274,0.338,0.064,74.62,14.0,141.0,71.0,Hitter,,,,
+663993.0,Nathaniel Lowe,CIN,,Neutral,0.1182,0.415,0.458,0.043,4.51,,,,Hitter,,,,
+673357.0,Luis Robert,NYM,,Neutral,0.1163,0.299,0.329,0.03,26.0,,212.0,,Hitter,,,,
+700337.0,Edgar Quero,CWS,C,Neutral,0.1157,0.224,0.248,0.024,0.61,,295.0,24.0,Hitter,,,,
+672275.0,Patrick Bailey,SF,C,Neutral,0.1154,0.202,0.292,0.09,0.94,,293.0,26.0,Hitter,,,,
+701538.0,Jackson Merrill,SD,SS,Neutral,0.1145,0.308,0.33,0.022,89.65,,64.0,97.5,Hitter,,,,
+663837.0,Matt Vierling,DET,RF,Neutral,0.1132,0.299,0.325,0.026,0.27,,198.0,56.0,Hitter,,,,
+543807.0,George Springer,TOR,,Neutral,0.1106,0.312,0.339,0.027,74.85,,,,Hitter,,,,
+681481.0,Kerry Carpenter,DET,RF,Neutral,0.1094,0.34,0.373,0.033,13.77,,166.0,66.5,Hitter,,,,
+602104.0,Ramón Urías,STL,3B,Neutral,0.1086,0.283,0.314,0.031,0.13,,270.0,35.0,Hitter,,,,
+592450.0,Aaron Judge,NYY,RF,Neutral,0.1071,0.469,0.488,0.019,99.89,1.0,3.0,159.0,Hitter,,,,
+596019.0,Francisco Lindor,NYM,SS,Neutral,0.1071,0.304,0.336,0.032,97.65,,195.0,57.5,Hitter,,,,
+671056.0,Iván Herrera,STL,C,Neutral,0.107,0.382,0.399,0.017,53.65,,32.0,113.5,Hitter,,,,
+656555.0,Rhys Hoskins,CLE,1B,Neutral,0.1036,0.309,0.337,0.028,1.97,,172.0,65.0,Hitter,,,,
+665862.0,Jazz Chisholm,NYY,,Neutral,0.1001,0.288,0.297,0.009,88.06,,78.0,,Hitter,,,,
+687462.0,Spencer Horwitz,PIT,1B,Neutral,0.0998,0.358,0.333,-0.025,1.39,,143.0,70.5,Hitter,,,,
+593428.0,Xander Bogaerts,SD,SS,Neutral,0.0994,0.36,0.363,0.003,32.9,,57.0,103.5,Hitter,,,,
+592206.0,Nick Castellanos,SD,,Neutral,0.0977,0.232,0.311,0.079,0.86,,,,Hitter,,,,
+691406.0,Junior Caminero,TB,3B,Neutral,0.0957,0.351,0.375,0.024,99.66,,51.0,105.0,Hitter,,,,
+543760.0,Marcus Semien,NYM,2B,Neutral,0.0941,0.247,0.283,0.036,46.21,,204.0,55.0,Hitter,,,,
+660821.0,Jesús Sánchez,TOR,RF,Neutral,0.0931,0.284,0.341,0.057,2.7,,160.0,67.0,Hitter,,,,
+677950.0,Alek Thomas,AZ,CF,Neutral,0.0925,0.272,0.3,0.028,0.68,,199.0,56.0,Hitter,,,,
+687363.0,Victor Scott,STL,,Neutral,0.0919,0.221,0.263,0.042,1.46,,,,Hitter,,,,
+672580.0,Maikel García,KC,3B,Neutral,0.0894,0.319,0.353,0.034,87.32,,71.0,93.5,Hitter,,,,
+680779.0,Henry Davis,PIT,RF,Neutral,0.089,0.241,0.283,0.042,0.53,,248.0,41.0,Hitter,,,,
+808959.0,Munetaka Murakami,CWS,1B,Neutral,0.0886,0.388,0.42,0.032,91.36,,18.0,128.5,Hitter,,,,
+547180.0,Bryce Harper,PHI,DH,Neutral,0.0871,0.417,0.434,0.017,96.0,29.0,15.0,131.5,Hitter,,,,
+521692.0,Salvador Pérez,KC,C,Neutral,0.0859,0.264,0.301,0.037,70.73,,142.0,70.5,Hitter,,,,
+695600.0,Carter Jensen,KC,C,Neutral,0.0843,0.328,0.33,0.002,21.71,,146.0,69.5,Hitter,,,,
+663538.0,Nico Hoerner,CHC,2B,Neutral,0.0842,0.379,0.398,0.019,98.92,,9.0,135.0,Hitter,,,,
+608701.0,Rob Refsnyder,SEA,,Neutral,0.0841,0.217,0.3,0.083,0.12,,,,Hitter,,,,
+669357.0,Nolan Gorman,STL,2B,Neutral,0.0839,0.289,0.318,0.029,5.04,,138.0,71.5,Hitter,,,,
+621439.0,Byron Buxton,MIN,DH,Neutral,0.0837,0.355,0.384,0.029,85.31,,28.0,115.0,Hitter,,,,
+660844.0,Leo Rivas,SEA,,Neutral,0.0809,0.219,0.235,0.016,0.12,,,,Hitter,,,,
+688363.0,Graham Pauley,MIA,3B,Neutral,0.0802,0.249,0.227,-0.022,0.09,,268.0,35.5,Hitter,,,,
+624413.0,Pete Alonso,BAL,1B,Neutral,0.0788,0.343,0.377,0.034,97.76,17.0,50.0,105.0,Hitter,,,,
+678246.0,Miguel Vargas,CWS,2B,Neutral,0.0787,0.366,0.415,0.049,56.0,,22.0,124.0,Hitter,,,,
+691785.0,Marcelo Mayer,BOS,2B,Neutral,0.0764,0.29,0.305,0.015,3.06,,216.0,51.0,Hitter,,,,
+701358.0,Cam Smith,HOU,3B,Neutral,0.0759,0.306,0.359,0.053,14.27,,101.0,84.0,Hitter,,,,
+679529.0,Spencer Torkelson,DET,1B,Neutral,0.0757,0.333,0.374,0.041,28.26,,129.0,75.5,Hitter,,,,
+596142.0,Gary Sánchez,MIL,C,Neutral,0.0727,0.371,0.395,0.024,4.81,,155.0,68.0,Hitter,,,,
+518692.0,Freddie Freeman,LAD,1B,Neutral,0.072,0.336,0.384,0.048,95.37,6.0,83.0,89.5,Hitter,,,,
+701675.0,Nathan Church,STL,OF,Neutral,0.0662,0.299,0.347,0.048,4.83,,137.0,72.0,Hitter,,,,
+687401.0,Joey Ortiz,MIL,,Neutral,0.0662,0.21,0.259,0.049,0.95,,,,Hitter,,,,
+681351.0,Logan O'hoppe,LAA,C,Neutral,0.0644,0.268,0.298,0.03,2.41,,250.0,39.5,Hitter,,,,
+671739.0,Michael Harris,ATL,,Neutral,0.064,0.372,0.474,0.102,79.33,,70.0,,Hitter,,,,
+694374.0,Tim Tawa,AZ,2B,Neutral,0.0625,0.25,0.304,0.054,0.12,,299.0,20.5,Hitter,,,,
+677951.0,Bobby Witt,KC,,Neutral,0.0615,0.355,0.395,0.04,99.8,,29.0,,Hitter,,,,
+671289.0,Tyler Freeman,COL,3B,Neutral,0.0558,0.324,0.354,0.03,0.39,,234.0,45.5,Hitter,,,,
+676914.0,Davis Schneider,TOR,2B,Neutral,0.0539,0.281,0.321,0.04,0.45,,262.0,37.0,Hitter,,,,
+663697.0,Jonathan India,KC,2B,Neutral,0.0526,0.304,0.313,0.009,7.92,,274.0,34.5,Hitter,,,,
+673237.0,Yainer Diaz,HOU,C,Neutral,0.052,0.282,0.273,-0.009,51.66,,223.0,50.0,Hitter,,,,
+660688.0,Keibert Ruiz,WSH,C,Neutral,0.0518,0.218,0.233,0.015,1.0,,284.0,29.5,Hitter,,,,
+696285.0,Jacob Young,WSH,CF,Neutral,0.0508,0.258,0.296,0.038,0.7,,196.0,57.5,Hitter,,,,
+678218.0,Brandon Valenzuela,TOR,C,Neutral,0.0489,0.28,0.305,0.025,0.39,,292.0,26.5,Hitter,,,,
+694377.0,Nick Yorke,PIT,2B,Neutral,0.0472,0.293,0.33,0.037,0.18,,273.0,34.5,Hitter,,,,
+682877.0,Juan Brito,CLE,SS,Neutral,0.046,0.232,0.256,0.024,0.08,,302.0,19.5,Hitter,,,,
+695734.0,Daylen Lile,WSH,RF,Neutral,0.046,0.322,0.342,0.02,41.69,,90.0,87.5,Hitter,,,,
+664040.0,Brandon Lowe,PIT,2B,Neutral,0.0438,0.371,0.398,0.027,77.78,,54.0,105.0,Hitter,,,,
+655316.0,Andruw Monasterio,BOS,3B,Neutral,0.0432,0.295,0.328,0.033,0.15,,275.0,34.0,Hitter,,,,
+800050.0,Chase Delauter,CLE,RF,Neutral,0.0413,0.384,0.396,0.012,79.52,,40.0,109.0,Hitter,,,,
+668715.0,Spencer Steer,CIN,1B,Neutral,0.0407,0.34,0.381,0.041,8.16,,134.0,73.0,Hitter,,,,
+664983.0,Jake Mccarthy,COL,RF,Neutral,0.0404,0.338,0.302,-0.036,0.37,,221.0,50.0,Hitter,,,,
+641933.0,Tyler O'neill,BAL,,Neutral,0.0399,0.298,0.305,0.007,0.78,,,,Hitter,,,,
+502671.0,Paul Goldschmidt,NYY,1B,Neutral,0.0366,0.324,0.42,0.096,1.22,,266.0,36.5,Hitter,,,,
+694384.0,Nolan Schanuel,LAA,1B,Neutral,0.0358,0.31,0.322,0.012,6.93,,108.0,82.0,Hitter,,,,
+686452.0,Drew Millas,WSH,C,Neutral,0.0356,0.213,0.259,0.046,0.05,,318.0,14.5,Hitter,,,,
+642708.0,Amed Rosario,NYY,SS,Neutral,0.0354,0.349,0.385,0.036,1.22,,220.0,50.5,Hitter,,,,
+680728.0,Adrian Del castillo,AZ,C,Neutral,0.0348,0.294,0.309,0.015,0.21,,247.0,41.0,Hitter,,,,
+642851.0,Austin Wynns,ATH,C,Neutral,0.0347,0.137,0.283,0.146,0.06,,353.0,4.0,Hitter,,,,
+641857.0,Ryan Mcmahon,NYY,3B,Neutral,0.0337,0.291,0.341,0.05,1.34,,227.0,48.0,Hitter,,,,
+670242.0,Matt Wallner,MIN,,Neutral,0.0335,0.256,0.3,0.044,1.18,,,,Hitter,,,,
+592663.0,J. t. Realmuto,PHI,C,Neutral,0.0332,0.318,0.317,-0.001,14.52,,,37.0,Hitter,,,,
+593871.0,Jorge Polanco,NYM,1B,Neutral,0.0324,0.221,0.28,0.059,10.74,,298.0,20.5,Hitter,,,,
+664056.0,Harrison Bader,SF,,Neutral,0.0321,0.159,0.28,0.121,1.75,,,,Hitter,,,,
+683083.0,Nasim Nuñez,WSH,2B,Neutral,0.0314,0.277,0.28,0.003,4.5,,107.0,82.0,Hitter,,,,
+677956.0,Rece Hinds,CIN,,Neutral,0.0312,0.168,0.152,-0.016,0.12,,,,Hitter,,,,
+803011.0,Sam Antonacci,CWS,SS,Neutral,0.0305,0.374,0.42,0.046,5.87,,226.0,48.5,Hitter,,,,
+666023.0,Freddy Fermin,SD,C,Neutral,0.0302,0.275,0.271,-0.004,0.54,,290.0,27.5,Hitter,,,,
+686681.0,Michael Massey,KC,2B,Neutral,0.0299,0.266,0.29,0.024,0.17,,263.0,37.0,Hitter,,,,
+687231.0,Darell Hernaiz,ATH,SS,Neutral,0.0292,0.275,0.271,-0.004,0.17,,280.0,31.0,Hitter,,,,
+660162.0,Yoán Moncada,LAA,3B,Neutral,0.0287,0.276,0.295,0.019,0.25,,239.0,44.0,Hitter,,,,
+650402.0,Gleyber Torres,DET,2B,Neutral,0.0286,0.341,0.365,0.024,62.57,,109.0,82.0,Hitter,,,,
+701678.0,Hao-yu Lee,DET,,Neutral,0.0282,0.232,0.288,0.056,0.2,,,,Hitter,,,,
+689414.0,Liam Hicks,MIA,C,Neutral,0.0279,0.395,0.44,0.045,87.39,,25.0,119.5,Hitter,,,,
+621438.0,Tyrone Taylor,NYM,,Neutral,0.0275,0.247,0.282,0.035,0.16,,,,Hitter,,,,
+665966.0,Carlos Narváez,BOS,C,Neutral,0.0258,0.276,0.304,0.028,1.6,,282.0,31.0,Hitter,,,,
+695020.0,Tanner Murray,CWS,3B,Neutral,0.0245,0.312,0.33,0.018,0.03,,322.0,13.5,Hitter,,,,
+642201.0,Eli White,ATL,,Neutral,0.0238,0.287,0.315,0.028,0.19,,,,Hitter,,,,
+695336.0,Thomas Saggese,STL,SS,Neutral,0.0235,0.204,0.215,0.011,0.17,,328.0,11.5,Hitter,,,,
+672515.0,Gabriel Moreno,AZ,C,Neutral,0.0234,0.344,0.373,0.029,22.29,,258.0,37.0,Hitter,,,,
+663368.0,Blake Perkins,MIL,,Neutral,0.0227,0.243,0.22,-0.023,0.06,,,,Hitter,,,,
+680700.0,Richie Palacios,TB,,Neutral,0.0219,0.305,0.369,0.064,0.18,,,,Hitter,,,,
+666181.0,Will Benson,CIN,,Neutral,0.0208,0.31,0.306,-0.004,0.18,,,,Hitter,,,,
+514888.0,José Altuve,HOU,2B,Neutral,0.0208,0.328,0.328,0.0,94.36,40.0,102.0,83.0,Hitter,,,,
+665742.0,Juan Soto,NYM,LF,Neutral,0.0197,0.377,0.477,0.1,99.8,5.0,190.0,59.0,Hitter,,,,
+687957.0,Dustin Harris,HOU,,Neutral,0.0193,0.291,0.331,0.04,0.06,,,,Hitter,,,,
+687093.0,Vaughn Grissom,LAA,2B,Neutral,0.0177,0.345,0.359,0.014,0.69,,251.0,39.0,Hitter,,,,
+657041.0,Lane Thomas,KC,,Neutral,0.0166,0.322,0.332,0.01,0.31,,,,Hitter,,,,
+677587.0,Brayan Rocchio,CLE,SS,Neutral,0.0163,0.319,0.308,-0.011,13.77,,92.0,87.0,Hitter,,,,
+678489.0,Jorge Barrosa,AZ,,Neutral,0.0158,0.282,0.242,-0.04,0.08,,,,Hitter,,,,
+661388.0,William Contreras,MIL,C,Neutral,0.0157,0.352,0.366,0.014,98.59,23.0,56.0,103.5,Hitter,,,,
+669236.0,Jeremiah Jackson,BAL,SS,Neutral,0.0154,0.325,0.331,0.006,28.73,,131.0,75.0,Hitter,,,,
+657757.0,Gavin Sheets,SD,RF,Neutral,0.0138,0.312,0.317,0.005,4.56,,170.0,65.5,Hitter,,,,
+682626.0,Francisco Álvarez,NYM,C,Neutral,0.0137,0.305,0.324,0.019,18.09,,203.0,55.0,Hitter,,,,
+663330.0,Jahmai Jones,DET,,Neutral,0.0132,0.309,0.384,0.075,0.1,,,,Hitter,,,,
+672960.0,Kazuma Okamoto,TOR,3B,Neutral,0.013,0.358,0.375,0.017,50.99,,60.0,100.0,Hitter,,,,
+543309.0,Kyle Higashioka,TEX,,Neutral,0.0106,0.283,0.305,0.022,0.49,,296.0,,Hitter,,,,
+664034.0,Ty France,SD,1B,Neutral,0.0094,0.379,0.415,0.036,0.44,,232.0,46.5,Hitter,,,,
+665019.0,Kody Clemens,MIN,1B,Neutral,0.0092,0.327,0.37,0.043,0.55,,200.0,56.0,Hitter,,,,
+665161.0,Jeremy Peña,HOU,SS,Neutral,0.0086,0.311,0.36,0.049,52.98,,297.0,22.0,Hitter,,,,
+623168.0,Tyler Heineman,TOR,C,Neutral,0.0083,0.189,0.225,0.036,0.18,,330.0,11.0,Hitter,,,,
+656716.0,Zach Mckinstry,DET,3B,Neutral,0.0069,0.24,0.245,0.005,3.31,,309.0,18.0,Hitter,,,,
+664954.0,Brett Sullivan,COL,C,Neutral,0.0056,0.304,0.267,-0.037,0.1,,291.0,27.0,Hitter,,,,
+668939.0,Adley Rutschman,BAL,C,Neutral,0.0056,0.378,0.369,-0.009,83.03,13.0,157.0,67.5,Hitter,,,,
+620443.0,Luis Torrens,NYM,DH,Neutral,0.0043,0.217,0.266,0.049,0.16,,317.0,15.0,Hitter,,,,
+641680.0,Jonah Heim,ATL,C,Neutral,0.004,0.313,0.287,-0.026,0.28,,283.0,30.5,Hitter,,,,
+596115.0,Trevor Story,BOS,SS,Neutral,0.0038,0.275,0.263,-0.012,18.88,,178.0,63.5,Hitter,,,,
+641555.0,J. c. Escarra,NYY,C,Neutral,0.0034,0.268,0.277,0.009,0.11,,,16.0,Hitter,,,,
+664770.0,Nathan Lukes,TOR,,Neutral,0.0031,0.288,0.28,-0.008,0.39,,,,Hitter,,,,
+669720.0,Austin Hays,CWS,,Neutral,0.0025,0.249,0.323,0.074,0.73,,,,Hitter,,,,
+624641.0,Edmundo Sosa,PHI,3B,Neutral,0.0008,0.311,0.349,0.038,0.38,,276.0,33.5,Hitter,,,,
+679845.0,Nick Loftin,KC,1B,Neutral,0.0006,0.37,0.323,-0.047,0.08,,278.0,32.5,Hitter,,,,
+662139.0,Daulton Varsho,TOR,LF,Neutral,0.0004,0.33,0.337,0.007,13.51,,125.0,76.5,Hitter,,,,
+694376.0,Shay Whitcomb,HOU,SS,Neutral,0.0,0.193,0.197,0.004,0.03,,347.0,5.0,Hitter,,,,
+669699.0,Braden Shewmake,HOU,SS,Neutral,0.0,0.479,0.435,-0.044,0.08,,320.0,14.5,Hitter,,,,
+683953.0,Travis Bazzana,CLE,2B,Neutral,0.0,0.259,0.392,0.133,18.91,,308.0,18.0,Hitter,,,,
+691176.0,Jasson Domínguez,NYY,,Neutral,0.0,0.339,0.394,0.055,9.22,,,,Hitter,,,,
+571657.0,Kyle Farmer,ATL,3B,Neutral,0.0,0.304,0.285,-0.019,0.05,,333.0,9.0,Hitter,,,,
+553869.0,Elías Díaz,KC,C,Neutral,0.0,0.508,0.486,-0.022,0.07,,319.0,14.5,Hitter,,,,
+664731.0,P. j. Higgins,CIN,1B,Neutral,0.0,0.208,0.301,0.093,0.03,,,2.0,Hitter,,,,
+671286.0,Johnathan Rodríguez,BAL,,Neutral,0.0,0.191,0.33,0.139,0.03,,,,Hitter,,,,
+669369.0,Bryce Johnson,SD,,Neutral,0.0,0.252,0.16,-0.092,0.02,,,,Hitter,,,,
+683766.0,Christian Koss,SF,SS,Neutral,0.0,0.096,0.099,0.003,0.03,,368.0,1.0,Hitter,,,,
+695257.0,Billy Cook,PIT,,Neutral,0.0,0.277,0.199,-0.078,0.05,,,,Hitter,,,,
+645302.0,Víctor Robles,SEA,,Neutral,0.0,0.235,0.256,0.021,0.32,,,,Hitter,,,,
+669289.0,Santiago Espinal,LAD,2B,Neutral,0.0,0.2,0.275,0.075,0.07,,332.0,9.5,Hitter,,,,
+682818.0,Yohendrick Pinango,TOR,,Neutral,0.0,0.476,0.368,-0.108,0.37,,,,Hitter,,,,
+665052.0,Griffin Conine,MIA,,Neutral,0.0,0.402,0.521,0.119,0.21,,,,Hitter,,,,
+669397.0,Nick Allen,HOU,SS,Neutral,0.0,0.298,0.302,0.004,0.08,,327.0,11.5,Hitter,,,,
+691740.0,Daniel Susac,SF,C,Neutral,0.0,0.5,0.386,-0.114,0.47,,303.0,19.5,Hitter,,,,
+676724.0,Jared Young,NYM,1B,Neutral,0.0,0.365,0.364,-0.001,0.03,,321.0,13.5,Hitter,,,,
+605141.0,Mookie Betts,LAD,RF,Neutral,0.0,0.306,0.417,0.111,96.84,,289.0,28.0,Hitter,,,,
+669707.0,Jared Triolo,PIT,3B,Neutral,0.0,0.267,0.282,0.015,0.38,,329.0,11.5,Hitter,,,,
+692216.0,Cj Kayfus,CLE,1B,Neutral,0.0,0.286,0.329,0.043,0.16,,324.0,13.0,Hitter,,,,
+467793.0,Carlos Santana,AZ,1B,Neutral,0.0,0.154,0.209,0.055,0.29,,360.0,2.0,Hitter,,,,
+680718.0,Addison Barger,TOR,SS,Neutral,0.0,0.146,0.23,0.084,8.66,,349.0,5.0,Hitter,,,,
+606992.0,Eric Haase,SF,C,Neutral,0.0,0.34,0.296,-0.044,0.03,,343.0,7.0,Hitter,,,,
+672012.0,Tyler Black,MIL,2B,Neutral,0.0,0.443,0.182,-0.261,0.5,,300.0,20.5,Hitter,,,,
+672356.0,Gabriel Arias,CLE,SS,Neutral,0.0,0.302,0.335,0.033,0.32,,316.0,15.0,Hitter,,,,
+664059.0,Sam Haggerty,TEX,,Neutral,0.0,0.211,0.189,-0.022,0.04,,,,Hitter,,,,
+694025.0,Felix Reyes,PHI,,Neutral,0.0,0.18,0.275,0.095,0.22,,,,Hitter,,,,
+682622.0,Noelvi Marte,CIN,3B,Neutral,0.0,0.203,0.171,-0.032,6.54,,354.0,4.0,Hitter,,,,
+596117.0,Garrett Stubbs,PHI,C,Neutral,0.0,0.253,0.267,0.014,0.08,,342.0,7.0,Hitter,,,,
+672284.0,Jarred Kelenic,CWS,,Neutral,0.0,0.333,0.427,0.094,0.06,,,,Hitter,,,,
+687515.0,Colby Thomas,ATH,,Neutral,0.0,0.327,0.343,0.016,0.12,,,,Hitter,,,,
+805249.0,Otto Kemp,PHI,3B,Neutral,0.0,0.145,0.227,0.082,0.18,,374.0,-0.5,Hitter,,,,
+675659.0,Greg Jones,MIL,,Neutral,0.0,0.091,0.176,0.085,0.02,,,,Hitter,,,,
+672386.0,Alejandro Kirk,TOR,C,Neutral,0.0,0.252,0.353,0.101,40.54,,326.0,12.0,Hitter,,,,
+656582.0,Connor Joe,SEA,,Neutral,0.0,0.325,0.384,0.059,0.04,,,,Hitter,,,,
+502054.0,Tommy Pham,NYM,,Neutral,0.0,0.05,0.137,0.087,0.05,,,,Hitter,,,,
+664238.0,Dylan Moore,PHI,LF,Neutral,0.0,0.14,0.233,0.093,0.13,,348.0,5.0,Hitter,,,,
+700246.0,Carson Williams,TB,SS,Neutral,0.0,0.188,0.22,0.032,0.53,,340.0,7.5,Hitter,,,,
+668952.0,Ryan Kreidler,MIN,,Neutral,0.0,0.447,0.499,0.052,0.08,,,,Hitter,,,,
+624431.0,Jose Trevino,CIN,C,Neutral,0.0,0.188,0.221,0.033,0.1,,356.0,3.0,Hitter,,,,
+628451.0,Andy Ibáñez,ATH,2B,Neutral,0.0,0.162,0.185,0.023,0.05,,344.0,6.5,Hitter,,,,
+642215.0,Weston Wilson,BAL,LF,Neutral,0.0,0.364,0.362,-0.002,0.02,,310.0,17.0,Hitter,,,,
+691011.0,Drew Romo,CWS,C,Neutral,0.0,0.519,0.576,0.057,0.4,,294.0,25.5,Hitter,,,,
+682641.0,Luis Matos,MIL,,Neutral,0.0,0.205,0.13,-0.075,0.06,,,,Hitter,,,,
+668709.0,Jj Bleday,CIN,,Neutral,0.0,0.522,0.624,0.102,5.13,,,,Hitter,,,,
+666624.0,Christopher Morel,MIA,,Neutral,0.0,0.312,0.295,-0.017,0.35,,,,Hitter,,,,
+665923.0,Esteury Ruiz,MIA,,Neutral,0.0,0.41,0.416,0.006,0.41,,,,Hitter,,,,
+663624.0,Ryan Mountcastle,BAL,1B,Neutral,0.0,0.31,0.301,-0.009,0.4,,346.0,6.0,Hitter,,,,
+650968.0,Yohel Pozo,STL,C,Neutral,0.0,0.179,0.247,0.068,0.06,,345.0,6.0,Hitter,,,,
+669288.0,Daniel Johnson,HOU,,Neutral,0.0,0.229,0.34,0.111,0.01,,,,Hitter,,,,
+691783.0,Jordan Lawlar,AZ,SS,Neutral,0.0,0.412,0.377,-0.035,2.94,,313.0,16.0,Hitter,,,,
+600869.0,Jeimer Candelario,LAA,3B,Neutral,0.0,0.195,0.216,0.021,0.07,,350.0,5.0,Hitter,,,,
+676694.0,Jake Meyers,HOU,,Neutral,-0.0007,0.349,0.353,0.004,0.52,,,,Hitter,,,,
+571448.0,Nolan Arenado,AZ,3B,Neutral,-0.0011,0.348,0.343,-0.005,15.91,,119.0,79.0,Hitter,,,,
+545341.0,Randal Grichuk,NYY,,Neutral,-0.0017,0.233,0.338,0.105,0.07,,,,Hitter,,,,
+671655.0,George Valera,CLE,,Neutral,-0.002,0.259,0.198,-0.061,0.14,,,,Hitter,,,,
+677595.0,Ronny Mauricio,NYM,2B,Neutral,-0.002,0.231,0.24,0.009,0.27,,335.0,9.0,Hitter,,,,
+646240.0,Rafael Devers,SF,3B,Neutral,-0.0024,0.253,0.26,0.007,68.74,16.0,213.0,52.0,Hitter,,,,
+672820.0,Lenyn Sosa,TOR,2B,Neutral,-0.0024,0.263,0.28,0.017,0.91,,267.0,36.5,Hitter,,,,
+805779.0,Jacob Wilson,ATH,SS,Neutral,-0.0027,0.322,0.296,-0.026,59.93,,100.0,85.0,Hitter,,,,
+666464.0,Jerar Encarnacion,SF,,Neutral,-0.003,0.184,0.21,0.026,0.06,,,,Hitter,,,,
+667472.0,Dane Myers,CIN,,Neutral,-0.0034,0.373,0.466,0.093,0.17,,,,Hitter,,,,
+518595.0,Travis D'arnaud,LAA,C,Neutral,-0.0036,0.267,0.302,0.035,0.13,,325.0,12.5,Hitter,,,,
+657136.0,Connor Wong,BOS,C,Neutral,-0.0036,0.315,0.266,-0.049,0.28,,285.0,29.0,Hitter,,,,
+665877.0,José Fermín,STL,2B,Neutral,-0.0042,0.334,0.316,-0.018,0.01,,305.0,19.0,Hitter,,,,
+668901.0,Mark Vientos,NYM,DH,Neutral,-0.0044,0.314,0.356,0.042,4.23,,197.0,57.0,Hitter,,,,
+677942.0,Blaze Alexander,BAL,SS,Neutral,-0.0052,0.256,0.313,0.057,0.23,,288.0,28.0,Hitter,,,,
+643396.0,Isiah Kiner-falefa,BOS,CF,Neutral,-0.0055,0.22,0.278,0.058,0.26,,304.0,19.5,Hitter,,,,
+668670.0,Jake Rogers,DET,C,Neutral,-0.0057,0.222,0.258,0.036,0.14,,311.0,17.0,Hitter,,,,
+664702.0,Myles Straw,TOR,CF,Neutral,-0.0061,0.361,0.404,0.043,0.22,,215.0,51.0,Hitter,,,,
+680777.0,Ryan Jeffers,MIN,C,Neutral,-0.0065,0.4,0.394,-0.006,28.62,,74.0,91.5,Hitter,,,,
+686780.0,Pedro Pagés,STL,C,Neutral,-0.0068,0.301,0.308,0.007,0.71,,235.0,45.5,Hitter,,,,
+666969.0,Adolis García,PHI,RF,Neutral,-0.0068,0.315,0.35,0.035,12.64,,168.0,66.0,Hitter,,,,
+543510.0,James Mccann,AZ,C,Neutral,-0.0075,0.193,0.187,-0.006,0.09,,323.0,13.5,Hitter,,,,
+650333.0,Luis Arráez,SF,2B,Neutral,-0.0076,0.338,0.299,-0.039,69.64,,88.0,89.0,Hitter,,,,
+681546.0,James Outman,MIN,,Neutral,-0.008,0.173,0.186,0.013,0.06,,,,Hitter,,,,
+669065.0,Kyle Stowers,MIA,,Neutral,-0.008,0.277,0.302,0.025,35.17,,,,Hitter,,,,
+650391.0,Eloy Jiménez,TOR,,Neutral,-0.0082,0.291,0.256,-0.035,0.1,,,,Hitter,,,,
+596103.0,Austin Slater,MIA,,Neutral,-0.0082,0.255,0.239,-0.016,0.03,,,,Hitter,,,,
+666971.0,Lourdes Gurriel,AZ,,Neutral,-0.0083,0.296,0.306,0.01,1.85,,,,Hitter,,,,
+624512.0,Reese Mcguire,CWS,C,Neutral,-0.0085,0.227,0.247,0.02,0.05,,336.0,8.5,Hitter,,,,
+678009.0,Parker Meadows,DET,,Neutral,-0.0086,0.296,0.255,-0.041,0.56,,,,Hitter,,,,
+686668.0,Brenton Doyle,COL,,Neutral,-0.0094,0.274,0.256,-0.018,7.37,,,,Hitter,,,,
+676391.0,Ernie Clement,TOR,SS,Neutral,-0.0099,0.313,0.288,-0.025,70.79,,117.0,79.0,Hitter,,,,
+642715.0,Willy Adames,SF,SS,Neutral,-0.0107,0.259,0.283,0.024,56.29,25.0,217.0,51.0,Hitter,,,,
+695578.0,James Wood,WSH,LF,Neutral,-0.0112,0.396,0.455,0.059,96.25,26.0,7.0,139.0,Hitter,,,,
+680869.0,Zack Gelof,ATH,2B,Neutral,-0.0115,0.311,0.328,0.017,0.42,,272.0,35.0,Hitter,,,,
+683146.0,Brett Baty,NYM,3B,Neutral,-0.0117,0.272,0.29,0.018,3.52,,219.0,50.5,Hitter,,,,
+694671.0,Wyatt Langford,TEX,,Neutral,-0.0119,0.293,0.306,0.013,63.59,,,,Hitter,,,,
+656537.0,Derek Hill,CWS,,Neutral,-0.0136,0.317,0.377,0.06,0.06,,,,Hitter,,,,
+500743.0,Miguel Rojas,LAD,SS,Neutral,-0.0136,0.329,0.351,0.022,1.08,,287.0,29.0,Hitter,,,,
+595879.0,Javier Báez,DET,SS,Neutral,-0.014,0.288,0.316,0.028,3.89,,243.0,43.0,Hitter,,,,
+680977.0,Brendan Donovan,SEA,2B,Neutral,-0.0146,0.391,0.375,-0.016,61.05,,209.0,53.0,Hitter,,,,
+682829.0,Elly De la cruz,CIN,SS,Neutral,-0.0161,0.394,0.397,0.003,99.53,9.0,10.0,134.5,Hitter,,,,
+663698.0,Joey Bart,PIT,C,Neutral,-0.0164,0.251,0.253,0.002,0.26,,315.0,15.0,Hitter,,,,
+665804.0,Miguel Amaya,CHC,C,Neutral,-0.0166,0.346,0.316,-0.03,0.85,,254.0,38.5,Hitter,,,,
+457705.0,Andrew Mccutchen,TEX,,Neutral,-0.0171,0.269,0.25,-0.019,0.24,,,,Hitter,,,,
+606192.0,Teoscar Hernández,LAD,RF,Neutral,-0.0178,0.306,0.333,0.027,66.71,,132.0,74.5,Hitter,,,,
+666211.0,Taylor Trammell,HOU,,Neutral,-0.0182,0.389,0.29,-0.099,0.05,,,,Hitter,,,,
+678391.0,Jorbit Vivas,WSH,2B,Neutral,-0.0185,0.305,0.281,-0.024,0.11,,252.0,39.0,Hitter,,,,
+672016.0,Denzel Clarke,ATH,,Neutral,-0.0185,0.197,0.205,0.008,0.19,,,,Hitter,,,,
+691718.0,Pete Crow-armstrong,CHC,CF,Neutral,-0.0211,0.29,0.313,0.023,92.36,,96.0,86.5,Hitter,,,,
+642086.0,Dominic Smith,ATL,1B,Neutral,-0.0214,0.374,0.424,0.05,5.13,,177.0,63.5,Hitter,,,,
+545361.0,Mike Trout,LAA,CF,Neutral,-0.0232,0.427,0.47,0.043,97.47,12.0,4.0,154.5,Hitter,,,,
+516782.0,Starling Marte,KC,,Neutral,-0.0233,0.307,0.267,-0.04,0.48,,,,Hitter,,,,
+694728.0,Brice Matthews,HOU,SS,Neutral,-0.0238,0.319,0.292,-0.027,1.92,,238.0,44.5,Hitter,,,,
+641598.0,Mitch Garver,SEA,DH,Neutral,-0.0247,0.288,0.299,0.011,0.13,,306.0,18.5,Hitter,,,,
+669743.0,Alex Call,LAD,,Neutral,-0.0247,0.414,0.345,-0.069,0.19,,,,Hitter,,,,
+687551.0,Drew Gilbert,SF,,Neutral,-0.0248,0.301,0.29,-0.011,0.24,,,,Hitter,,,,
+643376.0,Danny Jansen,TEX,C,Neutral,-0.0267,0.286,0.264,-0.022,0.57,,269.0,35.5,Hitter,,,,
+686527.0,Dominic Canzone,SEA,LF,Neutral,-0.0282,0.317,0.356,0.039,3.43,,192.0,58.5,Hitter,,,,
+650490.0,Yandy Díaz,TB,1B,Neutral,-0.0284,0.385,0.41,0.025,87.82,,30.0,114.0,Hitter,,,,
+681297.0,Colton Cowser,BAL,,Neutral,-0.0286,0.258,0.282,0.024,1.66,,,,Hitter,,,,
+573262.0,Mike Yastrzemski,ATL,,Neutral,-0.0289,0.259,0.26,0.001,1.49,,,,Hitter,,,,
+807799.0,Masataka Yoshida,BOS,,Neutral,-0.0295,0.375,0.288,-0.087,0.93,,,,Hitter,,,,
+669326.0,Bryce Teodosio,LAA,,Neutral,-0.0296,0.261,0.209,-0.052,0.04,,,,Hitter,,,,
+664023.0,Ian Happ,CHC,LF,Neutral,-0.0306,0.387,0.367,-0.02,83.78,37.0,38.0,110.0,Hitter,,,,
+700932.0,Kyle Manzardo,CLE,1B,Neutral,-0.0313,0.255,0.288,0.033,3.23,,261.0,37.0,Hitter,,,,
+665926.0,Andrés Giménez,TOR,2B,Neutral,-0.0314,0.304,0.281,-0.023,18.67,,110.0,81.5,Hitter,,,,
+805808.0,Kevin Mcgonigle,DET,SS,Neutral,-0.0338,0.373,0.393,0.02,88.59,,23.0,122.0,Hitter,,,,
+641584.0,Jake Fraley,TB,,Neutral,-0.035,0.33,0.301,-0.029,0.16,,,,Hitter,,,,
+624424.0,Michael Conforto,CHC,,Neutral,-0.0354,0.421,0.443,0.022,0.21,,,,Hitter,,,,
+681807.0,David Fry,CLE,C,Neutral,-0.0358,0.395,0.396,0.001,0.16,,260.0,37.0,Hitter,,,,
+687221.0,Dalton Rushing,LAD,C,Neutral,-0.0364,0.492,0.487,-0.005,20.56,,150.0,69.0,Hitter,,,,
+808982.0,Jung hoo Lee,SF,CF,Neutral,-0.0372,0.329,0.333,0.004,37.28,,118.0,79.0,Hitter,,,,
+677592.0,Everson Pereira,CWS,,Neutral,-0.0373,0.343,0.348,0.005,0.34,,,,Hitter,,,,
+668723.0,Ryan Vilade,TB,LF,Neutral,-0.0382,0.384,0.325,-0.059,0.06,,279.0,31.5,Hitter,,,,
+663743.0,Nick Fortes,TB,C,Neutral,-0.0393,0.277,0.305,0.028,2.66,,242.0,43.0,Hitter,,,,
+641343.0,Jake Bauers,MIL,RF,Neutral,-0.0393,0.322,0.35,0.028,20.29,,69.0,93.5,Hitter,,,,
+682928.0,Cj Abrams,WSH,SS,Neutral,-0.0394,0.406,0.419,0.013,93.46,,13.0,131.5,Hitter,,,,
+694212.0,Samuel Basallo,BAL,C,Neutral,-0.0395,0.345,0.359,0.014,19.54,,165.0,66.5,Hitter,,,,
+665487.0,Fernando Tatís,SD,RF,Neutral,-0.0402,0.289,0.351,0.062,99.35,,,77.5,Hitter,,,,
+676356.0,Jonny Deluca,TB,LF,Neutral,-0.0419,0.312,0.305,-0.007,0.61,,183.0,61.0,Hitter,,,,
+677594.0,Julio Rodríguez,SEA,CF,Neutral,-0.0431,0.338,0.336,-0.002,0.09,15.0,72.0,92.0,Hitter,,,,
+666018.0,Jonathan Aranda,TB,1B,Neutral,-0.0443,0.361,0.376,0.015,29.8,,39.0,110.0,Hitter,,,,
+670623.0,Isaac Paredes,HOU,3B,Neutral,-0.0476,0.357,0.336,-0.021,34.74,,103.0,83.0,Hitter,,,,
+643289.0,Mauricio Dubón,ATL,2B,Neutral,-0.0498,0.349,0.327,-0.022,54.4,,87.0,89.0,Hitter,,,,
+702284.0,Cole Young,SEA,SS,Neutral,-0.0511,0.323,0.347,0.024,13.79,,97.0,86.5,Hitter,,,,
+666160.0,Mickey Moniak,COL,CF,Neutral,-0.0521,0.464,0.412,-0.052,65.27,,36.0,112.5,Hitter,,,,
+691781.0,Brady House,WSH,3B,Neutral,-0.0536,0.293,0.307,0.014,1.81,,176.0,64.0,Hitter,,,,
+694208.0,Moisés Ballesteros,CHC,,Neutral,-0.0545,0.419,0.413,-0.006,12.82,,,,Hitter,,,,
+669134.0,Luis Campusano,SD,C,Neutral,-0.0573,0.42,0.379,-0.041,0.84,,225.0,48.5,Hitter,,,,
+676439.0,Hunter Feduccia,TB,C,Neutral,-0.0601,0.336,0.296,-0.04,0.09,,301.0,20.0,Hitter,,,,
+807713.0,Matt Shaw,CHC,SS,Neutral,-0.0612,0.361,0.364,0.003,3.29,,194.0,58.0,Hitter,,,,
+666152.0,David Hamilton,MIL,SS,Neutral,-0.0617,0.278,0.276,-0.002,0.95,,188.0,60.0,Hitter,,,,
+621043.0,Carlos Correa,HOU,SS,Neutral,-0.0624,0.364,0.383,0.019,39.35,39.0,66.0,96.0,Hitter,,,,
+808975.0,Hyeseong Kim,LAD,,Neutral,-0.0638,0.343,0.359,0.016,3.36,,,,Hitter,,,,
+687263.0,Zach Neto,LAA,,Neutral,-0.0655,0.335,0.342,0.007,65.93,,,,Hitter,,,,
+669004.0,Mj Melendez,NYM,,Neutral,-0.0656,0.385,0.332,-0.053,0.52,,,,Hitter,,,,
+624585.0,Jorge Soler,LAA,DH,Neutral,-0.0679,0.353,0.349,-0.004,21.69,,63.0,97.5,Hitter,,,,
+665750.0,Leody Taveras,BAL,CF,Neutral,-0.0711,0.359,0.363,0.004,1.67,,152.0,68.5,Hitter,,,,
+595978.0,Austin Hedges,CLE,C,Neutral,-0.0711,0.374,0.326,-0.048,0.16,,281.0,31.0,Hitter,,,,
+657656.0,Ramón Laureano,SD,RF,Neutral,-0.0737,0.309,0.339,0.03,21.87,,95.0,86.5,Hitter,,,,
+656484.0,Tristan Gray,MIN,SS,Neutral,-0.0776,0.33,0.348,0.018,0.44,,249.0,40.0,Hitter,,,,
+656811.0,Ryan O'hearn,PIT,1B,Neutral,-0.0798,0.366,0.39,0.024,79.52,,46.0,107.0,Hitter,,,,
+810938.0,Ben Williamson,TB,3B,Neutral,-0.0815,0.294,0.292,-0.002,0.42,,182.0,61.5,Hitter,,,,
+694388.0,Joey Loperfido,HOU,,Neutral,-0.0823,0.305,0.27,-0.035,0.36,,,,Hitter,,,,
+553993.0,Eugenio Suárez,CIN,3B,Neutral,-0.0848,0.345,0.305,-0.04,63.55,,228.0,48.0,Hitter,,,,
+696030.0,Alejandro Osuna,TEX,,Neutral,,0.34,0.345,0.005,0.06,,,,Hitter,,,,
+677870.0,Leo Jimenez,MIA,,Neutral,,0.295,0.313,0.018,0.03,,,,Hitter,,,,
+682663.0,Agustín Ramírez,MIA,C,Slight sell,-0.0869,0.303,0.292,-0.011,54.85,,135.0,73.0,Hitter,,,,
+682657.0,Angel Martínez,CLE,SS,Slight sell,-0.0872,0.339,0.362,0.023,22.42,,104.0,83.0,Hitter,,,,
+592885.0,Christian Yelich,MIL,,Slight sell,-0.0877,0.353,0.28,-0.073,82.83,32.0,,,Hitter,,,,
+621566.0,Matt Olson,ATL,1B,Slight sell,-0.089,0.441,0.437,-0.004,99.08,30.0,1.0,168.5,Hitter,,,,
+575929.0,Willson Contreras,BOS,C,Slight sell,-0.0891,0.387,0.427,0.04,28.5,,42.0,108.0,Hitter,,,,
+702222.0,Justin Crawford,PHI,CF,Slight sell,-0.0904,0.32,0.286,-0.034,4.98,,193.0,58.0,Hitter,,,,
+643446.0,Jeff Mcneil,ATH,2B,Slight sell,-0.0912,0.353,0.347,-0.006,9.19,,145.0,70.0,Hitter,,,,
+665489.0,Vladimir Guerrero,TOR,1B,Slight sell,-0.0939,0.372,0.377,0.005,99.81,,,107.0,Hitter,,,,
+650489.0,Willi Castro,COL,LF,Slight sell,-0.0955,0.286,0.28,-0.006,6.1,,229.0,48.0,Hitter,,,,
+543877.0,Christian Vázquez,HOU,C,Slight sell,-0.0978,0.356,0.295,-0.061,1.03,,237.0,44.5,Hitter,,,,
+683357.0,Owen Caissie,MIA,,Slight sell,-0.1017,0.261,0.282,0.021,3.91,,,,Hitter,,,,
+622761.0,Jorge Mateo,ATL,SS,Slight sell,-0.1017,0.338,0.283,-0.055,0.48,,255.0,38.0,Hitter,,,,
+669364.0,Xavier Edwards,MIA,2B,Slight sell,-0.1034,0.399,0.372,-0.027,87.47,,27.0,116.5,Hitter,,,,
+666176.0,Jo Adell,LAA,RF,Slight sell,-0.1051,0.28,0.31,0.03,42.17,,105.0,82.5,Hitter,,,,
+673548.0,Seiya Suzuki,CHC,RF,Slight sell,-0.1061,0.402,0.412,0.01,85.05,,121.0,78.5,Hitter,,,,
+643217.0,Andrew Benintendi,CWS,LF,Slight sell,-0.1091,0.287,0.317,0.03,2.37,,205.0,54.5,Hitter,,,,
+677588.0,José Tena,WSH,3B,Slight sell,-0.1109,0.338,0.302,-0.036,0.05,,256.0,37.5,Hitter,,,,
+670764.0,Taylor Walls,TB,3B,Slight sell,-0.1113,0.269,0.241,-0.028,0.19,,241.0,43.5,Hitter,,,,
+645277.0,Ozzie Albies,ATL,2B,Slight sell,-0.1122,0.408,0.372,-0.036,96.19,,14.0,131.5,Hitter,,,,
+678882.0,Ceddanne Rafaela,BOS,CF,Slight sell,-0.1154,0.33,0.314,-0.016,36.14,,140.0,71.0,Hitter,,,,
+669016.0,Brandon Marsh,PHI,CF,Slight sell,-0.1167,0.359,0.356,-0.003,13.78,,82.0,90.5,Hitter,,,,
+677649.0,Ezequiel Duran,TEX,SS,Slight sell,-0.1212,0.364,0.328,-0.036,0.89,,189.0,59.5,Hitter,,,,
+624428.0,Adam Frazier,LAA,2B,Slight sell,-0.123,0.32,0.253,-0.067,0.18,,253.0,38.5,Hitter,,,,
+677800.0,Wilyer Abreu,BOS,CF,Slight sell,-0.1237,0.39,0.411,0.021,58.98,,52.0,105.0,Hitter,,,,
+691026.0,Masyn Winn,STL,SS,Slight sell,-0.124,0.346,0.326,-0.02,8.5,,112.0,81.5,Hitter,,,,
+686948.0,Drake Baldwin,ATL,C,Slight sell,-0.1284,0.394,0.415,0.021,97.87,,6.0,145.5,Hitter,,,,
+690976.0,Alex Freeland,LAD,SS,Slight sell,-0.1318,0.315,0.33,0.015,0.66,,233.0,45.5,Hitter,,,,
+571970.0,Max Muncy,LAD,,Slight sell,-0.1343,0.4,0.448,0.048,5.99,,207.0,,Hitter,,,,
+621493.0,Taylor Ward,BAL,LF,Slight sell,-0.1363,0.396,0.388,-0.008,84.59,,44.0,107.5,Hitter,,,,
+802415.0,Chandler Simpson,TB,CF,Slight sell,-0.1481,0.3,0.264,-0.036,51.39,,76.0,91.5,Hitter,,,,
+607043.0,Brandon Nimmo,TEX,CF,Slight sell,-0.1483,0.376,0.382,0.006,81.63,,81.0,90.5,Hitter,,,,
+686797.0,Brooks Lee,MIN,SS,Slight sell,-0.16,0.362,0.313,-0.049,12.57,,93.0,87.0,Hitter,,,,
+691594.0,Javier Sanoja,MIA,SS,Slight sell,-0.1618,0.343,0.259,-0.084,4.56,,245.0,42.0,Hitter,,,,
+663968.0,Jake Mangum,PIT,,Slight sell,-0.1647,0.317,0.281,-0.036,0.54,,,,Hitter,,,,
+609280.0,Miguel Andújar,SD,RF,Slight sell,-0.1673,0.394,0.324,-0.07,2.31,,181.0,61.5,Hitter,,,,
+676609.0,José Caballero,NYY,2B,Sell high,-0.1518,0.332,0.291,-0.041,43.52,,65.0,97.5,Hitter,,,,
+673962.0,Josh Jung,TEX,3B,Sell high,-0.1536,0.419,0.414,-0.005,36.21,,61.0,98.5,Hitter,,,,
+695506.0,Jac Caglianone,KC,1B,Sell high,-0.155,0.333,0.342,0.009,26.06,,187.0,60.5,Hitter,,,,
+686555.0,Isaac Collins,KC,LF,Sell high,-0.1589,0.349,0.348,-0.001,0.78,,171.0,65.0,Hitter,,,,
+668930.0,Brice Turang,MIL,2B,Sell high,-0.1592,0.411,0.434,0.023,97.67,24.0,11.0,134.0,Hitter,,,,
+671976.0,Tristan Peters,CWS,,Sell high,-0.162,0.304,0.28,-0.024,0.18,,,,Hitter,,,,
+519317.0,Giancarlo Stanton,NYY,DH,Sell high,-0.1626,0.32,0.328,0.008,27.83,,208.0,53.5,Hitter,,,,
+668804.0,Bryan Reynolds,PIT,LF,Sell high,-0.1674,0.373,0.361,-0.012,71.19,,34.0,113.5,Hitter,,,,
+681393.0,Connor Norby,MIA,2B,Sell high,-0.1683,0.326,0.321,-0.005,1.46,,191.0,59.0,Hitter,,,,
+682998.0,Corbin Carroll,AZ,LF,Sell high,-0.1693,0.384,0.358,-0.026,99.67,8.0,49.0,105.5,Hitter,,,,
+701762.0,Nick Kurtz,ATH,1B,Sell high,-0.1764,0.362,0.389,0.027,96.34,,62.0,98.5,Hitter,,,,
+686894.0,Joey Wiemer,WSH,CF,Sell high,-0.1795,0.36,0.287,-0.073,6.55,,218.0,50.5,Hitter,,,,
+666397.0,Edouard Julien,COL,2B,Sell high,-0.1812,0.347,0.36,0.013,1.17,,169.0,65.5,Hitter,,,,
+805367.0,Chase Meidroth,CWS,SS,Sell high,-0.1868,0.312,0.3,-0.012,3.93,,130.0,75.0,Hitter,,,,
+687859.0,Troy Johnston,COL,RF,Sell high,-0.1934,0.366,0.328,-0.038,5.21,,133.0,73.5,Hitter,,,,
+664728.0,Kyle Isbel,KC,CF,Sell high,-0.2016,0.341,0.332,-0.009,4.06,,173.0,65.0,Hitter,,,,
+572233.0,Christian Walker,HOU,1B,Sell high,-0.2027,0.426,0.406,-0.02,78.15,,17.0,130.0,Hitter,,,,
+671218.0,Heliot Ramos,SF,LF,Sell high,-0.206,0.32,0.344,0.024,16.26,,163.0,67.0,Hitter,,,,
+665833.0,Oneil Cruz,PIT,SS,Sell high,-0.214,0.364,0.386,0.022,91.37,,20.0,128.0,Hitter,,,,
+666126.0,Carlos Cortes,ATH,LF,Sell high,-0.218,0.467,0.449,-0.018,21.32,,124.0,76.5,Hitter,,,,
+690993.0,Colt Keith,DET,3B,Sell high,-0.22,0.339,0.337,-0.002,9.28,,186.0,60.5,Hitter,,,,
+663616.0,Trevor Larnach,MIN,LF,Sell high,-0.2242,0.399,0.345,-0.054,2.63,,144.0,70.5,Hitter,,,,
+608348.0,Carson Kelly,CHC,C,Sell high,-0.2267,0.385,0.341,-0.044,11.14,,151.0,69.0,Hitter,,,,
+699912.0,Jose Fernandez,AZ,SS,Sell high,-0.2303,0.359,0.32,-0.039,5.69,,164.0,66.5,Hitter,,,,
+670042.0,Luke Raley,SEA,RF,Sell high,-0.2313,0.352,0.384,0.032,6.42,,179.0,63.5,Hitter,,,,
+668227.0,Randy Arozarena,SEA,LF,Sell high,-0.2321,0.343,0.346,0.003,90.3,,43.0,108.0,Hitter,,,,
+804606.0,Konnor Griffin,PIT,SS,Sell high,-0.2412,0.342,0.331,-0.011,48.37,,113.0,81.0,Hitter,,,,
+669127.0,Shea Langeliers,ATH,C,Sell high,-0.248,0.436,0.439,0.003,97.35,,24.0,122.0,Hitter,,,,
+669477.0,Casey Schmitt,SF,SS,Sell high,-0.2514,0.396,0.395,-0.001,17.56,,68.0,94.0,Hitter,,,,
+668885.0,Austin Martin,MIN,SS,Sell high,-0.2634,0.416,0.381,-0.035,1.28,,147.0,69.5,Hitter,,,,
+669003.0,Garrett Mitchell,MIL,CF,Sell high,-0.2722,0.323,0.336,0.013,6.0,,128.0,76.0,Hitter,,,,
+691777.0,Max Muncy,ATH,SS,Sell high,-0.2759,0.318,0.315,-0.003,5.99,,207.0,53.5,Hitter,,,,
+693304.0,Nick Gonzales,PIT,2B,Sell high,-0.2778,0.331,0.335,0.004,4.52,,127.0,76.0,Hitter,,,,
+681624.0,Andy Pages,LAD,CF,Sell high,-0.2793,0.378,0.37,-0.008,93.06,,26.0,117.0,Hitter,,,,
+682985.0,Riley Greene,DET,CF,Sell high,-0.3001,0.381,0.4,0.019,86.68,34.0,55.0,104.0,Hitter,,,,
+663604.0,Brandon Lockridge,MIL,OF,Sell high,-0.3064,0.328,0.264,-0.064,0.33,,210.0,52.5,Hitter,,,,
+656305.0,Matt Chapman,SF,3B,Sell high,-0.3112,0.306,0.281,-0.025,69.07,,159.0,67.5,Hitter,,,,
+672640.0,Otto Lopez,MIA,SS,Sell high,-0.3142,0.407,0.373,-0.034,74.34,,35.0,113.0,Hitter,,,,
+700250.0,Ben Rice,NYY,1B,Sell high,-0.3166,0.512,0.515,0.003,99.13,,5.0,151.0,Hitter,,,,
+691023.0,Jordan Walker,STL,RF,Sell high,-0.3308,0.424,0.428,0.004,89.35,,8.0,135.5,Hitter,,,,
+545121.0,Ildemaro Vargas,AZ,3B,Sell high,-0.3872,0.452,0.424,-0.028,73.79,,41.0,108.5,Hitter,,,,
+682177.0,Daniel Schneemann,CLE,2B,Sell high,-0.4196,0.357,0.359,0.002,10.07,,167.0,66.5,Hitter,,,,
+672724.0,Oswald Peraza,LAA,3B,Sell high,-0.4655,0.364,0.37,0.006,2.93,,162.0,67.0,Hitter,,,,
+,Jesús Luzardo,PHI,,Buy low,0.723,,,,92.03,,62.0,,Pitcher,666200.0,4.72,2.6,2.81
+,Joe Ryan,MIN,,Buy low,0.4279,,,,93.48,,64.0,,Pitcher,657746.0,4.78,2.87,2.711
+,David Peterson,NYM,,Buy low,0.3893,,,,3.9,,,,Pitcher,656849.0,5.82,3.15,4.939
+,Carmen Mlodzinski,PIT,,Buy low,0.3596,,,,4.56,,116.0,,Pitcher,669387.0,4.5,2.38,4.429
+,Yusei Kikuchi,LAA,,Buy low,0.2936,,,,11.21,,,,Pitcher,579328.0,5.87,3.62,4.691
+,Aaron Nola,PHI,,Buy low,0.2365,,,,48.16,,102.0,,Pitcher,605400.0,5.2,4.05,4.366
+,Framber Valdez,DET,,Buy low,0.2257,,,,92.4,,70.0,,Pitcher,664285.0,5.19,4.23,4.29
+,Walker Buehler,SD,,Buy low,0.2108,,,,2.21,,,,Pitcher,621111.0,5.1,3.36,4.703
+,Aaron Ashby,MIL,,Buy low,0.2081,,,,11.36,,73.0,,Pitcher,676879.0,3.86,1.81,2.328
+,Shane Baz,BAL,,Buy low,0.193,,,,24.88,,,,Pitcher,669358.0,5.08,3.98,4.667
+,Hogan Harris,ATH,,Neutral,0.5157,,,,2.24,,140.0,,Pitcher,663687.0,5.79,1.03,-3.431
+,Cade Cavalli,WSH,,Neutral,0.5036,,,,7.71,,,,Pitcher,676917.0,5.4,2.74,3.189
+,Dylan Cease,TOR,,Neutral,0.4034,,,,97.9,,54.0,,Pitcher,656302.0,3.52,2.01,2.852
+,Luis Castillo,SEA,,Neutral,0.3867,,,,65.6,,,,Pitcher,622491.0,7.36,4.18,5.757
+,Michael Lorenzen,COL,,Neutral,0.3457,,,,0.88,,,,Pitcher,547179.0,7.36,4.94,5.438
+,Cristopher Sánchez,PHI,,Neutral,0.312,,,,99.07,,18.0,,Pitcher,650911.0,3.02,2.27,2.692
+,Dustin May,STL,,Neutral,0.3096,,,,4.82,,110.0,,Pitcher,669160.0,5.61,3.77,4.224
+,Reid Detmers,LAA,,Neutral,0.2716,,,,22.49,,69.0,,Pitcher,672282.0,3.63,2.7,2.253
+,Jack Leiter,TEX,,Neutral,0.2346,,,,17.37,,126.0,,Pitcher,683004.0,5.54,4.37,4.852
+,Tarik Skubal,DET,,Neutral,0.2259,,,,98.89,,13.0,,Pitcher,669373.0,2.7,2.04,2.825
+,Michael Soroka,AZ,,Neutral,0.2041,,,,35.06,,86.0,,Pitcher,647336.0,4.8,3.13,5.052
+,Chris Paddack,MIA,,Neutral,0.1916,,,,0.46,,,,Pitcher,663978.0,7.92,4.89,4.398
+,Landen Roupp,SF,,Neutral,0.1727,,,,63.82,,22.0,,Pitcher,694738.0,3.2,2.55,1.955
+,Matt Boyd,CHC,,Neutral,0.1727,,,,,,,,Pitcher,571510.0,5.01,2.26,4.075
+,Bryan Woo,SEA,,Neutral,0.1717,,,,96.48,,71.0,,Pitcher,693433.0,5.09,4.11,3.973
+,Logan Webb,SF,,Neutral,0.167,,,,94.41,,79.0,,Pitcher,657277.0,4.64,3.73,4.384
+,Nolan Mclean,NYM,,Neutral,0.1632,,,,93.17,,44.0,,Pitcher,690997.0,2.56,1.99,1.503
+,Ben Brown,CHC,,Neutral,0.1503,,,,3.51,,99.0,,Pitcher,676962.0,3.97,2.59,1.992
+,Brent Suter,LAA,,Neutral,0.1499,,,,0.15,,,,Pitcher,608718.0,5.12,3.03,2.488
+,Braxton Ashcraft,PIT,,Neutral,0.1371,,,,51.21,,47.0,,Pitcher,677952.0,3.29,2.88,1.973
+,Will Warren,NYY,,Neutral,0.1285,,,,79.88,,16.0,,Pitcher,701542.0,3.19,2.67,3.126
+,Kodai Senga,NYM,,Neutral,0.125,,,,8.09,,,,Pitcher,673540.0,9.15,6.13,4.646
+,Sean Newcomb,CWS,,Neutral,0.1237,,,,0.17,,,,Pitcher,656794.0,3.38,1.53,2.375
+,Sean Manaea,NYM,,Neutral,0.123,,,,1.31,,,,Pitcher,640455.0,8.27,4.34,5.062
+,Sandy Alcántara,MIA,,Neutral,0.1188,,,,84.37,,29.0,,Pitcher,645261.0,4.09,3.76,3.207
+,Mike Burrows,HOU,,Neutral,0.1174,,,,3.44,,,,Pitcher,681347.0,5.79,5.09,3.702
+,Trevor Rogers,BAL,,Neutral,0.1164,,,,46.85,,,,Pitcher,669432.0,4.45,3.59,3.094
+,Simeon Woods richardson,MIN,,Neutral,0.1146,,,,0.57,,,,Pitcher,680573.0,7.41,6.41,5.167
+,Jake Irvin,WSH,,Neutral,0.1125,,,,1.26,,,,Pitcher,663623.0,4.93,3.92,4.793
+,Kyle Bradish,BAL,,Neutral,0.1109,,,,61.27,,,,Pitcher,680694.0,6.27,4.7,5.03
+,Andrew Painter,PHI,,Neutral,0.1076,,,,15.02,,,,Pitcher,691725.0,4.34,3.48,3.912
+,Miles Mikolas,WSH,,Neutral,0.1065,,,,0.34,,,,Pitcher,571945.0,8.33,6.7,5.321
+,Zac Gallen,AZ,,Neutral,0.1062,,,,56.76,,,,Pitcher,668678.0,4.55,3.53,5.165
+,Ryan Weiss,HOU,,Neutral,0.1033,,,,0.13,,,,Pitcher,680802.0,9.12,6.76,5.914
+,Lance Mccullers,HOU,,Neutral,0.1008,,,,,,,,Pitcher,621121.0,5.52,4.42,4.323
+,Cole Sulser,TB,,Neutral,0.0992,,,,0.55,,120.0,,Pitcher,642121.0,3.26,2.71,6.372
+,Taijuan Walker,PHI,,Neutral,0.0976,,,,0.24,,,,Pitcher,592836.0,10.23,7.85,6.698
+,Shane Mcclanahan,TB,,Neutral,0.0971,,,,43.91,,88.0,,Pitcher,663556.0,3.77,2.75,3.81
+,Javier Assad,CHC,,Neutral,0.0926,,,,0.59,,,,Pitcher,665871.0,8.5,4.97,5.126
+,Adrian Houser,SF,,Neutral,0.0886,,,,0.57,,,,Pitcher,605288.0,7.2,5.66,5.848
+,Mackenzie Gore,TEX,,Neutral,0.0865,,,,69.81,,95.0,,Pitcher,669022.0,4.41,3.95,4.195
+,Cam Schlittler,NYY,,Neutral,0.0825,,,,97.25,,1.0,,Pitcher,693645.0,1.91,1.62,2.123
+,Tim Mayza,PHI,,Neutral,0.0774,,,,0.13,,,,Pitcher,641835.0,4.0,2.28,0.443
+,Slade Cecconi,CLE,,Neutral,0.076,,,,1.22,,,,Pitcher,677944.0,6.81,5.72,5.516
+,Max Scherzer,TOR,,Neutral,0.0734,,,,3.05,,,,Pitcher,453286.0,8.84,8.37,6.533
+,Brandon Woodruff,MIL,,Neutral,0.07,,,,75.87,,85.0,,Pitcher,605540.0,4.23,3.9,2.701
+,Garrett Crochet,BOS,,Neutral,0.0689,,,,99.05,,119.0,,Pitcher,676979.0,3.49,2.96,3.468
+,Tyler Wells,BAL,,Neutral,0.063,,,,0.59,,,,Pitcher,669330.0,3.93,2.53,0.517
+,Zack Littell,WSH,,Neutral,0.0598,,,,1.1,,,,Pitcher,641793.0,9.0,8.37,7.628
+,Noah Cameron,KC,,Neutral,0.0499,,,,10.2,,,,Pitcher,702070.0,5.46,4.37,6.175
+,Chris Bassitt,BAL,,Neutral,0.0466,,,,5.39,,,,Pitcher,605135.0,6.1,5.13,5.482
+,Brayan Bello,BOS,,Neutral,0.0421,,,,4.61,,,,Pitcher,678394.0,7.03,6.28,6.63
+,Jameson Taillon,CHC,,Neutral,0.0421,,,,14.89,,56.0,,Pitcher,592791.0,4.54,5.88,3.864
+,Merrill Kelly,AZ,,Neutral,0.04,,,,21.21,,,,Pitcher,518876.0,10.0,8.14,9.392
+,Eury Pérez,MIA,,Neutral,0.0327,,,,77.53,,103.0,,Pitcher,691587.0,5.0,4.53,4.999
+,Emmet Sheehan,LAD,,Neutral,0.0315,,,,55.04,,100.0,,Pitcher,686218.0,4.45,4.22,4.254
+,Mick Abel,MIN,,Neutral,0.0311,,,,5.89,,,,Pitcher,690953.0,4.05,2.53,5.027
+,Cole Ragans,KC,,Neutral,0.0309,,,,86.09,,,,Pitcher,666142.0,4.99,6.68,5.181
+,Nathan Eovaldi,TEX,,Neutral,0.0262,,,,78.94,,87.0,,Pitcher,543135.0,4.99,4.92,4.344
+,Kevin Gausman,TOR,,Neutral,0.0262,,,,97.65,,23.0,,Pitcher,592332.0,3.26,3.16,3.307
+,Antonio Senzatela,COL,,Neutral,0.023,,,,5.49,,78.0,,Pitcher,622608.0,2.6,1.82,1.608
+,Seth Lugo,KC,,Neutral,0.0188,,,,54.47,,39.0,,Pitcher,607625.0,2.74,2.51,4.001
+,Brady Singer,CIN,,Neutral,0.0179,,,,7.88,,,,Pitcher,663903.0,5.97,5.68,5.726
+,Reynaldo López,ATL,,Neutral,0.0155,,,,7.26,,117.0,,Pitcher,625643.0,3.32,4.14,3.393
+,Ryan Feltner,COL,,Neutral,0.0128,,,,0.13,,,,Pitcher,663372.0,6.52,5.87,6.297
+,Brandon Pfaadt,AZ,,Neutral,0.0106,,,,2.16,,,,Pitcher,694297.0,5.08,5.04,4.687
+,Sam Bachman,LAA,,Neutral,0.0105,,,,0.17,,,,Pitcher,696147.0,3.5,1.83,2.414
+,Tyler Mahle,SF,,Neutral,0.0099,,,,2.75,,,,Pitcher,641816.0,4.84,4.84,4.555
+,Kyle Freeland,COL,,Neutral,0.0068,,,,1.59,,,,Pitcher,607536.0,4.68,4.63,4.465
+,Brad Lord,WSH,,Neutral,0.006,,,,0.42,,150.0,,Pitcher,695418.0,3.98,3.86,3.832
+,Colin Rea,CHC,,Neutral,0.0012,,,,11.36,,61.0,,Pitcher,607067.0,3.31,3.3,4.339
+,Nick Sandlin,LAA,,Neutral,0.0,,,,0.01,,,,Pitcher,680704.0,11.74,7.95,5.929
+,Kyle Nicolas,CIN,,Neutral,0.0,,,,0.02,,,,Pitcher,693312.0,12.27,7.53,4.375
+,Phil Maton,CHC,,Neutral,0.0,,,,0.73,,,,Pitcher,664208.0,11.05,5.32,6.145
+,Zach Pop,PHI,,Neutral,0.0,,,,0.03,,,,Pitcher,647315.0,4.91,2.03,8.613
+,Blade Tidwell,SF,,Neutral,0.0,,,,0.07,,,,Pitcher,694918.0,2.57,2.17,1.877
+,Tatsuya Imai,HOU,,Neutral,0.0,,,,23.58,,,,Pitcher,837227.0,4.32,2.43,2.45
+,Luis Severino,ATH,,Neutral,0.0,,,,11.0,,91.0,,Pitcher,622663.0,3.83,4.45,4.414
+,Gavin Collyer,TEX,,Neutral,0.0,,,,0.04,,,,Pitcher,686560.0,0.0,3.57,1.779
+,Tanner Bibee,CLE,,Neutral,0.0,,,,60.33,,,,Pitcher,676440.0,4.12,4.4,4.034
+,Sean Burke,CWS,,Neutral,0.0,,,,11.77,,53.0,,Pitcher,680732.0,2.97,3.08,3.08
+,Trey Yesavage,TOR,,Neutral,0.0,,,,63.49,,,,Pitcher,702056.0,0.96,2.06,0.075
+,Luis García,NYM,,Neutral,0.0,,,,0.04,,,,Pitcher,472610.0,9.64,3.03,3.646
+,Mason Englert,TB,,Neutral,0.0,,,,0.02,,,,Pitcher,669438.0,10.22,4.03,5.992
+,John Schreiber,KC,,Neutral,0.0,,,,0.19,,,,Pitcher,670167.0,5.84,5.75,5.09
+,Zack Kelly,BOS,,Neutral,0.0,,,,0.04,,,,Pitcher,677161.0,4.97,7.53,6.027
+,Jose Franco,CIN,,Neutral,0.0,,,,0.02,,,,Pitcher,683742.0,8.0,6.58,6.068
+,Jack Perkins,ATH,,Neutral,0.0,,,,10.39,,104.0,,Pitcher,678022.0,0.0,1.53,3.171
+,Abner Uribe,MIL,,Neutral,0.0,,,,52.41,,139.0,,Pitcher,682842.0,3.0,2.5,2.935
+,Aaron Bummer,ATL,,Neutral,0.0,,,,0.12,,,,Pitcher,607481.0,9.0,7.0,6.059
+,Camilo Doval,NYY,,Neutral,0.0,,,,3.69,,,,Pitcher,666808.0,6.75,4.5,2.763
+,Cade Horton,CHC,,Neutral,0.0,,,,10.51,,,,Pitcher,690990.0,2.84,4.29,2.8
+,Andrew Hoffmann,AZ,,Neutral,0.0,,,,0.02,,,,Pitcher,694851.0,2.84,3.98,3.069
+,Dean Kremer,BAL,,Neutral,0.0,,,,2.22,,,,Pitcher,665152.0,5.73,5.39,4.025
+,Matt Brash,SEA,,Neutral,0.0,,,,3.31,,148.0,,Pitcher,666374.0,0.82,2.09,3.603
+,Zack Wheeler,PHI,,Neutral,0.0,,,,95.34,,,,Pitcher,554430.0,2.45,1.85,1.683
+,Kyle Leahy,STL,,Neutral,0.0,,,,2.28,,133.0,,Pitcher,681517.0,4.5,5.15,5.967
+,Edgardo Henriquez,LAD,,Neutral,0.0,,,,0.09,,,,Pitcher,683618.0,6.1,4.64,3.946
+,Grant Holmes,ATL,,Neutral,0.0,,,,10.5,,76.0,,Pitcher,656550.0,4.58,4.93,4.234
+,Christian Roa,HOU,,Neutral,0.0,,,,0.01,,,,Pitcher,685005.0,8.22,3.89,6.519
+,Riley Martin,CHC,,Neutral,0.0,,,,0.05,,,,Pitcher,702303.0,2.16,3.24,1.684
+,Kolby Allard,CLE,,Neutral,0.0,,,,0.01,,,,Pitcher,663465.0,12.27,5.62,5.963
+,Kenley Jansen,DET,,Neutral,0.0,,,,50.04,,155.0,,Pitcher,445276.0,3.24,7.08,5.305
+,Jonathan Bowlan,PHI,,Neutral,0.0,,,,0.03,,,,Pitcher,680742.0,7.56,1.92,2.488
+,Ryne Nelson,AZ,,Neutral,0.0,,,,6.05,,,,Pitcher,669194.0,5.23,5.29,5.553
+,Germán Márquez,SD,,Neutral,0.0,,,,0.75,,,,Pitcher,608566.0,6.11,6.78,5.578
+,Roki Sasaki,LAD,,Neutral,0.0,,,,17.13,,,,Pitcher,808963.0,5.97,6.73,5.675
+,Eli Morgan,KC,,Neutral,0.0,,,,0.04,,,,Pitcher,669212.0,3.48,1.83,1.006
+,Shawn Armstrong,CLE,,Neutral,0.0,,,,0.65,,,,Pitcher,542888.0,1.69,5.25,4.775
+,Connor Seabold,DET,,Neutral,0.0,,,,0.03,,,,Pitcher,657756.0,9.28,1.41,0.691
+,Clayton Beeter,WSH,,Neutral,0.0,,,,1.89,,,,Pitcher,690925.0,4.22,5.72,4.792
+,Hunter Brown,HOU,,Neutral,0.0,,,,94.55,,,,Pitcher,686613.0,0.84,1.53,0.563
+,Valente Bellozo,COL,,Neutral,0.0,,,,0.07,,,,Pitcher,678368.0,5.23,8.25,8.134
+,Devin Williams,NYM,,Neutral,0.0,,,,72.83,,160.0,,Pitcher,642207.0,6.75,2.53,3.64
+,Ryan Helsley,BAL,,Neutral,0.0,,,,62.31,,107.0,,Pitcher,664854.0,0.84,1.87,2.461
+,Jake Bird,NYY,,Neutral,0.0,,,,0.1,,,,Pitcher,656234.0,7.59,3.28,3.335
+,Didier Fuentes,ATL,,Neutral,0.0,,,,1.56,,,,Pitcher,800311.0,5.0,2.81,3.578
+,Tyler Samaniego,BOS,,Neutral,0.0,,,,0.03,,,,Pitcher,701719.0,0.0,3.78,2.849
+,Brandon Sproat,MIL,,Neutral,0.0,,,,2.25,,,,Pitcher,687075.0,6.12,6.47,5.171
+,Janson Junk,MIA,,Neutral,0.0,,,,8.49,,67.0,,Pitcher,676083.0,3.35,3.35,3.099
+,Jacob Misiorowski,MIL,,Neutral,0.0,,,,95.62,,43.0,,Pitcher,694819.0,2.61,2.87,2.425
+,Tyler Glasnow,LAD,,Neutral,0.0,,,,95.81,,11.0,,Pitcher,607192.0,2.61,2.87,1.676
+,Paul Skenes,PIT,,Neutral,0.0,,,,99.87,,31.0,,Pitcher,694973.0,2.16,2.85,1.126
+,Joey Cantillo,CLE,,Neutral,0.0,,,,22.73,,105.0,,Pitcher,676282.0,3.93,4.31,4.143
+,Ken Waldichuk,WSH,,Neutral,0.0,,,,0.01,,,,Pitcher,686610.0,5.68,9.5,6.463
+,Elvis Alvarado,ATH,,Neutral,0.0,,,,0.06,,,,Pitcher,665660.0,11.57,6.03,8.512
+,Cristian Javier,HOU,,Neutral,0.0,,,,0.92,,,,Pitcher,664299.0,10.8,9.39,6.674
+,Lucas Sims,CWS,,Neutral,0.0,,,,0.01,,,,Pitcher,608371.0,5.59,5.03,5.8
+,Eric Lauer,TOR,,Neutral,0.0,,,,1.84,,,,Pitcher,641778.0,5.81,6.32,5.463
+,Bailey Ober,MIN,,Neutral,0.0,,,,31.53,,51.0,,Pitcher,641927.0,3.82,4.06,3.673
+,Ryan Watson,BOS,,Neutral,0.0,,,,0.05,,,,Pitcher,670245.0,5.23,6.56,4.872
+,Yohan Ramírez,PIT,,Neutral,0.0,,,,1.0,,129.0,,Pitcher,670990.0,3.18,3.21,2.063
+,Hunter Bigge,TB,,Neutral,0.0,,,,0.05,,,,Pitcher,685801.0,4.09,0.03,0.96
+,José Alvarado,PHI,,Neutral,0.0,,,,0.73,,,,Pitcher,621237.0,7.15,2.38,3.336
+,Ryan Borucki,SF,,Neutral,0.0,,,,0.01,,,,Pitcher,621366.0,8.74,4.76,4.085
+,Erik Miller,SF,,Neutral,0.0,,,,1.42,,,,Pitcher,669062.0,5.56,1.59,1.095
+,Aroldis Chapman,BOS,,Neutral,0.0,,,,91.7,,84.0,,Pitcher,547973.0,2.38,1.59,4.151
+,Mitch Farris,LAA,,Neutral,0.0,,,,0.02,,,,Pitcher,815083.0,3.0,3.7,4.738
+,Jack Flaherty,DET,,Neutral,0.0,,,,40.88,,,,Pitcher,656427.0,5.59,6.06,5.162
+,Anthony Kay,CWS,,Neutral,0.0,,,,0.5,,,,Pitcher,641743.0,5.83,6.37,6.978
+,Jacob Lopez,ATH,,Neutral,0.0,,,,0.61,,,,Pitcher,682052.0,6.04,6.35,3.204
+,Brent Headrick,NYY,,Neutral,0.0,,,,0.41,,128.0,,Pitcher,687396.0,1.5,1.55,2.945
+,Ron Marinaccio,SD,,Neutral,0.0,,,,0.03,,,,Pitcher,676760.0,3.86,4.46,4.793
+,Blake Treinen,LAD,,Neutral,0.0,,,,0.69,,,,Pitcher,595014.0,3.72,4.45,5.758
+,Jeremiah Estrada,SD,,Neutral,0.0,,,,10.52,,,,Pitcher,669093.0,3.72,3.2,4.183
+,Raisel Iglesias,ATL,,Neutral,0.0,,,,82.12,,90.0,,Pitcher,628452.0,0.0,0.62,-0.671
+,Kyle Backhus,PHI,,Neutral,0.0,,,,0.03,,,,Pitcher,679775.0,6.52,3.93,2.997
+,Jason Adam,SD,,Neutral,0.0,,,,14.54,,,,Pitcher,592094.0,1.8,4.2,1.367
+,Cal Quantrill,TEX,,Neutral,0.0,,,,0.03,,,,Pitcher,615698.0,5.0,3.81,5.49
+,Burch Smith,DET,,Neutral,0.0,,,,0.03,,,,Pitcher,572143.0,2.25,0.28,1.301
+,Ryan Yarbrough,NYY,,Neutral,0.0,,,,0.28,,,,Pitcher,642232.0,5.23,6.49,2.483
+,Chase Shugart,PHI,,Neutral,0.0,,,,0.06,,,,Pitcher,663767.0,1.74,1.28,1.061
+,Tim Herrin,CLE,,Neutral,0.0,,,,0.08,,,,Pitcher,682120.0,3.48,3.77,2.167
+,Jacob Degrom,TEX,,Neutral,0.0,,,,98.21,,49.0,,Pitcher,594798.0,2.7,3.17,3.239
+,Drew Rasmussen,TB,,Neutral,0.0,,,,84.0,,37.0,,Pitcher,656876.0,3.44,3.63,2.854
+,Edward Cabrera,CHC,,Neutral,0.0,,,,61.93,,32.0,,Pitcher,665795.0,3.79,3.92,4.114
+,Braydon Fisher,TOR,,Neutral,0.0,,,,1.01,,135.0,,Pitcher,680755.0,3.63,0.53,-0.947
+,Louis Varland,TOR,,Neutral,0.0,,,,52.74,,74.0,,Pitcher,686973.0,2.55,0.56,-0.102
+,Graham Ashcraft,CIN,,Neutral,0.0,,,,7.32,,132.0,,Pitcher,668933.0,1.53,2.71,2.216
+,Chase Silseth,LAA,,Neutral,0.0,,,,0.18,,,,Pitcher,681217.0,10.32,5.03,4.424
+,Paul Sewald,AZ,,Neutral,0.0,,,,33.05,,106.0,,Pitcher,623149.0,3.86,4.54,3.413
+,Will Vest,DET,,Neutral,0.0,,,,5.31,,,,Pitcher,676684.0,6.17,3.43,2.776
+,Angel Zerpa,MIL,,Neutral,0.0,,,,0.13,,,,Pitcher,672582.0,7.71,5.4,6.739
+,Hunter Barco,PIT,,Neutral,0.0,,,,0.21,,,,Pitcher,682995.0,8.0,6.7,5.662
+,Enmanuel De jesus,DET,,Neutral,0.0,,,,0.06,,,,Pitcher,646241.0,10.03,1.03,2.032
+,Cody Bolton,HOU,,Neutral,0.0,,,,0.21,,,,Pitcher,675989.0,0.93,2.93,4.875
+,Cole Sands,MIN,,Neutral,0.0,,,,0.64,,,,Pitcher,663485.0,6.17,1.03,-0.007
+,Yennier Cano,BAL,,Neutral,0.0,,,,0.59,,,,Pitcher,666974.0,3.09,2.48,3.455
+,Colin Holderman,CLE,,Neutral,0.0,,,,0.04,,,,Pitcher,670059.0,1.12,1.4,2.385
+,Jacob Latz,TEX,,Neutral,0.0,,,,10.64,,98.0,,Pitcher,656641.0,2.04,1.9,0.83
+,Brant Hurter,DET,,Neutral,0.0,,,,0.83,,93.0,,Pitcher,676428.0,2.53,3.59,2.174
+,Jake Woodford,MIL,,Neutral,0.0,,,,0.03,,,,Pitcher,663765.0,4.5,2.43,5.181
+,Huascar Brazobán,NYM,,Neutral,0.0,,,,0.41,,127.0,,Pitcher,623211.0,6.06,0.78,1.254
+,Anthony Nunez,BAL,,Neutral,0.0,,,,0.82,,157.0,,Pitcher,689296.0,8.82,3.78,0.615
+,Bryan Hudson,CWS,,Neutral,0.0,,,,0.22,,164.0,,Pitcher,663542.0,3.24,3.53,5.544
+,Ian Seymour,TB,,Neutral,0.0,,,,10.18,,,,Pitcher,693855.0,4.86,1.03,-3.287
+,Bradgley Rodriguez,SD,,Neutral,0.0,,,,0.33,,,,Pitcher,699134.0,4.32,0.03,-4.443
+,Tyler Rogers,TOR,,Neutral,0.0,,,,15.78,,,,Pitcher,643511.0,2.7,1.98,0.528
+,Justin Bruihl,STL,,Neutral,0.0,,,,0.03,,,,Pitcher,677865.0,7.94,2.53,0.507
+,Juan Mejia,COL,,Neutral,0.0,,,,0.08,,,,Pitcher,675848.0,2.65,0.03,-2.435
+,Gregory Soto,PIT,,Neutral,0.0,,,,22.86,,83.0,,Pitcher,642397.0,1.59,2.29,0.721
+,Jr Ritchie,ATL,,Neutral,0.0,,,,13.58,,,,Pitcher,702275.0,4.24,6.85,5.36
+,Payton Tolle,BOS,,Neutral,0.0,,,,28.08,,118.0,,Pitcher,801139.0,2.6,2.34,0.961
+,Dylan Lee,ATL,,Neutral,0.0,,,,4.22,,108.0,,Pitcher,669276.0,1.04,0.69,0.24
+,Yoendrys Gómez,TB,,Neutral,0.0,,,,0.04,,,,Pitcher,672782.0,6.23,6.11,7.491
+,Justin Sterner,ATH,,Neutral,0.0,,,,0.71,,,,Pitcher,686993.0,5.19,0.72,3.217
+,Taylor Clarke,AZ,,Neutral,0.0,,,,0.46,,,,Pitcher,664199.0,5.62,3.37,2.15
+,José Suarez,ATL,,Neutral,0.0,,,,0.12,,,,Pitcher,660761.0,3.29,2.59,2.521
+,Isaac Mattson,PIT,,Neutral,0.0,,,,0.68,,,,Pitcher,676755.0,3.38,3.19,6.317
+,Brock Burke,CIN,,Neutral,0.0,,,,0.3,,,,Pitcher,656271.0,5.06,2.6,-0.162
+,Shaun Anderson,LAA,,Neutral,0.0,,,,0.01,,,,Pitcher,641312.0,5.11,6.19,4.895
+,Rico Garcia,BAL,,Neutral,0.0,,,,14.04,,75.0,,Pitcher,670329.0,0.56,0.03,-0.461
+,Tyler Alexander,TEX,,Neutral,0.0,,,,3.66,,137.0,,Pitcher,641302.0,3.94,2.6,0.495
+,Spencer Miles,TOR,,Neutral,0.0,,,,0.1,,169.0,,Pitcher,693686.0,0.93,1.79,0.701
+,Matt Svanson,STL,,Neutral,0.0,,,,0.32,,,,Pitcher,694335.0,8.15,6.95,5.502
+,Adrián Morejón,SD,,Neutral,0.0,,,,7.56,,156.0,,Pitcher,670970.0,7.13,5.53,3.031
+,Lake Bachar,MIA,,Neutral,0.0,,,,0.1,,161.0,,Pitcher,669199.0,1.15,2.58,0.318
+,Jose Ferrer,SEA,,Neutral,0.0,,,,0.86,,,,Pitcher,678606.0,2.55,3.78,3.031
+,Mason Miller,SD,,Neutral,0.0,,,,99.4,,8.0,,Pitcher,695243.0,1.1,-0.37,-2.521
+,Osvaldo Bido,ATL,,Neutral,0.0,,,,0.07,,,,Pitcher,674370.0,4.97,6.11,5.357
+,Matt Festa,CLE,,Neutral,0.0,,,,0.11,,158.0,,Pitcher,670036.0,7.71,1.87,3.414
+,Hoby Milner,CHC,,Neutral,0.0,,,,0.22,,,,Pitcher,571948.0,2.76,5.26,4.903
+,Jakob Junis,TEX,,Neutral,0.0,,,,10.33,,123.0,,Pitcher,596001.0,0.0,1.03,0.623
+,Bryan King,HOU,,Neutral,0.0,,,,2.35,,172.0,,Pitcher,687911.0,6.89,3.03,4.251
+,Cionel Pérez,WSH,,Neutral,0.0,,,,0.11,,,,Pitcher,672335.0,4.02,3.03,1.628
+,Juan Morillo,AZ,,Neutral,0.0,,,,7.66,,141.0,,Pitcher,666661.0,2.87,2.17,0.355
+,Jonathan Loáisiga,AZ,,Neutral,0.0,,,,0.25,,,,Pitcher,642528.0,5.17,3.06,4.207
+,Dennis Santana,PIT,,Neutral,0.0,,,,17.43,,165.0,,Pitcher,642701.0,4.6,4.91,5.425
+,John King,MIA,,Neutral,0.0,,,,0.21,,134.0,,Pitcher,667463.0,1.72,3.19,1.638
+,Grant Taylor,CWS,,Neutral,0.0,,,,4.23,,166.0,,Pitcher,691799.0,2.7,1.03,6.244
+,Eric Orze,MIN,,Neutral,0.0,,,,0.06,,,,Pitcher,679358.0,5.4,3.95,0.039
+,Riley O'brien,STL,,Neutral,0.0,,,,82.04,,12.0,,Pitcher,676617.0,4.86,1.26,1.093
+,Jojo Romero,STL,,Neutral,0.0,,,,8.95,,,,Pitcher,668941.0,2.65,5.17,5.774
+,Pj Poulin,WSH,,Neutral,0.0,,,,0.08,,168.0,,Pitcher,676571.0,4.76,5.03,3.293
+,Jeff Hoffman,TOR,,Neutral,0.0,,,,50.11,,175.0,,Pitcher,656546.0,6.19,2.31,3.018
+,Kyle Hart,SD,,Neutral,0.0,,,,0.1,,,,Pitcher,606996.0,4.09,3.03,3.019
+,Nick Pivetta,SD,,Neutral,0.0,,,,71.47,,,,Pitcher,601713.0,4.5,1.15,0.463
+,Walbert Urena,LAA,,Neutral,0.0,,,,0.72,,,,Pitcher,700712.0,3.14,3.94,2.419
+,Albert Suárez,BAL,,Neutral,0.0,,,,0.07,,174.0,,Pitcher,544150.0,4.73,5.43,4.312
+,Ryne Stanek,STL,,Neutral,0.0,,,,0.44,,,,Pitcher,592773.0,7.8,3.8,4.305
+,Caleb Kilian,SF,,Neutral,0.0,,,,1.0,,145.0,,Pitcher,668873.0,1.8,1.03,-1.784
+,Justin Lawrence,PIT,,Neutral,0.0,,,,0.06,,,,Pitcher,664875.0,6.0,4.86,5.433
+,Tony Santillan,CIN,,Neutral,0.0,,,,15.68,,176.0,,Pitcher,663574.0,3.0,5.26,5.223
+,Cooper Criswell,SEA,,Neutral,0.0,,,,0.26,,159.0,,Pitcher,681867.0,3.0,3.03,3.88
+,Kevin Ginkel,AZ,,Neutral,0.0,,,,1.64,,,,Pitcher,656464.0,4.8,-0.97,-5.166
+,Grant Anderson,MIL,,Neutral,0.0,,,,0.26,,,,Pitcher,681982.0,5.06,1.78,-1.404
+,Scott Barlow,ATH,,Neutral,0.0,,,,0.26,,,,Pitcher,605130.0,2.76,4.9,3.399
+,Kyle Finnegan,DET,,Neutral,0.0,,,,4.54,,136.0,,Pitcher,640448.0,0.55,4.04,2.624
+,Cade Povich,BAL,,Neutral,0.0,,,,0.57,,,,Pitcher,700249.0,4.41,4.99,5.198
+,Jordan Leasure,CWS,,Neutral,0.0,,,,0.47,,,,Pitcher,673929.0,7.16,6.18,6.313
+,David Bednar,NYY,,Neutral,0.0,,,,89.68,,55.0,,Pitcher,670280.0,5.87,1.63,1.96
+,Joe Boyle,TB,,Neutral,0.0,,,,1.69,,,,Pitcher,671212.0,6.46,2.96,4.577
+,Dl Hall,MIL,,Neutral,0.0,,,,0.16,,,,Pitcher,669084.0,4.11,3.03,4.61
+,George Soriano,STL,,Neutral,0.0,,,,0.21,,167.0,,Pitcher,666277.0,4.7,1.53,1.872
+,Richard Lovelady,NYM,,Neutral,0.0,,,,0.06,,,,Pitcher,663992.0,5.02,4.28,2.23
+,Alex Lange,KC,,Neutral,0.0,,,,0.03,,,,Pitcher,656638.0,6.91,0.78,3.317
+,Tyler Holton,DET,,Neutral,0.0,,,,0.83,,,,Pitcher,663947.0,5.65,1.03,-0.444
+,Tanner Scott,LAD,,Neutral,0.0,,,,18.98,,146.0,,Pitcher,656945.0,2.51,3.14,3.646
+,Lucas Erceg,KC,,Neutral,0.0,,,,30.88,,34.0,,Pitcher,668674.0,3.77,3.35,3.675
+,Tim Hill,NYY,,Neutral,0.0,,,,1.21,,,,Pitcher,657612.0,0.63,3.49,2.753
+,Brandon Young,BAL,,Neutral,0.0,,,,1.42,,,,Pitcher,687064.0,7.98,5.48,5.701
+,Steven Okert,HOU,,Neutral,0.0,,,,0.17,,,,Pitcher,595345.0,6.89,4.59,4.675
+,Wandy Peralta,SD,,Neutral,0.0,,,,0.07,,,,Pitcher,593974.0,6.89,2.53,2.724
+,Eduard Bazardo,SEA,,Neutral,0.0,,,,0.84,,154.0,,Pitcher,660825.0,1.72,2.42,2.532
+,Tommy Nance,TOR,,Neutral,0.0,,,,0.05,,,,Pitcher,667297.0,3.94,2.44,3.211
+,Tyler Kinley,ATL,,Neutral,0.0,,,,1.57,,162.0,,Pitcher,641755.0,3.38,3.87,2.205
+,Erik Sabrowski,CLE,,Neutral,0.0,,,,20.93,,171.0,,Pitcher,681870.0,3.07,1.84,2.018
+,Andrew Morris,MIN,,Neutral,0.0,,,,0.06,,,,Pitcher,702193.0,2.25,2.78,2.097
+,Jt Brubaker,SF,,Neutral,0.0,,,,0.06,,,,Pitcher,664141.0,2.4,2.17,5.589
+,Casey Legumina,SEA,,Neutral,0.0,,,,0.02,,,,Pitcher,668984.0,3.6,4.18,8.067
+,Matt Waldron,SD,,Neutral,0.0,,,,0.33,,,,Pitcher,663362.0,8.56,6.25,4.522
+,Ryan Walker,SF,,Neutral,0.0,,,,19.01,,,,Pitcher,676254.0,4.61,3.14,3.569
+,Luke Weaver,NYM,,Neutral,0.0,,,,4.08,,,,Pitcher,596133.0,6.43,3.85,3.925
+,Enyel De los santos,HOU,,Neutral,0.0,,,,1.1,,,,Pitcher,660853.0,3.21,9.03,-0.212
+,Griffin Jax,TB,,Neutral,0.0,,,,30.72,,,,Pitcher,643377.0,5.79,2.63,4.915
+,Paul Blackburn,NYY,,Neutral,0.0,,,,0.05,,,,Pitcher,621112.0,6.43,2.46,3.112
+,Emilio Pagán,CIN,,Neutral,0.0,,,,64.93,,97.0,,Pitcher,641941.0,5.79,5.5,4.735
+,Andrés Muñoz,SEA,,Neutral,0.0,,,,89.28,,66.0,,Pitcher,662253.0,5.28,3.65,4.978
+,Jalen Beeks,TEX,,Neutral,0.0,,,,0.17,,,,Pitcher,656222.0,4.11,3.45,3.397
+,Cade Smith,CLE,,Neutral,0.0,,,,94.39,,42.0,,Pitcher,671922.0,5.28,2.08,3.518
+,Robert Suarez,ATL,,Neutral,0.0,,,,59.41,,58.0,,Pitcher,663158.0,1.17,1.3,1.608
+,Justin Topa,MIN,,Neutral,0.0,,,,0.21,,,,Pitcher,623437.0,5.28,5.54,5.408
+,Mark Leiter,ATH,,Neutral,0.0,,,,,,,,Pitcher,643410.0,8.79,3.83,5.757
+,Sam Moll,CIN,,Neutral,0.0,,,,0.04,,,,Pitcher,594580.0,3.77,4.03,2.73
+,Garrett Whitlock,BOS,,Neutral,0.0,,,,12.9,,,,Pitcher,676477.0,4.4,3.7,4.654
+,Tanner Gordon,COL,,Neutral,0.0,,,,0.02,,,,Pitcher,685299.0,6.91,5.82,5.026
+,Keaton Winn,SF,,Neutral,0.0,,,,1.07,,,,Pitcher,676775.0,1.35,6.03,6.596
+,Victor Vodnik,COL,,Neutral,0.0,,,,1.54,,,,Pitcher,680767.0,6.75,6.03,6.004
+,David Morgan,SD,,Neutral,0.0,,,,0.09,,,,Pitcher,688158.0,8.77,3.78,2.052
+,Mason Montgomery,PIT,,Neutral,0.0,,,,0.83,,,,Pitcher,682254.0,2.7,2.25,3.18
+,Fernando Cruz,NYY,,Neutral,0.0,,,,2.62,,153.0,,Pitcher,518585.0,4.72,4.65,4.495
+,Tanner Banks,PHI,,Neutral,0.0,,,,0.16,,,,Pitcher,621383.0,6.75,3.15,4.166
+,Matt Gage,SF,,Neutral,0.0,,,,0.08,,,,Pitcher,657424.0,1.98,4.61,3.795
+,Peyton Pallette,CLE,,Neutral,0.0,,,,0.08,,,,Pitcher,688883.0,4.91,2.86,5.81
+,Daniel Lynch,KC,,Neutral,0.0,,,,,,125.0,,Pitcher,663738.0,3.07,0.03,-1.454
+,Kevin Kelly,TB,,Neutral,0.0,,,,0.99,,115.0,,Pitcher,687330.0,3.68,5.53,5.483
+,Jack Dreyer,LAD,,Neutral,0.0,,,,1.47,,,,Pitcher,676263.0,4.91,1.53,-2.546
+,Anthony Banda,MIN,,Neutral,0.0,,,,0.09,,,,Pitcher,607455.0,11.05,4.7,3.883
+,Drew Pomeranz,LAA,,Neutral,0.0,,,,0.18,,,,Pitcher,519141.0,10.54,6.07,5.615
+,Joe Mantiply,TOR,,Neutral,0.0,,,,0.05,,,,Pitcher,573009.0,4.61,2.49,4.088
+,Bryan Baker,TB,,Neutral,0.0,,,,36.03,,35.0,,Pitcher,641329.0,2.63,2.41,0.408
+,Seranthony Domínguez,CWS,,Neutral,0.0,,,,20.26,,72.0,,Pitcher,622554.0,5.93,5.56,5.585
+,Joel Kuhnel,ATH,,Neutral,0.0,,,,5.04,,147.0,,Pitcher,669270.0,2.13,3.16,4.503
+,Kody Funderburk,MIN,,Neutral,0.0,,,,0.3,,,,Pitcher,681892.0,2.13,5.6,5.745
+,Ryan Thompson,AZ,,Neutral,0.0,,,,0.28,,,,Pitcher,657044.0,4.15,5.31,3.881
+,Taylor Rogers,MIN,,Neutral,0.0,,,,0.56,,,,Pitcher,573124.0,5.54,1.74,3.073
+,Pierce Johnson,CIN,,Neutral,0.0,,,,0.09,,,,Pitcher,572955.0,4.15,3.92,7.176
+,Jordan Hicks,CWS,,Neutral,0.0,,,,0.17,,,,Pitcher,663855.0,4.85,4.07,3.366
+,Jacob Webb,CHC,,Neutral,0.0,,,,0.07,,,,Pitcher,657097.0,6.23,1.53,-2.108
+,Will Klein,LAD,,Neutral,0.0,,,,0.23,,,,Pitcher,694361.0,3.86,0.53,2.904
+,Connor Brogdon,CLE,,Neutral,0.0,,,,0.14,,,,Pitcher,641401.0,5.14,4.35,3.642
+,Jimmy Herget,COL,,Neutral,0.0,,,,0.21,,,,Pitcher,623474.0,5.14,2.78,4.162
+,Connor Prielipp,MIN,,Neutral,0.0,,,,3.49,,,,Pitcher,687570.0,3.86,4.03,3.039
+,Brad Keller,PHI,,Neutral,0.0,,,,5.01,,142.0,,Pitcher,641745.0,5.02,3.77,2.441
+,Michael Petersen,MIA,,Neutral,0.0,,,,0.04,,,,Pitcher,656848.0,3.37,2.03,0.417
+,Cole Wilcox,SEA,,Neutral,0.0,,,,0.02,,,,Pitcher,677961.0,6.07,0.78,5.458
+,Mitchell Parker,WSH,,Neutral,0.0,,,,0.1,,,,Pitcher,680730.0,3.0,3.11,3.668
+,Gus Varland,WSH,,Neutral,0.0,,,,2.04,,152.0,,Pitcher,681402.0,6.75,2.55,4.369
+,Bryan Abreu,HOU,,Neutral,0.0,,,,37.72,,,,Pitcher,650556.0,6.75,5.03,3.547
+,Evan Sisk,PIT,,Neutral,0.0,,,,0.03,,,,Pitcher,681895.0,3.75,3.03,2.795
+,Luis Medina,ATH,,Neutral,0.0,,,,0.06,,,,Pitcher,665622.0,1.42,5.56,6.904
+,Trevor Megill,MIL,,Neutral,0.0,,,,42.12,,,,Pitcher,656730.0,5.84,2.35,4.413
+,Gabe Speier,SEA,,Neutral,0.0,,,,1.14,,,,Pitcher,642100.0,3.65,3.32,4.533
+,Grant Wolfram,BAL,,Neutral,0.0,,,,0.13,,,,Pitcher,664991.0,4.38,0.48,2.23
+,Mason Fluharty,TOR,,Neutral,0.0,,,,0.18,,,,Pitcher,689254.0,5.11,2.75,1.325
+,Cole Winn,TEX,,Neutral,0.0,,,,0.45,,,,Pitcher,668390.0,4.61,4.83,3.606
+,Anthony Bender,MIA,,Neutral,0.0,,,,0.32,,,,Pitcher,669622.0,6.59,2.63,2.661
+,Brennan Bernardino,COL,,Neutral,0.0,,,,0.07,,,,Pitcher,657514.0,3.95,2.85,2.869
+,Greg Weissert,BOS,,Neutral,0.0,,,,0.2,,,,Pitcher,669711.0,9.22,4.83,4.307
+,Matt Strahm,KC,,Neutral,0.0,,,,4.82,,,,Pitcher,621381.0,3.29,4.39,1.452
+,Orion Kerkering,PHI,,Neutral,0.0,,,,0.62,,,,Pitcher,689147.0,2.84,4.26,0.916
+,Alex Vesia,LAD,,Neutral,0.0,,,,14.17,,143.0,,Pitcher,681911.0,2.13,1.89,2.16
+,Nick Mears,KC,,Neutral,0.0,,,,0.1,,,,Pitcher,683232.0,4.26,3.08,5.348
+,Brooks Raley,NYM,,Neutral,0.0,,,,0.78,,,,Pitcher,548384.0,3.55,2.21,3.054
+,Jeffrey Springs,ATH,,Neutral,0.0,,,,30.36,,52.0,,Pitcher,605488.0,3.76,4.33,2.855
+,Shane Smith,CWS,,Neutral,0.0,,,,2.47,,,,Pitcher,681343.0,11.37,6.03,4.507
+,Robert Garcia,TEX,,Neutral,0.0,,,,6.23,,,,Pitcher,676395.0,3.38,4.12,4.482
+,Ryan Rolison,CHC,,Neutral,0.0,,,,0.04,,170.0,,Pitcher,669020.0,0.0,1.74,1.455
+,Danny Coulombe,BOS,,Neutral,0.0,,,,0.05,,,,Pitcher,543056.0,4.5,4.87,4.644
+,Cameron Foster,BAL,,Neutral,0.0,,,,0.01,,,,Pitcher,671382.0,2.25,3.03,2.06
+,Logan Gilbert,SEA,,Neutral,0.0,,,,95.6,,77.0,,Pitcher,669302.0,4.19,4.35,4.776
+,Yoshinobu Yamamoto,LAD,,Neutral,0.0,,,,99.8,,21.0,,Pitcher,808967.0,3.35,3.45,4.153
+,Max Fried,NYY,,Neutral,0.0,,,,99.75,,2.0,,Pitcher,608331.0,2.38,2.59,1.224
+,Jack Anderson,BOS,,Neutral,0.0,,,,0.01,,,,Pitcher,681252.0,3.52,3.94,5.745
+,Jordan Romano,LAA,,Neutral,0.0,,,,5.7,,,,Pitcher,605447.0,4.5,4.25,4.266
+,Paxton Schultz,WSH,,Neutral,0.0,,,,0.04,,,,Pitcher,687606.0,2.35,5.25,5.074
+,Shane Drohan,MIL,,Neutral,0.0,,,,0.05,,,,Pitcher,675660.0,5.91,2.93,3.83
+,Andrew Nardi,MIA,,Neutral,0.0,,,,0.06,,,,Pitcher,677053.0,7.62,5.38,6.568
+,Calvin Faucher,MIA,,Neutral,0.0,,,,0.35,,,,Pitcher,676534.0,6.92,3.23,4.992
+,Gavin Williams,CLE,,Neutral,0.0,,,,93.06,,7.0,,Pitcher,668909.0,3.54,4.06,4.222
+,Luinder Avila,KC,,Neutral,0.0,,,,0.05,,,,Pitcher,679883.0,9.0,4.6,6.429
+,Elmer Rodriguez,NYY,,Neutral,0.0,,,,3.47,,,,Pitcher,695684.0,5.19,5.34,7.107
+,Caleb Thielbar,CHC,,Neutral,0.0,,,,0.95,,,,Pitcher,573204.0,4.15,4.5,1.816
+,Colton Gordon,HOU,,Neutral,0.0,,,,0.06,,,,Pitcher,676467.0,14.62,11.4,7.161
+,Pete Fairbanks,MIA,,Neutral,0.0,,,,44.29,,,,Pitcher,664126.0,8.0,2.89,3.09
+,Andre Granillo,WSH,,Neutral,0.0,,,,0.01,,,,Pitcher,701552.0,7.5,7.36,5.714
+,Luis Morales,ATH,,Neutral,0.0,,,,0.21,,,,Pitcher,806960.0,12.54,12.67,9.093
+,Joel Payamps,ATL,,Neutral,0.0,,,,0.05,,,,Pitcher,606303.0,5.87,5.61,5.92
+,Jhoan Durán,PHI,,Neutral,0.0,,,,91.72,,122.0,,Pitcher,661395.0,4.7,1.56,2.786
+,Logan Henderson,MIL,,Neutral,0.0,,,,6.78,,,,Pitcher,701656.0,3.0,0.36,-1.41
+,Kyle Hurt,LAD,,Neutral,0.0,,,,0.05,,,,Pitcher,669165.0,2.25,1.0,-0.404
+,Jaden Hill,COL,,Neutral,0.0,,,,0.13,,,,Pitcher,677955.0,8.53,3.55,4.578
+,Craig Kimbrel,NYM,,Neutral,0.0,,,,0.07,,,,Pitcher,518886.0,0.0,1.28,2.868
+,Cole Henry,WSH,,Neutral,0.0,,,,0.1,,,,Pitcher,669371.0,9.0,1.03,0.139
+,Trevor Mcdonald,SF,,Neutral,0.0,,,,0.94,,,,Pitcher,686790.0,1.29,3.03,1.685
+,George Kirby,SEA,,Neutral,0.0,,,,98.12,,9.0,,Pitcher,669923.0,2.96,3.34,2.204
+,J. t. Ginn,ATH,,Neutral,-0.0012,,,,,,163.0,,Pitcher,669372.0,3.86,4.46,3.516
+,Brandon Williamson,CIN,,Neutral,-0.0096,,,,0.32,,,,Pitcher,682227.0,6.11,5.99,6.327
+,Andrew Abbott,CIN,,Neutral,-0.011,,,,39.77,,,,Pitcher,671096.0,4.76,4.69,5.224
+,Ryan Zeferjahn,LAA,,Neutral,-0.0112,,,,0.29,,131.0,,Pitcher,666171.0,0.9,1.03,-0.059
+,Zach Agnos,COL,,Neutral,-0.0128,,,,0.05,,,,Pitcher,688642.0,3.48,4.38,3.63
+,Chase Dollander,COL,,Neutral,-0.0131,,,,24.7,,59.0,,Pitcher,801403.0,3.28,3.39,2.637
+,Rhett Lowder,CIN,,Neutral,-0.0148,,,,9.15,,92.0,,Pitcher,695076.0,3.18,2.82,3.678
+,Tobias Myers,NYM,,Neutral,-0.017,,,,1.38,,151.0,,Pitcher,668964.0,2.37,3.61,2.579
+,Sonny Gray,BOS,,Neutral,-0.0191,,,,76.86,,,,Pitcher,543243.0,4.84,4.42,5.304
+,Aj Blubaugh,HOU,,Neutral,-0.0262,,,,0.16,,,,Pitcher,805123.0,3.86,5.94,4.532
+,Bubba Chandler,PIT,,Neutral,-0.0279,,,,30.43,,,,Pitcher,696149.0,4.76,5.5,5.107
+,Jovani Morán,BOS,,Neutral,-0.0303,,,,0.27,,,,Pitcher,663558.0,2.6,4.3,1.638
+,Casey Mize,DET,,Neutral,-0.0309,,,,23.05,,82.0,,Pitcher,663554.0,2.7,2.76,3.19
+,Luis Gil,NYY,,Neutral,-0.0375,,,,2.3,,,,Pitcher,661563.0,5.21,8.4,6.184
+,Andre Pallante,STL,,Neutral,-0.0435,,,,4.97,,101.0,,Pitcher,669467.0,4.02,4.56,4.367
+,Connor Phillips,CIN,,Neutral,-0.0436,,,,0.26,,173.0,,Pitcher,683175.0,4.74,5.36,3.838
+,Jesse Scholtens,TB,,Neutral,-0.0439,,,,1.31,,112.0,,Pitcher,669947.0,3.18,3.73,4.029
+,Kyle Harrison,MIL,,Neutral,-0.0447,,,,25.47,,63.0,,Pitcher,690986.0,1.88,2.75,3.083
+,Noah Schultz,CWS,,Neutral,-0.0463,,,,30.2,,109.0,,Pitcher,702273.0,2.95,3.45,3.225
+,Tyler Phillips,MIA,,Neutral,-0.0511,,,,1.61,,113.0,,Pitcher,663969.0,2.2,3.4,3.193
+,Drew Anderson,DET,,Neutral,-0.0531,,,,0.24,,149.0,,Pitcher,623454.0,0.68,2.95,0.247
+,Kumar Rocker,TEX,,Neutral,-0.0533,,,,2.2,,,,Pitcher,677958.0,3.37,3.59,4.224
+,Chad Patrick,MIL,,Neutral,-0.0585,,,,7.56,,124.0,,Pitcher,694477.0,3.48,4.03,4.503
+,Freddy Peralta,NYM,,Neutral,-0.0607,,,,96.15,,89.0,,Pitcher,642547.0,2.58,3.6,3.491
+,Peter Lambert,HOU,,Neutral,-0.0656,,,,3.19,,121.0,,Pitcher,663567.0,2.01,2.72,3.055
+,Jose Quintana,COL,,Neutral,-0.067,,,,0.55,,,,Pitcher,500779.0,4.5,6.24,5.245
+,Kris Bubic,KC,,Slight sell,-0.0775,,,,57.53,,30.0,,Pitcher,663460.0,3.18,3.41,3.652
+,Patrick Corbin,TOR,,Slight sell,-0.0777,,,,2.73,,,,Pitcher,571578.0,3.86,4.27,5.603
+,Keider Montero,DET,,Slight sell,-0.0816,,,,4.51,,81.0,,Pitcher,672456.0,2.97,3.33,2.69
+,Max Meyer,MIA,,Slight sell,-0.0827,,,,31.16,,48.0,,Pitcher,676974.0,2.68,2.87,3.697
+,Mitch Keller,PIT,,Slight sell,-0.088,,,,41.36,,28.0,,Pitcher,656605.0,2.68,2.78,3.608
+,Erick Fedde,CWS,,Slight sell,-0.0898,,,,2.42,,144.0,,Pitcher,607200.0,4.38,5.76,4.056
+,Matthew Liberatore,STL,,Slight sell,-0.1167,,,,3.76,,114.0,,Pitcher,669461.0,4.63,5.8,5.699
+,Ryan Weathers,NYY,,Slight sell,-0.126,,,,36.06,,57.0,,Pitcher,677960.0,2.87,3.51,4.554
+,Steven Matz,TB,,Slight sell,-0.1293,,,,15.32,,38.0,,Pitcher,571927.0,3.65,4.76,4.738
+,Kai-wei Teng,HOU,,Slight sell,-0.1298,,,,0.76,,138.0,,Pitcher,678906.0,1.69,1.84,4.207
+,Emerson Hancock,SEA,,Slight sell,-0.1349,,,,77.27,,24.0,,Pitcher,676106.0,2.63,3.59,3.316
+,Randy Vásquez,SD,,Slight sell,-0.1377,,,,46.99,,41.0,,Pitcher,681190.0,3.29,3.68,4.461
+,Bryce Elder,ATL,,Slight sell,-0.1395,,,,81.45,,6.0,,Pitcher,693821.0,2.61,3.09,2.306
+,Parker Messick,CLE,,Slight sell,-0.1406,,,,86.78,,19.0,,Pitcher,800048.0,2.02,2.95,2.36
+,Shohei Ohtani,LAD,DH,Slight sell,-0.1429,,,,99.82,,26.0,117.0,Pitcher,660271.0,1.46,2.43,1.234
+,Ranger Suarez,BOS,,Sell high,-0.1624,,,,73.95,,45.0,,Pitcher,624133.0,2.61,3.16,3.21
+,Gordon Graceffo,STL,,Sell high,-0.1643,,,,0.28,,111.0,,Pitcher,700669.0,1.93,2.79,2.025
+,Robbie Ray,SF,,Sell high,-0.1704,,,,76.47,,60.0,,Pitcher,592662.0,3.0,4.39,3.671
+,Shota Imanaga,CHC,,Sell high,-0.1707,,,,90.15,,14.0,,Pitcher,684007.0,1.96,2.62,2.332
+,Spencer Arrighetti,HOU,,Sell high,-0.1777,,,,30.68,,80.0,,Pitcher,681293.0,1.96,3.77,5.674
+,Taj Bradley,MIN,,Sell high,-0.18,,,,76.55,,10.0,,Pitcher,671737.0,2.68,3.41,3.707
+,Chase Burns,CIN,,Sell high,-0.1959,,,,92.28,,17.0,,Pitcher,695505.0,2.21,3.32,2.254
+,Chris Sale,ATL,,Sell high,-0.2079,,,,99.53,,3.0,,Pitcher,519242.0,2.14,3.39,2.345
+,Connelly Early,BOS,,Sell high,-0.2296,,,,19.35,,96.0,,Pitcher,813349.0,3.53,4.8,5.236
+,Aaron Civale,ATH,,Sell high,-0.2361,,,,7.44,,68.0,,Pitcher,650644.0,2.5,3.81,4.238
+,Mike King,SD,,Sell high,-0.2937,,,,,,46.0,,Pitcher,650633.0,2.09,3.73,3.968
+,Martín Pérez,ATL,,Sell high,-0.3003,,,,3.88,,94.0,,Pitcher,527048.0,1.91,4.33,4.398
+,Foster Griffin,WSH,,Sell high,-0.3075,,,,26.05,,33.0,,Pitcher,656492.0,2.95,4.21,4.348
+,Jack Kochanowicz,LAA,,Sell high,-0.3323,,,,13.94,,50.0,,Pitcher,686799.0,2.61,3.88,4.183
+,Michael Wacha,KC,,Sell high,-0.3617,,,,56.69,,27.0,,Pitcher,608379.0,2.91,3.97,4.221
+,Davis Martin,CWS,,Sell high,-0.3638,,,,68.68,,5.0,,Pitcher,663436.0,1.66,2.34,4.148
+,José Soriano,LAA,,Sell high,-0.3924,,,,95.03,,4.0,,Pitcher,667755.0,1.76,3.27,3.693
+,Justin Wrobleski,LAD,,Sell high,-0.4392,,,,59.99,,20.0,,Pitcher,680736.0,1.25,3.11,4.153
+,Eduardo Rodríguez,AZ,,Sell high,-0.4592,,,,16.07,,36.0,,Pitcher,593958.0,2.5,4.31,4.693
+,Clay Holmes,NYM,,Sell high,-0.5053,,,,56.77,,15.0,,Pitcher,605280.0,1.69,3.54,3.646
+,Nick Martínez,TB,,Sell high,-0.5469,,,,40.9,,25.0,,Pitcher,607259.0,1.51,3.34,3.757
+,Michael Mcgreevy,STL,,Sell high,-0.6036,,,,10.64,,40.0,,Pitcher,700241.0,2.35,4.1,5.611
+,Tomoyuki Sugano,COL,,Sell high,-0.6311,,,,5.65,,65.0,,Pitcher,608372.0,2.95,4.86,6.089
