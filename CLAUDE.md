@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 5, 2026 (Sessions 1-37)
+# Last updated: May 7, 2026 (Sessions 1-39)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -2352,8 +2352,48 @@ Pipeline run (Session 38 — May 6, 2026):
 37/37 PASS. All invariants PASS (Sanchez C#29, Yordan #3, Raleigh C#1, Baldwin C#4, Contreras C#7).
 
 PENDING MANUAL ACTIONS:
-  - Publish Week 3 article (outputs/week3_article_draft.md) — OVERDUE
   - Career lessons database (Sessions 22-38) — add new lessons manually in Claude.ai
+  - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS)
+  - Download updated thread_handoff.md to Claude.ai after push
+
+--- May 7, 2026 (Session 39) ---
+Trade analyzer output rewrite + league settings integration.
+
+Output format rewrite (trade_analyzer.py — --give/--receive CLI):
+  - Replaced flat dict printout with ═══ divider blocks, per-player signal descriptions,
+    signal-adjusted surplus display, VERDICT section, and SIGNAL CONTEXT advisory warnings
+  - _signal_desc(verdict, ptype): one-line description per signal type (hitter vs pitcher)
+  - _signal_context_warnings(give_rows, get_rows): ⚠/✓/· advisory lines per player
+  - Missing player error handling: collects missing_give/missing_get lists, prints clear
+    "Player not found: X\n  Check spelling or try last name only." before aborting
+  - Per-player block: Name (Pos, TEAM) | Signal with luck score | Signal desc | Surplus + signal-adjusted
+
+League settings integration (trade_analyzer.py):
+  - LEAGUES_DIR constant added (BASE_DIR / "data" / "leagues")
+  - _load_league_json(league_id): loads league_{id}.json, falls back to 12-team defaults
+  - _compute_roster_n(league_json): derives position-level N from roster_slots × team_count
+    CI split 50/50 between 1B/3B; MI split 50/50 between 2B/SS; UT 15% to OF; P 60/40 SP/RP
+  - _compute_cbs_fpts_league(row, league_json): OBP substitution for AVG leagues
+    use_obp fires when stat_weights OBP=1.0 and AVG=0.0
+    OBP proxy: proj_avg + bb_rate × (1 - proj_avg) (from luck_scores.csv bb_rate column)
+    Fallback: proj_avg + 0.065 when bb_rate missing
+  - --give/--receive block now calls _load_league_json → _compute_roster_n →
+    load_replacement_levels(roster_n) for league-specific replacement FPTS
+  - league_id=1 = CBS 13-Team; league_id=2 = Fantrax 15-Team OBP
+
+Trade scenarios (Week 4 article prep):
+  Scenario 1 (AVOID, -110.3): Ramírez+Ryan→Skenes. Two Buy Lows for one Neutral.
+    "Don't chase Skenes with two Buy Lows — you're selling at the exact wrong moment."
+  Scenario 2 (SLIGHTLY UNFAVORABLE, -13.0): Seager→Chapman+Dingler. Giving BL, receiving SH+BL.
+    "The 2-for-1 temptation: Dingler is the only green light on the receiving side."
+  Scenario 3 (STRONG TRADE, +258.8): Turang→Ryan+Ramírez. Three green signal lights.
+    "Textbook: sell peak value on Sell High, load up on two Buy Lows. Run it."
+  Files: outputs/trade_scenarios_week4.txt, outputs/week4_trade_hook.md
+
+37/37 PASS. All invariants PASS (Sanchez C#29, Raleigh C#1, Baldwin C#4, Contreras C#7).
+
+PENDING MANUAL ACTIONS:
+  - Career lessons database (Sessions 22-39) — add new lessons manually in Claude.ai
   - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS)
   - Download updated thread_handoff.md to Claude.ai after push
 

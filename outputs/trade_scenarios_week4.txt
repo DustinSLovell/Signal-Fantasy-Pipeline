@@ -1,0 +1,157 @@
+THE SIGNAL FANTASY — WEEK 4 TRADE SCENARIOS
+Generated: May 7, 2026
+League: CBS 13-Team (AVG, 13 teams)
+=================================================================
+
+
+SCENARIO 1: The "Skenes Is Untouchable" Trap
+─────────────────────────────────────────────
+You Give: José Ramírez (3B, CLE) + Joe Ryan (SP, MIN)
+You Receive: Paul Skenes (SP, PIT)
+
+═════════════════════════════════════════════════════════════════
+  THE SIGNAL FANTASY — TRADE ANALYZER  [CBS 13-Team]
+═════════════════════════════════════════════════════════════════
+
+  YOU GIVE:
+  ─────────────────────────────────────────────────────────
+  José Ramírez (3B, CLE)
+  Signal: Buy low (+0.512)
+    underperforming contact quality — buy before market adjusts
+  Surplus: +180  |  Signal-adjusted: +226 (+46)
+
+  Joe Ryan (SP, MIN)
+  Signal: Buy low (+0.428)
+    ERA inflated by luck — peripherals suggest improvement ahead
+  Surplus: +145  |  Signal-adjusted: +176 (+31)
+
+  YOU RECEIVE:
+  ─────────────────────────────────────────────────────────
+  Paul Skenes (SP, PIT)
+  Signal: Neutral (-0.041)
+    stats roughly matching underlying performance
+  Surplus: +215  |  Signal-adjusted: +215
+
+═════════════════════════════════════════════════════════════════
+
+  VERDICT: AVOID — significant projected value disadvantage
+  Give total: +325.0  |  Get total: +214.7  |  Delta: -110.3
+
+  SIGNAL CONTEXT:
+  ⚠  Giving José Ramírez: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
+  ⚠  Giving Joe Ryan: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
+
+═════════════════════════════════════════════════════════════════
+
+ARTICLE HOOK: You're giving away the two players the model is most bullish on
+right now — and getting back someone with a clean neutral signal. Skenes is
+elite, but his numbers are legitimately reflecting his performance (ERA-FIP gap
+is not inflated). Ramírez and Ryan are both underperforming their expected
+peripherals; their market value is suppressed at exactly the wrong moment.
+This is the most dangerous type of trade: the names on the receiving end look
+impressive, but the signal math says you're selling twice at the bottom.
+
+
+═════════════════════════════════════════════════════════════════
+
+
+SCENARIO 2: The 2-for-1 Temptation (Mixed Signals)
+────────────────────────────────────────────────────
+You Give: Corey Seager (SS, TEX)
+You Receive: Matt Chapman (3B, SF) + Dillon Dingler (C, DET)
+
+═════════════════════════════════════════════════════════════════
+  THE SIGNAL FANTASY — TRADE ANALYZER  [CBS 13-Team]
+═════════════════════════════════════════════════════════════════
+
+  YOU GIVE:
+  ─────────────────────────────────────────────────────────
+  Corey Seager (SS, TEX)
+  Signal: Buy low (+0.327)
+    underperforming contact quality — buy before market adjusts
+  Surplus: +74  |  Signal-adjusted: +86 (+12)
+
+  YOU RECEIVE:
+  ─────────────────────────────────────────────────────────
+  Matt Chapman (3B, SF)
+  Signal: Sell high (-0.286)
+    overperforming contact quality — sell before regression hits
+  Surplus: +18  |  Signal-adjusted: +15 (-3)
+
+  Dillon Dingler (C, DET)
+  Signal: Buy low (+0.209)
+    underperforming contact quality — buy before market adjusts
+  Surplus: +44  |  Signal-adjusted: +48 (+5)
+
+═════════════════════════════════════════════════════════════════
+
+  VERDICT: SLIGHTLY UNFAVORABLE — modest projected value gap
+  Give total: +74.2  |  Get total: +61.2  |  Delta: -13.0
+
+  SIGNAL CONTEXT:
+  ⚠  Giving Corey Seager: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
+  ⚠  Receiving Matt Chapman: Sell High — true value likely LOWER than perceived.
+  ✓  Receiving Dillon Dingler: Buy Low — good time to buy while market undervalues them.
+
+═════════════════════════════════════════════════════════════════
+
+ARTICLE HOOK: On the surface, 2-for-1 looks like depth. But the signal
+context tells the real story: you're selling a Buy Low at the worst moment
+and absorbing a Sell High on the way back. Dingler is the only positive signal
+on the receiving end — and he alone can't make up the gap. If you're doing
+this trade, flip it: ask for Dingler and a pitcher, not Chapman.
+
+
+═════════════════════════════════════════════════════════════════
+
+
+SCENARIO 3: The Textbook Signal Trade
+──────────────────────────────────────
+You Give: Brice Turang (2B, MIL)
+You Receive: Joe Ryan (SP, MIN) + José Ramírez (3B, CLE)
+
+═════════════════════════════════════════════════════════════════
+  THE SIGNAL FANTASY — TRADE ANALYZER  [CBS 13-Team]
+═════════════════════════════════════════════════════════════════
+
+  YOU GIVE:
+  ─────────────────────────────────────────────────────────
+  Brice Turang (2B, MIL)
+  Signal: Sell high (-0.172)
+    overperforming contact quality — sell before regression hits
+  Surplus: +66  |  Signal-adjusted: +60 (-6)
+
+  YOU RECEIVE:
+  ─────────────────────────────────────────────────────────
+  Joe Ryan (SP, MIN)
+  Signal: Buy low (+0.428)
+    ERA inflated by luck — peripherals suggest improvement ahead
+  Surplus: +145  |  Signal-adjusted: +176 (+31)
+
+  José Ramírez (3B, CLE)
+  Signal: Buy low (+0.512)
+    underperforming contact quality — buy before market adjusts
+  Surplus: +180  |  Signal-adjusted: +226 (+46)
+
+═════════════════════════════════════════════════════════════════
+
+  VERDICT: STRONG TRADE — clear projected value advantage incoming
+  Give total: +66.2  |  Get total: +325.0  |  Delta: +258.8
+
+  SIGNAL CONTEXT:
+  ✓  Giving Brice Turang: Sell High — good time to sell at peak value.
+  ✓  Receiving Joe Ryan: Buy Low — good time to buy while market undervalues them.
+  ✓  Receiving José Ramírez: Buy Low — good time to buy while market undervalues them.
+
+═════════════════════════════════════════════════════════════════
+
+ARTICLE HOOK: Three green lights — the rarest and clearest signal trade of
+the week. Turang is 97.6% owned and his luck score says he's overperforming
+his contact quality. Ryan and Ramírez are both at-market bargains with their
+peripherals pointing toward improvement. This is exactly the trade the Signal
+model is designed to surface: give peak value on a Sell High, and load up on
+two players whose market price hasn't caught up to the underlying data.
+The delta is +258.8 FPTS surplus. Run it.
+
+=================================================================
+END OF WEEK 4 TRADE SCENARIOS

@@ -39,6 +39,7 @@ PITCHER_CSV   = BASE_DIR / "pitcher_luck_scores.csv"
 PROJ_CSV      = BASE_DIR / "data" / "projections_2026.csv"
 CONFIG_PATH   = BASE_DIR / "data" / "league_config.json"
 HISTORY_PATH  = BASE_DIR / "data" / "trade_history.csv"
+LEAGUES_DIR   = BASE_DIR / "data" / "leagues"
 
 BUY_LOW     =  0.150
 SLIGHT_BUY  =  0.065
@@ -147,6 +148,97 @@ def _print_config(cfg: dict) -> None:
     print(f"  League  : {cfg['team_count']}-team {cfg['league_type'].title()} | {cfg['scoring_format'].title()}")
     print(f"  Draft   : {budget_str}")
     print(f"  Scarce  : {', '.join(cfg.get('scarce_positions', []))}")
+
+
+# ---------------------------------------------------------------------------
+# League JSON helpers (Task 4 — Session 39)
+# ---------------------------------------------------------------------------
+
+def _load_league_json(league_id: int) -> dict:
+    """Load data/leagues/league_{id}.json. Falls back to 12-team defaults."""
+    path = LEAGUES_DIR / f"league_{league_id}.json"
+    if path.exists():
+        try:
+            with open(path) as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {
+        "league_id": f"league_{league_id}",
+        "league_name": f"League {league_id} (defaults)",
+        "team_count": 12,
+        "roster_slots": {"C":1,"1B":1,"2B":1,"3B":1,"SS":1,"MI":1,"CI":1,"OF":3,"UT":1,"SP":5,"RP":3},
+        "stat_weights": {"AVG": 1.0, "OBP": 0.0},
+    }
+
+
+def _compute_roster_n(league_json: dict) -> dict:
+    """Derive per-position starter count from league_json roster_slots × team_count.
+
+    CI (corner infield) split evenly between 1B and 3B.
+    MI (middle infield) split evenly between 2B and SS.
+    UT (utility) allocated 15% to OF pool.
+    P (combined pitcher slots) split 60% SP / 40% RP.
+    """
+    tc    = league_json.get("team_count", 12)
+    slots = league_json.get("roster_slots", {})
+
+    ci  = slots.get("CI", 0)
+    mi  = slots.get("MI", 0)
+    ut  = slots.get("UT", 0)
+    p   = slots.get("P", 0)
+
+    n = {
+        "C":  max(int(round(slots.get("C",  1)               * tc)), 8),
+        "1B": max(int(round((slots.get("1B",1) + ci * 0.5)   * tc)), 8),
+        "2B": max(int(round((slots.get("2B",1) + mi * 0.5)   * tc)), 8),
+        "3B": max(int(round((slots.get("3B",1) + ci * 0.5)   * tc)), 8),
+        "SS": max(int(round((slots.get("SS",1) + mi * 0.5)   * tc)), 8),
+        "OF": max(int(round((slots.get("OF",3) + ut * 0.15)  * tc)), 12),
+        "SP": max(int((slots.get("SP",0) + p * 0.6)          * tc), 12),
+        "RP": max(int((slots.get("RP",0) + p * 0.4)          * tc), 12),
+    }
+    return n
+
+
+def _compute_cbs_fpts_league(row: pd.Series, league_json: dict) -> Optional[float]:
+    """Compute CBS-model projected FPTS respecting league stat_weights.
+
+    For OBP leagues (stat_weights.OBP = 1): substitutes proj_obp for proj_avg.
+    proj_obp computed as proj_avg + bb_rate × (1 − proj_avg) when bb_rate available;
+    otherwise uses proj_avg + 0.065 as a principled proxy (avg walk-rate contribution).
+    """
+    ptype = row.get("_type", "hitter")
+    stat_w = league_json.get("stat_weights", {})
+    use_obp = stat_w.get("OBP", 0.0) > 0 and stat_w.get("AVG", 1.0) == 0
+
+    def _f(col):
+        v = row.get(col)
+        try:
+            return float(v) if pd.notna(v) else None
+        except (TypeError, ValueError):
+            return None
+
+    if ptype == "hitter":
+        r, hr, rbi, sb, avg = _f("proj_r"), _f("proj_hr"), _f("proj_rbi"), _f("proj_sb"), _f("proj_avg")
+        if any(v is None for v in (r, hr, rbi, sb, avg)):
+            return None
+        if use_obp:
+            bb = _f("bb_rate")
+            if bb is not None:
+                batting_val = avg + bb * (1.0 - avg)  # standard OBP proxy (no HBP)
+            else:
+                batting_val = avg + 0.065              # league-average walk-rate offset
+        else:
+            batting_val = avg
+        return (CBS_H_COEF_R * r + CBS_H_COEF_HR * hr + CBS_H_COEF_RBI * rbi
+                + CBS_H_COEF_SB * sb + CBS_H_COEF_AVG * batting_val + CBS_H_INTERCEPT)
+    else:
+        w, era, whip, k, sv = _f("proj_w"), _f("proj_era"), _f("proj_whip"), _f("proj_k"), _f("proj_sv_h")
+        if any(v is None for v in (w, era, whip, k, sv)):
+            return None
+        return (CBS_P_COEF_W * w + CBS_P_COEF_ERA * era + CBS_P_COEF_WHIP * whip
+                + CBS_P_COEF_K * k + CBS_P_COEF_SV * sv + CBS_P_INTERCEPT)
 
 
 # ---------------------------------------------------------------------------
@@ -365,6 +457,44 @@ def _stat(val, dec: int = 3, signed: bool = False, leading_zero: bool = True) ->
         s = s[1:]
     prefix = "+" if (signed and v >= 0) else ("-" if v < 0 else "")
     return prefix + s
+
+
+def _signal_desc(verdict: str, ptype: str) -> str:
+    """One-line description of what the signal means for this player in a trade."""
+    v = verdict.lower()
+    if ptype == "pitcher":
+        if "buy low" in v:   return "ERA inflated by luck — peripherals suggest improvement ahead"
+        if "sell high" in v: return "ERA masking poor peripherals — regression incoming"
+        if "slight sell" in v: return "mild ERA outperformance — some regression likely"
+    else:
+        if "buy low" in v:   return "underperforming contact quality — buy before market adjusts"
+        if "sell high" in v: return "overperforming contact quality — sell before regression hits"
+        if "slight sell" in v: return "minor overperformance — modest regression risk"
+    return "stats roughly matching underlying performance"
+
+
+def _signal_context_warnings(give_rows: list, get_rows: list) -> list:
+    """Return list of advisory strings for the SIGNAL CONTEXT block."""
+    lines = []
+    for row in give_rows:
+        sig = str(row.get("verdict", "")).lower()
+        name = row.get("name", "?")
+        if "buy low" in sig:
+            lines.append(f"  ⚠  Giving {name}: Buy Low — true value likely HIGHER than perceived. Consider asking for more.")
+        elif "sell high" in sig:
+            lines.append(f"  ✓  Giving {name}: Sell High — good time to sell at peak value.")
+        elif "slight sell" in sig:
+            lines.append(f"  ·  Giving {name}: Slight Sell — mild regression risk; market may still overvalue.")
+    for row in get_rows:
+        sig = str(row.get("verdict", "")).lower()
+        name = row.get("name", "?")
+        if "sell high" in sig:
+            lines.append(f"  ⚠  Receiving {name}: Sell High — true value likely LOWER than perceived.")
+        elif "buy low" in sig:
+            lines.append(f"  ✓  Receiving {name}: Buy Low — good time to buy while market undervalues them.")
+        elif "slight sell" in sig:
+            lines.append(f"  ·  Receiving {name}: Slight Sell — mild regression on this side; monitor.")
+    return lines
 
 
 def _assessment(verdict: str, ptype: str) -> str:
@@ -1336,33 +1466,123 @@ def main() -> None:
 
     # Non-interactive --give / --receive mode
     if args.give and args.receive:
-        result = evaluate_trade(args.give, args.receive, league_id=args.league)
-        print()
-        print(DIVIDER)
-        print("  SIGNAL FANTASY TRADE ANALYZER")
-        print(DIVIDER)
-        if "error" in result:
-            print(f"  Error: {result['error']}")
+        league_json  = _load_league_json(args.league)
+        roster_n     = _compute_roster_n(league_json)
+        repl_levels  = load_replacement_levels(roster_n)
+        league_name  = league_json.get("league_name", f"League {args.league}")
+
+        try:
+            players = _load_players()
+        except FileNotFoundError as exc:
+            print(f"  Error: {exc}")
             return
-        print(f"\n  {'GIVING':<10}", end="")
-        for p in result["side_a_giving"]:
-            surp_str = f"+{p['surplus']:.0f}" if p['surplus'] and p['surplus'] >= 0 else f"{p['surplus']:.0f}" if p['surplus'] is not None else "?"
-            print(f"  {p['name']} ({p['signal']}, surplus {surp_str})")
-        print(f"\n  {'RECEIVING':<10}", end="")
-        for p in result["side_b_getting"]:
-            surp_str = f"+{p['surplus']:.0f}" if p['surplus'] and p['surplus'] >= 0 else f"{p['surplus']:.0f}" if p['surplus'] is not None else "?"
-            print(f"  {p['name']} ({p['signal']}, surplus {surp_str})")
+
+        give_rows_raw = [_resolve_player_silent(n, players) for n in args.give]
+        get_rows_raw  = [_resolve_player_silent(n, players) for n in args.receive]
+
+        # Clear error on any unresolved player
+        missing_give = [n for n, r in zip(args.give,    give_rows_raw) if r is None]
+        missing_get  = [n for n, r in zip(args.receive, get_rows_raw)  if r is None]
+        if missing_give or missing_get:
+            all_missing = missing_give + missing_get
+            print(f"\n  Player not found: {', '.join(all_missing)}")
+            print("  Check spelling or try last name only.")
+            return
+
+        give_rows = [r for r in give_rows_raw if r is not None]
+        get_rows  = [r for r in get_rows_raw  if r is not None]
+
+        give_adj = [_apply_signal_multipliers(r) for r in give_rows]
+        get_adj  = [_apply_signal_multipliers(r) for r in get_rows]
+
+        give_fpts_vals = [_compute_cbs_fpts_league(r, league_json) for r in give_adj]
+        get_fpts_vals  = [_compute_cbs_fpts_league(r, league_json) for r in get_adj]
+
+        give_surplus_vals = [get_surplus(f, r.get("_fpos"), repl_levels)
+                             for f, r in zip(give_fpts_vals, give_adj)]
+        get_surplus_vals  = [get_surplus(f, r.get("_fpos"), repl_levels)
+                             for f, r in zip(get_fpts_vals, get_adj)]
+
+        give_non_none = [v for v in give_surplus_vals if v is not None]
+        get_non_none  = [v for v in get_surplus_vals  if v is not None]
+        give_total    = sum(give_non_none) if give_non_none else None
+        get_total     = sum(get_non_none)  if get_non_none  else None
+        surplus_delta = (get_total - give_total) if (give_total is not None and get_total is not None) else None
+        verdict       = _trade_verdict_v3(surplus_delta)
+
+        W = 65
+        D = "═" * W
+        config = load_config()
         print()
-        g = result["give_total"]
-        r = result["get_total"]
-        d = result["surplus_delta"]
-        print(f"  Give surplus total : {g:+.1f}" if g is not None else "  Give surplus : N/A")
-        print(f"  Get  surplus total : {r:+.1f}" if r is not None else "  Get  surplus : N/A")
-        print(f"  Delta              : {d:+.1f}" if d is not None else "  Delta        : N/A")
+        print(D)
+        print(f"  THE SIGNAL FANTASY — TRADE ANALYZER  [{league_name}]")
+        print(D)
+
+        def _print_trade_player(orig_row: pd.Series, adj_row: pd.Series, surp: Optional[float]) -> None:
+            name  = orig_row.get("name", "?")
+            team  = orig_row.get("Team", orig_row.get("team", "?"))
+            pos   = orig_row.get("_fpos") or _derive_pos(orig_row) or "?"
+            sig   = str(orig_row.get("verdict", "Neutral"))
+            luck  = float(orig_row.get("luck_score", 0.0) or 0.0)
+            ptype = orig_row.get("_type", "hitter")
+            desc  = _signal_desc(sig, ptype)
+            luck_str = f"{luck:+.3f}"
+            surp_str = f"{surp:+.0f}" if surp is not None else "N/A"
+            # Signal-adjusted surplus
+            if "buy low" in sig.lower() and surp is not None:
+                adj_s    = surp * (1.0 + luck * 0.5)
+                diff_str = f"{adj_s - surp:+.0f}"
+                adj_str  = f"{adj_s:+.0f} ({diff_str})"
+            elif "sell high" in sig.lower() and surp is not None:
+                adj_s    = surp * (1.0 - abs(luck) * 0.5)
+                diff_str = f"{adj_s - surp:+.0f}"
+                adj_str  = f"{adj_s:+.0f} ({diff_str})"
+            else:
+                adj_str  = surp_str
+            # Short-sample flag
+            try:
+                short = float(orig_row.get("career_pa", 9999)) < 300
+            except (TypeError, ValueError):
+                short = False
+            short_note = "  ⚠ Short baseline (<300 career PA)" if short else ""
+            print(f"  {name} ({pos}, {team}){short_note}")
+            print(f"  Signal: {sig} ({luck_str})")
+            print(f"    {desc}")
+            print(f"  Surplus: {surp_str}  |  Signal-adjusted: {adj_str}")
+
         print()
-        print(f"  VERDICT: {result['verdict']}")
+        print("  YOU GIVE:")
+        print(f"  {'─' * 57}")
+        for orig, adj, surp in zip(give_rows, give_adj, give_surplus_vals):
+            _print_trade_player(orig, adj, surp)
+            print()
+
+        print("  YOU RECEIVE:")
+        print(f"  {'─' * 57}")
+        for orig, adj, surp in zip(get_rows, get_adj, get_surplus_vals):
+            _print_trade_player(orig, adj, surp)
+            print()
+
+        # Totals + verdict
+        g_str = f"{give_total:+.1f}" if give_total is not None else "N/A"
+        r_str = f"{get_total:+.1f}"  if get_total  is not None else "N/A"
+        d_str = f"{surplus_delta:+.1f}" if surplus_delta is not None else "N/A"
+        print(D)
         print()
-        print(DIVIDER)
+        print(f"  VERDICT: {verdict}")
+        print(f"  Give total: {g_str}  |  Get total: {r_str}  |  Delta: {d_str}")
+
+        # Signal context warnings
+        ctx = _signal_context_warnings(give_rows, get_rows)
+        print()
+        print("  SIGNAL CONTEXT:")
+        if ctx:
+            for line in ctx:
+                print(line)
+        else:
+            print("  No active luck signals on either side — evaluate on surplus value alone.")
+        print()
+        print(D)
         return
 
     if args.setup:

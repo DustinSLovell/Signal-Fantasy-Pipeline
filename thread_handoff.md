@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 5, 2026 (Sessions 1–37)
+# Last updated: May 7, 2026 (Sessions 1–39)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -4698,6 +4698,130 @@ Session 38 commit: 460a782 — live FP rank pull + dashboard rank column + trade
 
 ---
 
-*End of thread_handoff.md — Sessions 1-38 complete.*
+## SESSION 39 — May 7, 2026
+
+### Session 39 Goals
+Trade analyzer output rewrite (article-ready format), league settings integration (OBP leagues), Week 4 trade scenario prep + article hook, session close.
+
+### Session 39 Tasks Completed
+
+**Task 1 — Session start verification:**
+- 37/37 PASS (validate_formulas.py)
+- All CLAUDE.md greps confirmed (ERA >= 4.00, ERA >= 3.75, 0.150/0.100/0.085/0.380, CAREER_K_PULL, k_flag/pull_flag)
+- Sanchez C#29, Yordan #3, Raleigh C#1, Baldwin C#4, Contreras C#7 — all pass
+
+**Task 2 — Output format rewrite (trade_analyzer.py):**
+
+Old output: flat dict printout with "Give surplus: +95 | Get surplus: -47" one-liner.
+
+New output format:
+```
+═════════════════════════════════════════════════════════════════
+  THE SIGNAL FANTASY — TRADE ANALYZER  [League Name]
+═════════════════════════════════════════════════════════════════
+
+  YOU GIVE:
+  ─────────────────────────────────────────────────────────
+  Player Name (Pos, TEAM)
+  Signal: Buy low (+0.327)
+    underperforming contact quality — buy before market adjusts
+  Surplus: +74  |  Signal-adjusted: +86 (+12)
+
+═════════════════════════════════════════════════════════════════
+
+  VERDICT: SLIGHTLY UNFAVORABLE — modest projected value gap
+  Give total: +74.2  |  Get total: +61.2  |  Delta: -13.0
+
+  SIGNAL CONTEXT:
+  ⚠  Giving Player: Buy Low — true value likely HIGHER than perceived. Consider asking for more.
+  ⚠  Receiving Player: Sell High — true value likely LOWER than perceived.
+  ✓  Receiving Player: Buy Low — good time to buy while market undervalues them.
+
+═════════════════════════════════════════════════════════════════
+```
+
+New helper functions added to trade_analyzer.py:
+- `_signal_desc(verdict, ptype)`: one-line signal description, hitter vs pitcher framing
+- `_signal_context_warnings(give_rows, get_rows)`: ⚠/✓/· advisory lines
+- `_load_league_json(league_id)`: loads data/leagues/league_{id}.json with 12-team fallback
+- `_compute_roster_n(league_json)`: derives N per position from roster_slots × team_count
+  CI 50/50 → 1B/3B; MI 50/50 → 2B/SS; UT 15% → OF; P 60/40 → SP/RP
+- `_compute_cbs_fpts_league(row, league_json)`: OBP-aware FPTS calculation
+  use_obp = True when stat_weights OBP=1.0 and AVG=0.0
+  OBP proxy: `proj_avg + bb_rate × (1 - proj_avg)` from luck_scores.csv bb_rate
+  Fallback: proj_avg + 0.065 when bb_rate missing
+
+Missing player handling:
+- Old: silent or confusing error
+- New: `"Player not found: X\n  Check spelling or try last name only."` → abort before computation
+
+**Task 3 — League settings integration:**
+- --give/--receive block now fully league-aware
+- Calls _load_league_json(args.league) → _compute_roster_n() → load_replacement_levels(roster_n)
+- League 1 (CBS 13-Team, AVG): C×2/team=26 slots; SS pool larger → Seager surplus increases
+- League 2 (Fantrax 15-Team, OBP): OBP substitutes for AVG in CBS formula
+- Key note: Seager→Chapman+Dingler delta changed from +9.4 (Session 38 defaults) to -13.0 (CBS 13-team)
+  Root cause: League 1 has 26 catcher slots (C×2/team×13), which lowers catcher replacement level.
+  Dingler's surplus increased; Chapman's SS gap vs smaller 13-team 3B pool shifted net delta.
+
+**Task 4 — Multi-player + edge case testing:**
+- Multi-player trades: Ramírez+Ryan→Skenes (AVOID -110.3) ✓
+- Missing player: "Brent Turang" → "Player not found" error, "Turang" alone → resolves to Brice Turang ✓
+- Mixed H+P: Turang+Ryan→Skenes, Seager→Chapman+Dingler ✓
+- All 3 smell tests confirmed: Skenes→Rice AVOID ✓ | Skubal→Rice AVOID ✓ | Acuña→Rice AVOID ✓
+
+**Task 5 — Week 4 trade scenarios + article prep:**
+
+Three scenarios run (outputs/trade_scenarios_week4.txt):
+
+Scenario 1 (AVOID, -110.3): Give Ramírez+Ryan, receive Skenes
+  - "Don't chase Skenes with two Buy Lows — you're selling at the exact wrong moment."
+  - Ramírez luck=+0.512, Ryan luck=+0.428; both Buy Low signals
+  - Skenes: Neutral (-0.041) — great pitcher, not a lucky-ERA story
+
+Scenario 2 (SLIGHTLY UNFAVORABLE, -13.0): Give Seager, receive Chapman+Dingler
+  - "The 2-for-1 temptation: Dingler is the only green light on the receiving side."
+  - Seager: BL (+0.327) — giving away mispriced value
+  - Chapman: SH (-0.286) — regression risk; Dingler: BL (+0.209) — partial credit
+
+Scenario 3 (STRONG TRADE, +258.8): Give Turang, receive Ryan+Ramírez
+  - "Textbook: three green lights. Give Sell High at peak, load up on two Buy Lows."
+  - Turang: SH (-0.172), 97.6% owned; Ryan: BL (+0.428); Ramírez: BL (+0.512)
+  - Article hook: all-green signal context + biggest delta of any scenario
+
+Week 4 article hook (outputs/week4_trade_hook.md):
+  - Lead: Scenario 3 (Turang→Ryan+Ramírez) — clearest signal trade of the week
+  - Warning: Scenario 1 (Ramírez+Ryan→Skenes) — most common trap
+  - Nuance: Scenario 2 (Seager→Chapman+Dingler) — 2-for-1 dissected
+
+**Session 39 — Invariants and Validation:**
+- validate_formulas.py: **37/37 PASS**
+- Sanchez C#29, Raleigh C#1, Baldwin C#4, Contreras C#7, Yordan top-5 — **ALL PASS**
+
+### Files modified this session:
+- `trade_analyzer.py` — output format rewrite + league helpers + OBP FPTS + missing player errors
+- `outputs/trade_scenarios_week4.txt` (NEW — 3 trade scenarios with article hooks)
+- `outputs/week4_trade_hook.md` (NEW — 2-paragraph article intro + pull quotes)
+- `CLAUDE.md` — Session 39 changelog appended
+- `thread_handoff.md` — this file
+
+### GitHub (Session 39)
+Session 38 commit: 460a782 — live FP rank pull + dashboard rank column + trade analyzer foundation
+Session 39 commit: [pending push]
+
+### Parking lot changes (Session 39)
+- Trade output format rewrite → COMPLETED
+- League settings integration (OBP + roster_n) → COMPLETED
+- Week 4 trade scenarios → COMPLETED (3 scenarios in outputs/)
+- Week 3 article: PUBLISHED May 6, 2026 — remove from pending
+
+### PENDING MANUAL ACTIONS (carry forward)
+- **White paper Section 10**: Update pitcher accuracy to Version F (87.7% pooled, 82.0% OOS). Remove pitcher SB row.
+- **Career lessons database** (Sessions 22-39) — add manually in Claude.ai
+- **Download updated thread_handoff.md to Claude.ai** after git push
+
+---
+
+*End of thread_handoff.md — Sessions 1-39 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
