@@ -1,0 +1,84 @@
+THE SIGNAL FANTASY — TRADE ANALYZER BETA
+Top 3 Gaps Most Likely to Confuse Beta Users
+=============================================
+
+GAP 1: "Signal-adjusted" vs "Elite-adjusted" display confusion
+---------------------------------------------------------------
+WHAT USERS WILL SEE:
+  Surplus: +180  |  Signal-adjusted: +226 (+46)
+  Elite tier: FP #6 (top-10 overall) — scarcity premium x1.30  |  Elite-adjusted: +234
+
+WHAT THEY'LL THINK:
+  "Why is Elite-adjusted +234 when Signal-adjusted is +226?
+   If the elite premium is x1.30, shouldn't +226 x 1.30 = +293?"
+
+WHAT'S ACTUALLY HAPPENING:
+  The "Signal-adjusted" number (+226) is a display-only estimate showing
+  how the luck signal shifts the player's current value. It is NOT a
+  separate calculation layer that feeds into the totals.
+
+  The "Elite-adjusted" number (+234) is the BASE surplus (+180) multiplied
+  by the elite premium (x1.30). The base surplus already incorporates the
+  signal through projected stat adjustments.
+
+  So: Elite-adjusted = +180 x 1.30 = +234. NOT +226 x 1.30.
+
+HOW TO ADDRESS:
+  Option A: Add a one-line note: "(applied to base surplus, not to signal-adjusted)"
+  Option B: Remove the Signal-adjusted line from the per-player display in the
+            --give/--receive output (it's already embedded in base surplus).
+  Recommended: Option A — keep the display, add the clarifying note.
+  Priority: Medium. Sophisticated users will notice. Casual users probably won't.
+
+
+GAP 2: Player not found — no fuzzy suggestions
+----------------------------------------------
+WHAT USERS WILL SEE:
+  Player not found: Brett Turang
+  Check spelling or try last name only.
+
+WHAT THEY'LL THINK:
+  "Who is the correct name? Is this player even in the database?"
+
+WHAT'S ACTUALLY HAPPENING:
+  The fuzzy matcher found no close enough match. "Brett Turang" doesn't
+  resolve to "Brice Turang" because the first name difference is too large.
+  The current error message offers no guidance on the correct name.
+
+HOW TO ADDRESS:
+  Add a "Did you mean: [closest match]?" suggestion using the top-2 fuzzy
+  candidates even when they fall below the match threshold.
+  Example output:
+    Player not found: Brett Turang
+    Did you mean: Brice Turang (MIL)?
+  Priority: HIGH. This is the most likely first-impression failure for beta users.
+  Fix: lower the match threshold for suggestions (not for resolution) and print
+       the top candidate(s) in the error message.
+
+
+GAP 3: Two-way players and Ohtani
+----------------------------------
+WHAT USERS WILL SEE:
+  When trading Shohei Ohtani, the tool evaluates him as a hitter only.
+  His pitching value is not included in the standard analysis.
+
+WHAT THEY'LL THINK:
+  "Ohtani is the #1 overall player — why does his surplus look like
+   just a hitter? Shouldn't his pitching count too?"
+
+WHAT'S ACTUALLY HAPPENING:
+  In standard leagues, Ohtani fills one roster spot (OF or hitter slot).
+  The tool correctly evaluates his hitting value against OF/hitter replacement.
+  However, in two-way player leagues where he occupies a pitcher slot as well,
+  his surplus should be split across two positions.
+  The current tool has no two-way player flag, so it silently under-values
+  Ohtani in two-way leagues.
+
+HOW TO ADDRESS:
+  Short term: Add a note in the output when Ohtani (or any two-way player flag)
+              is in the trade: "Note: two-way player. Pitching surplus not included
+              in standard league analysis."
+  Long term: Add two_way_player flag to league_settings.json schema and split
+             surplus calculation for flagged players.
+  Priority: MEDIUM for standard leagues, HIGH if any beta users are in two-way leagues.
+  This is in the parking lot (Tier 2) in CLAUDE.md.

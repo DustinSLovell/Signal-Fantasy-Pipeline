@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 7, 2026 (Sessions 1-39, full)
+# Last updated: May 7, 2026 (Sessions 1-40, full)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -2422,6 +2422,72 @@ Spot tests (Task 6):
 
 PENDING MANUAL ACTIONS:
   - Career lessons database (Sessions 22-39) — add new lessons manually in Claude.ai
+  - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS)
+  - Download updated thread_handoff.md to Claude.ai after push
+
+--- May 7, 2026 (Session 40) ---
+Surplus calibration audit + debug flag + edge case guards + "Did you mean" fuzzy suggestions + beta prep.
+
+Calibration decision (Task 2) — Option A: NO CHANGE (+315.1 Turang trade delta unchanged):
+  Full three-layer decomposition confirmed architecture is correct:
+  - Layer 1: Signal embedded via stat multipliers (Backtest B v2): R×1.08/HR×1.05/RBI×1.08 for BL
+    → already in base_surplus before elite premium
+  - Layer 2: Elite premium applied to base_surplus → changes verdict totals
+  - Layer 3: Display signal_adj (±luck×0.5) is separate visualization only — NOT in totals
+  Ramírez: raw_surplus≈153.4 → signal adds +26.2 → base_surplus=179.6 → elite ×1.30 → final 233.5
+  Option B (cap dsm×ep at 1.50): arbitrary; delta would be +296.2. Not adopted.
+  Option C (max(dsm,ep)): double-counts signal (signal already in base surplus). Not adopted.
+
+--debug flag added (trade_analyzer.py):
+  - python trade_analyzer.py --give X --receive Y --debug
+  - Shows per-player table: Side | Name | FP | EP | Signal | Luck | BaseSurp | SigAdj | EliteAdj
+  - Also shows delta_base (no premium) vs delta_elite (with premium + opp_cost)
+  - Confirms directional invariant: giving higher-ranked player SHRINKS delta; receiving GROWS it
+
+7-test validation suite (Task 3) — ALL PASS under Option A:
+  Test 1: Both Neutral ~0 (no signal inflation) ✓
+  Test 2: Give BL recv SH → AVOID (negative delta) ✓
+  Test 3: Top-10 vs top-10 → NEUTRAL ±small (elite premiums cancel) ✓
+  Test 4: 2-for-1 no open slot → opp cost applied ✓
+  Test 5: 2-for-1 open slot → --open-slot bypasses opp cost, delta +1.5 vs Test 4 ✓
+  Test 6: Give top-10, recv 2×rank-35 → AVOID (delta -162.4, elite premium correctly penalizes) ✓
+  Test 7: L1 vs L2 league comparison (Seager trade: -14.5 vs -65.1, +50.6 OBP premium) ✓
+
+Edge case guards added (trade_analyzer.py):
+  - Single-side error: missing --give or --receive prints usage hint and exits cleanly
+  - Same-player duplicate detection: error if same MLBAM ID on both sides
+  - Cross-type advisory: single hitter-for-pitcher trade prints informational note only
+
+"Did you mean" fuzzy suggestion (trade_analyzer.py + difflib import):
+  - _suggest_player(name, df, top_n=2): last-name match first, then SequenceMatcher fallback
+    Last-name match: checks if last word of query appears in any player name (catches "Brett Turang" → "Brice Turang")
+    Fallback: SequenceMatcher ratio ≥0.50 across all players
+  - Error block now loops per-name, prints "Did you mean: [name] ([team])?" for each suggestion
+  - Validated: "Brett Turang" → "Did you mean: Brice Turang (MIL)?" ✓
+  - Priority: HIGH (identified as most likely first-impression failure for beta users)
+
+Beta prep (Task 4):
+  - outputs/beta_readme.txt: non-technical user guide (HOW TO RUN, WHICH LEAGUE, OPEN ROSTER SLOT,
+    VERDICT MEANINGS, SIGNAL MEANINGS, PLAYER NAMES, HOW TO REPORT ISSUES, QUICK EXAMPLES)
+  - outputs/beta_gaps.txt: 3 gaps documented for pre-launch awareness
+    Gap 1: Signal-adjusted vs Elite-adjusted display confusion (Medium)
+    Gap 2: No "Did you mean" suggestion — FIXED this session
+    Gap 3: Ohtani/two-way player in two-way leagues (Medium/High — parking lot Tier 2)
+
+Files modified this session:
+  - trade_analyzer.py (difflib import; _suggest_player() function; --debug flag; debug table block;
+    single-side guard; duplicate detection; cross-type advisory; "Did you mean" error block)
+  - outputs/beta_readme.txt (NEW)
+  - outputs/beta_gaps.txt (NEW)
+  - outputs/trade_scenarios_week4.txt (updated deltas)
+  - outputs/week4_trade_hook.md (updated hook)
+  - CLAUDE.md (this changelog)
+
+37/37 PASS. All invariants PASS (Sanchez C#29, Yordan #3, Raleigh C#1, Baldwin C#4, Contreras C#7).
+
+PENDING MANUAL ACTIONS:
+  - Publish Week 4 article (outputs/week4_trade_hook.md + trade_scenarios_week4.txt)
+  - Career lessons database (Sessions 22-40) — add new lessons manually in Claude.ai
   - White paper Section 10 update — Version F pitcher accuracy (87.7% pooled, 82.0% OOS)
   - Download updated thread_handoff.md to Claude.ai after push
 

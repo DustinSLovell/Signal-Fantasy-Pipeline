@@ -11,6 +11,7 @@ Usage:
 
 import argparse
 import csv
+import difflib
 import json
 import re
 import sys
@@ -420,6 +421,39 @@ def _fuzzy_find(name_input: str, df: pd.DataFrame) -> pd.DataFrame:
     words = query.split()
     mask = df["_norm"].apply(lambda n: all(w in n for w in words))
     return df[mask]
+
+
+def _suggest_player(name_input: str, df: pd.DataFrame, top_n: int = 2) -> list[dict]:
+    """Return top_n close-match suggestions when exact/word match fails.
+
+    Uses last-name match first, then SequenceMatcher ratio on full normalized names.
+    Always returns candidates regardless of score — for display-only suggestions.
+    """
+    query = _norm(name_input)
+    query_words = query.split()
+
+    # Last-name match: if any word in query matches any word in a player's name
+    last_word = query_words[-1] if query_words else ""
+    lastname_matches = df[df["_norm"].apply(lambda n: last_word in n.split())]
+    if not lastname_matches.empty:
+        # Score lastname matches by full-name similarity
+        scored = []
+        for _, row in lastname_matches.iterrows():
+            ratio = difflib.SequenceMatcher(None, query, row["_norm"]).ratio()
+            team = row.get("Team", row.get("team", ""))
+            scored.append({"name": row.get("name", "?"), "team": team, "ratio": ratio})
+        scored.sort(key=lambda x: x["ratio"], reverse=True)
+        return scored[:top_n]
+
+    # Fallback: SequenceMatcher across all players
+    scored = []
+    for _, row in df.iterrows():
+        ratio = difflib.SequenceMatcher(None, query, row["_norm"]).ratio()
+        if ratio >= 0.50:
+            team = row.get("Team", row.get("team", ""))
+            scored.append({"name": row.get("name", "?"), "team": team, "ratio": ratio})
+    scored.sort(key=lambda x: x["ratio"], reverse=True)
+    return scored[:top_n]
 
 
 def _resolve_player(name_input: str, players: pd.DataFrame, label: str = "Player") -> Optional[pd.Series]:
@@ -1496,7 +1530,16 @@ def main() -> None:
                         help="League config ID (default 1)")
     parser.add_argument("--open-slot", action="store_true",
                         help="Receiving side has an open roster slot — no opportunity cost applied")
+    parser.add_argument("--debug", action="store_true",
+                        help="Show per-player surplus breakdown: base → signal_adj → elite_adj")
     args = parser.parse_args()
+
+    # Provide a clear error when only one side is specified
+    if (args.give and not args.receive) or (args.receive and not args.give):
+        missing = "--receive" if args.give else "--give"
+        print(f"\n  Error: {missing} is required when using non-interactive mode.")
+        print("  Usage: python trade_analyzer.py --give PLAYER --receive PLAYER [PLAYER ...]")
+        return
 
     # Non-interactive --give / --receive mode
     if args.give and args.receive:
@@ -1518,13 +1561,38 @@ def main() -> None:
         missing_give = [n for n, r in zip(args.give,    give_rows_raw) if r is None]
         missing_get  = [n for n, r in zip(args.receive, get_rows_raw)  if r is None]
         if missing_give or missing_get:
-            all_missing = missing_give + missing_get
-            print(f"\n  Player not found: {', '.join(all_missing)}")
-            print("  Check spelling or try last name only.")
+            print()
+            for name in missing_give + missing_get:
+                print(f"  Player not found: {name}")
+                suggestions = _suggest_player(name, players, top_n=2)
+                if suggestions:
+                    for s in suggestions:
+                        team_str = f" ({s['team']})" if s.get("team") else ""
+                        print(f"  Did you mean: {s['name']}{team_str}?")
+                print("  Check spelling or try last name only.")
             return
 
         give_rows = [r for r in give_rows_raw if r is not None]
         get_rows  = [r for r in get_rows_raw  if r is not None]
+
+        # Duplicate detection: same player on both sides
+        give_ids = {r.get("id") or r.get("batter") or r.get("pitcher") for r in give_rows}
+        get_ids  = {r.get("id") or r.get("batter") or r.get("pitcher") for r in get_rows}
+        overlap  = give_ids & get_ids
+        if overlap:
+            overlap_names = [r.get("name","?") for r in give_rows + get_rows
+                             if (r.get("id") or r.get("batter") or r.get("pitcher")) in overlap]
+            print(f"\n  Error: {overlap_names[0] if overlap_names else 'A player'} appears on both sides of the trade.")
+            print("  A trade must have different players on each side.")
+            return
+
+        # Cross-type advisory (hitter-for-pitcher mismatch, allowed but worth noting)
+        give_types = {r.get("_type","hitter") for r in give_rows}
+        get_types  = {r.get("_type","hitter") for r in get_rows}
+        if give_types != get_types and len(give_rows) == 1 and len(get_rows) == 1:
+            print(f"\n  ℹ  Cross-type trade: giving a {next(iter(give_types))} for a {next(iter(get_types))}.")
+            print("     Surplus compares each player to their own position pool. Analysis proceeds.")
+            print()
 
         give_adj = [_apply_signal_multipliers(r) for r in give_rows]
         get_adj  = [_apply_signal_multipliers(r) for r in get_rows]
@@ -1563,6 +1631,64 @@ def main() -> None:
 
         surplus_delta = (get_total - give_total) if (give_total is not None and get_total is not None) else None
         verdict       = _trade_verdict_v3(surplus_delta)
+
+        # --- Debug table ---
+        if getattr(args, 'debug', False):
+            _DBG = "-" * 90
+            print(f"\n{'=' * 90}")
+            print("  DEBUG: Per-Player Surplus Breakdown")
+            print(f"{'=' * 90}")
+            hdr = f"  {'Side':<5} {'Name':<22} {'FP':>4} {'EP':>5} {'Signal':<14} {'Luck':>7} {'BaseSurp':>9} {'SigAdj':>8} {'EliteAdj':>9}"
+            print(hdr)
+            print(f"  {_DBG}")
+
+            def _dbg_row(side: str, orig_row, surp, elite_surp):
+                name    = str(orig_row.get("name", "?"))[:21]
+                fp_rank = orig_row.get("fp_rank")
+                ep      = _elite_premium(fp_rank)
+                fp_str  = f"{int(float(fp_rank))}" if fp_rank not in (None, "", "nan") and str(fp_rank) != "nan" else "—"
+                sig     = str(orig_row.get("verdict", "Neutral"))[:13]
+                luck    = float(orig_row.get("luck_score", 0.0) or 0.0)
+                # signal-adjusted surplus for display (same formula used in _print_trade_player)
+                if surp is not None:
+                    if "buy" in sig.lower():
+                        sadj = surp * (1 + luck * 0.5)
+                    elif "sell" in sig.lower():
+                        sadj = surp * (1 - abs(luck) * 0.5)
+                    else:
+                        sadj = surp
+                else:
+                    sadj = None
+                b_str  = f"{surp:+.1f}"       if surp is not None       else "N/A"
+                sa_str = f"{sadj:+.1f}"        if sadj is not None       else "N/A"
+                ea_str = f"{elite_surp:+.1f}"  if elite_surp is not None else "N/A"
+                ep_str = f"×{ep:.2f}"
+                print(f"  {side:<5} {name:<22} {fp_str:>4} {ep_str:>5} {sig:<14} {luck:>+7.3f} {b_str:>9} {sa_str:>8} {ea_str:>9}")
+
+            for orig, surp, esurf in zip(give_rows, give_surplus_vals, give_elite_surplus):
+                _dbg_row("GIVE", orig, surp, esurf)
+            for orig, surp, esurf in zip(get_rows, get_surplus_vals, get_elite_surplus):
+                _dbg_row("GET", orig, surp, esurf)
+
+            print(f"  {_DBG}")
+            give_pre = sum(v for v in give_surplus_vals if v is not None)
+            get_pre  = sum(v for v in get_surplus_vals  if v is not None)
+            give_ep  = sum(v for v in give_elite_surplus if v is not None)
+            get_ep   = sum(v for v in get_elite_surplus  if v is not None)
+            print(f"  {'GIVE totals:':<30} base={give_pre:+.1f}  →  elite-adjusted={give_ep:+.1f}  (Δ {give_ep-give_pre:+.1f})")
+            print(f"  {'GET totals (before opp cost):':<30} base={get_pre:+.1f}  →  elite-adjusted={get_ep:+.1f}  (Δ {get_ep-get_pre:+.1f})")
+            if opp_cost:
+                print(f"  {'Opportunity cost:':<30} -{opp_cost:.1f} applied to GET side")
+                print(f"  {'GET final:':<30} {get_ep - opp_cost:+.1f}")
+            delta_base  = get_pre  - give_pre
+            delta_elite = (get_ep - opp_cost) - give_ep
+            print(f"  {'Delta (base, no premium):':<30} {delta_base:+.1f}")
+            print(f"  {'Delta (elite+opp_cost):':<30} {delta_elite:+.1f}  ({delta_elite - delta_base:+.1f} from elite premium)")
+            print(f"  Directionality: GIVE ep={sum(_elite_premium(r.get('fp_rank')) for r in give_rows)/len(give_rows):.3f} avg | "
+                  f"GET ep={sum(_elite_premium(r.get('fp_rank')) for r in get_rows)/len(get_rows):.3f} avg")
+            print(f"  Giving a higher-ranked player INCREASES give_total → SHRINKS delta. "
+                  f"Receiving a higher-ranked player INCREASES get_total → GROWS delta.")
+            print(f"{'=' * 90}\n")
 
         W = 65
         D = "═" * W

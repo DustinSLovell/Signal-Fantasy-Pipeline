@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 7, 2026 (Sessions 1–39)
+# Last updated: May 7, 2026 (Sessions 1–40)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -4846,6 +4846,112 @@ Session 39 commit: [pending push]
 
 ---
 
-*End of thread_handoff.md — Sessions 1-39 complete.*
+## SESSION 40 — May 7, 2026
+
+### Session 40 — Summary
+
+Primary focus: trade analyzer final validation, surplus calibration audit, beta prep, "Did you mean" fuzzy suggestion.
+
+### Calibration audit (Task 2) — Option A: NO CHANGE
+
+Full three-layer decomposition of Turang→Ryan+Ramírez (+315.1 delta):
+- Layer 1: Signal stat multipliers (Backtest B v2) already embedded in base_surplus
+  BL: R×1.08, RBI×1.08, HR×1.05; SH: R×0.92, RBI×0.92
+- Layer 2: Elite premium applied to base_surplus → drives verdict totals
+- Layer 3: Display signal_adj (±luck×0.5) is separate visualization — NOT in totals
+
+Ramírez decomposition: raw_surplus≈153.4 → signal +26.2 → base_surplus=179.6 → elite ×1.30 → final 233.5
+Ryan decomposition: raw_surplus≈130.1 → BL signal → base 144.1 → elite ×1.05 → final 151.3
+Total get: 384.8 | Turang give: 69.7 | Delta: +315.1
+
+Option B (cap dsm×ep at 1.50) → +296.2: arbitrary cap, no principled basis. NOT adopted.
+Option C (max(dsm,ep)) → +339.0: double-counts signal (already in base). NOT adopted.
+Option A: correct architecture. No change needed.
+
+### 7-test validation suite — ALL PASS
+
+1. Both Neutral ~0 (large delta allowed when genuine quality difference, no signal inflation) ✓
+2. Give BL, recv SH → AVOID (negative delta) ✓
+3. Top-10 vs top-10 → NEUTRAL ±small (elite premiums cancel symmetrically) ✓
+4. 2-for-1 no open slot → opp cost applied (-1.5 for 13-team) ✓
+5. 2-for-1 open slot → --open-slot bypasses opp cost, delta improved by 1.5 pts ✓
+6. Give top-10, recv 2×rank-35 → AVOID, -162.4 (elite premium correctly penalizes giving #1) ✓
+7. L1 vs L2 (Seager→Chapman+Dingler): L1=-14.5, L2=-65.1, OBP premium +50.6 ✓
+
+### Edge case guards (trade_analyzer.py)
+
+- Single-side error: missing --give or --receive → usage hint and clean exit
+- Same-player duplicate detection: error if same MLBAM ID on both sides of trade
+- Cross-type advisory: single hitter-for-pitcher prints informational note, analysis proceeds
+
+### --debug flag (trade_analyzer.py)
+
+- `python trade_analyzer.py --give X --receive Y --debug`
+- Per-player table: Side | Name | FP | EP | Signal | Luck | BaseSurp | SigAdj | EliteAdj
+- Shows delta_base (no premium) vs delta_elite (with premium + opp_cost)
+- Confirms directionality: giving higher-ranked increases give_total (shrinks delta); receiving increases get_total (grows delta)
+
+### "Did you mean" fuzzy suggestion (trade_analyzer.py)
+
+Gap 2 from beta_gaps.txt — FIXED:
+- Added `import difflib`
+- Added `_suggest_player(name, df, top_n=2)`: last-name word match first, then SequenceMatcher fallback (≥0.50 ratio)
+- Error block now loops per-name; prints suggestions for each missing player
+- Validated: "Brett Turang" → "Did you mean: Brice Turang (MIL)?" ✓
+- Priority was HIGH — this was the most likely first-impression failure for beta users
+
+### Beta prep (Task 4)
+
+- `outputs/beta_readme.txt` (NEW): non-technical user guide covering HOW TO RUN, WHICH LEAGUE,
+  OPEN ROSTER SLOT, VERDICT MEANINGS, SIGNAL MEANINGS, PLAYER NAMES, HOW TO REPORT ISSUES, QUICK EXAMPLES
+- `outputs/beta_gaps.txt` (NEW): 3 gaps documented for pre-launch awareness
+  Gap 1: Signal-adjusted vs Elite-adjusted display confusion (Medium) — note: elite_adj = base×EP, not signal_adj×EP
+  Gap 2: No "Did you mean" suggestion — FIXED this session
+  Gap 3: Ohtani/two-way player in two-way leagues (Medium/High — parking lot Tier 2)
+
+### Updated scenarios (Task 5)
+
+- Scenario 1 (AVOID, -107.0): Ramírez+Ryan→Skenes
+- Scenario 2 (SLIGHTLY UNFAVORABLE, -14.5): Seager→Chapman+Dingler
+- Scenario 3 (STRONG TRADE, +315.1): Turang→Ryan+Ramírez (unchanged)
+
+### Session 40 — Invariants and Validation
+
+- validate_formulas.py: **37/37 PASS**
+- Sanchez C#29, Raleigh C#1, Baldwin C#4, Contreras C#7, Yordan #3 — **ALL PASS**
+
+### Files modified this session
+
+- `trade_analyzer.py` — difflib import; `_suggest_player()`; `--debug` flag + debug table;
+  single-side guard; duplicate detection; cross-type advisory; "Did you mean" error block
+- `outputs/beta_readme.txt` — NEW
+- `outputs/beta_gaps.txt` — NEW
+- `outputs/trade_scenarios_week4.txt` — updated deltas
+- `outputs/week4_trade_hook.md` — updated hook
+- `CLAUDE.md` — Session 40 full changelog
+- `thread_handoff.md` — this file
+
+### GitHub (Session 40)
+
+Session 39 commit: [see Session 39 pending push]
+Session 40 commit: [pending push — end of session]
+
+### Parking lot changes (Session 40)
+
+- "Did you mean" fuzzy suggestions → COMPLETED
+- Beta readme + gaps doc → COMPLETED
+- Gap 1 (signal_adj vs elite_adj note): still open (Tier 2 — display clarification in output)
+- Gap 3 (Ohtani two-way): still open (Tier 2 parking lot)
+
+### PENDING MANUAL ACTIONS (carry forward)
+
+- **Publish Week 4 article** (outputs/week4_trade_hook.md + trade_scenarios_week4.txt)
+- **White paper Section 10**: Update pitcher accuracy to Version F (87.7% pooled, 82.0% OOS). Remove pitcher SB row.
+- **Career lessons database** (Sessions 22-40) — add manually in Claude.ai
+- **Download updated thread_handoff.md to Claude.ai** after git push
+
+---
+
+*End of thread_handoff.md — Sessions 1-40 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
