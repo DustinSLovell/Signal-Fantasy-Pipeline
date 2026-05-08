@@ -1204,7 +1204,7 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
           Z-score above positional replacement level across all scoring categories.
           Scaled 0&ndash;100 (100&nbsp;=&nbsp;best available). Projected to a full 600 PA / 175 IP season.
           &nbsp;|&nbsp;
-          <strong>SV+H (League 2):</strong> SV weighted 3&times;, H weighted 2&times;.
+          <strong>SV+H (League 1/CBS):</strong> SV weighted 2&times;, H weighted 1&times;. League 2/Fantrax: SV and H weighted equally.
           &nbsp;|&nbsp;
           <strong>SV/H note:</strong> Saves and holds estimated from performance tier (Statcast only; updates when FanGraphs data is available).
         </div>
@@ -1258,7 +1258,7 @@ const S = {
     hCats: ['avg','r','hr','rbi','sb'],
     pCats: ['era','whip','w','k','svh'],
     roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
-    saves_holds_ratio: { saves:3, holds:2 },
+    saves_holds_ratio: { saves:2, holds:1 },
     team_count: 13,
   },
 };
@@ -1827,7 +1827,7 @@ const _LEAGUE_DEFAULTS = {
     hCats: ['avg','r','hr','rbi','sb'],
     pCats: ['era','whip','w','k','svh'],
     roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
-    saves_holds_ratio: { saves:3, holds:2 },
+    saves_holds_ratio: { saves:2, holds:1 },
     team_count: 13,
   },
   league2: {

@@ -40,9 +40,9 @@
       "pitcher_categories": ["ERA", "WHIP", "K", "W", "SVH"],
 
       "svh_weights": {
-        "_comment": "Weighted saves/holds: SV counts triple, H counts double (League 2 scoring rule).",
-        "SV": 3,
-        "H":  2
+        "_comment": "Weighted saves/holds: SV counts double, H counts single (CBS League 1 scoring rule — corrected Session 43/44).",
+        "SV": 2,
+        "H":  1
       },
 
       "roster": {
