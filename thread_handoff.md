@@ -5309,6 +5309,70 @@ SVH_L2: 95→60 (for 25SV/10H). Mason Miller 61.4→45.2 | Dylan Lee 44.1→34.2
 
 ---
 
-*End of thread_handoff.md — Sessions 1-44 complete.*
+## SESSION 45 — Pre-beta K/W projection fix (May 8, 2026)
+
+### Bug fixed
+`score_value.py` `project_pitcher_stats()` assigned full-season IP (175 SP / 65 RP) to all pitchers regardless of remaining season. K and W were computed from full-season IP with no ROS scaling, inflating them 1.6–2× in `player_values.json` and the dashboard. ERA and WHIP are rate stats — not affected by this bug.
+
+Root cause confirmed via math: Williams k_pct ≈ 0.300 × 4.30 × 175 = 225.75 ≈ 228 (matched reported inflation). The bug was at line 1085 in `project_pitcher_stats()`.
+
+The trade analyzer was unaffected — it uses `projections_2026.csv` which correctly applies `_games_remaining()` scaling.
+
+### Fix (two-part)
+
+**Part 1 — ROS IP scaling:**
+Added `SEASON_DAYS = proj_cfg["season_total_days"]` constant, then:
+```python
+days_remaining = max(0, SEASON_DAYS - days_elapsed)
+ros_frac       = min(1.0, days_remaining / SEASON_DAYS)
+IP_START_ROS = round(IP_START * ros_frac, 1)
+IP_REL_ROS   = round(IP_REL   * ros_frac, 1)
+out["IP_proj"] = out["is_starter"].map({True: IP_START_ROS, False: IP_REL_ROS})
+```
+May 8 result: IP_START_ROS = 134.0 (vs previous 175.0).
+
+**Part 2 — K/W Steamer override:**
+After formula computation, load `projections_2026.csv` and override `K_proj` and `W_proj` by name match. Uses Steamer-blended ROS values which handle k_pct regression and W/IP accuracy. 425 pitchers matched. Reliever `W_proj` (hardcoded 3.0) left unchanged.
+
+### Gate results — all PASS
+
+| Player | Stat | Before | After | CBS ROS | Result |
+|---|---|---|---|---|---|
+| Gavin Williams | K | 228 | 124 | 130 | PASS (−4.6%) |
+| Gavin Williams | W | 13 | 7 | 8 | PASS (−12.5%) |
+| Cristopher Sánchez | K | 216 | 130 | 134 | PASS (−3.0%) |
+| Cristopher Sánchez | W | 16 | 8 | 7 | PASS (+14.3%) |
+
+MAE across all four: **48.5 → 3.0**
+
+- validate_formulas.py: 37/37 PASS
+- All invariants PASS (Sanchez C#29, Yordan #3, Raleigh C#2, Baldwin C#4, Contreras C#6)
+- Commit: c2ada66 — "Pre-beta fix: K/W projection ROS vs full-season bug — MAE 48.5→3.0"
+
+### Known limitations (not fixed this session — logged as Tier 2)
+
+**WHIP inversion:** Williams tool WHIP=1.04 vs CBS ~1.23. WHIP in `score_value.py` is derived from the xBA/k_pct formula (`h_per_9 + bb_per_9`) rather than using Steamer blend from `projections_2026.csv`. Same architectural gap as the K/W bug before this fix — Steamer override would resolve it. Flag in beta disclosure.
+
+**ERA source:** Still uses `xERA.clip(1.50, 9.00)` in `score_value.py`, not Steamer blend. Sánchez ERA=2.69 (tool) vs ERA=2.87 (projections_2026.csv). Same category as WHIP. Note: Sánchez has a genuine Buy Low signal so his low xERA is not wrong — just not Steamer-blended.
+
+Both WHIP and ERA would be fixed by extending the Steamer override to include `proj_era` and `proj_whip` from `projections_2026.csv`. One-line additions to the override block once ready.
+
+### Next session priorities (updated)
+1. Pitcher K%/GB% stabilization research → mid-season architecture build
+2. WHIP and ERA source fix (extend Steamer override to `proj_era`/`proj_whip`)
+3. Wire SV/H ratio into trade analyzer
+4. Stress test prompt (now clean to run after K/W fix)
+
+### Files modified (Session 45)
+- `score_value.py` — `project_pitcher_stats()`: ROS IP scaling + K/W Steamer override (32 lines added)
+- `data/player_values.json` — regenerated (player_values.json reflects fix)
+
+### GitHub (Session 45)
+- Fix commit: c2ada66 — "Pre-beta fix: K/W projection ROS vs full-season bug — MAE 48.5→3.0"
+- Pushed to origin/main
+
+---
+
+*End of thread_handoff.md — Sessions 1-45 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
