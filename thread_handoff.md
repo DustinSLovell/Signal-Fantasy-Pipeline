@@ -1717,6 +1717,13 @@ NEW WORKFLOW: Pipeline flags Hidden Gem candidates automatically via query → m
 CBS YTD rank still populates automatically from fetch_cbs_rank.py.
 FUTURE: Revisit CBS data source at ~200 subscribers (CBS official API, FantasyPros premium, or CBS partnership).
 
+**Playwright-based CBS ownership scraper (PARKED — Session 44):**
+Status: Do not build yet.
+Trigger condition: Build when manual CBS ownership input exceeds 20 players/week OR Hidden Gem becomes a daily feature (whichever comes first).
+What it is: Playwright (Python) controls a headless Chromium browser to scrape the public CBS fantasy trends page (cbssports.com/fantasy/baseball/trends/) after JavaScript fully renders. No authentication required, no TOS risk.
+Why not now: Manual CBS input (~10-15 players/week) is sufficient at current scale. Playwright adds 1-2 days build time + medium ongoing maintenance (CSS selector brittleness).
+Why eventually: Every other ownership source rejected — ESPN (casual pool), FantasyPros (non-linear understatement confirmed), CBS authenticated scrape (TOS risk), CBS public static fetch (JS-rendered, can't read without browser execution). Playwright is the only remaining clean path to automated CBS-wide ownership data.
+
 **Pitcher Slight Buy elimination — COMPLETED Session 37:**
 62.0% accuracy, -18.0pp vs RTM → eliminated. P_BT_BUY_LOW raised 1.20→1.40, P_PROD_BUY_LOW 0.150→0.175.
 P_BT_SLIGHT_BUY=P_BT_BUY_LOW (structurally impossible); P_PROD_SLIGHT_BUY=P_PROD_BUY_LOW (impossible).
