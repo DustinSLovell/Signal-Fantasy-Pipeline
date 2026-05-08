@@ -1035,6 +1035,7 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     IP_REL        = proj_cfg["ip_full_reliever"]       # 65
     IP_DAY_THR    = proj_cfg["starter_ip_per_day"]     # 0.95
     SEASON_START  = date.fromisoformat(proj_cfg["season_start"])
+    SEASON_DAYS   = proj_cfg["season_total_days"]      # 180
     LG_ERA        = proj_cfg["lg_era"]
     LG_BABIP_ALW  = proj_cfg["lg_babip_allowed"]
     LG_K          = proj_cfg["lg_k_pct"]
@@ -1042,7 +1043,9 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
 
     BF_PER_IP = 4.30
 
-    days_elapsed = max(1, (date.today() - SEASON_START).days)
+    days_elapsed   = max(1, (date.today() - SEASON_START).days)
+    days_remaining = max(0, SEASON_DAYS - days_elapsed)
+    ros_frac       = min(1.0, days_remaining / SEASON_DAYS)
 
     out = df.copy()
 
@@ -1082,7 +1085,9 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
         out["is_starter"] = (out["ip_per_day"] >= ip_day_thr) | (out["GS"].fillna(0) >= gs_thresh)
     else:
         out["is_starter"] = out["ip_per_day"] >= ip_day_thr
-    out["IP_proj"]     = out["is_starter"].map({True: IP_START, False: IP_REL})
+    IP_START_ROS = round(IP_START * ros_frac, 1)
+    IP_REL_ROS   = round(IP_REL   * ros_frac, 1)
+    out["IP_proj"] = out["is_starter"].map({True: IP_START_ROS, False: IP_REL_ROS})
 
     # ── ERA ──────────────────────────────────────────────────────────────────
     # NOTE: Early-season small samples produce very low xERA readings that
@@ -1103,6 +1108,31 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     era_factor = (1.0 + (LG_ERA - out["ERA_proj"]) / 7.0).clip(lower=0.3)
     out["W_proj"]  = (out["IP_proj"] * 0.075 * era_factor).clip(lower=0).round(1)
     out.loc[~out["is_starter"], "W_proj"] = 3.0
+
+    # ── Override K/W with Steamer-blended ROS values from projections_2026.csv ─
+    # The formula above uses current-season k_pct (no regression) and a W/IP rate
+    # that diverges from Steamer for high-ERA-gap pitchers.  projections_2026.csv
+    # blends Steamer + observed stats and is already ROS-scaled — use it as the
+    # authoritative K and W source where available.
+    _proj_path = os.path.join(BASE_DIR, "data", "projections_2026.csv")
+    if os.path.exists(_proj_path) and "name" in out.columns:
+        try:
+            _ext = pd.read_csv(_proj_path, usecols=["name", "type", "proj_k", "proj_w"])
+            _ext = _ext[_ext["type"] == "pitcher"][["name", "proj_k", "proj_w"]].dropna()
+            _ext = _ext.drop_duplicates("name").set_index("name")
+            k_map = _ext["proj_k"].to_dict()
+            w_map = _ext["proj_w"].to_dict()
+            _matched = 0
+            for idx in out.index:
+                nm = out.at[idx, "name"]
+                if nm in k_map:
+                    out.at[idx, "K_proj"] = round(float(k_map[nm]), 1)
+                    _matched += 1
+                if nm in w_map and out.at[idx, "is_starter"]:
+                    out.at[idx, "W_proj"] = round(float(w_map[nm]), 1)
+            print(f"  K/W override applied to {_matched} pitchers from projections_2026.csv")
+        except Exception:
+            pass  # formula values remain if CSV load fails
 
     # ── SV + H (role tiers) ───────────────────────────────────────────────────
     out["SV_proj"] = 0.0
