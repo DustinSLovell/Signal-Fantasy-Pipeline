@@ -1109,19 +1109,30 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     out["W_proj"]  = (out["IP_proj"] * 0.075 * era_factor).clip(lower=0).round(1)
     out.loc[~out["is_starter"], "W_proj"] = 3.0
 
-    # ── Override K/W with Steamer-blended ROS values from projections_2026.csv ─
-    # The formula above uses current-season k_pct (no regression) and a W/IP rate
-    # that diverges from Steamer for high-ERA-gap pitchers.  projections_2026.csv
-    # blends Steamer + observed stats and is already ROS-scaled — use it as the
-    # authoritative K and W source where available.
+    # ── Override K/W/ERA/WHIP with Steamer-blended ROS values ───────────────
+    # Formula ERA = xERA.clip (signal-pure but not Steamer-calibrated).
+    # Formula WHIP = BABIP_allowed × contact_rate (current-season, no regression).
+    # Formula K = k_pct × BF × IP (k_pct un-regressed).
+    # Formula W = IP × 0.075 × era_factor (diverges for high-ERA-gap pitchers).
+    # projections_2026.csv blends Steamer + observed and is already ROS-scaled —
+    # use it as the authoritative source for all four stats where available.
+    # ERA must be overridden here (before SV/H tier classification at line ~1143
+    # which reads ERA_proj to classify relievers into elite/good/avg).
     _proj_path = os.path.join(BASE_DIR, "data", "projections_2026.csv")
     if os.path.exists(_proj_path) and "name" in out.columns:
         try:
-            _ext = pd.read_csv(_proj_path, usecols=["name", "type", "proj_k", "proj_w"])
-            _ext = _ext[_ext["type"] == "pitcher"][["name", "proj_k", "proj_w"]].dropna()
+            _ext = pd.read_csv(
+                _proj_path,
+                usecols=["name", "type", "proj_k", "proj_w", "proj_era", "proj_whip"],
+            )
+            _ext = _ext[_ext["type"] == "pitcher"][
+                ["name", "proj_k", "proj_w", "proj_era", "proj_whip"]
+            ].dropna(subset=["name"])
             _ext = _ext.drop_duplicates("name").set_index("name")
-            k_map = _ext["proj_k"].to_dict()
-            w_map = _ext["proj_w"].to_dict()
+            k_map    = _ext["proj_k"].dropna().to_dict()
+            w_map    = _ext["proj_w"].dropna().to_dict()
+            era_map  = _ext["proj_era"].dropna().to_dict()
+            whip_map = _ext["proj_whip"].dropna().to_dict()
             _matched = 0
             for idx in out.index:
                 nm = out.at[idx, "name"]
@@ -1130,7 +1141,11 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
                     _matched += 1
                 if nm in w_map and out.at[idx, "is_starter"]:
                     out.at[idx, "W_proj"] = round(float(w_map[nm]), 1)
-            print(f"  K/W override applied to {_matched} pitchers from projections_2026.csv")
+                if nm in era_map:
+                    out.at[idx, "ERA_proj"] = round(float(era_map[nm]), 2)
+                if nm in whip_map:
+                    out.at[idx, "WHIP_proj"] = round(float(whip_map[nm]), 2)
+            print(f"  K/W/ERA/WHIP override applied to {_matched} pitchers from projections_2026.csv")
         except Exception:
             pass  # formula values remain if CSV load fails
 
