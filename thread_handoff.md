@@ -5373,6 +5373,63 @@ Both WHIP and ERA would be fixed by extending the Steamer override to include `p
 
 ---
 
-*End of thread_handoff.md — Sessions 1-45 complete.*
+## SESSION 46 — Pre-beta WHIP/ERA Steamer override (May 8, 2026)
+
+### Bug fixed
+`score_value.py` `project_pitcher_stats()` derived ERA from `xERA.clip(1.50, 9.00)` and WHIP from the formula `(BABIP_allowed × contact_rate × BF_PER_IP × 9 + bb_pct × BF_PER_IP × 9) / 9` — both formula-only, no Steamer blend. Same architectural pattern as the K/W bug fixed in Session 45.
+
+**Before (formula-derived):**
+- Williams ERA: 4.24 | WHIP: 1.04
+- Sánchez ERA: 2.69 | WHIP: 1.31
+
+### Diagnostic
+- ERA source: line 1096, `out["ERA_proj"] = out["xERA"].clip(1.50, 9.00)` — pure xERA
+- WHIP source: line 1102, formula from BABIP_allowed × k_pct × bb_pct — no regression
+- `projections_2026.csv` confirmed to have both `proj_era` and `proj_whip` columns ✓
+- Same 425 pitcher match pool as K/W override
+
+### Fix
+Extended the Session 45 K/W override block to also include `proj_era` and `proj_whip` from `projections_2026.csv`. ERA override runs before the SV/H tier classification (line ~1143 reads `ERA_proj`) so reliever tier assignments correctly use Steamer ERA.
+
+Changed `usecols` from `["name","type","proj_k","proj_w"]` to include `proj_era` and `proj_whip`. Added `era_map` / `whip_map` lookups and per-row override inside the existing loop. Print message updated to "K/W/ERA/WHIP override applied to N pitchers."
+
+### Gate results — all PASS
+
+| Player | Stat | Before | After | CBS ROS | Gate | Result |
+|---|---|---|---|---|---|---|
+| Gavin Williams | ERA | 4.24 | 3.81 | 3.45 | ±0.50 | PASS (0.36) |
+| Gavin Williams | WHIP | 1.04 | 1.23 | 1.23 | ±15% | PASS (0.0%) |
+| Cristopher Sánchez | ERA | 2.69 | 2.87 | 2.81 | ±0.50 | PASS (0.06) |
+| Cristopher Sánchez | WHIP | 1.31 | 1.23 | 1.16 | ±15% | PASS (6.0%) |
+
+- Williams→Sánchez trade verdict: **STRONG TRADE, Delta +52.5** (Sánchez FP#3 ×1.30 elite premium vs Williams FP#41 ×1.05)
+- validate_formulas.py: 37/37 PASS
+- All invariants PASS (Sanchez C#29, Yordan #3, Raleigh C#2, Baldwin C#4, Contreras C#6)
+- Commit: 3d555b7 — "Pre-beta fix: WHIP/ERA Steamer override — Williams 4.24→3.81 ERA, 1.04→1.23 WHIP"
+- Pushed to origin/main
+
+### Side note — signal display in trade analyzer
+Sánchez displays "Neutral (+0.316)" in trade analyzer despite Buy Low signal at 0.3095. The signal field in `projections_2026.csv` may be stale (generated at pipeline time, not refreshed post-fix). This is a display-only issue — trade surplus values are unaffected. Log as Tier 2 to investigate.
+
+### Architecture note
+`score_value.py`'s pitcher projection block now fully delegates K, W, ERA, WHIP to `projections_2026.csv` (Steamer blend) for all matched pitchers. The formula path remains as fallback for unmatched players. IP_proj stays on the ROS-scaled formula (introduced Session 45) since `projections_2026.csv` proj_ip has a slightly different scaling method (`_games_remaining()` vs `ros_frac`). 
+
+### Next session priorities (updated)
+1. Stress test prompt — now clean to run (all four stat categories fixed)
+2. Signal display fix — Sánchez showing Neutral instead of Buy Low in trade analyzer
+3. Wire SV/H ratio into trade analyzer
+4. Pitcher K%/GB% stabilization research → mid-season architecture build
+
+### Files modified (Session 46)
+- `score_value.py` — `project_pitcher_stats()`: extended Steamer override to ERA/WHIP (25 lines changed)
+- `data/player_values.json` — regenerated
+
+### GitHub (Session 46)
+- Fix commit: 3d555b7 — "Pre-beta fix: WHIP/ERA Steamer override — Williams 4.24→3.81 ERA, 1.04→1.23 WHIP"
+- Pushed to origin/main
+
+---
+
+*End of thread_handoff.md — Sessions 1-46 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
