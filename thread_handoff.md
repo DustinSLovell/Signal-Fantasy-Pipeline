@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 7, 2026 (Sessions 1–42)
+# Last updated: May 8, 2026 (Sessions 1–43)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -38,6 +38,13 @@ Querying `fp_ownership` from `luck_scores.csv` causes a KeyError. Use `owned_pct
 - `data/ownership_history.json`: Week 9 (May 5) + Week 10 (May 6) snapshots present. 848 players tracked.
 - `delta_own_1w`: Active — 169 tracker rows have live values. Computed as current − prior week ownership %.
 - `delta_own_4w`: All NaN. Requires 4 snapshots minimum — activates ~Week 13 (early June 2026).
+
+**Session 43 decisions (May 8, 2026):**
+- League 1 SV/H ratio CORRECTED to SV×2 + H×1 (was incorrectly documented as SV×3 + H×2 everywhere — corrected in Section 10 Tier 2, Section 12, Section 16, and league_1.json reference)
+- May 15 mid-season architecture is a logical transition point, NOT an external commitment. No subscriber or partner is expecting it by May 15.
+- CBS ownership scraping via session auth: REJECTED (TOS risk + session instability — not production-grade)
+- FantasyPros ownership as CBS proxy for Hidden Gem: REJECTED after audit (3.3x understatement at low ownership, 1.46x at high ownership — gap too inconsistent for reliable correction)
+- Hidden Gem workflow updated: pipeline flags candidates automatically; manual CBS ownership check for ~10-15 players per week (~15 min); no scraping required
 
 ---
 
@@ -139,6 +146,7 @@ Every Claude Code session includes optional career lessons — data/ML concepts 
 - Pre-publish: 0
 - Post-Article #1: Base established via Reddit traffic
 - Post-Article #2: 25+ recipients (58% open rate suggests quality > casual list)
+- **May 8, 2026: 50 subscribers** — under 3 weeks from launch (+49 in last 30 days per CBS creator stats). Week 3 article ("May 6 Signals Update! Plus, Trade Tracker Update") published ✅
 - Paid tier plan: activate at 200-500 free subscribers
 
 ---
@@ -402,6 +410,36 @@ Full results: `outputs/signal_vs_rtm_backtest_s36.csv` (27 rows covering all dim
 - Buy signal persistence: 89% above 0.175 threshold at Wk1-4; drops to 59-61% at Wk8-9
 - window_signal at Wk9: confirming=30, deepening=59, still_waiting=71, refuted_4wk=9
 - Preliminary accuracy: 91.4% (32 confirmed / 3 misses) — official window opens Week 10
+
+---
+
+---
+
+### MAE BACKTEST SCORECARD SUMMARY (Session 43)
+
+**Strategic conclusion first:** Signal accuracy is the competitive moat. Steamer cannot detect in-season luck divergence. Do NOT over-invest in closing projection MAE gaps — invest in signal accuracy and mid-season architecture.
+
+**Hitters (n=235, 2025 OOS):**
+- Beats RTM: wOBA, R, HR, RBI — 4 of 5 measurable stats
+- Beats Steamer: 0 of 5 (Steamer advantage = preseason context unavailable to April model — irreducible)
+- AVG: only stat where RTM also beats model; structural gap, career BA anchor not enough
+- RBI closest to Steamer (−2.7% gap) — improving with lineup context maturation
+- Largest Steamer gap: wOBA (−24.2%) — explained by preseason context, not a fixable model bug
+
+**Pitchers (n=165, SP=79/RP=86, 2025 OOS):**
+- SP ERA: ONLY stat beating Steamer (+1.6%) — luck signal detection catching ERA/FIP divergence
+- ERA bias advantage: model +0.25 vs Steamer +0.41 — less systematically wrong even where MAE is higher
+- WHIP: loses to RTM and Steamer even post-fix — structurally hard, RTM-dominant metric
+- K: was 108% worse than Steamer for SP; fixed Session 30 (gs<10 Steamer blend)
+- W: fixed Session 30 (_blend_w())
+
+**Signal direction accuracy (the moat — not MAE):**
+- Buy Low: 98.5% vs RTM 90.8% (+7.7pp, n=65, 4yr pooled, Version E threshold)
+- Sell High: 94.0% vs RTM 94.0% — TIED (selection bias: 94% of SH pitchers have ERA < 4.00, trivially regresses)
+- Slight Sell: 85.4% vs RTM 81.7% (+3.7pp)
+- Slight Buy: ELIMINATED (72.9% vs RTM 74.1% — worse than RTM, no edge)
+- Pitcher Buy Low ERA direction: 100% (n=7, avg ΔERA = −1.08)
+- Pitcher Sell High ERA direction: 100% (n=9, avg ΔERA = +1.88)
 
 ---
 
@@ -1562,11 +1600,13 @@ Next: surface this in dashboard as premium feature toggle.
 
 **White paper Section 10:** Live track record table — needs 2-3 more weeks data. Then publish to whitepapersonline.com.
 
-**Mid-season signal architecture (full spec — build before May 15):**
+**Mid-season signal architecture (expanded spec — Session 43):**
+NOTE: May 15 is a LOGICAL TRANSITION POINT, not a hard deadline. No subscriber or partner is expecting this by May 15.
+
 Three time-period modes:
 
 APRIL (prediction mode — current):
-- Standard buy/sell signals; full 89.7% accuracy claim; 5-month correction window
+- Standard buy/sell signals; full 91.9% accuracy claim; 5-month correction window
 
 MID-SEASON May 15 - July 31 (momentum vs merit):
 - Buy/sell still valid but with urgency framing
@@ -1581,16 +1621,48 @@ LATE SEASON August+ (stretch run mode):
 - "Act now or hold through season" binary framing
 - Collection year for 2027 backtest
 
-Components to build:
+ROLLING WINDOW ARCHITECTURE — HITTERS (Session 43 spec):
+- Input: 4-week rolling window replaces full-season sample
+- PA minimum to fire: 80+ PA in rolling 4-week window (protects against part-time players)
+- Baseline: CAREER anchor (NOT season line) — prevents circular logic
+  Example: .350 BABIP player (career .250) stays Sell High even if 4-week BABIP drops to .325,
+  because rolling baseline is .250 career, not .350 season
+- Verdict lock: if season-long Sell High active, rolling window CANNOT generate Buy Low.
+  Rolling layer confirms or deepens verdict only — never contradicts.
+- Display: side-by-side season-long verdict + rolling momentum indicator
+  Use case: "Still Sell High (season), but 4-week trend shows correction beginning"
+- Same luck score formula as April mode; baseline shifts to player's own career line
+
+ROLLING WINDOW ARCHITECTURE — PITCHERS (Session 43 spec):
+- ERA/WHIP/FIP rolling signals: EXCLUDED. Too volatile over 4-5 starts.
+  Stabilization thresholds: ERA ~70 IP, WHIP ~70 IP, FIP ~70 IP — most pitchers won't hit these mid-season.
+- K% rolling: INCLUDED. Stabilizes at ~20 IP / 70 BF — fastest-stabilizing pitcher metric.
+- GB% rolling: INCLUDED. Stabilizes at ~40 IP — reliable momentum indicator.
+- K% and GB% are directional momentum indicators only — never standalone verdicts.
+- Season-long signals remain the SOLE verdict source for pitchers.
+- Pitcher IP minimum for rolling window: 15+ IP (to be confirmed next session)
+
+BREAKOUT PLAYER HANDLING (scope decision — Session 43):
+- Model catches breakouts naturally via xwOBA/wOBA convergence over time (lag ~3-4 weeks)
+- Signal age flag (8+ weeks without resolution) is the catching mechanism — prompts reassessment
+- No special breakout detection logic to be built (swing mechanics / coaching changes not in pipeline)
+- Article disclosure: "Sell High signals on confirmed breakout players may lag 3-4 weeks as xwOBA/wOBA converge. Use signal age as your reassessment trigger."
+
+NEXT SESSION — BEFORE BUILDING:
+- Verify K% and GB% stabilization thresholds (FanGraphs/Statcast research)
+- Confirm minimum IP gates for pitcher rolling window
+- Then finalize pitcher rolling spec before any code
+
+Components to build (confirmed):
 - signal_age column in calls_tracker.csv (weeks since call_date)
 - runway_weeks computed from current date
 - rank_trajectory (rising/falling/stable) from weekly delta
 - urgency_flag: signal + runway < 8 weeks
+- Career-anchor rolling baseline (not season-line)
+- Verdict lock (season-long verdict cannot be contradicted by rolling window)
 - Framing templates by time period
 
-Backtest: Do mid-May signals predict June-July regression? Same methodology as April backtest. Cannot publish accuracy until 2026 completes. 2025 collection year data available.
-
-Key publishing rule: Never mix April accuracy (89.7%) with mid-season signals. Two separate labeled sections. Urgency as content hook: "Window closing on these calls."
+Key publishing rule: NEVER mix April accuracy (91.9%) with mid-season signals. Two separate labeled sections. Urgency as content hook: "Window closing on these calls."
 
 ### TIER 2 — This week
 
@@ -1619,13 +1691,25 @@ Gate PASS (32.17 < 39.8); 71% gap closure vs Steamer (24.45).
 
 **Wire OBP vs AVG into hitter values (league-aware scoring):** League 2 (Fantrax) uses OBP — Seager, Judge, Schwarber worth more. AVG-only guys lose value. Requires stat_weights from league JSON to flow into score_value.py hitter ESV calculation. stat_weights in league JSON already present (AVG:0.0/OBP:1.0 for league_2). Implementation: load league settings in score_value.py, apply weight to AVG and OBP terms.
 
-**Wire SV/H ratio into reliever values:** League 1: saves×3 + holds×2. League 2: saves×1 + holds×1. Changes RP surplus value calculations. Use saves_holds_ratio from league JSON. Implementation: SV_WEIGHT × saves + H_WEIGHT × holds in CBS FPTS formula for pitchers.
+**Wire SV/H ratio into reliever values:** League 1: saves×2 + holds×1 (CORRECTED Session 43 — was incorrectly SV×3 + H×2). League 2: saves×1 + holds×1 (unchanged). Changes RP surplus value calculations. Update league_1.json saves_holds_ratio before wiring. Implementation: SV_WEIGHT × saves + H_WEIGHT × holds in CBS FPTS formula for pitchers.
+
+**AVG projection improvement (scoped and deprioritized — Session 43):**
+Decision: do not chase Steamer on AVG. Steamer's advantage partly explained by preseason context (swing changes, spring training) unavailable in April model. Realistic ceiling ~0.0200 MAE (currently 0.0215). Not worth deep investment given K and W fix ROI.
+Three levers approved for INVESTIGATION ONLY (backtest required before any implementation):
+1. GB% stratification of career BA weight: GB%>50% → weight 0.75 (stable); GB%40-50% → 0.65 (current); GB%<40% → 0.55 (fly-ball variance). GB rate already in pipeline Layer 3. Backtest before implementing.
+2. LD% nudge: LD% 4+ points above career → small positive AVG nudge (±.005-.010). PA gate: 100+ PA. Risk: April noise.
+3. xBA column check: verify whether hitters_statcast.csv contains xBA. If present, blend candidate: career_BA×0.50 + xBA×0.30 + april_AVG×0.20.
+Priority: TIER 2. Do not build until GB% backtest complete.
 
 **Pressure test league settings with 5-10 real trades from both leagues:** Run concrete trades (e.g., Seager for Grisham, Skenes for Rice) through trade_analyzer.py with both league JSONs before building any user-facing UI. Edge cases that no theoretical design catches appear immediately in real data.
 
 **Signal age indicator (build after Week 3):** Flag signals firing 8+ weeks without resolution. Display label: "Reassess — signal age X weeks." No verdict change — display layer only. signal_age = current_date - call_date in calls_tracker.csv.
 
-**Hidden Gem detector (formal):** Query: fp_ownership<35%, wOBA>.330, xwOBA_gap>-0.020, luck>-0.085, PA>=75. Current: Rumfield (COL,10%), Herrera (STL,29%), Aranda (TB,27%), Bogaerts (SD,31%). Run Monday morning, publish Tuesday.
+**Hidden Gem detector (updated workflow — Session 43):**
+Query threshold: CBS ownership < 35% (unchanged). FantasyPros REJECTED as CBS proxy (3.3x understatement at low ownership, 1.46x at high — audit: Burger FP12%/CBS40%, Rumfield FP11%/CBS37%, Wacha FP61%/CBS89%). CBS session-auth scraping REJECTED (TOS risk).
+NEW WORKFLOW: Pipeline flags Hidden Gem candidates automatically via query → manual CBS ownership check for ~10-15 flagged players (~15 min/week) → input CBS % manually for those players.
+CBS YTD rank still populates automatically from fetch_cbs_rank.py.
+FUTURE: Revisit CBS data source at ~200 subscribers (CBS official API, FantasyPros premium, or CBS partnership).
 
 **Pitcher Slight Buy elimination — COMPLETED Session 37:**
 62.0% accuracy, -18.0pp vs RTM → eliminated. P_BT_BUY_LOW raised 1.20→1.40, P_PROD_BUY_LOW 0.150→0.175.
@@ -1853,7 +1937,7 @@ Placement: after owned_pct. F.int formatter: NaN → "—". sortKey() pushes nul
 - `tvLeagueNames`: { league1: 'CBS 13-Team', league2: 'Fantrax 15-Team' } — toggle button labels updated
 - `taLeague` default object extended with `roster_slots`, `saves_holds_ratio`, `team_count` (seeded from league1/CBS 13-team defaults)
 - `_LEAGUE_DEFAULTS` constant (above `setLeague()`): mirrors data/leagues/*.json in JS for instant client-side access
-- `setLeague(lg)` now calls `Object.assign({}, S.taLeague, defaults)` on toggle — switching CBS→Fantrax automatically updates: AVG→OBP, SV×3+H×2→SV×1+H×1, C:2→C:1, 13→15 teams
+- `setLeague(lg)` now calls `Object.assign({}, S.taLeague, defaults)` on toggle — switching CBS→Fantrax automatically updates: AVG→OBP, SV×2+H×1→SV×1+H×1, C:2→C:1, 13→15 teams
 - `loadLeagueSettings()` seeds from league1 defaults on first visit (no localStorage record)
 - Data files: data/leagues/league_1.json, data/leagues/league_2.json, data/leagues/template.json, league_settings.py
 
@@ -2176,6 +2260,26 @@ Keep filtered ERA (qualifying starts only, MIN_START_IP=2.0). ERA_all_sc creates
 
 ---
 
+## CBS OWNERSHIP — TECHNICAL FINDINGS (archive, Session 43)
+
+**API endpoint discovered via DevTools network inspection (May 8, 2026):**
+URL pattern: `https://[league-subdomain].baseball.cbssports.com/players/playerpage/snippet/{PLAYER_ID}?loc=snippet&selected_tab=overview&play_video=0`
+Auth: cookie-based session (userId, cbsiaa, sports_user, fly-session tokens required)
+Response: text/html snippet containing rostered%, start%, proj_rank, positional rank
+Example player ID: Luke Raley = 2921005
+
+**DECISION: Do not build auth-based scraper.**
+Reasons: (1) CBS ToS likely prohibits automated scraping of authenticated pages, (2) session cookies expire requiring manual refresh, (3) account suspension risk.
+Documented here for reference only — if CBS releases official API access in future, this endpoint is the starting point.
+
+**FantasyPros vs CBS ownership audit (3-player sample, May 8, 2026):**
+| Player | FP ownership | CBS ownership | FP/CBS ratio |
+|--------|-------------|---------------|-------------|
+| Burger | 12% | 40% | 0.30× (3.3× CBS understatement) |
+| Rumfield | 11% | 37% | 0.30× (3.3× CBS understatement) |
+| Wacha | 61% | 89% | 0.69× (1.46× CBS understatement) |
+Gap is non-linear — correction factor is not reliable. FantasyPros rejected as CBS proxy for Hidden Gem feature.
+
 ---
 
 ## SECTION 18: SESSION 16 CHANGELOG
@@ -2193,7 +2297,7 @@ Keep filtered ERA (qualifying starts only, MIN_START_IP=2.0). ERA_all_sc creates
 5. get_replacement_level() formula corrected in league_settings.py: Was (0.90 + 0.10 × pool_ratio) — inverted. Fixed to (1.10 − 0.10 × pool_ratio). Deeper leagues now correctly produce lower replacement FPTS. 13-team SP: ~208 FPTS, 15-team SP: ~197 FPTS. Committed 4cfde51.
 
 6. League settings Phase 1 complete:
-   - data/leagues/league_1.json: CBS 13-Team (AVG, SV×3+H×2, C:2, P:9, 7 reserves)
+   - data/leagues/league_1.json: CBS 13-Team (AVG, SV×2+H×1, C:2, P:9, 7 reserves) — SV ratio CORRECTED Session 43
    - data/leagues/league_2.json: Fantrax 15-Team (OBP, SV×1+H×1, C:1, P:10, 5 reserves)
    - data/leagues/template.json: blank schema for paid users
    - league_settings.py: load_league(), get_replacement_level(), get_stat_weight(), _validate()
@@ -5116,15 +5220,24 @@ All operationally critical content preserved. All 4 session-start greps validate
 - CLAUDE.md reduction commit: 58d48fd
 - Thread handoff final commit: [this push]
 
-### PENDING MANUAL ACTIONS
+### PENDING MANUAL ACTIONS (as of Session 43 — May 8, 2026)
 
 - **Publish Week 4 article** (outputs/week4_article_draft.md) to Substack
-- **Post Reddit beta post** (outputs/reddit_beta_post.md) to r/fantasybaseball
-- **White paper Section 10**: Update pitcher accuracy to Version F (87.7% pooled / 82.0% OOS). Remove pitcher Slight Buy row.
-- **Career lessons database** (Sessions 22-42) — add new lessons manually in Claude.ai
+- **Post Reddit beta post** (outputs/reddit_beta_post.md) to r/fantasybaseball — update copy to include "50 subscribers in under 3 weeks" social proof
+- **White paper**: bring to Session 44 for full Version 2 review and revision; update pitcher accuracy to Version F (87.7% pooled / 82.0% OOS), remove Slight Buy row, then publish to whitepapersonline.com
+- **Career lessons database** (Sessions 22-43) — add new lessons manually in Claude.ai
+
+### NEXT CODE SESSION PRIORITIES (Session 44)
+
+1. Pitcher K%/GB% stabilization research → verify thresholds from FanGraphs/Statcast; finalize pitcher rolling spec
+2. Mid-season architecture build: calendar flip, verdict lock, career baseline anchor, side-by-side display
+3. GB% stratification backtest for AVG improvement (investigation only — backtest before any build)
+4. Check hitters_statcast.csv for xBA column (AVG improvement lever 3 prerequisite)
+5. Wire league settings into trade analyzer — update league_1.json SV ratio to SV×2+H×1 before any reliever wiring
+6. Wire SV/H ratio into reliever values (after league_1.json corrected)
 
 ---
 
-*End of thread_handoff.md — Sessions 1-42 complete.*
+*End of thread_handoff.md — Sessions 1-43 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
