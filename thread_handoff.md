@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 8, 2026 (Sessions 1–43)
+# Last updated: May 8, 2026 (Sessions 1–44)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -38,6 +38,12 @@ Querying `fp_ownership` from `luck_scores.csv` causes a KeyError. Use `owned_pct
 - `data/ownership_history.json`: Week 9 (May 5) + Week 10 (May 6) snapshots present. 848 players tracked.
 - `delta_own_1w`: Active — 169 tracker rows have live values. Computed as current − prior week ownership %.
 - `delta_own_4w`: All NaN. Requires 4 snapshots minimum — activates ~Week 13 (early June 2026).
+
+**Session 44 decisions (May 8, 2026):**
+- SV/H ratio correction LIVE: league_config.json league2 svh_weights SV:3→2, H:2→1; also data/leagues/league_1.json + dashboard.html (2 occurrences + legend text). player_values.json regenerated. Elite closer CBS values drop ~10-16 pts (SVH_L2: 95→60 for 25SV/10H). Commit 021ddbe.
+- GB% stratification for AVG GATE FAILED: overall delta -0.0001 (regression), only 1/3 tiers pass (High-GB +0.0007, Mid-GB 0.0000, Low-GB -0.0005). Formally CLOSED. Removed from Tier 2 scope. Root cause: fly-ball hitters benefit MORE from career_ba anchor, not less — opposite to design intuition.
+- xBA column confirmed: `estimated_ba_using_speedangle` in hitters_statcast.csv (col 36/54). 476 batters, 27,563 non-null rows (16.8% — BIP only, expected). Already wired into Layer 3 (score_value.py) as primary AVG input. NOT in Layer 2 (stat_projections.py). Lever 3 xBA blend deprioritized — Layer 3 already captures it; Layer 2 wiring not worth the complexity given low AVG ROI.
+- Tasks 1/2 (W blend, SP K blend) confirmed already COMPLETED Session 30 — verified in code.
 
 **Session 43 decisions (May 8, 2026):**
 - League 1 SV/H ratio CORRECTED to SV×2 + H×1 (was incorrectly documented as SV×3 + H×2 everywhere — corrected in Section 10 Tier 2, Section 12, Section 16, and league_1.json reference)
@@ -1696,10 +1702,10 @@ Gate PASS (32.17 < 39.8); 71% gap closure vs Steamer (24.45).
 **AVG projection improvement (scoped and deprioritized — Session 43):**
 Decision: do not chase Steamer on AVG. Steamer's advantage partly explained by preseason context (swing changes, spring training) unavailable in April model. Realistic ceiling ~0.0200 MAE (currently 0.0215). Not worth deep investment given K and W fix ROI.
 Three levers approved for INVESTIGATION ONLY (backtest required before any implementation):
-1. GB% stratification of career BA weight: GB%>50% → weight 0.75 (stable); GB%40-50% → 0.65 (current); GB%<40% → 0.55 (fly-ball variance). GB rate already in pipeline Layer 3. Backtest before implementing.
+~~1. GB% stratification of career BA weight~~ — **CLOSED Session 44 (gate failed).** Backtest n=223: overall MAE delta -0.0001 (regression). Only 1/3 tiers passed. Low-GB hitters (-0.0005 worse) showed that fly-ball hitters benefit MORE from the 0.65 career anchor — opposite of design assumption. Do not revisit.
 2. LD% nudge: LD% 4+ points above career → small positive AVG nudge (±.005-.010). PA gate: 100+ PA. Risk: April noise.
-3. xBA column check: verify whether hitters_statcast.csv contains xBA. If present, blend candidate: career_BA×0.50 + xBA×0.30 + april_AVG×0.20.
-Priority: TIER 2. Do not build until GB% backtest complete.
+3. ~~xBA column check~~ — **CONFIRMED Session 44 (no build needed).** `estimated_ba_using_speedangle` confirmed present in hitters_statcast.csv. Already wired into Layer 3 (score_value.py): used as primary AVG input via sum(xBA_BIP)/total_PA. Layer 2 (stat_projections.py) uses xwOBA→AVG formula. Blend candidate deprioritized — Layer 3 already captures it; Layer 2 wiring adds complexity without clear ROI.
+Priority: TIER 2. Only LD% nudge remains open for investigation. Do not build without backtest.
 
 **Pressure test league settings with 5-10 real trades from both leagues:** Run concrete trades (e.g., Seager for Grisham, Skenes for Rice) through trade_analyzer.py with both league JSONs before building any user-facing UI. Edge cases that no theoretical design catches appear immediately in real data.
 
@@ -5220,24 +5226,82 @@ All operationally critical content preserved. All 4 session-start greps validate
 - CLAUDE.md reduction commit: 58d48fd
 - Thread handoff final commit: [this push]
 
-### PENDING MANUAL ACTIONS (as of Session 43 — May 8, 2026)
+### PENDING MANUAL ACTIONS (as of Session 44 — May 8, 2026)
 
 - **Publish Week 4 article** (outputs/week4_article_draft.md) to Substack
 - **Post Reddit beta post** (outputs/reddit_beta_post.md) to r/fantasybaseball — update copy to include "50 subscribers in under 3 weeks" social proof
-- **White paper**: bring to Session 44 for full Version 2 review and revision; update pitcher accuracy to Version F (87.7% pooled / 82.0% OOS), remove Slight Buy row, then publish to whitepapersonline.com
-- **Career lessons database** (Sessions 22-43) — add new lessons manually in Claude.ai
+- **White paper**: deferred from Session 44 — bring to Session 45 for full Version 2 review and revision; update pitcher accuracy to Version F (87.7% pooled / 82.0% OOS), remove Slight Buy row, then publish to whitepapersonline.com
+- **Career lessons database** (Sessions 22-44) — add new lessons manually in Claude.ai
 
-### NEXT CODE SESSION PRIORITIES (Session 44)
+### NEXT CODE SESSION PRIORITIES (Session 45)
 
-1. Pitcher K%/GB% stabilization research → verify thresholds from FanGraphs/Statcast; finalize pitcher rolling spec
-2. Mid-season architecture build: calendar flip, verdict lock, career baseline anchor, side-by-side display
-3. GB% stratification backtest for AVG improvement (investigation only — backtest before any build)
-4. Check hitters_statcast.csv for xBA column (AVG improvement lever 3 prerequisite)
-5. Wire league settings into trade analyzer — update league_1.json SV ratio to SV×2+H×1 before any reliever wiring
-6. Wire SV/H ratio into reliever values (after league_1.json corrected)
+1. Pitcher K%/GB% stabilization research → verify thresholds from FanGraphs/Statcast; finalize pitcher rolling spec (carried from Session 44)
+2. Mid-season architecture build: calendar flip, verdict lock, career baseline anchor, side-by-side display (carried from Session 44)
+3. Wire SV/H ratio into reliever values — prerequisites now met (league_1.json corrected Session 44, league_config.json corrected Session 44)
+4. White paper Version 2 review (deferred from Session 44)
 
 ---
 
-*End of thread_handoff.md — Sessions 1-43 complete.*
+## SESSION 44 CHANGELOG — May 8, 2026
+
+### Comprehension verification (session start)
+- Confirmed: Tier 1 HIGHEST PRIORITY = Career BA floor multiplier 0.75→0.85 (last labeled, completed Session 24; active Tier 1 = mid-season architecture)
+- Confirmed: Hard deadline = Week 3 article May 5-6 (published ✅)
+- Confirmed: Track record = 17/23 = 73.9% (published Big Board); 32/35 = 91.4% internal tracker
+- Confirmed: Last commit = d1371ab (Session 43 handoff)
+- Discovery on session start: Tasks 1/2 already completed Session 30 (verified in code — `_STEAMER_W`, `_STEAMER_K`, `_blend_w()` all present)
+
+### Task 3 — SV ratio correction (commit 021ddbe)
+**Problem:** saves_holds_ratio was SV×3+H×2 in all four locations. Correct CBS ratio is SV×2+H×1.
+
+**Files changed:**
+- `league_config.json`: league2 svh_weights SV:3→2, H:2→1 + comment updated (live wire to score_value.py)
+- `data/leagues/league_1.json`: saves_holds_ratio saves:3→2, holds:2→1 (future trade analyzer wire)
+- `dashboard.html`: taLeague defaults (line 1261) + _LEAGUE_DEFAULTS.league1 (line 1830): saves:3→2, holds:1→1
+- `dashboard.html`: legend text corrected — was "SV+H (League 2): SV×3, H×2"; now "SV+H (League 1/CBS): SV×2, H×1. League 2/Fantrax: SV and H weighted equally."
+- `data/player_values.json`: regenerated (score_value.py --write)
+
+**5-reliever impact (CBS/league2_value):**
+SVH_L2: 95→60 (for 25SV/10H). Mason Miller 61.4→45.2 | Dylan Lee 44.1→34.2 | Louis Varland 31.5→17.3 | Payton Tolle 30.5→22.1 | Aaron Ashby 16.8→8.7. All decreased — old SV×3 was inflating closer values.
+
+**Architecture note:** trade_analyzer.py uses `proj_sv_h` (pre-combined) with CBS_P_COEF_SV — reads `saves_holds_ratio` only indirectly. Verdict deltas won't change until "Wire SV/H ratio into reliever values" (Tier 2) is built. Task 3 corrects source documents.
+
+**Validation:** 37/37 PASS. All invariants PASS (Sanchez C#29, Yordan #3, Raleigh C#2, Baldwin C#4, Contreras C#6).
+
+### Task 4 — GB% stratification backtest (diagnostic, no code changes)
+**Gate:** tiered MAE improvement >0.0005 AND holds across ≥2 tiers.
+**Result: GATE FAILED.**
+
+| Tier | N | Flat MAE | Tiered MAE | Delta | Gate |
+|---|---|---|---|---|---|
+| High-GB (>50%) | 39 | 0.0216 | 0.0209 | +0.0007 | PASS |
+| Mid-GB (40-50%) | 94 | 0.0225 | 0.0225 | +0.0000 | FAIL |
+| Low-GB (<40%) | 90 | 0.0255 | 0.0259 | -0.0005 | FAIL |
+| **Overall** | 223 | **0.0235** | **0.0236** | **-0.0001** | **FAIL** |
+
+**Root cause:** Low-GB (fly-ball) hitters benefit MORE from the 0.65 career anchor, not less. Reducing weight to 0.55 increases error because formula_avg from April xwOBA over-projects for this group. Design assumption was backwards. 72/223 players hit veteran exception (unchanged). **CLOSED — removed from Tier 2 scope.**
+
+### Task 5 — xBA column audit (diagnostic, no code changes)
+**Column confirmed:** `estimated_ba_using_speedangle` (column 36/54 in hitters_statcast.csv).
+**Coverage:** 476 batters, 27,563 non-null rows (16.8% — BIP only, expected). 281 batters with 50+ BIP rows; 66 with 100+.
+**Distribution:** mean xBA per-player (50+ BIP) = 0.331, p5–p95 range 0.265–0.398.
+**Already in pipeline (Layer 3):** score_value.py `compute_hitter_kbb()` aggregates per-player xBA using correct formula (sum(xBA_BIP)/total_PA). Used as primary `AVG_proj` input with career BA anchor gate.
+**Not in Layer 2:** stat_projections.py uses `formula_avg = (xwOBA − 0.050) / 1.057`.
+**Conclusion:** Lever 3 xBA blend deprioritized — Layer 3 already captures it. Layer 2 wiring adds complexity without clear ROI given low overall AVG improvement ceiling. Closed from active investigation.
+
+### Files modified (Session 44)
+- `league_config.json` — league2 svh_weights corrected
+- `data/leagues/league_1.json` — saves_holds_ratio corrected
+- `dashboard.html` — saves_holds_ratio (2 places) + legend text corrected
+- `data/player_values.json` — regenerated
+- `thread_handoff.md` — this file
+
+### GitHub (Session 44)
+- Task 3 commit: 021ddbe — "Session 44 Task 3 — SV ratio corrected to SV×2+H×1 everywhere"
+- Session close commit: [this push]
+
+---
+
+*End of thread_handoff.md — Sessions 1-44 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
