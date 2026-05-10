@@ -2793,6 +2793,25 @@ function computeNetStats(getting, giving, dropping) {
   return { netH, netP, wonCats, totalCats };
 }
 
+function taElitePremium(fpRank) {
+  if (!fpRank) return 1.00;
+  if (fpRank <= 10) return 1.30;
+  if (fpRank <= 25) return 1.15;
+  if (fpRank <= 50) return 1.05;
+  return 1.00;
+}
+
+function taVerdictFromSurplus(delta) {
+  const d = Math.round(delta);
+  if (delta >=  50) return { cls:'vb-strong',  icon:'✅', label:'Strong Trade',       sub:`CBS surplus delta: +${d}` };
+  if (delta >=  20) return { cls:'vb-favor',   icon:'✅', label:'Favorable',           sub:`CBS surplus delta: +${d}` };
+  if (delta >=   5) return { cls:'vb-favor',   icon:'✅', label:'Slightly Favorable',  sub:`CBS surplus delta: +${d}` };
+  if (delta >=  -5) return { cls:'vb-neutral', icon:'⚠️', label:'Neutral',             sub:`CBS surplus delta: ${d}`  };
+  if (delta >= -20) return { cls:'vb-unfavor', icon:'⚠️', label:'Slightly Unfavorable',sub:`CBS surplus delta: ${d}`  };
+  if (delta >= -50) return { cls:'vb-unfavor', icon:'⚠️', label:'Unfavorable',         sub:`CBS surplus delta: ${d}`  };
+  return               { cls:'vb-avoid',   icon:'❌', label:'Avoid',               sub:`CBS surplus delta: ${d}`  };
+}
+
 function taComputeVerdict(wonCats, totalCats) {
   if (totalCats === 0) return { cls:'vb-neutral', icon:'⚠️', label:'No Data', sub:'Add players to both sides' };
   const pct = wonCats / totalCats;
@@ -2836,10 +2855,28 @@ function analyzeTrade() {
   const gettingSum = computeTaSide(S.ta.getting);
   const dropSum    = S.ta.dropping.length ? computeTaSide(S.ta.dropping) : null;
   const { netH, netP, wonCats, totalCats } = computeNetStats(gettingSum, givingSum, dropSum);
-  const verdict  = taComputeVerdict(wonCats, totalCats);
+
+  // Surplus-delta verdict: mirrors CLI _trade_verdict_v3 + _elite_premium logic.
+  // surplus_l1 and fp_rank come from player_values.json via flattenPlayer.
+  let gettingAdj = 0, givingAdj = 0;
+  S.ta.getting.forEach(p => {
+    const surp = parseFloat(p.surplus_l1) || 0;
+    const ep   = taElitePremium(p.fp_rank);
+    gettingAdj += surp * ep;
+  });
+  S.ta.giving.forEach(p => {
+    const surp = parseFloat(p.surplus_l1) || 0;
+    const ep   = taElitePremium(p.fp_rank);
+    givingAdj += surp * ep;
+  });
+  const surplusDelta = gettingAdj - givingAdj;
+  const verdict = (gettingAdj === 0 && givingAdj === 0)
+    ? taComputeVerdict(wonCats, totalCats)   // fallback if no surplus data
+    : taVerdictFromSurplus(surplusDelta);
+
   const signal   = taSignalNote(S.ta.giving, S.ta.getting);
 
-  S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal };
+  S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal, surplusDelta };
   renderTradeResults();
 }
 

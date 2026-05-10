@@ -57,6 +57,14 @@ from datetime import date, datetime
 import numpy as np
 import pandas as pd
 
+from config import (
+    CBS_H_COEF_R, CBS_H_COEF_HR, CBS_H_COEF_RBI, CBS_H_COEF_SB,
+    CBS_H_COEF_AVG, CBS_H_INTERCEPT,
+    CBS_P_COEF_W, CBS_P_COEF_ERA, CBS_P_COEF_WHIP, CBS_P_COEF_K,
+    CBS_P_COEF_SV, CBS_P_INTERCEPT,
+)
+from replacement_level import load_replacement_levels, get_surplus as _get_surplus
+
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
@@ -1935,9 +1943,10 @@ def main():
         on="batter", how="left"
     )
 
+    _p_extra = [c for c in ["fp_rank"] if c in pitcher_df.columns]
     p_merged = pitcher_df[["pitcher", "name", "position"] +
         [f"{c}_proj" for c in set(p_cats_l1 + p_cats_l2) if f"{c}_proj" in pitcher_df.columns] +
-        ["IP_proj", "is_starter", "SV_proj", "H_proj"]
+        ["IP_proj", "is_starter", "SV_proj", "H_proj"] + _p_extra
     ].copy()
 
     p_merged = p_merged.merge(
@@ -1958,6 +1967,17 @@ def main():
     )
 
     players_out = []
+
+    # Build a pitcher-ID → fp_rank lookup from pitcher_luck_scores.csv.
+    # The stale fantasy_rankings_pitchers_2026.csv (20 rows) misses most current pitchers;
+    # pitcher_luck_scores.csv is always fresh and carries fp_rank from the pipeline fetch.
+    _fp_rank_by_id: dict = {}
+    try:
+        _plucks = pd.read_csv(LUCK_P_PATH, usecols=["pitcher", "fp_rank"])
+        for _, _r in _plucks.dropna(subset=["fp_rank"]).iterrows():
+            _fp_rank_by_id[int(_r["pitcher"])] = int(float(_r["fp_rank"]))
+    except Exception:
+        pass
 
     for _, row in h_merged.iterrows():
         pid_int = int(row.get("batter") or 0)
@@ -2053,11 +2073,16 @@ def main():
             (row.get("SV_proj") or 0) * leagues["league2"]["svh_weights"]["SV"]
             + (row.get("H_proj") or 0) * leagues["league2"]["svh_weights"]["H"]
         )
-        # Fantasy rank lookup by normalised name
+        # Fantasy rank lookup by normalised name; fall back to fp_rank column
+        # from pitcher_luck_scores.csv (populated by the pipeline fetch step)
+        # when the stale rankings file doesn't cover the player.
         _p_key = _normalize_name(str(row.get("name") or ""))
         _p_rank_entry = pitcher_ranks.get(_p_key, {})
         p_rank      = _p_rank_entry.get("rank")
         p_rank_tier = _p_rank_entry.get("rank_tier")
+        if p_rank is None:
+            _pid_int = int(row.get("pitcher") or 0)
+            p_rank = _fp_rank_by_id.get(_pid_int)
 
         rec = {
             "id":            int(row.get("pitcher") or 0),
@@ -2112,6 +2137,62 @@ def main():
             print("  Hitter tiers:  " + " | ".join(f"{t}: {h_tiers.get(t,0)}" for t in tier_order if h_tiers.get(t)))
         if p_tiers:
             print("  Pitcher tiers: " + " | ".join(f"{t}: {p_tiers.get(t,0)}" for t in tier_order if p_tiers.get(t)))
+
+    # ── Pre-compute CBS FPTS surplus for dashboard trade verdict ──────────────
+    # surplus_l1: CBS FPTS minus positional replacement level for League 1.
+    # Mirrors evaluate_trade() in trade_analyzer.py so dashboard verdict matches CLI.
+    _l1_json_path = os.path.join(DATA_DIR, "leagues", "league_1.json")
+    _repl_l1: dict = {}
+    try:
+        with open(_l1_json_path) as _f:
+            _l1_cfg = json.load(_f)
+        _tc    = _l1_cfg.get("team_count", 13)
+        _slots = _l1_cfg.get("roster_slots", {})
+        _p     = _slots.get("P", 9)
+        _ci    = _slots.get("CI", 0)
+        _mi    = _slots.get("MI", 0)
+        _ut    = _slots.get("UT", 0)
+        _roster_n = {
+            "C":  max(int(round(_slots.get("C",  1)                        * _tc)), 8),
+            "1B": max(int(round((_slots.get("1B", 1) + _ci * 0.5)          * _tc)), 8),
+            "2B": max(int(round((_slots.get("2B", 1) + _mi * 0.5)          * _tc)), 8),
+            "3B": max(int(round((_slots.get("3B", 1) + _ci * 0.5)          * _tc)), 8),
+            "SS": max(int(round((_slots.get("SS", 1) + _mi * 0.5)          * _tc)), 8),
+            "OF": max(int(round((_slots.get("OF", 3) + _ut * 0.15)         * _tc)), 12),
+            "SP": max(int(        (_slots.get("SP", 0) + _p * 0.6)         * _tc),  12),
+            "RP": max(int(        (_slots.get("RP", 0) + _p * 0.4)         * _tc),  12),
+        }
+        _repl_l1 = load_replacement_levels(_roster_n)
+    except Exception:
+        pass
+
+    for _rec in players_out:
+        _proj = _rec.get("proj", {})
+        try:
+            if _rec["type"] == "pitcher":
+                _fpts = (
+                    CBS_P_COEF_W    * float(_proj.get("W")      or 0)
+                    + CBS_P_COEF_ERA  * float(_proj.get("ERA")    or 4.0)
+                    + CBS_P_COEF_WHIP * float(_proj.get("WHIP")   or 1.30)
+                    + CBS_P_COEF_K    * float(_proj.get("K")      or 0)
+                    + CBS_P_COEF_SV   * float(_proj.get("SVH_L1") or 0)
+                    + CBS_P_INTERCEPT
+                )
+                _fpos = _rec.get("pos", "SP")
+            else:
+                _fpts = (
+                    CBS_H_COEF_R   * float(_proj.get("R")   or 0)
+                    + CBS_H_COEF_HR  * float(_proj.get("HR")  or 0)
+                    + CBS_H_COEF_RBI * float(_proj.get("RBI") or 0)
+                    + CBS_H_COEF_SB  * float(_proj.get("SB")  or 0)
+                    + CBS_H_COEF_AVG * float(_proj.get("AVG") or 0.250)
+                    + CBS_H_INTERCEPT
+                )
+                _fpos = _rec.get("pos", "OF")
+            _surp = _get_surplus(_fpts, _fpos, _repl_l1)
+            _rec["surplus_l1"] = round(_surp, 1) if _surp is not None else None
+        except Exception:
+            _rec["surplus_l1"] = None
 
     output = {
         "generated_at":  datetime.now().isoformat(timespec="seconds"),
