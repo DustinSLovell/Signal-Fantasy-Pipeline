@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 8, 2026 (Sessions 1–44)
+# Last updated: May 9, 2026 (Sessions 1–47)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -5430,6 +5430,92 @@ Sánchez displays "Neutral (+0.316)" in trade analyzer despite Buy Low signal at
 
 ---
 
-*End of thread_handoff.md — Sessions 1-46 complete.*
+## SESSION 47 — Asymmetric verdict bug fix (May 9, 2026)
+
+### Root cause
+Two separate verdict engines were producing different results for the same trade:
+- **Dashboard**: `taComputeVerdict(wonCats, totalCats)` — category-win-percentage logic (# cats won / total)
+- **CLI**: `_trade_verdict_v3(surplus_delta)` — CBS FPTS surplus delta with elite premium
+
+Williams give / Sánchez receive showed NEUTRAL in dashboard (2/5 cats = 40%) but STRONG TRADE in CLI (+52.5 delta). The underlying reason category math diverged: fp_rank was None for both pitchers in player_values.json, so elite premium defaulted to 1.00 for both, and raw surplus delta was only +19.6 (FAVORABLE threshold, not STRONG TRADE).
+
+**fp_rank = None root cause**: The primary pitcher rankings lookup uses `data/fantasy_rankings_pitchers_2026.csv` — a stale 20-row file from April 22 that doesn't include Sánchez or Williams. The fallback code was reading `row.get("fp_rank")` from `p_merged`, but a column selection issue caused it to silently fail. Name-normalization fallback was also not matching correctly.
+
+### Fix 1 — score_value.py (fp_rank ID-based lookup)
+
+Built `_fp_rank_by_id` dict directly from `pitcher_luck_scores.csv` using pitcher ID (unambiguous, always current). Placed after `players_out = []`, before the hitter/pitcher record loops.
+
+```python
+_fp_rank_by_id: dict = {}
+try:
+    _plucks = pd.read_csv(LUCK_P_PATH, usecols=["pitcher", "fp_rank"])
+    for _, _r in _plucks.dropna(subset=["fp_rank"]).iterrows():
+        _fp_rank_by_id[int(_r["pitcher"])] = int(float(_r["fp_rank"]))
+except Exception:
+    pass
+```
+
+Fallback in pitcher record loop replaced:
+```python
+if p_rank is None:
+    _pid_int = int(row.get("pitcher") or 0)
+    p_rank = _fp_rank_by_id.get(_pid_int)
+```
+
+Result: Williams fp_rank=42 (ep×1.05), Sánchez fp_rank=3 (ep×1.30). Elite-adjusted surplus: Williams 111.5, Sánchez 163.5. Delta = +52.0 → STRONG TRADE.
+
+### Fix 2 — dashboard.html (surplus-delta verdict engine)
+
+Added two new JS functions:
+```javascript
+function taElitePremium(fpRank)       // FP≤10→1.30, ≤25→1.15, ≤50→1.05, else→1.00
+function taVerdictFromSurplus(delta)  // ≥50 STRONG, ≥20 FAVORABLE, ≥5 SLIGHTLY, ≤-50 AVOID...
+```
+
+`analyzeTrade()` now computes:
+```javascript
+gettingAdj = Σ(getting players: surplus_l1 * taElitePremium(fp_rank))
+givingAdj  = Σ(giving  players: surplus_l1 * taElitePremium(fp_rank))
+surplusDelta = gettingAdj - givingAdj
+verdict = taVerdictFromSurplus(surplusDelta)   // same thresholds as CLI
+```
+
+Category-win logic (`taComputeVerdict`) retained as fallback only when `surplus_l1` data is absent for all players.
+
+### Gate results — all PASS
+- Williams give / Sánchez receive: **STRONG TRADE** (+52.0) ✓
+- Sánchez give / Williams receive: **AVOID** (−52.0) ✓
+- |delta| identical in both directions (symmetric) ✓
+- Yordan/Machado symmetric test: ✓
+- Mayer/Hoskins symmetric test (NEUTRAL both ways): ✓
+- validate_formulas.py: **37/37 PASS** ✓
+
+### Status: All four blocking pre-beta bugs now resolved
+- Session 45: K/W ROS projection inflation (MAE 48.5→3.0)
+- Session 46: ERA/WHIP formula vs Steamer override (Williams 4.24→3.81 ERA, 1.04→1.23 WHIP)
+- Session 47: Asymmetric verdict — stale rankings CSV + wrong verdict engine in dashboard
+
+### Remaining known limitations (beta disclosure items)
+- Sánchez signal displays Neutral despite Buy Low in luck scores — stale signal field in projections_2026.csv (display only, no impact on surplus math)
+- SV/H ratio not yet wired into live score_value.py pitcher projection (Tier 2 — reliever verdicts use corrected JSON but formula path still uses old ratio)
+
+### Files modified (Session 47)
+- `score_value.py` — `_fp_rank_by_id` lookup dict + pitcher record loop fallback (12 lines)
+- `dashboard.html` — `taElitePremium()`, `taVerdictFromSurplus()`, `analyzeTrade()` surplus-delta logic (40 lines)
+- `data/player_values.json` — regenerated
+
+### GitHub (Session 47)
+- Fix commit: 9c1a72b — "Pre-beta fix: asymmetric verdict bug — dashboard now uses CBS surplus delta"
+- Pushed to origin/main
+
+### Next session priorities
+1. **Stress test** — run 10+ trade scenarios across positions and league types; confirm symmetry, edge cases (single-player, mixed hitter/pitcher), no-data fallback
+2. **Beta disclosure doc** — document known limitations for beta testers
+3. **Reddit beta recruitment post** — publish Monday 9am EST (outputs/reddit_beta_post.md ready)
+4. White paper Section 10 update — Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+
+---
+
+*End of thread_handoff.md — Sessions 1-47 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
