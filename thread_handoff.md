@@ -5563,6 +5563,20 @@ This did NOT affect pitchers — their pos is "SP" or "RP", which match the repl
 - Fix commit: a1a5d5d — "Pre-beta fix: positional surplus miscalibration — hitter/pitcher replacement levels"
 - Pushed to origin/main
 
+### Pre-beta blocking bug scorecard — 4 resolved
+
+| Session | Bug | Resolution |
+|---|---|---|
+| 45 | K/W ROS projection inflation (MAE 48.5→3.0) | Steamer override + ROS IP scaling |
+| 46 | ERA/WHIP formula vs Steamer (Williams 1.04→1.23 WHIP) | Extended Steamer override to ERA/WHIP |
+| 47 | Asymmetric verdict — stale rankings CSV + wrong engine | ID-based fp_rank lookup + dashboard surplus delta |
+| **48** | **167 hitters returning surplus = None** | **FANTASY_POS_MAP position mapping** |
+
+### Significance
+**Most consequential bug found to date.** Silent failure — users would have received confident wrong verdicts on the majority of hitter trades (every outfielder, every DH) with no visible error or warning. All four position types most commonly traded in fantasy (RF, LF, CF, OF) were affected. The tool appeared to work — it showed a verdict — but the verdict was mathematically inverted whenever the giving side was an outfielder.
+
+Tool is now ready for full stress test before beta launch.
+
 ### Next session priorities
 1. **Stress test** — run 10+ trade scenarios across positions; confirm all position types work, edge cases (multi-player, same-position, hitter-only, pitcher-only, mixed)
 2. **Beta disclosure doc** — document known limitations for beta testers
