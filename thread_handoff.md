@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 10, 2026 (Sessions 1–49)
+# Last updated: May 10, 2026 (Sessions 1–50)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -1761,6 +1761,20 @@ Implementation:
 Currently: trade tool resolves Ohtani correctly as a hitter when queried directly by name.
 Only surfaces as noise in position-table diagnostics, not user-facing trade output.
 Non-blocking for beta; blocking for general public launch.
+
+**Roster Slot Configuration — settings panel (Tier 2 — Session 50):**
+Status: Tier 2. Promote to Tier 1 if 3+ beta users report positional values feeling wrong for their league format.
+Trigger condition: 3+ beta users flag catcher or OF values as incorrect for their league format.
+What it is: Add roster construction dropdowns to the league settings panel:
+- Catcher slots: 1C / 2C (default: 1C)
+- OF slots: 3 / 4 / 5 (default: 3)
+- Utility slot: yes / no (default: yes)
+- CI slot: yes / no (default: no)
+- MI slot: yes / no (default: no)
+Why it matters: Roster construction directly affects positional replacement levels. A 2C league has lower catcher replacement level (shallower pool) → elite catchers worth more surplus. Current hardcoded defaults correctly reflect most CBS/Fantrax standard formats. Non-standard configurations (2C, 5OF) understate scarcity for affected positions.
+Known impact: Baldwin give / Tucker receive verdict (+17.1 SLIGHTLY FAVORABLE) may shift toward NEUTRAL in a confirmed 2C league where Baldwin's positional scarcity is higher.
+Estimated build: 2-3 hours. Replacement level recalculation must trigger on settings save.
+Beta disclosure: "Positional surplus is calculated based on standard roster defaults. Non-standard roster settings (2C, 4+ OF, extra utility) may cause positional surplus values to diverge from your league's actual scarcity."
 
 **Steamer Dependency Audit (pre-paid-tier requirement):**
 Before activating paid tier, determine licensing path for Steamer ROS projections. Options in priority order:
@@ -5656,7 +5670,7 @@ These are now two visible columns in the Trade Value chart:
 
 When these diverge significantly (Goldschmidt: surplus=-29.9 but model=60.0), it usually means CQS floor is propping up a player with poor current projections. The surplus metric is the correct one for trade decisions.
 
-### Pre-beta blocking bug scorecard — 6 resolved
+### Pre-beta blocking bug scorecard — 5 resolved
 
 | Session | Bug | Resolution |
 |---|---|---|
@@ -5664,8 +5678,7 @@ When these diverge significantly (Goldschmidt: surplus=-29.9 but model=60.0), it
 | 46 | ERA/WHIP formula vs Steamer override | Extended Steamer override to ERA/WHIP |
 | 47 | Asymmetric verdict — stale pitcher rankings + wrong engine | ID-based fp_rank lookup + dashboard surplus delta |
 | 48 | 167 hitters (all RF/LF/CF/DH) returning surplus = None | FANTASY_POS_MAP position mapping |
-| 49a | Trade Value chart sorted by wrong metric (league1_value) | surplus_l1 column added as default sort |
-| 49b | All hitters missing fp_rank (stale 40-row rankings file) | _fp_rank_by_h_id from luck_scores.csv |
+| 49 | Tucker fp_rank=None (−388 delta) + TV chart wrong sort | _fp_rank_by_h_id + surplus_l1 as default sort |
 
 ### Files modified (Session 49)
 - `score_value.py` — `_fp_rank_by_h_id` lookup dict + hitter record loop fallback (12 lines)
@@ -5684,6 +5697,38 @@ When these diverge significantly (Goldschmidt: surplus=-29.9 but model=60.0), it
 
 ---
 
-*End of thread_handoff.md — Sessions 1-49 complete.*
+## SESSION 50 — Roster slot configuration: known limitation identified (May 10, 2026)
+
+### Finding: roster construction is hardcoded
+
+Dashboard pressure testing revealed that while league size, format, scoring, and stat categories are configurable in the settings panel, roster construction (C slots, OF slots, utility slot, CI/MI flex) is hardcoded based on CBS/Fantrax standard defaults.
+
+**Impact on positional surplus:** In a 2C league, the catcher replacement pool is shallower — meaning elite catchers are worth *more* surplus than the tool currently shows. The Baldwin give / Tucker receive verdict (+17.1 SLIGHTLY FAVORABLE) may move toward NEUTRAL or flip to SLIGHTLY UNFAVORABLE in a confirmed 2C league where Baldwin's positional scarcity is higher.
+
+**No code change made this session.** This is a display accuracy limitation, not a bug in the math logic. The current hardcoded defaults are correct for the most common CBS and Fantrax league formats. Non-standard roster configurations (2C, 4OF, extra utility slots) are out of scope for beta.
+
+### Beta disclosure added
+
+> **Roster construction notice:** Positional surplus values (CBS Surplus column) are calculated based on standard roster defaults for each league format. If your league runs non-standard settings — 2 catchers, 4+ outfielders, extra utility slots — positional surplus values may not fully reflect your league's actual scarcity. Roster slot configuration is on the roadmap.
+
+### Tier 2 item added
+
+Roster Slot Configuration added to Tier 2 parking lot (see Section 10). Promote to Tier 1 if 3+ beta users report positional values feeling wrong for their league format.
+
+### Files modified (Session 50)
+- `thread_handoff.md` — Session 50 entry + Tier 2 roster config item
+
+### GitHub (Session 50)
+- Commit: [this push] — "Sessions 49-50 — 5 pre-beta bugs resolved, roster config added to Tier 2, beta disclosure updated"
+
+### Next session priorities
+1. **Stress test** — run 10+ trade scenarios; confirm all position types, edge cases, multi-player trades
+2. **Beta disclosure doc** — finalize `outputs/beta_gaps.txt` with roster config notice
+3. **Reddit beta recruitment post** — publish (outputs/reddit_beta_post.md ready)
+4. White paper Section 10 update — Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+
+---
+
+*End of thread_handoff.md — Sessions 1-50 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
