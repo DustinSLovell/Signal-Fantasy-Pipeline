@@ -223,6 +223,39 @@ def main():
         err = (result.stderr or result.stdout or "unknown error")[:200]
         print(f"  WARNING: Projections generation failed: {err}")
 
+    # Fetch game logs + compute rolling FP (runs after signals are scored)
+    # Order: fetch_game_logs.py → compute_rolling_fp.py
+    if any(s in ("score_luck.py", "score_pitcher_luck.py") for s, _ in SCRIPTS):
+        print(f"\n{STEP_DIVIDER}")
+        print("  Fetching MLB game logs for signaled players...")
+        print(STEP_DIVIDER)
+        result = subprocess.run(
+            [sys.executable, "fetch_game_logs.py"],
+            capture_output=True, text=True,
+            cwd=Path(__file__).parent,
+        )
+        if result.returncode == 0:
+            for line in result.stdout.strip().splitlines():
+                print(f"  {line}")
+        else:
+            err = (result.stderr or result.stdout or "unknown error")[:200]
+            print(f"  WARNING: Game log fetch failed: {err.splitlines()[0]}")
+
+        print(f"\n{STEP_DIVIDER}")
+        print("  Computing rolling FP / game metrics...")
+        print(STEP_DIVIDER)
+        result = subprocess.run(
+            [sys.executable, "compute_rolling_fp.py"],
+            capture_output=True, text=True,
+            cwd=Path(__file__).parent,
+        )
+        if result.returncode == 0:
+            for line in result.stdout.strip().splitlines():
+                print(f"  {line}")
+        else:
+            err = (result.stderr or result.stdout or "unknown error")[:200]
+            print(f"  WARNING: Rolling FP compute failed: {err.splitlines()[0]}")
+
     # Generate public signal board
     print(f"\n{STEP_DIVIDER}")
     print("  Generating signal board export...")

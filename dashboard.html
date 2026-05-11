@@ -309,6 +309,12 @@ td.luck-pos { color: #15803d; font-weight: 700; }
 td.luck-neg { color: #b91c1c; font-weight: 700; }
 td.luck-neu { color: var(--muted); }
 
+/* Rolling Performance Indicator */
+td.rfp-val { font-variant-numeric: tabular-nums; }
+td.trend-resolving { color: #15803d; font-weight: 600; }
+td.trend-mixed     { color: var(--muted); }
+td.trend-deepening { color: #b91c1c; font-weight: 600; }
+
 /* row verdict tints */
 tr.rBuyLow    td { background: var(--c-bl-bg); }
 tr.rSlightBuy td { background: var(--c-sb-bg); }
@@ -1253,6 +1259,7 @@ const S = {
   taById:   {},   // id string -> flatPlayer
   hLuckById:{},   // batter id string -> luck row
   pLuckById:{},   // pitcher id string -> luck row
+  rollingFp:{},   // player_id string -> rolling FP row
   taLeague: {
     size: '13', format: 'redraft', scoring: '5x5',
     hCats: ['avg','r','hr','rbi','sb'],
@@ -1284,6 +1291,10 @@ const HITTER_COLS = [
   { key:'luck_score',    label:'Luck Score', fmt:'luck'  },
   { key:'verdict',       label:'Verdict',    fmt:'badge', nosort:true },
   { key:'tier_sell',     label:'Sell Tier',  fmt:'tier',  nosort:true },
+  // Rolling Performance Indicator (signaled players only — displays — for Neutral)
+  { key:'_season_fp',   label:'FP/G (Season)', fmt:'rfp'   },
+  { key:'_rolling_fp',  label:'FP/G (60 AB)',  fmt:'rfp',   nosort:true },
+  { key:'_trend_label', label:'Trend',          fmt:'trend', nosort:true },
 ];
 
 const PITCHER_COLS = [
@@ -1304,6 +1315,10 @@ const PITCHER_COLS = [
   { key:'luck_score',            label:'Luck Score',fmt:'luck'  },
   { key:'verdict',               label:'Verdict',   fmt:'badge', nosort:true },
   { key:'tier_sell',             label:'Sell Tier', fmt:'tier',  nosort:true },
+  // Rolling Performance Indicator (signaled players only — displays — for Neutral)
+  { key:'_season_fp',   label:'FP/Start (Season)', fmt:'rfp'   },
+  { key:'_rolling_fp',  label:'FP/Start (20 IP)',  fmt:'rfp',   nosort:true },
+  { key:'_trend_label', label:'Trend',              fmt:'trend', nosort:true },
 ];
 
 // ─── Trade value column definitions ──────────────────────────────────────────
@@ -1446,6 +1461,23 @@ const F = {
   // Position abbreviation (SP/RP/C/1B/etc.)
   pos(v) {
     return isNA(v) ? `<td class="na">—</td>` : `<td class="pos-cell">${esc(v)}</td>`;
+  },
+  // Rolling FP — one decimal, coloured by magnitude
+  rfp(v) {
+    const n = toNum(v);
+    return isNaN(n) ? `<td class="na">—</td>` : `<td class="rfp-val">${n.toFixed(1)}</td>`;
+  },
+  // Rolling trend label — Resolving / Mixed / Deepening
+  trend(v) {
+    if (!v || v === 'null' || v === 'undefined' || isNA(v)) return `<td class="na">—</td>`;
+    const MAP = {
+      Resolving: { cls:'trend-resolving', icon:'🟢' },
+      Mixed:     { cls:'trend-mixed',     icon:'⚪' },
+      Deepening: { cls:'trend-deepening', icon:'🔴' },
+    };
+    const info = MAP[String(v)] || { cls:'trend-mixed', icon:'⚪' };
+    const tip  = 'Rolling FP calculated from official MLB game logs. Reflects recent performance trend vs season baseline. Display only — does not affect signal verdict.';
+    return `<td class="${info.cls}" title="${esc(tip)}">${info.icon} ${esc(v)}</td>`;
   },
 };
 
@@ -3115,12 +3147,13 @@ async function init() {
     } catch (_) { return null; }
   };
 
-  const [hText, pText, tvText, cbsText, overrideText] = await Promise.all([
+  const [hText, pText, tvText, cbsText, overrideText, rfpText] = await Promise.all([
     tryFetch('luck_scores.csv'),
     tryFetch('pitcher_luck_scores.csv'),
     tryFetch('data/player_values.json'),
     tryFetch('data/cbs_positions.json'),
     tryFetch('data/position_overrides.json'),
+    tryFetch('data/rolling_fp_2026.csv'),
   ]);
 
   // Trade value data (optional)
@@ -3150,9 +3183,40 @@ async function init() {
     } catch(e) { console.warn('position_overrides.json parse error:', e); }
   }
 
+  // Rolling FP lookup indexed by player_id (optional — graceful miss)
+  S.rollingFp = {};
+  if (rfpText) {
+    try {
+      parseCSV(rfpText).forEach(r => {
+        if (r.player_id) S.rollingFp[String(r.player_id)] = r;
+      });
+    } catch(e) { console.warn('rolling_fp_2026.csv parse error:', e); }
+  }
+
   if (hText && pText) {
     S.data.hitters  = parseCSV(hText);
     S.data.pitchers = parseCSV(pText);
+
+    // Enrich hitters and pitchers with rolling FP fields
+    S.data.hitters = S.data.hitters.map(r => {
+      const rfp = S.rollingFp[String(r.batter)];
+      if (rfp) {
+        r._season_fp   = rfp.season_fp_per_game;
+        r._rolling_fp  = rfp.rolling_fp_per_game;
+        r._trend_label = rfp.trend_label;
+      }
+      return r;
+    });
+    S.data.pitchers = S.data.pitchers.map(r => {
+      const rfp = S.rollingFp[String(r.pitcher)];
+      if (rfp) {
+        r._season_fp   = rfp.season_fp_per_game;
+        r._rolling_fp  = rfp.rolling_fp_per_game;
+        r._trend_label = rfp.trend_label;
+      }
+      return r;
+    });
+
     S.ready.hitters = true;
     S.ready.pitchers = true;
     // Build trade analyzer index eagerly so first tab-switch is instant
