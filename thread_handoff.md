@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 9, 2026 (Sessions 1–47)
+# Last updated: May 10, 2026 (Sessions 1–48)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -5516,6 +5516,61 @@ Category-win logic (`taComputeVerdict`) retained as fallback only when `surplus_
 
 ---
 
-*End of thread_handoff.md — Sessions 1-47 complete.*
+## SESSION 48 — Positional surplus miscalibration fix (May 10, 2026)
+
+### Bug reported
+Carroll give / Sánchez receive = STRONG TRADE (+164 delta) in dashboard. Carroll has wOBA .382, elite FP#8 rank — should be AVOID when giving him away for any SP. Signal: all trades involving giving an outfielder were producing spuriously large STRONG TRADE verdicts.
+
+### Root cause
+`score_value.py` surplus_l1 computation used `_fpos = _rec.get("pos", "OF")` for hitters, then passed this directly to `_get_surplus(_fpts, _fpos, _repl_l1)`. The replacement level dict (`_repl_l1`) is keyed by fantasy slot names ("OF", "1B", "2B", etc.), but hitter `pos` fields store MLB primary position codes:
+- RF, LF, CF → no match in `_repl_l1` → `get_surplus()` returns None → `surplus_l1 = None`
+- DH, IF → same
+- C, 1B, 2B, 3B, SS → matched correctly (pos code = fantasy slot key) → surplus computed correctly
+- "OF" directly coded (7 players) → also matched correctly
+
+**167 hitters had surplus_l1=None** (all RF: 58, LF: 57, CF: 52, DH: 4, IF: 1). With `giving = 0` for any of these players, any received player produced a spurious surplus delta, making the verdict wrong.
+
+This did NOT affect pitchers — their pos is "SP" or "RP", which match the replacement level keys directly.
+
+### Fix
+`FANTASY_POS_MAP` already existed in `replacement_level.py` with exactly the right mapping: `LF/RF/CF/OF → "OF"`, `DH → "1B"`, `IF → "2B"`. Two-line change:
+
+1. Extended import: `from replacement_level import load_replacement_levels, get_surplus as _get_surplus, FANTASY_POS_MAP`
+2. In hitter surplus branch: `_raw_pos = _rec.get("pos", "OF")` → `_fpos = FANTASY_POS_MAP.get(_raw_pos, _raw_pos)`
+
+### Before / After
+
+| Trade | Before | After |
+|---|---|---|
+| Carroll give / Sánchez receive | +164 STRONG TRADE (WRONG) | -165.6 AVOID ✓ |
+| Carroll give / Williams receive | +112 STRONG TRADE (WRONG) | -219.9 AVOID ✓ |
+| Carroll surplus_l1 | None | 256.9 (vs OF repl 194.3) ✓ |
+| Williams give / Sánchez receive | +54.3 STRONG TRADE | +54.3 STRONG TRADE (unchanged) ✓ |
+
+### Gate results — all PASS
+- Carroll give / Sánchez receive: **AVOID (-165.6)** — intuitive given FP#8 elite OF ✓
+- Carroll surplus (256.9) >> OF replacement level (194.3) ✓
+- Carroll give / Williams receive: giving 334.0 >> getting 114.0 — Carroll substantially favored ✓
+- Williams/Sánchez symmetry: +54.3 / -54.3 (unchanged) ✓
+- validate_formulas.py: **37/37 PASS** ✓
+- All invariants PASS (Sanchez C#29, Yordan #2, Raleigh C#2, Baldwin C#4, Contreras C#7)
+
+### Files modified (Session 48)
+- `score_value.py` — 2-line fix: import FANTASY_POS_MAP + map _raw_pos through it for hitters
+- `data/player_values.json` — regenerated (all 167 previously-None outfielder surpluses now populated)
+
+### GitHub (Session 48)
+- Fix commit: a1a5d5d — "Pre-beta fix: positional surplus miscalibration — hitter/pitcher replacement levels"
+- Pushed to origin/main
+
+### Next session priorities
+1. **Stress test** — run 10+ trade scenarios across positions; confirm all position types work, edge cases (multi-player, same-position, hitter-only, pitcher-only, mixed)
+2. **Beta disclosure doc** — document known limitations for beta testers
+3. **Reddit beta recruitment post** — publish (outputs/reddit_beta_post.md ready)
+4. White paper Section 10 update — Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+
+---
+
+*End of thread_handoff.md — Sessions 1-48 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
