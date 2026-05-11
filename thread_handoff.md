@@ -5729,6 +5729,65 @@ Roster Slot Configuration added to Tier 2 parking lot (see Section 10). Promote 
 
 ---
 
-*End of thread_handoff.md — Sessions 1-50 complete.*
+## SESSION 52 — Rolling Performance Indicator (May 11, 2026)
+*(Note: Claude Code labeled this Session 43 internally — actual session count is 52)*
+
+### What shipped
+
+| File | Status | Detail |
+|------|--------|--------|
+| `fetch_game_logs.py` | NEW | MLB Stats API per-game log fetcher; 133 signaled players (86H + 47P); 0 missing MLB ID mappings; urllib.request only (no third-party dep); `_parse_ip()` handles "6.1"→6.333 IP strings; 0.5s delay |
+| `compute_rolling_fp.py` | NEW | CBS FP/game rolling window calculator; hitter 60 AB window, pitcher 20 IP window; `_trend_label()` → Resolving/>15%, Mixed/±15%, Deepening/<-15% |
+| `data/rolling_fp_2026.csv` | NEW | 133 rows (86H + 47P); columns: player_id, player_name, type, signal, season_fp_per_game, rolling_fp_per_game, rolling_window_games, rolling_window_ab_or_ip, rolling_window_start_date, rolling_window_end_date, sufficient_sample, trend_label |
+| `dashboard.html` | MODIFIED | 3 columns added to hitter table (FP/G Season, FP/G 60AB, Trend 🟢⚪🔴) and pitcher table (FP/Start Season, FP/Start 20IP, Trend); tooltip disclosure on all trend cells |
+| `run_pipeline.py` | MODIFIED | `fetch_game_logs.py` + `compute_rolling_fp.py` wired as post-processing steps (after score_luck/score_pitcher_luck, before export_signal_board) |
+
+### Pipeline order after this session
+```
+fetch_stats.py → process_stats.py → score_luck.py →
+fetch_pitcher_stats.py → process_pitcher_stats.py → score_pitcher_luck.py →
+[post-processing]:
+  build_pitcher_pitch_mix.py → generate_projections.py →
+  fetch_game_logs.py → compute_rolling_fp.py →
+  export_signal_board.py
+```
+
+### Dashboard disclosure text (tooltip on all Trend cells)
+> "Rolling FP calculated from official MLB game logs. Reflects recent performance trend vs season baseline. Display only — does not affect signal verdict."
+
+### Gate results — all PASS
+| Gate | Result |
+|------|--------|
+| Luzardo rolling > season | 12.17 rolling / 10.97 season / Mixed (+10.9%) ✓ |
+| ≥1 Sell High pitcher Deepening | 8 pitchers deepening (Arrighetti, Bradley, Messick leading) ✓ |
+| validate_formulas.py | 37/37 PASS ✓ |
+| Surplus invariants | Sanchez C#29 ✓, Yordan #3 ✓, Raleigh C#2 ✓, Baldwin C#4 ✓, Contreras C#7 ✓ |
+
+### Trend distribution (133 players)
+- 🟢 Resolving: 51
+- ⚪ Mixed: 44
+- 🔴 Deepening: 38
+
+### Technical notes
+- Rolling window: scan from most recent game backward until 60 AB (hitters) or 20 IP (pitchers) accumulated
+- Trend label formula: `(rolling_fp - season_fp) / abs(season_fp)` — >+15% = Resolving, <-15% = Deepening, else Mixed
+- Luzardo trend = Mixed (not Resolving) because +10.9% improvement is below the 15% Resolving threshold — correct behavior
+- MLB Stats API active signal filter: `{"Buy low", "Sell high"}` (lowercase second word — matches exact values in luck_scores.csv)
+- SVH formula (League 1): `SV×2 + HLD×1`
+
+### GitHub (Session 52)
+- Commit 1: `9cbbbf8` — "Rolling Performance Indicator — MLB game logs, 60 AB hitter / 20 IP pitcher rolling windows"
+- Commit 2: `9a06771` — "Update CLAUDE.md — Session 43 changelog" *(CC session numbering)*
+- Both pushed to origin/main
+
+### Next session priorities
+1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
+2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
+3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+4. **Career lessons database** — Sessions 22-52 not yet added in Claude.ai
+
+---
+
+*End of thread_handoff.md — Sessions 1-52 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
