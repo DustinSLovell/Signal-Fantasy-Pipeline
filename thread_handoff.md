@@ -1,6 +1,6 @@
 # THE SIGNAL FANTASY — Thread Handoff Document
 # Complete project state. Overwrite at end of every session.
-# Last updated: May 10, 2026 (Sessions 1–48)
+# Last updated: May 10, 2026 (Sessions 1–49)
 # DO NOT skim. Read every section before acting.
 
 ---
@@ -5585,6 +5585,105 @@ Tool is now ready for full stress test before beta launch.
 
 ---
 
-*End of thread_handoff.md — Sessions 1-48 complete.*
+## SESSION 49 — Trade Value chart + hitter fp_rank fix (May 10, 2026)
+
+### Bug 1 — Trade Value chart: Goldschmidt ranked above Tucker
+
+**Reported:** Trade Value chart shows Goldschmidt ranked above Tucker (despite Trade Analyzer showing Tucker as Favorable to acquire). Hypothesis was stale player_values.json.
+
+**Actual root cause:** player_values.json was NOT stale (regenerated 2026-05-10T17:49 with Session 48 fix). The contradiction was two different metrics:
+- **Trade Value chart** sorts by `league1_value` (Tucker=52.7 < Goldschmidt=60.0 → Goldschmidt ranks higher)
+- **Trade Analyzer** uses `surplus_l1 × ep` (Tucker=353.0 >> Goldschmidt=-29.9 → Tucker is far superior)
+
+`league1_value` is the 3-layer CBS model score (includes CQS floors, track record multipliers). `surplus_l1` is CBS FPTS minus replacement level. They can diverge significantly when CQS floors prop up players with poor current projections (Goldschmidt: RBI=34.4, HR=10.7 ROS → below replacement, but league1_value=60.0 from floor).
+
+**Fix:**
+- Added `surplus_l1` as "CBS Surplus" column to `TV_COLS` in dashboard.html
+- Changed default TV chart sort from `__value` (league1_value) to `surplus_l1 desc`
+- Tucker now ranks well above Goldschmidt in Trade Value chart
+
+### Bug 2 — Hitter fp_rank = None for Tucker, Baldwin, Goldschmidt (and most hitters)
+
+**Root cause:** `data/fantasy_rankings_hitters_2026.csv` is a stale 40-row file (same pattern as the 20-row pitcher file fixed in Session 47). No hitter fallback lookup existed, so all hitters not in that 40-row file received `fp_rank=None → ep=1.00`.
+- Tucker fp_rank=None (should be 15, ep=1.15)
+- Baldwin fp_rank=None (should be 66, ep=1.00 — correct)
+- Goldschmidt fp_rank=None (should be 232, ep=1.00 — correct)
+
+`luck_scores.csv` has the correct current fp_ranks for all hitters (from the FantasyPros pipeline fetch).
+
+**Fix (score_value.py):** Added `_fp_rank_by_h_id` dict from `luck_scores.csv` by batter ID + fallback in hitter record loop. Exact mirror of Session 47 pitcher fix:
+```python
+_fp_rank_by_h_id: dict = {}
+try:
+    _hlucks = pd.read_csv(LUCK_H_PATH, usecols=["batter", "fp_rank"])
+    for _, _r in _hlucks.dropna(subset=["fp_rank"]).iterrows():
+        _fp_rank_by_h_id[int(_r["batter"])] = int(float(_r["fp_rank"]))
+except Exception:
+    pass
+# In hitter record loop:
+if h_rank is None:
+    h_rank = _fp_rank_by_h_id.get(pid_int)
+```
+
+### Before / After
+
+| Player | fp_rank before | fp_rank after | ep before | ep after |
+|---|---|---|---|---|
+| Kyle Tucker (RF) | None | 15 | 1.00 | 1.15 |
+| Drake Baldwin (C) | None | 66 | 1.00 | 1.00 |
+| Paul Goldschmidt (1B) | None | 232 | 1.00 | 1.00 |
+
+| Trade | Before | After |
+|---|---|---|
+| Tucker TV chart rank vs Goldschmidt | Tucker below (l1v 52.7 < 60.0) | Tucker above (surp 353.0 >> -29.9) ✓ |
+| Baldwin give / Tucker receive | -35.9 SLIGHTLY UNFAVORABLE (fp=None) | +17.1 SLIGHTLY FAVORABLE (Tucker FP#15 premium) ✓ |
+| Baldwin give / Goldschmidt receive | -418.8 AVOID | -418.8 AVOID (unchanged) ✓ |
+
+### Gate results — all PASS
+- Tucker surplus_l1=353.0 >> Goldschmidt surplus_l1=-29.9: Tucker above Goldschmidt in TV chart ✓
+- Baldwin C surplus=388.9 > Tucker OF surplus=353.0 — catcher scarcity premium captured ✓
+- Baldwin give / Tucker receive: +17.1 SLIGHTLY FAVORABLE (Tucker FP#15 elite premium vs Baldwin FP#66) ✓
+- Baldwin give / Goldschmidt receive: -418.8 AVOID ✓
+- Williams/Sanchez symmetry: +57.7/-57.7 symmetric ✓ (slight magnitude shift from prior +54 due to projection refresh — verdict STRONG TRADE / AVOID unchanged)
+- Carroll give / Sanchez receive: -148.1 AVOID ✓
+- validate_formulas.py: **37/37 PASS** ✓
+- All invariants PASS (Sanchez C#29, Yordan #2, Raleigh C#2, Baldwin C#4, Contreras C#7)
+
+### Design note: league1_value vs surplus_l1
+These are now two visible columns in the Trade Value chart:
+- `surplus_l1` ("CBS Surplus") = CBS FPTS − positional replacement level. Default sort. Aligns with Trade Analyzer.
+- `league1_value` ("Model Score") = 3-layer valuation score (CQS floors + track record multipliers + projected stats). Still shown for reference.
+
+When these diverge significantly (Goldschmidt: surplus=-29.9 but model=60.0), it usually means CQS floor is propping up a player with poor current projections. The surplus metric is the correct one for trade decisions.
+
+### Pre-beta blocking bug scorecard — 6 resolved
+
+| Session | Bug | Resolution |
+|---|---|---|
+| 45 | K/W ROS projection inflation (MAE 48.5→3.0) | Steamer override + ROS IP scaling |
+| 46 | ERA/WHIP formula vs Steamer override | Extended Steamer override to ERA/WHIP |
+| 47 | Asymmetric verdict — stale pitcher rankings + wrong engine | ID-based fp_rank lookup + dashboard surplus delta |
+| 48 | 167 hitters (all RF/LF/CF/DH) returning surplus = None | FANTASY_POS_MAP position mapping |
+| 49a | Trade Value chart sorted by wrong metric (league1_value) | surplus_l1 column added as default sort |
+| 49b | All hitters missing fp_rank (stale 40-row rankings file) | _fp_rank_by_h_id from luck_scores.csv |
+
+### Files modified (Session 49)
+- `score_value.py` — `_fp_rank_by_h_id` lookup dict + hitter record loop fallback (12 lines)
+- `dashboard.html` — surplus_l1 added to TV_COLS; default sort changed to surplus_l1 (4 lines)
+- `data/player_values.json` — regenerated
+
+### GitHub (Session 49)
+- Fix commit: f44a89b — "Pre-beta fix: Trade Value chart regenerated + hitter fp_rank fallback"
+- Pushed to origin/main
+
+### Next session priorities
+1. **Stress test** — run 10+ trade scenarios across positions; confirm all position types, edge cases
+2. **Beta disclosure doc** — document known limitations for beta testers
+3. **Reddit beta recruitment post** — publish (outputs/reddit_beta_post.md ready)
+4. White paper Section 10 update — Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+
+---
+
+*End of thread_handoff.md — Sessions 1-49 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
