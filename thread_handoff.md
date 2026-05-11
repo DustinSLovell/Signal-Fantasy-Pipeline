@@ -2309,6 +2309,71 @@ Gap is non-linear — correction factor is not reliable. FantasyPros rejected as
 
 ---
 
+## CAREER TRANSITION ROADMAP
+
+**Goal:** Transition from CPG Director ($257K total comp) to tech or tech-adjacent role within 12-18 months.
+
+### Target Roles (confirmed Session 1, April 2026)
+
+| Priority | Role | Comp Range |
+|----------|------|-----------|
+| 1 | VP of Analytics — growth-stage tech | $300K–$500K+ |
+| 2 | Director/VP AI Strategy — large tech | $300K–$450K |
+| 3 | Head of Revenue Operations — B2B SaaS | $280K–$400K |
+| 4 | Applied AI/ML Strategy — CPG digital transformation | Highest probability near-term |
+| 5 | Founding analytics hire — well-funded startup | Equity upside |
+| 6 | Technical PM — data platform company | $200K–$280K |
+
+---
+
+### Four-Project Portfolio Plan
+
+#### Project 1 — Signal Fantasy (NOW → Month 2)
+Baseball luck detection, trade tool, Substack.
+- **Milestone:** 100 subscribers + beta publicly launched
+- **Story:** Built and shipped live AI analytics product from zero. Revenue generation a bonus, not required.
+- **Demonstrates:** Data pipeline engineering, ML model building and backtesting, product thinking and shipping, agentic AI workflow (Claude.ai + Claude Code coordination), content and distribution, pre-registered validation methodology, full SDLC from zero to live product
+
+#### Project 2 — LLM-Powered CPG Tool (Month 2–4)
+Solve a real Reckitt-era problem using LLM API as core engine. Competitive intelligence, promo effectiveness, or shelf compliance.
+- **Story:** Domain expertise + AI engineering in enterprise context. Targets AI Strategy/RevOps roles.
+- **Gap filled:** NLP/language model integration, enterprise data context, B2B use case
+
+#### Project 3 — Multi-Agent Workflow (Month 4–6)
+Orchestrated agents with handoffs, tool use, human-in-the-loop approval. Topic secondary to architecture demonstration.
+- **Story:** Can design and deploy agentic systems, not just use them.
+- **Gap filled:** Multi-agent systems, autonomous orchestration, failure handling
+
+#### Project 4 — Football Start/Sit Tool (Month 6+)
+Monetization intent baked in from day one. NOT a luck model — start/sit decision engine.
+- **Inputs:** Snap counts, target share, matchup data, weather, injury reports, efficiency metrics
+- **Why football:** 40M+ players (3–4× baseball), 17-week high-intensity season, higher willingness to pay ($50–150/yr), less analytically saturated, DFS crossover audience
+- **Why start/sit vs luck:** Recurring weekly decision need, clear value proposition, monetization obvious, confidence-weighted recommendation engine transfers directly from Signal Fantasy architecture
+- **Story:** Monetization-focused sports AI product with documented accuracy methodology
+
+---
+
+### Current Portfolio Gaps to Fill
+
+| Gap | Filled By |
+|-----|-----------|
+| NLP/LLM API integration | Project 2 |
+| Enterprise/cloud data context | Project 2 |
+| Multi-agent orchestration | Project 3 |
+| B2B SaaS product context | Project 2 |
+
+### What Signal Fantasy Already Demonstrates
+
+- Data pipeline engineering
+- ML model building and backtesting
+- Product thinking and shipping
+- Agentic AI workflow (Claude.ai + Claude Code coordination)
+- Content and distribution
+- Pre-registered validation methodology
+- Full SDLC from zero to live product
+
+---
+
 ## SECTION 18: SESSION 16 CHANGELOG
 
 **Session 16 — May 1, 2026**
