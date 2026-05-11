@@ -63,7 +63,7 @@ from config import (
     CBS_P_COEF_W, CBS_P_COEF_ERA, CBS_P_COEF_WHIP, CBS_P_COEF_K,
     CBS_P_COEF_SV, CBS_P_INTERCEPT,
 )
-from replacement_level import load_replacement_levels, get_surplus as _get_surplus
+from replacement_level import load_replacement_levels, get_surplus as _get_surplus, FANTASY_POS_MAP
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -2188,7 +2188,8 @@ def main():
                     + CBS_H_COEF_AVG * float(_proj.get("AVG") or 0.250)
                     + CBS_H_INTERCEPT
                 )
-                _fpos = _rec.get("pos", "OF")
+                _raw_pos = _rec.get("pos", "OF")
+                _fpos = FANTASY_POS_MAP.get(_raw_pos, _raw_pos)
             _surp = _get_surplus(_fpts, _fpos, _repl_l1)
             _rec["surplus_l1"] = round(_surp, 1) if _surp is not None else None
         except Exception:
