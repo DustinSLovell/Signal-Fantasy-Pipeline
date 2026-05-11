@@ -1241,9 +1241,9 @@ const S = {
   tvVerdictFilter: 'all',       // 'all' | 'Buy low' | 'Sell high' | 'neutral'
   tvData:          null,
   tvSearch: { all: '', hitters: '', pitchers: '' },
-  tvSort:   { all:      { col: '__value', dir: 'desc' },
-              hitters:  { col: '__value', dir: 'desc' },
-              pitchers: { col: '__value', dir: 'desc' } },
+  tvSort:   { all:      { col: 'surplus_l1', dir: 'desc' },
+              hitters:  { col: 'surplus_l1', dir: 'desc' },
+              pitchers: { col: 'surplus_l1', dir: 'desc' } },
   tvLeagueNames: { league1: 'CBS 13-Team', league2: 'Fantrax 15-Team' },
   tvMode: 'analyzer',   // 'analyzer' | 'rankings'
   // Trade analyzer
@@ -1313,7 +1313,8 @@ const PITCHER_COLS = [
 const TV_COLS = [
   { key:'name',                   label:'Player',       fmt:'name'  },
   { key:'pos',                    label:'Pos',          fmt:'pos'   },
-  { key:'__value',                label:'Trade Value',  fmt:'value' },
+  { key:'surplus_l1',             label:'CBS Surplus',  fmt:'f1'    },
+  { key:'__value',                label:'Model Score',  fmt:'value' },
   { key:'__esv',                  label:'Exp Stats',    fmt:'f2'    },
   { key:'track_record_multiplier',label:'Track Rec',    fmt:'f2'    },
   { key:'quality_points',         label:'QP',           fmt:'int'   },

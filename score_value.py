@@ -1979,6 +1979,17 @@ def main():
     except Exception:
         pass
 
+    # Build a hitter-ID → fp_rank lookup from luck_scores.csv.
+    # The stale fantasy_rankings_hitters_2026.csv (40 rows) misses most current hitters;
+    # luck_scores.csv is always fresh and carries fp_rank from the pipeline fetch.
+    _fp_rank_by_h_id: dict = {}
+    try:
+        _hlucks = pd.read_csv(LUCK_H_PATH, usecols=["batter", "fp_rank"])
+        for _, _r in _hlucks.dropna(subset=["fp_rank"]).iterrows():
+            _fp_rank_by_h_id[int(_r["batter"])] = int(float(_r["fp_rank"]))
+    except Exception:
+        pass
+
     for _, row in h_merged.iterrows():
         pid_int = int(row.get("batter") or 0)
         pid_str = str(pid_int)
@@ -2017,11 +2028,14 @@ def main():
                 l2_val = float(cqs_floor)
                 floor_applied = True
 
-        # Fantasy rank lookup by normalised name
+        # Fantasy rank lookup by normalised name; fall back to ID-based lookup
+        # from luck_scores.csv when the stale 40-row rankings file doesn't cover the player.
         _h_key = _normalize_name(str(row.get("name") or ""))
         _h_rank_entry = hitter_ranks.get(_h_key, {})
         h_rank      = _h_rank_entry.get("rank")       # int or None
         h_rank_tier = _h_rank_entry.get("rank_tier")  # str or None
+        if h_rank is None:
+            h_rank = _fp_rank_by_h_id.get(pid_int)
 
         rec = {
             "id":            pid_int,
