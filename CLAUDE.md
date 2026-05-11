@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 7, 2026 (Sessions 1-42, consolidated)
+# Last updated: May 11, 2026 (Sessions 1-43, consolidated)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -422,7 +422,7 @@ Use full-vector prediction ONLY. Do NOT use HR coef (0.430) to manually estimate
 
 ---
 
-## RECENT CHANGELOG (Sessions 35-42)
+## RECENT CHANGELOG (Sessions 35-43)
 
 --- May 5, 2026 (Session 35) ---
 Slight Buy tier eliminated (Version E): H_PROD_BUY_LOW 0.150→0.175, SB impossible (=BL threshold).
@@ -484,12 +484,22 @@ The error in user's Python snippet was querying luck_scores.csv (which has owned
 No Python files needed changes. thread_handoff.md confirmed 297KB — under 500KB threshold, no archiving needed.
 37/37 PASS. All invariants PASS.
 
+--- May 11, 2026 (Session 43) ---
+Rolling Performance Indicator: new display feature for dashboard and pipeline.
+- fetch_game_logs.py (NEW): MLB Stats API per-game log fetcher; 133 signaled players (86H + 47P); 0 empty; 0.5s delay; urllib.request (no third-party dep); _parse_ip() handles "6.1"→6.333 inningsPitched strings.
+- compute_rolling_fp.py (NEW): CBS FP/game rolling window calculator; hitter 60 AB window, pitcher 20 IP window; _trend_label() → Resolving/>15%, Mixed/±15%, Deepening/<-15%; data/rolling_fp_2026.csv (133 rows: 51R/44M/38D).
+- dashboard.html: 3 columns added to hitter table (FP/G Season, FP/G 60AB, Trend 🟢⚪🔴) and pitcher table (FP/Start Season, FP/Start 20IP, Trend); tooltip disclosure "Display only — does not affect signal verdict."
+- run_pipeline.py: fetch_game_logs + compute_rolling_fp wired as post-processing steps (after score_luck/score_pitcher_luck, before export_signal_board).
+Gate results: Luzardo rolling(12.17) > season(10.97) ✓; 8 SH pitchers deepening (Arrighetti, Bradley, Messick leading) ✓; 37/37 PASS ✓.
+Invariants: Sanchez C#29 ✓, Yordan overall #3 ✓, Raleigh C#2 ✓, Baldwin C#4 ✓, Contreras C#7 ✓.
+Commit: 9cbbbf8
+
 PENDING MANUAL ACTIONS:
 - Publish Week 4 article (outputs/week4_article_draft.md) to Substack
 - Post Reddit beta recruitment (outputs/reddit_beta_post.md)
 - White paper Section 10 update — use Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
-- Career lessons database (Sessions 22-42) — add manually in Claude.ai
-- Update thread_handoff.md in Claude.ai with Session 42 summary
+- Career lessons database (Sessions 22-43) — add manually in Claude.ai
+- Update thread_handoff.md in Claude.ai with Session 43 summary
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
