@@ -962,7 +962,7 @@ def _explain_walkthrough(
     surplus_delta: Optional[float],
     verdict: str,
 ) -> None:
-    """Print step-by-step CBS FPTS + surplus walkthrough (--explain mode)."""
+    """Print step-by-step projected value + surplus walkthrough (--explain mode)."""
 
     SEP  = "=" * WIDE
     LINE = "  " + "─" * (WIDE - 2)
@@ -1030,7 +1030,7 @@ def _explain_walkthrough(
             print(f"           Signal: {sig} — no trade-tool adjustments applied")
 
         # Step 3: CBS FPTS with per-term breakdown
-        print("  Step 3 — CBS Fantasy Points  (signal-adjusted projections × coefficients):")
+        print("  Step 3 — Projected Value  (signal-adjusted projections × coefficients):")
 
         def _fv(col: str) -> Optional[float]:
             v = row_adj.get(col)
@@ -1125,7 +1125,7 @@ def _explain_walkthrough(
     sd  = f"{surplus_delta:+.1f}"      if surplus_delta      is not None else "N/A"
     print(f"  {'Give total surplus:':30s} {sg}")
     print(f"  {'Get  total surplus:':30s} {sge}")
-    print(f"  {'Surplus delta:':30s} {sd}")
+    print(f"  {'Projected Value delta:':30s} {sd}")
     print()
     print(f"  ➤  {verdict}")
     print(SEP)
@@ -1227,7 +1227,7 @@ def _analyze_and_display(give_rows: list[pd.Series], get_rows: list[pd.Series],
         get_bk  = _surplus_breakdown(get_adj,  get_surplus_vals)
         print(f"  Give surplus    : {give_bk}")
         print(f"  Get  surplus    : {get_bk}")
-        print(f"  Surplus delta   : {surplus_delta:+.0f}  ({note})")
+        print(f"  Projected Value delta: {surplus_delta:+.0f}  ({note})")
     elif give_fpts_total is not None or get_fpts_total is not None:
         gf  = f"{give_fpts_total:.0f}" if give_fpts_total is not None else "N/A"
         gf2 = f"{get_fpts_total:.0f}"  if get_fpts_total  is not None else "N/A"

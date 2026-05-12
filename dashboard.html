@@ -1374,7 +1374,7 @@ const PITCHER_COLS = [
 const TV_COLS = [
   { key:'name',                   label:'Player',       fmt:'name'  },
   { key:'pos',                    label:'Pos',          fmt:'pos'   },
-  { key:'surplus_l1',             label:'CBS Surplus',  fmt:'f1'    },
+  { key:'surplus_l1',             label:'Proj. Value',  fmt:'f1'    },
   { key:'__value',                label:'Model Score',  fmt:'value' },
   { key:'__esv',                  label:'Exp Stats',    fmt:'f2'    },
   { key:'track_record_multiplier',label:'Track Rec',    fmt:'f2'    },
@@ -2940,13 +2940,13 @@ function taElitePremium(fpRank) {
 
 function taVerdictFromSurplus(delta) {
   const d = Math.round(delta);
-  if (delta >=  50) return { cls:'vb-strong',  icon:'✅', label:'Strong Trade',       sub:`CBS surplus delta: +${d}` };
-  if (delta >=  20) return { cls:'vb-favor',   icon:'✅', label:'Favorable',           sub:`CBS surplus delta: +${d}` };
-  if (delta >=   5) return { cls:'vb-favor',   icon:'✅', label:'Slightly Favorable',  sub:`CBS surplus delta: +${d}` };
-  if (delta >=  -5) return { cls:'vb-neutral', icon:'⚠️', label:'Neutral',             sub:`CBS surplus delta: ${d}`  };
-  if (delta >= -20) return { cls:'vb-unfavor', icon:'⚠️', label:'Slightly Unfavorable',sub:`CBS surplus delta: ${d}`  };
-  if (delta >= -50) return { cls:'vb-unfavor', icon:'⚠️', label:'Unfavorable',         sub:`CBS surplus delta: ${d}`  };
-  return               { cls:'vb-avoid',   icon:'❌', label:'Avoid',               sub:`CBS surplus delta: ${d}`  };
+  if (delta >=  50) return { cls:'vb-strong',  icon:'✅', label:'Strong Trade',       sub:`Projected Value delta: +${d}` };
+  if (delta >=  20) return { cls:'vb-favor',   icon:'✅', label:'Favorable',           sub:`Projected Value delta: +${d}` };
+  if (delta >=   5) return { cls:'vb-favor',   icon:'✅', label:'Slightly Favorable',  sub:`Projected Value delta: +${d}` };
+  if (delta >=  -5) return { cls:'vb-neutral', icon:'⚠️', label:'Neutral',             sub:`Projected Value delta: ${d}`  };
+  if (delta >= -20) return { cls:'vb-unfavor', icon:'⚠️', label:'Slightly Unfavorable',sub:`Projected Value delta: ${d}`  };
+  if (delta >= -50) return { cls:'vb-unfavor', icon:'⚠️', label:'Unfavorable',         sub:`Projected Value delta: ${d}`  };
+  return               { cls:'vb-avoid',   icon:'❌', label:'Avoid',               sub:`Projected Value delta: ${d}`  };
 }
 
 function taComputeVerdict(wonCats, totalCats) {
