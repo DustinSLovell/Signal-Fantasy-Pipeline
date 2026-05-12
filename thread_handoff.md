@@ -5898,7 +5898,7 @@ Session resumed from context compaction mid-stress-test. Prior session (52) had 
 - Commit: `b185709` — "Pre-beta stress test — 2 blocking fixes, known limitations documented"
 - Pushed to origin/main
 
-### Next Session Priorities
+### Next Session Priorities (post-53)
 1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
 2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
 3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
@@ -5907,6 +5907,69 @@ Session resumed from context compaction mid-stress-test. Prior session (52) had 
 
 ---
 
-*End of thread_handoff.md — Sessions 1-53 complete.*
+## SESSION 54 CLOSE — May 12, 2026
+
+### Context
+Continued from Session 53. Built the roster slot configuration feature (Tier 2 parking lot → immediate build, required for beta readiness).
+
+### What Shipped
+
+| File | Change |
+|------|--------|
+| `dashboard.html` | 5 new dropdowns in league settings panel: Catcher Slots (1C/2C), Outfield Slots (3/4/5 OF), Utility (Yes/No), CI Slot (Yes/No), MI Slot (Yes/No) |
+| `dashboard.html` | Dynamic replacement level engine: `_rosterN()` + `_recomputeReplLevels()` + `_taGetSurplus()` — trade verdicts recompute live on Save Settings |
+| `dashboard.html` | `_LEAGUE_DEFAULTS` and `taLeague` extended with `cSlots/ofSlots/utility/ciSlot/miSlot`; `syncLeagueUI()` and `saveLeagueSettings()` updated |
+| `score_value.py` | `proj_fpts` added to every player record in `player_values.json` |
+| `data/player_values.json` | `replacement_levels_l1` dict added at top level — confirms what repl levels the pre-baked `surplus_l1` values used |
+
+### Architecture Note
+Dashboard trade analyzer previously used pre-baked `surplus_l1` (L1 defaults: 2C, 5OF, CI=1, MI=1, UT=1, 13 teams). Now:
+- `score_value.py --write` stores `proj_fpts` (CBS FPTS before surplus subtraction) per player
+- JS recomputes `_dynReplLevels` from the full player pool using configured slots on every Save Settings
+- `_taGetSurplus(player)` returns `proj_fpts − dynReplLevel[fpos]`; falls back to `surplus_l1` if `proj_fpts` unavailable
+- Trade verdict uses `_taGetSurplus()` — dynamically reflects slot config changes
+
+### Gate Results
+
+| Gate | 1C | 2C | Status |
+|------|----|----|--------|
+| Baldwin (C) surplus | 343.9 | 393.6 | +49.7 ✓ meaningful increase in 2C |
+
+| Gate | 3 OF | 5 OF | Status |
+|------|------|------|--------|
+| Tucker (OF) surplus | 306.9 | 356.5 | +49.6 ✓ meaningful increase in 5OF |
+
+| Gate | 1C verdict | 2C verdict | Status |
+|------|-----------|-----------|--------|
+| Give Baldwin / Get Tucker | +66.1 STRONG | +16.3 SLIGHTLY FAV | ✓ direction shifts correctly |
+
+| Gate | Value | Status |
+|------|-------|--------|
+| Williams / Sanchez symmetry (L1 defaults) | ±79.0 | ✓ perfectly symmetric |
+| Dynamic surplus at L1 defaults = surplus_l1 | 393.6 = 393.6 | ✓ exact match |
+
+### Validate + Invariants
+- 37/37 PASS ✓
+- Sanchez C#29 ✓ | Yordan overall #3 ✓ | Raleigh C#2 ✓ | Baldwin C#4 ✓ | Contreras C#6 ✓
+
+### GitHub (Session 54)
+- Commit: `506fdec` — "Roster slot config — C slots, OF slots, utility, CI, MI now configurable in settings panel"
+- Pushed to origin/main
+
+### Notes for Next Session
+- `outputs/beta_disclosure.md` limitation #1 ("Roster slot configuration is hardcoded") is now resolved — update before distributing to beta testers
+- L2 has UT=2 in roster_slots but UI shows Yes(1)/No(0); L2 default maps to utility=1 — minor approximation, negligible OF impact (UT contributes only 0.15 × ut × tc to N_OF)
+- `_recomputeReplLevels()` fires on: (a) `loadPlayerValues()`, (b) `loadLeagueSettings()`, (c) `saveLeagueSettings()`
+
+### Next Session Priorities
+1. **Update `outputs/beta_disclosure.md`** — remove limitation #1 (now resolved); note slot config is available in settings panel
+2. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
+3. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
+4. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+5. **Career lessons database** — Sessions 22-54 not yet added in Claude.ai
+
+---
+
+*End of thread_handoff.md — Sessions 1-54 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
