@@ -2205,8 +2205,10 @@ def main():
                 _raw_pos = _rec.get("pos", "OF")
                 _fpos = FANTASY_POS_MAP.get(_raw_pos, _raw_pos)
             _surp = _get_surplus(_fpts, _fpos, _repl_l1)
+            _rec["proj_fpts"]  = round(_fpts, 1)
             _rec["surplus_l1"] = round(_surp, 1) if _surp is not None else None
         except Exception:
+            _rec["proj_fpts"]  = None
             _rec["surplus_l1"] = None
 
     output = {
@@ -2217,6 +2219,7 @@ def main():
             "league1": leagues["league1"]["name"],
             "league2": leagues["league2"]["name"],
         },
+        "replacement_levels_l1": {k: round(v, 1) for k, v in _repl_l1.items()},
         "players": players_out,
     }
 

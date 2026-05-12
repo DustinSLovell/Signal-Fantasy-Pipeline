@@ -1083,6 +1083,48 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
             <label><input type="checkbox" id="cat-qs"         > QS</label>
             <label><input type="checkbox" id="cat-hld"        > HLD</label>
           </div>
+          <div class="ta-cat-section-label" style="margin-top:8px">Roster Slots</div>
+          <div class="ta-league-grid" style="margin-top:4px">
+            <div class="ta-league-field">
+              <label>Catcher Slots</label>
+              <select id="ta-ls-c-slots">
+                <option value="1">1C</option>
+                <option value="2" selected>2C</option>
+              </select>
+            </div>
+            <div class="ta-league-field">
+              <label>Outfield Slots</label>
+              <select id="ta-ls-of-slots">
+                <option value="3">3 OF</option>
+                <option value="4">4 OF</option>
+                <option value="5" selected>5 OF</option>
+              </select>
+            </div>
+            <div class="ta-league-field">
+              <label>Utility Slot</label>
+              <select id="ta-ls-utility">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="ta-league-field">
+              <label>CI Slot (1B/3B)</label>
+              <select id="ta-ls-ci">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="ta-league-field">
+              <label>MI Slot (2B/SS)</label>
+              <select id="ta-ls-mi">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+          </div>
+          <div class="ta-slot-note" style="font-size:10px;color:#94a3b8;margin-top:6px">
+            Slot changes recalculate surplus · affects trade verdicts
+          </div>
           <div style="margin-top:12px">
             <button class="ta-save-btn" onclick="saveLeagueSettings()">Save Settings</button>
           </div>
@@ -1260,10 +1302,14 @@ const S = {
   hLuckById:{},   // batter id string -> luck row
   pLuckById:{},   // pitcher id string -> luck row
   rollingFp:{},   // player_id string -> rolling FP row
+  tvById:   {},   // id string -> raw player record (un-flattened)
+  _dynReplLevels: null,  // position -> replacement FPTS (slot-config-aware)
+  _replLevelsL1:  null,  // replacement levels stored in player_values.json
   taLeague: {
     size: '13', format: 'redraft', scoring: '5x5',
     hCats: ['avg','r','hr','rbi','sb'],
     pCats: ['era','whip','w','k','svh'],
+    cSlots: 2, ofSlots: 5, utility: 1, ciSlot: 1, miSlot: 1,
     roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
     saves_holds_ratio: { saves:2, holds:1 },
     team_count: 13,
@@ -1694,6 +1740,7 @@ function loadPlayerValues(json) {
     const parsed = typeof json === 'string' ? JSON.parse(json) : json;
     S.tvData = (parsed.players || []).map(flattenPlayer);
     S.tvLeagueNames = parsed.leagues || { league1: 'League 1', league2: 'League 2' };
+    S._replLevelsL1 = parsed.replacement_levels_l1 || null;
     // Index by player id for O(1) trade-value lookup in Simple View gate
     S.tvById = {};
     (parsed.players || []).forEach(p => { if (p.id) S.tvById[String(p.id)] = p; });
@@ -1702,6 +1749,7 @@ function loadPlayerValues(json) {
       note.textContent = 'Projections generated ' + parsed.generated_at.replace('T', ' ').slice(0, 16)
         + ' \u00b7 ' + parsed.season_days + ' days into season';
     }
+    _recomputeReplLevels();
     return true;
   } catch(e) {
     console.error('player_values.json parse error:', e);
@@ -1859,6 +1907,7 @@ const _LEAGUE_DEFAULTS = {
     size: '13', scoring: '5x5',
     hCats: ['avg','r','hr','rbi','sb'],
     pCats: ['era','whip','w','k','svh'],
+    cSlots: 2, ofSlots: 5, utility: 1, ciSlot: 1, miSlot: 1,
     roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
     saves_holds_ratio: { saves:2, holds:1 },
     team_count: 13,
@@ -1867,6 +1916,7 @@ const _LEAGUE_DEFAULTS = {
     size: '15', scoring: '5x5',
     hCats: ['obp','r','hr','rbi','sb'],
     pCats: ['era','whip','w','k','svh'],
+    cSlots: 1, ofSlots: 5, utility: 1, ciSlot: 1, miSlot: 1,
     roster_slots: { C:1, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:2, SP:0, RP:0, P:10 },
     saves_holds_ratio: { saves:1, holds:1 },
     team_count: 15,
@@ -2826,6 +2876,60 @@ function computeNetStats(getting, giving, dropping) {
   return { netH, netP, wonCats, totalCats };
 }
 
+// ─── Dynamic replacement level helpers ───────────────────────────────────────
+const _FPOS_MAP = {
+  C:'C', '1B':'1B', '2B':'2B', '3B':'3B', SS:'SS',
+  LF:'OF', RF:'OF', CF:'OF', OF:'OF', DH:'1B', IF:'2B',
+  SP:'SP', RP:'RP',
+};
+
+function _rosterN(ls) {
+  const tc = parseInt(ls.size) || 13;
+  const ci = ls.ciSlot  || 0;
+  const mi = ls.miSlot  || 0;
+  const ut = ls.utility || 0;
+  const p  = (ls.roster_slots && ls.roster_slots.P) || 9;
+  return {
+    C:    Math.max(Math.round((ls.cSlots  || 1) * tc), 8),
+    '1B': Math.max(Math.round((1 + ci * 0.5)    * tc), 8),
+    '2B': Math.max(Math.round((1 + mi * 0.5)    * tc), 8),
+    '3B': Math.max(Math.round((1 + ci * 0.5)    * tc), 8),
+    SS:   Math.max(Math.round((1 + mi * 0.5)    * tc), 8),
+    OF:   Math.max(Math.round(((ls.ofSlots || 3) + ut * 0.15) * tc), 12),
+    SP:   Math.max(Math.floor(p * 0.6 * tc), 12),
+    RP:   Math.max(Math.floor(p * 0.4 * tc), 12),
+  };
+}
+
+function _recomputeReplLevels() {
+  if (!S.tvData || S.tvData.length === 0) { S._dynReplLevels = null; return; }
+  const n = _rosterN(S.taLeague);
+  const pools = {};
+  for (const pos of Object.keys(n)) pools[pos] = [];
+  for (const pl of S.tvData) {
+    if (pl.proj_fpts == null) continue;
+    const fpos = _FPOS_MAP[pl.pos];
+    if (fpos && pools[fpos] !== undefined) pools[fpos].push(pl.proj_fpts);
+  }
+  const repl = {};
+  for (const [pos, arr] of Object.entries(pools)) {
+    arr.sort((a, b) => b - a);
+    const idx = Math.min(n[pos] - 1, arr.length - 1);
+    repl[pos] = idx >= 0 ? arr[idx] : 0;
+  }
+  S._dynReplLevels = repl;
+}
+
+function _taGetSurplus(player) {
+  if (player.proj_fpts != null && S._dynReplLevels) {
+    const fpos = _FPOS_MAP[player.pos];
+    const repl = fpos != null ? (S._dynReplLevels[fpos] || 0) : 0;
+    return player.proj_fpts - repl;
+  }
+  return parseFloat(player.surplus_l1) || 0;
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 function taElitePremium(fpRank) {
   if (!fpRank) return 1.00;
   if (fpRank <= 10) return 1.30;
@@ -2890,15 +2994,15 @@ function analyzeTrade() {
   const { netH, netP, wonCats, totalCats } = computeNetStats(gettingSum, givingSum, dropSum);
 
   // Surplus-delta verdict: mirrors CLI _trade_verdict_v3 + _elite_premium logic.
-  // surplus_l1 and fp_rank come from player_values.json via flattenPlayer.
+  // Uses dynamic surplus (_taGetSurplus) so slot config changes affect verdicts.
   let gettingAdj = 0, givingAdj = 0;
   S.ta.getting.forEach(p => {
-    const surp = parseFloat(p.surplus_l1) || 0;
+    const surp = _taGetSurplus(p);
     const ep   = taElitePremium(p.fp_rank);
     gettingAdj += surp * ep;
   });
   S.ta.giving.forEach(p => {
-    const surp = parseFloat(p.surplus_l1) || 0;
+    const surp = _taGetSurplus(p);
     const ep   = taElitePremium(p.fp_rank);
     givingAdj += surp * ep;
   });
@@ -3092,6 +3196,7 @@ function loadLeagueSettings() {
   } catch(e) {}
   syncLeagueUI();
   renderLeagueSummary();
+  _recomputeReplLevels();
 }
 
 function syncLeagueUI() {
@@ -3100,6 +3205,11 @@ function syncLeagueUI() {
   set('ta-ls-size',    ls.size);
   set('ta-ls-format',  ls.format);
   set('ta-ls-scoring', ls.scoring);
+  set('ta-ls-c-slots',  ls.cSlots  != null ? ls.cSlots  : 2);
+  set('ta-ls-of-slots', ls.ofSlots != null ? ls.ofSlots : 5);
+  set('ta-ls-utility',  ls.utility != null ? ls.utility : 1);
+  set('ta-ls-ci',       ls.ciSlot  != null ? ls.ciSlot  : 1);
+  set('ta-ls-mi',       ls.miSlot  != null ? ls.miSlot  : 1);
 
   const H_MAP = [['cat-avg','avg'],['cat-r','r'],['cat-hr','hr'],['cat-rbi','rbi'],
                  ['cat-sb','sb'],['cat-obp','obp'],['cat-slg','slg'],['cat-ops','ops']];
@@ -3119,8 +3229,16 @@ function saveLeagueSettings() {
   const hCats = ['avg','r','hr','rbi','sb','obp','slg','ops'].filter(k => chk(`cat-${k}`));
   const pCats = ['era','whip','w','k','svh','qs','hld'].filter(k => chk(`cat-${k}`));
 
-  S.taLeague = { size, format, scoring, hCats, pCats };
+  const cSlots  = parseInt(val('ta-ls-c-slots'))  || 2;
+  const ofSlots = parseInt(val('ta-ls-of-slots')) || 5;
+  const utility = parseInt(val('ta-ls-utility'))  || 0;
+  const ciSlot  = parseInt(val('ta-ls-ci'))       || 0;
+  const miSlot  = parseInt(val('ta-ls-mi'))       || 0;
+
+  S.taLeague = Object.assign({}, S.taLeague,
+    { size, format, scoring, hCats, pCats, cSlots, ofSlots, utility, ciSlot, miSlot });
   try { localStorage.setItem('signalFantasy_leagueSettings', JSON.stringify(S.taLeague)); } catch(e) {}
+  _recomputeReplLevels();
   renderLeagueSummary();
   toggleLeaguePanel();
 }
