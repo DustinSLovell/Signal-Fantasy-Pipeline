@@ -452,6 +452,57 @@ def _load_players() -> pd.DataFrame:
     # (normalized name, _type) to avoid phantom matches in _fuzzy_find().
     combined = combined.drop_duplicates(subset=["_norm", "_type"], keep="first").reset_index(drop=True)
 
+    # Append IL-only player stubs from player_values.json (players with zero 2026
+    # Statcast data who cannot enter the normal pipeline; stubs built by build_il_stubs.py)
+    _il_rows = []
+    try:
+        import json as _json
+        _pv_data = _json.loads(_values_json.read_text(encoding="utf-8"))
+        for _p in _pv_data.get("players", []):
+            if not _p.get("il_only"):
+                continue
+            # Skip if already present in combined (shouldn't happen, but guard)
+            _il_norm = _norm(_p.get("name", ""))
+            if not combined[combined["_norm"] == _il_norm].empty:
+                continue
+            _proj = _p.get("proj") or {}
+            _il_rows.append({
+                "name":          _p.get("name", ""),
+                "Team":          _p.get("team", ""),
+                "_type":         "pitcher",
+                "_fpos":         _p.get("pos", "SP"),
+                "pitcher":       _p.get("id"),
+                "batter":        None,
+                "verdict":       "Neutral",
+                "luck_score":    None,
+                "owned_pct":     None,
+                "fp_rank":       _p.get("fp_rank"),
+                "roto_surplus_l1": _p.get("roto_surplus_l1"),
+                "surplus_l1":    _p.get("surplus_l1"),
+                "il_only":       True,
+                "il_note":       _p.get("il_note", "IL — Steamer ROS projection only"),
+                "proj_era":      _proj.get("ERA"),
+                "proj_whip":     _proj.get("WHIP"),
+                "proj_k":        _proj.get("K"),
+                "proj_w":        _proj.get("W"),
+                "proj_sv_h":     _proj.get("SVH_L1"),
+                "proj_ip":       _proj.get("IP"),
+                "proj_avg":      None,
+                "proj_hr":       None,
+                "proj_r":        None,
+                "proj_rbi":      None,
+                "proj_sb":       None,
+                "_norm":         _il_norm,
+                "_user_pos":     None,
+            })
+    except Exception:
+        pass
+
+    if _il_rows:
+        combined = pd.concat(
+            [combined, pd.DataFrame(_il_rows)], ignore_index=True
+        )
+
     return combined
 
 
@@ -1800,8 +1851,15 @@ def main() -> None:
                 short = False
             short_note = "  ⚠ Short baseline (<300 career PA)" if short else ""
             print(f"  {name} ({pos}, {team}){short_note}")
-            print(f"  Signal: {sig} ({luck_str})")
-            print(f"    {desc}")
+            # IL-only flag (player has no 2026 data)
+            if orig_row.get("il_only") is True:
+                il_note = orig_row.get("il_note", "IL — Steamer ROS projection only")
+                print(f"  ⚠ {il_note}")
+                print(f"  Signal: Neutral (no 2026 Statcast data)")
+                print(f"    Value based on projected ROS stats only")
+            else:
+                print(f"  Signal: {sig} ({luck_str})")
+                print(f"    {desc}")
             print(f"  Surplus: {surp_str}  |  Signal-adjusted: {adj_str}")
             # Elite tier display
             fp_rank = orig_row.get("fp_rank")
@@ -1885,6 +1943,15 @@ def main() -> None:
                 print(line)
         else:
             print("  No active luck signals on either side — evaluate on surplus value alone.")
+
+        # IL player advisory notes
+        for row in give_rows + get_rows:
+            if row.get("il_only") is True:
+                il_note = row.get("il_note", "IL — Steamer ROS projection only")
+                print()
+                print(f"  ℹ  {row.get('name', '?')}: {il_note}.")
+                print(f"     No 2026 Statcast data available. Projected value uses historical")
+                print(f"     career rates scaled to remaining season — treat as directional only.")
 
         # Elite player qualitative warnings
         for row in give_rows:

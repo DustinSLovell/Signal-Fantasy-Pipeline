@@ -2241,6 +2241,13 @@ def main():
     print(f"\nWrote {len(players_out):,} records to {OUTPUT_PATH}")
     print(f"File size: {os.path.getsize(OUTPUT_PATH) / 1024:.1f} KB")
 
+    # ── IL player stubs (must run BEFORE roto surplus so stubs enter roto pool) ─
+    try:
+        import build_il_stubs as _il
+        _il.main()
+    except Exception as _e:
+        print(f"  WARNING: IL stubs update skipped — {_e}")
+
     # ── Roto surplus model (runs after player_values.json is written) ─────────
     try:
         import compute_roto_surplus as _roto
