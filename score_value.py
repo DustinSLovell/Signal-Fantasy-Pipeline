@@ -1093,6 +1093,22 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
         out["is_starter"] = (out["ip_per_day"] >= ip_day_thr) | (out["GS"].fillna(0) >= gs_thresh)
     else:
         out["is_starter"] = out["ip_per_day"] >= ip_day_thr
+
+    # Steamer player_type override — FanGraphs GS is NaN when blocked, causing
+    # SPs with low ip_per_day (missed starts, IL stints) to be misclassified.
+    # pitcher_luck_scores.csv uses Steamer GS>=10 + current GS>=5 override — use
+    # it as the authoritative source when the ip_per_day heuristic disagrees.
+    try:
+        _plcs = pd.read_csv(LUCK_P_PATH, usecols=["pitcher", "player_type"])
+        _plcs["pitcher"] = pd.to_numeric(_plcs["pitcher"], errors="coerce")
+        _steamer_sp = set(_plcs.loc[_plcs["player_type"] == "SP", "pitcher"].dropna().astype(int))
+        _override_mask = out["pitcher"].isin(_steamer_sp)
+        _n_overridden = int((~out.loc[_override_mask, "is_starter"]).sum())
+        out.loc[_override_mask, "is_starter"] = True
+        if _n_overridden:
+            print(f"  Steamer SP override: {_n_overridden} pitchers reclassified RP→SP")
+    except Exception as _e:
+        print(f"  WARNING: Steamer SP override skipped — {_e}")
     IP_START_ROS = round(IP_START * ros_frac, 1)
     IP_REL_ROS   = round(IP_REL   * ros_frac, 1)
     out["IP_proj"] = out["is_starter"].map({True: IP_START_ROS, False: IP_REL_ROS})
@@ -1131,24 +1147,38 @@ def project_pitcher_stats(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
         try:
             _ext = pd.read_csv(
                 _proj_path,
-                usecols=["name", "type", "proj_k", "proj_w", "proj_era", "proj_whip"],
+                usecols=["name", "type", "proj_k", "proj_w", "proj_era", "proj_whip", "proj_ip"],
             )
             _ext = _ext[_ext["type"] == "pitcher"][
-                ["name", "proj_k", "proj_w", "proj_era", "proj_whip"]
+                ["name", "proj_k", "proj_w", "proj_era", "proj_whip", "proj_ip"]
             ].dropna(subset=["name"])
             _ext = _ext.drop_duplicates("name").set_index("name")
             k_map    = _ext["proj_k"].dropna().to_dict()
             w_map    = _ext["proj_w"].dropna().to_dict()
             era_map  = _ext["proj_era"].dropna().to_dict()
             whip_map = _ext["proj_whip"].dropna().to_dict()
+            ip_map   = _ext["proj_ip"].dropna().to_dict()
             _matched = 0
             for idx in out.index:
                 nm = out.at[idx, "name"]
                 if nm in k_map:
                     out.at[idx, "K_proj"] = round(float(k_map[nm]), 1)
                     _matched += 1
-                if nm in w_map and out.at[idx, "is_starter"]:
+                # Override IP_proj only when projections_2026.csv has a lower value
+                # (protects against inflated generic SP IP for IL-return pitchers)
+                if nm in ip_map and float(ip_map[nm]) > 0:
+                    ext_ip = float(ip_map[nm])
+                    if ext_ip < out.at[idx, "IP_proj"]:
+                        out.at[idx, "IP_proj"] = round(ext_ip, 1)
+                if nm in w_map and out.at[idx, "is_starter"] and float(w_map[nm]) > 0:
                     out.at[idx, "W_proj"] = round(float(w_map[nm]), 1)
+                elif nm not in w_map or float(w_map.get(nm, 0)) <= 0:
+                    # proj_w=0 means Steamer had no W (IL/RP projection); recalculate
+                    # from overridden IP_proj + ERA so the CBS FPTS is self-consistent.
+                    if out.at[idx, "is_starter"]:
+                        _era_v  = out.at[idx, "ERA_proj"] if nm in era_map else out.at[idx, "ERA_proj"]
+                        _erf    = max(0.3, 1 + (LG_ERA - _era_v) / 7)
+                        out.at[idx, "W_proj"] = round(float(out.at[idx, "IP_proj"]) * 0.075 * _erf, 1)
                 if nm in era_map:
                     out.at[idx, "ERA_proj"] = round(float(era_map[nm]), 2)
                 if nm in whip_map:
