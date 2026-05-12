@@ -1125,6 +1125,14 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
           <div class="ta-slot-note" style="font-size:10px;color:#94a3b8;margin-top:6px">
             Slot changes recalculate surplus · affects trade verdicts
           </div>
+          <div style="margin-top:10px">
+            <label style="font-size:11px;color:#94a3b8;display:block;margin-bottom:3px">Scoring Format</label>
+            <select id="ta-scoring-format" style="width:100%;padding:4px 6px;background:#1e2738;color:#e2e8f0;border:1px solid #334155;border-radius:4px;font-size:12px">
+              <option value="roto" selected>Roto (category rank)</option>
+              <option value="cbs">CBS Points</option>
+            </select>
+            <div style="font-size:10px;color:#94a3b8;margin-top:3px">Roto: HR ×1.4, R/RBI/SB/AVG ×1.0 — default</div>
+          </div>
           <div style="margin-top:12px">
             <button class="ta-save-btn" onclick="saveLeagueSettings()">Save Settings</button>
           </div>
@@ -1289,9 +1297,9 @@ const S = {
   tvVerdictFilter: 'all',       // 'all' | 'Buy low' | 'Sell high' | 'neutral'
   tvData:          null,
   tvSearch: { all: '', hitters: '', pitchers: '' },
-  tvSort:   { all:      { col: 'surplus_l1', dir: 'desc' },
-              hitters:  { col: 'surplus_l1', dir: 'desc' },
-              pitchers: { col: 'surplus_l1', dir: 'desc' } },
+  tvSort:   { all:      { col: 'roto_surplus_l1', dir: 'desc' },
+              hitters:  { col: 'roto_surplus_l1', dir: 'desc' },
+              pitchers: { col: 'roto_surplus_l1', dir: 'desc' } },
   tvLeagueNames: { league1: 'CBS 13-Team', league2: 'Fantrax 15-Team' },
   tvMode: 'analyzer',   // 'analyzer' | 'rankings'
   // Trade analyzer
@@ -1305,6 +1313,7 @@ const S = {
   tvById:   {},   // id string -> raw player record (un-flattened)
   _dynReplLevels: null,  // position -> replacement FPTS (slot-config-aware)
   _replLevelsL1:  null,  // replacement levels stored in player_values.json
+  scoringFormat:  'roto', // 'roto' (default) or 'cbs'
   taLeague: {
     size: '13', format: 'redraft', scoring: '5x5',
     hCats: ['avg','r','hr','rbi','sb'],
@@ -1374,7 +1383,7 @@ const PITCHER_COLS = [
 const TV_COLS = [
   { key:'name',                   label:'Player',       fmt:'name'  },
   { key:'pos',                    label:'Pos',          fmt:'pos'   },
-  { key:'surplus_l1',             label:'Proj. Value',  fmt:'f1'    },
+  { key:'roto_surplus_l1',        label:'Proj. Value',  fmt:'f1'    },
   { key:'__value',                label:'Model Score',  fmt:'value' },
   { key:'__esv',                  label:'Exp Stats',    fmt:'f2'    },
   { key:'track_record_multiplier',label:'Track Rec',    fmt:'f2'    },
@@ -2921,6 +2930,10 @@ function _recomputeReplLevels() {
 }
 
 function _taGetSurplus(player) {
+  if (S.scoringFormat === 'roto' && player.roto_surplus_l1 != null) {
+    return parseFloat(player.roto_surplus_l1) || 0;
+  }
+  // CBS mode: dynamic surplus from proj_fpts minus slot-config replacement level
   if (player.proj_fpts != null && S._dynReplLevels) {
     const fpos = _FPOS_MAP[player.pos];
     const repl = fpos != null ? (S._dynReplLevels[fpos] || 0) : 0;
@@ -3210,6 +3223,7 @@ function syncLeagueUI() {
   set('ta-ls-utility',  ls.utility != null ? ls.utility : 1);
   set('ta-ls-ci',       ls.ciSlot  != null ? ls.ciSlot  : 1);
   set('ta-ls-mi',       ls.miSlot  != null ? ls.miSlot  : 1);
+  set('ta-scoring-format', S.scoringFormat || 'roto');
 
   const H_MAP = [['cat-avg','avg'],['cat-r','r'],['cat-hr','hr'],['cat-rbi','rbi'],
                  ['cat-sb','sb'],['cat-obp','obp'],['cat-slg','slg'],['cat-ops','ops']];
@@ -3234,6 +3248,8 @@ function saveLeagueSettings() {
   const utility = parseInt(val('ta-ls-utility'))  || 0;
   const ciSlot  = parseInt(val('ta-ls-ci'))       || 0;
   const miSlot  = parseInt(val('ta-ls-mi'))       || 0;
+  const scoringFmt = val('ta-scoring-format') || 'roto';
+  S.scoringFormat = scoringFmt;
 
   S.taLeague = Object.assign({}, S.taLeague,
     { size, format, scoring, hCats, pCats, cSlots, ofSlots, utility, ciSlot, miSlot });

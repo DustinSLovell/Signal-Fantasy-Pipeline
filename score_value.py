@@ -2241,6 +2241,13 @@ def main():
     print(f"\nWrote {len(players_out):,} records to {OUTPUT_PATH}")
     print(f"File size: {os.path.getsize(OUTPUT_PATH) / 1024:.1f} KB")
 
+    # ── Roto surplus model (runs after player_values.json is written) ─────────
+    try:
+        import compute_roto_surplus as _roto
+        _roto.main()
+    except Exception as _e:
+        print(f"  WARNING: roto surplus update skipped — {_e}")
+
     # ── Permanent invariant checks ────────────────────────────────────────────
     _run_invariant_checks(players_out)
 

@@ -399,13 +399,16 @@ def _load_players() -> pd.DataFrame:
     # their hitter position (DH→1B) rather than having the pitcher entry (RP)
     # overwrite it in the combined pos_map dict.
     _hitter_pos_map: dict[int, str] = {}
+    _roto_surplus_map: dict[int, float | None] = {}
     _values_json = BASE_DIR / "data" / "player_values.json"
     try:
         import json as _json
         _pv = _json.loads(_values_json.read_text(encoding="utf-8"))
         for _p in _pv.get("players", []):
+            _pid = _p.get("id")
+            if _pid:
+                _roto_surplus_map[int(_pid)] = _p.get("roto_surplus_l1")
             if _p.get("type") == "hitter":
-                _pid = _p.get("id")
                 _fpos = FANTASY_POS_MAP.get(_p.get("pos", ""))
                 if _pid and _fpos:
                     _hitter_pos_map[int(_pid)] = _fpos
@@ -431,6 +434,18 @@ def _load_players() -> pd.DataFrame:
     combined["_fpos"] = combined.apply(_get_fpos, axis=1)
     combined["_norm"] = combined["name"].apply(_norm)
     combined["_user_pos"] = None
+
+    # Merge roto_surplus_l1 from player_values.json (keyed by MLBAM id)
+    def _get_roto_surplus(row):
+        for col in ("batter", "pitcher"):
+            pid_raw = row.get(col)
+            if pid_raw is not None and pd.notna(pid_raw):
+                try:
+                    return _roto_surplus_map.get(int(pid_raw))
+                except (TypeError, ValueError):
+                    pass
+        return None
+    combined["roto_surplus_l1"] = combined.apply(_get_roto_surplus, axis=1)
 
     # Deduplicate: projection merge can create duplicate rows when a player appears
     # as both hitter and pitcher in projections_2026.csv. Keep the first row per
@@ -1565,6 +1580,8 @@ def main() -> None:
                         help="Receiving side has an open roster slot — no opportunity cost applied")
     parser.add_argument("--debug", action="store_true",
                         help="Show per-player surplus breakdown: base → signal_adj → elite_adj")
+    parser.add_argument("--format", dest="scoring_format", choices=["roto", "cbs"], default="roto",
+                        help="Scoring format: roto (default) or cbs points")
     args = parser.parse_args()
 
     # Flatten: action="append" + nargs="+" gives list-of-lists when flag is repeated
@@ -1636,13 +1653,29 @@ def main() -> None:
         give_adj = [_apply_signal_multipliers(r) for r in give_rows]
         get_adj  = [_apply_signal_multipliers(r) for r in get_rows]
 
-        give_fpts_vals = [_compute_cbs_fpts_league(r, league_json) for r in give_adj]
-        get_fpts_vals  = [_compute_cbs_fpts_league(r, league_json) for r in get_adj]
+        scoring_format = getattr(args, "scoring_format", "roto")
 
-        give_surplus_vals = [get_surplus(f, r.get("_fpos"), repl_levels)
-                             for f, r in zip(give_fpts_vals, give_adj)]
-        get_surplus_vals  = [get_surplus(f, r.get("_fpos"), repl_levels)
-                             for f, r in zip(get_fpts_vals, get_adj)]
+        if scoring_format == "roto":
+            # Use precomputed roto_surplus_l1 (category rank contribution, HR x1.4).
+            # Signal context is informational; verdict uses base roto surplus + elite premium.
+            give_surplus_vals = [r.get("roto_surplus_l1") for r in give_rows]
+            get_surplus_vals  = [r.get("roto_surplus_l1") for r in get_rows]
+            # Fall back to CBS if roto surplus missing
+            for i, v in enumerate(give_surplus_vals):
+                if v is None:
+                    f = _compute_cbs_fpts_league(give_adj[i], league_json)
+                    give_surplus_vals[i] = get_surplus(f, give_adj[i].get("_fpos"), repl_levels)
+            for i, v in enumerate(get_surplus_vals):
+                if v is None:
+                    f = _compute_cbs_fpts_league(get_adj[i], league_json)
+                    get_surplus_vals[i] = get_surplus(f, get_adj[i].get("_fpos"), repl_levels)
+        else:
+            give_fpts_vals = [_compute_cbs_fpts_league(r, league_json) for r in give_adj]
+            get_fpts_vals  = [_compute_cbs_fpts_league(r, league_json) for r in get_adj]
+            give_surplus_vals = [get_surplus(f, r.get("_fpos"), repl_levels)
+                                 for f, r in zip(give_fpts_vals, give_adj)]
+            get_surplus_vals  = [get_surplus(f, r.get("_fpos"), repl_levels)
+                                 for f, r in zip(get_fpts_vals, get_adj)]
 
         # --- Elite premium (applied AFTER signal adjustment, to surplus values) ---
         give_elite_surplus = [
@@ -1734,7 +1767,8 @@ def main() -> None:
         config = load_config()
         print()
         print(D)
-        print(f"  THE SIGNAL FANTASY — TRADE ANALYZER  [{league_name}]")
+        fmt_label = "Roto" if scoring_format == "roto" else "CBS Points"
+        print(f"  THE SIGNAL FANTASY — TRADE ANALYZER  [{league_name} | {fmt_label}]")
         print(D)
 
         def _print_trade_player(orig_row: pd.Series, adj_row: pd.Series,
