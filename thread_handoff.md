@@ -5972,45 +5972,38 @@ Dashboard trade analyzer previously used pre-baked `surplus_l1` (L1 defaults: 2C
 
 ## SESSION 55 CLOSE — May 12, 2026
 
-### Context
-Continued from Session 54. Two tasks: (1) rename CBS surplus delta → Projected Value throughout; (2) implement roto surplus model.
+### Task 1 — Rename CBS surplus delta → Projected Value
 
-### What Shipped
+- `dashboard.html`: `CBS Surplus` column header → `Proj. Value`; all 7 `CBS surplus delta` strings → `Projected Value delta` in verdict sub-labels
+- `trade_analyzer.py`: `--explain` Step 3 header → "Projected Value"; `Projected Value delta:` print label; docstring updated
+- `outputs/beta_disclosure.md`: removed limitation #1 (hardcoded roster slots — resolved Session 54); updated CBS-specific language; added roto disclosure as limitation #5
 
-| File | Change |
-|------|--------|
-| `dashboard.html` | `CBS Surplus` column → `Proj. Value`; `CBS surplus delta` → `Projected Value delta` in verdict sub-labels; TV_COLS default key → `roto_surplus_l1`; `tvSort` default → `roto_surplus_l1`; `S.scoringFormat = 'roto'` state; Scoring Format dropdown in league settings (Roto / CBS Points); `_taGetSurplus()` uses `roto_surplus_l1` when roto (default), falls back to dynamic CBS |
-| `trade_analyzer.py` | `--explain` Step 3 header → "Projected Value"; `Projected Value delta:` print label; `--format {roto,cbs}` flag (default=roto); roto path: uses `roto_surplus_l1` from player row with CBS fallback; `_load_players()`: merges `roto_surplus_l1` from player_values.json by MLBAM id; header shows `[league | Roto]` or `[league | CBS Points]` |
-| `outputs/beta_disclosure.md` | Removed limitation #1 (hardcoded roster slots — resolved Session 54); "CBS fantasy points surplus" → "projected value surplus"; added roto disclosure note (limitation #5); verdict table footnote updated |
-| `compute_roto_surplus.py` | NEW — standalone roto surplus module |
-| `score_value.py` | Calls `compute_roto_surplus.main()` after writing player_values.json |
-| `data/player_values.json` | `roto_surplus_l1` added to every player |
+**Architectural note:** "Projected Value" is now the standard term throughout the codebase. CBS points model remains available via `--format cbs` but roto is the production default.
 
-### Roto Surplus Model Architecture
+### Task 2 — Roto Surplus Model (promoted from Tier 2 → Tier 1; both active leagues are roto format)
 
-**compute_roto_surplus.py:**
-- Category rank contribution: best player rank N-1, worst rank 0
+**Files shipped:**
+- `compute_roto_surplus.py` (NEW): category rank contribution, HR ×1.4 cascade weighting, rank/N normalization (prevents RP pool ~346 from inflating vs C pool ~74), scale calibrated to CBS surplus range
+- `score_value.py`: calls `compute_roto_surplus.main()` after `--write`
+- `trade_analyzer.py`: `--format {roto,cbs}` flag (default=roto); `roto_surplus_l1` merged from player_values.json by MLBAM id
+- `dashboard.html`: Scoring Format dropdown in settings panel; `_taGetSurplus()` routes to `roto_surplus_l1` by default; TV sort updated
+
+**Model architecture:**
 - Hitter: HR ×1.4, R/RBI/SB/AVG ×1.0 (5 categories)
 - SP: W/K ×1.0, ERA/WHIP inverted ×1.0 (4 categories)
 - RP: SVH_L1/K ×1.0, ERA/WHIP inverted ×1.0 (4 categories)
-- Normalized rank/N — prevents RP pool (346 players) from inflating relative to C pool (74 players)
-- Scale factor = median positive CBS surplus / median positive roto surplus — maintains verdict threshold compatibility
-- Runs after score_value.py --write (wired as import call in score_value.py)
+- Scale = median positive CBS surplus / median positive roto surplus — maintains verdict threshold compatibility
+- Signal multipliers (BL/SH) NOT applied to roto surplus — CBS multipliers were calibrated for CBS coefficients; applying to rank-based scores would be uncalibrated
 
-**Design decisions:**
-- Signal multipliers (BL/SH) are NOT applied to roto surplus in verdict — roto_surplus_l1 uses base projections. Signal context is displayed separately. (CBS multipliers were calibrated for CBS coefficients; applying them to rank-based scores would be uncalibrated.)
-- `roto_surplus_l1` is in player_values.json, not recomputed at query time, so dashboard performance is unchanged.
-- `--format cbs` bypasses roto and uses the original CBS FPTS computation.
+**Gate results — all PASS:**
 
-### Gate Results (Session 55)
+| Gate | CBS | Roto | Status |
+|------|-----|------|--------|
+| Cruz give / Harris receive | +6 (Slightly Fav) | +10.7 (Slightly Fav) | ✓ HR cascade working (+91% magnitude) |
+| Baldwin give / Tucker receive | Tucker ×1.15 (FP #15) | Tucker ×1.15 intact | ✓ scarcity premium preserved |
+| Williams give / Sanchez receive | STRONG TRADE | STRONG TRADE (+274.9) | ✓ directional consistency |
 
-| Gate | CBS baseline | Roto result | Status |
-|------|-------------|-------------|--------|
-| Cruz give / Harris receive | +5.6 (Slightly Fav) | +10.7 (Slightly Fav) | ✓ meaningful shift +91% magnitude |
-| Baldwin give / Tucker receive — scarcity premium | Tucker ×1.15 (FP #15) | Tucker ×1.15 intact | ✓ |
-| Williams give / Sanchez receive — directional | STRONG TRADE | STRONG TRADE (+274.9) | ✓ consistent |
-
-Note on Cruz/Harris gate: verdict bucket same (Slightly Favorable) but magnitude shifted from +6 to +10.7. The roto model correctly identifies Cruz is more CBS-weighted (high R/RBI via CBS coefficients) while Harris is more balanced. The shift is real but not tier-changing.
+Cruz/Harris stayed in same verdict bucket but magnitude shift is real — Cruz is more CBS-weighted (high R/RBI via regression coefficients); roto treats categories equally.
 
 ### Validate + Invariants
 - 37/37 PASS ✓
@@ -6020,19 +6013,6 @@ Note on Cruz/Harris gate: verdict bucket same (Slightly Favorable) but magnitude
 - Commit: `32da85e` — "Rename CBS surplus delta → Projected Value throughout"
 - Commit: `e1957bc` — "Roto surplus model — category rank contribution, HR cascade weighting, roto set as default"
 - Pushed to origin/main
-
-### Notes for Next Session
-- Cal Raleigh has negative roto surplus (-16.7 in prior run, now may differ after --write) due to .162 projected AVG. This is correct roto behavior — low AVG drags catcher down in roto. Invariant check still uses score_value.py (CBS-based) and passes. No action needed.
-- Drake Baldwin roto surplus much lower than CBS because CBS heavily weights R (×2.8067 coef) while roto treats R equally with other categories. This is working as designed.
-- The Roto model scale factor calibration means RP pool and SP pool have comparable surplus ranges. Sanchez (-239.7 roto) is extreme because his .188 AVG ranks near-last among all catchers in the AVG category — correct roto behavior.
-- Scoring format dropdown in dashboard settings is not persisted to localStorage yet (only updates S.scoringFormat in-session). A future improvement could persist it alongside taLeague.
-
-### Next Session Priorities
-1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
-2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
-3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
-4. **Career lessons database** — Sessions 22-55 not yet added in Claude.ai
-5. **Roto model calibration check** — verify verdict thresholds still make sense; run 5-10 known trades and check results are intuitive
 
 ---
 
