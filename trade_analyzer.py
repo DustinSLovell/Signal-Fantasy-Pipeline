@@ -394,22 +394,49 @@ def _load_players() -> pd.DataFrame:
 
     # Merge fantasy positions from player_values.json (id-based for accuracy)
     pos_map = load_position_map()  # {mlbam_id: fantasy_pos}
+
+    # Build hitter-only position map so two-way players (e.g. Ohtani) resolve to
+    # their hitter position (DH→1B) rather than having the pitcher entry (RP)
+    # overwrite it in the combined pos_map dict.
+    _hitter_pos_map: dict[int, str] = {}
+    _values_json = BASE_DIR / "data" / "player_values.json"
+    try:
+        import json as _json
+        _pv = _json.loads(_values_json.read_text(encoding="utf-8"))
+        for _p in _pv.get("players", []):
+            if _p.get("type") == "hitter":
+                _pid = _p.get("id")
+                _fpos = FANTASY_POS_MAP.get(_p.get("pos", ""))
+                if _pid and _fpos:
+                    _hitter_pos_map[int(_pid)] = _fpos
+    except Exception:
+        pass
+
     def _get_fpos(row):
         # For pitchers: player_type column (from Steamer GS) is most reliable.
         # player_values.json can lag when score_value.py run predates role corrections.
         if row.get("_type") == "pitcher":
             return "SP" if _derive_pos(row) == "SP" else "RP"
-        # For hitters: use player_values.json id lookup (most accurate multi-pos handling)
+        # For hitters: prefer hitter-only map so two-way players (Ohtani) use
+        # their hitter position (DH→1B) and not the pitcher entry (RP).
         pid = row.get("batter")
         try:
-            fpos = pos_map.get(int(pid)) if pd.notna(pid) else None
+            pid_int = int(pid) if pd.notna(pid) else None
         except (TypeError, ValueError):
-            fpos = None
-        return fpos
+            pid_int = None
+        if pid_int is None:
+            return None
+        return _hitter_pos_map.get(pid_int) or pos_map.get(pid_int)
 
     combined["_fpos"] = combined.apply(_get_fpos, axis=1)
     combined["_norm"] = combined["name"].apply(_norm)
     combined["_user_pos"] = None
+
+    # Deduplicate: projection merge can create duplicate rows when a player appears
+    # as both hitter and pitcher in projections_2026.csv. Keep the first row per
+    # (normalized name, _type) to avoid phantom matches in _fuzzy_find().
+    combined = combined.drop_duplicates(subset=["_norm", "_type"], keep="first").reset_index(drop=True)
+
     return combined
 
 
@@ -539,14 +566,20 @@ def _signal_desc(verdict: str, ptype: str) -> str:
     return "stats roughly matching underlying performance"
 
 
-def _signal_context_warnings(give_rows: list, get_rows: list) -> list:
+def _signal_context_warnings(give_rows: list, get_rows: list,
+                              give_surplus: list | None = None) -> list:
     """Return list of advisory strings for the SIGNAL CONTEXT block."""
     lines = []
-    for row in give_rows:
+    for i, row in enumerate(give_rows):
         sig = str(row.get("verdict", "")).lower()
         name = row.get("name", "?")
+        surp = give_surplus[i] if (give_surplus and i < len(give_surplus)) else None
         if "buy low" in sig:
-            lines.append(f"  ⚠  Giving {name}: Buy Low — true value likely HIGHER than perceived. Consider asking for more.")
+            if surp is not None and surp <= 0:
+                # Sub-replacement BL player: surplus is negative, warning is misleading
+                lines.append(f"  ⚠  Giving {name}: Buy Low, but surplus is negative — likely IL or early-season sample. Trade at your discretion.")
+            else:
+                lines.append(f"  ⚠  Giving {name}: Buy Low — true value likely HIGHER than perceived. Consider asking for more.")
         elif "sell high" in sig:
             lines.append(f"  ✓  Giving {name}: Sell High — good time to sell at peak value.")
         elif "slight sell" in sig:
@@ -1522,10 +1555,10 @@ def main() -> None:
     parser.add_argument("--replacement-table", action="store_true", help="Show replacement level table")
     parser.add_argument("--explain",           action="store_true",
                         help="Print step-by-step valuation walkthrough (CBS coefs, surplus calc) after each verdict")
-    parser.add_argument("--give",    nargs="+", metavar="PLAYER",
-                        help="Players you are giving (non-interactive mode)")
-    parser.add_argument("--receive", nargs="+", metavar="PLAYER",
-                        help="Players you are receiving (non-interactive mode)")
+    parser.add_argument("--give",    nargs="+", action="append", metavar="PLAYER",
+                        help="Players you are giving — repeat flag OR space-separate names")
+    parser.add_argument("--receive", nargs="+", action="append", metavar="PLAYER",
+                        help="Players you are receiving — repeat flag OR space-separate names")
     parser.add_argument("--league",  type=int, default=1, metavar="ID",
                         help="League config ID (default 1)")
     parser.add_argument("--open-slot", action="store_true",
@@ -1533,6 +1566,12 @@ def main() -> None:
     parser.add_argument("--debug", action="store_true",
                         help="Show per-player surplus breakdown: base → signal_adj → elite_adj")
     args = parser.parse_args()
+
+    # Flatten: action="append" + nargs="+" gives list-of-lists when flag is repeated
+    if args.give:
+        args.give    = [p for sublist in args.give    for p in sublist]
+    if args.receive:
+        args.receive = [p for sublist in args.receive for p in sublist]
 
     # Provide a clear error when only one side is specified
     if (args.give and not args.receive) or (args.receive and not args.give):
@@ -1804,7 +1843,7 @@ def main() -> None:
             print(f"  {elite_note}")
 
         # Signal context warnings + elite qualitative warnings
-        ctx = _signal_context_warnings(give_rows, get_rows)
+        ctx = _signal_context_warnings(give_rows, get_rows, give_surplus_vals)
         print()
         print("  SIGNAL CONTEXT:")
         if ctx:
