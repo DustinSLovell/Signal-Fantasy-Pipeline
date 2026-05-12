@@ -6036,6 +6036,53 @@ Note on Cruz/Harris gate: verdict bucket same (Slightly Favorable) but magnitude
 
 ---
 
-*End of thread_handoff.md — Sessions 1-55 complete.*
+## SESSION 56 CLOSE — May 12, 2026
+
+### Context
+Short diagnostic session continuing from Session 55. Sole task: Lodolo trade tool absence investigation.
+
+### What Was Investigated
+
+**Nick Lodolo — Trade Tool Absence Diagnosis (No code changes)**
+
+Files checked: `pitchers_statcast.csv`, `pitcher_luck_input.csv`, `pitcher_luck_scores.csv`, `projections_2026.csv`, `player_values.json`, `fantasy_rankings_pitchers_2026.csv`, `player_ownership_2026.csv`, `data/fg_pitching_ev_2025.csv`
+
+**Root cause: Lodolo has zero 2026 Statcast pitches.**
+
+The `fetch_pitcher_stats.py` bulk pull (`statcast()`) returns all pitchers who have actually thrown. Lodolo (MLBAM 666157) has no rows in `pitchers_statcast.csv` — not a name/ID mismatch, genuinely no 2026 appearances. He has been on the IL since the start of 2026.
+
+**Pipeline block:**
+```
+pitchers_statcast.csv → pitcher_luck_input.csv (7 IP min) → pitcher_luck_scores.csv → projections → player_values.json
+```
+He's absent at step 1, so MIN_IP adjustments and ID lookup fixes cannot help.
+
+**Correct action: do nothing.** When Lodolo returns from IL and reaches 7 IP, the next `python run_pipeline.py --write` adds him automatically. His fp_ros_rank = 55 in `player_ownership_2026.csv` indicates FantasyPros already anticipates his return — this will flow through once his MLBAM ID (666157, confirmed in `data/fg_pitching_ev_2025.csv`) appears in Statcast data.
+
+**Secondary finding:** `fantasy_rankings_pitchers_2026.csv` is still the stale 20-row file from Sessions 47/49. All pitchers ranked 21+ are missing fp_rank in the trade tool, which means no elite premium is applied for pitchers ranked 21–418. This needs a refetch via `fetch_fantasypros_ownership.py` on the next pipeline run.
+
+**Lodolo's mlbam_id = NaN** in `player_ownership_2026.csv` — name match failed during ownership fetch. Not an urgent issue; will self-correct when he starts pitching (Statcast data uses MLBAM natively).
+
+### What Shipped
+Nothing — diagnostic only, no code changes.
+
+### GitHub (Session 56)
+No new commits. Session 55 commits (`32da85e`, `e1957bc`) still current.
+
+### Notes for Next Session
+- `fantasy_rankings_pitchers_2026.csv` needs refetch — 21+ ranked pitchers missing fp_rank/elite premium in trade tool
+- Lodolo will auto-enter pipeline when he returns from IL and hits 7 IP (no action needed)
+
+### Next Session Priorities
+1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
+2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
+3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+4. **Career lessons database** — Sessions 22-56 not yet added in Claude.ai
+5. **Roto model calibration check** — run 5-10 known trades, verify verdicts are intuitive
+6. **fantasy_rankings_pitchers_2026.csv refetch** — fix elite premium for pitchers ranked 21+
+
+---
+
+*End of thread_handoff.md — Sessions 1-56 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
