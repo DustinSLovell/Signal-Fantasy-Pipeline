@@ -6018,81 +6018,29 @@ Cruz/Harris stayed in same verdict bucket but magnitude shift is real — Cruz i
 
 ## SESSION 56 CLOSE — May 12, 2026
 
-### Context
-Short diagnostic session continuing from Session 55. Sole task: Lodolo trade tool absence investigation.
+### Task 1 — Pitcher Rankings Rebuild (commit `674bd31`)
 
-### What Was Investigated
+- `fantasy_rankings_pitchers_2026.csv`: 20 rows → 417 rows, rebuilt from current `pitcher_luck_scores.csv` fp_rank data
+- Elite premium was already correct — Luzardo fp_rank=7 (not ~45 as previously estimated); `_fp_rank_by_id` fallback from Sessions 47/49 was already working
+- Name-lookup now current and comprehensive; `_fp_rank_by_id` fallback still active for new entrants not yet in CSV
+- **fp_rank is position-specific:** SP rank = rank among SPs on FantasyPros ROS page; RP rank = rank among RPs. Luzardo #7 SP → ×1.30 ✓, Ryan #17 SP → ×1.15 ✓
+- 37/37 PASS ✓ | All invariants PASS ✓
 
-**Nick Lodolo — Trade Tool Absence Diagnosis (No code changes)**
+**Pre-fix research finding:** Lodolo has zero 2026 Statcast pitches (on IL all season) — absent from all pipeline files and NOT in projections_2026.csv. When he returns and reaches 7 IP, `run_pipeline.py --write` adds him automatically. MLBAM ID: 666157 (from `data/fg_pitching_ev_2025.csv`).
 
-Files checked: `pitchers_statcast.csv`, `pitcher_luck_input.csv`, `pitcher_luck_scores.csv`, `projections_2026.csv`, `player_values.json`, `fantasy_rankings_pitchers_2026.csv`, `player_ownership_2026.csv`, `data/fg_pitching_ev_2025.csv`
+### Task 2 — IL Player Coverage (commit `674bd31`)
 
-**Root cause: Lodolo has zero 2026 Statcast pitches.**
+**Files shipped:**
+- `data/il_pitcher_stubs.csv` (new): manually maintained IL pitchers with career-rate ROS estimates
+- `build_il_stubs.py` (new): injects stubs into player_values.json with `il_only: True`; removes stale entries on each run (idempotent)
+- `score_value.py`: calls `build_il_stubs` BEFORE `compute_roto_surplus` so stubs enter roto ranking pool
+- `trade_analyzer.py`: `_load_players()` appends IL rows from player_values.json; IL disclaimer in trade output; NaN-safe `is True` check (prevents regular players triggering IL display)
 
-The `fetch_pitcher_stats.py` bulk pull (`statcast()`) returns all pitchers who have actually thrown. Lodolo (MLBAM 666157) has no rows in `pitchers_statcast.csv` — not a name/ID mismatch, genuinely no 2026 appearances. He has been on the IL since the start of 2026.
+**Stub projections (career stats scaled to remaining season):**
+- Lodolo (CIN): 125 IP, 8W, 3.45 ERA, 1.12 WHIP, 115K → surplus +27, roto +314
+- Burnes (BAL): 140 IP, 10W, 3.15 ERA, 1.15 WHIP, 125K → surplus +60, roto +384
 
-**Pipeline block:**
-```
-pitchers_statcast.csv → pitcher_luck_input.csv (7 IP min) → pitcher_luck_scores.csv → projections → player_values.json
-```
-He's absent at step 1, so MIN_IP adjustments and ID lookup fixes cannot help.
-
-**Correct action: do nothing.** When Lodolo returns from IL and reaches 7 IP, the next `python run_pipeline.py --write` adds him automatically. His fp_ros_rank = 55 in `player_ownership_2026.csv` indicates FantasyPros already anticipates his return — this will flow through once his MLBAM ID (666157, confirmed in `data/fg_pitching_ev_2025.csv`) appears in Statcast data.
-
-**Secondary finding:** `fantasy_rankings_pitchers_2026.csv` is still the stale 20-row file from Sessions 47/49. All pitchers ranked 21+ are missing fp_rank in the trade tool, which means no elite premium is applied for pitchers ranked 21–418. This needs a refetch via `fetch_fantasypros_ownership.py` on the next pipeline run.
-
-**Lodolo's mlbam_id = NaN** in `player_ownership_2026.csv` — name match failed during ownership fetch. Not an urgent issue; will self-correct when he starts pitching (Statcast data uses MLBAM natively).
-
-### What Shipped
-Nothing — diagnostic only, no code changes.
-
-### GitHub (Session 56)
-No new commits. Session 55 commits (`32da85e`, `e1957bc`) still current.
-
-### Notes for Next Session
-- `fantasy_rankings_pitchers_2026.csv` needs refetch — 21+ ranked pitchers missing fp_rank/elite premium in trade tool
-- Lodolo will auto-enter pipeline when he returns from IL and hits 7 IP (no action needed)
-
-### Next Session Priorities
-1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
-2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
-3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
-4. **Career lessons database** — Sessions 22-56 not yet added in Claude.ai
-5. **Roto model calibration check** — run 5-10 known trades, verify verdicts are intuitive
-6. **fantasy_rankings_pitchers_2026.csv refetch** — fix elite premium for pitchers ranked 21+
-
----
-
-## SESSION 57 CLOSE — May 12, 2026
-
-### Task 1 — Pitcher Rankings Rebuild
-
-**Problem confirmed:** `fantasy_rankings_pitchers_2026.csv` was stale (20 rows only). However, investigation showed that the `_fp_rank_by_id` fallback from Sessions 47/49 was already correctly applying elite premiums for ALL scored pitchers:
-- Luzardo: fp_rank=7 → ×1.30 ✓ (user thought ~45 but FP actually ranks him #7 SP)
-- Ryan: fp_rank=17 → ×1.15 ✓
-
-**Fix applied regardless:** Rebuilt file from current `pitcher_luck_scores.csv` fp_rank data — 417 rows (was 20). Makes primary name-lookup comprehensive and current. `_fp_rank_by_id` fallback still active for any new entrants not yet in the CSV.
-
-**Architecture note:** fp_rank in `pitcher_luck_scores.csv` is position-specific (SP rank = rank among SPs on FantasyPros ROS page; RP rank = rank among RPs). Luzardo at fp_rank=7 means #7 SP, not #7 overall pitcher. This is correct for elite premium calculation.
-
-### Task 2 — IL Player Projections (Lodolo + Burnes)
-
-**Root cause confirmed:** Both Lodolo (MLBAM 666157) and Burnes (MLBAM 669203) have zero 2026 Statcast pitches — absent from all pipeline files. They were NOT in projections_2026.csv (contrary to the task premise; the user's assumption was incorrect).
-
-**Fix:** New IL stubs architecture:
-
-| File | Role |
-|------|------|
-| `data/il_pitcher_stubs.csv` (new) | Manually maintained list of IL pitchers with ROS projections |
-| `build_il_stubs.py` (new) | Reads stubs → adds entries to player_values.json with `il_only: True` |
-| `score_value.py` | Calls `build_il_stubs` BEFORE `compute_roto_surplus` so stubs enter roto pool |
-| `trade_analyzer.py` | `_load_players()` appends IL rows from player_values.json; IL note in output; NaN-safe `is True` check |
-
-**Stub projections (based on career stats scaled to remaining season):**
-- Lodolo: 125 IP, 8W, 3.45 ERA, 1.12 WHIP, 115K → CBS FPTS +249, surplus +27, roto +314
-- Burnes: 140 IP, 10W, 3.15 ERA, 1.15 WHIP, 125K → CBS FPTS +281, surplus +60, roto +384
-
-**Trade tool output for IL players:**
+**Trade output for IL players:**
 ```
 Nick Lodolo (SP, CIN)
 ⚠ IL — Steamer ROS projection only
@@ -6100,18 +6048,19 @@ Signal: Neutral (no 2026 Statcast data)
   Value based on projected ROS stats only
 ```
 
-**Important design note:** Roto surplus for IL players is computed by `compute_roto_surplus.py` ranking their projected stats in the full SP pool. Lodolo's roto of +314 is comparable to Ryan/Luzardo because his projected ERA/WHIP are similar. The disclaimer handles the uncertainty.
-
-**Architecture note:** When Lodolo/Burnes return from IL and accumulate 7+ IP, `run_pipeline.py --write` will add them through the normal pipeline. The `build_il_stubs.py` removes IL-only entries on each run (idempotent), so they'll be cleanly replaced by pipeline-generated entries.
+**Maintenance:** When Lodolo or Burnes returns and hits 7 IP, remove from `data/il_pitcher_stubs.csv`. `run_pipeline.py --write` auto-adds them through normal pipeline. `build_il_stubs.py` skips stubs already in the combined DataFrame.
 
 ### Gate Results
 - Luzardo in trade tool (FP#7, ×1.30): ✓
-- Burnes in trade tool (FP#168): ✓ with IL disclaimer
-- Burnes K/ERA/WHIP reasonable: 125K/3.15ERA/1.15WHIP ✓
+- Burnes in trade tool (FP#168, IL note): ✓
+- Burnes K/ERA/WHIP reasonable vs FantasyPros ROS: 125K/3.15ERA/1.15WHIP ✓
 - Williams/Sanchez: STRONG TRADE ✓ (CBS delta +188.2, Roto delta +276.8)
 - 37/37 PASS ✓ | All invariants PASS ✓
 
-### GitHub (Session 57)
+### Content Protocol Note
+Published content (Reddit/Substack) should only use dashboard-sourced rank and ownership numbers. External search results risk stale or platform-mismatched data.
+
+### GitHub (Session 56)
 - Commit `674bd31` — "Refetch pitcher rankings — expand from 20 rows to top 150, elite premium now correct"
 - Pushed to origin/main
 
@@ -6119,12 +6068,12 @@ Signal: Neutral (no 2026 Statcast data)
 1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
 2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
 3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
-4. **Career lessons database** — Sessions 22-57 not yet added in Claude.ai
+4. **Career lessons database** — Sessions 22-56 not yet added in Claude.ai
 5. **Roto model calibration check** — run 5-10 known trades, verify verdicts are intuitive
-6. **IL stubs maintenance** — as players return from IL, remove from il_pitcher_stubs.csv; pipeline auto-picks them up once they reach 7 IP
+6. **IL stubs maintenance** — remove from il_pitcher_stubs.csv when players return from IL
 
 ---
 
-*End of thread_handoff.md — Sessions 1-57 complete.*
+*End of thread_handoff.md — Sessions 1-56 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
