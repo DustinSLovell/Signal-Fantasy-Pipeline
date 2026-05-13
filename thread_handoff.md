@@ -6074,56 +6074,43 @@ Published content (Reddit/Substack) should only use dashboard-sourced rank and o
 
 ---
 
-## SESSION 57 CLOSE — May 12, 2026
+## SESSION 57 — May 12, 2026
 
-### Task — SP/RP Misclassification Fix (commit `767b7b6`)
+### SP/RP Misclassification Fix (commit `767b7b6`)
 
-**Root cause:**
-- `score_value.py` `_project_pitcher_stats()` classifies pitchers via `ip_per_day >= threshold`
-- May threshold = 0.85; Sheehan (34.7 IP / 47 days = 0.738) and McClanahan (34.3 IP = 0.730) both below → misclassified as RP
-- FanGraphs GS = NaN (blocked) → GS-based override disabled
-- `player_values.json` `pos` field comes from `is_starter` → wrote "RP" for both
+**Root cause:** `score_value.py` classifies pitchers using `ip_per_day >= 0.85` (May threshold). Sheehan (0.738) and McClanahan (0.730) both fell below. FanGraphs GS was NaN (blocked) so GS fallback didn't fire.
 
-**Diagnostic audit:** 85 of ~400 pitchers misclassified RP in `player_values.json` despite `player_type=SP` in `pitcher_luck_scores.csv`. Notable names: Garrett Crochet, Zack Wheeler, Tyler Glasnow, Spencer Strider, Luis Castillo, and 80 others.
+**Audit:** 85 pitchers misclassified including Wheeler, Glasnow, Crochet, Strider, Castillo and many more. All were being valued against RP replacement level instead of SP replacement level — producing wrong trade verdicts on the most-traded pitchers in fantasy.
 
-**Fix 1 — Steamer SP override in `_project_pitcher_stats()`:**
-```python
-# After ip_per_day is_starter computation:
-_plcs = pd.read_csv(LUCK_P_PATH, usecols=["pitcher", "player_type"])
-_steamer_sp = set of pitcher IDs where player_type == "SP"
-out.loc[out["pitcher"].isin(_steamer_sp), "is_starter"] = True
-# → 85 pitchers reclassified RP→SP
-```
-Uses `pitcher_luck_scores.csv` as authoritative source — it already uses Steamer GS>=10 + current GS>=5/IP>=20 override logic.
+**Three fixes applied to `score_value.py`:**
+1. **Steamer SP override** — after ip_per_day classification, load `player_type` from `pitcher_luck_scores.csv` and force `is_starter=True` for any pitcher Steamer classifies as SP. 85 pitchers reclassified.
+2. **W=0 override skip** — don't use `projections_2026.csv` W when `proj_w <= 0` (Steamer had IL pitcher projected as RP with ~0 W). Recalculate from formula instead.
+3. **IP override** — added `proj_ip` to projections override list; only applies when projections IP < generic SP formula IP, preventing inflated innings and W for IL-return pitchers.
 
-**Fix 2 — W=0 for IL-return SPs:**
-- Sheehan had W=0 in `projections_2026.csv` because Steamer projected 1 IP (IL all year)
-- `score_value.py` override logic was writing W=0 when `proj_w=0`, overwriting the formula-derived ~4W
-- Fix: skip W override when `proj_w <= 0`; recalculate from corrected IP_proj × 0.075 × era_factor
-
-**Fix 3 — IP_proj override from projections_2026.csv:**
-- Added `proj_ip` to the projections override column list
-- Applies IP only when `projections_2026.csv` IP < formula IP_START_ROS (protects against generic 129 IP for IL-return SPs)
-- Sheehan IP: 129.3 (generic SP) → 55.0 (projections_2026 value) ✓
-
-**Final verified values:**
-- Emmet Sheehan: pos=SP, W=4.1, IP=55.0, surplus=-101.7 (trade tool: "Emmet Sheehan (SP, LAD)")
-- Shane McClanahan: pos=SP, W=7.0, IP=118.0, surplus=+52.6 (trade tool: "Shane Mcclanahan (SP, TB)")
-- George Soriano: pos=RP (correctly kept as RP — total_starts=18 but IP=16.7 → low IP/start = bulk relief, Steamer player_type=RP)
-
-### Pre-Registered Gate Results
-- Sheehan classified as SP in trade tool ✓
-- McClanahan classified as SP in trade tool ✓
-- W projections increased meaningfully (3W → 4.1W Sheehan, 7.0W McClanahan) ✓
-- Surplus benchmarked against SP replacement level (221.5, not 157) ✓
+**Gate results — all PASS:**
+- Sheehan classified as SP ✓
+- McClanahan classified as SP ✓
+- W projections increase meaningfully for both ✓
+- Surplus recalculates against SP replacement level ✓
 - validate_formulas.py 37/37 PASS ✓
+- All invariants PASS ✓
 
-### Invariants
-- Sanchez C#29 ✓ | Yordan overall #3 ✓ | Raleigh C#2 ✓ | Baldwin C#4 ✓ | Contreras C#7 ✓
+**Discovery method:** Reddit trade stress testing — crowdsourced QA surfaced Sheehan/McClanahan as suspicious, audit revealed 85 affected pitchers.
+
+**Pre-beta blocking bug scorecard — now 9 resolved:**
+- Session 45: K/W ROS projection inflation
+- Session 46: ERA/WHIP Steamer override
+- Session 47: Asymmetric verdict
+- Session 48: 167 hitters surplus = None
+- Session 49: Tucker fp_rank=None + TV chart
+- Session 53a: Multiple --give flag
+- Session 53b: Misleading negative surplus warning
+- Session 54: Roster slot configuration
+- Session 57: 85 pitchers SP/RP misclassified
 
 ### GitHub (Session 57)
-- Commit `767b7b6` — "Fix SP/RP misclassification — Steamer player_type override in score_value.py"
-- Push to origin/main before closing
+- Commit `767b7b6` — SP/RP misclassification fix (score_value.py)
+- Commit `a154c00` — thread_handoff.md Session 57 entry
 
 ### Next Session Priorities
 1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
