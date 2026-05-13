@@ -155,6 +155,37 @@ def main():
             err = stdout[:200] or "unknown error"
             print(f"  FP rank fetch failed — using cached fp_rank ({err.splitlines()[0]})")
 
+        # Fetch FP ROS consensus rankings (498-player ECR list, better than ownership proxy)
+        print("\nFetching FP ROS consensus rankings...")
+        result = subprocess.run(
+            [sys.executable, "-X", "utf8", "fetch_fp_ros_rankings.py"],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            cwd=Path(__file__).parent,
+        )
+        if result.returncode == 0:
+            for line in (result.stdout or "").strip().splitlines():
+                print(f"  {line}")
+            print("  FP ROS rankings updated")
+        else:
+            err = ((result.stderr or result.stdout or "")[:200] or "unknown error")
+            print(f"  FP ROS rankings fetch failed — using cached (${err.splitlines()[0]})")
+
+        # Fetch CBS ownership + ROS rankings (Playwright, ~5-7 min — weekly data refresh)
+        print("\nFetching CBS ownership and ROS rankings (Playwright)...")
+        result = subprocess.run(
+            [sys.executable, "-X", "utf8", "fetch_cbs_data.py"],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            cwd=Path(__file__).parent,
+        )
+        if result.returncode == 0:
+            for line in (result.stdout or "").strip().splitlines():
+                if any(kw in line for kw in ["Wrote", "SKIP", "Fetching"]):
+                    print(f"  {line}")
+            print("  CBS data updated")
+        else:
+            err = ((result.stderr or result.stdout or "")[:200] or "unknown error")
+            print(f"  CBS fetch failed — using cached data ({err.splitlines()[0]})")
+
     pipeline_start = time.perf_counter()
     step_times = []
 
@@ -255,6 +286,24 @@ def main():
         else:
             err = (result.stderr or result.stdout or "unknown error")[:200]
             print(f"  WARNING: Rolling FP compute failed: {err.splitlines()[0]}")
+
+    # Enrich luck CSVs with FP ROS, CBS ownership, CBS ROS rank columns
+    # Runs after scoring so luck_scores.csv / pitcher_luck_scores.csv exist
+    if any(s in ("score_luck.py", "score_pitcher_luck.py") for s, _ in SCRIPTS):
+        print(f"\n{STEP_DIVIDER}")
+        print("  Enriching rankings columns (FP ROS / CBS own / CBS ROS)...")
+        print(STEP_DIVIDER)
+        result = subprocess.run(
+            [sys.executable, "-X", "utf8", "enrich_rankings.py"],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            cwd=Path(__file__).parent,
+        )
+        if result.returncode == 0:
+            for line in (result.stdout or "").strip().splitlines():
+                print(f"  {line}")
+        else:
+            err = ((result.stderr or result.stdout or "")[:200] or "unknown error")
+            print(f"  WARNING: Rankings enrichment failed: {err.splitlines()[0]}")
 
     # Generate public signal board
     print(f"\n{STEP_DIVIDER}")

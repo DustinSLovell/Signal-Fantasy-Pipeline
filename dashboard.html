@@ -1330,9 +1330,9 @@ const S = {
 //            gap (±f2, coloured) | luck (±f4, coloured) | badge | team
 const HITTER_COLS = [
   { key:'name',          label:'Player',     fmt:'name'  },
-  { key:'owned_pct',     label:'Own%',       fmt:'own'   },
+  { key:'owned_pct',     label:'CBS%',       fmt:'own'   },
   { key:'fp_rank',       label:'FP ROS',     fmt:'int'   },
-  { key:'cbs_rank',      label:'CBS YTD',    fmt:'int'   },
+  { key:'cbs_rank',      label:'CBS ROS',    fmt:'int'   },
   { key:'PA',            label:'PA',         fmt:'int'   },
   // ── Scoring components (v2 model) ────────────────────────────────────────
   { key:'BABIP',         label:'BABIP',      fmt:'rate'  },
@@ -1354,9 +1354,9 @@ const HITTER_COLS = [
 
 const PITCHER_COLS = [
   { key:'name',                  label:'Player',    fmt:'name'  },
-  { key:'owned_pct',             label:'Own%',      fmt:'own'   },
+  { key:'owned_pct',             label:'CBS%',      fmt:'own'   },
   { key:'fp_rank',               label:'FP ROS',    fmt:'int'   },
-  { key:'cbs_rank',              label:'CBS YTD',   fmt:'int'   },
+  { key:'cbs_rank',              label:'CBS ROS',   fmt:'int'   },
   { key:'Team',                  label:'Team',      fmt:'team'  },
   { key:'IP',                    label:'IP',        fmt:'f1'    },
   { key:'ERA',                   label:'ERA',       fmt:'f2'    },
