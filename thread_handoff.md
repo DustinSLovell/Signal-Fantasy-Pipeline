@@ -6112,16 +6112,163 @@ Published content (Reddit/Substack) should only use dashboard-sourced rank and o
 - Commit `767b7b6` — SP/RP misclassification fix (score_value.py)
 - Commit `a154c00` — thread_handoff.md Session 57 entry
 
-### Next Session Priorities
-1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
-2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
-3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
-4. **Career lessons database** — Sessions 22-57 not yet added in Claude.ai
-5. **Roto model calibration check** — run 5-10 known trades, verify verdicts are intuitive
-6. **IL stubs maintenance** — remove from il_pitcher_stubs.csv when players return from IL
+---
+
+## Session 58 — Playwright CBS Ownership + ROS Rankings + FP ROS Rankings
+
+### What Was Built
+
+**Three new scripts:**
+
+**`fetch_cbs_data.py`** (NEW)
+- Playwright headless Chromium scraper for three CBS data sources
+- CBS ownership: 550 players from added/dropped trending pages (all positions)
+- CBS ROS hitter rankings: 248 players (C/1B/2B/SS/3B/OF/DH, ~40 per position)
+- CBS ROS pitcher rankings: 161 players (SP/RP)
+- Key discovery: CBS rankings pages use custom web components — `page.query_selector_all()` returns 0 rows. Must use `page.inner_text("body")` + regex parse.
+- CBS rankings format: multiple expert lists per page; only first "RK PLAYER" block is consensus; stop at second "RK PLAYER" header.
+- CBS abbreviated names: "F. Tatis Jr.", "C. Raleigh" — first initial + ". " + rest of name.
+- Fixed Windows console unicode: all `→` replaced with `->`, `…` with `...`, `──` with `--` throughout.
+- Ownership stored as 0–100 scale (matching ESPN owned_pct format, not 0–1 decimal).
+
+**`fetch_fp_ros_rankings.py`** (NEW)
+- FantasyPros ROS consensus rankings via `var ecrData = {...}` JSON embedded in FP page
+- No Playwright needed — plain `urllib.request` works
+- 498 players covered; columns: player_name, player_name_norm, team, primary_position, all_positions, fp_ros_rank, fp_pos_rank
+
+**`enrich_rankings.py`** (NEW)
+- Post-scoring enrichment script — runs after score_luck.py and score_pitcher_luck.py
+- Merges three data sources into luck_scores.csv and pitcher_luck_scores.csv without touching Layer 1
+- Columns updated: `fp_rank` (FP ROS overall ECR), `owned_pct` (CBS where available; keeps ESPN otherwise), `cbs_rank` (CBS positional rank — NEW column)
+- Jr./Sr. suffix normalization: builds fallback lookup keys stripped of Jr./Sr./II/III/IV via `SUFFIX_RE`. "Fernando Tatís" (luck_scores, no Jr.) correctly matches "Fernando Tatis Jr." (FP/CBS).
+- Name matching: full-name norm for FP and CBS ownership; abbreviated norm (`_abbrev_norm()`) for CBS ROS.
+
+**Coverage achieved:**
+- Hitters: 258 fp_rank updated, 209 owned_pct from CBS, 242 cbs_rank added (of 448 total)
+- Pitchers: 206 fp_rank updated, 204 owned_pct from CBS, 149 cbs_rank added (of 432 total)
+
+### Pipeline Order Updated
+
+```
+run_pipeline.py pre-pipeline block (before score_luck.py):
+  fetch_ownership.py          (existing)
+  fetch_fantasypros_ownership.py  (existing)
+  fetch_fp_ros_rankings.py    (NEW — 498 FP ROS players)
+  fetch_cbs_data.py           (NEW — CBS ownership + rankings, ~5-7 min)
+
+[existing pipeline steps: fetch → process → score]
+
+run_pipeline.py post-scoring block (after score_luck.py/score_pitcher_luck.py):
+  enrich_rankings.py          (NEW — merges all ranking sources)
+  [existing: export_signal_board.py]
+```
+
+### Dashboard Updated
+
+- `owned_pct` column label: "Own%" → "CBS%" (source now CBS trending data)
+- `cbs_rank` column label: "CBS YTD" → "CBS ROS" (now positional ROS rank, not YTD)
+
+### Known Limitation
+
+CBS ownership only covers ~550 trending (added/dropped) players. Stable elite players (Machado, Tatis when not trending, etc.) won't appear in CBS trends data — they retain ESPN owned_pct as fallback. CBS ROS = positional rank (SS #1, 3B #1), not overall rank like FP ROS.
+
+### Spot Check Results
+
+- Tatis: fp_rank=17, owned_pct=99.27%, cbs_rank=1 ✓
+- Machado: owned_pct=97.06% ✓ (CBS trending)
+- Tovar: owned_pct=31.0% ✓
+- Cade Smith: owned_pct=95.44% ✓
+- Luzardo: cbs_rank=16 (pitcher) ✓
+
+### Parking Lot Items Resolved
+
+- Playwright CBS scraper (was Tier 2) — built ✓
+- FP ROS rank stale data bug (was Tier 3) — resolved ✓
+- CBS YTD rank dashes bug (was Tier 3) — resolved ✓
+
+### Content Protocol Reminder (added Session 56)
+
+Published content should only use dashboard-sourced rank and ownership numbers.
+
+### Validation
+
+37/37 PASS. Invariants: Yordan #6, Raleigh C#2, Baldwin C#4, Contreras C#7.
+
+### GitHub (Session 58)
+
+- Commit `1c856b6` — Playwright CBS scraper, FP ROS rankings, enrich_rankings.py, dashboard columns
+- Commit `5461fcb` — CLAUDE.md Session 58 update
 
 ---
 
-*End of thread_handoff.md — Sessions 1-57 complete.*
+## Session 59 — Launch Angle Mechanical Suppression Flag
+
+### What Was Built
+
+**`score_luck.py`** — two new columns added post-verdict (after sort, so no verdict flips by architecture):
+
+**`la_suppression_flag`** (bool): fires when ALL gates pass:
+- PA >= 75
+- current_la_avg is not null AND < 12.0 (below mechanical floor)
+- career_la_avg is not null AND > 0
+- AND at least one of: la_delta < −6° (absolute) OR la_delta/career_la_avg < −0.50 (50% relative decline)
+
+**`la_suppression_pct`** (float): `abs(la_delta / career_la_avg)` rounded to 2dp
+
+**Buy Low amplifier:** luck_score × 1.08 when flag fires. Sets `amplification_cap_applied = True`.
+
+**11 total flagged (of 448 hitters):**
+- Buy Low amplified (2): Cronenworth (0.2756→0.2976), Butler (0.1768→0.1909)
+- Neutral flagged (7): Tatís, Torres, Altuve, Burleson, Sheets, Yastrzemski, Laureano
+- Sell High flagged (2): Caballero, Chapman — flag recorded, no score change
+
+**`dashboard.html`** — two new badge classes:
+- `.la-amp-badge` (amber): "⚡ Amplified" — shows for Buy Low + la_suppression_flag
+  - Tooltip: "Luck signal + mechanical LA suppression — score amplified 8%"
+- `.la-mech-badge` (steel blue): "⚙ Mech. Watch" — shows for Neutral + la_suppression_flag + xwOBA_gap > 0.030
+  - Tooltip: "LA X.X° current vs Y.Y° career (Z% decline) — swing plane deterioration may be mechanical"
+
+**Mech. Watch fires for (Neutral, xwgap>0.030):** Tatís (0.057), Burleson (0.037), Laureano (0.034)
+
+**Does NOT badge (xwgap below threshold):** Torres (0.024), Altuve (0.002), Carroll (flag=False)
+
+### Pre-Registered Gate Results
+
+| Gate | Player | Expected | Result |
+|------|--------|----------|--------|
+| 1 | Tatís | Neutral, Mech. Watch | ✓ flag=True, xwgap=0.057>0.030 → badge |
+| 2 | Torres | Neutral, Mech. Watch | Flag fires ✓; badge suppressed (xwgap=0.024<0.030) — data differs from spec |
+| 3 | Altuve | Neutral, check if xwgap>0.030 | ✓ xwgap=0.002<0.030 → no badge |
+| 4 | Cronenworth | Buy Low, amplified ≤8% | ✓ 0.2756→0.2976 (+8.0%) |
+| 5 | Butler | Buy Low, amplified ≤8% | ✓ 0.1768→0.1909 (+8.0%) |
+| 6 | Machado | Buy Low, may get badge | ✓ flag=False (la_delta=−5.1, both gates miss) |
+| 7 | Carroll | Neutral, no badge | ✓ flag=False, xwgap=−0.016 |
+| 8 | No verdict flips | Architectural guarantee | ✓ (flag applied post-verdict) |
+| 9 | 37/37 PASS | validate_formulas.py | ✓ |
+| 10 | Sanchez C#29 | Not top 20 catchers | ✓ rank 29/74 |
+
+Gate 2 note: Torres' la_suppression_flag correctly fires (la_delta=−13.4° < −6°). Badge does not show because live xwOBA_gap=0.024 is below the 0.030 badge threshold. Spec expected >0.030 but live data shows 0.024. Architecture is correct; data was slightly different from expectation when spec was written.
+
+### Validation
+
+37/37 PASS. Invariants: Sanchez C#29, Yordan #3, Raleigh C#2, Baldwin C#4, Contreras C#7.
+
+### GitHub (Session 59)
+
+- Commit `6421e0a` — LA mechanical suppression flag (score_luck.py + dashboard.html)
+- Commit `3612bcd` — CLAUDE.md Session 59 update
+
+### Next Session Priorities
+
+1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
+2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
+3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+4. **Career lessons database** — Sessions 22-59 not yet added in Claude.ai
+5. **Mid-season architecture build** (Tier 1 parking lot)
+6. **CQS interaction with Buy Low signals** — Ramírez, Stewart, Caminero suppressed by CQS floors despite strong Buy Low + FP top-3 position rankings; design requires signal-aware CQS rule
+
+---
+
+*End of thread_handoff.md — Sessions 1-59 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
