@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 13, 2026 (Sessions 1-58, consolidated)
+# Last updated: May 13, 2026 (Sessions 1-59, consolidated)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -484,6 +484,21 @@ The error in user's Python snippet was querying luck_scores.csv (which has owned
 No Python files needed changes. thread_handoff.md confirmed 297KB — under 500KB threshold, no archiving needed.
 37/37 PASS. All invariants PASS.
 
+--- May 13, 2026 (Session 59) ---
+Launch Angle Mechanical Suppression Flag.
+- score_luck.py: la_suppression_flag (bool) + la_suppression_pct (float) columns added post-verdict.
+  Gate: PA>=75, current_la_avg<12, career_la_avg>0, AND (la_delta<-6 OR la_delta/career_la<-0.50).
+  Buy Low amplifier: luck_score x1.08 when flag fires. 2 players amplified: Cronenworth (0.2756->0.2976), Butler (0.1768->0.1909).
+  Sell High + flag: recorded but no score change (Chapman, Caballero).
+  11 total flagged: 2 Buy Low, 7 Neutral, 2 Sell High.
+- dashboard.html: amber 'Amplified' badge for Buy Low + flag (CSS .la-amp-badge).
+  Steel-blue 'Mech. Watch' badge for Neutral + flag + xwOBA_gap>0.030 (CSS .la-mech-badge).
+  Mech. Watch fires for: Tatís (xwgap=0.057), Burleson (0.037), Laureano (0.034).
+  Torres: flag fires but xwgap=0.024 < 0.030 -> no badge (data note).
+Gate results: 1-Tatís ✓, 2-Torres flag ✓/badge threshold miss, 3-Altuve ✓, 4-Cronenworth ✓, 5-Butler ✓, 6-Machado ✓ (flag false), 7-Carroll ✓, 8-no verdict flips ✓, 9-37/37 ✓, 10-Sanchez C#29 ✓.
+37/37 PASS. Invariants: Sanchez C#29, Yordan #3, Raleigh C#2, Baldwin C#4, Contreras C#7.
+Commit: 6421e0a
+
 --- May 13, 2026 (Session 58) ---
 Playwright CBS scraper + FP ROS rankings + dashboard CBS columns.
 - fetch_cbs_data.py (NEW): Playwright headless CBS scraper; ownership 550 players (added+dropped, all positions);
@@ -516,8 +531,8 @@ PENDING MANUAL ACTIONS:
 - Publish Week 4 article (outputs/week4_article_draft.md) to Substack
 - Post Reddit beta recruitment (outputs/reddit_beta_post.md)
 - White paper Section 10 update — use Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
-- Career lessons database (Sessions 22-58) — add manually in Claude.ai
-- Update thread_handoff.md in Claude.ai with Session 58 summary
+- Career lessons database (Sessions 22-59) — add manually in Claude.ai
+- Update thread_handoff.md in Claude.ai with Session 59 summary (LA suppression flag spec + gate results)
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
