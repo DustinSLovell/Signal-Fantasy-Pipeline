@@ -2351,6 +2351,45 @@ Monetization intent baked in from day one. NOT a luck model — start/sit decisi
 - **Why start/sit vs luck:** Recurring weekly decision need, clear value proposition, monetization obvious, confidence-weighted recommendation engine transfers directly from Signal Fantasy architecture
 - **Story:** Monetization-focused sports AI product with documented accuracy methodology
 
+#### PROJECT 4 — EARLY WHITEBOARD NOTES (Football)
+
+**Status:** Planning only — not started.
+**Target start:** Month 6+ (after Signal Fantasy milestone + Projects 2 and 3 complete)
+
+**Key architectural decisions to make before building:**
+
+**1. DATA SOURCES**
+What is publicly available vs paid?
+Candidates: NFL Next Gen Stats, nflfastR, PFF, FantasyPros, Statcast equivalent?
+Research needed before first CC session.
+
+**2. SIGNAL ARCHITECTURE**
+What is the football equivalent of BABIP luck?
+Candidates: target share variance, snap count trajectory, air yards vs actual yards, red zone opportunity vs red zone production.
+Core thesis: start/sit decision engine, NOT a luck detection model (different from baseball approach).
+
+**3. MONETIZATION DESIGN**
+Bake in from day one — unlike Signal Fantasy where revenue was retrofitted.
+Questions: subscription vs one-time vs freemium? Price point? Free tier scope?
+Football players pay $50–150/yr for edge. DFS crossover audience is additional TAM.
+
+**INHERITANCE FROM SIGNAL FANTASY:**
+- Pre-registration framework (use from day one)
+- Three-layer AI workflow (Claude.ai + CC + handoff)
+- Backtest methodology (adapt for football data)
+- Content strategy (Reddit → Substack funnel)
+- Trade tool architecture (adapt for start/sit)
+- Career transition narrative (Project 4 of 4)
+
+**PROJECT STRUCTURE DECISION:**
+Start whiteboarding in the baseball Claude.ai project to inherit institutional knowledge.
+Migrate to new project when football has its own:
+- thread_handoff_football.md
+- Running pipeline
+- Publishing content
+
+Trigger: when tools are more independent than interdependent.
+
 ---
 
 ### Current Portfolio Gaps to Fill
