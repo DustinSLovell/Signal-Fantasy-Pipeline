@@ -1656,6 +1656,51 @@ def main():
     else:
         print("  Launch angle: skipped (hitter_launch_angle.json not found)")
 
+    # ── Launch Angle Mechanical Suppression Flag ──────────────────────────────
+    # Detects swing-plane deterioration where current LA is below mechanical floor.
+    # Gate: PA>=75, current_la_avg<12, and (la_delta<-6 OR relative drop>50%).
+    # For Buy Low signals: applies 1.08x amplifier (suppression corroborates signal).
+    # For Neutral with xwOBA_gap>0.030: dashboard shows "Mech. Watch" badge only.
+    LA_SUPP_MIN_PA    = 75     # PA floor
+    LA_SUPP_MAX_LA    = 12.0   # current_la_avg ceiling (below = mechanical floor)
+    LA_SUPP_ABS_DELTA = -6.0   # absolute drop threshold (degrees)
+    LA_SUPP_PCT_DROP  = -0.50  # relative drop vs career (50% decline)
+    LA_SUPP_AMP       = 1.08   # Buy Low multiplier
+
+    df["la_suppression_flag"] = False
+    df["la_suppression_pct"]  = float("nan")
+
+    n_la_supp = 0
+    n_la_amp  = 0
+    for _idx, _row in df.iterrows():
+        _pa      = int(_row.get("PA", 0) or 0)
+        _curr_la = _row["current_la_avg"]
+        _car_la  = _row["career_la_avg"]
+        _la_d    = _row["la_delta"]
+        _verdict = _row["verdict"]
+
+        if _pa < LA_SUPP_MIN_PA:
+            continue
+        if pd.isna(_curr_la) or pd.isna(_car_la) or pd.isna(_la_d):
+            continue
+        if _car_la <= 0 or _curr_la >= LA_SUPP_MAX_LA:
+            continue
+
+        _pct_drop = _la_d / _car_la   # negative value
+        if not (_la_d < LA_SUPP_ABS_DELTA or _pct_drop < LA_SUPP_PCT_DROP):
+            continue
+
+        df.at[_idx, "la_suppression_flag"] = True
+        df.at[_idx, "la_suppression_pct"]  = round(abs(_pct_drop), 2)
+        n_la_supp += 1
+
+        if _verdict in ("Buy low", "Slight buy"):
+            df.at[_idx, "luck_score"] = round(float(_row["luck_score"]) * LA_SUPP_AMP, 4)
+            df.at[_idx, "amplification_cap_applied"] = True
+            n_la_amp += 1
+
+    print(f"  LA suppression: {n_la_supp} flagged, {n_la_amp} Buy Low amplified (x{LA_SUPP_AMP})")
+
     # ── Worry Index / Confidence Meter (display-only — no effect on luck_score) ─
     # Flags players where model SILENCE is itself meaningful context.
     # Requires fp_rank (preseason expectation proxy) and xwoba_3yr (expected baseline).

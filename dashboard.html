@@ -602,6 +602,36 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
   margin-left: 5px;
 }
 
+/* LA suppression badges */
+.la-amp-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  white-space: nowrap;
+  margin-left: 4px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+.la-mech-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  white-space: nowrap;
+  margin-left: 4px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+
 /* ── Table fade transition ──────────────────────────────────────────────── */
 .tbl-wrap { transition: opacity .15s ease; }
 .tbl-wrap.fading { opacity: 0; }
@@ -2333,7 +2363,28 @@ function renderSimpleTable() {
     const confSpan = showConf ? `<span class="signal-conf">${confLabel}</span>` : '';
     const volBadge = (tab === 'pitchers' && (r.volatility_flag === true || r.volatility_flag === 'True'))
       ? `<span class="volatility-badge" title="${esc(r.volatility_label || 'High variance — signals less reliable')}">⚡</span>` : '';
-    const actionCell = `<td class="action-cell"><span class="action-badge ${finalAct.badge}">${finalAct.emoji} ${finalAct.label}</span>${volBadge}${seasonalBadge}${confSpan}</td>`;
+
+    // LA mechanical suppression badge (hitters only)
+    let lasBadge = '';
+    if (tab === 'hitters' && (r.la_suppression_flag === true || r.la_suppression_flag === 'True')) {
+      if (r.verdict === 'Buy low' || r.verdict === 'Slight buy') {
+        lasBadge = `<span class="la-amp-badge" title="Luck signal + mechanical LA suppression — score amplified 8%">&#9889; Amplified</span>`;
+      } else if (r.verdict === 'Neutral') {
+        const xwGap = toNum(r.xwOBA_gap);
+        if (!isNaN(xwGap) && xwGap > 0.030) {
+          const currLa = toNum(r.current_la_avg);
+          const carLa  = toNum(r.career_la_avg);
+          const laPct  = toNum(r.la_suppression_pct);
+          const dropPct = !isNaN(laPct) ? `${(laPct * 100).toFixed(0)}% decline` : '';
+          const laVals  = (!isNaN(currLa) && !isNaN(carLa))
+            ? `LA ${currLa.toFixed(1)}° current vs ${carLa.toFixed(1)}° career${dropPct ? ' (' + dropPct + ')' : ''} — swing plane deterioration may be mechanical`
+            : 'Launch angle below career floor — may be mechanical, not luck-driven';
+          lasBadge = `<span class="la-mech-badge" title="${esc(laVals)}">&#9881; Mech. Watch</span>`;
+        }
+      }
+    }
+
+    const actionCell = `<td class="action-cell"><span class="action-badge ${finalAct.badge}">${finalAct.emoji} ${finalAct.label}</span>${volBadge}${seasonalBadge}${lasBadge}${confSpan}</td>`;
 
     // Truncate explanation to 120 chars; full text on hover
     const short = explain.length > 120 ? explain.slice(0, 117) + '…' : explain;
