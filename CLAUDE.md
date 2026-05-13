@@ -1,6 +1,6 @@
 # CLAUDE.md — The Signal Fantasy
 # Auto-read by Claude Code at session start.
-# Last updated: May 11, 2026 (Sessions 1-43, consolidated)
+# Last updated: May 13, 2026 (Sessions 1-58, consolidated)
 # DO NOT modify scoring logic without running validate_formulas.py after.
 
 ---
@@ -484,6 +484,24 @@ The error in user's Python snippet was querying luck_scores.csv (which has owned
 No Python files needed changes. thread_handoff.md confirmed 297KB — under 500KB threshold, no archiving needed.
 37/37 PASS. All invariants PASS.
 
+--- May 13, 2026 (Session 58) ---
+Playwright CBS scraper + FP ROS rankings + dashboard CBS columns.
+- fetch_cbs_data.py (NEW): Playwright headless CBS scraper; ownership 550 players (added+dropped, all positions);
+  hitter ROS 248 players (C/1B/2B/SS/3B/OF/DH, 40 per pos); pitcher ROS 161 players (SP/RP).
+  Fixed Windows console unicode: all → characters removed from print statements.
+  Ownership stored as percentage (0-100 scale, matching ESPN format).
+- fetch_fp_ros_rankings.py (NEW): FP ROS consensus rankings, 498 players via ecrData JSON embed; no Playwright needed.
+- enrich_rankings.py (NEW): Post-scoring enrichment; merges fp_rank (FP ROS), owned_pct (CBS ownership),
+  cbs_rank (CBS positional rank) into luck_scores.csv and pitcher_luck_scores.csv without touching Layer 1.
+  Jr./Sr. suffix normalization: FP "Fernando Tatis Jr." matches luck_scores "Fernando Tatís" correctly.
+- run_pipeline.py: fetch_fp_ros_rankings.py + fetch_cbs_data.py wired pre-pipeline; enrich_rankings.py wired post-scoring.
+- dashboard.html: owned_pct label Own% -> CBS%; cbs_rank label CBS YTD -> CBS ROS.
+Coverage: hitters 242/448 CBS ROS, 258/448 fp_rank; pitchers 149/432 CBS ROS, 206/432 fp_rank.
+CBS ownership limitation: trending players only (550); stable elite players not in added/dropped lists.
+Gate results: Machado 97.06%, Tatis 99.27%, Tovar 31.0%, Cade Smith 95.44%; Tatis cbs_rank=1, Luzardo cbs_rank=16.
+37/37 PASS. Invariants: Yordan #6, Raleigh C#2, Baldwin C#4, Contreras C#7.
+Commit: 1c856b6
+
 --- May 11, 2026 (Session 43) ---
 Rolling Performance Indicator: new display feature for dashboard and pipeline.
 - fetch_game_logs.py (NEW): MLB Stats API per-game log fetcher; 133 signaled players (86H + 47P); 0 empty; 0.5s delay; urllib.request (no third-party dep); _parse_ip() handles "6.1"→6.333 inningsPitched strings.
@@ -498,8 +516,8 @@ PENDING MANUAL ACTIONS:
 - Publish Week 4 article (outputs/week4_article_draft.md) to Substack
 - Post Reddit beta recruitment (outputs/reddit_beta_post.md)
 - White paper Section 10 update — use Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
-- Career lessons database (Sessions 22-43) — add manually in Claude.ai
-- Update thread_handoff.md in Claude.ai with Session 43 summary
+- Career lessons database (Sessions 22-58) — add manually in Claude.ai
+- Update thread_handoff.md in Claude.ai with Session 58 summary
 
 ---
 *This file is the persistent memory for Claude Code sessions.*
