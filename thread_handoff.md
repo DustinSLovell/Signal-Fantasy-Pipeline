@@ -18,7 +18,7 @@ Before responding to ANY session goal, Claude must:
    - The exact Tier 1 item marked HIGHEST PRIORITY
    - The hard deadline item and its date
    - The current track record fraction
-   - The last GitHub commit hash and what it did
+   - The last GitHub commit hash and what it did (last commit this session: 3c3b039 — Session 60 final close, SLG/ISO coverage documented)
 
 3. Do NOT proceed until Dustin confirms the comprehension check
    looks correct.
@@ -6364,7 +6364,10 @@ Changed-row breakdown:
 
 ### GitHub (Session 60)
 
-- No commits — diagnostic only; ablation CSV files untracked
+- Commit `ecb0bce` — Session 60: xwOBA HR ablation complete, intentional calibration confirmed, permanently deferred (data/backtest_hr_ablation.csv + data/xwoba_hr_comparison.csv committed)
+- Commit `7d56bf6` — Career roadmap: Project 4 football whiteboard notes added (data sources, signal architecture, monetization design, inheritance from Signal Fantasy, migration trigger)
+- Commit `3c3b039` — Session 60 final close: SLG/ISO coverage confirmed, commit log updated (thread_handoff.md only — no code changes)
+- SLG/ISO metric coverage decision: intentionally excluded, documented in thread_handoff.md only (no separate commit)
 
 ### Next Session Priorities (updated)
 
