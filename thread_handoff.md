@@ -483,6 +483,18 @@ Layer 4: Trade Analyzer    → trade verdict
 
 ---
 
+### METRIC COVERAGE DECISION — SLG/ISO/2B-3B (May 13, 2026)
+
+SLG and ISO are adequately deconstructed via existing signals: barrel rate, HR/FB rate, xwOBA gap, hard hit rate, and BABIP collectively cover the meaningful drivers.
+
+**2B vs 3B distinction:** intentionally excluded. Marginal signal does not justify implementation complexity. xwOBA already values extra base contact quality appropriately regardless of specific outcome. Park geometry, sprint speed, and OF positioning are noise at season scale.
+
+**xSLG gap:** intentionally excluded. Largely redundant with xwOBA gap for most player profiles. Gap hitter archetype (doubles power) is the one underserved segment but impact is insufficient to warrant a new signal layer.
+
+No action required. Documented for reference.
+
+---
+
 ### HITTER SIGNAL STACK — 7 Layers (score_luck.py)
 
 **Layer 1: Core xwOBA Gap**
