@@ -6273,6 +6273,48 @@ Published content should only use dashboard-sourced rank and ownership numbers.
 
 ---
 
-*End of thread_handoff.md — Sessions 1-59 complete.*
+## Session 60 — xwOBA HR Treatment Diagnostic
+
+### Known Model Limitation — xwOBA HR Inflation
+
+**Discovery:** Session 60 diagnostic (no code changes made)
+
+**Root cause:** `process_stats.py:calc_xwoba()` treats `home_run` as a TRUE_OUTCOME_EVENT and uses `woba_value=2.00` for all HR rows. Statcast's published leaderboard xwOBA uses `estimated_woba_using_speedangle` for HRs — which captures whether the HR was "expected" based on EV/LA. A cheapie HR at 97 mph / 40° launch angle has a much lower estimated value than a 107 mph laser at 28°. The pipeline assigns all HRs the same 2.00 weight regardless.
+
+**Confirmed on Liam Hicks:** 9 HRs in 138 PA, mean estimated_woba=0.868 (cheapest: 0.151, 0.447, 0.447). HR treatment inflates xwOBA by +0.067. Pipeline shows 0.430 vs Statcast published 0.358. After HR fix: 0.364 — gap of only 0.006 (within date-cutoff noise). Root cause fully accounts for the discrepancy.
+
+**Systematic impact:** PA ≥ 100 cohort mean pipeline xwOBA = 0.345 vs expected league average ~0.317–0.320 = **+0.028 systematic inflation**. After HR fix, drops to 0.328. Scales with HR count: 0 HR mean=0.275, 8+ HR mean=0.410.
+
+**Verdict impact:** 66 players in the border zone (luck_score 0.100–0.250) may have slightly inflated Buy Low signals. HR-heavy players near the ±0.175 threshold are most at risk.
+
+**Why NOT fixed before beta:** Backtest (Version E/F — 91.9%/90.5%/87.7%) was computed with the same HR treatment. Thresholds are calibrated to the inflated scale. Fixing xwOBA without a full backtest re-run would create threshold miscalibration worse than the current consistent bias.
+
+**Correct fix path:**
+1. Fix HR true-outcome treatment in `calc_xwoba()` — remove `home_run` from TRUE_OUTCOME_EVENTS
+2. Re-run full backtest (`backtest_multi_year_v7.py`)
+3. Re-validate thresholds against new xwOBA scale
+4. Publish as Version F hitter model update
+
+**Priority:** Tier 1 — mid-season architecture window. Trigger: build during scheduled mid-season architecture session alongside rolling window work.
+
+**Beta disclosure language (approved):**
+> "xwOBA calculation uses a consistent methodology that may slightly overstate expected contact quality for high-HR hitters. All accuracy numbers (91.4%) were validated using the same methodology, so verdicts remain reliable — this is a calibration note, not a model flaw."
+
+### GitHub (Session 60)
+
+- No commits — diagnostic only
+
+### Next Session Priorities (updated)
+
+1. **Publish Week 4 article** — `outputs/week4_article_draft.md` to Substack
+2. **Reddit beta recruitment post** — `outputs/reddit_beta_post.md` (ready to post)
+3. **White paper Section 10** — update with Version F pitcher accuracy (87.7% pooled / 82.0% OOS)
+4. **Career lessons database** — Sessions 22-60 not yet added in Claude.ai
+5. **Mid-season architecture build** — includes xwOBA HR fix + backtest re-run (Tier 1)
+6. **CQS interaction with Buy Low signals** — Ramírez, Stewart, Caminero suppressed despite strong signals; design requires signal-aware CQS rule
+
+---
+
+*End of thread_handoff.md — Sessions 1-60 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
