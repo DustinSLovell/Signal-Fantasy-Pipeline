@@ -3003,15 +3003,21 @@ function taElitePremium(fpRank) {
   return 1.00;
 }
 
-function taVerdictFromSurplus(delta) {
-  const d = Math.round(delta);
-  if (delta >=  50) return { cls:'vb-strong',  icon:'✅', label:'Strong Trade',       sub:`Projected Value delta: +${d}` };
-  if (delta >=  20) return { cls:'vb-favor',   icon:'✅', label:'Favorable',           sub:`Projected Value delta: +${d}` };
-  if (delta >=   5) return { cls:'vb-favor',   icon:'✅', label:'Slightly Favorable',  sub:`Projected Value delta: +${d}` };
-  if (delta >=  -5) return { cls:'vb-neutral', icon:'⚠️', label:'Neutral',             sub:`Projected Value delta: ${d}`  };
-  if (delta >= -20) return { cls:'vb-unfavor', icon:'⚠️', label:'Slightly Unfavorable',sub:`Projected Value delta: ${d}`  };
-  if (delta >= -50) return { cls:'vb-unfavor', icon:'⚠️', label:'Unfavorable',         sub:`Projected Value delta: ${d}`  };
-  return               { cls:'vb-avoid',   icon:'❌', label:'Avoid',               sub:`Projected Value delta: ${d}`  };
+function taVerdictFromSurplus(delta, leagueSize) {
+  const d  = Math.round(delta);
+  const ls = parseInt(leagueSize) || 13;
+  let disclaimer = '';
+  if (delta >= 50) {
+    if      (ls <= 12) disclaimer = 'Note: In shallow leagues, verify both incoming players are genuine starters above your current roster floor.';
+    else if (ls <= 14) disclaimer = 'Note: Verify incoming players fit your roster needs.';
+  }
+  if (delta >=  50) return { cls:'vb-strong',  icon:'✅', label:'Strong Trade',        sub:`Projected Value delta: +${d}`, disclaimer };
+  if (delta >=  20) return { cls:'vb-favor',   icon:'✅', label:'Favorable',            sub:`Projected Value delta: +${d}`, disclaimer };
+  if (delta >=   5) return { cls:'vb-favor',   icon:'✅', label:'Slightly Favorable',   sub:`Projected Value delta: +${d}`, disclaimer };
+  if (delta >=  -5) return { cls:'vb-neutral', icon:'⚠️', label:'Neutral',              sub:`Projected Value delta: ${d}`,  disclaimer };
+  if (delta >= -20) return { cls:'vb-unfavor', icon:'⚠️', label:'Slightly Unfavorable', sub:`Projected Value delta: ${d}`,  disclaimer };
+  if (delta >= -50) return { cls:'vb-unfavor', icon:'⚠️', label:'Unfavorable',          sub:`Projected Value delta: ${d}`,  disclaimer };
+  return               { cls:'vb-avoid',   icon:'❌', label:'Avoid',                sub:`Projected Value delta: ${d}`,  disclaimer };
 }
 
 function taComputeVerdict(wonCats, totalCats) {
@@ -3060,25 +3066,36 @@ function analyzeTrade() {
 
   // Surplus-delta verdict: mirrors CLI _trade_verdict_v3 + _elite_premium logic.
   // Uses dynamic surplus (_taGetSurplus) so slot config changes affect verdicts.
+  const ls           = parseInt(S.taLeague.size) || 13;
+  const extraDiscount = ls <= 12 ? 0.65 : ls <= 14 ? 0.80 : 0.95;
+
+  // Per-player contributions sorted desc so primary (highest-value) players index first
+  const getContribs  = S.ta.getting.map(p => _taGetSurplus(p) * taElitePremium(p.fp_rank)).sort((a,b) => b-a);
+  const giveContribs = S.ta.giving.map(p  => _taGetSurplus(p) * taElitePremium(p.fp_rank)).sort((a,b) => b-a);
+  const primaryN     = Math.min(S.ta.getting.length, S.ta.giving.length);
+
   let gettingAdj = 0, givingAdj = 0;
-  S.ta.getting.forEach(p => {
-    const surp = _taGetSurplus(p);
-    const ep   = taElitePremium(p.fp_rank);
-    gettingAdj += surp * ep;
-  });
-  S.ta.giving.forEach(p => {
-    const surp = _taGetSurplus(p);
-    const ep   = taElitePremium(p.fp_rank);
-    givingAdj += surp * ep;
-  });
+  getContribs.forEach((v, i)  => { gettingAdj += i >= primaryN ? v * extraDiscount : v; });
+  giveContribs.forEach((v, i) => { givingAdj  += i >= primaryN ? v * extraDiscount : v; });
+
   const surplusDelta = gettingAdj - givingAdj;
   const verdict = (gettingAdj === 0 && givingAdj === 0)
-    ? taComputeVerdict(wonCats, totalCats)   // fallback if no surplus data
-    : taVerdictFromSurplus(surplusDelta);
+    ? taComputeVerdict(wonCats, totalCats)           // fallback if no surplus data
+    : taVerdictFromSurplus(surplusDelta, S.taLeague.size);
 
-  const signal   = taSignalNote(S.ta.giving, S.ta.getting);
+  const signal = taSignalNote(S.ta.giving, S.ta.getting);
 
-  S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal, surplusDelta };
+  // Superstar irreplaceability note
+  let superstarNote = '';
+  if (S.ta.giving.length === 1) {
+    const fpRank = parseFloat(S.ta.giving[0].fp_rank);
+    if (!isNaN(fpRank) && fpRank <= 10)
+      superstarNote = '⚠️ Trading away a top-10 overall player. These are irreplaceable in most leagues — verify the return matches that ceiling.';
+    else if (!isNaN(fpRank) && fpRank <= 25)
+      superstarNote = '📊 Trading away a top-25 overall player. Confirm the return reflects their true value.';
+  }
+
+  S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal, surplusDelta, superstarNote };
   renderTradeResults();
 }
 
@@ -3102,6 +3119,8 @@ function renderTradeResults() {
     <div class="ta-verdict-icon">${v.icon}</div>
     <div class="ta-verdict-label">${v.label}</div>
     <div class="ta-verdict-sub">${v.sub}</div>
+    ${v.disclaimer ? `<div class="ta-verdict-signal" style="margin-top:6px;font-style:italic">${v.disclaimer}</div>` : ''}
+    ${r.superstarNote ? `<div class="ta-verdict-signal" style="margin-top:6px;font-weight:700">${r.superstarNote}</div>` : ''}
     <div class="ta-verdict-signal" style="margin-top:6px">${r.signal.note}</div>
     ${r.signal.msg ? `<div class="ta-verdict-signal" style="margin-top:3px;font-weight:700">${r.signal.msg}</div>` : ''}
   `;
@@ -3159,10 +3178,13 @@ function buildTaSideHtml(side, players, summary) {
     const hasEvo = !isH && (rNewPitches.length >= 2 || (!isNaN(rEvoSwstr) && rEvoSwstr > 0.015));
     const evoBadge = hasEvo ? `<span class="ta-evo-badge">⚡ New Pitcher — career discounted</span>` : '';
 
+    const verdictBadge = (p.verdict && p.verdict !== 'Neutral')
+      ? `<span class="badge ${info.cls}" style="font-size:10px">${info.label}</span>`
+      : '';
     return `<div class="ta-result-player">
       <div class="ta-rp-name">
         ${esc(p.name)}
-        <span class="badge ${info.cls}" style="font-size:10px">${info.label}</span>
+        ${verdictBadge}
         ${evoBadge}
       </div>
       <div class="ta-rp-meta">${esc(pos)} · ${esc(team)}</div>
