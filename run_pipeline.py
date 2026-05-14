@@ -303,7 +303,9 @@ def main():
                 print(f"  {line}")
         else:
             err = ((result.stderr or result.stdout or "")[:200] or "unknown error")
-            print(f"  WARNING: Rankings enrichment failed: {err.splitlines()[0]}")
+            raise RuntimeError(
+                f"enrich_rankings.py failed (exit {result.returncode}):\n{err}"
+            )
 
     # Generate public signal board
     print(f"\n{STEP_DIVIDER}")
