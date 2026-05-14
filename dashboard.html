@@ -3178,7 +3178,7 @@ function buildTaSideHtml(side, players, summary) {
     const hasEvo = !isH && (rNewPitches.length >= 2 || (!isNaN(rEvoSwstr) && rEvoSwstr > 0.015));
     const evoBadge = hasEvo ? `<span class="ta-evo-badge">⚡ New Pitcher — career discounted</span>` : '';
 
-    const verdictBadge = (p.verdict && p.verdict !== 'Neutral')
+    const verdictBadge = (p.verdict && !p.verdict.toLowerCase().startsWith('neutral'))
       ? `<span class="badge ${info.cls}" style="font-size:10px">${info.label}</span>`
       : '';
     return `<div class="ta-result-player">
