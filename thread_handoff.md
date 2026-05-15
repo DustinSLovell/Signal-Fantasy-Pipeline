@@ -6380,6 +6380,101 @@ Changed-row breakdown:
 
 ---
 
-*End of thread_handoff.md — Sessions 1-60 complete.*
+## Session 61 (May 15, 2026)
+
+### Key Decisions Made
+
+**Roto Surplus Model — Complete Architectural Rebuild**
+- Replaced position-pool ranking with global ranking
+- Added Category Breadth multiplier (1.20 ^ breadth_count)
+- Fixed contribution thresholds as raw stat values:
+  HR >= 22, R >= 85, RBI >= 80, SB >= 15,
+  AVG >= .255 (contrib), AVG < .220 (penalty)
+- Elite bonus: 1.05 ^ elite_count (90th pct thresholds:
+  HR>=35, R>=120, RBI>=105, SB>=35, AVG>=.285)
+- SB independence bonus: ×1.10 when SB + HR/RBI both fire
+- Demand-based scarcity multipliers (OF 1.183, C capped
+  at 1.00, DH penalty 0.90)
+- Tiered FP gate: >200 excluded, 101-200 capped at
+  40th pct surplus
+- PA gate: proj_PA < 400 excluded
+- Pedigree override system: data/projection_overrides.json
+  Current overrides: Ramírez, Soto, Carroll
+- Position-relative HR floors (65th pct within pos pool)
+- AVG penalty: breadth -= 1 AND ×0.92 when AVG < .220
+
+**Trade Analyzer — 4 Bug Fixes**
+- Utility slot: Yes/No → 0/1/2
+- Neutral badges removed from trade panel
+- League size disclaimer on strong verdicts
+- 2:1 replacement discount + superstar irreplaceability flag
+
+**CBS Scraper — Verified Healthy**
+- fetch_cbs_data.py running clean (545 ownership,
+  247 hitter ROS, 161 pitcher ROS)
+- enrich_rankings.py silent failure fixed → now raises
+  RuntimeError
+
+**Legal**
+- BUSL 1.1 license added (commit 0a56c1a)
+- Commercial use prohibited until 2029
+
+**Content Strategy — Locked**
+- Monday: AI/process article → Reddit with Substack link
+- Wednesday: Signals article → Reddit with Substack link
+- Reddit post AFTER Substack (not before) — validated
+  by Week 4 data
+
+**Week 4 Published**
+- 83 views by end of day, 19 email opens
+- Reddit post driving traffic correctly
+- Beta interest: James + others in comments
+
+### GitHub Commits
+- 7c5e4da — fix: enrich_rankings.py RuntimeError
+- 0a56c1a — legal: BUSL 1.1 license
+- 8b1371c — fix: utility slot 0/1/2
+- e5fb55b — feat: trade analyzer 4 fixes
+- 9d623f3 — fix: Neutral variant badges suppressed
+- dd091ad — fix: roto surplus global ranking + scarcity
+- e123061 — feat: Category Breadth Architecture
+- 2b88111 — feat: roto surplus v1 complete
+
+### Next Session Priorities
+1. Freeman → Judge stress test (roto calibration
+   final validation)
+2. GitHub Pages beta deployment (3-4 CC prompts)
+3. Pitcher roto calibration — team win% data needed
+   (create data/team_win_pcts_2026.json to unlock
+   W dimension for Skenes etc.)
+4. Pedigree Override Option A — career blend in model
+   (mid-season architecture session)
+5. Projection quality fixes — Harris, Cruz, Baldwin
+   inflated CBS projections
+6. White paper Version 2 update
+7. Monday AI article draft (first execution next week)
+8. Roto model: Ramírez still FP#5 but model #1 —
+   monitor as season progresses
+
+### Known Issues / Parking Lot
+- Soto projection corrupted (PA=412 mid-season)
+- Carroll AVG projection YTD bleed (.219 vs true ~.248)
+- Catcher inflation (Baldwin/Rice still slightly high)
+- Cruz/Harris FP skepticism not fully captured
+- Pitcher W dimension not yet live (needs standings data)
+- DH scarcity penalty (0.90) — monitor Ohtani placement
+- Career lessons database: Sessions 22-61 not yet added
+
+### Model State
+- Hitter Version E: 91.4% pooled / 90.5% OOS (unchanged)
+- Pitcher Version F: 87.7% pooled / 82.0% OOS (unchanged)
+- Roto surplus: v1 Architecture complete (2b88111)
+- Trade analyzer: beta-ready with 4 fixes
+- Substack: 69+ subscribers, Week 4 live
+- Beta launch: 3 days out
+
+---
+
+*End of thread_handoff.md — Sessions 1-61 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
