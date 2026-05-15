@@ -4,12 +4,16 @@ Roto surplus model for Signal Fantasy — Category Breadth Architecture.
 Two-stage scoring:
   Stage 1: Global percentile ranking per category (rank/N = percentile).
   Stage 2: Exponential breadth multiplier based on how many categories
-           the player contributes to meaningfully (>= 55th percentile).
+           the player contributes to meaningfully (fixed raw stat floors).
 
 Hitter categories (5x5 roto):
-  HR x1.6 | R x1.0 | RBI x1.0 | SB x1.2 | AVG x1.0
+  HR x1.6 | R x1.0 | RBI x1.0 | SB x1.2 | AVG x1.3
   breadth_mult = 1.20 ^ breadth_count (0–5 contributing categories)
   SB independence bonus x1.10 when contributes_SB + (contributes_HR or RBI)
+  AVG three-state: AVG>=0.255 -> +1 breadth | 0.220-0.254 -> neutral | <0.220 -> -1 breadth + x0.92
+  Contribution floors (fixed, pool-size-stable):
+    HR>=22 | R>=85 | RBI>=80 | SB>=15 | AVG>=0.255
+  Elite floors: HR>=35 | R>=120 | RBI>=105 | SB>=35 | AVG>=0.285
 
 SP categories (breadth model):
   ERA x1.0 (inv) | WHIP x0.5 (inv, corr w/ ERA) | K x1.0 | W x0.5
@@ -20,10 +24,12 @@ RP categories (flat within-pool ranking, unchanged):
   SVH x1.0 | K x1.0 | ERA x1.0 (inv) | WHIP x1.0 (inv)
 
 Demand-based scarcity multipliers (13-team, 5 OF slots):
-  OF 1.183 | C 1.173 | 1B 1.148 | SS 1.130 | 3B 1.127 | 2B 1.118 | DH 1.183
+  OF 1.183 | C 1.173 | 1B 1.148 | SS 1.130 | 3B 1.127 | 2B 1.118 | DH 0.90 (penalty)
 
 Gates:
-  Hitters: proj_PA < 400 OR fp_rank > 300 → roto_surplus = 0
+  Tier 1 (fp_rank <= 150): full scoring, no cap
+  Tier 2 (fp_rank 151-200): scored normally, surplus capped at median Tier 1/3 surplus
+  Excluded (proj_PA < 400 OR fp_rank > 200): roto_surplus = 0
   SP:      proj_IP < 100 → roto_surplus = 0
   RP:      proj_IP < 40  → roto_surplus = 0
 """
@@ -55,7 +61,7 @@ HITTER_CATS = [
     ('R',   1.0, True),
     ('RBI', 1.0, True),
     ('SB',  1.2, True),
-    ('AVG', 1.0, True),
+    ('AVG', 1.3, True),
 ]
 SP_CATS = [
     ('W',    1.0, True),
@@ -88,18 +94,26 @@ _NULL_FILL: dict[str, float] = {
     'WHIP':  5.0,
 }
 
-# ── Breadth model constants ───────────────────────────────────────────────────
-_HITTER_BREADTH_THRESH = 0.55   # global percentile threshold for R, RBI, AVG
-_HR_BREADTH_THRESH     = 0.63   # hybrid HR threshold — percentile gate
-_HR_HARD_FLOOR         = 25     # hybrid HR threshold — raw stat floor
-_SB_BREADTH_THRESH     = 0.62   # hybrid SB threshold — percentile gate
-_SB_HARD_FLOOR         = 15     # hybrid SB threshold — raw stat floor
+# ── Breadth model constants (fixed raw stat floors — pool-size-stable) ───────
+# Contribution floors: must reach this raw projected stat to count breadth
+_C_HR_THRESH        = 22      # proj_HR >= 22 → c_HR = True
+_C_R_THRESH         = 85      # proj_R  >= 85 → c_R  = True
+_C_RBI_THRESH       = 80      # proj_RBI >= 80 → c_RBI = True
+_SB_HARD_FLOOR      = 15      # proj_SB >= 15 → c_SB = True
+_AVG_CONTRIB_THRESH = 0.255   # proj_AVG >= 0.255 → c_AVG = +1
+_AVG_NEUTRAL_THRESH = 0.220   # proj_AVG >= 0.220 (and < 0.255) → c_AVG = 0; else -1
+
 _HITTER_BREADTH_BASE   = 1.20   # multiplier base: 1.20^breadth_count
 _SB_POWER_BONUS        = 1.10   # extra bonus: SB + (HR or RBI) together
+_AVG_PENALTY_MULT      = 0.92   # score multiplier when c_AVG == -1
 
-# Dominance bonus: elite performance at 90th percentile or above
-_ELITE_THRESH          = 0.90
-_ELITE_BASE            = 1.05   # 1.05^elite_count
+# Elite dominance floors (fixed raw stats)
+_E_HR_THRESH    = 35      # proj_HR >= 35  → elite HR
+_E_R_THRESH     = 120     # proj_R  >= 120 → elite R
+_E_RBI_THRESH   = 105     # proj_RBI >= 105 → elite RBI
+_E_SB_THRESH    = 35      # proj_SB >= 35  → elite SB
+_E_AVG_THRESH   = 0.285   # proj_AVG >= 0.285 → elite AVG
+_ELITE_BASE     = 1.05    # 1.05^elite_count
 
 # Tiered scarcity tier boundaries (percentile of raw h_score across all hitters)
 _SCARCITY_TOP_PCT      = 0.85
@@ -110,6 +124,11 @@ _SCARCITY_BOT_AMP      = 1.40   # amplify scarcity at bottom tier
 _SP_BREADTH_THRESH  = 0.55
 _SP_BREADTH_BASE    = 1.15      # 1.15^pitcher_breadth (fractional exponent)
 _SP_WIN_PCT_GATE    = 0.520     # min team win% for W to count as a contribution
+
+# FP rank tiered gate
+_FP_EXCLUDE_GATE    = 200       # fp_rank > this -> excluded (roto_surplus = 0)
+_FP_TIER2_GATE      = 150       # fp_rank 151-200 -> scored but capped at median surplus
+_C_SCARCITY_CAP     = 1.02      # max effective scarcity mult for catchers
 
 
 def _load_team_win_pcts() -> dict[str, float]:
@@ -162,7 +181,7 @@ def _w_team_mult(win_pct: float) -> float:
 def compute_roto_surpluses(
     players: list[dict],
     roster_n: dict[str, int],
-) -> tuple[dict[int, float], dict[int, dict]]:
+) -> tuple[dict[int, float], dict[int, dict]]:  # (surplus, extras)
     """
     Returns (surplus_dict, extras_dict).
 
@@ -197,7 +216,8 @@ def compute_roto_surpluses(
     sp_pool: list[dict] = []
     rp_pool: list[dict] = []
     excluded_ids: set[int] = set()
-    _seen_ids: set[int] = set()   # dedup: first entry wins (DH before SP for Ohtani)
+    tier2_ids:    set[int] = set()   # fp_rank 151-200: scored normally, capped post-scoring
+    _seen_ids:    set[int] = set()   # dedup: first entry wins (DH before SP for Ohtani)
 
     for p in players:
         if p['id'] in _seen_ids:
@@ -206,11 +226,13 @@ def compute_roto_surpluses(
         fpos = FPOS_MAP.get(p.get('pos', ''))
         if fpos in HITTER_FPOS:
             pa = p.get('PA_proj') or 0
-            fp = p.get('fp_rank') or 9999
-            if float(pa) < 400 or int(fp) > 150:
+            fp = int(p.get('fp_rank') or 9999)
+            if float(pa) < 400 or fp > _FP_EXCLUDE_GATE:
                 excluded_ids.add(p['id'])
             else:
                 hitters.append((p, fpos))
+                if fp > _FP_TIER2_GATE:
+                    tier2_ids.add(p['id'])
         elif fpos == 'SP':
             ip = p.get('IP_proj') or 0
             if float(ip) < 100:
@@ -227,6 +249,35 @@ def compute_roto_surpluses(
     result: dict[int, float] = {pid: 0.0 for pid in excluded_ids}
     extras: dict[int, dict]  = {}
 
+    # ── Projection overrides: blend career avg + current projection ───────────
+    _override_proj: dict[int, dict] = {}     # mlbam_id -> blended proj dict
+    _orig_proj:     dict[int, dict] = {}     # mlbam_id -> original proj (for display)
+    try:
+        _ov_path = os.path.join(_DIR, 'data', 'projection_overrides.json')
+        with open(_ov_path, encoding='utf-8') as _ov_f:
+            _overrides_data = json.load(_ov_f)
+        _id_to_p = {p['id']: p for p, _ in hitters}
+        for _ov in _overrides_data.get('hitters', []):
+            _ov_id = _ov['mlbam_id']
+            if _ov_id not in _id_to_p:
+                continue
+            _op = _id_to_p[_ov_id].get('proj') or {}
+            _w  = float(_ov['blend_weight'])
+            _ca = _ov['career_avg']
+            _orig_proj[_ov_id] = dict(_op)
+            _override_proj[_ov_id] = {
+                'HR':  _w * _ca['HR']  + (1 - _w) * float(_op.get('HR')  or 0),
+                'R':   _w * _ca['R']   + (1 - _w) * float(_op.get('R')   or 0),
+                'RBI': _w * _ca['RBI'] + (1 - _w) * float(_op.get('RBI') or 0),
+                'SB':  _w * _ca['SB']  + (1 - _w) * float(_op.get('SB')  or 0),
+                'AVG': _w * _ca['AVG'] + (1 - _w) * float(_op.get('AVG') or 0),
+            }
+            print(f"  Override applied: {_ov['name']} -- blended projections")
+    except FileNotFoundError:
+        pass
+    except Exception as _ov_err:
+        print(f"  WARNING: projection_overrides.json load failed: {_ov_err}")
+
     # ── Hitters: global percentile ranking ───────────────────────────────────
     N_h = len(hitters)
     h_percentiles: dict[int, dict[str, float]] = {p['id']: {} for p, _ in hitters}
@@ -236,7 +287,8 @@ def compute_roto_surpluses(
             null_fill = _NULL_FILL.get(cat, 0.0)
             vals: list[tuple[int, float]] = []
             for p, _ in hitters:
-                v = (p.get('proj') or {}).get(cat)
+                _pj = _override_proj.get(p['id']) or (p.get('proj') or {})
+                v = _pj.get(cat)
                 vals.append((p['id'], float(v) if v is not None else null_fill))
 
             sorted_asc = sorted(vals, key=lambda x: x[1], reverse=not higher_is_better)
@@ -249,41 +301,47 @@ def compute_roto_surpluses(
     for p, _fpos in hitters:
         pid  = p['id']
         pcts = h_percentiles[pid]
+        _proj = _override_proj.get(pid) or (p.get('proj') or {})
 
-        _proj  = p.get('proj') or {}
+        # Breadth flags: fixed raw stat floors (pool-size-stable)
+        c_HR  = float(_proj.get('HR')  or 0) >= _C_HR_THRESH
+        c_R   = float(_proj.get('R')   or 0) >= _C_R_THRESH
+        c_RBI = float(_proj.get('RBI') or 0) >= _C_RBI_THRESH
+        c_SB  = float(_proj.get('SB')  or 0) >= _SB_HARD_FLOOR
+        avg_v = float(_proj.get('AVG') or 0)
+        if avg_v >= _AVG_CONTRIB_THRESH:
+            c_AVG = 1      # contributes breadth
+        elif avg_v >= _AVG_NEUTRAL_THRESH:
+            c_AVG = 0      # neutral
+        else:
+            c_AVG = -1     # AVG liability: reduces breadth + penalty mult
 
-        # Breadth flags (hybrid thresholds for HR and SB)
-        c_HR  = (pcts.get('HR',  0.0) >= _HR_BREADTH_THRESH and
-                 float(_proj.get('HR') or 0) >= _HR_HARD_FLOOR)
-        c_R   =  pcts.get('R',   0.0) >= _HITTER_BREADTH_THRESH
-        c_RBI =  pcts.get('RBI', 0.0) >= _HITTER_BREADTH_THRESH
-        c_SB  = (pcts.get('SB',  0.0) >= _SB_BREADTH_THRESH and
-                 float(_proj.get('SB') or 0) >= _SB_HARD_FLOOR)
-        c_AVG =  pcts.get('AVG', 0.0) >= _HITTER_BREADTH_THRESH
-
-        breadth_count = int(c_HR) + int(c_R) + int(c_RBI) + int(c_SB) + int(c_AVG)
+        breadth_count = max(0, int(c_HR) + int(c_R) + int(c_RBI) + int(c_SB) + c_AVG)
         breadth_mult  = _HITTER_BREADTH_BASE ** breadth_count
+        avg_penalty_mult = _AVG_PENALTY_MULT if c_AVG == -1 else 1.0
 
         sb_bonus = _SB_POWER_BONUS if (c_SB and (c_HR or c_RBI)) else 1.0
 
-        # Dominance bonus: 1.05 ^ (# categories at >= 90th percentile)
-        elite_HR  = pcts.get('HR',  0.0) >= _ELITE_THRESH
-        elite_R   = pcts.get('R',   0.0) >= _ELITE_THRESH
-        elite_RBI = pcts.get('RBI', 0.0) >= _ELITE_THRESH
-        elite_SB  = pcts.get('SB',  0.0) >= _ELITE_THRESH
-        elite_AVG = pcts.get('AVG', 0.0) >= _ELITE_THRESH
+        # Elite dominance bonus: 1.05 ^ (# categories at fixed elite floor)
+        elite_HR  = float(_proj.get('HR')  or 0) >= _E_HR_THRESH
+        elite_R   = float(_proj.get('R')   or 0) >= _E_R_THRESH
+        elite_RBI = float(_proj.get('RBI') or 0) >= _E_RBI_THRESH
+        elite_SB  = float(_proj.get('SB')  or 0) >= _E_SB_THRESH
+        elite_AVG = float(_proj.get('AVG') or 0) >= _E_AVG_THRESH
         elite_count = int(elite_HR) + int(elite_R) + int(elite_RBI) + int(elite_SB) + int(elite_AVG)
         elite_bonus = _ELITE_BASE ** elite_count
 
         base = sum(pcts.get(cat, 0.0) * w for cat, w, _ in HITTER_CATS)
-        h_scores[pid] = base * breadth_mult * sb_bonus * elite_bonus
+        h_scores[pid] = base * breadth_mult * sb_bonus * elite_bonus * avg_penalty_mult
 
         extras[pid] = {
-            'breadth_count': breadth_count,
-            'breadth_mult':  round(breadth_mult, 3),
-            'sb_bonus':      sb_bonus,
-            'elite_count':   elite_count,
-            'elite_bonus':   round(elite_bonus, 3),
+            'breadth_count':    breadth_count,
+            'breadth_mult':     round(breadth_mult, 3),
+            'orig_proj':        _orig_proj.get(pid),   # None if not overridden
+            'sb_bonus':         sb_bonus,
+            'elite_count':      elite_count,
+            'elite_bonus':      round(elite_bonus, 3),
+            'avg_penalty_mult': avg_penalty_mult,
             'c_HR': c_HR, 'c_R': c_R, 'c_RBI': c_RBI, 'c_SB': c_SB, 'c_AVG': c_AVG,
         }
 
@@ -311,6 +369,8 @@ def compute_roto_surpluses(
         else:
             sc = 1.0 + (base_sc - 1.0) * _SCARCITY_BOT_AMP    # amplified at bottom
 
+        if fpos == 'C':
+            sc = min(sc, _C_SCARCITY_CAP)   # catcher scarcity hard cap
         h_adjusted[pid] = score * sc
 
     # ── Position-specific replacement levels ──────────────────────────────────
@@ -428,6 +488,16 @@ def compute_roto_surpluses(
         scale = 1.0
 
     surplus = {pid: round(v * scale, 1) for pid, v in result.items()}
+
+    # Tier 2 cap: fp_rank 151-200 capped at median positive surplus of Tier 1/3 players
+    _tier1_pos = sorted(v for pid, v in surplus.items()
+                        if v > 0 and pid not in tier2_ids and pid not in excluded_ids)
+    if _tier1_pos and tier2_ids:
+        _median_cap = _tier1_pos[len(_tier1_pos) // 2]
+        for pid in tier2_ids:
+            if pid in surplus and surplus[pid] > _median_cap:
+                surplus[pid] = round(_median_cap, 1)
+
     return surplus, extras
 
 
@@ -439,29 +509,34 @@ def _print_pool_percentiles(players: list[dict], roster_n: dict[str, int]) -> No
         if fpos not in HITTER_FPOS:
             continue
         pa = p.get('PA_proj') or 0
-        fp = p.get('fp_rank') or 9999
-        if float(pa) >= 400 and int(fp) <= 300:
+        fp = int(p.get('fp_rank') or 9999)
+        if float(pa) >= 400 and fp <= _FP_EXCLUDE_GATE:
             qualified.append(p.get('proj') or {})
 
     def _pct_val(vals_sorted: list[float], pct: float) -> float:
         idx = min(int(pct * len(vals_sorted)), len(vals_sorted) - 1)
         return vals_sorted[idx]
 
-    sb_vals = sorted(float(q.get('SB') or 0) for q in qualified)
-    hr_vals = sorted(float(q.get('HR') or 0) for q in qualified)
+    sb_vals  = sorted(float(q.get('SB')  or 0) for q in qualified)
+    hr_vals  = sorted(float(q.get('HR')  or 0) for q in qualified)
+    avg_vals = sorted(float(q.get('AVG') or 0) for q in qualified)
     N = len(qualified)
 
-    print(f"\n── Pool calibration ({N} qualified hitters) ─────────────────────────")
-    print(f"  SB  (gate: pct>=0.62 AND raw>=15)")
-    for pct in (0.50, 0.62, 0.68, 0.75, 0.85):
+    print(f"\n-- Pool calibration ({N} qualified hitters, fixed thresholds) ----")
+    print(f"  SB  (floor: raw>=15)")
+    for pct in (0.40, 0.50, 0.60, 0.75, 0.90):
         v = _pct_val(sb_vals, pct)
-        marker = ' ◄ GATE' if pct == 0.62 else ''
+        marker = ' <- FLOOR ~' if abs(v - 15) <= 2 else ''
         print(f"    {pct:.0%}: {v:5.1f} SB{marker}")
-    print(f"  HR  (gate: pct>=0.63 AND raw>=25)")
-    for pct in (0.50, 0.63, 0.68, 0.75, 0.85):
+    print(f"  HR  (floor: raw>=22 | elite: raw>=35)")
+    for pct in (0.40, 0.50, 0.60, 0.75, 0.90):
         v = _pct_val(hr_vals, pct)
-        marker = ' ◄ GATE' if pct == 0.63 else ''
+        marker = ' <- CONTRIB ~' if abs(v - 22) <= 2 else (' <- ELITE ~' if abs(v - 35) <= 2 else '')
         print(f"    {pct:.0%}: {v:5.1f} HR{marker}")
+    print(f"  AVG (liability: <0.220 | neutral: 0.220-0.254 | contrib: >=0.255 | elite: >=0.285)")
+    for pct in (0.20, 0.35, 0.50, 0.65, 0.80):
+        v = _pct_val(avg_vals, pct)
+        print(f"    {pct:.0%}: {v:.3f} AVG")
     print()
 
 
@@ -493,7 +568,7 @@ def main() -> None:
 
     surpluses, extras = compute_roto_surpluses(players, roster_n)
 
-    # ── Pool percentile calibration display ───────────────────────────────────
+    # ── Pool calibration display ───────────────────────────────────────────────
     _print_pool_percentiles(players, roster_n)
 
     updated = 0

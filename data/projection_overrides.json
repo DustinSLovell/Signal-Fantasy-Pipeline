@@ -1,0 +1,28 @@
+{
+  "hitters": [
+    {
+      "name": "José Ramírez",
+      "mlbam_id": 608070,
+      "reason": "Elite pedigree — slow 2026 start, career true talent anchor applied",
+      "career_avg": {"HR": 27, "R": 100, "RBI": 100, "SB": 25, "AVG": 0.270},
+      "blend_weight": 0.65,
+      "comment": "65% career avg + 35% current projection"
+    },
+    {
+      "name": "Juan Soto",
+      "mlbam_id": 665742,
+      "reason": "Corrupted mid-season PA projection — career true talent anchor applied",
+      "career_avg": {"HR": 28, "R": 105, "RBI": 95, "SB": 8, "AVG": 0.282},
+      "blend_weight": 0.70,
+      "comment": "70% career avg + 30% current projection — PA corruption severe"
+    },
+    {
+      "name": "Corbin Carroll",
+      "mlbam_id": 682998,
+      "reason": "2026 slow start distorting AVG projection below true talent",
+      "career_avg": {"HR": 24, "R": 92, "RBI": 80, "SB": 40, "AVG": 0.248},
+      "blend_weight": 0.55,
+      "comment": "55% career avg + 45% current — less severe than Ramirez/Soto"
+    }
+  ]
+}
