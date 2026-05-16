@@ -211,6 +211,23 @@ def compute_roto_surpluses(
     team_win_pcts  = _load_team_win_pcts()
     pitcher_teams  = _load_pitcher_teams()
 
+    # ── ROS-scaled breadth/elite thresholds ──────────────────────────────────
+    # ros_fraction is written per-player by score_value.py; read from first player
+    _ros = next((float(p['ros_fraction']) for p in players
+                 if p.get('ros_fraction') is not None), 1.0)
+    # Counting stat thresholds scale with remaining season; rate stats do not
+    _c_hr_thresh  = _C_HR_THRESH  * _ros   # e.g. 22 × 0.735 ≈ 16.2
+    _c_r_thresh   = _C_R_THRESH   * _ros   # e.g. 85 × 0.735 ≈ 62.5
+    _c_rbi_thresh = _C_RBI_THRESH * _ros   # e.g. 80 × 0.735 ≈ 58.8
+    _c_sb_thresh  = _SB_HARD_FLOOR * _ros  # e.g. 15 × 0.735 ≈ 11.0
+    _e_hr_thresh  = _E_HR_THRESH  * _ros   # e.g. 35 × 0.735 ≈ 25.7
+    _e_r_thresh   = _E_R_THRESH   * _ros   # e.g. 120 × 0.735 ≈ 88.2
+    _e_rbi_thresh = _E_RBI_THRESH * _ros   # e.g. 105 × 0.735 ≈ 77.2
+    _e_sb_thresh  = _E_SB_THRESH  * _ros   # e.g. 35 × 0.735 ≈ 25.7
+    print(f"  Roto thresholds (ros={_ros:.3f}): "
+          f"HR>={_c_hr_thresh:.1f} R>={_c_r_thresh:.1f} "
+          f"RBI>={_c_rbi_thresh:.1f} SB>={_c_sb_thresh:.1f}")
+
     # ── Gate players + separate pools ────────────────────────────────────────
     hitters: list[tuple[dict, str]] = []
     sp_pool: list[dict] = []
@@ -265,12 +282,14 @@ def compute_roto_surpluses(
             _w  = float(_ov['blend_weight'])
             _ca = _ov['career_avg']
             _orig_proj[_ov_id] = dict(_op)
+            # career_avg counting stats scaled by ros_fraction so they match
+            # the already-scaled proj_stat from score_value.py
             _override_proj[_ov_id] = {
-                'HR':  _w * _ca['HR']  + (1 - _w) * float(_op.get('HR')  or 0),
-                'R':   _w * _ca['R']   + (1 - _w) * float(_op.get('R')   or 0),
-                'RBI': _w * _ca['RBI'] + (1 - _w) * float(_op.get('RBI') or 0),
-                'SB':  _w * _ca['SB']  + (1 - _w) * float(_op.get('SB')  or 0),
-                'AVG': _w * _ca['AVG'] + (1 - _w) * float(_op.get('AVG') or 0),
+                'HR':  _w * (_ca['HR']  * _ros) + (1 - _w) * float(_op.get('HR')  or 0),
+                'R':   _w * (_ca['R']   * _ros) + (1 - _w) * float(_op.get('R')   or 0),
+                'RBI': _w * (_ca['RBI'] * _ros) + (1 - _w) * float(_op.get('RBI') or 0),
+                'SB':  _w * (_ca['SB']  * _ros) + (1 - _w) * float(_op.get('SB')  or 0),
+                'AVG': _w * _ca['AVG']           + (1 - _w) * float(_op.get('AVG') or 0),
             }
             print(f"  Override applied: {_ov['name']} -- blended projections")
     except FileNotFoundError:
@@ -303,11 +322,11 @@ def compute_roto_surpluses(
         pcts = h_percentiles[pid]
         _proj = _override_proj.get(pid) or (p.get('proj') or {})
 
-        # Breadth flags: fixed raw stat floors (pool-size-stable)
-        c_HR  = float(_proj.get('HR')  or 0) >= _C_HR_THRESH
-        c_R   = float(_proj.get('R')   or 0) >= _C_R_THRESH
-        c_RBI = float(_proj.get('RBI') or 0) >= _C_RBI_THRESH
-        c_SB  = float(_proj.get('SB')  or 0) >= _SB_HARD_FLOOR
+        # Breadth flags: ROS-scaled stat floors
+        c_HR  = float(_proj.get('HR')  or 0) >= _c_hr_thresh
+        c_R   = float(_proj.get('R')   or 0) >= _c_r_thresh
+        c_RBI = float(_proj.get('RBI') or 0) >= _c_rbi_thresh
+        c_SB  = float(_proj.get('SB')  or 0) >= _c_sb_thresh
         avg_v = float(_proj.get('AVG') or 0)
         if avg_v >= _AVG_CONTRIB_THRESH:
             c_AVG = 1      # contributes breadth
@@ -322,11 +341,11 @@ def compute_roto_surpluses(
 
         sb_bonus = _SB_POWER_BONUS if (c_SB and (c_HR or c_RBI)) else 1.0
 
-        # Elite dominance bonus: 1.05 ^ (# categories at fixed elite floor)
-        elite_HR  = float(_proj.get('HR')  or 0) >= _E_HR_THRESH
-        elite_R   = float(_proj.get('R')   or 0) >= _E_R_THRESH
-        elite_RBI = float(_proj.get('RBI') or 0) >= _E_RBI_THRESH
-        elite_SB  = float(_proj.get('SB')  or 0) >= _E_SB_THRESH
+        # Elite dominance bonus: 1.05 ^ (# categories at ROS-scaled elite floor)
+        elite_HR  = float(_proj.get('HR')  or 0) >= _e_hr_thresh
+        elite_R   = float(_proj.get('R')   or 0) >= _e_r_thresh
+        elite_RBI = float(_proj.get('RBI') or 0) >= _e_rbi_thresh
+        elite_SB  = float(_proj.get('SB')  or 0) >= _e_sb_thresh
         elite_AVG = float(_proj.get('AVG') or 0) >= _E_AVG_THRESH
         elite_count = int(elite_HR) + int(elite_R) + int(elite_RBI) + int(elite_SB) + int(elite_AVG)
         elite_bonus = _ELITE_BASE ** elite_count
