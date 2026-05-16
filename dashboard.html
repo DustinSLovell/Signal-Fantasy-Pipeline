@@ -1306,6 +1306,10 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 <script>
 'use strict';
 
+// ─── Exempt from New Pitcher career discount badge ────────────────────────────
+// Mirrors data/projection_overrides.json → exempt_career_discount[].mlbam_id
+const EXEMPT_CAREER_DISCOUNT = new Set([694973]); // Paul Skenes
+
 // ─── State ────────────────────────────────────────────────────────────────────
 const S = {
   // Luck analyzer (existing)
@@ -2812,7 +2816,8 @@ function buildTaCardHtml(p, side) {
 
   const newPitches = (lRow.new_pitches || '').split(',').filter(x => x.trim().length > 0);
   const evoSwstr  = toNum(lRow.swstr_gap);
-  const hasEvo = !isH && (newPitches.length >= 2 || (!isNaN(evoSwstr) && evoSwstr > 0.015));
+  const hasEvo = !isH && !EXEMPT_CAREER_DISCOUNT.has(Number(p.id)) &&
+                 (newPitches.length >= 2 || (!isNaN(evoSwstr) && evoSwstr > 0.015));
   const evoBadge = hasEvo ? `<div class="ta-evo-badge">⚡ New Pitcher — career discounted</div>` : '';
 
   return `<div class="ta-player-card">
@@ -3188,7 +3193,8 @@ function buildTaSideHtml(side, players, summary) {
 
     const rNewPitches = (lRow.new_pitches || '').split(',').filter(x => x.trim().length > 0);
     const rEvoSwstr   = toNum(lRow.swstr_gap);
-    const hasEvo = !isH && (rNewPitches.length >= 2 || (!isNaN(rEvoSwstr) && rEvoSwstr > 0.015));
+    const hasEvo = !isH && !EXEMPT_CAREER_DISCOUNT.has(Number(p.id)) &&
+                   (rNewPitches.length >= 2 || (!isNaN(rEvoSwstr) && rEvoSwstr > 0.015));
     const evoBadge = hasEvo ? `<span class="ta-evo-badge">⚡ New Pitcher — career discounted</span>` : '';
 
     const verdictBadge = (p.verdict && !p.verdict.toLowerCase().startsWith('neutral'))

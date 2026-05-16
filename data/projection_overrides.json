@@ -24,5 +24,12 @@
       "blend_weight": 0.55,
       "comment": "55% career avg + 45% current — less severe than Ramirez/Soto"
     }
+  ],
+  "exempt_career_discount": [
+    {
+      "name": "Paul Skenes",
+      "mlbam_id": 694973,
+      "reason": "Generational talent — career discount not applicable"
+    }
   ]
 }
