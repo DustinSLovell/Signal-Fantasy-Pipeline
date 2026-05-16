@@ -1681,6 +1681,13 @@ def main():
     SEASON_START = date.fromisoformat(proj_cfg["season_start"])
     SEASON_YEAR  = SEASON_START.year
 
+    # ── ROS scaling fraction ────────────────────────────────────────────────
+    _SEASON_END        = date(SEASON_YEAR, 9, 28)
+    _season_total_days = (_SEASON_END - SEASON_START).days
+    _days_left         = max(0, (_SEASON_END - date.today()).days)
+    _ros_fraction      = max(0.1, min(1.0, _days_left / _season_total_days))
+    print(f"ROS scaling: {_ros_fraction:.3f} remaining ({_days_left} days left in season)")
+
     # ── Load Career Quality Scores (for trade value floors) ───────────────
     print("Loading Career Quality Scores ...")
     cqs_data = load_career_quality()
@@ -2105,6 +2112,11 @@ def main():
             if col in row:
                 digits = 3 if cat in {"OBP", "AVG"} else 1
                 rec["proj"][cat] = _round_proj(row.get(col), digits)
+        # Scale ROS counting stats (rate stats AVG/OBP excluded)
+        for _sc in ("HR", "R", "RBI", "SB"):
+            if rec["proj"].get(_sc) is not None:
+                rec["proj"][_sc] = round(rec["proj"][_sc] * _ros_fraction, 1)
+        rec["ros_fraction"] = round(_ros_fraction, 3)
         players_out.append(rec)
 
     for _, row in p_merged.iterrows():
@@ -2161,6 +2173,11 @@ def main():
                 "H":    _round_proj(row.get("H_proj"), 1),
             },
         }
+        # Scale ROS counting stats (rate stats ERA/WHIP excluded)
+        for _sc in ("K", "W"):
+            if rec["proj"].get(_sc) is not None:
+                rec["proj"][_sc] = round(rec["proj"][_sc] * _ros_fraction, 1)
+        rec["ros_fraction"] = round(_ros_fraction, 3)
         players_out.append(rec)
 
     # ── Rankings match summary ─────────────────────────────────────────────

@@ -3219,7 +3219,12 @@ function buildTaSideHtml(side, players, summary) {
 function renderTaNetBar(netH, netP) {
   const el = document.getElementById('ta-net-bar');
   if (!el) return;
-  const allStats = [...Object.entries(netH), ...Object.entries(netP)];
+  // Rate stats excluded from net display (ERA/WHIP/AVG still used internally)
+  const _HIDE_NET = new Set(['AVG', 'ERA', 'WHIP']);
+  const allStats = [
+    ...Object.entries(netH).filter(([k]) => !_HIDE_NET.has(k)),
+    ...Object.entries(netP).filter(([k]) => !_HIDE_NET.has(k)),
+  ];
   if (!allStats.length) { el.innerHTML = ''; return; }
 
   const statHtml = allStats.map(([, stat]) => {
