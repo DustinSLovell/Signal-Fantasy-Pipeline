@@ -2258,6 +2258,30 @@ def main():
             _rec["proj_fpts"]  = None
             _rec["surplus_l1"] = None
 
+    # ── Deduplicate by player id (two-way players appear as hitter + pitcher) ──
+    # Rule: hitter entry beats pitcher entry; ties broken by higher proj_fpts.
+    _dedup_by_id: dict[int, dict] = {}
+    for _rec in players_out:
+        _pid = _rec.get("id")
+        if _pid is None:
+            continue
+        if _pid not in _dedup_by_id:
+            _dedup_by_id[_pid] = _rec
+        else:
+            _existing = _dedup_by_id[_pid]
+            _keep_new = (
+                (_rec.get("type") == "hitter" and _existing.get("type") == "pitcher") or
+                (_rec.get("type") == _existing.get("type") and
+                 (_rec.get("proj_fpts") or 0) > (_existing.get("proj_fpts") or 0))
+            )
+            if _keep_new:
+                _dedup_by_id[_pid] = _rec
+    _n_before = len(players_out)
+    players_out = list(_dedup_by_id.values())
+    if len(players_out) < _n_before:
+        print(f"  Dedup: removed {_n_before - len(players_out)} duplicate player "
+              f"{'entry' if _n_before - len(players_out) == 1 else 'entries'}")
+
     output = {
         "generated_at":  datetime.now().isoformat(timespec="seconds"),
         "season_start":  proj_cfg["season_start"],

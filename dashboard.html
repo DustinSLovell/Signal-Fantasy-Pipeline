@@ -1779,6 +1779,19 @@ function loadPlayerValues(json) {
   try {
     const parsed = typeof json === 'string' ? JSON.parse(json) : json;
     S.tvData = (parsed.players || []).map(flattenPlayer);
+    // Deduplicate by id: hitter beats pitcher for two-way players; ties → higher proj_fpts
+    { const _byId = new Map();
+      for (const p of S.tvData) {
+        if (!p.id) continue;
+        const key = String(p.id);
+        if (!_byId.has(key)) { _byId.set(key, p); continue; }
+        const ex = _byId.get(key);
+        const keepNew = (p.type === 'hitter' && ex.type === 'pitcher') ||
+                        (p.type === ex.type && (toNum(p.proj_fpts)||0) > (toNum(ex.proj_fpts)||0));
+        if (keepNew) _byId.set(key, p);
+      }
+      S.tvData = Array.from(_byId.values());
+    }
     S.tvLeagueNames = parsed.leagues || { league1: 'League 1', league2: 'League 2' };
     S._replLevelsL1 = parsed.replacement_levels_l1 || null;
     // Index by player id for O(1) trade-value lookup in Simple View gate
