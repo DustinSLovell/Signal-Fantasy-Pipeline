@@ -3182,9 +3182,30 @@ function analyzeTrade() {
   giveContribs.forEach((v, i) => { givingAdj  += i >= primaryN ? v * extraDiscount : v; });
 
   const surplusDelta = gettingAdj - givingAdj;
-  const verdict = (gettingAdj === 0 && givingAdj === 0)
+  let verdict = (gettingAdj === 0 && givingAdj === 0)
     ? taComputeVerdict(wonCats, totalCats)           // fallback if no surplus data
     : taVerdictFromSurplus(surplusDelta, S.taLeague.size);
+
+  // Cross-position detection: giving hitters for pitchers (or mixed sides)
+  const givingHasH  = S.ta.giving.some(p  => p.type === 'hitter');
+  const givingHasP  = S.ta.giving.some(p  => p.type === 'pitcher');
+  const gettingHasH = S.ta.getting.some(p => p.type === 'hitter');
+  const gettingHasP = S.ta.getting.some(p => p.type === 'pitcher');
+  const isCrossPos  = (givingHasH && gettingHasP) || (givingHasP && gettingHasH)
+                   || (givingHasH && givingHasP)   || (gettingHasH && gettingHasP);
+  if (isCrossPos) {
+    const fmtP = p => `${p.name} (${p.verdict || 'Neutral'})`;
+    verdict = {
+      cls:         'vb-neutral',
+      icon:        '⚾',
+      label:       'Cross-Position Trade',
+      sub:         'Direct surplus comparison is not meaningful across categories.',
+      crossPos:    true,
+      givingDesc:  S.ta.giving.map(fmtP).join(', '),
+      gettingDesc: S.ta.getting.map(fmtP).join(', '),
+      disclaimer:  'Consider whether the category gains offset the category losses for your specific roster.',
+    };
+  }
 
   const signal = taSignalNote(S.ta.giving, S.ta.getting);
 
@@ -3198,7 +3219,17 @@ function analyzeTrade() {
       superstarNote = '📊 Trading away a top-25 overall player. Confirm the return reflects their true value.';
   }
 
-  S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal, surplusDelta, superstarNote };
+  const givePerPlayer = S.ta.giving.map(p => ({
+    name: p.name, type: p.type, verdict: p.verdict,
+    surplus: Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
+  }));
+  const getPerPlayer = S.ta.getting.map(p => ({
+    name: p.name, type: p.type, verdict: p.verdict,
+    surplus: Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
+  }));
+  S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal,
+                   surplusDelta, superstarNote, gettingAdj, givingAdj,
+                   givePerPlayer, getPerPlayer };
   renderTradeResults();
 }
 
@@ -3218,11 +3249,59 @@ function renderTradeResults() {
   const v = r.verdict;
   const vEl = document.getElementById('ta-verdict-banner');
   vEl.className = `ta-verdict-banner ${v.cls}`;
+
+  let verdictBody;
+  if (v.crossPos) {
+    // Build per-player surplus rows for each side
+    const fmtRow = (p) => {
+      const sig = p.verdict && p.verdict !== 'Neutral'
+        ? ` <span style="font-size:10px;opacity:.8">[${p.verdict}]</span>` : '';
+      const surpStr = p.surplus >= 0 ? `+${p.surplus}` : `${p.surplus}`;
+      return `<div style="margin-top:3px">${esc(p.name)}${sig} — surplus <strong>${surpStr}</strong></div>`;
+    };
+    const gvTotal = Math.round(r.givingAdj);
+    const gtTotal = Math.round(r.gettingAdj);
+    const diff    = Math.abs(gtTotal - gvTotal);
+    let dirNote;
+    if (diff < 5)
+      dirNote = 'Both sides have roughly equal surplus value.';
+    else if (gtTotal > gvTotal)
+      dirNote = diff >= 30
+        ? `⬆️ Getting side has significantly higher surplus value (+${diff}).`
+        : `⬆️ Getting side has moderately higher surplus value (+${diff}).`;
+    else
+      dirNote = diff >= 30
+        ? `⬇️ Giving side has significantly higher surplus value (+${diff}) — you may be overpaying.`
+        : `⬇️ Giving side has moderately higher surplus value (+${diff}).`;
+
+    verdictBody = `
+      <div class="ta-verdict-sub" style="margin-bottom:6px">
+        Evaluate each side independently — direct surplus comparison is not meaningful across categories.
+      </div>
+      <div class="ta-verdict-signal" style="margin-top:6px;line-height:1.6;font-size:12px">
+        <div style="font-weight:700">Giving (total: ${gvTotal >= 0 ? '+' : ''}${gvTotal})</div>
+        ${r.givePerPlayer.map(fmtRow).join('')}
+      </div>
+      <div class="ta-verdict-signal" style="margin-top:6px;line-height:1.6;font-size:12px">
+        <div style="font-weight:700">Getting (total: ${gtTotal >= 0 ? '+' : ''}${gtTotal})</div>
+        ${r.getPerPlayer.map(fmtRow).join('')}
+      </div>
+      <div class="ta-verdict-signal" style="margin-top:8px;font-weight:700">${dirNote}</div>
+      <div class="ta-verdict-signal" style="margin-top:4px;font-style:italic">
+        Category gains vs losses depend on your roster needs — check the net stats below.
+      </div>
+    `;
+  } else {
+    verdictBody = `
+      <div class="ta-verdict-sub">${v.sub}</div>
+      ${v.disclaimer ? `<div class="ta-verdict-signal" style="margin-top:6px;font-style:italic">${v.disclaimer}</div>` : ''}
+    `;
+  }
+
   vEl.innerHTML = `
     <div class="ta-verdict-icon">${v.icon}</div>
     <div class="ta-verdict-label">${v.label}</div>
-    <div class="ta-verdict-sub">${v.sub}</div>
-    ${v.disclaimer ? `<div class="ta-verdict-signal" style="margin-top:6px;font-style:italic">${v.disclaimer}</div>` : ''}
+    ${verdictBody}
     ${r.superstarNote ? `<div class="ta-verdict-signal" style="margin-top:6px;font-weight:700">${r.superstarNote}</div>` : ''}
     <div class="ta-verdict-signal" style="margin-top:6px">${r.signal.note}</div>
     ${r.signal.msg ? `<div class="ta-verdict-signal" style="margin-top:3px;font-weight:700">${r.signal.msg}</div>` : ''}
