@@ -1321,13 +1321,13 @@ const VALID_TOKENS = new Set([
 ]);
 
 function checkToken() {
-  let token = localStorage.getItem("signal_token");
+  let token = localStorage.getItem("signal_token") || "";
   if (!token || !VALID_TOKENS.has(token)) {
     token = prompt(
       "The Signal Fantasy — Beta Access\n\nPlease enter your access token:"
     );
-    if (VALID_TOKENS.has(token)) {
-      localStorage.setItem("signal_token", token);
+    if (VALID_TOKENS.has(token.toLowerCase().trim())) {
+      localStorage.setItem("signal_token", token.toLowerCase().trim());
     } else {
       document.body.innerHTML = `
         <div style="display:flex;align-items:center;justify-content:center;
