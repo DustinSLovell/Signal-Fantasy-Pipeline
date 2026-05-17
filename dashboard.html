@@ -3194,16 +3194,42 @@ function analyzeTrade() {
   const isCrossPos  = (givingHasH && gettingHasP) || (givingHasP && gettingHasH)
                    || (givingHasH && givingHasP)   || (gettingHasH && gettingHasP);
   if (isCrossPos) {
-    const fmtP = p => `${p.name} (${p.verdict || 'Neutral'})`;
+    // roto_surplus_l1 is not cross-position comparable (hitters 0–400, pitchers 0–100).
+    // Use FP rank value as the normalized cross-position signal.
+    // fpVal: FP#1 → 200, FP#65 → 136, FP#200 → 1; unknown → 50
+    const fpVal   = fp => { const r = parseFloat(fp); return (isNaN(r) || r <= 0) ? 50 : Math.max(1, 201 - r); };
+    const gvFpTotal = S.ta.giving.reduce((s, p)  => s + fpVal(p.fp_rank), 0);
+    const gtFpTotal = S.ta.getting.reduce((s, p) => s + fpVal(p.fp_rank), 0);
+    const fpDiff    = gtFpTotal - gvFpTotal; // positive = getting side better
+
+    let crossCls, crossIcon, crossLabel, crossSub;
+    if (Math.abs(fpDiff) < 20) {
+      crossCls = 'vb-neutral'; crossIcon = '⚾'; crossLabel = 'Cross-Position Trade';
+      crossSub = 'Both sides have similar FP rank value — evaluate by category fit for your roster.';
+    } else if (fpDiff >= 60) {
+      crossCls = 'vb-strong';  crossIcon = '✅'; crossLabel = 'Strong Trade';
+      crossSub = 'Getting side is significantly more valuable by FP rank.';
+    } else if (fpDiff >= 30) {
+      crossCls = 'vb-favor';   crossIcon = '✅'; crossLabel = 'Favorable';
+      crossSub = 'Getting side is moderately more valuable by FP rank.';
+    } else if (fpDiff >= 20) {
+      crossCls = 'vb-favor';   crossIcon = '✅'; crossLabel = 'Slightly Favorable';
+      crossSub = 'Getting side has a slight FP rank edge.';
+    } else if (fpDiff <= -60) {
+      crossCls = 'vb-avoid';   crossIcon = '❌'; crossLabel = 'Avoid';
+      crossSub = 'Giving side is significantly more valuable by FP rank — you are overpaying.';
+    } else if (fpDiff <= -30) {
+      crossCls = 'vb-unfavor'; crossIcon = '⚠️'; crossLabel = 'Unfavorable';
+      crossSub = 'Giving side is moderately more valuable by FP rank.';
+    } else {
+      crossCls = 'vb-unfavor'; crossIcon = '⚠️'; crossLabel = 'Slightly Unfavorable';
+      crossSub = 'Giving side has a slight FP rank edge.';
+    }
+
     verdict = {
-      cls:         'vb-neutral',
-      icon:        '⚾',
-      label:       'Cross-Position Trade',
-      sub:         'Direct surplus comparison is not meaningful across categories.',
-      crossPos:    true,
-      givingDesc:  S.ta.giving.map(fmtP).join(', '),
-      gettingDesc: S.ta.getting.map(fmtP).join(', '),
-      disclaimer:  'Consider whether the category gains offset the category losses for your specific roster.',
+      cls: crossCls, icon: crossIcon, label: crossLabel, sub: crossSub,
+      crossPos: true, gvFpTotal, gtFpTotal, fpDiff,
+      disclaimer: 'FP ROS rank used as cross-position comparison — category fit still matters.',
     };
   }
 
@@ -3219,13 +3245,16 @@ function analyzeTrade() {
       superstarNote = '📊 Trading away a top-25 overall player. Confirm the return reflects their true value.';
   }
 
+  const _fpValFn = fp => { const r = parseFloat(fp); return (isNaN(r) || r <= 0) ? 50 : Math.max(1, 201 - r); };
   const givePerPlayer = S.ta.giving.map(p => ({
-    name: p.name, type: p.type, verdict: p.verdict,
-    surplus: Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
+    name: p.name, type: p.type, verdict: p.verdict, fp_rank: p.fp_rank,
+    surplus:    verdict.crossPos ? _fpValFn(p.fp_rank) : Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
+    isFpValue:  !!verdict.crossPos,
   }));
   const getPerPlayer = S.ta.getting.map(p => ({
-    name: p.name, type: p.type, verdict: p.verdict,
-    surplus: Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
+    name: p.name, type: p.type, verdict: p.verdict, fp_rank: p.fp_rank,
+    surplus:    verdict.crossPos ? _fpValFn(p.fp_rank) : Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
+    isFpValue:  !!verdict.crossPos,
   }));
   S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal,
                    surplusDelta, superstarNote, gettingAdj, givingAdj,
@@ -3252,44 +3281,24 @@ function renderTradeResults() {
 
   let verdictBody;
   if (v.crossPos) {
-    // Build per-player surplus rows for each side
     const fmtRow = (p) => {
       const sig = p.verdict && p.verdict !== 'Neutral'
         ? ` <span style="font-size:10px;opacity:.8">[${p.verdict}]</span>` : '';
-      const surpStr = p.surplus >= 0 ? `+${p.surplus}` : `${p.surplus}`;
-      return `<div style="margin-top:3px">${esc(p.name)}${sig} — surplus <strong>${surpStr}</strong></div>`;
+      const fpStr = p.fp_rank ? `FP #${p.fp_rank}` : 'unranked';
+      return `<div style="margin-top:3px">${esc(p.name)}${sig} — <strong>${fpStr}</strong></div>`;
     };
-    const gvTotal = Math.round(r.givingAdj);
-    const gtTotal = Math.round(r.gettingAdj);
-    const diff    = Math.abs(gtTotal - gvTotal);
-    let dirNote;
-    if (diff < 5)
-      dirNote = 'Both sides have roughly equal surplus value.';
-    else if (gtTotal > gvTotal)
-      dirNote = diff >= 30
-        ? `⬆️ Getting side has significantly higher surplus value (+${diff}).`
-        : `⬆️ Getting side has moderately higher surplus value (+${diff}).`;
-    else
-      dirNote = diff >= 30
-        ? `⬇️ Giving side has significantly higher surplus value (+${diff}) — you may be overpaying.`
-        : `⬇️ Giving side has moderately higher surplus value (+${diff}).`;
-
+    const gvFp = v.gvFpTotal, gtFp = v.gtFpTotal;
     verdictBody = `
-      <div class="ta-verdict-sub" style="margin-bottom:6px">
-        Evaluate each side independently — direct surplus comparison is not meaningful across categories.
-      </div>
-      <div class="ta-verdict-signal" style="margin-top:6px;line-height:1.6;font-size:12px">
-        <div style="font-weight:700">Giving (total: ${gvTotal >= 0 ? '+' : ''}${gvTotal})</div>
+      <div class="ta-verdict-sub">${v.sub}</div>
+      <div class="ta-verdict-signal" style="margin-top:8px;line-height:1.6;font-size:12px">
+        <div style="font-weight:700">Giving (FP rank score: ${gvFp})</div>
         ${r.givePerPlayer.map(fmtRow).join('')}
       </div>
       <div class="ta-verdict-signal" style="margin-top:6px;line-height:1.6;font-size:12px">
-        <div style="font-weight:700">Getting (total: ${gtTotal >= 0 ? '+' : ''}${gtTotal})</div>
+        <div style="font-weight:700">Getting (FP rank score: ${gtFp})</div>
         ${r.getPerPlayer.map(fmtRow).join('')}
       </div>
-      <div class="ta-verdict-signal" style="margin-top:8px;font-weight:700">${dirNote}</div>
-      <div class="ta-verdict-signal" style="margin-top:4px;font-style:italic">
-        Category gains vs losses depend on your roster needs — check the net stats below.
-      </div>
+      <div class="ta-verdict-signal" style="margin-top:6px;font-style:italic">${v.disclaimer}</div>
     `;
   } else {
     verdictBody = `
