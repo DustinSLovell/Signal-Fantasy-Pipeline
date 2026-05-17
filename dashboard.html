@@ -1306,6 +1306,34 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 <script>
 'use strict';
 
+// ─── Token gate ───────────────────────────────────────────────────────────────
+const VALID_TOKENS = new Set([
+  "signal-beta-001",
+  "signal-beta-002",
+  "signal-beta-003"
+]);
+
+function checkToken() {
+  let token = localStorage.getItem("signal_token");
+  if (!token || !VALID_TOKENS.has(token)) {
+    token = prompt(
+      "The Signal Fantasy — Beta Access\n\nPlease enter your access token:"
+    );
+    if (VALID_TOKENS.has(token)) {
+      localStorage.setItem("signal_token", token);
+    } else {
+      document.body.innerHTML = `
+        <div style="display:flex;align-items:center;justify-content:center;
+        height:100vh;font-family:sans-serif;flex-direction:column;gap:16px">
+          <h2>Access Denied</h2>
+          <p>Invalid token. Please contact Dustin for beta access.</p>
+        </div>`;
+      return false;
+    }
+  }
+  return true;
+}
+
 // ─── Exempt from New Pitcher career discount badge ────────────────────────────
 // Mirrors data/projection_overrides.json → exempt_career_discount[].mlbam_id
 const EXEMPT_CAREER_DISCOUNT = new Set([694973]); // Paul Skenes
@@ -3462,6 +3490,9 @@ async function init() {
     showScreen('load-screen');
   }
 }
+
+// Call before init
+if (!checkToken()) { throw new Error("Access denied"); }
 
 document.addEventListener('DOMContentLoaded', init);
 </script>
