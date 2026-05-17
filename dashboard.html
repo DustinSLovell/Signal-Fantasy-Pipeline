@@ -1453,7 +1453,7 @@ const PITCHER_COLS = [
 const TV_COLS = [
   { key:'name',                   label:'Player',       fmt:'name'  },
   { key:'pos',                    label:'Pos',          fmt:'pos'   },
-  { key:'roto_surplus_l1',        label:'Proj. Value',  fmt:'f1'    },
+  { key:'roto_surplus_l1',        label:'Proj. Value',  fmt:'f1',    hidden:true },
   { key:'__value',                label:'Model Score',  fmt:'value' },
   { key:'__esv',                  label:'Exp Stats',    fmt:'f2'    },
   { key:'track_record_multiplier',label:'Track Rec',    fmt:'f2'    },
@@ -1961,10 +1961,11 @@ function renderTVTable() {
 
   // Render header
   document.getElementById('tv-head').innerHTML = '<tr>' + cols.map(c => {
-    if (c.nosort) return `<th style="cursor:default">${esc(c.label)}</th>`;
+    const hide = c.hidden ? ' style="display:none"' : '';
+    if (c.nosort) return `<th${hide} style="cursor:default">${esc(c.label)}</th>`;
     const active = sort.col === c.key;
     const arr    = active ? (sort.dir === 'asc' ? ' &#9650;' : ' &#9660;') : ' <i class="sort-arrow">&#8597;</i>';
-    return `<th class="${active ? 'sorted' : ''}"
+    return `<th${hide} class="${active ? 'sorted' : ''}"
                 data-col="${c.key}"
                 onclick="onTvSort(this.dataset.col)">${esc(c.label)}${arr}</th>`;
   }).join('') + '</tr>';
@@ -1983,7 +1984,8 @@ function renderTVTable() {
     const cells  = cols.map(c => {
       const k   = tvColKey(c);
       const fmt = F[c.fmt] || F.f1;
-      return fmt(row[k]);
+      const cell = fmt(row[k]);
+      return c.hidden ? cell.replace('<td', '<td style="display:none"') : cell;
     }).join('');
     return `<tr class="${rowCls}">${cells}</tr>`;
   }).join('');
