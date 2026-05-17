@@ -1399,51 +1399,54 @@ const S = {
 // fmt codes: name | int | f1 | f2 | rate (3dp) | pct (×100, 1dp%) |
 //            gap (±f2, coloured) | luck (±f4, coloured) | badge | team
 const HITTER_COLS = [
-  { key:'name',          label:'Player',     fmt:'name'  },
-  { key:'owned_pct',     label:'CBS%',       fmt:'own'   },
-  { key:'fp_rank',       label:'FP ROS',     fmt:'int'   },
-  { key:'cbs_rank',      label:'CBS ROS',    fmt:'int'   },
-  { key:'PA',            label:'PA',         fmt:'int'   },
-  // ── Scoring components (v2 model) ────────────────────────────────────────
-  { key:'BABIP',         label:'BABIP',      fmt:'rate'  },
-  { key:'hr_fb_rate',    label:'HR/FB%',     fmt:'pct'   },
-  { key:'xwOBA_gap',     label:'xwOBA Gap',  fmt:'xwoba' },
-  { key:'z_contact_rate',label:'Z-Con%',     fmt:'pct'   },
-  // ── Display-only metrics (informational; not in v2 scoring formula) ──────
-  { key:'hard_hit_rate', label:'Hard Hit%',  fmt:'pct'   },
-  { key:'barrel_rate',   label:'Barrel%',    fmt:'pct'   },
-  // ── Result ───────────────────────────────────────────────────────────────
-  { key:'luck_score',    label:'Luck Score', fmt:'luck'  },
-  { key:'verdict',       label:'Verdict',    fmt:'badge', nosort:true },
-  { key:'tier_sell',     label:'Sell Tier',  fmt:'tier',  nosort:true },
-  // Rolling Performance Indicator (signaled players only — displays — for Neutral)
-  { key:'_season_fp',   label:'FP/G (Season)', fmt:'rfp'   },
-  { key:'_rolling_fp',  label:'FP/G (60 AB)',  fmt:'rfp',   nosort:true },
-  { key:'_trend_label', label:'Trend',          fmt:'trend', nosort:true },
+  // ── Visible columns ──────────────────────────────────────────────────────
+  { key:'name',          label:'Player',      fmt:'name'  },
+  { key:'_pos',          label:'POS',         fmt:'pvpos', nosort:true },
+  { key:'wOBA',          label:'wOBA',        fmt:'rate'  },
+  { key:'xwOBA',         label:'xwOBA',       fmt:'rate'  },
+  { key:'BABIP',         label:'BABIP',       fmt:'rate'  },
+  { key:'verdict',       label:'Verdict',     fmt:'badge', nosort:true },
+  { key:'fp_rank',       label:'FP ROS Rank', fmt:'int'   },
+  // ── Hidden columns (data retained, not displayed) ─────────────────────
+  { key:'owned_pct',     label:'CBS%',        fmt:'own',   hidden:true },
+  { key:'cbs_rank',      label:'CBS ROS',     fmt:'int',   hidden:true },
+  { key:'PA',            label:'PA',          fmt:'int',   hidden:true },
+  { key:'hr_fb_rate',    label:'HR/FB%',      fmt:'pct',   hidden:true },
+  { key:'xwOBA_gap',     label:'xwOBA Gap',   fmt:'xwoba', hidden:true },
+  { key:'z_contact_rate',label:'Z-Con%',      fmt:'pct',   hidden:true },
+  { key:'hard_hit_rate', label:'Hard Hit%',   fmt:'pct',   hidden:true },
+  { key:'barrel_rate',   label:'Barrel%',     fmt:'pct',   hidden:true },
+  { key:'luck_score',    label:'Luck Score',  fmt:'luck',  hidden:true },
+  { key:'tier_sell',     label:'Sell Tier',   fmt:'tier',  hidden:true, nosort:true },
+  { key:'_season_fp',    label:'FP/G Season', fmt:'rfp',   hidden:true },
+  { key:'_rolling_fp',   label:'FP/G 60 AB',  fmt:'rfp',   hidden:true, nosort:true },
+  { key:'_trend_label',  label:'Trend',       fmt:'trend', hidden:true, nosort:true },
 ];
 
 const PITCHER_COLS = [
-  { key:'name',                  label:'Player',    fmt:'name'  },
-  { key:'owned_pct',             label:'CBS%',      fmt:'own'   },
-  { key:'fp_rank',               label:'FP ROS',    fmt:'int'   },
-  { key:'cbs_rank',              label:'CBS ROS',   fmt:'int'   },
-  { key:'Team',                  label:'Team',      fmt:'team'  },
-  { key:'IP',                    label:'IP',        fmt:'f1'    },
-  { key:'ERA',                   label:'ERA',       fmt:'f2'    },
-  { key:'FIP',                   label:'FIP',       fmt:'f2'    },
-  { key:'ERA_minus_FIP',         label:'ERA−FIP',   fmt:'gap'   },
-  { key:'xERA',                  label:'xERA',      fmt:'f2'    },
-  { key:'BABIP_allowed',         label:'BABIP',     fmt:'rate'  },
-  { key:'lob_pct',               label:'LOB%',      fmt:'pct'   },
-  { key:'hard_hit_rate_allowed', label:'Hard Hit%', fmt:'pct'   },
-  { key:'swstr_rate',            label:'SwStr%',    fmt:'pct'   },
-  { key:'luck_score',            label:'Luck Score',fmt:'luck'  },
-  { key:'verdict',               label:'Verdict',   fmt:'badge', nosort:true },
-  { key:'tier_sell',             label:'Sell Tier', fmt:'tier',  nosort:true },
-  // Rolling Performance Indicator (signaled players only — displays — for Neutral)
-  { key:'_season_fp',   label:'FP/Start (Season)', fmt:'rfp'   },
-  { key:'_rolling_fp',  label:'FP/Start (20 IP)',  fmt:'rfp',   nosort:true },
-  { key:'_trend_label', label:'Trend',              fmt:'trend', nosort:true },
+  // ── Visible columns ──────────────────────────────────────────────────────
+  { key:'name',                  label:'Player',      fmt:'name'  },
+  { key:'_pos',                  label:'POS',         fmt:'pvpos', nosort:true },
+  { key:'ERA',                   label:'ERA',         fmt:'f2'    },
+  { key:'FIP',                   label:'FIP',         fmt:'f2'    },
+  { key:'xERA',                  label:'xERA',        fmt:'f2'    },
+  { key:'verdict',               label:'Verdict',     fmt:'badge', nosort:true },
+  { key:'fp_rank',               label:'FP ROS Rank', fmt:'int'   },
+  // ── Hidden columns (data retained, not displayed) ─────────────────────
+  { key:'owned_pct',             label:'CBS%',        fmt:'own',   hidden:true },
+  { key:'cbs_rank',              label:'CBS ROS',     fmt:'int',   hidden:true },
+  { key:'Team',                  label:'Team',        fmt:'team',  hidden:true },
+  { key:'IP',                    label:'IP',          fmt:'f1',    hidden:true },
+  { key:'ERA_minus_FIP',         label:'ERA−FIP',     fmt:'gap',   hidden:true },
+  { key:'BABIP_allowed',         label:'BABIP',       fmt:'rate',  hidden:true },
+  { key:'lob_pct',               label:'LOB%',        fmt:'pct',   hidden:true },
+  { key:'hard_hit_rate_allowed', label:'Hard Hit%',   fmt:'pct',   hidden:true },
+  { key:'swstr_rate',            label:'SwStr%',      fmt:'pct',   hidden:true },
+  { key:'luck_score',            label:'Luck Score',  fmt:'luck',  hidden:true },
+  { key:'tier_sell',             label:'Sell Tier',   fmt:'tier',  hidden:true, nosort:true },
+  { key:'_season_fp',            label:'FP/Start S',  fmt:'rfp',   hidden:true },
+  { key:'_rolling_fp',           label:'FP/Start IP', fmt:'rfp',   hidden:true, nosort:true },
+  { key:'_trend_label',          label:'Trend',       fmt:'trend', hidden:true, nosort:true },
 ];
 
 // ─── Trade value column definitions ──────────────────────────────────────────
@@ -1454,13 +1457,13 @@ const TV_COLS = [
   { key:'name',                   label:'Player',       fmt:'name'  },
   { key:'pos',                    label:'Pos',          fmt:'pos'   },
   { key:'roto_surplus_l1',        label:'Proj. Value',  fmt:'f1',    hidden:true },
-  { key:'__value',                label:'Model Score',  fmt:'value' },
-  { key:'__esv',                  label:'Exp Stats',    fmt:'f2'    },
-  { key:'track_record_multiplier',label:'Track Rec',    fmt:'f2'    },
-  { key:'quality_points',         label:'QP',           fmt:'int'   },
-  { key:'luck_adjustment',        label:'Luck Adj',     fmt:'f2'    },
+  { key:'__value',                label:'Model Score',  fmt:'value', hidden:true },
+  { key:'__esv',                  label:'Exp Stats',    fmt:'f2',    hidden:true },
+  { key:'track_record_multiplier',label:'Track Rec',    fmt:'f2',    hidden:true },
+  { key:'quality_points',         label:'QP',           fmt:'int',   hidden:true },
+  { key:'luck_adjustment',        label:'Luck Adj',     fmt:'f2',    hidden:true },
   { key:'verdict',                label:'Verdict',      fmt:'badge', nosort:true },
-  { key:'_rank',                  label:'League Rank',  fmt:'int',   nosort:true },
+  { key:'_rank',                  label:'FP ROS Rank',  fmt:'int',   nosort:true },
 ];
 
 // ─── Verdict helpers ──────────────────────────────────────────────────────────
@@ -1583,9 +1586,15 @@ const F = {
     const cls = n > 75 ? 'val-elite' : n > 40 ? 'val-great' : n > 10 ? 'val-good' : 'val-zero';
     return `<td><span class="val-badge ${cls}">${n.toFixed(1)}</span></td>`;
   },
-  // Position abbreviation (SP/RP/C/1B/etc.)
+  // Position abbreviation (SP/RP/C/1B/etc.) — from player_values field
   pos(v) {
     return isNA(v) ? `<td class="na">—</td>` : `<td class="pos-cell">${esc(v)}</td>`;
+  },
+  // Position via pvById lookup — for luck-score table rows (no pos field in CSV)
+  pvpos(v, r) {
+    const id = r.batter || r.pitcher;
+    const pv = S.tvById && S.tvById[String(id)];
+    return `<td class="pos-cell">${esc((pv && pv.pos) || '—')}</td>`;
   },
   // Rolling FP — one decimal, coloured by magnitude
   rfp(v) {
@@ -2461,13 +2470,14 @@ function renderAdvancedTable() {
 
   // Head
   const headHTML = '<tr>' + cols.map(c => {
+    const hide = c.hidden ? ' style="display:none"' : '';
     if (c.nosort)
-      return `<th style="cursor:default">${c.label}</th>`;
+      return `<th${hide} style="cursor:default">${c.label}</th>`;
     const sorted = sort.col === c.key;
     const arrow  = sorted
       ? (sort.dir === 'desc' ? ' ↓' : ' ↑')
       : ' <i class="sort-arrow">↕</i>';
-    return `<th class="${sorted ? 'sorted' : ''}"
+    return `<th${hide} class="${sorted ? 'sorted' : ''}"
                 onclick="onSort('${c.key}')"
             >${c.label}${arrow}</th>`;
   }).join('') + '</tr>';
@@ -2483,7 +2493,10 @@ function renderAdvancedTable() {
     bodyHTML = rows.map(r => {
       const info   = vInfo(r.verdict);
       const rowCls = info.row;
-      const cells  = cols.map(c => F[c.fmt](r[c.key], r)).join('');
+      const cells  = cols.map(c => {
+        const cell = F[c.fmt](r[c.key], r);
+        return c.hidden ? cell.replace('<td', '<td style="display:none"') : cell;
+      }).join('');
       return `<tr class="${rowCls}">${cells}</tr>`;
     }).join('');
   }
