@@ -1,0 +1,6 @@
+signal,n,correct,accuracy_pct,avg_woba_delta,no_data
+Buy Low,19,9,47.4,-0.0074,0
+Slight Buy,17,7,41.2,-0.0067,0
+Neutral,84,29,34.5,-0.0054,0
+Slight Sell,13,6,46.2,-0.0011,0
+Sell High,8,6,75.0,-0.0192,0
