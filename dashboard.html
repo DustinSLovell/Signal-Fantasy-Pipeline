@@ -669,12 +669,12 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 .league-btn:hover { background: var(--bg); color: var(--text); }
 .league-btn.active { background: #2563eb; color: white; }
 .league-btn .league-rename-input {
-  width: 88px; background: #1e2738; color: #e2e8f0;
-  border: 1px solid #3b82f6; border-radius: 3px;
+  width: 88px; background: #ffffff; color: #1a1a1a;
+  border: 2px solid #3b82f6; border-radius: 3px;
   padding: 1px 4px; font-size: 12px; font-weight: 600;
   outline: none;
 }
-.league-toggle-hint { font-size: 9px; color: #475569; align-self: center; margin-left: 4px; }
+.league-btn.editing { background: transparent !important; }
 
 /* ── Trade value content ─────────────────────────────────────────────────── */
 .tv-sub-bar {
@@ -1003,12 +1003,11 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 
     <!-- League toggle — visible only on Trade Value tab -->
     <div class="league-toggle" id="league-toggle" style="display:none">
-      <button class="league-btn active" id="lg-btn-1" onclick="setLeague('league1')" ondblclick="startRenameLeague(event,'league1')">League 1</button>
-      <button class="league-btn"        id="lg-btn-2" onclick="setLeague('league2')" ondblclick="startRenameLeague(event,'league2')">League 2</button>
-      <button class="league-btn"        id="lg-btn-3" onclick="setLeague('league3')" ondblclick="startRenameLeague(event,'league3')">League 3</button>
-      <button class="league-btn"        id="lg-btn-4" onclick="setLeague('league4')" ondblclick="startRenameLeague(event,'league4')">League 4</button>
-      <button class="league-btn"        id="lg-btn-5" onclick="setLeague('league5')" ondblclick="startRenameLeague(event,'league5')">League 5</button>
-      <span class="league-toggle-hint">dbl-click to rename</span>
+      <button class="league-btn active" id="lg-btn-1" title="Double-click to rename" onclick="setLeague('league1')" ondblclick="startRenameLeague(event,'league1')">League 1</button>
+      <button class="league-btn"        id="lg-btn-2" title="Double-click to rename" onclick="setLeague('league2')" ondblclick="startRenameLeague(event,'league2')">League 2</button>
+      <button class="league-btn"        id="lg-btn-3" title="Double-click to rename" onclick="setLeague('league3')" ondblclick="startRenameLeague(event,'league3')">League 3</button>
+      <button class="league-btn"        id="lg-btn-4" title="Double-click to rename" onclick="setLeague('league4')" ondblclick="startRenameLeague(event,'league4')">League 4</button>
+      <button class="league-btn"        id="lg-btn-5" title="Double-click to rename" onclick="setLeague('league5')" ondblclick="startRenameLeague(event,'league5')">League 5</button>
     </div>
 
     <!-- Luck analysis content (Hitters / Pitchers tabs) -->
@@ -3493,6 +3492,7 @@ function startRenameLeague(e, lg) {
   input.className = 'league-rename-input';
   input.onclick = ev => ev.stopPropagation();
   const commit = () => {
+    btn.classList.remove('editing');
     const name = input.value.trim() || currentName;
     S.leagueNames[lg] = name;
     try { localStorage.setItem('signalFantasy_league_names', JSON.stringify(S.leagueNames)); } catch(_) {}
@@ -3504,6 +3504,7 @@ function startRenameLeague(e, lg) {
     if (ev.key === 'Escape') { input.value = currentName; input.blur(); }
   };
   btn.textContent = '';
+  btn.classList.add('editing');
   btn.appendChild(input);
   requestAnimationFrame(() => { input.focus(); input.select(); });
 }
