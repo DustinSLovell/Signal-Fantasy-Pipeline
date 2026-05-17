@@ -668,6 +668,13 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 }
 .league-btn:hover { background: var(--bg); color: var(--text); }
 .league-btn.active { background: #2563eb; color: white; }
+.league-btn .league-rename-input {
+  width: 88px; background: #1e2738; color: #e2e8f0;
+  border: 1px solid #3b82f6; border-radius: 3px;
+  padding: 1px 4px; font-size: 12px; font-weight: 600;
+  outline: none;
+}
+.league-toggle-hint { font-size: 9px; color: #475569; align-self: center; margin-left: 4px; }
 
 /* ── Trade value content ─────────────────────────────────────────────────── */
 .tv-sub-bar {
@@ -996,8 +1003,12 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 
     <!-- League toggle — visible only on Trade Value tab -->
     <div class="league-toggle" id="league-toggle" style="display:none">
-      <button class="league-btn active" id="lg-btn-1" onclick="setLeague('league1')">League 1</button>
-      <button class="league-btn"        id="lg-btn-2" onclick="setLeague('league2')">League 2</button>
+      <button class="league-btn active" id="lg-btn-1" onclick="setLeague('league1')" ondblclick="startRenameLeague(event,'league1')">League 1</button>
+      <button class="league-btn"        id="lg-btn-2" onclick="setLeague('league2')" ondblclick="startRenameLeague(event,'league2')">League 2</button>
+      <button class="league-btn"        id="lg-btn-3" onclick="setLeague('league3')" ondblclick="startRenameLeague(event,'league3')">League 3</button>
+      <button class="league-btn"        id="lg-btn-4" onclick="setLeague('league4')" ondblclick="startRenameLeague(event,'league4')">League 4</button>
+      <button class="league-btn"        id="lg-btn-5" onclick="setLeague('league5')" ondblclick="startRenameLeague(event,'league5')">League 5</button>
+      <span class="league-toggle-hint">dbl-click to rename</span>
     </div>
 
     <!-- Luck analysis content (Hitters / Pitchers tabs) -->
@@ -1078,8 +1089,7 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
               <label>Format</label>
               <select id="ta-ls-format">
                 <option value="redraft" selected>Redraft</option>
-                <option value="keeper">Keeper</option>
-                <option value="dynasty">Dynasty</option>
+                <option value="" disabled>── Keeper/Dynasty coming soon ──</option>
               </select>
             </div>
             <div class="ta-league-field">
@@ -1370,7 +1380,8 @@ const S = {
   tvSort:   { all:      { col: 'roto_surplus_l1', dir: 'desc' },
               hitters:  { col: 'roto_surplus_l1', dir: 'desc' },
               pitchers: { col: 'roto_surplus_l1', dir: 'desc' } },
-  tvLeagueNames: { league1: 'CBS 13-Team', league2: 'Fantrax 15-Team' },
+  leagueNames: { league1: 'League 1', league2: 'League 2', league3: 'League 3', league4: 'League 4', league5: 'League 5' },
+  allLeagueSettings: {},
   tvMode: 'analyzer',   // 'analyzer' | 'rankings'
   // Trade analyzer
   ta: { giving: [], getting: [], dropping: [], results: null },
@@ -1840,7 +1851,7 @@ function loadPlayerValues(json) {
       }
       S.tvData = Array.from(_byId.values());
     }
-    S.tvLeagueNames = parsed.leagues || { league1: 'League 1', league2: 'League 2' };
+    // League names managed in S.leagueNames / localStorage — not loaded from JSON
     S._replLevelsL1 = parsed.replacement_levels_l1 || null;
     // Index by player id for O(1) trade-value lookup in Simple View gate
     S.tvById = {};
@@ -1887,10 +1898,7 @@ function renderTV() {
   if (!isTV) return;
 
   // Sync league button states
-  document.getElementById('lg-btn-1').classList.toggle('active', S.league === 'league1');
-  document.getElementById('lg-btn-2').classList.toggle('active', S.league === 'league2');
-  document.getElementById('lg-btn-1').textContent = S.tvLeagueNames.league1 || 'League 1';
-  document.getElementById('lg-btn-2').textContent = S.tvLeagueNames.league2 || 'League 2';
+  renderLeagueButtons();
 
   // Sync type filter buttons
   document.getElementById('tv-tab-all').classList.toggle('active', S.tvTab === 'all');
@@ -2024,17 +2032,45 @@ const _LEAGUE_DEFAULTS = {
     saves_holds_ratio: { saves:1, holds:1 },
     team_count: 15,
   },
+  league3: {
+    size: '12', format: 'redraft', scoring: '5x5',
+    hCats: ['avg','r','hr','rbi','sb'],
+    pCats: ['era','whip','w','k','svh'],
+    cSlots: 2, ofSlots: 5, utility: 1, ciSlot: 1, miSlot: 1,
+    roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
+    saves_holds_ratio: { saves:2, holds:1 },
+    team_count: 12,
+  },
+  league4: {
+    size: '12', format: 'redraft', scoring: '5x5',
+    hCats: ['avg','r','hr','rbi','sb'],
+    pCats: ['era','whip','w','k','svh'],
+    cSlots: 2, ofSlots: 5, utility: 1, ciSlot: 1, miSlot: 1,
+    roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
+    saves_holds_ratio: { saves:2, holds:1 },
+    team_count: 12,
+  },
+  league5: {
+    size: '12', format: 'redraft', scoring: '5x5',
+    hCats: ['avg','r','hr','rbi','sb'],
+    pCats: ['era','whip','w','k','svh'],
+    cSlots: 2, ofSlots: 5, utility: 1, ciSlot: 1, miSlot: 1,
+    roster_slots: { C:2, '1B':1, '2B':1, '3B':1, SS:1, MI:1, CI:1, OF:5, UT:1, SP:0, RP:0, P:9 },
+    saves_holds_ratio: { saves:2, holds:1 },
+    team_count: 12,
+  },
 };
 
 function setLeague(lg) {
+  // Persist current league's settings before switching
+  S.allLeagueSettings[S.league] = Object.assign({}, S.taLeague);
   S.league = lg;
-  // Merge league-specific defaults into taLeague (preserves user overrides for other fields)
-  const defaults = _LEAGUE_DEFAULTS[lg];
-  if (defaults) {
-    S.taLeague = Object.assign({}, S.taLeague, defaults);
-    syncLeagueUI();
-    renderLeagueSummary();
-  }
+  // Load the target league's settings (saved → defaults)
+  const saved = S.allLeagueSettings[lg];
+  const defaults = _LEAGUE_DEFAULTS[lg] || _LEAGUE_DEFAULTS.league1;
+  S.taLeague = Object.assign({}, defaults, saved || {});
+  syncLeagueUI();
+  renderLeagueSummary();
   renderTV();
 }
 
@@ -3345,16 +3381,31 @@ function toggleLeaguePanel() {
 
 function loadLeagueSettings() {
   try {
-    const raw = localStorage.getItem('signalFantasy_leagueSettings');
-    if (raw) {
-      const saved = JSON.parse(raw);
-      S.taLeague = Object.assign({}, S.taLeague, saved);
-    } else {
-      // First visit: seed from league1 defaults
-      const defaults = _LEAGUE_DEFAULTS[S.league] || _LEAGUE_DEFAULTS.league1;
-      S.taLeague = Object.assign({}, S.taLeague, defaults);
+    // Load league names
+    const rawNames = localStorage.getItem('signalFantasy_league_names');
+    if (rawNames) {
+      const saved = JSON.parse(rawNames);
+      Object.assign(S.leagueNames, saved);
+    }
+    // Load each league's settings
+    for (let i = 1; i <= 5; i++) {
+      const lg = 'league' + i;
+      const raw = localStorage.getItem('signalFantasy_ls_' + lg);
+      if (raw) {
+        S.allLeagueSettings[lg] = JSON.parse(raw);
+      } else {
+        // Migrate from old single-key format for league1 only
+        if (lg === 'league1') {
+          const oldRaw = localStorage.getItem('signalFantasy_leagueSettings');
+          if (oldRaw) S.allLeagueSettings[lg] = JSON.parse(oldRaw);
+        }
+      }
     }
   } catch(e) {}
+  // Apply current league's settings
+  const saved = S.allLeagueSettings[S.league];
+  const defaults = _LEAGUE_DEFAULTS[S.league] || _LEAGUE_DEFAULTS.league1;
+  S.taLeague = Object.assign({}, defaults, saved || {});
   syncLeagueUI();
   renderLeagueSummary();
   _recomputeReplLevels();
@@ -3401,7 +3452,8 @@ function saveLeagueSettings() {
 
   S.taLeague = Object.assign({}, S.taLeague,
     { size, format, scoring, hCats, pCats, cSlots, ofSlots, utility, ciSlot, miSlot });
-  try { localStorage.setItem('signalFantasy_leagueSettings', JSON.stringify(S.taLeague)); } catch(e) {}
+  S.allLeagueSettings[S.league] = Object.assign({}, S.taLeague);
+  try { localStorage.setItem('signalFantasy_ls_' + S.league, JSON.stringify(S.taLeague)); } catch(e) {}
   _recomputeReplLevels();
   renderLeagueSummary();
   toggleLeaguePanel();
@@ -3411,9 +3463,49 @@ function renderLeagueSummary() {
   const el = document.getElementById('ta-league-summary');
   if (!el) return;
   const ls  = S.taLeague;
-  const fmt = { redraft:'Redraft', keeper:'Keeper', dynasty:'Dynasty' }[ls.format] || ls.format;
+  const fmt = ls.format === 'redraft' ? 'Redraft' : 'Redraft';
   const scr = { '5x5':'5×5 Roto', points:'Points', h2h_cat:'H2H Cat', h2h_pts:'H2H Pts' }[ls.scoring] || ls.scoring;
   el.innerHTML = `<strong>${ls.size}-team</strong> · ${fmt} · ${scr}`;
+}
+
+// ─── League button helpers ────────────────────────────────────────────────────
+function renderLeagueButtons() {
+  for (let i = 1; i <= 5; i++) {
+    const lg  = 'league' + i;
+    const btn = document.getElementById('lg-btn-' + i);
+    if (!btn) continue;
+    // Don't overwrite while user is typing in rename input
+    if (btn.querySelector('input')) continue;
+    btn.textContent = S.leagueNames[lg] || ('League ' + i);
+    btn.classList.toggle('active', S.league === lg);
+  }
+}
+
+function startRenameLeague(e, lg) {
+  e.stopPropagation();
+  const idx = lg.slice(-1);
+  const btn = document.getElementById('lg-btn-' + idx);
+  if (!btn || btn.querySelector('input')) return;
+  const currentName = S.leagueNames[lg] || ('League ' + idx);
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.value = currentName;
+  input.className = 'league-rename-input';
+  input.onclick = ev => ev.stopPropagation();
+  const commit = () => {
+    const name = input.value.trim() || currentName;
+    S.leagueNames[lg] = name;
+    try { localStorage.setItem('signalFantasy_league_names', JSON.stringify(S.leagueNames)); } catch(_) {}
+    renderLeagueButtons();
+  };
+  input.onblur = commit;
+  input.onkeydown = ev => {
+    if (ev.key === 'Enter') { ev.preventDefault(); input.blur(); }
+    if (ev.key === 'Escape') { input.value = currentName; input.blur(); }
+  };
+  btn.textContent = '';
+  btn.appendChild(input);
+  requestAnimationFrame(() => { input.focus(); input.select(); });
 }
 
 // ─── Init: try auto-fetch, fall back to file inputs ───────────────────────────
