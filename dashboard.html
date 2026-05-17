@@ -1027,8 +1027,8 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
       <button class="clear-filter" id="clear-btn" onclick="clearFilter()">✕ Clear filter</button>
       <span class="results-info" id="results-info"></span>
       <div class="view-toggle-group">
-        <button class="view-toggle-btn active" id="view-btn-simple" onclick="setViewMode('simple')">Simple</button>
-        <button class="view-toggle-btn"        id="view-btn-advanced" onclick="setViewMode('advanced')">Advanced</button>
+        <button class="view-toggle-btn" id="view-btn-simple" onclick="setViewMode('simple')" style="display:none">Simple</button>
+        <button class="view-toggle-btn active" id="view-btn-advanced" onclick="setViewMode('advanced')">Advanced</button>
       </div>
     </div>
 
@@ -1357,7 +1357,7 @@ const S = {
   tierfilter: { hitters: null, pitchers: null },
   ready:   { hitters: false, pitchers: false },
   // View mode: 'simple' (default) | 'advanced'
-  viewMode: 'simple',
+  viewMode: 'advanced',
   // Position data
   cbsPositions:     {},   // mlbam_id (string) -> {name, position, source}
   positionOverrides:{},   // mlbam_id (string) -> position string
