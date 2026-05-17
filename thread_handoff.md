@@ -6475,6 +6475,105 @@ Changed-row breakdown:
 
 ---
 
-*End of thread_handoff.md — Sessions 1-61 complete.*
+## Session 62 (May 16, 2026)
+
+### Key Decisions Made
+
+**Trade Analyzer Stress Tests — 5 trades evaluated**
+- Ramírez → Judge: Unfavorable (-45). Known issue — 
+  pedigree override inflating Ramírez surplus above Judge.
+  Model #1 Ramírez vs FP#1 Judge creates trade tool tension.
+  Flag for Session 63 review.
+- Carroll + Sánchez → Judge: Strong Trade (+221). Correct.
+  Validated by Reddit community response.
+- Sánchez + Ramírez → Judge: Avoid (-188). Correct.
+- Carroll → Skenes: Avoid (-268). Correct verdict.
+  Skenes career discount badge suppressed (pedigree exempt).
+- Witt + Sánchez → Judge + Wheeler: Strong Trade (+207).
+  Flagged — Witt/Sánchez may be undervalued vs Judge/Wheeler.
+  Wheeler career discount badge firing incorrectly (veteran pitcher).
+
+**Fixes Shipped**
+- Paul Skenes exempted from New Pitcher career discount badge
+  (commit 3390d85). Underlying calc unchanged, badge suppressed.
+- Witt fp_rank corrected from stale #38 → #2 via score_value.py
+  re-run. Name-matching bug confirmed (fp_ros_rankings had 
+  Bryan Woo at #38, Witt was not being matched correctly).
+- ROS projection scaling live (0.735 fraction as of May 16)
+- ERA/WHIP/AVG removed from NET STATS display (counting only)
+- Ohtani dedup confirmed clean (1 entry, DH type)
+
+**Article Published**
+- "The Gary Sanchez Problem" drafted and editorial-reviewed
+- Title strategy: Gary Sanchez for Substack, Carroll/Manzardo 
+  for Reddit (Monday 9-10 AM EST)
+- Publish schedule: Substack Sunday evening, Reddit Monday morning
+- Article ready — Murakami fact-check recommended before publish
+
+**Whitepaper V2**
+- Full rebuild incorporating all Session 61-62 developments
+- 15 sections, ~5,000 words
+- New sections: Category Breadth Architecture, Mid-Season 
+  Calibration, Pedigree Override Layer, Trade Analyzer 
+  Refinements, Distribution Framework, Methodology Lessons
+- Committed to docs/ folder (commit 64132ba)
+- V1 preserved in docs/ for historical reference
+
+**Beta Deployment**
+- Token gate added to dashboard.html (commit 98eb1f4)
+- Tokens: signal-beta-001, signal-beta-002, signal-beta-003
+- Repo made public → GitHub Pages enabled
+- URL: dustinslovell.github.io/Signal-Fantasy-Pipeline
+- Beta testers: James (Substack commenter) + 2 others
+
+**AI Article Context**
+- Opus used for deep editorial review — recommended for 
+  white paper, Monday AI articles, high-stakes content
+- Sonnet for weekly signals articles, Reddit posts, quick work
+- Key insight: AI vs Agentic Coding distinction documented 
+  for article use (AI = brain, Agentic = brain with hands)
+
+### GitHub Commits (Session 62)
+- 10b451f — fix: ROS projection scaling + remove ERA/WHIP/AVG 
+  from net stats display
+- b3c4862 — fix: scale breadth thresholds by ROS fraction
+- d9c8cf8 — fix: deduplicate Ohtani/two-way players
+- 3390d85 — feat: exempt Skenes from career discount badge
+- 64132ba — docs: whitepaper V2 added to repo
+- 98eb1f4 — feat: token gate for beta access
+
+### Next Session Priorities
+1. Verify GitHub Pages URL live + beta tester onboarding
+2. Freeman → Judge stress test (final roto validation)
+3. Fix Wheeler career discount badge (veteran pitcher exempt)
+4. Ramírez → Judge trade tension — review pedigree override 
+   impact on trade tool surplus calculations
+5. Pitcher W dimension — create data/team_win_pcts_2026.json
+6. Witt fp_rank confirmed fixed — verify in live dashboard
+7. Monday article publish to Substack + Reddit
+8. Roto model: run full top-30 validation vs FP ROS roto
+
+### Known Issues / Parking Lot
+- Ramírez pedigree override inflating trade surplus too high
+- Wheeler career discount badge firing on veteran pitcher
+- Harris/Cruz inflated projections (CBS vs FP skepticism gap)
+- Pitcher W dimension not live (defaults to 0.500 team win%)
+- Soto projection still corrupted (low PA estimate)
+- Career lessons database: Sessions 22-62 not yet added
+- GitHub Pages — confirm live URL after repo goes public
+
+### Model State (unchanged from Session 61)
+- Hitter Version E: 91.4% pooled / 90.5% OOS
+- Pitcher Version F: 87.7% pooled / 82.0% OOS
+- Roto surplus: Category Breadth v1 (2b88111)
+- ROS fraction: 0.735 (auto-updates each pipeline run)
+- Trade analyzer: beta-ready
+- Token gate: live (98eb1f4)
+- Substack: 78 subscribers, Week 4 live
+- Beta launch: imminent
+
+---
+
+*End of thread_handoff.md — Sessions 1-62 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
