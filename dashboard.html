@@ -3162,23 +3162,25 @@ function taSignalNote(giving, getting) {
 function analyzeTrade() {
   if (!S.ta.giving.length || !S.ta.getting.length) return;
 
-  const givingSum  = computeTaSide(S.ta.giving);
-  const gettingSum = computeTaSide(S.ta.getting);
-  const dropSum    = S.ta.dropping.length ? computeTaSide(S.ta.dropping) : null;
-  const { netH, netP, wonCats, totalCats } = computeNetStats(gettingSum, givingSum, dropSum);
-
   // Surplus-delta verdict: mirrors CLI _trade_verdict_v3 + _elite_premium logic.
   // Uses dynamic surplus (_taGetSurplus) so slot config changes affect verdicts.
   const ls           = parseInt(S.taLeague.size) || 13;
   const extraDiscount = ls <= 12 ? 0.65 : ls <= 14 ? 0.80 : 0.95;
 
   // Replacement-level gate: players below these thresholds contribute zero surplus
+  // AND are excluded from projected stat totals / net stats.
   // Hitters: fp_rank <= 300 | Pitchers: fp_rank <= 250 | Unranked: include (benefit of doubt)
   const _isAboveRepl = p => {
     const fp = parseFloat(p.fp_rank);
     if (isNaN(fp) || fp <= 0) return true;
     return p.type === 'hitter' ? fp <= 300 : fp <= 250;
   };
+
+  // Stat totals and net stats only include above-replacement players
+  const givingSum  = computeTaSide(S.ta.giving.filter(_isAboveRepl));
+  const gettingSum = computeTaSide(S.ta.getting.filter(_isAboveRepl));
+  const dropSum    = S.ta.dropping.length ? computeTaSide(S.ta.dropping) : null;
+  const { netH, netP, wonCats, totalCats } = computeNetStats(gettingSum, givingSum, dropSum);
 
   // Best (lowest) FP rank on each side — used for quantity discount calibration
   const _bestGetFp  = Math.min(...S.ta.getting.map(p => parseFloat(p.fp_rank) || 999));
@@ -3442,6 +3444,8 @@ function buildTaSideHtml(side, players, summary) {
     const verdictBadge = (p.verdict && !p.verdict.toLowerCase().startsWith('neutral'))
       ? `<span class="badge ${info.cls}" style="font-size:10px">${info.label}</span>`
       : '';
+    const _fpRk = parseFloat(p.fp_rank);
+    const _belowRepl = !isNaN(_fpRk) && _fpRk > 0 && (isH ? _fpRk > 300 : _fpRk > 250);
     return `<div class="ta-result-player">
       <div class="ta-rp-name">
         ${esc(p.name)}
@@ -3451,6 +3455,7 @@ function buildTaSideHtml(side, players, summary) {
       <div class="ta-rp-meta">${esc(pos)} · ${esc(team)}</div>
       ${cur  ? `<div class="ta-rp-stats">${cur}</div>` : ''}
       ${proj ? `<div class="ta-rp-stats">Proj: ${proj}</div>` : ''}
+      ${_belowRepl ? `<div class="ta-rp-stats" style="color:#b45309;font-style:italic;font-size:10px">Stats excluded from totals — below replacement</div>` : ''}
     </div>`;
   }).join('');
 
