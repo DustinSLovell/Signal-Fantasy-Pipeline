@@ -1415,6 +1415,7 @@ const HITTER_COLS = [
   { key:'wOBA',          label:'wOBA',        fmt:'rate'  },
   { key:'xwOBA',         label:'xwOBA',       fmt:'rate'  },
   { key:'BABIP',         label:'BABIP',       fmt:'rate'  },
+  { key:'luck_score',    label:'Luck Score',  fmt:'luck'  },
   { key:'verdict',       label:'Verdict',     fmt:'badge', nosort:true },
   { key:'fp_rank',       label:'FP ROS Rank', fmt:'int'   },
   // ── Hidden columns (data retained, not displayed) ─────────────────────
@@ -1426,7 +1427,6 @@ const HITTER_COLS = [
   { key:'z_contact_rate',label:'Z-Con%',      fmt:'pct',   hidden:true },
   { key:'hard_hit_rate', label:'Hard Hit%',   fmt:'pct',   hidden:true },
   { key:'barrel_rate',   label:'Barrel%',     fmt:'pct',   hidden:true },
-  { key:'luck_score',    label:'Luck Score',  fmt:'luck',  hidden:true },
   { key:'tier_sell',     label:'Sell Tier',   fmt:'tier',  hidden:true, nosort:true },
   { key:'_season_fp',    label:'FP/G Season', fmt:'rfp',   hidden:true },
   { key:'_rolling_fp',   label:'FP/G 60 AB',  fmt:'rfp',   hidden:true, nosort:true },
@@ -1440,6 +1440,7 @@ const PITCHER_COLS = [
   { key:'ERA',                   label:'ERA',         fmt:'f2'    },
   { key:'FIP',                   label:'FIP',         fmt:'f2'    },
   { key:'xERA',                  label:'xERA',        fmt:'f2'    },
+  { key:'luck_score',            label:'Luck Score',  fmt:'luck'  },
   { key:'verdict',               label:'Verdict',     fmt:'badge', nosort:true },
   { key:'fp_rank',               label:'FP ROS Rank', fmt:'int'   },
   // ── Hidden columns (data retained, not displayed) ─────────────────────
@@ -1452,7 +1453,6 @@ const PITCHER_COLS = [
   { key:'lob_pct',               label:'LOB%',        fmt:'pct',   hidden:true },
   { key:'hard_hit_rate_allowed', label:'Hard Hit%',   fmt:'pct',   hidden:true },
   { key:'swstr_rate',            label:'SwStr%',      fmt:'pct',   hidden:true },
-  { key:'luck_score',            label:'Luck Score',  fmt:'luck',  hidden:true },
   { key:'tier_sell',             label:'Sell Tier',   fmt:'tier',  hidden:true, nosort:true },
   { key:'_season_fp',            label:'FP/Start S',  fmt:'rfp',   hidden:true },
   { key:'_rolling_fp',           label:'FP/Start IP', fmt:'rfp',   hidden:true, nosort:true },
@@ -1566,7 +1566,7 @@ const F = {
     if (isNaN(n)) return `<td class="na">—</td>`;
     const sign = n > 0 ? '+' : '';
     const cls  = n > 0.05 ? 'luck-pos' : n < -0.05 ? 'luck-neg' : 'luck-neu';
-    return `<td class="${cls}">${sign}${n.toFixed(4)}</td>`;
+    return `<td class="${cls}">${sign}${n.toFixed(2)}</td>`;
   },
   badge(v, r) {
     const info   = vInfo(v);
