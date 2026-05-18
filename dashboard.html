@@ -3211,6 +3211,28 @@ function analyzeTrade() {
     } else { givingAdj += val; }
   });
 
+  // Drop cost: extra players on the getting side require roster drops.
+  // Cost varies by league size and position scarcity.
+  const _DROP_POS_MULT = { C:1.50, SS:1.40, '2B':1.25, SP:1.20, '3B':1.10, RP:1.00, '1B':0.85, OF:0.80, DH:0.70 };
+  const _baseDrop      = ls <= 12 ? 25 : ls <= 14 ? 15 : 5;
+  const _dropsNeeded   = Math.max(0, S.ta.getting.length - S.ta.giving.length);
+  let totalDropCost = 0;
+  const dropCostLines = [];
+  if (_dropsNeeded > 0) {
+    // Identify extra getters: the lowest-surplus players are the marginal roster adds
+    const extraGetters = [...S.ta.getting]
+      .sort((a, b) => _taGetSurplus(a) - _taGetSurplus(b))
+      .slice(0, _dropsNeeded);
+    extraGetters.forEach(p => {
+      const pos  = (p.pos || '').toUpperCase().trim();
+      const mult = _DROP_POS_MULT[pos] !== undefined ? _DROP_POS_MULT[pos] : 1.00;
+      const cost = Math.round(_baseDrop * mult);
+      totalDropCost += cost;
+      dropCostLines.push({ name: p.name, pos: pos || '?', cost });
+    });
+  }
+  gettingAdj -= totalDropCost;
+
   // Replacement warning — collect below-threshold players from both sides
   const _getBelowRepl  = S.ta.getting.filter(p => !_isAboveRepl(p));
   const _giveBelowRepl = S.ta.giving.filter(p  => !_isAboveRepl(p));
@@ -3300,7 +3322,8 @@ function analyzeTrade() {
   }));
   S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal,
                    surplusDelta, superstarNote, gettingAdj, givingAdj,
-                   givePerPlayer, getPerPlayer, replWarning };
+                   givePerPlayer, getPerPlayer, replWarning,
+                   totalDropCost, dropCostLines, _dropsNeeded, ls };
   renderTradeResults();
 }
 
@@ -3356,6 +3379,7 @@ function renderTradeResults() {
     <div class="ta-verdict-label">${v.label}</div>
     ${verdictBody}
     ${r.replWarning ? `<div class="ta-verdict-signal" style="margin-top:6px;font-weight:700;color:#b45309">${r.replWarning}</div>` : ''}
+    ${r.totalDropCost > 0 ? `<div class="ta-verdict-signal" style="margin-top:6px;color:#b45309">📉 Drop cost: −${r.totalDropCost} (${r._dropsNeeded} player${r._dropsNeeded > 1 ? 's' : ''} must be dropped — ${r.dropCostLines.map(l => `${l.pos}: ~${l.cost}`).join(', ')} in ${r.ls}-team league)</div>` : ''}
     ${r.superstarNote ? `<div class="ta-verdict-signal" style="margin-top:6px;font-weight:700">${r.superstarNote}</div>` : ''}
     <div class="ta-verdict-signal" style="margin-top:6px">${r.signal.note}</div>
     ${r.signal.msg ? `<div class="ta-verdict-signal" style="margin-top:3px;font-weight:700">${r.signal.msg}</div>` : ''}
