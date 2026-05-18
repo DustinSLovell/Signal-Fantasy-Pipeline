@@ -3261,9 +3261,11 @@ function analyzeTrade() {
     // roto_surplus_l1 is not cross-position comparable (hitters 0–400, pitchers 0–100).
     // Use FP rank value as the normalized cross-position signal.
     // fpVal: FP#1 → 200, FP#65 → 136, FP#200 → 1; unknown → 50
-    const fpVal   = fp => { const r = parseFloat(fp); return (isNaN(r) || r <= 0) ? 50 : Math.max(1, 201 - r); };
+    const fpVal     = fp => { const r = parseFloat(fp); return (isNaN(r) || r <= 0) ? 50 : Math.max(1, 201 - r); };
     const gvFpTotal = S.ta.giving.reduce((s, p)  => s + fpVal(p.fp_rank), 0);
-    const gtFpTotal = S.ta.getting.reduce((s, p) => s + fpVal(p.fp_rank), 0);
+    let   gtFpTotal = S.ta.getting.reduce((s, p) => s + fpVal(p.fp_rank), 0);
+    const fpDropCost = _dropsNeeded * 15;  // each drop costs ~15 FP rank points
+    if (fpDropCost > 0) gtFpTotal -= fpDropCost;
     const fpDiff    = gtFpTotal - gvFpTotal; // positive = getting side better
 
     let crossCls, crossIcon, crossLabel, crossSub;
@@ -3292,7 +3294,7 @@ function analyzeTrade() {
 
     verdict = {
       cls: crossCls, icon: crossIcon, label: crossLabel, sub: crossSub,
-      crossPos: true, gvFpTotal, gtFpTotal, fpDiff,
+      crossPos: true, gvFpTotal, gtFpTotal, fpDiff, fpDropCost,
       disclaimer: 'FP ROS rank used as cross-position comparison — category fit still matters.',
     };
   }
@@ -3356,7 +3358,8 @@ function renderTradeResults() {
         ? ` <span style="font-size:10px;color:#b45309">(below replacement — not included in value)</span>` : '';
       return `<div style="margin-top:3px">${esc(p.name)}${sig} — <strong>${fpStr}</strong>${replNote}</div>`;
     };
-    const gvFp = v.gvFpTotal, gtFp = v.gtFpTotal;
+    const gvFp = v.gvFpTotal, gtFp = v.gtFpTotal, fpDrop = v.fpDropCost || 0;
+    const gtFpGross = gtFp + fpDrop;
     verdictBody = `
       <div class="ta-verdict-sub">${v.sub}</div>
       <div class="ta-verdict-signal" style="margin-top:8px;line-height:1.6;font-size:12px">
@@ -3364,7 +3367,7 @@ function renderTradeResults() {
         ${r.givePerPlayer.map(fmtRow).join('')}
       </div>
       <div class="ta-verdict-signal" style="margin-top:6px;line-height:1.6;font-size:12px">
-        <div style="font-weight:700">Getting (FP rank score: ${gtFp})</div>
+        <div style="font-weight:700">Getting (FP rank score: ${fpDrop > 0 ? `${gtFpGross} − ${fpDrop} drop cost = <strong>${gtFp}</strong>` : gtFp})</div>
         ${r.getPerPlayer.map(fmtRow).join('')}
       </div>
       <div class="ta-verdict-signal" style="margin-top:6px;font-style:italic">${v.disclaimer}</div>
