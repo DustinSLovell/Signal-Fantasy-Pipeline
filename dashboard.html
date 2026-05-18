@@ -3172,14 +3172,54 @@ function analyzeTrade() {
   const ls           = parseInt(S.taLeague.size) || 13;
   const extraDiscount = ls <= 12 ? 0.65 : ls <= 14 ? 0.80 : 0.95;
 
+  // Replacement-level gate: players below these thresholds contribute zero surplus
+  // Hitters: fp_rank <= 300 | Pitchers: fp_rank <= 250 | Unranked: include (benefit of doubt)
+  const _isAboveRepl = p => {
+    const fp = parseFloat(p.fp_rank);
+    if (isNaN(fp) || fp <= 0) return true;
+    return p.type === 'hitter' ? fp <= 300 : fp <= 250;
+  };
+
+  // Best (lowest) FP rank on each side — used for quantity discount calibration
+  const _bestGetFp  = Math.min(...S.ta.getting.map(p => parseFloat(p.fp_rank) || 999));
+  const _bestGiveFp = Math.min(...S.ta.giving.map(p  => parseFloat(p.fp_rank) || 999));
+
   // Per-player contributions sorted desc so primary (highest-value) players index first
-  const getContribs  = S.ta.getting.map(p => _taGetSurplus(p) * taElitePremium(p.fp_rank)).sort((a,b) => b-a);
-  const giveContribs = S.ta.giving.map(p  => _taGetSurplus(p) * taElitePremium(p.fp_rank)).sort((a,b) => b-a);
-  const primaryN     = Math.min(S.ta.getting.length, S.ta.giving.length);
+  // Below-replacement players are zeroed out before sorting
+  const getContribs  = S.ta.getting
+    .map(p => ({ val: _isAboveRepl(p) ? _taGetSurplus(p) * taElitePremium(p.fp_rank) : 0,
+                 fp:  parseFloat(p.fp_rank) || 999 }))
+    .sort((a, b) => b.val - a.val);
+  const giveContribs = S.ta.giving
+    .map(p => ({ val: _isAboveRepl(p) ? _taGetSurplus(p) * taElitePremium(p.fp_rank) : 0,
+                 fp:  parseFloat(p.fp_rank) || 999 }))
+    .sort((a, b) => b.val - a.val);
+  const primaryN = Math.min(S.ta.getting.length, S.ta.giving.length);
 
   let gettingAdj = 0, givingAdj = 0;
-  getContribs.forEach((v, i)  => { gettingAdj += i >= primaryN ? v * extraDiscount : v; });
-  giveContribs.forEach((v, i) => { givingAdj  += i >= primaryN ? v * extraDiscount : v; });
+  getContribs.forEach(({ val, fp }, i) => {
+    if (i >= primaryN) {
+      // Extra player: if significantly worse than opponent's best, apply hard 50% discount
+      const disc = (fp - _bestGiveFp) > 100 ? 0.50 : extraDiscount;
+      gettingAdj += val * disc;
+    } else { gettingAdj += val; }
+  });
+  giveContribs.forEach(({ val, fp }, i) => {
+    if (i >= primaryN) {
+      const disc = (fp - _bestGetFp) > 100 ? 0.50 : extraDiscount;
+      givingAdj  += val * disc;
+    } else { givingAdj += val; }
+  });
+
+  // Replacement warning — collect below-threshold players from both sides
+  const _getBelowRepl  = S.ta.getting.filter(p => !_isAboveRepl(p));
+  const _giveBelowRepl = S.ta.giving.filter(p  => !_isAboveRepl(p));
+  let replWarning = '';
+  if (_getBelowRepl.length || _giveBelowRepl.length) {
+    const names = [..._getBelowRepl, ..._giveBelowRepl].map(p => p.name).join(', ');
+    const plural = (_getBelowRepl.length + _giveBelowRepl.length) > 1;
+    replWarning = `⚠️ ${names} ${plural ? 'are' : 'is'} below replacement level and ${plural ? 'add' : 'adds'} no meaningful trade value.`;
+  }
 
   const surplusDelta = gettingAdj - givingAdj;
   let verdict = (gettingAdj === 0 && givingAdj === 0)
@@ -3248,17 +3288,19 @@ function analyzeTrade() {
   const _fpValFn = fp => { const r = parseFloat(fp); return (isNaN(r) || r <= 0) ? 50 : Math.max(1, 201 - r); };
   const givePerPlayer = S.ta.giving.map(p => ({
     name: p.name, type: p.type, verdict: p.verdict, fp_rank: p.fp_rank,
+    belowRepl:  !_isAboveRepl(p),
     surplus:    verdict.crossPos ? _fpValFn(p.fp_rank) : Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
     isFpValue:  !!verdict.crossPos,
   }));
   const getPerPlayer = S.ta.getting.map(p => ({
     name: p.name, type: p.type, verdict: p.verdict, fp_rank: p.fp_rank,
+    belowRepl:  !_isAboveRepl(p),
     surplus:    verdict.crossPos ? _fpValFn(p.fp_rank) : Math.round(_taGetSurplus(p) * taElitePremium(p.fp_rank)),
     isFpValue:  !!verdict.crossPos,
   }));
   S.ta.results = { givingSum, gettingSum, dropSum, netH, netP, verdict, signal,
                    surplusDelta, superstarNote, gettingAdj, givingAdj,
-                   givePerPlayer, getPerPlayer };
+                   givePerPlayer, getPerPlayer, replWarning };
   renderTradeResults();
 }
 
@@ -3285,7 +3327,9 @@ function renderTradeResults() {
       const sig = p.verdict && p.verdict !== 'Neutral'
         ? ` <span style="font-size:10px;opacity:.8">[${p.verdict}]</span>` : '';
       const fpStr = p.fp_rank ? `FP #${p.fp_rank}` : 'unranked';
-      return `<div style="margin-top:3px">${esc(p.name)}${sig} — <strong>${fpStr}</strong></div>`;
+      const replNote = p.belowRepl
+        ? ` <span style="font-size:10px;color:#b45309">(below replacement — not included in value)</span>` : '';
+      return `<div style="margin-top:3px">${esc(p.name)}${sig} — <strong>${fpStr}</strong>${replNote}</div>`;
     };
     const gvFp = v.gvFpTotal, gtFp = v.gtFpTotal;
     verdictBody = `
@@ -3311,6 +3355,7 @@ function renderTradeResults() {
     <div class="ta-verdict-icon">${v.icon}</div>
     <div class="ta-verdict-label">${v.label}</div>
     ${verdictBody}
+    ${r.replWarning ? `<div class="ta-verdict-signal" style="margin-top:6px;font-weight:700;color:#b45309">${r.replWarning}</div>` : ''}
     ${r.superstarNote ? `<div class="ta-verdict-signal" style="margin-top:6px;font-weight:700">${r.superstarNote}</div>` : ''}
     <div class="ta-verdict-signal" style="margin-top:6px">${r.signal.note}</div>
     ${r.signal.msg ? `<div class="ta-verdict-signal" style="margin-top:3px;font-weight:700">${r.signal.msg}</div>` : ''}
