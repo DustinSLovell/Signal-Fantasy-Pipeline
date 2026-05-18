@@ -6574,6 +6574,161 @@ Changed-row breakdown:
 
 ---
 
-*End of thread_handoff.md — Sessions 1-62 complete.*
+## Session 63 (May 17, 2026)
+
+### Key Decisions Made
+
+**Beta Launch — Tool Shared with Testers**
+- Beta URL live: dustinslovell.github.io/Signal-Fantasy-Pipeline
+- 10 tokens issued (signal-beta-001 through 010)
+- Case-insensitive token matching
+- Tool shared with beta testers evening of May 17
+
+**Dashboard Column Streamlining**
+- Hitters: now shows Player · POS · wOBA · xwOBA · BABIP · Verdict · FP ROS Rank
+- Pitchers: now shows Player · POS · ERA · FIP · xERA · Verdict · FP ROS Rank
+- Proj Value, Model Score, Exp Stats, Track Rec, QP, Luck Adj all hidden
+- League Rank renamed to FP ROS Rank
+
+**Dashboard UI Fixes**
+- Simple tab hidden — Advanced view default
+- WHY/narrative column hidden for beta
+- Signal trend sub-text hidden
+- Dynasty/Keeper removed — Redraft only (Keeper/Dynasty coming soon placeholder)
+
+**5 Named League Tabs**
+- Expanded from 2 → 5 fully independent leagues
+- Double-click to rename inline
+- Names persist in localStorage per browser
+- Each league saves settings independently
+- League 1: CBS 13-team 5×5 (existing settings)
+- League 2: Fantrax 15-team OBP (existing)
+- League 3-5: Generic 12-team 5×5 ready to configure
+
+**Cross-Position Trade Overhaul**
+- Detected when giving hitters for pitchers or vice versa
+- Uses FP rank normalization (201 - fp_rank) instead of broken surplus scale comparison
+- Shows independent FP rank scores per side
+- Verdict thresholds: diff ≥60 Strong, ≥30 Favorable, ≥20 Slightly Favorable (and inverse)
+- "FP ROS rank used as cross-position comparison — category fit still matters" disclaimer
+- Net stats still visible below verdict
+
+**Quantity Inflation Prevention**
+- Replacement level gate:
+  Hitters fp_rank > 300 → surplus = 0
+  Pitchers fp_rank > 250 → surplus = 0
+- Below-replacement players flagged in amber: "below replacement — not included in value"
+- Below-replacement stats excluded from Projected Totals and Net Stats row
+- Warning: "adds no meaningful trade value"
+
+**Position-Weighted Drop Cost**
+- When getting side has more players than giving, receiving manager must drop players
+- Base cost by league size: ≤12 teams: 25, ≤14 teams: 15, ≥15 teams: 5
+- Position multipliers: C×1.50, SS×1.40, 2B×1.25, SP×1.20, 3B×1.10, RP×1.00, 1B×0.85, OF×0.80, DH×0.70
+- Applied to FP rank score for cross-position trades (fpDropCost = drops × 15)
+- Applied to surplus for same-position trades
+- Shown transparently: "Getting (FP rank score: 249 − 30 drop cost = 219)"
+
+**FP Rank Data Bug Fixed**
+- Lookup priority was backwards — stale name-based file overriding fresh ID-based file
+- Fixed: ID-based pitcher_luck_scores.csv now primary, stale rankings file fallback
+- Skenes now shows FP#4 consistently everywhere
+
+**2025 Signal Miss Report**
+- Generated data/signal_miss_report_2025.csv
+- prior_teams_2025.json confirmed corrupt (Machado=NYM, Freeman=CHC — ignore this file)
+- Corrected results (team-change flag stripped):
+  Buy Low: 1 true miss (Tommy Edman)
+  Slight Buy: 3 true misses
+  Slight Sell: 3 true misses
+  Sell High: 0 true misses ✅
+- Total: 7 true misses out of 57 signals
+- Trea Turner noted as fair miss — speed/age profile, pedigree caught up to signal
+- Backlog: rebuild prior_teams_2025.json properly
+
+**2025 ROS Projection Backtest**
+- proj_remaining beats naive ×0.735 scaling on all three counting stats
+- HR MAE: 6.7, bias +3.8 (under-projection)
+- R MAE: 16.4, bias +3.6
+- RBI MAE: 17.6, bias +9.6 (biggest miss)
+- AVG MAE: .021, bias -.010 (only over-projection)
+- Optimal HR scaling factor ~0.80 not 0.735
+- Saved: data/ros_projection_backtest_2025.csv
+
+**Paul Skenes Career Discount Badge**
+- Exempted from New Pitcher career discount display (commit 3390d85)
+- Underlying calculation unchanged
+
+**Whitepaper V2**
+- Published to docs/signal_fantasy_whitepaper_v2.docx
+- 15 sections, ~5,000 words
+- New sections: Category Breadth Architecture, Mid-Season Calibration, Pedigree Override, Trade Analyzer Refinements, Distribution Framework, Methodology Lessons
+
+**AI Article**
+- "The Gary Sanchez Problem" finalized
+- Substack: Gary Sanchez Problem title
+- Reddit: Carroll/Manzardo title
+- HTML version created for Substack paste
+- Publish: Substack Sunday evening, Reddit Monday 9-10 AM EST
+
+### GitHub Commits (Sessions 62-63)
+- 10b451f — fix: ROS scaling + remove ERA/WHIP/AVG
+- b3c4862 — fix: scale breadth thresholds by ROS
+- d9c8cf8 — fix: deduplicate Ohtani/two-way players
+- 3390d85 — feat: exempt Skenes career discount badge
+- 64132ba — docs: whitepaper V2 added
+- 98eb1f4 — feat: token gate beta access
+- 54d6a18 — fix: index.html redirect for GitHub Pages
+- 742bb37 — feat: 10 case-insensitive beta tokens
+- 354c9b5 — feat: streamline dashboard columns
+- a573e43 — fix: hide Simple tab, Advanced default
+- c4d0e09 — analysis: 2025 signal miss report
+- 0508d77 — feat: 5 named league tabs localStorage
+- 5383db7 — fix: cross-position trade banner
+- 508226b — fix: cross-position FP rank verdict
+- d28b35d — fix: FP rank lookup priority + data refresh
+- f435917 — fix: replacement level gate + warnings
+- 00794e3 — fix: position-weighted drop cost
+- 6f9e1e6 — fix: below-replacement stat exclusion
+- 1f5faec — fix: drop cost applied to FP rank score
+
+### Next Session Priorities
+1. Verify beta tester feedback — first responses
+2. Publish Gary Sanchez Problem article (Substack Sunday PM, Reddit Monday 9-10 AM)
+3. Ramírez → Judge trade tension — pedigree override inflating Ramírez surplus too high
+4. Wheeler career discount badge — veteran pitcher should be exempt like Skenes
+5. Pitcher W dimension — create data/team_win_pcts_2026.json
+6. League tab rename styling — white bg when editing (cosmetic)
+7. Speed-profile age flag — dampen Sell High for 30+ SB-dependent players (Trea Turner)
+8. CBS Sell High spot check — empirical edge validation vs CBS projections
+9. Rebuild prior_teams_2025.json — current data corrupt
+10. Mid-season architecture (rolling 4-week window)
+
+### Known Issues / Parking Lot
+- Ramírez pedigree override → trade surplus #1 overall but FP#7 (creates trade tool tension)
+- Wheeler career discount badge firing on veteran
+- Harris/Cruz inflated CBS projections
+- Pitcher W dimension defaults to 0.500
+- Soto projection still suppressed (low PA)
+- Career lessons database Sessions 22-63 not yet added
+- Google Analytics — deferred, revisit later
+- prior_teams_2025.json corrupt — ignore
+- Speed-profile age decay not yet implemented
+- Optimal HR ROS scaling factor ~0.80 not 0.735
+
+### Model State
+- Hitter Version E: 91.4% pooled / 90.5% OOS
+- Pitcher Version F: 87.7% pooled / 82.0% OOS
+- Roto surplus: Category Breadth v1 (2b88111)
+- ROS fraction: 0.735 (auto-updates each pipeline run)
+- Trade analyzer: beta-ready ✅
+- Token gate: live (742bb37)
+- Beta URL: dustinslovell.github.io/Signal-Fantasy-Pipeline
+- Substack: 78 subscribers, Week 4 + AI article ready
+- Beta testers: active as of May 17
+
+---
+
+*End of thread_handoff.md — Sessions 1-63 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
