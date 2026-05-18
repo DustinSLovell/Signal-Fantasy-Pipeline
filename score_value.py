@@ -2130,15 +2130,15 @@ def main():
             + (row.get("H_proj") or 0) * leagues["league2"]["svh_weights"]["H"]
         )
         # Fantasy rank lookup by normalised name; fall back to fp_rank column
-        # from pitcher_luck_scores.csv (populated by the pipeline fetch step)
-        # when the stale rankings file doesn't cover the player.
+        # Priority: fresh ID-based lookup from pitcher_luck_scores.csv (always current),
+        # falling back to the weekly-drop fantasy_rankings_pitchers_2026.csv by name.
+        _pid_int = int(row.get("pitcher") or 0)
+        p_rank = _fp_rank_by_id.get(_pid_int)
         _p_key = _normalize_name(str(row.get("name") or ""))
         _p_rank_entry = pitcher_ranks.get(_p_key, {})
-        p_rank      = _p_rank_entry.get("rank")
         p_rank_tier = _p_rank_entry.get("rank_tier")
         if p_rank is None:
-            _pid_int = int(row.get("pitcher") or 0)
-            p_rank = _fp_rank_by_id.get(_pid_int)
+            p_rank = _p_rank_entry.get("rank")
 
         rec = {
             "id":            int(row.get("pitcher") or 0),
