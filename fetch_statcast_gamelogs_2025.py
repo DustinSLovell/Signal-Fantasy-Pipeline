@@ -31,7 +31,6 @@ def _build_url(mlbam_id: int, player_type: str) -> str:
         f"&{lookup_key}={mlbam_id}"
         f"&group_by=name-date"
         f"&min_pas=1"
-        f"&type=details"
     )
     return f"{BASE_URL}?{params}"
 
@@ -121,8 +120,8 @@ def _verify_elly(mlbam_id: int = 666163):
         print("  File empty")
         return
 
-    want = ["game_date", "estimated_woba_using_speedangle",
-            "woba_value", "babip_value", "estimated_ba_using_speedangle"]
+    want = ["game_date", "xwoba", "woba", "babip", "xba",
+            "hardhit_percent", "barrels_per_pa_percent", "k_percent", "pa"]
     available = [c for c in want if c in rows[0]]
 
     dates = sorted(r["game_date"] for r in rows if r.get("game_date"))
@@ -132,13 +131,12 @@ def _verify_elly(mlbam_id: int = 666163):
     print(f"  Columns available: {available}")
     print()
     print(f"  {'game_date':<12}  "
-          + "  ".join(f"{c.replace('estimated_','est_').replace('_using_speedangle',''):<10}"
-                      for c in available))
-    print(f"  {'-'*60}")
+          + "  ".join(f"{c:<12}" for c in available))
+    print(f"  {'-'*70}")
     for row in rows[:3]:
         line = f"  {row.get('game_date',''):<12}  "
         for c in available:
-            line += f"{row.get(c,''):<12}"
+            line += f"{row.get(c,''):<14}"
         print(line)
 
 
@@ -164,7 +162,7 @@ def main():
     print(f"  Avg rows/file:  {avg_rows:.1f}")
 
     print(f"\n--- Elly De La Cruz spot-check ---")
-    _verify_elly()
+    _verify_elly(682829)  # ID from backtest_A_hitters_2025.csv
 
 
 if __name__ == "__main__":
