@@ -1,0 +1,141 @@
+player_name,mlbam_id,player_type,pos,luck_signal,luck_score,fp_rank,trend_dir,trend_strength,trend_notes,combined_signal,recent_metric,prior_metric,metric_delta,metric_label,recent_secondary,prior_secondary,secondary_label,recent_volume,recent_volume_label,prior_volume,window_start_recent,window_end_recent,window_start_prior,window_end_prior
+Marcell Ozuna,542303,hitter,,Buy low,0.1947,307,Neutral,0.0063,BA -0.006 (no clear trend),No Signal,0.203,0.21,-0.006,BA,0.0508,0.0323,HR/AB,59,AB,62,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+George Springer,543807,hitter,,Buy low,0.1804,102,Cold,0.0625,BA -0.062,Conflicted (Buy vs Cold),0.188,0.25,-0.062,BA,0.0,0.0,HR/AB,48,AB,16,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Ildemaro Vargas,545121,hitter,,Sell high,-0.237,244,Cold,0.0409,BA -0.041,Strong Sell,0.297,0.338,-0.041,BA,0.0135,0.0735,HR/AB,74,AB,68,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Manny Machado,592518,hitter,,Buy low,0.4328,43,Cold,0.0561,BA -0.056,Conflicted (Buy vs Cold),0.147,0.203,-0.056,BA,0.0294,0.0469,HR/AB,68,AB,64,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Joc Pederson,592626,hitter,,Neutral,0.1413,211.0,Cold,0.116,BA -0.116,Fading Sell,0.179,0.295,-0.116,BA,0.0513,0.0,HR/AB,39,AB,44,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Víctor Caratini,605170,hitter,,Buy low,0.2073,269.0,Cold,0.095,BA -0.095,Conflicted (Buy vs Cold),0.125,0.22,-0.095,BA,0.0,0.02,HR/AB,32,AB,50,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Teoscar Hernández,606192,hitter,,Sell high,-0.1694,104,Hot,0.121,BA ++0.121,Conflicted (Sell vs Hot),0.311,0.19,0.121,BA,0.0164,0.0476,HR/AB,61,AB,63,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Ketel Marte,606466,hitter,,Buy low,0.2771,28,Cold,0.0912,BA -0.091,Conflicted (Buy vs Cold),0.177,0.269,-0.091,BA,0.0161,0.0448,HR/AB,62,AB,67,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Trea Turner,607208,hitter,,Neutral,0.1724,26,Neutral,0.0319,BA +0.032 (no clear trend),No Signal,0.232,0.2,0.032,BA,0.0145,0.04,HR/AB,69,AB,75,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+José Ramírez,608070,hitter,,Buy low,0.3916,5,Cold,0.0442,BA -0.044,Conflicted (Buy vs Cold),0.229,0.273,-0.044,BA,0.0143,0.0758,HR/AB,70,AB,66,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Carson Kelly,608348,hitter,,Sell high,-0.1711,331,Cold,0.0728,BA -0.073,Strong Sell,0.275,0.348,-0.073,BA,0.0,0.0435,HR/AB,40,AB,46,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Corey Seager,608369,hitter,,Buy low,0.4537,79,Cold,0.105,BA -0.105,Conflicted (Buy vs Cold),0.107,0.212,-0.105,BA,0.0179,0.0455,HR/AB,56,AB,66,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Dansby Swanson,621020,hitter,,Buy low,0.289,130,Neutral,0.0224,BA -0.022 (no clear trend),No Signal,0.193,0.215,-0.022,BA,0.0,0.0769,HR/AB,57,AB,65,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jorge Mateo,622761,hitter,,Sell high,-0.2215,425.0,Hot,0.0952,BA ++0.095,Conflicted (Sell vs Hot),0.333,0.238,0.095,BA,0.0333,0.0,HR/AB,30,AB,21,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Pete Alonso,624413,hitter,,Neutral,0.1691,42,Hot,0.0594,BA ++0.059,Emerging Buy,0.24,0.181,0.059,BA,0.1,0.0278,HR/AB,50,AB,72,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jake Bauers,641343,hitter,,Sell high,-0.2123,337,Mixed,0.0433,BA +0.043 but HR rate down,No Signal,0.319,0.276,0.043,BA,0.0213,0.0517,HR/AB,47,AB,58,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+J. p. Crawford,641487,hitter,,Buy low,0.3028,,Hot,0.0464,BA +0.046,Strong Buy,0.246,0.2,0.046,BA,0.0725,0.0167,HR/AB,69,AB,60,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Willy Adames,642715,hitter,,Slight sell,-0.1661,132,Hot,0.0586,BA ++0.059,Slight Buy + Hot,0.278,0.219,0.059,BA,0.0,0.0274,HR/AB,72,AB,73,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Rafael Devers,646240,hitter,,Sell high,-0.1616,86,Hot,0.0749,BA ++0.075,Conflicted (Sell vs Hot),0.294,0.219,0.075,BA,0.0441,0.0137,HR/AB,68,AB,73,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Luis Rengifo,650859,hitter,,Buy low,0.2429,483,Hot,0.0914,BA ++0.091,Strong Buy,0.245,0.154,0.091,BA,0.0,0.0,HR/AB,53,AB,52,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Matt Chapman,656305,hitter,,Sell high,-0.2611,160,Cold,0.1784,BA -0.178,Strong Sell,0.13,0.309,-0.178,BA,0.0,0.0,HR/AB,69,AB,68,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Rhys Hoskins,656555,hitter,,Neutral,0.1596,254.0,Mixed,0.0387,BA -0.039 but HR rate up,No Signal,0.161,0.2,-0.039,BA,0.0968,0.02,HR/AB,31,AB,50,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Kyle Schwarber,656941,hitter,,Neutral,0.14,17,Hot,0.0742,BA ++0.074,Emerging Buy,0.274,0.2,0.074,BA,0.1452,0.0857,HR/AB,62,AB,70,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Shohei Ohtani,660271,hitter,,Neutral,0.0505,3,Cold,0.0657,BA -0.066,Fading Sell,0.191,0.257,-0.066,BA,0.0213,0.0571,HR/AB,47,AB,70,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Nico Hoerner,663538,hitter,,Buy low,0.2267,58,Cold,0.1259,BA -0.126,Conflicted (Buy vs Cold),0.192,0.318,-0.126,BA,0.0,0.0471,HR/AB,73,AB,85,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Austin Riley,663586,hitter,,Buy low,0.1758,59,Neutral,0.0151,BA +0.015 (no clear trend),No Signal,0.239,0.224,0.015,BA,0.0597,0.0395,HR/AB,67,AB,76,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Trevor Larnach,663616,hitter,,Slight sell,-0.1023,214.0,Hot,0.0698,BA ++0.070,Slight Buy + Hot,0.302,0.233,0.07,BA,0.0,0.0233,HR/AB,43,AB,43,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Ke'bryan Hayes,663647,hitter,,Buy low,0.5167,244.0,Hot,0.1029,BA ++0.103,Strong Buy,0.209,0.106,0.103,BA,0.0233,0.0213,HR/AB,43,AB,47,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Cal Raleigh,663728,hitter,,Buy low,0.1967,90,Cold,0.1775,BA -0.177,Conflicted (Buy vs Cold),0.062,0.24,-0.177,BA,0.0208,0.08,HR/AB,48,AB,75,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Trent Grisham,663757,hitter,,Buy low,0.3568,223,Neutral,0.0176,BA +0.018 (no clear trend),No Signal,0.171,0.154,0.018,BA,0.0286,0.0769,HR/AB,70,AB,52,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Matt Vierling,663837,hitter,,Buy low,0.2386,295.0,Neutral,0.0126,BA -0.013 (no clear trend),No Signal,0.207,0.22,-0.013,BA,0.0345,0.0,HR/AB,58,AB,41,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Tyler Stephenson,663886,hitter,,Buy low,0.3604,323,Neutral,0.0333,BA +0.033 (no clear trend),No Signal,0.196,0.163,0.033,BA,0.0196,0.0233,HR/AB,51,AB,43,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Nathaniel Lowe,663993,hitter,,Neutral,0.1507,445,Neutral,0.028,BA -0.028 (no clear trend),No Signal,0.229,0.257,-0.028,BA,0.0417,0.1143,HR/AB,48,AB,35,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Kyle Isbel,664728,hitter,,Sell high,-0.1992,219.0,Hot,0.0689,BA ++0.069,Conflicted (Sell vs Hot),0.255,0.186,0.069,BA,0.0,0.0233,HR/AB,51,AB,43,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Alec Bohm,664761,hitter,,Buy low,0.3033,276,Hot,0.1917,BA ++0.192,Strong Buy,0.317,0.125,0.192,BA,0.0333,0.0,HR/AB,60,AB,64,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Kody Clemens,665019,hitter,,Sell high,-0.1994,293.0,Hot,0.1316,BA ++0.132,Conflicted (Sell vs Hot),0.321,0.189,0.132,BA,0.0377,0.027,HR/AB,53,AB,37,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Oneil Cruz,665833,hitter,,Sell high,-0.3187,50,Neutral,0.026,BA +0.026 (no clear trend),No Signal,0.26,0.234,0.026,BA,0.026,0.0519,HR/AB,77,AB,77,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Carlos Cortes,666126,hitter,,Sell high,-0.1904,258,Cold,0.0562,BA -0.056,Strong Sell,0.302,0.358,-0.056,BA,0.0,0.0755,HR/AB,43,AB,53,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Josh Lowe,666139,hitter,,Neutral,0.1103,314,Cold,0.1562,BA -0.156,Fading Sell,0.094,0.25,-0.156,BA,0.0312,0.05,HR/AB,32,AB,40,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jo Adell,666176,hitter,,Slight sell,-0.1104,106,Neutral,0.034,BA +0.034 (no clear trend),No Signal,0.312,0.278,0.034,BA,0.0417,0.0506,HR/AB,48,AB,79,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Bo Bichette,666182,hitter,,Buy low,0.2484,97,Cold,0.0821,BA -0.082,Conflicted (Buy vs Cold),0.171,0.254,-0.082,BA,0.0143,0.0141,HR/AB,70,AB,71,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Randy Arozarena,668227,hitter,,Sell high,-0.439,83,Hot,0.0706,BA ++0.071,Conflicted (Sell vs Hot),0.338,0.268,0.071,BA,0.0294,0.0282,HR/AB,68,AB,71,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Austin Martin,668885,hitter,,Sell high,-0.2223,420,Cold,0.0684,BA -0.068,Strong Sell,0.3,0.368,-0.068,BA,0.0,0.0263,HR/AB,60,AB,38,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Royce Lewis,668904,hitter,,Neutral,0.165,249,Cold,0.0968,BA -0.097,Fading Sell,0.122,0.219,-0.097,BA,0.0,0.0312,HR/AB,41,AB,32,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Garrett Mitchell,669003,hitter,,Sell high,-0.2765,368,Neutral,0.0119,BA +0.012 (no clear trend),No Signal,0.208,0.196,0.012,BA,0.0189,0.0,HR/AB,53,AB,46,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Brandon Marsh,669016,hitter,,Slight sell,-0.1505,261,Hot,0.122,BA ++0.122,Slight Buy + Hot,0.415,0.293,0.122,BA,0.0,0.0517,HR/AB,53,AB,58,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Shea Langeliers,669127,hitter,,Sell high,-0.2302,55,Hot,0.1009,BA ++0.101,Conflicted (Sell vs Hot),0.404,0.303,0.101,BA,0.0702,0.0395,HR/AB,57,AB,76,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Austin Wells,669224,hitter,,Buy low,0.3372,338,Cold,0.0478,BA -0.048,Conflicted (Buy vs Cold),0.152,0.2,-0.048,BA,0.0217,0.05,HR/AB,46,AB,40,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Will Smith,669257,hitter,,Buy low,0.1999,122,Neutral,0.0051,BA -0.005 (no clear trend),No Signal,0.255,0.26,-0.005,BA,0.0196,0.02,HR/AB,51,AB,50,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jake Burger,669394,hitter,,Neutral,0.1208,189,Neutral,0.0293,BA -0.029 (no clear trend),No Signal,0.146,0.176,-0.029,BA,0.0244,0.0405,HR/AB,41,AB,74,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Casey Schmitt,669477,hitter,,Sell high,-0.2534,264,Neutral,0.0082,BA -0.008 (no clear trend),No Signal,0.297,0.305,-0.008,BA,0.0625,0.0678,HR/AB,64,AB,59,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Luke Raley,670042,hitter,,Sell high,-0.2334,419,Neutral,0.0317,BA -0.032 (no clear trend),No Signal,0.268,0.3,-0.032,BA,0.122,0.04,HR/AB,41,AB,50,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Yordan Álvarez,670541,hitter,,Buy low,0.2254,8,Cold,0.0921,BA -0.092,Conflicted (Buy vs Cold),0.25,0.342,-0.092,BA,0.0588,0.0921,HR/AB,68,AB,76,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Taylor Walls,670764,hitter,,Sell high,-0.2242,328.0,Neutral,0.0085,BA +0.008 (no clear trend),No Signal,0.22,0.212,0.008,BA,0.0,0.0,HR/AB,50,AB,52,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Tj Friedl,670770,hitter,,Buy low,0.3038,318,Cold,0.0571,BA -0.057,Conflicted (Buy vs Cold),0.17,0.227,-0.057,BA,0.0213,0.0152,HR/AB,47,AB,66,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Heliot Ramos,671218,hitter,,Sell high,-0.208,232,Cold,0.0364,BA -0.036,Strong Sell,0.269,0.305,-0.036,BA,0.0149,0.0508,HR/AB,67,AB,59,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Tyler Freeman,671289,hitter,,Buy low,0.1794,236.0,Neutral,0.025,BA -0.025 (no clear trend),No Signal,0.231,0.256,-0.025,BA,0.0513,0.0,HR/AB,39,AB,43,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Lawrence Butler,671732,hitter,,Buy low,0.2105,195,Cold,0.0408,BA -0.041,Conflicted (Buy vs Cold),0.14,0.18,-0.041,BA,0.0233,0.0164,HR/AB,43,AB,61,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Tristan Peters,671976,hitter,,Slight sell,-0.0937,363.0,Neutral,0.0345,BA +0.035 (no clear trend),No Signal,0.278,0.243,0.035,BA,0.0,0.0,HR/AB,36,AB,37,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Otto Lopez,672640,hitter,,Sell high,-0.3082,138,Hot,0.0791,BA ++0.079,Conflicted (Sell vs Hot),0.385,0.306,0.079,BA,0.0128,0.0278,HR/AB,78,AB,72,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Geraldo Perdomo,672695,hitter,,Buy low,0.2978,84,Cold,0.1006,BA -0.101,Conflicted (Buy vs Cold),0.194,0.294,-0.101,BA,0.0161,0.0,HR/AB,62,AB,51,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Oswald Peraza,672724,hitter,,Sell high,-0.2875,433,Cold,0.0644,BA -0.064,Strong Sell,0.227,0.292,-0.064,BA,0.0227,0.0625,HR/AB,44,AB,48,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Wenceel Pérez,672761,hitter,,Buy low,0.2266,223.0,Hot,0.1247,BA ++0.125,Strong Buy,0.222,0.098,0.125,BA,0.0185,0.0244,HR/AB,54,AB,41,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+José Caballero,676609,hitter,,Sell high,-0.1569,291,Cold,0.1077,BA -0.108,Strong Sell,0.231,0.338,-0.108,BA,0.0256,0.0462,HR/AB,39,AB,65,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+José Tena,677588,hitter,,Slight sell,-0.1045,341.0,Neutral,0.0242,BA +0.024 (no clear trend),No Signal,0.267,0.242,0.024,BA,0.0333,0.0303,HR/AB,30,AB,33,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Ezequiel Tovar,678662,hitter,,Buy low,0.266,199,Hot,0.051,BA +0.051,Strong Buy,0.213,0.162,0.051,BA,0.0,0.0,HR/AB,47,AB,68,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Matt Mclain,680574,hitter,,Buy low,0.1952,211,Neutral,0.0133,BA +0.013 (no clear trend),No Signal,0.222,0.209,0.013,BA,0.0476,0.0299,HR/AB,63,AB,67,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Steven Kwan,680757,hitter,,Buy low,0.1982,185,Cold,0.0695,BA -0.069,Conflicted (Buy vs Cold),0.161,0.231,-0.069,BA,0.0,0.0154,HR/AB,62,AB,65,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jarren Duran,680776,hitter,,Buy low,0.3129,93,Neutral,0.0077,BA -0.008 (no clear trend),No Signal,0.176,0.183,-0.008,BA,0.0405,0.0167,HR/AB,74,AB,60,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Henry Davis,680779,hitter,,Buy low,0.1796,340.0,Neutral,0.0317,BA -0.032 (no clear trend),No Signal,0.111,0.143,-0.032,BA,0.0556,0.0,HR/AB,36,AB,35,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Bryson Stott,681082,hitter,,Buy low,0.2869,260,Neutral,0.0073,BA +0.007 (no clear trend),No Signal,0.227,0.22,0.007,BA,0.0606,0.0,HR/AB,66,AB,50,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Tj Rumfield,681198,hitter,,Neutral,0.1382,269,Hot,0.1079,BA ++0.108,Emerging Buy,0.319,0.211,0.108,BA,0.0426,0.0141,HR/AB,47,AB,71,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Connor Norby,681393,hitter,,Slight sell,-0.1057,470,Neutral,0.0103,BA -0.010 (no clear trend),No Signal,0.244,0.254,-0.01,BA,0.0,0.0508,HR/AB,41,AB,59,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Andy Pages,681624,hitter,,Neutral,-0.0585,73,Neutral,0.0313,BA +0.031 (no clear trend),No Signal,0.3,0.269,0.031,BA,0.08,0.0299,HR/AB,50,AB,67,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Daniel Schneemann,682177,hitter,,Sell high,-0.2727,300.0,Cold,0.2214,BA -0.221,Strong Sell,0.179,0.4,-0.221,BA,0.0179,0.075,HR/AB,56,AB,40,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Cj Abrams,682928,hitter,,Sell high,-0.1701,34,Hot,0.0805,BA ++0.080,Conflicted (Sell vs Hot),0.338,0.258,0.08,BA,0.0282,0.0606,HR/AB,71,AB,66,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Riley Greene,682985,hitter,,Sell high,-0.4872,54,Neutral,0.0102,BA +0.010 (no clear trend),No Signal,0.348,0.338,0.01,BA,0.0152,0.0441,HR/AB,66,AB,68,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Gunnar Henderson,683002,hitter,,Buy low,0.2327,16,Neutral,0.0135,BA +0.013 (no clear trend),No Signal,0.221,0.207,0.013,BA,0.013,0.0854,HR/AB,77,AB,82,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Sal Frelick,686217,hitter,,Neutral,0.1334,290,Hot,0.05,BA +0.050,Emerging Buy,0.25,0.2,0.05,BA,0.0556,0.0,HR/AB,36,AB,55,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Vinnie Pasquantino,686469,hitter,,Buy low,0.2761,99,Hot,0.1283,BA ++0.128,Strong Buy,0.265,0.136,0.128,BA,0.0294,0.0455,HR/AB,68,AB,66,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Brooks Lee,686797,hitter,,Neutral,-0.0326,273,Mixed,0.0438,BA +0.044 but HR rate down,No Signal,0.319,0.275,0.044,BA,0.0,0.0725,HR/AB,47,AB,69,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Troy Johnston,687859,hitter,,Sell high,-0.2294,279.0,Neutral,0.0052,BA +0.005 (no clear trend),No Signal,0.333,0.328,0.005,BA,0.0,0.0156,HR/AB,48,AB,64,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Colt Keith,690993,hitter,,Sell high,-0.2467,294,Neutral,0.0174,BA -0.017 (no clear trend),No Signal,0.255,0.273,-0.017,BA,0.0,0.0,HR/AB,47,AB,55,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Tyler Soderstrom,691016,hitter,,Buy low,0.2917,109,Cold,0.0583,BA -0.058,Conflicted (Buy vs Cold),0.158,0.216,-0.058,BA,0.0351,0.0405,HR/AB,57,AB,74,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jordan Walker,691023,hitter,,Sell high,-0.2137,127,Mixed,0.049,BA +0.049 but HR rate down,No Signal,0.324,0.275,0.049,BA,0.0676,0.087,HR/AB,74,AB,69,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Kyle Karros,691720,hitter,,Neutral,0.1469,246.0,Hot,0.0974,BA ++0.097,Emerging Buy,0.283,0.185,0.097,BA,0.0,0.0185,HR/AB,46,AB,54,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Coby Mayo,691723,hitter,,Neutral,0.1355,394,Cold,0.0864,BA -0.086,Fading Sell,0.118,0.204,-0.086,BA,0.0294,0.0612,HR/AB,34,AB,49,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Nick Gonzales,693304,hitter,,Sell high,-0.2523,410,Hot,0.0387,BA +0.039,Conflicted (Sell vs Hot),0.339,0.3,0.039,BA,0.0,0.0,HR/AB,62,AB,60,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Dillon Dingler,693307,hitter,,Buy low,0.1991,197,Neutral,0.0326,BA +0.033 (no clear trend),No Signal,0.27,0.237,0.033,BA,0.0476,0.0508,HR/AB,63,AB,59,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Samuel Basallo,694212,hitter,,Slight sell,-0.1392,206,Hot,0.057,BA ++0.057,Slight Buy + Hot,0.34,0.283,0.057,BA,0.0189,0.087,HR/AB,53,AB,46,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Evan Carter,694497,hitter,,Buy low,0.4996,371,Cold,0.0714,BA -0.071,Conflicted (Buy vs Cold),0.107,0.179,-0.071,BA,0.0357,0.0536,HR/AB,56,AB,56,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jose Fernandez,699912,hitter,,Sell high,-0.1557,238.0,Cold,0.2076,BA -0.208,Strong Sell,0.159,0.367,-0.208,BA,0.0,0.0167,HR/AB,44,AB,60,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Ben Rice,700250,hitter,,Slight sell,-0.1062,37,Neutral,0.011,BA -0.011 (no clear trend),No Signal,0.294,0.305,-0.011,BA,0.098,0.1017,HR/AB,51,AB,59,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Sal Stewart,701398,hitter,,Buy low,0.3444,48,Cold,0.0846,BA -0.085,Conflicted (Buy vs Cold),0.176,0.26,-0.085,BA,0.0135,0.0959,HR/AB,74,AB,73,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jackson Merrill,701538,hitter,,Buy low,0.1999,62,Neutral,0.0032,BA -0.003 (no clear trend),No Signal,0.194,0.197,-0.003,BA,0.0149,0.0141,HR/AB,67,AB,71,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Nick Kurtz,701762,hitter,,Sell high,-0.2736,23,Neutral,0.0283,BA +0.028 (no clear trend),No Signal,0.308,0.279,0.028,BA,0.0462,0.0735,HR/AB,65,AB,68,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Carson Benge,701807,hitter,,Neutral,-0.0184,471,Neutral,0.034,BA +0.034 (no clear trend),No Signal,0.263,0.229,0.034,BA,0.0263,0.0208,HR/AB,38,AB,48,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Caleb Durbin,702332,hitter,,Buy low,0.4019,327,Cold,0.0531,BA -0.053,Conflicted (Buy vs Cold),0.16,0.213,-0.053,BA,0.0,0.0164,HR/AB,50,AB,61,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jj Wetherholt,802139,hitter,,Buy low,0.2072,107,Neutral,0.0048,BA +0.005 (no clear trend),No Signal,0.225,0.221,0.005,BA,0.0423,0.0588,HR/AB,71,AB,68,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Chandler Simpson,802415,hitter,,Sell high,-0.1527,141,Neutral,0.0341,BA -0.034 (no clear trend),No Signal,0.258,0.292,-0.034,BA,0.0,0.0,HR/AB,66,AB,72,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Konnor Griffin,804606,hitter,,Sell high,-0.2305,156,Hot,0.0626,BA ++0.063,Conflicted (Sell vs Hot),0.301,0.239,0.063,BA,0.0274,0.0149,HR/AB,73,AB,67,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jakob Marsee,805300,hitter,,Neutral,0.099,203,Neutral,0.0088,BA +0.009 (no clear trend),No Signal,0.214,0.205,0.009,BA,0.0357,0.0137,HR/AB,56,AB,73,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Chase Meidroth,805367,hitter,,Slight sell,-0.1229,454,Neutral,0.0137,BA +0.014 (no clear trend),No Signal,0.304,0.29,0.014,BA,0.0357,0.0,HR/AB,56,AB,69,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Chris Sale,519242,pitcher,,Sell high,-0.2437,13,Hot,1.7804,"ERA -1.78, K/9 +0.4",Conflicted (Sell vs Hot),1.35,3.13,-1.78,ERA,11.7,11.35,K/9,20.0,IP,23.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Kevin Gausman,592332,pitcher,,Neutral,0.3556,78,Cold,3.0905,"ERA +3.09, K/9 -1.1",Fading Sell,6.61,3.52,3.09,ERA,5.51,6.65,K/9,16.3,IP,23.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Robbie Ray,592662,pitcher,,Sell high,-0.2886,137,Cold,1.3235,"ERA +1.32, K/9 -2.1",Strong Sell,3.71,2.38,1.32,ERA,7.41,9.53,K/9,17.0,IP,22.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Eduardo Rodríguez,593958,pitcher,,Sell high,-0.5251,311,Hot,2.9309,"ERA -2.93, K/9 +1.8",Conflicted (Sell vs Hot),2.13,5.06,-2.93,ERA,7.46,5.62,K/9,25.3,IP,16.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jacob Degrom,594798,pitcher,,Sell high,-0.206,24,Cold,2.6014,"ERA +2.60, K/9 -3.0",Strong Sell,3.91,1.31,2.6,ERA,9.24,12.19,K/9,25.3,IP,20.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Clay Holmes,605280,pitcher,,Sell high,-0.351,229,Neutral,0.1833,ERA +0.18 (no clear trend),No Signal,2.78,2.6,0.18,ERA,10.32,5.19,K/9,22.7,IP,17.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Erick Fedde,607200,pitcher,,Sell high,-0.235,417,Cold,2.5384,ERA +2.54,Strong Sell,5.49,2.95,2.54,ERA,5.49,5.06,K/9,19.7,IP,21.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Nick Martínez,607259,pitcher,,Sell high,-0.7634,256,Hot,1.2394,ERA -1.24,Conflicted (Sell vs Hot),0.76,2.0,-1.24,ERA,5.7,6.5,K/9,23.7,IP,18.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Tomoyuki Sugano,608372,pitcher,,Sell high,-0.922,374,Neutral,0.1946,ERA +0.19 (no clear trend),No Signal,4.79,4.6,0.19,ERA,2.61,5.74,K/9,20.7,IP,15.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Michael Wacha,608379,pitcher,,Sell high,-0.74,238,Neutral,0.1641,ERA +0.16 (no clear trend),No Signal,3.24,3.08,0.16,ERA,6.84,7.18,K/9,25.0,IP,26.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Ranger Suarez,624133,pitcher,,Sell high,-0.2428,126,Hot,1.9286,"ERA -1.93, K/9 +4.2",Conflicted (Sell vs Hot),0.0,1.93,-1.93,ERA,10.9,6.75,K/9,17.3,IP,18.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Freddy Peralta,642547,pitcher,,Sell high,-0.3742,68,Mixed,1.2273,ERA -1.23 but K/9 down,No Signal,2.45,3.68,-1.23,ERA,7.36,9.0,K/9,22.0,IP,22.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Mike King,650633,pitcher,,Sell high,-0.5022,,Cold,1.1001,"ERA +1.10, K/9 -0.8",Strong Sell,3.06,1.96,1.1,ERA,8.15,9.0,K/9,17.7,IP,23.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Aaron Civale,650644,pitcher,,Sell high,-0.5161,335,Mixed,2.6336,ERA -2.63 but K/9 down,No Signal,1.29,3.92,-2.63,ERA,6.0,7.84,K/9,21.0,IP,20.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+David Peterson,656849,pitcher,,Buy low,0.7475,392,Mixed,0.6459,ERA +0.65 but K/9 up,No Signal,5.94,5.29,0.65,ERA,11.88,8.47,K/9,16.7,IP,17.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Joe Ryan,657746,pitcher,,Buy low,0.5035,63,Hot,1.5581,"ERA -1.56, K/9 +0.3",Strong Buy,1.96,3.52,-1.56,ERA,9.33,9.0,K/9,18.3,IP,23.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Shohei Ohtani,660271,pitcher,,Sell high,-0.2882,3,Mixed,0.85,ERA +0.85 but K/9 up,No Signal,1.35,0.5,0.85,ERA,11.25,9.5,K/9,20.0,IP,18.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Davis Martin,663436,pitcher,,Sell high,-0.4371,201,Hot,0.6759,ERA -0.68,Conflicted (Sell vs Hot),1.09,1.77,-0.68,ERA,12.04,6.2,K/9,24.7,IP,20.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Peter Lambert,663567,pitcher,,Sell high,-0.1756,310,Neutral,0.4259,ERA +0.43 (no clear trend),No Signal,3.7,3.27,0.43,ERA,7.03,13.09,K/9,24.3,IP,11.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jesús Luzardo,666200,pitcher,,Buy low,0.8159,47,Hot,5.77,"ERA -5.77, K/9 +2.1",Strong Buy,2.82,8.59,-5.77,ERA,11.28,9.2,K/9,22.3,IP,14.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+José Soriano,667755,pitcher,,Sell high,-0.5094,129,Cold,5.7857,"ERA +5.79, K/9 -1.4",Strong Sell,6.14,0.35,5.79,ERA,9.82,11.22,K/9,22.0,IP,25.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Shane Baz,669358,pitcher,,Neutral,0.2381,300,Neutral,0.476,ERA +0.48 (no clear trend),No Signal,6.19,5.71,0.48,ERA,8.44,7.27,K/9,16.0,IP,17.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Keider Montero,672456,pitcher,,Sell high,-0.344,329,Mixed,0.8552,ERA -0.86 but K/9 down,No Signal,3.12,3.97,-0.86,ERA,4.15,7.94,K/9,17.3,IP,22.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Kyle Bradish,680694,pitcher,,Buy low,0.3271,111,Mixed,0.8603,ERA +0.86 but K/9 up,No Signal,4.24,3.38,0.86,ERA,11.12,8.86,K/9,17.0,IP,21.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Justin Wrobleski,680736,pitcher,,Sell high,-0.3849,280,Cold,3.227,ERA +3.23,Strong Sell,3.92,0.69,3.23,ERA,5.23,4.5,K/9,20.7,IP,26.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Randy Vásquez,681190,pitcher,,Sell high,-0.3228,263,Cold,1.0385,"ERA +1.04, K/9 -4.0",Strong Sell,3.74,2.7,1.04,ERA,6.23,10.26,K/9,21.7,IP,16.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Spencer Arrighetti,681293,pitcher,,Sell high,-0.3152,259,Mixed,1.0,ERA -1.00 but K/9 down,No Signal,1.0,2.0,-1.0,ERA,7.0,10.5,K/9,18.0,IP,18.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Kyle Leahy,681517,pitcher,,Sell high,-0.2107,397,Hot,3.7088,"ERA -3.71, K/9 +1.5",Conflicted (Sell vs Hot),2.08,5.79,-3.71,ERA,7.89,6.43,K/9,21.7,IP,14.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Shota Imanaga,684007,pitcher,,Sell high,-0.4007,82,Hot,0.8692,ERA -0.87,Conflicted (Sell vs Hot),1.35,2.22,-0.87,ERA,9.45,9.99,K/9,20.0,IP,24.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Jack Kochanowicz,686799,pitcher,,Sell high,-0.2915,364,Mixed,4.1202,ERA +4.12 but K/9 up,No Signal,6.45,2.33,4.12,ERA,6.04,4.19,K/9,22.3,IP,19.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Bryce Elder,693821,pitcher,,Sell high,-0.3306,262,Hot,0.8961,"ERA -0.90, K/9 +2.0",Conflicted (Sell vs Hot),2.1,3.0,-0.9,ERA,8.77,6.75,K/9,25.7,IP,24.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Paul Skenes,694973,pitcher,,Neutral,-0.0313,4,Mixed,0.5143,ERA +0.51 but K/9 up,No Signal,1.29,0.77,0.51,ERA,11.14,9.26,K/9,21.0,IP,23.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Chase Burns,695505,pitcher,,Sell high,-0.6132,76,Hot,2.6259,"ERA -2.63, K/9 +1.6",Conflicted (Sell vs Hot),1.08,3.71,-2.63,ERA,9.0,7.41,K/9,25.0,IP,17.0,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Michael Mcgreevy,700241,pitcher,,Sell high,-1.1211,266,Hot,2.6765,"ERA -2.68, K/9 +2.7",Conflicted (Sell vs Hot),0.5,3.18,-2.68,ERA,7.5,4.76,K/9,18.0,IP,22.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Will Warren,701542,pitcher,,Buy low,0.3787,181,Cold,2.5312,ERA +2.53,Conflicted (Buy vs Cold),5.06,2.53,2.53,ERA,12.38,11.81,K/9,16.0,IP,21.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Parker Messick,800048,pitcher,,Sell high,-0.2332,101,Mixed,0.8423,ERA +0.84 but K/9 up,No Signal,3.13,2.29,0.84,ERA,11.35,8.24,K/9,23.0,IP,19.7,2026-04-27,2026-05-17,2026-04-06,2026-04-26
+Connelly Early,813349,pitcher,,Sell high,-0.4107,218,Mixed,1.1166,ERA +1.12 but K/9 up,No Signal,3.94,2.82,1.12,ERA,9.56,7.25,K/9,16.0,IP,22.3,2026-04-27,2026-05-17,2026-04-06,2026-04-26
