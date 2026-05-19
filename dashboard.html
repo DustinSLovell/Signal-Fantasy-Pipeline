@@ -685,6 +685,69 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 .tbl-wrap { transition: opacity .15s ease; }
 .tbl-wrap.fading { opacity: 0; }
 
+/* ── How Signals Work info modal ────────────────────────────────────────── */
+#signals-modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,.45);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 60px 16px 32px;
+  overflow-y: auto;
+}
+#signals-modal {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.22);
+  width: 100%; max-width: 600px;
+  overflow: hidden;
+}
+.sm-header {
+  background: var(--hdr);
+  color: white;
+  padding: 14px 22px;
+  font-size: 14px; font-weight: 700; letter-spacing: .3px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sm-close {
+  background: none; border: none; color: rgba(255,255,255,.65);
+  font-size: 20px; cursor: pointer; padding: 0 2px; line-height: 1;
+}
+.sm-close:hover { color: white; }
+.sm-body { padding: 22px 26px; overflow-y: auto; max-height: 72vh; }
+.sm-section { margin-bottom: 24px; }
+.sm-section:last-child { margin-bottom: 0; }
+.sm-section-title {
+  font-size: 10px; font-weight: 800; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.sm-text { font-size: 13px; color: var(--text); line-height: 1.7; margin-bottom: 0; }
+.sm-tier-grid { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.sm-tier-row {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 12.5px; line-height: 1.55;
+  padding: 7px 10px; border-radius: 7px; background: var(--bg);
+}
+.sm-tier-badge { flex-shrink: 0; width: 140px; font-weight: 700; }
+.sm-tier-right { flex: 1; }
+.sm-tier-desc { color: var(--text); }
+.sm-tier-note { color: var(--muted); font-style: italic; font-size: 11.5px; margin-top: 2px; }
+.sm-data-note { font-size: 12px; color: var(--muted); line-height: 1.7; }
+
+/* "How signals work" trigger button */
+.signals-info-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 11px;
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 11px; font-weight: 600; cursor: pointer;
+  transition: background .12s, color .12s, border-color .12s;
+  white-space: nowrap;
+}
+.signals-info-btn:hover { background: var(--bg); color: var(--text); border-color: #94a3b8; }
+
 /* responsive */
 @media (max-width: 900px) { .cards-row { grid-template-columns: repeat(3,1fr); } }
 @media (max-width: 560px) {
@@ -2299,13 +2362,15 @@ function renderSignalFilterBar() {
 
   const el = document.getElementById('signal-filter-bar');
   if (!el) return;
-  el.innerHTML = DEFS.map(d => {
+  const filterBtns = DEFS.map(d => {
     const isActive = vf === d.key;
     const count    = d.key ? (counts[d.key] || 0) : data.length;
     const label    = d.key ? `${d.label} (${count})` : `All (${count})`;
     return `<button class="sig-btn ${d.cls}${isActive ? ' active' : ''}"
                     onclick="setSignalFilter(${d.key === null ? 'null' : `'${d.key}'`})">${label}</button>`;
   }).join('');
+  const infoBtn = `<button class="signals-info-btn" onclick="openSignalsModal()" title="How signals work">ℹ️ How signals work</button>`;
+  el.innerHTML = filterBtns + infoBtn;
 }
 
 function setSignalFilter(verdict) {
@@ -4009,6 +4074,153 @@ async function init() {
 if (!checkToken()) { throw new Error("Access denied"); }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// ─── How Signals Work modal ───────────────────────────────────────────────────
+function openSignalsModal() {
+  const overlay = document.getElementById('signals-modal-overlay');
+  if (!overlay) return;
+  // Populate last-updated timestamp from header meta
+  const metaEl = document.getElementById('hdr-meta');
+  const tsEl   = document.getElementById('sm-last-updated');
+  if (tsEl && metaEl) {
+    const raw = metaEl.textContent || '';
+    const match = raw.match(/Updated (.+)/);
+    tsEl.textContent = match ? match[1] : new Date().toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+  }
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeSignalsModal() {
+  const overlay = document.getElementById('signals-modal-overlay');
+  if (overlay) overlay.style.display = 'none';
+  document.body.style.overflow = '';
+}
+// Close on overlay click (outside modal)
+document.addEventListener('DOMContentLoaded', () => {
+  const ov = document.getElementById('signals-modal-overlay');
+  if (ov) ov.addEventListener('click', e => { if (e.target === ov) closeSignalsModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSignalsModal(); });
+});
 </script>
+
+<!-- ── How Signals Work modal ────────────────────────────────────────────── -->
+<div id="signals-modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="How signals work">
+  <div id="signals-modal">
+    <div class="sm-header">
+      <span>ℹ️ How Signals Work</span>
+      <button class="sm-close" onclick="closeSignalsModal()" title="Close">✕</button>
+    </div>
+    <div class="sm-body">
+
+      <!-- Section A: The Luck Signal -->
+      <div class="sm-section">
+        <div class="sm-section-title">A — The Luck Signal</div>
+        <p class="sm-text">
+          The luck signal detects when a player's results are meaningfully luckier or
+          unluckier than their underlying contact quality — measured by xwOBA, BABIP,
+          and exit velocity metrics. A <strong>Buy Low</strong> signal means the model
+          expects improvement as luck normalizes. A <strong>Sell High</strong> signal
+          means regression is likely.
+        </p>
+        <p class="sm-text" style="margin-top:8px;font-size:12px;color:var(--muted)">
+          Validated accuracy: Buy Low 95.7% · Sell High 100% · Overall 91.4%
+          (out-of-sample 2025, n=94).
+        </p>
+      </div>
+
+      <!-- Section B: The Trend Layer -->
+      <div class="sm-section">
+        <div class="sm-section-title">B — The Trend Layer</div>
+        <p class="sm-text">
+          The trend signal compares a player's <strong>last 21 days</strong> of Statcast
+          performance against the <strong>prior 21 days</strong>:
+        </p>
+        <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:20px;margin:8px 0 12px">
+          <li>Hitters: xwOBA and batting average</li>
+          <li>Pitchers: ERA and strikeout rate</li>
+        </ul>
+        <p class="sm-text">Combined with the luck signal, this creates higher-conviction tiers:</p>
+        <div class="sm-tier-grid">
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vStrongBuy">Strong Buy</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">Unlucky AND recent trend improving. Both signals agree.</div>
+              <div class="sm-tier-note">Highest conviction buy.</div>
+            </div>
+          </div>
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vBuyLow">Buy Low</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">Unlucky with no clear trend signal.</div>
+              <div class="sm-tier-note">Model expects normalization over time.</div>
+            </div>
+          </div>
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vConflictedBuy">Conflicted Buy</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">Unlucky BUT recent trend cold.</div>
+              <div class="sm-tier-note">Backtest note: these players had the best ROS outcomes (.354 wOBA). The cold streak is often the buying opportunity.</div>
+            </div>
+          </div>
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vStrongSell">Strong Sell</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">Lucky AND recent trend declining. Both signals agree.</div>
+              <div class="sm-tier-note">Highest conviction sell. +27.4 wOBA point separation vs Conflicted Sell in backtest.</div>
+            </div>
+          </div>
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vSellHigh">Sell High</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">Lucky with no clear trend signal.</div>
+              <div class="sm-tier-note">Model expects regression over time.</div>
+            </div>
+          </div>
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vConflictedSell">Conflicted Sell</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">Lucky BUT recent trend hot.</div>
+              <div class="sm-tier-note">Consider waiting — the sell thesis may be premature while the player is trending well.</div>
+            </div>
+          </div>
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vEmergingBuy">Emerging Buy</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">No luck gap but trend improving.</div>
+              <div class="sm-tier-note">Something may be genuinely getting better — worth monitoring.</div>
+            </div>
+          </div>
+          <div class="sm-tier-row">
+            <div class="sm-tier-badge"><span class="badge vFadingSell">Fading Sell</span></div>
+            <div class="sm-tier-right">
+              <div class="sm-tier-desc">No luck gap but trend declining.</div>
+              <div class="sm-tier-note">Worth monitoring for a developing sell signal.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section C: Data Note -->
+      <div class="sm-section">
+        <div class="sm-section-title">C — Data Note</div>
+        <p class="sm-data-note">
+          Luck signals are based on full-season Statcast data (xwOBA, BABIP, exit velocity).
+          Trend signals use game-by-game Statcast data from the last 6 weeks, sourced from
+          Baseball Savant. Both update each pipeline run.
+        </p>
+        <p class="sm-data-note" style="margin-top:6px">
+          Last updated: <strong id="sm-last-updated">—</strong>
+        </p>
+        <p class="sm-data-note" style="margin-top:10px;font-size:11px">
+          Backtest methodology: 2025 season, n=68 signaled players, real rolling-window
+          xwOBA (Apr 5–May 17 windows), validated vs actual ROS wOBA.
+          <em>Signal Fantasy by Dustin Lovell.</em>
+        </p>
+      </div>
+
+    </div><!-- .sm-body -->
+  </div><!-- #signals-modal -->
+</div><!-- #signals-modal-overlay -->
+
 </body>
 </html>
