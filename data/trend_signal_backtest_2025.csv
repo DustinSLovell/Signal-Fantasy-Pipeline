@@ -1,0 +1,125 @@
+name,batter_id,signal,trend_dir,trend_delta,combined,april_xwoba,fs_xwoba,ros_woba,woba_delta,april_pa,ros_pa,correct
+Carlos Santana,467793,Neutral,Flat,0.019,Neutral + Flat,0.271,0.29,0.3138,0.0428,120,290,0
+Tommy Pham,502054,Neutral,Up,0.085,Neutral + Up,0.233,0.318,0.4006,0.1676,105,170,0
+Paul Goldschmidt,502671,Sell High,Down,-0.046,Strong Sell,0.375,0.329,0.315,-0.06,130,274,1
+Jose Altuve,514888,Slight Sell,Up,0.036,Slight Sell + Up,0.264,0.3,0.3669,0.1029,127,320,0
+Salvador Perez,521692,Buy Low,Down,-0.04,Conflicted Buy,0.397,0.357,0.3371,-0.0599,123,306,0
+Wilmer Flores,527038,Neutral,Flat,-0.001,Neutral + Flat,0.282,0.281,0.3228,0.0408,117,261,0
+Marcus Semien,543760,Buy Low,Flat,0.012,Buy Low (Flat),0.306,0.318,0.3296,0.0236,124,335,1
+George Springer,543807,Neutral,Up,0.046,Neutral + Up,0.358,0.404,0.3913,0.0333,102,306,0
+Mike Trout,545361,Buy Low,Flat,-0.001,Buy Low (Flat),0.359,0.358,0.3746,0.0156,120,240,0
+Bryce Harper,547180,Slight Buy,Flat,-0.002,Neutral + Flat,0.37,0.368,0.3955,0.0255,135,220,1
+Nolan Arenado,571448,Neutral,Flat,-0.004,Neutral + Flat,0.293,0.289,0.2861,-0.0069,122,273,1
+Christian Walker,572233,Neutral,Up,0.024,Neutral + Up,0.29,0.314,0.3145,0.0245,119,314,0
+Mike Yastrzemski,573262,Slight Sell,Flat,-0.012,Neutral + Flat,0.341,0.329,0.2849,-0.0561,107,265,1
+Willson Contreras,575929,Neutral,Up,0.033,Neutral + Up,0.325,0.358,0.371,0.046,131,305,0
+Nick Castellanos,592206,Neutral,Down,-0.04,Neutral + Down,0.342,0.302,0.3243,-0.0177,122,315,1
+Aaron Judge,592450,Sell High,Down,-0.027,Strong Sell,0.487,0.46,0.4337,-0.0533,140,319,1
+Manny Machado,592518,Slight Buy,Down,-0.027,Slight Buy + Down,0.382,0.355,0.3958,0.0138,122,346,0
+J.T. Realmuto,592663,Neutral,Flat,-0.008,Neutral + Flat,0.324,0.316,0.3267,0.0027,107,260,1
+Christian Yelich,592885,Neutral,Flat,-0.003,Neutral + Flat,0.333,0.33,0.3505,0.0175,128,304,1
+Xander Bogaerts,593428,Neutral,Up,0.028,Neutral + Up,0.299,0.327,0.3306,0.0316,118,320,0
+Francisco Lindor,596019,Neutral,Flat,-0.017,Neutral + Flat,0.362,0.345,0.299,-0.063,137,348,0
+Trevor Story,596115,Neutral,Flat,-0.005,Neutral + Flat,0.316,0.311,0.3094,-0.0066,131,303,1
+Max Kepler,596146,Neutral,Down,-0.024,Neutral + Down,0.356,0.332,0.2741,-0.0819,108,243,0
+Josh Bell,605137,Buy Low,Up,0.091,Strong Buy,0.268,0.359,0.351,0.083,114,257,1
+Mookie Betts,605141,Slight Buy,Flat,0.016,Neutral + Flat,0.314,0.33,0.299,-0.015,124,311,0
+Brandon Nimmo,607043,Buy Low,Flat,-0.003,Buy Low (Flat),0.324,0.321,0.3617,0.0377,120,317,1
+Trea Turner,607208,Slight Sell,Up,0.028,Slight Sell + Up,0.293,0.321,0.3577,0.0647,124,355,0
+Dansby Swanson,621020,Slight Buy,Up,0.035,Slight Buy + Up,0.31,0.345,0.3286,0.0186,127,313,0
+Carlos Correa,621043,Slight Buy,Up,0.058,Slight Buy + Up,0.28,0.338,0.3398,0.0598,115,250,1
+Byron Buxton,621439,Neutral,Up,0.042,Neutral + Up,0.308,0.35,0.4211,0.1131,117,247,0
+Taylor Ward,621493,Buy Low,Up,0.034,Strong Buy,0.299,0.333,0.3654,0.0664,119,345,1
+Matt Olson,621566,Buy Low,Down,-0.038,Conflicted Buy,0.398,0.36,0.3626,-0.0354,131,352,0
+Pete Alonso,624413,Neutral,Down,-0.084,Neutral + Down,0.47,0.386,0.3164,-0.1536,137,333,0
+Michael Conforto,624424,Slight Buy,Up,0.02,Slight Buy + Up,0.31,0.33,0.3086,-0.0014,101,232,0
+Cody Bellinger,641355,Slight Buy,Up,0.043,Slight Buy + Up,0.284,0.327,0.3942,0.1102,114,313,1
+J.P. Crawford,641487,Neutral,Down,-0.046,Neutral + Down,0.375,0.329,0.3207,-0.0543,113,353,0
+Ryan McMahon,641857,Neutral,Up,0.068,Neutral + Up,0.254,0.322,0.3552,0.1012,121,306,0
+Willy Adames,642715,Slight Buy,Up,0.023,Slight Buy + Up,0.304,0.327,0.3525,0.0485,137,323,1
+Isiah Kiner-Falefa,643396,Neutral,Flat,-0.017,Neutral + Flat,0.279,0.262,0.293,0.014,109,227,1
+Ozzie Albies,645277,Neutral,Up,0.029,Neutral + Up,0.27,0.299,0.2982,0.0282,132,327,0
+Rafael Devers,646240,Slight Buy,Down,-0.029,Slight Buy + Down,0.396,0.367,0.3689,-0.0271,147,350,0
+Josh Naylor,647304,Neutral,Down,-0.022,Neutral + Down,0.357,0.335,0.3334,-0.0236,125,298,0
+Luis Arraez,650333,Neutral,Up,0.02,Neutral + Up,0.283,0.303,0.3216,0.0386,104,349,0
+Luis Rengifo,650859,Neutral,Up,0.021,Neutral + Up,0.281,0.302,0.2893,0.0083,108,280,1
+Matt Chapman,656305,Neutral,Flat,0.016,Neutral + Flat,0.324,0.34,0.3566,0.0326,132,226,0
+Rhys Hoskins,656555,Neutral,Down,-0.039,Neutral + Down,0.353,0.314,0.3229,-0.0301,104,214,0
+Zach McKinstry,656716,Sell High,Down,-0.031,Strong Sell,0.336,0.305,0.3385,0.0025,112,261,0
+Cedric Mullins,656775,Slight Sell,Down,-0.067,Slight Sell + Down,0.351,0.284,0.2767,-0.0743,119,236,1
+Kyle Schwarber,656941,Neutral,Flat,-0.002,Neutral + Flat,0.405,0.403,0.4026,-0.0024,133,349,1
+Shohei Ohtani,660271,Neutral,Flat,0.016,Neutral + Flat,0.409,0.425,0.4077,-0.0013,125,359,1
+William Contreras,661388,Neutral,Up,0.029,Neutral + Up,0.302,0.331,0.3247,0.0227,125,318,0
+Lars Nootbaar,663457,Neutral,Down,-0.066,Neutral + Down,0.383,0.317,0.287,-0.096,140,246,0
+Nico Hoerner,663538,Neutral,Up,0.033,Neutral + Up,0.289,0.322,0.3303,0.0413,115,315,0
+Austin Riley,663586,Neutral,Flat,-0.009,Neutral + Flat,0.339,0.33,0.3193,-0.0197,133,309,1
+Trevor Larnach,663616,Neutral,Flat,-0.005,Neutral + Flat,0.323,0.318,0.3258,0.0028,123,277,1
+Ke'Bryan Hayes,663647,Neutral,Down,-0.026,Neutral + Down,0.308,0.282,0.2644,-0.0436,116,281,0
+Kyle Tucker,663656,Neutral,Down,-0.04,Neutral + Down,0.412,0.372,0.3778,-0.0342,136,327,0
+Jonathan India,663697,Buy Low,Flat,-0.019,Buy Low (Flat),0.334,0.315,0.3101,-0.0239,120,313,0
+Cal Raleigh,663728,Neutral,Flat,0.002,Neutral + Flat,0.369,0.371,0.4115,0.0425,135,338,0
+Ian Happ,664023,Neutral,Flat,-0.009,Neutral + Flat,0.363,0.354,0.3164,-0.0466,142,295,0
+Ty France,664034,Slight Buy,Down,-0.053,Slight Buy + Down,0.381,0.328,0.2975,-0.0835,123,265,0
+Brandon Lowe,664040,Buy Low,Flat,-0.002,Buy Low (Flat),0.337,0.335,0.3972,0.0602,114,247,1
+Alec Bohm,664761,Buy Low,Up,0.027,Strong Buy,0.297,0.324,0.3606,0.0636,119,264,1
+Fernando Tatis Jr.,665487,Slight Sell,Down,-0.065,Slight Sell + Down,0.435,0.37,0.3376,-0.0974,127,344,1
+Vladimir Guerrero Jr.,665489,Slight Buy,Flat,-0.003,Neutral + Flat,0.387,0.384,0.402,0.015,130,348,0
+Juan Soto,665742,Neutral,Up,0.078,Neutral + Up,0.351,0.429,0.4005,0.0495,136,333,0
+Oneil Cruz,665833,Neutral,Down,-0.084,Neutral + Down,0.408,0.324,0.3084,-0.0996,120,290,0
+Jonathan Aranda,666018,Neutral,Flat,-0.019,Neutral + Flat,0.401,0.382,0.382,-0.019,103,306,1
+Gavin Lux,666158,Sell High,Down,-0.043,Strong Sell,0.342,0.299,0.305,-0.037,113,240,1
+Bo Bichette,666182,Slight Buy,Flat,-0.004,Neutral + Flat,0.357,0.353,0.3579,0.0009,137,348,0
+Brent Rooker,667670,Neutral,Down,-0.023,Neutral + Down,0.374,0.351,0.3771,0.0031,134,347,1
+Randy Arozarena,668227,Neutral,Down,-0.025,Neutral + Down,0.352,0.327,0.3663,0.0143,131,340,1
+Spencer Steer,668715,Slight Buy,Flat,0.015,Neutral + Flat,0.278,0.293,0.3342,0.0562,101,298,1
+Bryan Reynolds,668804,Neutral,Flat,0.016,Neutral + Flat,0.322,0.338,0.2969,-0.0251,136,302,0
+Mark Vientos,668901,Neutral,Up,0.022,Neutral + Up,0.298,0.32,0.2841,-0.0139,118,173,1
+Brice Turang,668930,Slight Sell,Down,-0.021,Slight Sell + Down,0.356,0.335,0.3039,-0.0521,134,307,1
+Adley Rutschman,668939,Neutral,Down,-0.055,Neutral + Down,0.38,0.325,0.3108,-0.0692,115,176,0
+Kyle Stowers,669065,Slight Sell,Flat,0.004,Neutral + Flat,0.371,0.375,0.4071,0.0361,111,281,0
+Shea Langeliers,669127,Neutral,Flat,-0.017,Neutral + Flat,0.345,0.328,0.3431,-0.0019,113,209,1
+Austin Wells,669224,Neutral,Flat,-0.001,Neutral + Flat,0.295,0.294,0.3007,0.0057,105,220,1
+Tommy Edman,669242,Slight Buy,Down,-0.059,Slight Buy + Down,0.38,0.321,0.287,-0.093,112,204,0
+Xavier Edwards,669364,Neutral,Flat,0.011,Neutral + Flat,0.284,0.295,0.3459,0.0619,140,270,0
+Jake Burger,669394,Buy Low,Up,0.038,Strong Buy,0.286,0.324,0.3218,0.0358,105,181,1
+Michael Toglia,669911,Neutral,Flat,0.006,Neutral + Flat,0.265,0.271,0.2858,0.0208,112,218,0
+Isaac Paredes,670623,Neutral,Flat,-0.012,Neutral + Flat,0.332,0.32,0.3735,0.0415,130,279,0
+TJ Friedl,670770,Neutral,Flat,0.02,Neutral + Flat,0.28,0.3,0.367,0.087,133,327,0
+Heliot Ramos,671218,Neutral,Flat,0.0,Neutral + Flat,0.32,0.32,0.3421,0.0221,134,334,0
+Lawrence Butler,671732,Neutral,Flat,0.011,Neutral + Flat,0.293,0.304,0.3095,0.0165,131,328,1
+Maikel Garcia,672580,Neutral,Flat,-0.009,Neutral + Flat,0.344,0.335,0.3675,0.0235,114,326,0
+Otto Lopez,672640,Buy Low,Flat,-0.01,Buy Low (Flat),0.34,0.33,0.3544,0.0144,119,260,0
+Geraldo Perdomo,672695,Neutral,Flat,0.014,Neutral + Flat,0.342,0.356,0.3545,0.0125,134,344,1
+Lenyn Sosa,672820,Neutral,Flat,0.014,Neutral + Flat,0.312,0.326,0.3316,0.0196,107,234,1
+Seiya Suzuki,673548,Slight Sell,Down,-0.031,Slight Sell + Down,0.383,0.352,0.3387,-0.0443,112,337,1
+Eric Wagaman,676572,Buy Low,Down,-0.049,Conflicted Buy,0.364,0.315,0.2697,-0.0943,104,272,0
+Wilyer Abreu,677800,Neutral,Down,-0.057,Neutral + Down,0.392,0.335,0.31,-0.082,115,224,0
+Miguel Vargas,678246,Neutral,Up,0.035,Neutral + Up,0.284,0.319,0.3239,0.0399,118,316,0
+Ceddanne Rafaela,678882,Buy Low,Down,-0.027,Conflicted Buy,0.332,0.305,0.3406,0.0086,104,287,0
+Spencer Torkelson,679529,Neutral,Down,-0.062,Neutral + Down,0.396,0.334,0.3343,-0.0617,131,305,0
+Steven Kwan,680757,Neutral,Down,-0.024,Neutral + Down,0.334,0.31,0.3225,-0.0115,128,326,1
+Jarren Duran,680776,Neutral,Flat,0.004,Neutral + Flat,0.322,0.326,0.3649,0.0429,149,338,0
+Brendan Donovan,680977,Neutral,Down,-0.064,Neutral + Down,0.41,0.346,0.3245,-0.0855,125,316,0
+Bryson Stott,681082,Sell High,Flat,0.014,Sell High (Flat),0.299,0.313,0.2668,-0.0322,115,271,1
+Kerry Carpenter,681481,Neutral,Down,-0.027,Neutral + Down,0.362,0.335,0.3535,-0.0085,104,188,1
+Andy Pages,681624,Slight Sell,Flat,0.009,Neutral + Flat,0.307,0.316,0.3318,0.0248,100,319,0
+Elly De La Cruz,682829,Slight Sell,Flat,-0.011,Neutral + Flat,0.333,0.322,0.379,0.046,135,340,0
+Riley Greene,682985,Neutral,Up,0.041,Neutral + Up,0.294,0.335,0.3804,0.0864,126,322,0
+Corbin Carroll,682998,Neutral,Down,-0.031,Neutral + Down,0.403,0.372,0.3458,-0.0572,141,272,0
+Anthony Volpe,683011,Neutral,Down,-0.036,Neutral + Down,0.337,0.301,0.2871,-0.0499,131,302,0
+Michael Busch,683737,Slight Sell,Up,0.031,Slight Sell + Up,0.347,0.378,0.3841,0.0371,106,276,0
+Sal Frelick,686217,Slight Sell,Flat,-0.01,Neutral + Flat,0.309,0.299,0.3302,0.0212,125,278,0
+Vinnie Pasquantino,686469,Buy Low,Up,0.055,Strong Buy,0.279,0.334,0.3773,0.0983,124,331,1
+Victor Scott II,687363,Sell High,Flat,0.003,Sell High (Flat),0.284,0.287,0.2736,-0.0104,108,261,0
+Tyler Soderstrom,691016,Neutral,Down,-0.039,Neutral + Down,0.38,0.341,0.3193,-0.0607,129,314,0
+Junior Caminero,691406,Neutral,Up,0.023,Neutral + Up,0.323,0.346,0.3497,0.0267,120,320,0
+Pete Crow-Armstrong,691718,Neutral,Down,-0.025,Neutral + Down,0.346,0.321,0.3726,0.0266,123,317,0
+Jackson Chourio,694192,Neutral,Up,0.021,Neutral + Up,0.286,0.307,0.3433,0.0573,137,335,0
+Nolan Schanuel,694384,Neutral,Up,0.035,Neutral + Up,0.292,0.327,0.3544,0.0624,110,343,0
+James Wood,695578,Neutral,Down,-0.023,Neutral + Down,0.384,0.361,0.3635,-0.0205,136,334,0
+Hunter Goodman,696100,Neutral,Flat,0.015,Neutral + Flat,0.309,0.324,0.3619,0.0529,110,277,0
+Trey Sweeney,700242,Neutral,Down,-0.037,Neutral + Down,0.282,0.245,0.262,-0.02,104,154,1
+Ben Rice,700250,Neutral,Flat,-0.004,Neutral + Flat,0.398,0.394,0.3132,-0.0848,110,231,0
+Kyle Manzardo,700932,Neutral,Flat,-0.005,Neutral + Flat,0.327,0.322,0.3277,0.0007,108,231,1
+Jacob Wilson,805779,Neutral,Flat,-0.009,Neutral + Flat,0.313,0.304,0.3645,0.0515,117,280,0
+Jung Hoo Lee,808982,Slight Sell,Down,-0.023,Slight Sell + Down,0.344,0.321,0.287,-0.057,128,304,1
