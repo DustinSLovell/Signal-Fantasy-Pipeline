@@ -338,6 +338,55 @@ tr.rSellHigh  td { background: var(--c-sh-bg); }
 .badge.vSlightSell { background: #fef3c7; color: #92400e; border-color: var(--c-ss-bd); }
 .badge.vSellHigh  { background: #fee2e2; color: #991b1b; border-color: var(--c-sh-bd); }
 
+/* ── Combined trend+luck signal badges ────────────────────────────────────── */
+.badge.vStrongBuy      { background: #14532d; color: #ffffff; border-color: #166534; }
+.badge.vConflictedBuy  { background: #dcfce7; color: #15803d; border-color: #d97706; border-width: 2px; }
+.badge.vStrongSell     { background: #7f1d1d; color: #ffffff; border-color: #991b1b; }
+.badge.vConflictedSell { background: #ea580c; color: #ffffff; border-color: #c2410c; }
+.badge.vEmergingBuy    { background: #ccfbf1; color: #0f766e; border-color: #5eead4; }
+.badge.vFadingSell     { background: #fef3c7; color: #92400e; border-color: #f59e0b; }
+
+/* trend direction cell in advanced table */
+td.trend-dir-cell { text-align: center; font-size: 13px; }
+td.trend-cell-hot  { background: rgba(21,128,61,0.07); }
+td.trend-cell-cold { background: rgba(185,28,28,0.07); }
+
+/* ── Trend sub-filter pills ───────────────────────────────────────────────── */
+.trend-sub-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+  padding-left: 4px;
+}
+.sub-btn {
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  transition: background .12s, color .12s;
+}
+.sub-btn:hover { background: var(--bg); color: var(--text); }
+.sub-btn.active.sb-all         { background: #e2e8f0; color: #1e293b; border-color: #cbd5e1; }
+.sub-btn.active.sb-strong-buy  { background: #14532d; color: #fff;    border-color: #14532d; }
+.sub-btn.active.sb-conf-buy    { background: #dcfce7; color: #15803d; border-color: #d97706; }
+.sub-btn.active.sb-strong-sell { background: #7f1d1d; color: #fff;    border-color: #7f1d1d; }
+.sub-btn.active.sb-conf-sell   { background: #ea580c; color: #fff;    border-color: #ea580c; }
+
+/* trend breakdown line on summary card */
+.vc-trend-split {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 3px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
 /* sell tier badges */
 .badge.tSellMoveOn  { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
 .badge.tSellPerc    { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
@@ -1018,6 +1067,8 @@ td.explain-cell { text-align: left; max-width: 400px; min-width: 200px; }
 
     <!-- Signal filter button bar -->
     <div class="signal-filter-bar" id="signal-filter-bar"></div>
+    <!-- Trend sub-filter pills (Buy Low / Sell High only) -->
+    <div class="trend-sub-bar" id="trend-subfilter-bar" style="display:none"></div>
 
     <!-- Tier filter bar (sell signals only) -->
     <div class="tier-filter-bar" id="tier-btns"></div>
@@ -1390,6 +1441,8 @@ const S = {
   hLuckById:{},   // batter id string -> luck row
   pLuckById:{},   // pitcher id string -> luck row
   rollingFp:{},   // player_id string -> rolling FP row
+  trendMap: {},   // mlbam_id string -> trend_signals_2026 row
+  trendSubfilter: { hitters: null, pitchers: null },
   tvById:   {},   // id string -> raw player record (un-flattened)
   _dynReplLevels: null,  // position -> replacement FPTS (slot-config-aware)
   _replLevelsL1:  null,  // replacement levels stored in player_values.json
@@ -1416,6 +1469,7 @@ const HITTER_COLS = [
   { key:'xwOBA',         label:'xwOBA',       fmt:'rate'  },
   { key:'BABIP',         label:'BABIP',       fmt:'rate'  },
   { key:'luck_score',    label:'Luck Score',  fmt:'luck'  },
+  { key:'_trend_dir',    label:'Trend',       fmt:'trenddir', nosort:true },
   { key:'verdict',       label:'Verdict',     fmt:'badge', nosort:true },
   { key:'fp_rank',       label:'FP ROS Rank', fmt:'int'   },
   // ── Hidden columns (data retained, not displayed) ─────────────────────
@@ -1441,6 +1495,7 @@ const PITCHER_COLS = [
   { key:'FIP',                   label:'FIP',         fmt:'f2'    },
   { key:'xERA',                  label:'xERA',        fmt:'f2'    },
   { key:'luck_score',            label:'Luck Score',  fmt:'luck'  },
+  { key:'_trend_dir',            label:'Trend',       fmt:'trenddir', nosort:true },
   { key:'verdict',               label:'Verdict',     fmt:'badge', nosort:true },
   { key:'fp_rank',               label:'FP ROS Rank', fmt:'int'   },
   // ── Hidden columns (data retained, not displayed) ─────────────────────
@@ -1569,9 +1624,52 @@ const F = {
     return `<td class="${cls}">${sign}${n.toFixed(2)}</td>`;
   },
   badge(v, r) {
-    const info   = vInfo(v);
+    const info     = vInfo(v);
     const volBadge = (r && (r.volatility_flag === true || r.volatility_flag === 'True'))
       ? `<span class="volatility-badge" title="${esc(r.volatility_label || 'High variance — signals less reliable')}">⚡</span>` : '';
+
+    // Combined signal map: trend_signals_2026 combined_signal → badge spec
+    const COMBINED = {
+      'Strong Buy':               { cls:'vStrongBuy',      label:'Strong Buy'      },
+      'Strong Sell':              { cls:'vStrongSell',     label:'Strong Sell'     },
+      'Conflicted (Buy vs Cold)': { cls:'vConflictedBuy',  label:'Conflicted Buy'  },
+      'Conflicted (Sell vs Hot)': { cls:'vConflictedSell', label:'Conflicted Sell' },
+      'Emerging Buy':             { cls:'vEmergingBuy',    label:'Emerging Buy'    },
+      'Slight Buy + Hot':         { cls:'vEmergingBuy',    label:'Emerging Buy'    },
+      'Fading Sell':              { cls:'vFadingSell',     label:'Fading Sell'     },
+    };
+    const NOTES = {
+      'Strong Buy':               'Luck buy + hot trend. Backtest: 89.5% acc (n=19)',
+      'Strong Sell':              'Luck sell + cold trend. Backtest: 84.6% acc, +27.4 wOBA pt separation (n=13)',
+      'Conflicted (Buy vs Cold)': 'Luck buy + cold trend — backtest shows BEST ROS outcomes (.354 wOBA, n=13)',
+      'Conflicted (Sell vs Hot)': 'Luck sell + hot trend — proceed with caution (70.0% acc, .346 ROS wOBA)',
+      'Emerging Buy':             'Neutral luck but trending hot recently — worth monitoring',
+      'Fading Sell':              'Neutral luck but trending cold recently — watch for signal development',
+    };
+
+    const id = r && (r.batter || r.pitcher);
+    const tr = id && S.trendMap && S.trendMap[String(id)];
+    const cb = tr && COMBINED[tr.combined_signal];
+
+    if (cb) {
+      const note   = NOTES[tr.combined_signal] || '';
+      const mLabel = tr.metric_label || 'Metric';
+      const rVal   = parseFloat(tr.recent_metric);
+      const pVal   = parseFloat(tr.prior_metric);
+      const dVal   = parseFloat(tr.metric_delta);
+      const rFmt   = isNaN(rVal) ? tr.recent_metric : rVal.toFixed(3);
+      const pFmt   = isNaN(pVal) ? tr.prior_metric  : pVal.toFixed(3);
+      const dFmt   = isNaN(dVal) ? tr.metric_delta  : (dVal >= 0 ? '+' : '') + dVal.toFixed(3);
+      const vol    = tr.recent_volume ? `${tr.recent_volume} ${tr.recent_volume_label || ''}` : '';
+      const tip    = `${cb.label}\nRecent ${mLabel}: ${rFmt}  |  Prior ${mLabel}: ${pFmt}\nChange: ${dFmt}${vol ? '  (' + vol + ' recent)' : ''}\nNote: ${note}`;
+      return `<td><span class="badge ${cb.cls}" title="${esc(tip)}">${cb.label}</span>${volBadge}</td>`;
+    }
+
+    // No combined signal — plain verdict badge (add trend dir hint if available)
+    if (tr && tr.trend_dir && tr.trend_dir !== 'Neutral' && tr.trend_dir !== '' && tr.combined_signal !== 'No Signal') {
+      const tip = `${info.label}\nTrend: ${tr.trend_dir}  —  ${tr.trend_notes || ''}`;
+      return `<td><span class="badge ${info.cls}" title="${esc(tip)}">${info.label}</span>${volBadge}</td>`;
+    }
     return `<td><span class="badge ${info.cls}">${info.label}</span>${volBadge}</td>`;
   },
   tier(v) {
@@ -1622,6 +1720,27 @@ const F = {
     const info = MAP[String(v)] || { cls:'trend-mixed', icon:'⚪' };
     const tip  = 'Rolling FP calculated from official MLB game logs. Reflects recent performance trend vs season baseline. Display only — does not affect signal verdict.';
     return `<td class="${info.cls}" title="${esc(tip)}">${info.icon} ${esc(v)}</td>`;
+  },
+  // Statcast rolling-window trend direction (Hot/Cold/Neutral from trend_signals_2026)
+  trenddir(v, r) {
+    const id = r && (r.batter || r.pitcher);
+    const tr = id && S.trendMap && S.trendMap[String(id)];
+    if (!tr || !tr.trend_dir || tr.trend_dir === 'Neutral' || tr.trend_dir === '') {
+      return `<td class="trend-dir-cell na">—</td>`;
+    }
+    const dir = tr.trend_dir;
+    const mLabel = tr.metric_label || 'Metric';
+    const rVal   = parseFloat(tr.recent_metric);
+    const pVal   = parseFloat(tr.prior_metric);
+    const dVal   = parseFloat(tr.metric_delta);
+    const rFmt   = isNaN(rVal) ? '' : rVal.toFixed(3);
+    const pFmt   = isNaN(pVal) ? '' : pVal.toFixed(3);
+    const dFmt   = isNaN(dVal) ? '' : (dVal >= 0 ? '+' : '') + dVal.toFixed(3);
+    const tip    = `${dir} trend\nRecent ${mLabel}: ${rFmt}  |  Prior ${mLabel}: ${pFmt}\nChange: ${dFmt}\n(21-day rolling window from Statcast game logs)`;
+    if (dir === 'Hot')   return `<td class="trend-dir-cell trend-cell-hot"  title="${esc(tip)}">🔥</td>`;
+    if (dir === 'Cold')  return `<td class="trend-dir-cell trend-cell-cold" title="${esc(tip)}">❄️</td>`;
+    if (dir === 'Mixed') return `<td class="trend-dir-cell" title="${esc(tip)}">〜</td>`;
+    return `<td class="trend-dir-cell na">—</td>`;
   },
 };
 
@@ -2190,7 +2309,63 @@ function renderSignalFilterBar() {
 }
 
 function setSignalFilter(verdict) {
-  S.vfilter[S.tab] = verdict;
+  S.vfilter[S.tab]       = verdict;
+  S.trendSubfilter[S.tab] = null;  // clear sub-filter when main filter changes
+  render();
+}
+
+// ─── Render: trend sub-filter pills ──────────────────────────────────────────
+function renderTrendSubfilterBar() {
+  const el = document.getElementById('trend-subfilter-bar');
+  if (!el) return;
+  const vf  = S.vfilter[S.tab];
+  const tsf = S.trendSubfilter[S.tab];
+
+  if (vf === 'Buy low') {
+    const data   = S.data[S.tab];
+    const idKey  = S.tab === 'hitters' ? 'batter' : 'pitcher';
+    const _n = sig => data.filter(r => {
+      const tr = S.trendMap[String(r[idKey])];
+      return tr && tr.combined_signal === sig;
+    }).length;
+    const sbn = _n('Strong Buy');
+    const cbn = _n('Conflicted (Buy vs Cold)');
+    if (sbn + cbn === 0) { el.style.display = 'none'; return; }
+    el.style.display = 'flex';
+    el.innerHTML = `
+      <span style="font-size:10px;color:var(--muted);font-weight:600;margin-right:2px">Trend:</span>
+      <button class="sub-btn sb-all${!tsf ? ' active' : ''}"
+              onclick="setTrendSubfilter(null)">All (${data.filter(r => r.verdict === 'Buy low').length})</button>
+      ${sbn ? `<button class="sub-btn sb-strong-buy${tsf === 'strong-buy' ? ' active' : ''}"
+              onclick="setTrendSubfilter('strong-buy')">🔥 Strong Buy (${sbn})</button>` : ''}
+      ${cbn ? `<button class="sub-btn sb-conf-buy${tsf === 'conflicted-buy' ? ' active' : ''}"
+              onclick="setTrendSubfilter('conflicted-buy')">❄️ Conflicted Buy (${cbn})</button>` : ''}`;
+  } else if (vf === 'Sell high') {
+    const data   = S.data[S.tab];
+    const idKey  = S.tab === 'hitters' ? 'batter' : 'pitcher';
+    const _n = sig => data.filter(r => {
+      const tr = S.trendMap[String(r[idKey])];
+      return tr && tr.combined_signal === sig;
+    }).length;
+    const ssn = _n('Strong Sell');
+    const csn = _n('Conflicted (Sell vs Hot)');
+    if (ssn + csn === 0) { el.style.display = 'none'; return; }
+    el.style.display = 'flex';
+    el.innerHTML = `
+      <span style="font-size:10px;color:var(--muted);font-weight:600;margin-right:2px">Trend:</span>
+      <button class="sub-btn sb-all${!tsf ? ' active' : ''}"
+              onclick="setTrendSubfilter(null)">All (${data.filter(r => r.verdict === 'Sell high').length})</button>
+      ${ssn ? `<button class="sub-btn sb-strong-sell${tsf === 'strong-sell' ? ' active' : ''}"
+              onclick="setTrendSubfilter('strong-sell')">❄️ Confirmed Sell (${ssn})</button>` : ''}
+      ${csn ? `<button class="sub-btn sb-conf-sell${tsf === 'conflicted-sell' ? ' active' : ''}"
+              onclick="setTrendSubfilter('conflicted-sell')">🔥 Conflicted Sell (${csn})</button>` : ''}`;
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+function setTrendSubfilter(key) {
+  S.trendSubfilter[S.tab] = key;
   render();
 }
 
@@ -2241,16 +2416,45 @@ function renderCards() {
     { key:'Sell high',  cls:'vSellHigh',  label:'Sell High'  },
   ];
 
+  // Trend breakdown counts for Buy Low / Sell High cards
+  const idKey = S.tab === 'hitters' ? 'batter' : 'pitcher';
+  const _trendCount = (combinedSig) => data.filter(r => {
+    const tr = S.trendMap[String(r[idKey])];
+    return tr && tr.combined_signal === combinedSig;
+  }).length;
+  const strongBuyN   = _trendCount('Strong Buy');
+  const confBuyN     = _trendCount('Conflicted (Buy vs Cold)');
+  const emergingBuyN = _trendCount('Emerging Buy') + _trendCount('Slight Buy + Hot');
+  const strongSellN  = _trendCount('Strong Sell');
+  const confSellN    = _trendCount('Conflicted (Sell vs Hot)');
+  const fadingSellN  = _trendCount('Fading Sell');
+
   document.getElementById('cards').innerHTML = CARD_DEF.map(d => {
     const n   = counts[d.key] || 0;
     const pct = total ? Math.round(n / total * 100) : 0;
     const act = vf === d.key ? ' active' : '';
+    let splitLine = '';
+    if (d.key === 'Buy low' && (strongBuyN + confBuyN + emergingBuyN) > 0) {
+      const parts = [];
+      if (strongBuyN)   parts.push(`<span style="color:#15803d;font-weight:700">${strongBuyN} Strong</span>`);
+      if (confBuyN)     parts.push(`<span style="color:#d97706">${confBuyN} Conflicted</span>`);
+      if (emergingBuyN) parts.push(`<span style="color:#0f766e">${emergingBuyN} Emerging</span>`);
+      splitLine = `<div class="vc-trend-split">${parts.join(' · ')}</div>`;
+    }
+    if (d.key === 'Sell high' && (strongSellN + confSellN + fadingSellN) > 0) {
+      const parts = [];
+      if (strongSellN) parts.push(`<span style="color:#991b1b;font-weight:700">${strongSellN} Confirmed</span>`);
+      if (confSellN)   parts.push(`<span style="color:#ea580c">${confSellN} Conflicted</span>`);
+      if (fadingSellN) parts.push(`<span style="color:#92400e">${fadingSellN} Fading</span>`);
+      splitLine = `<div class="vc-trend-split">${parts.join(' · ')}</div>`;
+    }
     return `<div class="v-card ${d.cls}${act}"
                  data-verdict="${d.key}"
                  onclick="toggleFilter(this.dataset.verdict)">
       <div class="vc-label">${d.label}</div>
       <div class="vc-count">${n}</div>
       <div class="vc-pct">${pct}% of ${total}</div>
+      ${splitLine}
     </div>`;
   }).join('');
 }
@@ -2282,13 +2486,28 @@ function getFilteredRows(tab) {
   const sort  = S.sort[tab];
   const vf    = S.vfilter[tab];
   const tf    = S.tierfilter[tab];
+  const tsf   = S.trendSubfilter[tab];
   const q     = S.search[tab].toLowerCase();
   const idKey = tab === 'hitters' ? 'batter' : 'pitcher';
+
+  // Map sub-filter key → expected combined_signal value(s)
+  const TSF_SIG = {
+    'strong-buy':      ['Strong Buy'],
+    'conflicted-buy':  ['Conflicted (Buy vs Cold)'],
+    'strong-sell':     ['Strong Sell'],
+    'conflicted-sell': ['Conflicted (Sell vs Hot)'],
+  };
 
   let rows = S.data[tab].filter(r => {
     if (q && !String(r.name || '').toLowerCase().includes(q)) return false;
     if (vf && r.verdict !== vf) return false;
     if (tf && r.tier_sell !== tf) return false;
+    if (tsf) {
+      const sigs = TSF_SIG[tsf] || [];
+      const tr   = S.trendMap[String(r[idKey])];
+      const sig  = tr ? tr.combined_signal : null;
+      if (!sigs.includes(sig)) return false;
+    }
     return true;
   });
 
@@ -2575,12 +2794,14 @@ function renderLegend() {
 function render() {
   renderCards();
   renderSignalFilterBar();
+  renderTrendSubfilterBar();
   renderTierButtons();
   renderTable();
   renderLegend();
-  const vf = S.vfilter[S.tab];
-  const tf = S.tierfilter[S.tab];
-  document.getElementById('clear-btn').classList.toggle('on', !!(vf || tf));
+  const vf  = S.vfilter[S.tab];
+  const tf  = S.tierfilter[S.tab];
+  const tsf = S.trendSubfilter[S.tab];
+  document.getElementById('clear-btn').classList.toggle('on', !!(vf || tf || tsf));
   document.getElementById('cards').classList.toggle('has-filter', !!vf);
 }
 
@@ -2632,8 +2853,9 @@ function toggleTierFilter(tier) {
 }
 
 function clearFilter() {
-  S.vfilter[S.tab]    = null;
-  S.tierfilter[S.tab] = null;
+  S.vfilter[S.tab]       = null;
+  S.tierfilter[S.tab]    = null;
+  S.trendSubfilter[S.tab] = null;
   render();
 }
 
@@ -3687,13 +3909,14 @@ async function init() {
     } catch (_) { return null; }
   };
 
-  const [hText, pText, tvText, cbsText, overrideText, rfpText] = await Promise.all([
+  const [hText, pText, tvText, cbsText, overrideText, rfpText, trendText] = await Promise.all([
     tryFetch('luck_scores.csv'),
     tryFetch('pitcher_luck_scores.csv'),
     tryFetch('data/player_values.json'),
     tryFetch('data/cbs_positions.json'),
     tryFetch('data/position_overrides.json'),
     tryFetch('data/rolling_fp_2026.csv'),
+    tryFetch('data/trend_signals_2026.csv'),
   ]);
 
   // Trade value data (optional)
@@ -3721,6 +3944,17 @@ async function init() {
       delete ov._comment;
       S.positionOverrides = ov;
     } catch(e) { console.warn('position_overrides.json parse error:', e); }
+  }
+
+  // Trend signal lookup indexed by mlbam_id (optional — graceful miss)
+  S.trendMap = {};
+  if (trendText) {
+    try {
+      parseCSV(trendText).forEach(r => {
+        if (r.mlbam_id) S.trendMap[String(r.mlbam_id)] = r;
+      });
+      console.log(`trend_signals_2026.csv: ${Object.keys(S.trendMap).length} players loaded`);
+    } catch(e) { console.warn('trend_signals_2026.csv parse error:', e); }
   }
 
   // Rolling FP lookup indexed by player_id (optional — graceful miss)
