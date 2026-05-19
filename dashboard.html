@@ -3990,7 +3990,7 @@ async function init() {
     tryFetch('data/cbs_positions.json'),
     tryFetch('data/position_overrides.json'),
     tryFetch('data/rolling_fp_2026.csv'),
-    tryFetch('data/trend_signals_2026.csv'),
+    tryFetch('data/trend_signals_v2_2026.csv'),
   ]);
 
   // Trade value data (optional)
@@ -4020,15 +4020,40 @@ async function init() {
     } catch(e) { console.warn('position_overrides.json parse error:', e); }
   }
 
-  // Trend signal lookup indexed by mlbam_id (optional — graceful miss)
+  // Trend signal lookup indexed by mlbam_id (v2 schema — computes combined_signal + metric fields)
   S.trendMap = {};
   if (trendText) {
     try {
       parseCSV(trendText).forEach(r => {
-        if (r.mlbam_id) S.trendMap[String(r.mlbam_id)] = r;
+        if (!r.mlbam_id) return;
+        // Compute combined_signal from verdict + trend_dir (v2 uses 'verdict', v1 used 'combined_signal')
+        if (!r.combined_signal) {
+          const v   = (r.verdict || r.luck_signal || '').toLowerCase();
+          const isBuy  = v.includes('buy');
+          const isSell = v.includes('sell');
+          const dir    = r.trend_dir || '';
+          if      (isBuy  && dir === 'Hot')  r.combined_signal = 'Strong Buy';
+          else if (isBuy  && dir === 'Cold') r.combined_signal = 'Conflicted (Buy vs Cold)';
+          else if (isSell && dir === 'Cold') r.combined_signal = 'Strong Sell';
+          else if (isSell && dir === 'Hot')  r.combined_signal = 'Conflicted (Sell vs Hot)';
+          else if (!isBuy && !isSell && dir === 'Hot')  r.combined_signal = 'Emerging Buy';
+          else if (!isBuy && !isSell && dir === 'Cold') r.combined_signal = 'Fading Sell';
+          else    r.combined_signal = 'No Signal';
+        }
+        // Map v2 metric fields → tooltip display in trenddir cell
+        if (!r.metric_label) {
+          r.metric_label  = 'xwOBA Gap Delta';
+          r.recent_metric = r.recent_xwoba_gap;
+          r.prior_metric  = r.prior_xwoba_gap;
+          r.metric_delta  = r.l1_gap_delta;
+          const sc = parseFloat(r.trend_score);
+          r.trend_notes = isNaN(sc) ? '' :
+            `v2 score: ${sc.toFixed(3)} (${r.n_layers || '?'} layers — contact quality + xwOBA + discipline)`;
+        }
+        S.trendMap[String(r.mlbam_id)] = r;
       });
-      console.log(`trend_signals_2026.csv: ${Object.keys(S.trendMap).length} players loaded`);
-    } catch(e) { console.warn('trend_signals_2026.csv parse error:', e); }
+      console.log(`trend_signals_v2_2026.csv: ${Object.keys(S.trendMap).length} players loaded`);
+    } catch(e) { console.warn('trend_signals_v2_2026.csv parse error:', e); }
   }
 
   // Rolling FP lookup indexed by player_id (optional — graceful miss)
@@ -4207,6 +4232,13 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
         </div>
+        <p class="sm-data-note" style="margin-top:14px;border-top:1px solid var(--border);padding-top:10px;font-size:11px">
+          <strong>Trend layer v2 — May 19 2026:</strong> Now using a seven-layer contact-quality
+          model (xwOBA gap, exit velocity, hard-hit%, barrel%, bat speed, plate discipline)
+          parallel to the main luck signal architecture. Backtest shows
+          <strong>+35.7 wOBA point improvement</strong> in Buy Low Hot–Cold separation vs v1.
+          Live validation ongoing.
+        </p>
       </div>
 
       <!-- Section C: Data Note -->

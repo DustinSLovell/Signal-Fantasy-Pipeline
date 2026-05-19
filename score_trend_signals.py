@@ -1,5 +1,10 @@
-"""score_trend_signals.py — Mid-season trajectory trend signal system
+"""score_trend_signals.py
+DEPRECATED — superseded by score_trend_signals_v2.py as of May 19, 2026.
+v2 uses a seven-layer contact-quality architecture (xwOBA gap, exit velocity,
+hard-hit%, barrel%, bat speed, plate discipline) with 2026 Baseball Savant
+game logs. Do not run this script. Left in place for reference only.
 
+Original: Mid-season trajectory trend signal system.
 Detects TRAJECTORY over the last 3-4 weeks, separate from the static
 April luck signals (Buy Low / Sell High).
 
