@@ -287,6 +287,21 @@ def main():
             err = (result.stderr or result.stdout or "unknown error")[:200]
             print(f"  WARNING: Rolling FP compute failed: {err.splitlines()[0]}")
 
+        print(f"\n{STEP_DIVIDER}")
+        print("  Fetching 2026 Statcast game logs (signaled players, daily cache)...")
+        print(STEP_DIVIDER)
+        result = subprocess.run(
+            [sys.executable, "-X", "utf8", "fetch_statcast_gamelogs_2026.py"],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            cwd=Path(__file__).parent,
+        )
+        if result.returncode == 0:
+            for line in (result.stdout or "").strip().splitlines():
+                print(f"  {line}")
+        else:
+            err = ((result.stderr or result.stdout or "")[:200] or "unknown error")
+            print(f"  WARNING: Statcast 2026 fetch failed: {err.splitlines()[0]}")
+
     # Enrich luck CSVs with FP ROS, CBS ownership, CBS ROS rank columns
     # Runs after scoring so luck_scores.csv / pitcher_luck_scores.csv exist
     if any(s in ("score_luck.py", "score_pitcher_luck.py") for s, _ in SCRIPTS):
