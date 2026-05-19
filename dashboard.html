@@ -1532,7 +1532,7 @@ const HITTER_COLS = [
   { key:'xwOBA',         label:'xwOBA',       fmt:'rate'  },
   { key:'BABIP',         label:'BABIP',       fmt:'rate'  },
   { key:'luck_score',    label:'Luck Score',  fmt:'luck'  },
-  { key:'_trend_dir',    label:'Trend',       fmt:'trenddir', nosort:true },
+  { key:'_trend_dir',    label:'Trend',       fmt:'trenddir' },
   { key:'verdict',       label:'Verdict',     fmt:'badge', nosort:true },
   { key:'fp_rank',       label:'FP ROS Rank', fmt:'int'   },
   // ── Hidden columns (data retained, not displayed) ─────────────────────
@@ -2607,6 +2607,15 @@ function getFilteredRows(tab) {
           return dir * (Math.abs(lb) - Math.abs(la));
         });
       }
+    } else if (sort.col === '_trend_dir') {
+      const TREND_SORT = { 'Hot': 1, 'Cold': -1 };
+      rows = [...rows].sort((a, b) => {
+        const trA = S.trendMap[String(a[idKey])];
+        const trB = S.trendMap[String(b[idKey])];
+        const ka  = trA ? (TREND_SORT[trA.trend_dir] ?? 0) : 0;
+        const kb  = trB ? (TREND_SORT[trB.trend_dir] ?? 0) : 0;
+        return dir * (kb - ka); // desc → Hot(1) first; asc → Cold(-1) first
+      });
     } else {
       rows = [...rows].sort((a, b) => {
         const ka = sortKey(a[sort.col]);
