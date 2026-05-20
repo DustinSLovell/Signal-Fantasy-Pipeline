@@ -1857,12 +1857,19 @@ const F = {
     const cqSection = cqRows
       ? `<div class="cq-section-title">Contact Quality Components</div>${cqRows}${bsFlagHtml}` : '';
 
+    // Layer 6 warning: show if modifier is non-zero and notes exist
+    const l6mod   = parseFloat(tr.layer6_modifier);
+    const l6notes = (tr.layer6_notes || '').trim();
+    const l6Html  = (!isNaN(l6mod) && l6mod !== 0 && l6notes)
+      ? `<div class="cq-bs-flag" style="margin-top:6px;">⚠️ ${l6notes}</div>` : '';
+
     // Encode HTML for use as a data attribute value
     const tipHtml = `<div class="cq-tip-header">${dir} Trend</div>`
       + `<div class="cq-tip-line">Recent ${mLabel}: <strong>${rFmt}</strong> &nbsp;|&nbsp; Prior: <strong>${pFmt}</strong></div>`
       + `<div class="cq-tip-line">Change: <strong>${dFmt}</strong></div>`
       + `<div class="cq-tip-note">(21-day rolling window, Statcast)</div>`
-      + cqSection;
+      + cqSection
+      + l6Html;
     const attrVal = tipHtml.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
 
     const icon = dir === 'Hot' ? '🔥' : dir === 'Cold' ? '❄️' : '〜';
