@@ -347,9 +347,43 @@ tr.rSellHigh  td { background: var(--c-sh-bg); }
 .badge.vFadingSell     { background: #fef3c7; color: #92400e; border-color: #f59e0b; }
 
 /* trend direction cell in advanced table */
-td.trend-dir-cell { text-align: center; font-size: 13px; }
+td.trend-dir-cell { text-align: center; font-size: 13px; cursor: default; }
 td.trend-cell-hot  { background: rgba(21,128,61,0.07); }
 td.trend-cell-cold { background: rgba(185,28,28,0.07); }
+
+/* ── Contact quality rich tooltip ───────────────────────────────────────── */
+#cq-tooltip {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  background: #1e2330;
+  color: #e2e8f0;
+  border: 1px solid #374151;
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+  line-height: 1.55;
+  min-width: 220px;
+  max-width: 300px;
+  pointer-events: none;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+.cq-tip-header { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+.cq-tip-line   { margin-bottom: 2px; font-family: inherit; }
+.cq-tip-note   { color: #6b7280; font-size: 10px; margin-bottom: 0; }
+.cq-section-title {
+  font-weight: 600; color: #94a3b8; margin: 7px 0 4px;
+  border-top: 1px solid #374151; padding-top: 6px;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.cq-row { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 1px; }
+.cq-label { color: #94a3b8; }
+.cq-val   { font-weight: 600; white-space: nowrap; }
+.cq-val.pos  { color: #4ade80; }
+.cq-val.neg  { color: #f87171; }
+.cq-val.neut { color: #6b7280; }
+.cq-bs-flag  { margin-top: 5px; color: #fbbf24; font-size: 11px; }
 
 /* ── Trend sub-filter pills ───────────────────────────────────────────────── */
 .trend-sub-bar {
@@ -1791,18 +1825,52 @@ const F = {
     if (!tr || !tr.trend_dir || tr.trend_dir === 'Neutral' || tr.trend_dir === '') {
       return `<td class="trend-dir-cell na">—</td>`;
     }
-    const dir = tr.trend_dir;
-    const mLabel = tr.metric_label || 'Metric';
+    const dir    = tr.trend_dir;
+    const mLabel = tr.metric_label || 'xwOBA Gap';
     const rVal   = parseFloat(tr.recent_metric);
     const pVal   = parseFloat(tr.prior_metric);
     const dVal   = parseFloat(tr.metric_delta);
-    const rFmt   = isNaN(rVal) ? '' : rVal.toFixed(3);
-    const pFmt   = isNaN(pVal) ? '' : pVal.toFixed(3);
-    const dFmt   = isNaN(dVal) ? '' : (dVal >= 0 ? '+' : '') + dVal.toFixed(3);
-    const tip    = `${dir} trend\nRecent ${mLabel}: ${rFmt}  |  Prior ${mLabel}: ${pFmt}\nChange: ${dFmt}\n(21-day rolling window from Statcast game logs)`;
-    if (dir === 'Hot')   return `<td class="trend-dir-cell trend-cell-hot"  title="${esc(tip)}">🔥</td>`;
-    if (dir === 'Cold')  return `<td class="trend-dir-cell trend-cell-cold" title="${esc(tip)}">❄️</td>`;
-    if (dir === 'Mixed') return `<td class="trend-dir-cell" title="${esc(tip)}">〜</td>`;
+    const rFmt   = isNaN(rVal) ? '—' : rVal.toFixed(3);
+    const pFmt   = isNaN(pVal) ? '—' : pVal.toFixed(3);
+    const dFmt   = isNaN(dVal) ? '—' : (dVal >= 0 ? '+' : '') + dVal.toFixed(3);
+
+    // Build a colored HTML string for the custom tooltip
+    const _cqRow = (label, rawVal, decimals, unit, nearZero) => {
+      const n = parseFloat(rawVal);
+      if (isNaN(n)) return '';
+      const abs  = Math.abs(n);
+      const sign = n >= 0 ? '+' : '';
+      const arrow = abs <= nearZero ? '→' : (n > 0 ? '↑' : '↓');
+      const cls  = abs <= nearZero ? 'neut' : (n > 0 ? 'pos' : 'neg');
+      const txt  = `${sign}${n.toFixed(decimals)}${unit} ${arrow}`;
+      return `<div class="cq-row"><span class="cq-label">${label}</span><span class="cq-val ${cls}">${txt}</span></div>`;
+    };
+    const cqRows = [
+      _cqRow('Exit Velocity:',  tr.ev_delta_mph,  1, ' mph', 0.3),
+      _cqRow('Hard Hit Rate:',  tr.hh_delta_pp,   1, ' pp',  0.5),
+      _cqRow('Barrel Rate:',    tr.brl_delta_pp,  1, ' pp',  0.5),
+      _cqRow('BABIP:',          tr.babip_delta,   3, '',      0.005),
+      _cqRow('Bat Speed:',      tr.bs_delta_mph,  1, ' mph', 0.3),
+    ].join('');
+    const bsFlagHtml = (tr.bs_flag === 'True' || tr.bs_flag === true)
+      ? '<div class="cq-bs-flag">⚠️ Bat speed flag — drop vs career baseline</div>' : '';
+    const cqSection = cqRows
+      ? `<div class="cq-section-title">Contact Quality Components</div>${cqRows}${bsFlagHtml}` : '';
+
+    // Encode HTML for use as a data attribute value
+    const tipHtml = `<div class="cq-tip-header">${dir} Trend</div>`
+      + `<div class="cq-tip-line">Recent ${mLabel}: <strong>${rFmt}</strong> &nbsp;|&nbsp; Prior: <strong>${pFmt}</strong></div>`
+      + `<div class="cq-tip-line">Change: <strong>${dFmt}</strong></div>`
+      + `<div class="cq-tip-note">(21-day rolling window, Statcast)</div>`
+      + cqSection;
+    const attrVal = tipHtml.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+
+    const icon = dir === 'Hot' ? '🔥' : dir === 'Cold' ? '❄️' : '〜';
+    const cls  = dir === 'Hot' ? 'trend-dir-cell trend-cell-hot'
+               : dir === 'Cold' ? 'trend-dir-cell trend-cell-cold'
+               : 'trend-dir-cell';
+    if (dir === 'Hot' || dir === 'Cold' || dir === 'Mixed')
+      return `<td class="${cls}" data-cq-html="${attrVal}">${icon}</td>`;
     return `<td class="trend-dir-cell na">—</td>`;
   },
 };
@@ -4134,6 +4202,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const ov = document.getElementById('signals-modal-overlay');
   if (ov) ov.addEventListener('click', e => { if (e.target === ov) closeSignalsModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSignalsModal(); });
+
+  // ── Contact quality rich tooltip ────────────────────────────────────────
+  const cqTip = document.getElementById('cq-tooltip');
+  if (cqTip) {
+    const OFFSET = 14;
+    let activeCell = null;
+
+    document.addEventListener('mouseover', e => {
+      const td = e.target.closest('td[data-cq-html]');
+      if (!td) return;
+      activeCell = td;
+      cqTip.innerHTML = td.getAttribute('data-cq-html');
+      cqTip.style.display = 'block';
+      _posCqTip(e);
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (!activeCell) return;
+      _posCqTip(e);
+    });
+
+    document.addEventListener('mouseout', e => {
+      const td = e.target.closest('td[data-cq-html]');
+      if (td && td === activeCell) {
+        const related = e.relatedTarget;
+        if (!related || !td.contains(related)) {
+          activeCell = null;
+          cqTip.style.display = 'none';
+        }
+      }
+    });
+
+    function _posCqTip(e) {
+      const vw = window.innerWidth, vh = window.innerHeight;
+      const tw = cqTip.offsetWidth  || 240;
+      const th = cqTip.offsetHeight || 160;
+      let left = e.clientX + OFFSET;
+      let top  = e.clientY + OFFSET;
+      if (left + tw > vw - 8) left = e.clientX - tw - OFFSET;
+      if (top  + th > vh - 8) top  = e.clientY - th - OFFSET;
+      cqTip.style.left = left + 'px';
+      cqTip.style.top  = top  + 'px';
+    }
+  }
 });
 </script>
 
@@ -4262,6 +4374,8 @@ document.addEventListener('DOMContentLoaded', () => {
     </div><!-- .sm-body -->
   </div><!-- #signals-modal -->
 </div><!-- #signals-modal-overlay -->
+
+<div id="cq-tooltip" role="tooltip" aria-hidden="true"></div>
 
 </body>
 </html>
