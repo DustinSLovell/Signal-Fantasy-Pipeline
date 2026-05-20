@@ -3,12 +3,14 @@ score_trend_signals_v2.py
 Seven-layer rolling trend model for hitters using 2026 Statcast game logs.
 Parallel architecture to score_luck.py — applied to 21-day rolling windows.
 
-Layer 1 — xwOBA gap trend         (weight 1.0)
+Layer 1 — xwOBA gap trend          (weight 1.0)
 Layer 2 — Contact quality composite (weight 0.8)
-Layer 3 — BABIP normalization      (weight 0.4)
-Layer 4 — Plate discipline trend   (weight 0.5)
-Layer 5 — Bat speed / swing health (weight 0.3)
-Layer 6 — Composite score          (sum of L1–L5 * weights)
+Layer 3 — BABIP normalization       (weight 0.4)
+Layer 4 — Plate discipline trend    (weight 0.5)
+Layer 5 — Bat speed / swing health  (weight 0.3)
+Layer 6 — Pitch vulnerability +     (additive modifier, penalty only)
+           Batted ball profile shift
+           Composite score = sum(L1-L5 * weights) + L6 modifier
 
 Normalization: all percentage fields (hardhit, barrel, k_pct, bb_pct, whiff)
 are divided by 100 before scoring to bring them to wOBA scale (~0.0–1.0).
@@ -25,6 +27,7 @@ Save: data/trend_signals_v2_2026.csv
 Do NOT deploy to dashboard until backtest v2 vs 2025 validates improvement over v1.
 """
 import csv
+import json
 from datetime import date, timedelta
 from pathlib import Path
 from collections import defaultdict
@@ -55,6 +58,33 @@ BAT_SPEED_FLAG_MPH = -1.0   # bs_delta < -1.0 mph → flag
 GAMELOG_DIR  = Path("data/statcast_gamelogs_2026")
 LUCK_CSV     = "luck_scores.csv"
 OUT_PATH     = Path("data/trend_signals_v2_2026.csv")
+
+# ── Layer 6 data paths ────────────────────────────────────────────────────────
+PITCH_VALUES_CSV  = Path("data/fg_pitch_values_2024_2026.csv")
+BATTED_BALL_CSV   = Path("data/fg_batted_ball_2024_2026.csv")
+LA_JSON           = Path("data/hitter_launch_angle.json")
+CAREER_BABIP_JSON = Path("data/hitter_career_babip.json")
+
+# ── Layer 6 Sub-Signal A: pitch vulnerability thresholds ─────────────────────
+L6_MIN_PITCHES   = 20    # min 2026 pitches of that type to qualify
+L6_SEVERE_THRESH = -8.0  # wPT/C delta → severe
+L6_MOD_THRESH    = -5.0  # moderate
+L6_MILD_THRESH   = -3.0  # mild
+L6_SEVERE_MOD    = -0.15
+L6_MOD_MOD       = -0.10
+L6_MILD_MOD      = -0.05
+
+# ── Layer 6 Sub-Signal B: batted ball profile thresholds ──────────────────────
+L6_BB_MIN_BBE    = 30    # min batted ball events for profile signal
+L6_LD_DELTA_GATE = -0.04 # LD% must drop >= 4pp below expected
+L6_FB_DELTA_GATE =  0.04 # FB% must rise >= 4pp above expected
+L6_BB_MOD_BASE   = -0.08 # approach change alone
+L6_BB_MOD_NOBRL  = -0.10 # approach change + no barrel support
+L6_BARREL_FLOOR  = -0.01 # barrel_delta >= this → barrel is "supported"
+
+# ── League-average LD%/FB% (used when career LA data unavailable) ─────────────
+LEAGUE_AVG_LD = 0.200
+LEAGUE_AVG_FB = 0.340
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
@@ -238,6 +268,288 @@ def _classify(trend_score):
     return "Flat"
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# LAYER 6 — Pitch Vulnerability + Batted Ball Profile
+# ─────────────────────────────────────────────────────────────────────────────
+
+# FanGraphs-style pitch column names (rate = per-100-pitches seen)
+_PITCH_RATE_COLS = ["wFA/C", "wSI/C", "wFC/C", "wSL/C", "wCH/C", "wCU/C", "wFS/C"]
+_PITCH_LABELS = {
+    "wFA/C": "4-Seam",
+    "wSI/C": "Sinker",
+    "wFC/C": "Cutter",
+    "wSL/C": "Slider",
+    "wCH/C": "Changeup",
+    "wCU/C": "Curveball",
+    "wFS/C": "Splitter",
+}
+
+
+def _load_pitch_values() -> dict[str, dict[int, dict]]:
+    """Load pitch values CSV into {player_id: {year: {col: val}}}."""
+    if not PITCH_VALUES_CSV.exists():
+        return {}
+    out: dict[str, dict[int, dict]] = defaultdict(dict)
+    with open(PITCH_VALUES_CSV, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            pid  = r.get("player_id", "").strip()
+            yr   = _safe_float(r.get("season"))
+            if not (pid and yr is not None):
+                continue
+            out[pid][int(yr)] = r
+    return out
+
+
+def _load_batted_ball() -> dict[str, dict]:
+    """Load batted ball CSV into {player_id: row}."""
+    if not BATTED_BALL_CSV.exists():
+        return {}
+    out = {}
+    with open(BATTED_BALL_CSV, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            pid = str(r.get("id", "")).strip()
+            if pid:
+                out[pid] = r
+    return out
+
+
+def _load_la_data() -> dict[str, dict]:
+    """Load hitter_launch_angle.json into {str(mlbam_id): row}."""
+    if not LA_JSON.exists():
+        return {}
+    with open(LA_JSON, encoding="utf-8") as f:
+        raw = json.load(f)
+    return {str(k): v for k, v in raw.items()}
+
+
+def _load_career_babip() -> dict[str, dict]:
+    """Load hitter_career_babip.json into {str(mlbam_id): row}."""
+    if not CAREER_BABIP_JSON.exists():
+        return {}
+    with open(CAREER_BABIP_JSON, encoding="utf-8") as f:
+        raw = json.load(f)
+    # raw can be list or dict
+    if isinstance(raw, list):
+        return {str(r.get("player_id", r.get("mlbam_id", ""))): r for r in raw}
+    return {str(k): v for k, v in raw.items()}
+
+
+def _expected_ld_fb_from_la(career_la_avg: float) -> tuple[float, float]:
+    """
+    Estimate expected LD% and FB% from a player's career average launch angle.
+    Based on empirical LA-to-batted-ball-type distribution:
+      LA ~12° → LD ≈22%, FB ≈30%
+      LA ~16° → LD ≈20%, FB ≈34%
+      LA ~20° → LD ≈18%, FB ≈38%
+    Returns (expected_ld_pct, expected_fb_pct) as decimals.
+    """
+    la_diff = career_la_avg - 12.0
+    expected_ld = max(0.12, min(0.28, 0.220 - 0.004 * la_diff))
+    expected_fb = max(0.18, min(0.50, 0.300 + 0.010 * la_diff))
+    return expected_ld, expected_fb
+
+
+def _sub_signal_a(pitch_values: dict, mlbam_id: str) -> dict:
+    """
+    Sub-Signal A: Pitch vulnerability.
+    Compare wPT/C (run value per 100 pitches) 2026 vs 2025 per pitch type.
+    Returns dict with modifier and metadata.
+    """
+    player_pv = pitch_values.get(str(mlbam_id), {})
+    row_2026  = player_pv.get(2026, {})
+    row_2025  = player_pv.get(2025, {})
+
+    if not row_2026 or not row_2025:
+        return {
+            "vulnerability_modifier": 0.0,
+            "worst_pitch_type": "",
+            "worst_pitch_delta": None,
+            "vulnerability_severity": "none",
+        }
+
+    worst_delta = None
+    worst_col   = ""
+
+    for col in _PITCH_RATE_COLS:
+        cnt_col = col.replace("/C", "_pitches")
+        cnt_2026 = _safe_float(row_2026.get(cnt_col), 0)
+        if cnt_2026 < L6_MIN_PITCHES:
+            continue
+
+        v_2026 = _safe_float(row_2026.get(col))
+        v_2025 = _safe_float(row_2025.get(col))
+        if v_2026 is None or v_2025 is None:
+            continue
+
+        delta = v_2026 - v_2025
+        if worst_delta is None or delta < worst_delta:
+            worst_delta = delta
+            worst_col   = col
+
+    if worst_delta is None:
+        return {
+            "vulnerability_modifier": 0.0,
+            "worst_pitch_type": "",
+            "worst_pitch_delta": None,
+            "vulnerability_severity": "none",
+        }
+
+    if worst_delta < L6_SEVERE_THRESH:
+        modifier   = L6_SEVERE_MOD
+        severity   = "severe"
+    elif worst_delta < L6_MOD_THRESH:
+        modifier   = L6_MOD_MOD
+        severity   = "moderate"
+    elif worst_delta < L6_MILD_THRESH:
+        modifier   = L6_MILD_MOD
+        severity   = "mild"
+    else:
+        modifier  = 0.0
+        severity  = "none"
+
+    return {
+        "vulnerability_modifier": modifier,
+        "worst_pitch_type": _PITCH_LABELS.get(worst_col, worst_col),
+        "worst_pitch_delta": round(worst_delta, 2),
+        "vulnerability_severity": severity,
+    }
+
+
+def _sub_signal_b(
+    batted_ball: dict,
+    la_data: dict,
+    career_babip: dict,
+    luck_row: dict,
+    mlbam_id: str,
+) -> dict:
+    """
+    Sub-Signal B: Batted ball profile shift.
+    Compare current LD%/FB% vs career expected, and barrel rate vs career.
+    Returns dict with modifier and metadata.
+    """
+    _null = {
+        "batted_ball_modifier": 0.0,
+        "approach_change_flag": False,
+        "barrel_supported": True,
+        "ld_delta_pp": None,
+        "fb_delta_pp": None,
+        "barrel_delta_pp": None,
+    }
+
+    bb_row = batted_ball.get(str(mlbam_id))
+    if bb_row is None:
+        return _null
+
+    bbe = _safe_float(bb_row.get("bbe"), 0)
+    if bbe < L6_BB_MIN_BBE:
+        return _null
+
+    ld_2026 = _safe_float(bb_row.get("ld_rate"))
+    fb_2026 = _safe_float(bb_row.get("fb_rate"))
+    if ld_2026 is None or fb_2026 is None:
+        return _null
+
+    # Career LD%/FB% estimated from launch angle profile
+    la_row = la_data.get(str(mlbam_id))
+    if la_row and _safe_float(la_row.get("career_la_avg")) is not None:
+        career_la = _safe_float(la_row["career_la_avg"])
+        exp_ld, exp_fb = _expected_ld_fb_from_la(career_la)
+    else:
+        exp_ld = LEAGUE_AVG_LD
+        exp_fb = LEAGUE_AVG_FB
+
+    ld_delta = ld_2026 - exp_ld   # negative = fewer LD than career profile
+    fb_delta = fb_2026 - exp_fb   # positive = more FB than career profile
+
+    approach_change = (ld_delta < L6_LD_DELTA_GATE) and (fb_delta > L6_FB_DELTA_GATE)
+
+    # Barrel support: compare current barrel_rate vs career_barrel
+    barrel_2026    = _safe_float(luck_row.get("barrel_rate"))
+    cr_row         = career_babip.get(str(mlbam_id))
+    career_barrel  = _safe_float(cr_row.get("career_barrel") if cr_row else None)
+    barrel_delta   = (barrel_2026 - career_barrel) if (barrel_2026 is not None and career_barrel is not None) else None
+    barrel_support = (barrel_delta is None) or (barrel_delta >= L6_BARREL_FLOOR)
+
+    if not approach_change:
+        modifier = 0.0
+    elif barrel_support:
+        modifier = L6_BB_MOD_BASE
+    else:
+        modifier = L6_BB_MOD_NOBRL
+
+    return {
+        "batted_ball_modifier": modifier,
+        "approach_change_flag": approach_change,
+        "barrel_supported": barrel_support,
+        "ld_delta_pp": round(ld_delta * 100, 1) if ld_delta is not None else None,
+        "fb_delta_pp": round(fb_delta * 100, 1) if fb_delta is not None else None,
+        "barrel_delta_pp": round(barrel_delta * 100, 1) if barrel_delta is not None else None,
+    }
+
+
+def calculate_layer6(records: list[dict], luck_rows: dict) -> list[dict]:
+    """
+    Compute Layer 6 (pitch vulnerability + batted ball profile) for all records.
+    Mutates records in-place, adding layer6_* fields and trend_score_final.
+    Returns records for chaining.
+    """
+    print("Loading Layer 6 data sources...")
+    pitch_values  = _load_pitch_values()
+    batted_ball   = _load_batted_ball()
+    la_data       = _load_la_data()
+    career_babip  = _load_career_babip()
+    print(f"  Pitch values: {len(pitch_values)} players (multi-year)")
+    print(f"  Batted ball:  {len(batted_ball)} players (2026 YTD)")
+    print(f"  LA data:      {len(la_data)} players")
+    print(f"  Career BABIP: {len(career_babip)} players")
+
+    for rec in records:
+        mlbam_id = str(rec["mlbam_id"])
+        luck_row = luck_rows.get(int(mlbam_id), {})
+
+        sa = _sub_signal_a(pitch_values, mlbam_id)
+        sb = _sub_signal_b(batted_ball, la_data, career_babip, luck_row, mlbam_id)
+
+        v_mod = sa["vulnerability_modifier"]
+        b_mod = sb["batted_ball_modifier"]
+
+        # Combined modifier: if both fire, cap at -0.15 with extra -0.05 penalty
+        if v_mod < 0 and b_mod < 0:
+            combined = max(-0.15, min(v_mod, b_mod) - 0.05)
+        else:
+            combined = v_mod + b_mod
+
+        rec["layer6_modifier"]         = round(combined, 4)
+        rec["worst_pitch_vulnerability"] = sa["worst_pitch_type"]
+        rec["worst_pitch_delta"]         = sa["worst_pitch_delta"]
+        rec["vulnerability_severity"]    = sa["vulnerability_severity"]
+        rec["approach_change_flag"]      = sb["approach_change_flag"]
+        rec["barrel_supported"]          = sb["barrel_supported"]
+        rec["ld_delta_pp"]               = sb["ld_delta_pp"]
+        rec["fb_delta_pp"]               = sb["fb_delta_pp"]
+        rec["barrel_delta_pp"]           = sb["barrel_delta_pp"]
+        rec["trend_score_final"]         = round(
+            rec["trend_score"] + combined, 4
+        )
+
+        # Human-readable notes
+        notes = []
+        if sa["vulnerability_severity"] != "none":
+            notes.append(
+                f"{sa['vulnerability_severity'].capitalize()} {sa['worst_pitch_type']} vulnerability "
+                f"(Δ{sa['worst_pitch_delta']:+.1f}/100)"
+            )
+        if sb["approach_change_flag"]:
+            brl_note = "barrel supported" if sb["barrel_supported"] else "no barrel support"
+            notes.append(
+                f"Approach shift: LD{sb['ld_delta_pp']:+.1f}pp / FB{sb['fb_delta_pp']:+.1f}pp "
+                f"vs career profile ({brl_note})"
+            )
+        rec["layer6_notes"] = "; ".join(notes) if notes else ""
+
+    return records
+
+
 def main():
     print("=" * 65)
     print("TREND SIGNALS v2 — SEVEN-LAYER ROLLING MODEL (2026)")
@@ -248,18 +560,21 @@ def main():
     print(f"Min PA:         recent≥{MIN_PA_RECENT}, prior≥{MIN_PA_PRIOR}")
     print()
 
-    # ── load luck scores for name + verdict context ───────────────────────────
-    luck = {}
+    # ── load luck scores for name + verdict context + L6 fields ─────────────
+    luck      = {}   # int(mlbam_id) → summary dict for trend scoring
+    luck_rows = {}   # int(mlbam_id) → full row dict for Layer 6
     with open(LUCK_CSV, newline="", encoding="utf-8") as f:
         for r in csv.DictReader(f):
             bid = _safe_float(r.get("batter"))
             if bid is None:
                 continue
-            luck[int(bid)] = {
+            ibid = int(bid)
+            luck[ibid] = {
                 "name":       r.get("name", ""),
                 "verdict":    r.get("verdict", ""),
                 "luck_score": _safe_float(r.get("luck_score")),
             }
+            luck_rows[ibid] = r
 
     records = []
     skip_nolog = skip_minpa = skip_noscore = 0
@@ -314,6 +629,13 @@ def main():
     print(f"  No game log:   {skip_nolog}")
     print(f"  Min PA fail:   {skip_minpa}")
     print(f"  No score:      {skip_noscore}")
+    print()
+
+    # ── Layer 6: pitch vulnerability + batted ball profile ────────────────────
+    print("=" * 65)
+    print("LAYER 6 — PITCH VULNERABILITY + BATTED BALL PROFILE")
+    print("=" * 65)
+    records = calculate_layer6(records, luck_rows)
     print()
 
     # ── distribution ─────────────────────────────────────────────────────────
@@ -410,23 +732,72 @@ def main():
               f"Cold={len(cold)}({len(cold)/n*100:.0f}%)  "
               f"Flat={len(flat)}({len(flat)/n*100:.0f}%)")
 
+    # ── Layer 6 summary ───────────────────────────────────────────────────────
+    l6_flagged = [p for p in records if p.get("layer6_modifier", 0) < 0]
+    l6_flagged_sorted = sorted(l6_flagged, key=lambda x: x.get("layer6_modifier", 0))
+
+    print()
+    print("=" * 65)
+    print(f"LAYER 6 FLAGS  ({len(l6_flagged)} players penalized)")
+    print("=" * 65)
+    print(f"  {'Name':<24} {'Verdict':<12} {'Before':>7} {'After':>7} {'L6Mod':>7}  Notes")
+    print(f"  {'-'*90}")
+    for p in l6_flagged_sorted:
+        print(f"  {p['name']:<24} {p['verdict']:<12} "
+              f"{p['trend_score']:>7.3f} {p['trend_score_final']:>7.3f} "
+              f"{p['layer6_modifier']:>+7.4f}  {p['layer6_notes']}")
+
+    # ── Merrill spotlight ─────────────────────────────────────────────────────
+    merrill_list = [p for p in records if "merrill" in p.get("name", "").lower()]
+    if merrill_list:
+        m = merrill_list[0]
+        print()
+        print("=" * 65)
+        print("JACKSON MERRILL — FULL LAYER 6 BREAKDOWN")
+        print("=" * 65)
+        print(f"  Name:          {m['name']}")
+        print(f"  Verdict:       {m['verdict']}  (luck_score={m.get('luck_score','?')})")
+        print(f"  trend_score:   {m['trend_score']:.4f}  (L1-L5 composite)")
+        print(f"  layer6_modifier: {m['layer6_modifier']:+.4f}")
+        print(f"  trend_score_final: {m['trend_score_final']:.4f}")
+        print(f"  --- Sub-Signal A: Pitch Vulnerability ---")
+        print(f"  Worst pitch type: {m.get('worst_pitch_vulnerability','n/a')}")
+        print(f"  Worst delta (2026-2025 wPT/C): {m.get('worst_pitch_delta','n/a')}")
+        print(f"  Severity: {m.get('vulnerability_severity','n/a')}")
+        print(f"  --- Sub-Signal B: Batted Ball Profile ---")
+        print(f"  Approach change flag: {m.get('approach_change_flag','n/a')}")
+        print(f"  LD delta (vs career profile): {m.get('ld_delta_pp','n/a')} pp")
+        print(f"  FB delta (vs career profile): {m.get('fb_delta_pp','n/a')} pp")
+        print(f"  Barrel delta (vs career): {m.get('barrel_delta_pp','n/a')} pp")
+        print(f"  Barrel supported: {m.get('barrel_supported','n/a')}")
+        print(f"  Notes: {m.get('layer6_notes','(none)')}")
+
     # ── save ──────────────────────────────────────────────────────────────────
     fieldnames = [
         "mlbam_id", "name", "verdict", "luck_score",
-        "trend_dir", "trend_score", "n_layers",
+        "trend_dir", "trend_score", "trend_score_final", "n_layers",
         "recent_pa", "prior_pa",
         "l1_gap_delta", "l2_cq_score", "babip_delta", "l4_pd_score",
         "bs_delta_mph", "bs_flag",
         "recent_xwoba_gap", "prior_xwoba_gap",
         "hh_delta_pp", "brl_delta_pp", "ev_delta_mph",
         "recent_babip", "prior_babip",
+        # Layer 6 columns
+        "layer6_modifier",
+        "worst_pitch_vulnerability", "worst_pitch_delta", "vulnerability_severity",
+        "approach_change_flag", "barrel_supported",
+        "ld_delta_pp", "fb_delta_pp", "barrel_delta_pp",
+        "layer6_notes",
     ]
     with open(OUT_PATH, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         w.writeheader()
-        for p in sorted(records, key=lambda x: -x["trend_score"]):
-            w.writerow({k: (f"{p[k]:.4f}" if isinstance(p[k], float) else p[k])
-                        for k in fieldnames})
+        for p in sorted(records, key=lambda x: -x.get("trend_score_final", x["trend_score"])):
+            row = {}
+            for k in fieldnames:
+                v = p.get(k)
+                row[k] = f"{v:.4f}" if isinstance(v, float) else v
+            w.writerow(row)
     print(f"\nSaved: {OUT_PATH} ({len(records)} rows)")
     print(f"Windows: recent {RECENT_START}→{RECENT_END}  prior {PRIOR_START}→{PRIOR_END}")
 
