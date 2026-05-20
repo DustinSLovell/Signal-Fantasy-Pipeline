@@ -6729,6 +6729,172 @@ Changed-row breakdown:
 
 ---
 
-*End of thread_handoff.md — Sessions 1-63 complete.*
+## Session 64 (May 20, 2026)
+
+### Key Decisions Made
+
+**Recency Signal V2 — Seven-Layer Rebuild**
+- Rebuilt from scratch using contact quality metrics
+  instead of surface stats (BA/HR/ERA)
+- Five layers: xwOBA gap trend, contact quality 
+  composite (EV/HH/barrel), BABIP normalization,
+  plate discipline, bat speed health flag
+- Percentile-based thresholds: Hot=p80, Cold=p20
+- Backtest: +45.7 wOBA pt Buy Low Hot-Cold separation
+  vs +10.0 in v1 — more than 4x improvement
+- Sell High directionality flipped correctly in v2
+- Commits: 87f16a6 (scripts) + 228e08c (dashboard)
+
+**Layer 6 — Pitch Vulnerability + Batted Ball Profile**
+- Sub-Signal A: Baseball Savant pitch arsenal data
+  (2024-2026), wPC/C YoY delta per pitch type
+  Severe(-0.15) / Moderate(-0.10) / Mild(-0.05)
+  Min 20 pitches seen gate
+- Sub-Signal B: LD%/FB% approach change detection
+  Career profile estimated from launch angle data
+  Barrel support check (career vs current)
+- 62/120 qualified players flagged (5 severe, 
+  23 moderate, 34 mild, 1 dual-flag: Cal Raleigh)
+- Jackson Merrill: severe cutter vulnerability
+  wFC/C 2025=+4.8 → 2026=-7.2, delta=-12.0
+- Commits: 8a5dd98 (data+scripts) + 5062477 (dashboard)
+- FanGraphs blocked (403) — switched to Baseball Savant
+  pitch-arsenal-stats API (21 calls, 1,555 rows)
+
+**Dashboard Updates**
+- Layer 6 ⚠️ tooltip note in amber when flag fires
+- Contact quality layer breakdown in trend tooltip:
+  EV, HH rate, barrel rate, BABIP, bat speed
+  Color coded green/red/gray per threshold
+  Commit: 50035bd
+- Trend column sortable by click (460ba98)
+- "How signals work" info modal (5b91135)
+- Combined signal tiers live: Strong Buy, Conflicted 
+  Buy, Confirmed Sell, Conflicted Sell, Emerging Buy,
+  Fading Sell (eba87cf)
+
+**Backtest Findings (Key)**
+- Stratified 2025 backtest confirmed:
+  Sell High at 100% ceiling — trend adds no lift
+  Slight Sell + Cold vs Hot: 42 wOBA pt gap (real)
+  Buy Low + Hot: +4.3pp accuracy improvement
+- prior_teams_2025.json confirmed corrupt — ignore
+- True miss count: 7 (not 0 as originally reported)
+  Sell High: 0 true misses ✅
+  Buy Low: 1 true miss (Tommy Edman)
+- Trea Turner flagged as fair miss — speed/age profile
+
+**Otto Lopez Deep Dive**
+- Strongest combined sell signal on the board
+- Full layer breakdown pulled live from dashboard:
+  EV: ~94.0 → ~86.5 mph (-7.5 mph)
+  HH Rate: ~55% → ~35% (-20pp)
+  Barrel: ~10.7% → ~7.0% (-3.7pp)
+  xwOBA gap flipped: +0.005 → -0.065
+  Bat speed: UP +0.86 mph (rules out injury)
+- Interpretation: contact quality collapse without
+  physical explanation — approach/pitch exploitation
+- Internal math verified: weighted average of prior
+  (94.0 × 77 PA) + recent (86.5 × 81 PA) = 90.16 mph
+  matches stored full-season 90.15 mph ✅
+
+**Pitch Vulnerability Analysis**
+- FanGraphs pitch value data discussion:
+  wPC/C (per contact) is what matters, not raw wPC
+  Positive = good for pitcher, negative = bad
+- David Peterson (NYM) identified as pitch vulnerability
+  case — sinker overuse (-3.9 runs above average)
+- Michael King: per-contact improving on all pitches
+  despite raw totals looking mixed
+- Pitcher Layer 6 architecture designed:
+  Secondary pitch collapse flag
+  Pitch mix reactive shift flag
+  Velocity-independent decline flag
+
+**Content Published**
+- Week 5 Substack article: "Buy Low/Sell High Updates
+  and Introducing the Recency Layer"
+  Players: Perdomo (Strong Buy), McLain/Merrill
+  (Buys with Caveats), Peterson (hidden gem),
+  King (Sell High), Lopez (Confirmed Sell)
+- Reddit post live — early positive engagement
+  ("Love this! Great job and format sir")
+- Article #5 | May 20, 2026
+
+**Substack Growth**
+- 82 subscribers as of May 20 (up from 78)
+- 4 new subscribers on article launch day
+
+**Model Architecture — Complete Layer Count**
+Main luck model: 7 layers (full season)
+Recency signal: 5 layers (21-day rolling)
+Layer 6: 2 sub-signals (pitch vulnerability + BB profile)
+Total: 14 analytical layers
+
+### GitHub Commits (Session 64)
+- 87f16a6 — feat: recency signal v2 + 2026 Statcast fetch
+- 228e08c — feat: deploy trend signal v2 to dashboard
+- 50035bd — feat: contact quality tooltip breakdown
+- eba87cf — feat: combined signal tiers in dashboard
+- 5b91135 — feat: How Signals Work info modal
+- 460ba98 — feat: sortable trend column
+- 8a5dd98 — feat: Layer 6 pitch vulnerability data+scripts
+- 5062477 — feat: Layer 6 tooltip in dashboard
+- 4dea6bd — analysis: proper rolling-window backtest 2025
+- 7435e67 — analysis: 2025 trend signal backtest
+- ad63d98 — feat: trend signal v1 live system
+- 828a644 — fix: Baseball Savant URL param fix
+- 8cdb080 — feat: 2025 Statcast game log fetcher
+
+### Next Session Priorities
+1. Pitcher recency layer — velocity, arsenal evolution,
+   swing-miss trends (parallel to hitter framework)
+2. Pitcher pitch vulnerability Layer 6
+3. Verify Otto Lopez numbers with CC raw game log script
+   (data/statcast_gamelogs_2026/hitter_672640.csv)
+4. Trea Turner miss analysis — why sell signal failed
+5. Tommy Edman miss analysis — why buy signal failed
+6. Speed-profile age flag — dampen Sell High for 30+
+   SB-dependent players
+7. CBS Sell High spot check — empirical edge validation
+8. Wheeler career discount badge — veteran exempt
+9. Ramírez trade tool tension — pedigree override
+10. Pitcher W dimension (team win% data)
+11. Rebuild prior_teams_2025.json (currently corrupt)
+12. Whitepaper V3 — incorporate all Session 64 work:
+    recency signal v2, Layer 6, backtest corrections,
+    14-layer architecture documentation
+13. FanGraphs pitch value data for Layer 6 batted ball
+    sub-signal — career LD%/FB% properly sourced
+
+### Known Issues / Parking Lot
+- prior_teams_2025.json corrupt — ignore entirely
+- Wheeler career discount badge firing on veteran
+- Ramírez pedigree override → trade surplus too high
+- Pitcher W dimension defaults to 0.500
+- Soto projection still suppressed (low PA)
+- Career lessons database Sessions 22-64 not added
+- Optimal HR ROS scaling factor ~0.80 not 0.735
+- Career LD%/FB% for Layer 6 Sub-B estimated from
+  launch angle data (conservative — only 1 player
+  flagged: Cal Raleigh)
+- Layer 6 v1 trend data still in CSV (superseded by v2)
+- Pitcher pitch vulnerability not yet built
+
+### Model State
+- Hitter Version E: 91.4% pooled / 90.5% OOS
+- Pitcher Version F: 87.7% pooled / 82.0% OOS
+- Recency Signal: v2 live (87f16a6)
+- Layer 6: pitch vulnerability live (8a5dd98)
+- ROS fraction: auto-updates each pipeline run
+- Trade analyzer: beta-ready with drop cost + L6 notes
+- Token gate: live (742bb37)
+- Beta URL: dustinslovell.github.io/Signal-Fantasy-Pipeline
+- Substack: 82 subscribers, Article #5 live
+- Reddit: active engagement on Week 5 post
+
+---
+
+*End of thread_handoff.md — Sessions 1-64 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
