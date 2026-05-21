@@ -54,10 +54,16 @@ SPEED_NORM =  10.0   # launch_speed and bat_speed (mph) → divide by 10
 # ── bat speed decline flag threshold ─────────────────────────────────────────
 BAT_SPEED_FLAG_MPH = -1.0   # bs_delta < -1.0 mph → flag
 
+# ── pitcher trend constants ───────────────────────────────────────────────────
+MIN_BF_RECENT = 20    # min batters faced in recent 21-day window
+MIN_BF_PRIOR  = 15    # min batters faced in prior 21-day window
+VELO_FLAG_MPH = -1.0  # velo delta < -1.0 mph → velo health flag
+
 # ── data paths ────────────────────────────────────────────────────────────────
-GAMELOG_DIR  = Path("data/statcast_gamelogs_2026")
-LUCK_CSV     = "luck_scores.csv"
-OUT_PATH     = Path("data/trend_signals_v2_2026.csv")
+GAMELOG_DIR      = Path("data/statcast_gamelogs_2026")
+LUCK_CSV         = "luck_scores.csv"
+PITCHER_LUCK_CSV = "pitcher_luck_scores.csv"
+OUT_PATH         = Path("data/trend_signals_v2_2026.csv")
 
 # ── Layer 6 data paths ────────────────────────────────────────────────────────
 PITCH_VALUES_CSV  = Path("data/fg_pitch_values_2024_2026.csv")
@@ -119,6 +125,15 @@ def _weighted_avg(rows, field: str, start: date, end: date, norm: float = 1.0):
 
 def _load_gamelogs(mlbam_id: int) -> list[dict]:
     path = GAMELOG_DIR / f"hitter_{mlbam_id}.csv"
+    if not path.exists():
+        return []
+    with open(path, newline="", encoding="utf-8") as f:
+        content = f.read().lstrip("﻿")
+    return list(csv.DictReader(content.splitlines()))
+
+
+def _load_pitcher_gamelogs(mlbam_id: int) -> list[dict]:
+    path = GAMELOG_DIR / f"pitcher_{mlbam_id}.csv"
     if not path.exists():
         return []
     with open(path, newline="", encoding="utf-8") as f:
@@ -255,6 +270,115 @@ def _score_player(rows) -> dict:
         # composite
         "n_layers_used":  n_layers_used,
         "trend_score":    trend_score,
+    }
+
+
+def _score_pitcher(rows: list[dict]) -> dict:
+    """
+    5-layer pitcher trend score from per-start Statcast game logs.
+    Hot pitcher = pitching BETTER recently (less woba/xwoba gap, less hard
+    contact, better K/BB/whiff, stable velocity). Inverted from hitter
+    convention on L1-L3 so that Hot = favorable performance, not lucky gap.
+
+    Layer P1: wOBA-xwOBA gap trend  (weight 1.0) — inverted
+    Layer P2: Contact quality allowed (weight 0.8) — inverted
+    Layer P3: BABIP allowed         (weight 0.4) — inverted
+    Layer P4: K%/BB%/Whiff%         (weight 0.5) — pitcher signs
+    Layer P5: Velocity health       (weight 0.3)
+    """
+    R0, R1, P0, P1 = RECENT_START, RECENT_END, PRIOR_START, PRIOR_END
+
+    # BF gate — use 'woba' as proxy field (same _weighted_avg logic)
+    _, rpa = _weighted_avg(rows, "woba", R0, R1)
+    _, ppa = _weighted_avg(rows, "woba", P0, P1)
+
+    # ── P1: wOBA-xwOBA gap trend ─────────────────────────────────────────────
+    # wobadiff = woba_allowed - xwoba_allowed; positive = more unlucky
+    # Inverted: decreasing wobadiff = pitcher improving → positive l1
+    rwd, _, pwd, _ = _window_pair(rows, "wobadiff", R0, R1, P0, P1)
+    wobadiff_delta = _delta(rwd, pwd)
+    l1 = -(wobadiff_delta) * 1.0 if wobadiff_delta is not None else None
+
+    # ── P2: Contact quality allowed (inverted — lower = better) ─────────────
+    rhh, _, phh, _ = _window_pair(rows, "hardhit_percent",         R0, R1, P0, P1, PCT_NORM)
+    rbb, _, pbb, _ = _window_pair(rows, "barrels_per_bbe_percent", R0, R1, P0, P1, PCT_NORM)
+    rev, _, pev, _ = _window_pair(rows, "launch_speed",            R0, R1, P0, P1, SPEED_NORM)
+
+    hh_delta  = _delta(rhh, phh)
+    brl_delta = _delta(rbb, pbb)
+    ev_delta  = _delta(rev, pev)
+
+    cq_parts = []
+    cq_w = 0.0
+    if hh_delta  is not None: cq_parts.append(-0.5 * hh_delta); cq_w += 0.5
+    if brl_delta is not None: cq_parts.append(-0.3 * brl_delta); cq_w += 0.3
+    if ev_delta  is not None: cq_parts.append(-0.2 * ev_delta);  cq_w += 0.2
+
+    if cq_parts and cq_w:
+        cq_score = sum(cq_parts) / cq_w
+        l2 = cq_score * 0.8
+    else:
+        cq_score = l2 = None
+
+    # ── P3: BABIP allowed (inverted — lower = better) ────────────────────────
+    rbp, _, pbp, _ = _window_pair(rows, "babip", R0, R1, P0, P1)
+    babip_delta = _delta(rbp, pbp)
+    l3 = -(babip_delta) * 0.4 if babip_delta is not None else None
+
+    # ── P4: K/BB/Whiff (K↑ good, BB↓ good, Whiff↑ good) ─────────────────────
+    rkp, _, pkp, _ = _window_pair(rows, "k_percent",          R0, R1, P0, P1, PCT_NORM)
+    rbp2,_, pbp2,_ = _window_pair(rows, "bb_percent",         R0, R1, P0, P1, PCT_NORM)
+    rwh, _, pwh, _ = _window_pair(rows, "swing_miss_percent", R0, R1, P0, P1, PCT_NORM)
+
+    kp_delta  = _delta(rkp,  pkp)
+    bbp_delta = _delta(rbp2, pbp2)
+    wh_delta  = _delta(rwh,  pwh)
+
+    pd_parts = []
+    pd_w = 0.0
+    if kp_delta  is not None: pd_parts.append( 0.4 * kp_delta);  pd_w += 0.4
+    if bbp_delta is not None: pd_parts.append(-0.3 * bbp_delta); pd_w += 0.3
+    if wh_delta  is not None: pd_parts.append( 0.3 * wh_delta);  pd_w += 0.3
+
+    if pd_parts and pd_w:
+        pd_score = sum(pd_parts) / pd_w
+        l4 = pd_score * 0.5
+    else:
+        pd_score = l4 = None
+
+    # ── P5: Velocity health (decline = bad) ──────────────────────────────────
+    rvl, _, pvl, _ = _window_pair(rows, "velocity", R0, R1, P0, P1, SPEED_NORM)
+    velo_delta = _delta(rvl, pvl)
+    velo_flag  = (velo_delta is not None and velo_delta < VELO_FLAG_MPH / SPEED_NORM)
+    l5 = velo_delta * 0.3 if velo_delta is not None else None
+
+    layers = [l for l in [l1, l2, l3, l4, l5] if l is not None]
+    n_layers_used = len(layers)
+    trend_score = sum(layers) if layers else None
+
+    return {
+        "recent_pa":       rpa,
+        "prior_pa":        ppa,
+        "recent_wobadiff": rwd,
+        "prior_wobadiff":  pwd,
+        "wobadiff_delta":  wobadiff_delta,
+        "hh_delta":        hh_delta,
+        "brl_delta":       brl_delta,
+        "ev_delta":        ev_delta,
+        "l2_cq_score":     cq_score,
+        "recent_babip":    rbp,
+        "prior_babip":     pbp,
+        "babip_delta":     babip_delta,
+        "kp_delta":        kp_delta,
+        "bbp_delta":       bbp_delta,
+        "wh_delta":        wh_delta,
+        "l4_pd_score":     pd_score,
+        "recent_velo":     rvl,
+        "prior_velo":      pvl,
+        "velo_delta":      velo_delta,
+        "velo_flag":       velo_flag,
+        "n_layers_used":   n_layers_used,
+        "trend_score":     trend_score,
     }
 
 
@@ -550,6 +674,76 @@ def calculate_layer6(records: list[dict], luck_rows: dict) -> list[dict]:
     return records
 
 
+def calculate_pitcher_trend(pitcher_luck: dict) -> list[dict]:
+    """
+    Compute 5-layer pitcher trend signals for all pitchers that have gamelogs.
+    Returns list of records with player_type='pitcher'.
+    """
+    records = []
+    skip_nolog = skip_minbf = skip_noscore = 0
+
+    for mlbam_id, meta in pitcher_luck.items():
+        rows = _load_pitcher_gamelogs(mlbam_id)
+        if not rows:
+            skip_nolog += 1
+            continue
+
+        sc = _score_pitcher(rows)
+
+        if sc["recent_pa"] < MIN_BF_RECENT or sc["prior_pa"] < MIN_BF_PRIOR:
+            skip_minbf += 1
+            continue
+
+        if sc["trend_score"] is None:
+            skip_noscore += 1
+            continue
+
+        trend_dir = _classify(sc["trend_score"])
+
+        records.append({
+            "player_type":   "pitcher",
+            "mlbam_id":      mlbam_id,
+            "name":          meta["name"],
+            "verdict":       meta["verdict"],
+            "luck_score":    meta["luck_score"],
+            "trend_dir":     trend_dir,
+            "trend_score":   sc["trend_score"],
+            "trend_score_final": sc["trend_score"],   # no L6 for pitchers
+            "n_layers":      sc["n_layers_used"],
+            "recent_pa":     sc["recent_pa"],
+            "prior_pa":      sc["prior_pa"],
+            # shared column names (pitcher-specific semantics noted in player_type)
+            "l1_gap_delta":     -(sc["wobadiff_delta"]) if sc["wobadiff_delta"] is not None else None,
+            "l2_cq_score":      sc["l2_cq_score"],
+            "babip_delta":      sc["babip_delta"],
+            "l4_pd_score":      sc["l4_pd_score"],
+            "bs_delta_mph":     (sc["velo_delta"] * SPEED_NORM) if sc["velo_delta"] is not None else None,
+            "bs_flag":          sc["velo_flag"],
+            "recent_xwoba_gap": sc["recent_wobadiff"],
+            "prior_xwoba_gap":  sc["prior_wobadiff"],
+            "hh_delta_pp":      (sc["hh_delta"]  * PCT_NORM)   if sc["hh_delta"]  is not None else None,
+            "brl_delta_pp":     (sc["brl_delta"] * PCT_NORM)   if sc["brl_delta"] is not None else None,
+            "ev_delta_mph":     (sc["ev_delta"]  * SPEED_NORM) if sc["ev_delta"]  is not None else None,
+            "recent_babip":     sc["recent_babip"],
+            "prior_babip":      sc["prior_babip"],
+            # Layer 6 not applicable for pitchers
+            "layer6_modifier":           0.0,
+            "worst_pitch_vulnerability": "",
+            "worst_pitch_delta":         None,
+            "vulnerability_severity":    "n/a",
+            "approach_change_flag":      False,
+            "barrel_supported":          True,
+            "ld_delta_pp":               None,
+            "fb_delta_pp":               None,
+            "barrel_delta_pp":           None,
+            "layer6_notes":              "",
+        })
+
+    print(f"  Qualified pitchers: {len(records)}")
+    print(f"  No gamelog: {skip_nolog}  Min BF fail: {skip_minbf}  No score: {skip_noscore}")
+    return records
+
+
 def main():
     print("=" * 65)
     print("TREND SIGNALS v2 — SEVEN-LAYER ROLLING MODEL (2026)")
@@ -598,6 +792,7 @@ def main():
         trend_dir = _classify(sc["trend_score"])
 
         records.append({
+            "player_type":  "hitter",
             "mlbam_id":     mlbam_id,
             "name":         meta["name"],
             "verdict":      meta["verdict"],
@@ -772,9 +967,109 @@ def main():
         print(f"  Barrel supported: {m.get('barrel_supported','n/a')}")
         print(f"  Notes: {m.get('layer6_notes','(none)')}")
 
+    # ── pitcher trend signals ─────────────────────────────────────────────────
+    pitcher_luck = {}
+    if Path(PITCHER_LUCK_CSV).exists():
+        with open(PITCHER_LUCK_CSV, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                pid = _safe_float(r.get("pitcher"))
+                if pid is None:
+                    continue
+                pitcher_luck[int(pid)] = {
+                    "name":       r.get("name", ""),
+                    "verdict":    r.get("verdict", ""),
+                    "luck_score": _safe_float(r.get("luck_score")),
+                }
+
+    print()
+    print("=" * 65)
+    print("PITCHER TREND SIGNALS — 5-LAYER ROLLING MODEL (2026)")
+    print("=" * 65)
+    pitcher_records = calculate_pitcher_trend(pitcher_luck)
+
+    # ── pitcher distribution ──────────────────────────────────────────────────
+    p_by_dir = defaultdict(list)
+    for p in pitcher_records:
+        p_by_dir[p["trend_dir"]].append(p)
+
+    p_hot  = sorted(p_by_dir["Hot"],  key=lambda x: -x["trend_score"])
+    p_cold = sorted(p_by_dir["Cold"], key=lambda x:  x["trend_score"])
+    p_flat = p_by_dir["Flat"]
+
+    print()
+    print(f"  Hot: {len(p_hot)}   Cold: {len(p_cold)}   Flat: {len(p_flat)}")
+    print()
+    print("TOP 10 HOT PITCHERS")
+    print(f"  {'Name':<24} {'Verdict':<12} {'Score':>7}  {'L1wob':>6} {'L2cq':>6} {'L3bab':>6} {'L4pd':>6} {'L5vel':>6}  {'rBF':>4} {'pBF':>4}")
+    print(f"  {'-'*88}")
+    for p in p_hot[:10]:
+        l1 = f"{p['l1_gap_delta']:.3f}"  if p['l1_gap_delta']  is not None else "  n/a"
+        l2 = f"{p['l2_cq_score']:.3f}"   if p['l2_cq_score']   is not None else "  n/a"
+        l3 = f"{p['babip_delta']:.3f}"   if p['babip_delta']    is not None else "  n/a"
+        l4 = f"{p['l4_pd_score']:.3f}"   if p['l4_pd_score']    is not None else "  n/a"
+        l5 = f"{p['bs_delta_mph']:.1f}"  if p['bs_delta_mph']   is not None else "  n/a"
+        print(f"  {p['name']:<24} {p['verdict']:<12} {p['trend_score']:>7.3f}  "
+              f"{l1:>6} {l2:>6} {l3:>6} {l4:>6} {l5:>6}  "
+              f"{p['recent_pa']:>4} {p['prior_pa']:>4}")
+
+    print()
+    print("TOP 10 COLD PITCHERS")
+    print(f"  {'Name':<24} {'Verdict':<12} {'Score':>7}  {'L1wob':>6} {'L2cq':>6} {'L3bab':>6} {'L4pd':>6} {'L5vel':>6}  {'rBF':>4} {'pBF':>4}")
+    print(f"  {'-'*88}")
+    for p in p_cold[:10]:
+        l1 = f"{p['l1_gap_delta']:.3f}"  if p['l1_gap_delta']  is not None else "  n/a"
+        l2 = f"{p['l2_cq_score']:.3f}"   if p['l2_cq_score']   is not None else "  n/a"
+        l3 = f"{p['babip_delta']:.3f}"   if p['babip_delta']    is not None else "  n/a"
+        l4 = f"{p['l4_pd_score']:.3f}"   if p['l4_pd_score']    is not None else "  n/a"
+        l5 = f"{p['bs_delta_mph']:.1f}"  if p['bs_delta_mph']   is not None else "  n/a"
+        print(f"  {p['name']:<24} {p['verdict']:<12} {p['trend_score']:>7.3f}  "
+              f"{l1:>6} {l2:>6} {l3:>6} {l4:>6} {l5:>6}  "
+              f"{p['recent_pa']:>4} {p['prior_pa']:>4}")
+
+    # ── pitcher spotlight: Luzardo, Ryan, Skenes ──────────────────────────────
+    SPOTLIGHT_IDS = {666200: "Jesús Luzardo", 657746: "Joe Ryan", 694973: "Paul Skenes"}
+    print()
+    print("=" * 65)
+    print("PITCHER SPOTLIGHT — Luzardo / Ryan / Skenes")
+    print("=" * 65)
+    for spot_id, spot_name in SPOTLIGHT_IDS.items():
+        match = [p for p in pitcher_records if p["mlbam_id"] == spot_id]
+        if not match:
+            # Try to diagnose why missing
+            rows = _load_pitcher_gamelogs(spot_id)
+            if not rows:
+                print(f"\n  {spot_name}: no gamelog available")
+            else:
+                sc = _score_pitcher(rows)
+                print(f"\n  {spot_name}: gamelog exists ({len(rows)} starts) but "
+                      f"failed PA gate (recent={sc['recent_pa']:.0f} prior={sc['prior_pa']:.0f})")
+            continue
+
+        p = match[0]
+        print(f"\n  {p['name']}  [{p['verdict']}]  luck_score={p.get('luck_score','?')}")
+        print(f"  trend_score={p['trend_score']:+.4f}  dir={p['trend_dir']}  layers={p['n_layers']}")
+        print(f"  Window:    recent BF={p['recent_pa']:.0f}  prior BF={p['prior_pa']:.0f}")
+        print(f"  L1 wob-gap: {p.get('recent_xwoba_gap','?'):.3f} (recent) vs "
+              f"{p.get('prior_xwoba_gap','?'):.3f} (prior)  "
+              f"-> l1={p.get('l1_gap_delta','?'):.3f}" if p.get('recent_xwoba_gap') is not None else
+              f"  L1: n/a")
+        print(f"  L2 CQ:      hh_delta={p.get('hh_delta_pp','?'):.1f}pp  "
+              f"brl_delta={p.get('brl_delta_pp','?'):.1f}pp  "
+              f"ev_delta={p.get('ev_delta_mph','?'):.2f}mph  "
+              f"-> l2={p.get('l2_cq_score','?'):.3f}"
+              if p.get('hh_delta_pp') is not None else "  L2: n/a")
+        print(f"  L3 BABIP:   recent={p.get('recent_babip','?'):.3f}  "
+              f"prior={p.get('prior_babip','?'):.3f}  "
+              f"delta={p.get('babip_delta','?'):.3f}"
+              if p.get('recent_babip') is not None else "  L3: n/a")
+        print(f"  L4 PD:      l4={p.get('l4_pd_score','?'):.3f}")
+        print(f"  L5 Velo:    delta={p.get('bs_delta_mph','?'):.2f}mph  "
+              f"flag={p.get('bs_flag','?')}"
+              if p.get('bs_delta_mph') is not None else "  L5: n/a")
+
     # ── save ──────────────────────────────────────────────────────────────────
     fieldnames = [
-        "mlbam_id", "name", "verdict", "luck_score",
+        "player_type", "mlbam_id", "name", "verdict", "luck_score",
         "trend_dir", "trend_score", "trend_score_final", "n_layers",
         "recent_pa", "prior_pa",
         "l1_gap_delta", "l2_cq_score", "babip_delta", "l4_pd_score",
@@ -789,16 +1084,19 @@ def main():
         "ld_delta_pp", "fb_delta_pp", "barrel_delta_pp",
         "layer6_notes",
     ]
+    all_records = records + pitcher_records
     with open(OUT_PATH, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         w.writeheader()
-        for p in sorted(records, key=lambda x: -x.get("trend_score_final", x["trend_score"])):
+        for p in sorted(all_records, key=lambda x: -x.get("trend_score_final", x["trend_score"])):
             row = {}
             for k in fieldnames:
                 v = p.get(k)
                 row[k] = f"{v:.4f}" if isinstance(v, float) else v
             w.writerow(row)
-    print(f"\nSaved: {OUT_PATH} ({len(records)} rows)")
+    h_count = len(records)
+    p_count = len(pitcher_records)
+    print(f"\nSaved: {OUT_PATH} ({h_count} hitters + {p_count} pitchers = {h_count + p_count} total rows)")
     print(f"Windows: recent {RECENT_START}→{RECENT_END}  prior {PRIOR_START}→{PRIOR_END}")
 
 
