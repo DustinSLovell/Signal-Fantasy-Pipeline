@@ -1625,7 +1625,7 @@ const TV_COLS = [
   { key:'quality_points',         label:'QP',           fmt:'int',   hidden:true },
   { key:'luck_adjustment',        label:'Luck Adj',     fmt:'f2',    hidden:true },
   { key:'verdict',                label:'Verdict',      fmt:'badge', nosort:true },
-  { key:'_rank',                  label:'FP ROS Rank',  fmt:'int',   nosort:true },
+  { key:'luck_score',             label:'Luck Score',   fmt:'luck'  },
 ];
 
 // ─── Verdict helpers ──────────────────────────────────────────────────────────
@@ -4170,6 +4170,14 @@ async function init() {
       }
       return r;
     });
+
+    // Enrich tvData with luck_score from luck_scores for Signal Rankings view
+    if (S.tvData) {
+      const _lsMap = {};
+      S.data.hitters.forEach(r  => { if (r.batter)  _lsMap[String(r.batter)]  = r.luck_score; });
+      S.data.pitchers.forEach(r => { if (r.pitcher) _lsMap[String(r.pitcher)] = r.luck_score; });
+      S.tvData = S.tvData.map(p => Object.assign({}, p, { luck_score: _lsMap[String(p.id)] }));
+    }
 
     S.ready.hitters = true;
     S.ready.pitchers = true;
