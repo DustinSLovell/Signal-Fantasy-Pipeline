@@ -1845,17 +1845,20 @@ const F = {
       const txt  = `${sign}${n.toFixed(decimals)}${unit} ${arrow}`;
       return `<div class="cq-row"><span class="cq-label">${label}</span><span class="cq-val ${cls}">${txt}</span></div>`;
     };
+    // For pitchers, CQ metrics are "allowed" stats — invert sign so red=bad, green=good
+    const isPit = !!tr._is_pitcher;
+    const _flip = v => { const n = parseFloat(v); return isNaN(n) ? v : String(-n); };
     const cqRows = [
-      _cqRow('Exit Velocity:',  tr.ev_delta_mph,  1, ' mph', 0.3),
-      _cqRow('Hard Hit Rate:',  tr.hh_delta_pp,   1, ' pp',  0.5),
-      _cqRow('Barrel Rate:',    tr.brl_delta_pp,  1, ' pp',  0.5),
-      _cqRow('BABIP:',          tr.babip_delta,   3, '',      0.005),
-      _cqRow('Bat Speed:',      tr.bs_delta_mph,  1, ' mph', 0.3),
+      _cqRow(isPit ? 'Exit Velo (allowed):'   : 'Exit Velocity:',  isPit ? _flip(tr.ev_delta_mph)  : tr.ev_delta_mph,  1, ' mph', 0.3),
+      _cqRow(isPit ? 'Hard Hit (allowed):'    : 'Hard Hit Rate:',  isPit ? _flip(tr.hh_delta_pp)   : tr.hh_delta_pp,   1, ' pp',  0.5),
+      _cqRow(isPit ? 'Barrel Rate (allowed):' : 'Barrel Rate:',    isPit ? _flip(tr.brl_delta_pp)  : tr.brl_delta_pp,  1, ' pp',  0.5),
+      _cqRow(isPit ? 'BABIP (allowed):'       : 'BABIP:',          isPit ? _flip(tr.babip_delta)   : tr.babip_delta,   3, '',      0.005),
+      _cqRow(isPit ? 'Velocity:'              : 'Bat Speed:',      tr.bs_delta_mph,                                    1, ' mph', 0.3),
     ].join('');
     const bsFlagHtml = (tr.bs_flag === 'True' || tr.bs_flag === true)
-      ? '<div class="cq-bs-flag">⚠️ Bat speed flag — drop vs career baseline</div>' : '';
+      ? `<div class="cq-bs-flag">⚠️ ${isPit ? 'Velocity flag — drop vs prior window' : 'Bat speed flag — drop vs career baseline'}</div>` : '';
     const cqSection = cqRows
-      ? `<div class="cq-section-title">Contact Quality Components</div>${cqRows}${bsFlagHtml}` : '';
+      ? `<div class="cq-section-title">${isPit ? 'Pitching Quality (lower allowed = better)' : 'Contact Quality Components'}</div>${cqRows}${bsFlagHtml}` : '';
 
     // Layer 6 warning: show if modifier is non-zero and notes exist
     const l6mod   = parseFloat(tr.layer6_modifier);
@@ -4117,13 +4120,16 @@ async function init() {
         }
         // Map v2 metric fields → tooltip display in trenddir cell
         if (!r.metric_label) {
-          r.metric_label  = 'xwOBA Gap Delta';
-          r.recent_metric = r.recent_xwoba_gap;
-          r.prior_metric  = r.prior_xwoba_gap;
-          r.metric_delta  = r.l1_gap_delta;
+          const isPitcher    = r.player_type === 'pitcher';
+          r._is_pitcher      = isPitcher;
+          r.metric_label     = isPitcher ? 'wOBA-xwOBA Allowed' : 'xwOBA Gap Delta';
+          r.recent_metric    = r.recent_xwoba_gap;
+          r.prior_metric     = r.prior_xwoba_gap;
+          r.metric_delta     = r.l1_gap_delta;
           const sc = parseFloat(r.trend_score);
           r.trend_notes = isNaN(sc) ? '' :
-            `v2 score: ${sc.toFixed(3)} (${r.n_layers || '?'} layers — contact quality + xwOBA + discipline)`;
+            `v2 score: ${sc.toFixed(3)} (${r.n_layers || '?'} layers — ${
+              isPitcher ? 'contact allowed + wOBA gap + K/BB/velo' : 'contact quality + xwOBA + discipline'})`;
         }
         S.trendMap[String(r.mlbam_id)] = r;
       });
