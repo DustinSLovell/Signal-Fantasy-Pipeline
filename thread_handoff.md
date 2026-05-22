@@ -6895,6 +6895,148 @@ Total: 14 analytical layers
 
 ---
 
-*End of thread_handoff.md — Sessions 1-64 complete.*
+## Session 65 (May 21, 2026)
+
+### Key Accomplishments
+
+**Pitcher Recency Layer — Built and Deployed**
+- 5-layer parallel architecture to hitter recency:
+  L1: ERA-FIP gap trend (wOBA-xwOBA allowed)
+  L2: Contact quality allowed composite (EV/HH/barrel)
+  L3: BABIP allowed normalization
+  L4: K%/BB%/whiff trend
+  L5: Velocity health flag (>1 mph decline)
+- 86 pitchers analyzed
+- Distribution: 36 Hot (42%) / 34 Cold (40%) / 16 Flat (19%)
+- Near-zero median — no systematic bias ✓
+- 37/37 tests passing
+- Commits: 9224a42 (layer) + 3ef3f02 (dashboard fix)
+
+**Dashboard Semantic Inversion Fix**
+- Pitcher tooltip correctly inverts sign for
+  "allowed" metrics (HH allowed DOWN = green)
+- Label corrections: "Hard Hit Rate" ->
+  "Hard Hit (allowed)", "Bat Speed" -> "Velocity"
+  "xwOBA Gap Delta" -> "wOBA-xwOBA Allowed"
+- Section title: "Pitching Quality (lower allowed = better)"
+
+**Pitcher Recency Results — Key Findings**
+Strong Buy pitchers (8):
+  - Tyler Holton (FP#146, luck 0.401) — highest
+    conviction, multi-layer confirmation
+  - David Peterson (FP#333, luck 0.747) — hidden
+    gem confirmed by recency layer
+  - Cade Smith (FP#43, luck 0.267) — K/BB dominant
+  - Alex Lange (FP#281, luck 0.312) — strongest
+    trend score (+0.501), CQ dominant
+  - Luke Weaver, Huascar Brazoban, Matt Festa,
+    Jeff Hoffman
+
+Confirmed Sell pitchers (16):
+  - deGrom (FP#23) — wob-gap deteriorating
+  - Parker Messick (FP#99) — strongest cold (-0.232)
+  - Clay Holmes (FP#376) — BABIP not correcting
+  - Justin Wrobleski, Martin Perez
+
+Velocity flags (3):
+  - Tyler Phillips: -1.24 mph (Hot despite flag)
+  - Jesus Luzardo: -1.10 mph (Buy Low + Cold + velo)
+  - Jack Kochanowicz: -1.02 mph (Confirmed Sell)
+
+**Luzardo Context**
+- #1 Buy Low (luck 1.03) now shows Conflicted Buy
+  with velocity flag in dashboard
+- ERA 4.77 vs FIP 2.81 — luck signal intact
+- But: velocity -1.10 mph + Cold recency + BABIP
+  spiking .362->.404 + harder contact allowed
+- Honest call: buy thesis valid but meaningful
+  caveats — monitor before acting aggressively
+
+**Shohei Ohtani — Sell High Discussion**
+- ERA 1.23 / FIP 2.32 / xERA 1.48
+- Luck score -0.29 -> Sell High signal fires
+- xERA (1.48) partially validates ERA — contact
+  quality allowed is genuinely elite
+- Pedigree override candidate: FP#3, elite talent,
+  practical sell advice is different from signal
+- Added to backlog: projection_overrides.json
+  with luck_score_blend: 0.60
+
+**Career Lessons Database**
+- Updated: 228 -> 240 lessons (12 new Session 64)
+- Saved to /mnt/user-data/outputs/
+
+**Model Architecture Infographic**
+- Interactive HTML widget built (inline in chat)
+- PDF version: signal_fantasy_model_architecture.pdf
+- Covers all 14 layers across 3 tiers
+
+**Content / Growth**
+- Week 5 article published: "Buy Low/Sell High
+  Updates and Introducing the Recency Layer"
+- Reddit post live — positive early engagement
+- Substack: 91 subscribers (up from 82)
+- Target: 100 subscribers
+
+**Signal Rankings View Fix**
+- Removed FP ROS Rank column from Signal Rankings
+- Replaced with Luck Score column
+- Enrichment at init: tvData mapped from hitter/pitcher
+  MLBAM IDs to luck_score values
+- Commit: e0290f1
+
+### GitHub Commits (Session 65)
+- 9224a42 — feat: pitcher recency layer
+- 3ef3f02 — fix: dashboard pitcher trend signals
+- 50035bd — feat: contact quality tooltip breakdown
+- 460ba98 — feat: sortable trend column
+- 5b91135 — feat: How Signals Work modal
+- eba87cf — feat: combined signal tiers
+- 8a5dd98 — feat: Layer 6 pitch vulnerability
+- 5062477 — feat: Layer 6 tooltip in dashboard
+- e0290f1 — fix: Signal Rankings FP rank column removed
+
+### Model State (Current)
+- Hitter Version E: 91.4% pooled / 90.5% OOS
+- Pitcher Version F: 87.7% pooled / 82.0% OOS
+- Recency Signal v2: live for hitters + pitchers
+- Layer 6: pitch vulnerability live (hitters)
+- Total analytical layers: 14
+  (7 hitter luck + 5 pitcher luck +
+   5 hitter recency + 5 pitcher recency +
+   2 Layer 6 sub-signals)
+- Beta URL: dustinslovell.github.io/Signal-Fantasy-Pipeline
+- Substack: 91 subscribers, Article #5 live
+
+### Next Session Priorities
+1. Ohtani pedigree override -> projection_overrides.json
+2. Pitcher Layer 6 — pitch vulnerability pitcher side
+3. Wheeler career discount badge fix (veteran exempt)
+4. Ramirez trade tool tension — pedigree override
+5. Pitcher W dimension (team win% data)
+6. Rebuild prior_teams_2025.json (corrupt)
+7. Speed-profile age flag (Trea Turner case)
+8. Whitepaper V3 — incorporate Sessions 64-65
+9. Career lessons database Session 65 entries
+10. CBS Sell High spot check validation
+11. True OOS backtest for pitcher recency layer
+    (needs 2025 pitcher game logs validated)
+
+### Known Issues / Parking Lot
+- prior_teams_2025.json corrupt — ignore entirely
+- Wheeler career discount badge firing on veteran
+- Ramirez pedigree override -> trade surplus too high
+- Pitcher W dimension defaults to 0.500
+- Soto projection suppressed (low PA estimate)
+- Optimal HR ROS scaling factor ~0.80 not 0.735
+- Career LD%/FB% for Layer 6 Sub-B estimated from
+  launch angle (conservative — only Cal Raleigh flagged)
+- Pitcher pitch vulnerability Layer 6 not yet built
+- Speed-profile age flag not implemented
+- Ohtani pedigree override not yet committed
+
+---
+
+*End of thread_handoff.md — Sessions 1-65 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
