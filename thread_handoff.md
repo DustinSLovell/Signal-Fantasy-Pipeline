@@ -7,6 +7,14 @@
 
 ## SESSION START — MANDATORY VERIFICATION PROTOCOL
 
+> NOTE (added May 21, 2026): This protocol is Dustin’s own scaffolding to keep
+> Claude Code disciplined at session start — it is NOT an external instruction set.
+> The comprehension-check values below were drifting out of date (the commit hash
+> was stale by ~5 sessions). Treat these as a reminder to re-derive the current
+> values from the live repo and the Session changelogs at the BOTTOM of this file,
+> not as fixed answers to recite. When in doubt, the latest Session changelog wins.
+
+
 Before responding to ANY session goal, Claude must:
 
 1. READ SECTIONS 1–23 IN FULL using multiple Read calls.
@@ -18,7 +26,7 @@ Before responding to ANY session goal, Claude must:
    - The exact Tier 1 item marked HIGHEST PRIORITY
    - The hard deadline item and its date
    - The current track record fraction
-   - The last GitHub commit hash and what it did (last commit this session: 3c3b039 — Session 60 final close, SLG/ISO coverage documented)
+   - The last GitHub commit hash and what it did (last commit as of Session 65: e0290f1 — fix: Signal Rankings FP rank column removed)
 
 3. Do NOT proceed until Dustin confirms the comprehension check
    looks correct.
@@ -6908,16 +6916,16 @@ Total: 14 analytical layers
   L5: Velocity health flag (>1 mph decline)
 - 86 pitchers analyzed
 - Distribution: 36 Hot (42%) / 34 Cold (40%) / 16 Flat (19%)
-- Near-zero median — no systematic bias ✓
+- Near-zero median — no systematic bias ✅
 - 37/37 tests passing
 - Commits: 9224a42 (layer) + 3ef3f02 (dashboard fix)
 
 **Dashboard Semantic Inversion Fix**
 - Pitcher tooltip correctly inverts sign for
   "allowed" metrics (HH allowed DOWN = green)
-- Label corrections: "Hard Hit Rate" ->
-  "Hard Hit (allowed)", "Bat Speed" -> "Velocity"
-  "xwOBA Gap Delta" -> "wOBA-xwOBA Allowed"
+- Label corrections: "Hard Hit Rate" →
+  "Hard Hit (allowed)", "Bat Speed" → "Velocity"
+  "xwOBA Gap Delta" → "wOBA-xwOBA Allowed"
 - Section title: "Pitching Quality (lower allowed = better)"
 
 **Pitcher Recency Results — Key Findings**
@@ -6929,18 +6937,18 @@ Strong Buy pitchers (8):
   - Cade Smith (FP#43, luck 0.267) — K/BB dominant
   - Alex Lange (FP#281, luck 0.312) — strongest
     trend score (+0.501), CQ dominant
-  - Luke Weaver, Huascar Brazoban, Matt Festa,
+  - Luke Weaver, Huascar Brazobán, Matt Festa,
     Jeff Hoffman
 
 Confirmed Sell pitchers (16):
   - deGrom (FP#23) — wob-gap deteriorating
   - Parker Messick (FP#99) — strongest cold (-0.232)
   - Clay Holmes (FP#376) — BABIP not correcting
-  - Justin Wrobleski, Martin Perez
+  - Justin Wrobleski, Martín Pérez
 
 Velocity flags (3):
   - Tyler Phillips: -1.24 mph (Hot despite flag)
-  - Jesus Luzardo: -1.10 mph (Buy Low + Cold + velo)
+  - Jesús Luzardo: -1.10 mph (Buy Low + Cold + velo)
   - Jack Kochanowicz: -1.02 mph (Confirmed Sell)
 
 **Luzardo Context**
@@ -6948,13 +6956,13 @@ Velocity flags (3):
   with velocity flag in dashboard
 - ERA 4.77 vs FIP 2.81 — luck signal intact
 - But: velocity -1.10 mph + Cold recency + BABIP
-  spiking .362->.404 + harder contact allowed
+  spiking .362→.404 + harder contact allowed
 - Honest call: buy thesis valid but meaningful
   caveats — monitor before acting aggressively
 
 **Shohei Ohtani — Sell High Discussion**
 - ERA 1.23 / FIP 2.32 / xERA 1.48
-- Luck score -0.29 -> Sell High signal fires
+- Luck score -0.29 → Sell High signal fires
 - xERA (1.48) partially validates ERA — contact
   quality allowed is genuinely elite
 - Pedigree override candidate: FP#3, elite talent,
@@ -6963,7 +6971,7 @@ Velocity flags (3):
   with luck_score_blend: 0.60
 
 **Career Lessons Database**
-- Updated: 228 -> 240 lessons (12 new Session 64)
+- Updated: 228 → 240 lessons (12 new Session 64)
 - Saved to /mnt/user-data/outputs/
 
 **Model Architecture Infographic**
@@ -7009,10 +7017,10 @@ Velocity flags (3):
 - Substack: 91 subscribers, Article #5 live
 
 ### Next Session Priorities
-1. Ohtani pedigree override -> projection_overrides.json
+1. Ohtani pedigree override → projection_overrides.json
 2. Pitcher Layer 6 — pitch vulnerability pitcher side
 3. Wheeler career discount badge fix (veteran exempt)
-4. Ramirez trade tool tension — pedigree override
+4. Ramírez trade tool tension — pedigree override
 5. Pitcher W dimension (team win% data)
 6. Rebuild prior_teams_2025.json (corrupt)
 7. Speed-profile age flag (Trea Turner case)
@@ -7025,7 +7033,7 @@ Velocity flags (3):
 ### Known Issues / Parking Lot
 - prior_teams_2025.json corrupt — ignore entirely
 - Wheeler career discount badge firing on veteran
-- Ramirez pedigree override -> trade surplus too high
+- Ramírez pedigree override → trade surplus too high
 - Pitcher W dimension defaults to 0.500
 - Soto projection suppressed (low PA estimate)
 - Optimal HR ROS scaling factor ~0.80 not 0.735
