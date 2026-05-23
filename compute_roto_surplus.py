@@ -1,19 +1,23 @@
 """
-Roto surplus model for Signal Fantasy — Category Breadth Architecture.
+Roto surplus model for Signal Fantasy — Category Breadth + Elite Architecture.
 
 Two-stage scoring:
   Stage 1: Global percentile ranking per category (rank/N = percentile).
-  Stage 2: Exponential breadth multiplier based on how many categories
-           the player contributes to meaningfully (fixed raw stat floors).
+  Stage 2: Percentile-based breadth multiplier + additive category elite bonus.
 
 Hitter categories (5x5 roto):
   HR x1.6 | R x1.0 | RBI x1.0 | SB x1.2 | AVG x1.3
-  breadth_mult = 1.20 ^ breadth_count (0–5 contributing categories)
-  SB independence bonus x1.10 when contributes_SB + (contributes_HR or RBI)
-  AVG three-state: AVG>=0.255 -> +1 breadth | 0.220-0.254 -> neutral | <0.220 -> -1 breadth + x0.92
-  Contribution floors (fixed, pool-size-stable):
-    HR>=22 | R>=85 | RBI>=80 | SB>=15 | AVG>=0.255
-  Elite floors: HR>=35 | R>=120 | RBI>=105 | SB>=35 | AVG>=0.285
+
+  Breadth multiplier (# categories at p70+):
+    5 cats → x1.25 | 4 → x1.15 | 3 → x1.05 | 2 → x1.00 | 1 → x0.95 | 0 → x0.90
+
+  Category elite bonus (additive, capped at +0.40):
+    EXTREME (p97+):  +0.15 × scarcity_weight
+    STRONG  (p93-97): +0.10 × scarcity_weight
+    MILD    (p90-93): +0.05 × scarcity_weight
+    Scarcity weights: SB=1.35 | AVG=1.15 | HR=1.05 | R=1.00 | RBI=1.00
+
+  Formula: h_score = base × breadth_mult + category_elite_bonus
 
 SP categories (breadth model):
   ERA x1.0 (inv) | WHIP x0.5 (inv, corr w/ ERA) | K x1.0 | W x0.5
@@ -94,26 +98,40 @@ _NULL_FILL: dict[str, float] = {
     'WHIP':  5.0,
 }
 
-# ── Breadth model constants (fixed raw stat floors — pool-size-stable) ───────
-# Contribution floors: must reach this raw projected stat to count breadth
-_C_HR_THRESH        = 22      # proj_HR >= 22 → c_HR = True
-_C_R_THRESH         = 85      # proj_R  >= 85 → c_R  = True
-_C_RBI_THRESH       = 80      # proj_RBI >= 80 → c_RBI = True
-_SB_HARD_FLOOR      = 15      # proj_SB >= 15 → c_SB = True
-_AVG_CONTRIB_THRESH = 0.255   # proj_AVG >= 0.255 → c_AVG = +1
-_AVG_NEUTRAL_THRESH = 0.220   # proj_AVG >= 0.220 (and < 0.255) → c_AVG = 0; else -1
+# ── Percentile-based breadth + category elite constants ───────────────────────
+# Breadth: count categories where player is p70+ → lookup table for multiplier
+_CAT_BREADTH_THRESH = 0.70
+_BREADTH_MULT_TABLE = {5: 1.25, 4: 1.15, 3: 1.05, 2: 1.00, 1: 0.95, 0: 0.90}
 
-_HITTER_BREADTH_BASE   = 1.20   # multiplier base: 1.20^breadth_count
-_SB_POWER_BONUS        = 1.10   # extra bonus: SB + (HR or RBI) together
-_AVG_PENALTY_MULT      = 0.92   # score multiplier when c_AVG == -1
+# Elite tiers (percentile thresholds)
+_CAT_ELITE_EXTREME = 0.97   # top ~14 of 462 hitters
+_CAT_ELITE_STRONG  = 0.93   # top ~32 of 462 hitters
+_CAT_ELITE_MILD    = 0.90   # top ~46 of 462 hitters
 
-# Elite dominance floors (fixed raw stats)
-_E_HR_THRESH    = 35      # proj_HR >= 35  → elite HR
-_E_R_THRESH     = 120     # proj_R  >= 120 → elite R
-_E_RBI_THRESH   = 105     # proj_RBI >= 105 → elite RBI
-_E_SB_THRESH    = 35      # proj_SB >= 35  → elite SB
-_E_AVG_THRESH   = 0.285   # proj_AVG >= 0.285 → elite AVG
-_ELITE_BASE     = 1.05    # 1.05^elite_count
+# Scarcity weights per category (for elite bonus calculation)
+_CAT_SCARCITY: dict[str, float] = {
+    'SB':  1.35,   # most scarce — fewest elite producers
+    'AVG': 1.15,
+    'HR':  1.05,
+    'R':   1.00,
+    'RBI': 1.00,
+}
+
+# Elite bonus per tier (× scarcity_weight × scarcity_premium), additive, capped at +0.40
+_ELITE_EXTREME_BONUS = 0.15
+_ELITE_STRONG_BONUS  = 0.10
+_ELITE_MILD_BONUS    = 0.05
+_ELITE_BONUS_CAP     = 0.40
+
+# Scarcity liquidity premium per category × tier (applied on top of scarcity_weight)
+# SB: cliff curve — irreplaceable at elite level.  AVG: gradual.  HR/R/RBI: no premium.
+_CAT_SCARCITY_PREMIUM: dict[str, dict[str, float]] = {
+    'SB':  {'EXTREME': 1.25, 'STRONG': 1.15, 'MILD': 1.10},
+    'AVG': {'EXTREME': 1.05, 'STRONG': 1.00, 'MILD': 1.00},
+    'HR':  {'EXTREME': 1.00, 'STRONG': 1.00, 'MILD': 1.00},
+    'R':   {'EXTREME': 1.00, 'STRONG': 1.00, 'MILD': 1.00},
+    'RBI': {'EXTREME': 1.00, 'STRONG': 1.00, 'MILD': 1.00},
+}
 
 # Tiered scarcity tier boundaries (percentile of raw h_score across all hitters)
 _SCARCITY_TOP_PCT      = 0.85
@@ -126,8 +144,10 @@ _SP_BREADTH_BASE    = 1.15      # 1.15^pitcher_breadth (fractional exponent)
 _SP_WIN_PCT_GATE    = 0.520     # min team win% for W to count as a contribution
 
 # FP rank tiered gate
-_FP_EXCLUDE_GATE    = 200       # fp_rank > this -> excluded (roto_surplus = 0)
-_FP_TIER2_GATE      = 150       # fp_rank 151-200 -> scored but capped at median surplus
+_FP_EXCLUDE_GATE    = 200       # primary gate: fp_rank > this -> excluded
+_FP_TIER2_GATE      = 150       # fp_rank 151-200 -> scored normally, capped post-scoring
+_FP_ELITE_GATE      = 350       # elite pathway: fp_rank 201-350 (requires PA≥300 + cat≥p90)
+_PA_ELITE_GATE      = 300       # elite pathway min PA projection
 _C_SCARCITY_CAP     = 1.02      # max effective scarcity mult for catchers
 
 
@@ -211,30 +231,19 @@ def compute_roto_surpluses(
     team_win_pcts  = _load_team_win_pcts()
     pitcher_teams  = _load_pitcher_teams()
 
-    # ── ROS-scaled breadth/elite thresholds ──────────────────────────────────
-    # ros_fraction is written per-player by score_value.py; read from first player
+    # ── ROS fraction (used for projection overrides only) ────────────────────
     _ros = next((float(p['ros_fraction']) for p in players
                  if p.get('ros_fraction') is not None), 1.0)
-    # Counting stat thresholds scale with remaining season; rate stats do not
-    _c_hr_thresh  = _C_HR_THRESH  * _ros   # e.g. 22 × 0.735 ≈ 16.2
-    _c_r_thresh   = _C_R_THRESH   * _ros   # e.g. 85 × 0.735 ≈ 62.5
-    _c_rbi_thresh = _C_RBI_THRESH * _ros   # e.g. 80 × 0.735 ≈ 58.8
-    _c_sb_thresh  = _SB_HARD_FLOOR * _ros  # e.g. 15 × 0.735 ≈ 11.0
-    _e_hr_thresh  = _E_HR_THRESH  * _ros   # e.g. 35 × 0.735 ≈ 25.7
-    _e_r_thresh   = _E_R_THRESH   * _ros   # e.g. 120 × 0.735 ≈ 88.2
-    _e_rbi_thresh = _E_RBI_THRESH * _ros   # e.g. 105 × 0.735 ≈ 77.2
-    _e_sb_thresh  = _E_SB_THRESH  * _ros   # e.g. 35 × 0.735 ≈ 25.7
-    print(f"  Roto thresholds (ros={_ros:.3f}): "
-          f"HR>={_c_hr_thresh:.1f} R>={_c_r_thresh:.1f} "
-          f"RBI>={_c_rbi_thresh:.1f} SB>={_c_sb_thresh:.1f}")
+    print(f"  Roto model (percentile-based breadth+elite, ros={_ros:.3f})")
 
-    # ── Gate players + separate pools ────────────────────────────────────────
+    # ── Gate players + separate pools ─────────────────────────────────────────
     hitters: list[tuple[dict, str]] = []
     sp_pool: list[dict] = []
     rp_pool: list[dict] = []
     excluded_ids: set[int] = set()
-    tier2_ids:    set[int] = set()   # fp_rank 151-200: scored normally, capped post-scoring
-    _seen_ids:    set[int] = set()   # dedup: first entry wins (DH before SP for Ohtani)
+    tier2_ids:    set[int] = set()
+    _seen_ids:    set[int] = set()
+    _hitter_candidates: list[tuple[dict, str]] = []   # all hitter-eligible, not yet gated
 
     for p in players:
         if p['id'] in _seen_ids:
@@ -242,14 +251,7 @@ def compute_roto_surpluses(
         _seen_ids.add(p['id'])
         fpos = FPOS_MAP.get(p.get('pos', ''))
         if fpos in HITTER_FPOS:
-            pa = p.get('PA_proj') or 0
-            fp = int(p.get('fp_rank') or 9999)
-            if float(pa) < 400 or fp > _FP_EXCLUDE_GATE:
-                excluded_ids.add(p['id'])
-            else:
-                hitters.append((p, fpos))
-                if fp > _FP_TIER2_GATE:
-                    tier2_ids.add(p['id'])
+            _hitter_candidates.append((p, fpos))
         elif fpos == 'SP':
             ip = p.get('IP_proj') or 0
             if float(ip) < 100:
@@ -262,6 +264,49 @@ def compute_roto_surpluses(
                 excluded_ids.add(p['id'])
             else:
                 rp_pool.append(p)
+
+    # Hitter gate — Pass 1: primary qualification (fp_rank ≤ 200, PA_proj ≥ 400)
+    _fringe_candidates: list[tuple[dict, str]] = []
+    for p, fpos in _hitter_candidates:
+        pa = float(p.get('PA_proj') or 0)
+        fp = int(p.get('fp_rank') or 9999)
+        if pa >= 400 and fp <= _FP_EXCLUDE_GATE:
+            hitters.append((p, fpos))
+            if fp > _FP_TIER2_GATE:
+                tier2_ids.add(p['id'])
+        elif pa >= _PA_ELITE_GATE and fp <= _FP_ELITE_GATE:
+            _fringe_candidates.append((p, fpos))   # eligible for elite pathway
+        else:
+            excluded_ids.add(p['id'])
+
+    # Global SB p90 — computed from ALL hitters PA≥300 regardless of fp_rank.
+    # Used for (a) elite pathway SB gate and (b) scarce_sb_flag on all scored hitters.
+    _global_hitters = [
+        p for p in players
+        if FPOS_MAP.get(p.get('pos', '')) in HITTER_FPOS
+        and float(p.get('PA_proj') or 0) >= _PA_ELITE_GATE
+    ]
+    _global_sb_vals = sorted(float((p.get('proj') or {}).get('SB', 0)) for p in _global_hitters)
+    _global_p90_sb_idx = max(0, int(0.90 * len(_global_sb_vals)) - 1)
+    _global_p90_sb: float = _global_sb_vals[_global_p90_sb_idx] if _global_sb_vals else 9999.0
+
+    # Hitter gate — Pass 2: elite category pathway (fp 201-350, PA ≥ 300, SB ≥ global p90)
+    # SB-only gate: only SB specialists benefit from the fringe pathway; other category
+    # elites in this fp range are adequately captured by the primary pool ranking.
+    if _fringe_candidates:
+        _elite_admitted = 0
+        for p, fpos in _fringe_candidates:
+            _proj = p.get('proj') or {}
+            if float(_proj.get('SB', 0)) >= _global_p90_sb:
+                hitters.append((p, fpos))
+                tier2_ids.add(p['id'])    # fringe elites always get Tier 2 surplus cap
+                _elite_admitted += 1
+            else:
+                excluded_ids.add(p['id'])
+
+        if _elite_admitted:
+            print(f"  Elite pathway: +{_elite_admitted} fringe hitters admitted "
+                  f"(fp 201-350, PA≥300, SB≥global p90={_global_p90_sb:.1f})")
 
     result: dict[int, float] = {pid: 0.0 for pid in excluded_ids}
     extras: dict[int, dict]  = {}
@@ -314,54 +359,70 @@ def compute_roto_surpluses(
             for rank, (pid, _) in enumerate(sorted_asc):
                 h_percentiles[pid][cat] = rank / N_h
 
-    # ── Hitter breadth + dominance scores ────────────────────────────────────
+    # ── Hitter breadth + category elite scores ───────────────────────────────
     h_scores: dict[int, float] = {}
 
     for p, _fpos in hitters:
-        pid  = p['id']
-        pcts = h_percentiles[pid]
-        _proj = _override_proj.get(pid) or (p.get('proj') or {})
+        pid   = p['id']
+        pcts  = h_percentiles[pid]
 
-        # Breadth flags: ROS-scaled stat floors
-        c_HR  = float(_proj.get('HR')  or 0) >= _c_hr_thresh
-        c_R   = float(_proj.get('R')   or 0) >= _c_r_thresh
-        c_RBI = float(_proj.get('RBI') or 0) >= _c_rbi_thresh
-        c_SB  = float(_proj.get('SB')  or 0) >= _c_sb_thresh
-        avg_v = float(_proj.get('AVG') or 0)
-        if avg_v >= _AVG_CONTRIB_THRESH:
-            c_AVG = 1      # contributes breadth
-        elif avg_v >= _AVG_NEUTRAL_THRESH:
-            c_AVG = 0      # neutral
-        else:
-            c_AVG = -1     # AVG liability: reduces breadth + penalty mult
+        # Breadth: count categories at p70+
+        breadth_score = sum(
+            1 for cat, _, _ in HITTER_CATS if pcts.get(cat, 0.0) >= _CAT_BREADTH_THRESH
+        )
+        breadth_mult = _BREADTH_MULT_TABLE[breadth_score]
 
-        breadth_count = max(0, int(c_HR) + int(c_R) + int(c_RBI) + int(c_SB) + c_AVG)
-        breadth_mult  = _HITTER_BREADTH_BASE ** breadth_count
-        avg_penalty_mult = _AVG_PENALTY_MULT if c_AVG == -1 else 1.0
-
-        sb_bonus = _SB_POWER_BONUS if (c_SB and (c_HR or c_RBI)) else 1.0
-
-        # Elite dominance bonus: 1.05 ^ (# categories at ROS-scaled elite floor)
-        elite_HR  = float(_proj.get('HR')  or 0) >= _e_hr_thresh
-        elite_R   = float(_proj.get('R')   or 0) >= _e_r_thresh
-        elite_RBI = float(_proj.get('RBI') or 0) >= _e_rbi_thresh
-        elite_SB  = float(_proj.get('SB')  or 0) >= _e_sb_thresh
-        elite_AVG = float(_proj.get('AVG') or 0) >= _E_AVG_THRESH
-        elite_count = int(elite_HR) + int(elite_R) + int(elite_RBI) + int(elite_SB) + int(elite_AVG)
-        elite_bonus = _ELITE_BASE ** elite_count
+        # Category elite flags (additive bonus, capped)
+        cat_elite_bonus: float = 0.0
+        cat_elite_flags: list[dict] = []
+        for cat, _, _ in HITTER_CATS:
+            pct = pcts.get(cat, 0.0)
+            sc  = _CAT_SCARCITY.get(cat, 1.00)
+            if pct >= _CAT_ELITE_EXTREME:
+                tier_label = 'EXTREME'
+                sp = _CAT_SCARCITY_PREMIUM.get(cat, {}).get(tier_label, 1.00)
+                bonus = _ELITE_EXTREME_BONUS * sc * sp
+                cat_elite_flags.append({'cat': cat, 'tier': tier_label,
+                                        'pct': round(pct * 100, 1), 'bonus': round(bonus, 3),
+                                        'scarcity_premium': sp})
+                cat_elite_bonus += bonus
+            elif pct >= _CAT_ELITE_STRONG:
+                tier_label = 'STRONG'
+                sp = _CAT_SCARCITY_PREMIUM.get(cat, {}).get(tier_label, 1.00)
+                bonus = _ELITE_STRONG_BONUS * sc * sp
+                cat_elite_flags.append({'cat': cat, 'tier': tier_label,
+                                        'pct': round(pct * 100, 1), 'bonus': round(bonus, 3),
+                                        'scarcity_premium': sp})
+                cat_elite_bonus += bonus
+            elif pct >= _CAT_ELITE_MILD:
+                tier_label = 'MILD'
+                sp = _CAT_SCARCITY_PREMIUM.get(cat, {}).get(tier_label, 1.00)
+                bonus = _ELITE_MILD_BONUS * sc * sp
+                cat_elite_flags.append({'cat': cat, 'tier': tier_label,
+                                        'pct': round(pct * 100, 1), 'bonus': round(bonus, 3),
+                                        'scarcity_premium': sp})
+                cat_elite_bonus += bonus
+        cat_elite_bonus = min(cat_elite_bonus, _ELITE_BONUS_CAP)
 
         base = sum(pcts.get(cat, 0.0) * w for cat, w, _ in HITTER_CATS)
-        h_scores[pid] = base * breadth_mult * sb_bonus * elite_bonus * avg_penalty_mult
+        h_scores[pid] = base * breadth_mult + cat_elite_bonus
 
+        _p_sb = float((_override_proj.get(pid) or (p.get('proj') or {})).get('SB', 0))
         extras[pid] = {
-            'breadth_count':    breadth_count,
-            'breadth_mult':     round(breadth_mult, 3),
-            'orig_proj':        _orig_proj.get(pid),   # None if not overridden
-            'sb_bonus':         sb_bonus,
-            'elite_count':      elite_count,
-            'elite_bonus':      round(elite_bonus, 3),
-            'avg_penalty_mult': avg_penalty_mult,
-            'c_HR': c_HR, 'c_R': c_R, 'c_RBI': c_RBI, 'c_SB': c_SB, 'c_AVG': c_AVG,
+            'breadth_score':        breadth_score,
+            'breadth_mult':         round(breadth_mult, 3),
+            'orig_proj':            _orig_proj.get(pid),
+            'category_elite_flags': cat_elite_flags,
+            'category_elite_bonus': round(cat_elite_bonus, 3),
+            'elite_count':          len(cat_elite_flags),   # backward compat
+            'elite_bonus':          round(cat_elite_bonus, 3),  # backward compat
+            'cat_pcts':             {cat: round(pcts.get(cat, 0.0) * 100, 1) for cat, _, _ in HITTER_CATS},
+            'c_HR':  pcts.get('HR',  0.0) >= _CAT_BREADTH_THRESH,
+            'c_R':   pcts.get('R',   0.0) >= _CAT_BREADTH_THRESH,
+            'c_RBI': pcts.get('RBI', 0.0) >= _CAT_BREADTH_THRESH,
+            'c_SB':  pcts.get('SB',  0.0) >= _CAT_BREADTH_THRESH,
+            'c_AVG': pcts.get('AVG', 0.0) >= _CAT_BREADTH_THRESH,
+            'scarce_sb_flag':       _p_sb >= _global_p90_sb,
         }
 
     # ── Tiered positional scarcity multiplier ────────────────────────────────
@@ -541,21 +602,22 @@ def _print_pool_percentiles(players: list[dict], roster_n: dict[str, int]) -> No
     avg_vals = sorted(float(q.get('AVG') or 0) for q in qualified)
     N = len(qualified)
 
-    print(f"\n-- Pool calibration ({N} qualified hitters, fixed thresholds) ----")
-    print(f"  SB  (floor: raw>=15)")
-    for pct in (0.40, 0.50, 0.60, 0.75, 0.90):
+    print(f"\n-- Pool calibration ({N} qualified hitters, percentile thresholds) --")
+    print(f"  SB  (breadth>=p70 | mild>=p90 | strong>=p93 | extreme>=p97)")
+    for pct in (0.70, 0.90, 0.93, 0.97):
         v = _pct_val(sb_vals, pct)
-        marker = ' <- FLOOR ~' if abs(v - 15) <= 2 else ''
-        print(f"    {pct:.0%}: {v:5.1f} SB{marker}")
-    print(f"  HR  (floor: raw>=22 | elite: raw>=35)")
-    for pct in (0.40, 0.50, 0.60, 0.75, 0.90):
+        label = {0.70: 'breadth', 0.90: 'mild', 0.93: 'strong', 0.97: 'extreme'}[pct]
+        print(f"    p{pct:.0%}: {v:5.1f} SB  <- {label}")
+    print(f"  HR  (breadth>=p70 | mild>=p90 | strong>=p93 | extreme>=p97)")
+    for pct in (0.70, 0.90, 0.93, 0.97):
         v = _pct_val(hr_vals, pct)
-        marker = ' <- CONTRIB ~' if abs(v - 22) <= 2 else (' <- ELITE ~' if abs(v - 35) <= 2 else '')
-        print(f"    {pct:.0%}: {v:5.1f} HR{marker}")
-    print(f"  AVG (liability: <0.220 | neutral: 0.220-0.254 | contrib: >=0.255 | elite: >=0.285)")
-    for pct in (0.20, 0.35, 0.50, 0.65, 0.80):
+        label = {0.70: 'breadth', 0.90: 'mild', 0.93: 'strong', 0.97: 'extreme'}[pct]
+        print(f"    p{pct:.0%}: {v:5.1f} HR  <- {label}")
+    print(f"  AVG (breadth>=p70 | mild>=p90 | strong>=p93 | extreme>=p97)")
+    for pct in (0.70, 0.90, 0.93, 0.97):
         v = _pct_val(avg_vals, pct)
-        print(f"    {pct:.0%}: {v:.3f} AVG")
+        label = {0.70: 'breadth', 0.90: 'mild', 0.93: 'strong', 0.97: 'extreme'}[pct]
+        print(f"    p{pct:.0%}: {v:.3f} AVG <- {label}")
     print()
 
 
@@ -594,12 +656,14 @@ def main() -> None:
     for p in players:
         pid = p['id']
         rs  = surpluses.get(pid)
-        p['roto_surplus_l1']    = rs
+        p['roto_surplus_l1']      = rs
         ex = extras.get(pid, {})
-        p['roto_breadth_count'] = ex.get('breadth_count')
-        p['roto_breadth_mult']  = ex.get('breadth_mult')
-        p['roto_elite_count']   = ex.get('elite_count')
-        p['roto_elite_bonus']   = ex.get('elite_bonus')
+        p['roto_breadth_count']   = ex.get('breadth_score')
+        p['roto_breadth_mult']    = ex.get('breadth_mult')
+        p['roto_elite_count']     = ex.get('elite_count')
+        p['roto_elite_bonus']     = ex.get('category_elite_bonus')
+        p['category_elite_flags'] = ex.get('category_elite_flags', [])
+        p['scarce_sb_flag']       = ex.get('scarce_sb_flag', False)
         if rs is not None:
             updated += 1
 
@@ -623,6 +687,29 @@ def main() -> None:
         if fpos in by_fpos:
             top3 = sorted(by_fpos[fpos], key=lambda x: x[1], reverse=True)[:3]
             print(f"  {fpos}: {', '.join(f'{n} ({v:+.0f})' for n, v in top3)}")
+
+    # ── Category elite breakdown for key validation players ───────────────────
+    _validate_names = ['Nasim', 'Corbin Carroll', 'Yordan', 'Bobby Witt', 'Elly De']
+    print("\nCategory elite breakdown (validation):")
+    for p in players:
+        if any(v.lower() in p['name'].lower() for v in _validate_names):
+            ex   = extras.get(p['id'], {})
+            rs   = surpluses.get(p['id'], 0.0)
+            flags   = ex.get('category_elite_flags', [])
+            cat_p   = ex.get('cat_pcts', {})
+            flag_str = ', '.join(
+                f"{f['cat']} {f['tier']} (p{f['pct']}, +{f['bonus']:.3f}, sp×{f.get('scarcity_premium',1.0):.2f})"
+                for f in flags) if flags else 'none'
+            scarce = '⚡' if ex.get('scarce_sb_flag') else ''
+            print(f"  {p['name']:28s}  breadth={ex.get('breadth_score','?')}  "
+                  f"mult={ex.get('breadth_mult','?')}  "
+                  f"elite_bonus={ex.get('category_elite_bonus','?')}  "
+                  f"roto_surplus={rs:+.1f}  {scarce}")
+            print(f"    flags: {flag_str}")
+            if cat_p:
+                print(f"    pcts:  HR={cat_p.get('HR','?')}  R={cat_p.get('R','?')}  "
+                      f"RBI={cat_p.get('RBI','?')}  SB={cat_p.get('SB','?')}  "
+                      f"AVG={cat_p.get('AVG','?')}")
 
     # Gate players verification
     print("\nGate players:")

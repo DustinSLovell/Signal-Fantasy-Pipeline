@@ -400,6 +400,7 @@ def _load_players() -> pd.DataFrame:
     # overwrite it in the combined pos_map dict.
     _hitter_pos_map: dict[int, str] = {}
     _roto_surplus_map: dict[int, float | None] = {}
+    _scarce_sb_map: dict[int, bool] = {}
     _values_json = BASE_DIR / "data" / "player_values.json"
     try:
         import json as _json
@@ -408,6 +409,7 @@ def _load_players() -> pd.DataFrame:
             _pid = _p.get("id")
             if _pid:
                 _roto_surplus_map[int(_pid)] = _p.get("roto_surplus_l1")
+                _scarce_sb_map[int(_pid)] = bool(_p.get("scarce_sb_flag", False))
             if _p.get("type") == "hitter":
                 _fpos = FANTASY_POS_MAP.get(_p.get("pos", ""))
                 if _pid and _fpos:
@@ -435,7 +437,7 @@ def _load_players() -> pd.DataFrame:
     combined["_norm"] = combined["name"].apply(_norm)
     combined["_user_pos"] = None
 
-    # Merge roto_surplus_l1 from player_values.json (keyed by MLBAM id)
+    # Merge roto_surplus_l1 and scarce_sb_flag from player_values.json (keyed by MLBAM id)
     def _get_roto_surplus(row):
         for col in ("batter", "pitcher"):
             pid_raw = row.get(col)
@@ -445,7 +447,19 @@ def _load_players() -> pd.DataFrame:
                 except (TypeError, ValueError):
                     pass
         return None
+
+    def _get_scarce_sb(row):
+        for col in ("batter", "pitcher"):
+            pid_raw = row.get(col)
+            if pid_raw is not None and pd.notna(pid_raw):
+                try:
+                    return _scarce_sb_map.get(int(pid_raw), False)
+                except (TypeError, ValueError):
+                    pass
+        return False
+
     combined["roto_surplus_l1"] = combined.apply(_get_roto_surplus, axis=1)
+    combined["scarce_sb_flag"]  = combined.apply(_get_scarce_sb, axis=1)
 
     # Deduplicate: projection merge can create duplicate rows when a player appears
     # as both hitter and pitcher in projections_2026.csv. Keep the first row per
@@ -1943,6 +1957,14 @@ def main() -> None:
                 print(line)
         else:
             print("  No active luck signals on either side — evaluate on surplus value alone.")
+
+        # Scarce SB asset flag
+        _sb_scarce_players = [r for r in give_rows + get_rows if r.get("scarce_sb_flag")]
+        if _sb_scarce_players:
+            print()
+            print(f"  ⚡ Scarce category asset — SB producers at this level are nearly irreplaceable")
+            print(f"     in roto leagues. Seller has pricing power; buyer should expect to overpay")
+            print(f"     relative to model estimate. Value shown is a floor, not a ceiling.")
 
         # IL player advisory notes
         for row in give_rows + get_rows:
