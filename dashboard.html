@@ -1834,26 +1834,33 @@ const F = {
     const pFmt   = isNaN(pVal) ? '—' : pVal.toFixed(3);
     const dFmt   = isNaN(dVal) ? '—' : (dVal >= 0 ? '+' : '') + dVal.toFixed(3);
 
-    // Build a colored HTML string for the custom tooltip
-    const _cqRow = (label, rawVal, decimals, unit, nearZero) => {
+    // Build a colored HTML string for the custom tooltip.
+    // rawVal drives the printed magnitude + arrow (TRUE direction the metric moved).
+    // colorVal drives only the pos/neg color class (good/bad). For pitcher "allowed"
+    // stats colorVal is the sign-flipped delta so red=worse, green=better; when
+    // colorVal is omitted the color follows rawVal (hitter / own-velocity behavior).
+    const _cqRow = (label, rawVal, decimals, unit, nearZero, colorVal) => {
       const n = parseFloat(rawVal);
       if (isNaN(n)) return '';
-      const abs  = Math.abs(n);
-      const sign = n >= 0 ? '+' : '';
+      const abs   = Math.abs(n);
+      const sign  = n > 0 ? '+' : (n < 0 ? '-' : '');
       const arrow = abs <= nearZero ? '→' : (n > 0 ? '↑' : '↓');
-      const cls  = abs <= nearZero ? 'neut' : (n > 0 ? 'pos' : 'neg');
-      const txt  = `${sign}${n.toFixed(decimals)}${unit} ${arrow}`;
+      const c     = (colorVal === undefined || colorVal === null || colorVal === '')
+                      ? n : parseFloat(colorVal);
+      const cls   = abs <= nearZero ? 'neut' : (c > 0 ? 'pos' : 'neg');
+      const txt   = `${sign}${abs.toFixed(decimals)}${unit} ${arrow}`;
       return `<div class="cq-row"><span class="cq-label">${label}</span><span class="cq-val ${cls}">${txt}</span></div>`;
     };
-    // For pitchers, CQ metrics are "allowed" stats — invert sign so red=bad, green=good
+    // For pitchers, CQ metrics are "allowed" stats — flip the COLOR only (red=bad,
+    // green=good) while the printed number keeps its true sign/arrow direction.
     const isPit = !!tr._is_pitcher;
     const _flip = v => { const n = parseFloat(v); return isNaN(n) ? v : String(-n); };
     const cqRows = [
-      _cqRow(isPit ? 'Exit Velo (allowed):'   : 'Exit Velocity:',  isPit ? _flip(tr.ev_delta_mph)  : tr.ev_delta_mph,  1, ' mph', 0.3),
-      _cqRow(isPit ? 'Hard Hit (allowed):'    : 'Hard Hit Rate:',  isPit ? _flip(tr.hh_delta_pp)   : tr.hh_delta_pp,   1, ' pp',  0.5),
-      _cqRow(isPit ? 'Barrel Rate (allowed):' : 'Barrel Rate:',    isPit ? _flip(tr.brl_delta_pp)  : tr.brl_delta_pp,  1, ' pp',  0.5),
-      _cqRow(isPit ? 'BABIP (allowed):'       : 'BABIP:',          isPit ? _flip(tr.babip_delta)   : tr.babip_delta,   3, '',      0.005),
-      _cqRow(isPit ? 'Velocity:'              : 'Bat Speed:',      tr.bs_delta_mph,                                    1, ' mph', 0.3),
+      _cqRow(isPit ? 'Exit Velo (allowed):'   : 'Exit Velocity:',  tr.ev_delta_mph,  1, ' mph', 0.3,   isPit ? _flip(tr.ev_delta_mph)  : undefined),
+      _cqRow(isPit ? 'Hard Hit (allowed):'    : 'Hard Hit Rate:',  tr.hh_delta_pp,   1, ' pp',  0.5,   isPit ? _flip(tr.hh_delta_pp)   : undefined),
+      _cqRow(isPit ? 'Barrel Rate (allowed):' : 'Barrel Rate:',    tr.brl_delta_pp,  1, ' pp',  0.5,   isPit ? _flip(tr.brl_delta_pp)  : undefined),
+      _cqRow(isPit ? 'BABIP (allowed):'       : 'BABIP:',          tr.babip_delta,   3, '',     0.005, isPit ? _flip(tr.babip_delta)   : undefined),
+      _cqRow(isPit ? 'Velocity:'              : 'Bat Speed:',      tr.bs_delta_mph,  1, ' mph', 0.3),
     ].join('');
     const bsFlagHtml = (tr.bs_flag === 'True' || tr.bs_flag === true)
       ? `<div class="cq-bs-flag">⚠️ ${isPit ? 'Velocity flag — drop vs prior window' : 'Bat speed flag — drop vs career baseline'}</div>` : '';
