@@ -7097,9 +7097,9 @@ Word doc: week6_article_final.docx
 - "+3.73 mph" (worse for pitcher) displays as
   "-3.7 mph ↓" — color correct (red) but sign/
   arrow wrong
-- Fix identified but not yet committed
-- Send to CC: fix _flip to use raw delta for
-  display, only use negation for color class
+- Fixed and committed: 9ce06f7
+- Fix: _flip now drives the color class only; printed
+  magnitude + arrow use the raw delta (true direction)
 
 **Category Elite System — Built and Committed**
 - Rebuilt broken fixed-threshold elite system
@@ -7169,18 +7169,17 @@ Word doc: week6_article_final.docx
 - Reddit: active engagement Week 6 post
 
 ### Next Session Priorities
-1. Fix pitcher tooltip display bug (_flip sign/arrow)
-2. Ohtani pedigree override → projection_overrides.json
-3. Pitcher Layer 6 — pitch vulnerability pitcher side
-4. Wheeler career discount badge fix (veteran exempt)
-5. Ramírez trade tool tension — pedigree override
-6. Pitcher W dimension (team win% data)
-7. Rebuild prior_teams_2025.json (corrupt)
-8. xwOBA root cause investigation (offseason priority)
-9. Win equity layer — standings context for trade value
-10. Whitepaper V3 — Sessions 64-66 incorporated
-11. Career lessons database Session 66 entries
-12. True OOS backtest for pitcher recency layer
+1. Ohtani pedigree override → projection_overrides.json
+2. Pitcher Layer 6 — pitch vulnerability pitcher side
+3. Wheeler career discount badge fix (veteran exempt)
+4. Ramírez trade tool tension — pedigree override
+5. Pitcher W dimension (team win% data)
+6. Rebuild prior_teams_2025.json (corrupt)
+7. xwOBA root cause investigation (offseason priority)
+8. Win equity layer — standings context for trade value
+9. Whitepaper V3 — Sessions 64-66 incorporated
+10. Career lessons database Session 66 entries
+11. True OOS backtest for pitcher recency layer
 
 ### Known Issues / Parking Lot
 - prior_teams_2025.json corrupt — ignore entirely
@@ -7194,7 +7193,6 @@ Word doc: week6_article_final.docx
 - Pitcher pitch vulnerability Layer 6 not yet built
 - Speed-profile age flag not implemented
 - Ohtani pedigree override not yet committed
-- Pitcher tooltip _flip bug (sign/arrow inverted)
 - xwOBA offset ~+16pts vs Savant est_woba
   (internally consistent, offseason fix)
 - Win equity layer not yet built (standings context)
