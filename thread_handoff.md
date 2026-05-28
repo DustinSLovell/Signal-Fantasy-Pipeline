@@ -7042,9 +7042,166 @@ Velocity flags (3):
 - Pitcher pitch vulnerability Layer 6 not yet built
 - Speed-profile age flag not implemented
 - Ohtani pedigree override not yet committed
+- xwOBA offset: model xwOBA runs ~+16pts vs Savant
+  est_woba (not xwOBAcon — K% r=0.004). System
+  internally consistent. Root-cause (calc_xwoba vs
+  est_woba methodology) deferred to offseason rebuild.
+  Diagnostic: data/xwoba_verdict_flip_diagnostic.csv
 
 ---
 
-*End of thread_handoff.md — Sessions 1-65 complete.*
+## Session 66 (May 27, 2026)
+
+### Key Accomplishments
+
+**Week 6 Article — Published**
+Title: "Pitcher Recency Layer is Live — Plus This Week's Signals"
+Article #6 | May 27, 2026
+Players covered:
+  Buy Low Hitters: Evan Carter, Trea Turner
+  Buy Low Pitcher: Bryan Woo (top-10 SP framing)
+  Confirmed Sell: Max Meyer (Sell High + Cold)
+  Conflicted Sell: Ryan Weathers (Sell High + Hot)
+HTML saved to: outputs/week6_substack.html
+Word doc: week6_article_final.docx
+
+**Pitcher Trend Backtest — Built and Validated**
+- backtest_trend_signals_pitcher.py built
+- 2025 game logs used, May 18-Aug 31 validation
+- Key findings:
+  Sell High + Declining: 100% accuracy (Confirmed Sell)
+  Sell High + Improving: 40% accuracy (Conflicted Sell)
+  Buy Low baseline: 87.5% accuracy
+  Mirrors hitter backtest pattern
+- Saved: data/trend_signal_pitcher_backtest_2025.csv
+- Saved: data/ros_era_cache_2025.json
+
+**xwOBA Offset Diagnostic — Investigated and Documented**
+- Model xwOBA runs ~+16pts vs Savant est_woba
+- NOT xwOBAcon — K% correlation r=0.004 (flat)
+- Systematic offset of unknown root cause
+- Impact: 7 borderline Buy Low flips, 0 Sell High flips
+- System is internally consistent — thresholds
+  calibrated on same metric
+- Full re-calibration deferred to offseason
+- Diagnostic files committed: f8bcfc0
+  data/xwoba_verdict_flip_diagnostic.csv
+  data/savant_true_xwoba_2026.json
+  _diag_xwoba_flips.py
+- xwOBA footnote added to article methodology section
+- KNOWN_ISSUES note added to thread_handoff.md
+
+**Pitcher Tooltip Display Bug — Identified**
+- _flip() at dashboard.html:1850 inverts sign AND
+  arrow in tooltip, should only affect color
+- "+3.73 mph" (worse for pitcher) displays as
+  "-3.7 mph ↓" — color correct (red) but sign/
+  arrow wrong
+- Fix identified but not yet committed
+- Send to CC: fix _flip to use raw delta for
+  display, only use negation for color class
+
+**Category Elite System — Built and Committed**
+- Rebuilt broken fixed-threshold elite system
+  (HR≥35 threshold with max 31.5 in pool = 0 players)
+- New percentile-based tiers (p90/p93/p97)
+- SB-only elite pathway for fringe specialists
+  (fp_rank 200-350, global p90 SB threshold)
+- Scarcity premium multipliers:
+  SB p97+: 1.25x, SB p93-97: 1.15x, SB p90-93: 1.10x
+  AVG p97+: 1.05x, HR/R/RBI: 1.00x
+- Breadth multiplier: 0.90-1.25 by category count
+- ⚡ Scarcity liquidity flag in trade UI
+- Pool: 120 qualified players (8 SB-only fringe)
+- 37/37 tests passing
+- Commit: 762fbbb
+
+**Nuñez Trade Analysis — Key Design Insights**
+- Nuñez correctly shows roto liability (-52.9 surplus)
+  BUT ⚡ flag fires (SB 20.6 ≥ global p90 14.7)
+- Two true things simultaneously:
+  "He's a roto liability" (accurate)
+  "His SB is nearly irreplaceable" (also accurate)
+- Win equity concept identified for future build:
+  Category specialist value = marginal impact on
+  league outcome for specific team at specific moment
+- SB replacement curve is cliff (irreplaceable at
+  elite levels), AVG is gradual slope
+- Scarcity premium reflects replacement cost,
+  not just player value
+
+**Luck Scores Spreadsheet — Updated**
+- Luck_Scores_5_27_26.xlsx built with current data
+- Both hitters and pitchers tabs
+- Navy header + green/red section formatting
+- Saved to outputs/
+
+**Data Sources Inventory — Documented**
+5 external sources confirmed:
+  1. Baseball Savant (primary — luck + recency + L6)
+  2. MLB Stats API (game logs, metadata)
+  3. CBS Sports Fantasy (projections, FP rank)
+  4. ESPN Fantasy API (ownership %)
+  5. FantasyPros (cross-platform ownership)
+
+**Reddit / Substack Growth**
+- Week 6 article published May 27
+- Reddit post live on r/fantasybaseball
+  15 upvotes, 6 comments in first 15 minutes
+- Substack: 99 subscribers (1 away from 100!)
+- r/Sabermetrics original post: still driving traffic
+- Engaged with josefjohann comment on pooled accuracy
+
+### GitHub Commits (Session 66)
+- f8bcfc0 — xwOBA diagnostic files + known issues note
+- 762fbbb — category elite system rebuild
+- 3ccbb4d — Session 65 handoff (previous session)
+
+### Model State (Current)
+- Hitter Version E: 91.4% pooled / 90.5% OOS 2025
+- Pitcher Version F: 87.7% pooled / 82.0% OOS 2025
+- Recency Signal v2: live hitters + pitchers
+- Layer 6: pitch vulnerability live (hitters)
+- Category elite: percentile-based, SB scarcity premium
+- Total analytical layers: 14
+- Beta URL: dustinslovell.github.io/Signal-Fantasy-Pipeline
+- Substack: 99 subscribers, Article #6 live
+- Reddit: active engagement Week 6 post
+
+### Next Session Priorities
+1. Fix pitcher tooltip display bug (_flip sign/arrow)
+2. Ohtani pedigree override → projection_overrides.json
+3. Pitcher Layer 6 — pitch vulnerability pitcher side
+4. Wheeler career discount badge fix (veteran exempt)
+5. Ramírez trade tool tension — pedigree override
+6. Pitcher W dimension (team win% data)
+7. Rebuild prior_teams_2025.json (corrupt)
+8. xwOBA root cause investigation (offseason priority)
+9. Win equity layer — standings context for trade value
+10. Whitepaper V3 — Sessions 64-66 incorporated
+11. Career lessons database Session 66 entries
+12. True OOS backtest for pitcher recency layer
+
+### Known Issues / Parking Lot
+- prior_teams_2025.json corrupt — ignore entirely
+- Wheeler career discount badge firing on veteran
+- Ramírez pedigree override → trade surplus too high
+- Pitcher W dimension defaults to 0.500
+- Soto projection suppressed (low PA estimate)
+- Optimal HR ROS scaling factor ~0.80 not 0.735
+- Career LD%/FB% for Layer 6 Sub-B estimated from
+  launch angle (conservative — only Cal Raleigh flagged)
+- Pitcher pitch vulnerability Layer 6 not yet built
+- Speed-profile age flag not implemented
+- Ohtani pedigree override not yet committed
+- Pitcher tooltip _flip bug (sign/arrow inverted)
+- xwOBA offset ~+16pts vs Savant est_woba
+  (internally consistent, offseason fix)
+- Win equity layer not yet built (standings context)
+- FP ROS rank column misleading in Signal Rankings view
+
+---
+
+*End of thread_handoff.md — Sessions 1-66 complete.*
 *Overwrite completely at end of every session. Single source of truth.*
 *Save to: C:\Users\dusti\fantasy-baseball\thread_handoff.md*
